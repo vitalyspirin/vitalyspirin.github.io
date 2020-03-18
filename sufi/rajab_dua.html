@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
       article, body > footer {
         width: 60rem;
         margin: auto;
@@ -14,14 +17,20 @@
       }
       article > section {
         display: inline-block;
-        width: 49%;
+        box-sizing: border-box;
+        width: calc(50% - 2rem);
         vertical-align: top;
+        padding: 0.5rem;
       }
       article > section p {
         min-height: 6rem;
         margin: 1rem 0;
       }
-      header { text-align: center !important; font-weight: bold; }
+      header {
+        text-align: center !important;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
       .one-line { min-height: 3rem; }
       .three-lines { min-height: 9rem; }
       hr { width: 100%; background-color: black; font-size: unset; }
@@ -29,17 +38,23 @@
       .justify { text-align: justify; }
 
       @media screen and (max-width: 975px) {
+        body article { text-align: justify; }
         body article, body article > section, body > footer { width: 100%; }
         article > section p, .one-line, .three-lines { min-height: 0; }
         p { padding: 0.5rem; }
-        p:lang(en) {font-size: 125%; }
+        p:lang(en), header {font-size: 125%; }
+        .transliteration p:lang(en) {
+          display: inline;
+          margin: 0;
+          padding: 0;
+        }
         p:lang(ar), header:lang(ar) { font-size: 250%; text-align: right;}
 
       }
     </style>
   </head>
   <body>
-    <article>
+    <article class="transliteration">
       <section lang="en">
         <header class="one-line">Rajab dua</header>
 
@@ -109,7 +124,7 @@
 
     </article>
 
-    <article>
+    <article class="translation">
       <p class="justify">
         In the name of Allah, the All-Beneficent, the All-Merciful O  Allah,  I  ask  forgiveness  of  You  for  everything  for  which  I  repented  to  You  then  returned  to.  And  I  ask  forgiveness  of  You  for  everything  I  displeased  You  with  and  all that concerns me with which You are displeased. And I ask forgiveness of You for the  favors  which  I  used  for  increasing  my  disobedience  towards  You.  And  I  ask  forgiveness  of  You  for  the  sins  which  no  one  knows  except  You  and  no  one  sees  except  You  and  nothing  encompasses  except  Your  Mercy  and  nothing  delivers  from  except Your forgiveness and clemency. There is no god except You alone. Glory be to You! Indeed I was an oppressor to myself.
       </p>
