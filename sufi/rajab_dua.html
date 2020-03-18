@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
   <head>
@@ -28,10 +28,13 @@
       p:lang(ar), header:lang(ar) { font-size: 225%; text-align: right;}
       .justify { text-align: justify; }
 
-      @media screen and (max-width: 400px) {
-        body article, body article > section { width: 100%; }
+      @media screen and (max-width: 975px) {
+        body article, body article > section, body > footer { width: 100%; }
         article > section p, .one-line, .three-lines { min-height: 0; }
         p { padding: 0.5rem; }
+        p:lang(en) {font-size: 125%; }
+        p:lang(ar), header:lang(ar) { font-size: 250%; text-align: right;}
+
       }
     </style>
   </head>
