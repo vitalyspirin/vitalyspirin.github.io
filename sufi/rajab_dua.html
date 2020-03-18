@@ -9,6 +9,7 @@
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
+        line-height: 150%;
       }
       article, body > footer {
         width: 60rem;
@@ -23,7 +24,7 @@
         padding: 0.5rem;
       }
       article > section p {
-        min-height: 6rem;
+        min-height: 7rem;
         margin: 1rem 0;
       }
       header {
@@ -31,10 +32,10 @@
         font-weight: bold;
         margin-bottom: 1rem;
       }
-      .one-line { min-height: 3rem; }
-      .three-lines { min-height: 9rem; }
+      .one-line { min-height: 4rem; }
+      .three-lines { min-height: 10rem; }
       hr { width: 100%; background-color: black; font-size: unset; }
-      p:lang(ar), header:lang(ar) { font-size: 225%; text-align: right;}
+      p:lang(ar), header:lang(ar) { font-size: 225%; line-height: 150%; text-align: right;}
       .justify { text-align: justify; }
 
       @media screen and (max-width: 975px) {
@@ -42,7 +43,7 @@
         body article, body article > section, body > footer { width: 100%; }
         article > section p, .one-line, .three-lines { min-height: 0; }
         p { padding: 0.5rem; }
-        p:lang(en), header {font-size: 125%; }
+        p:lang(en), header {font-size: 125%; line-height: 150%; }
         .transliteration p:lang(en) {
           display: inline;
           margin: 0;
