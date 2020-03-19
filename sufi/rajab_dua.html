@@ -39,7 +39,11 @@
       .justify { text-align: justify; }
 
       @media screen and (max-width: 975px) {
-        body article { text-align: justify; }
+        body article {
+          text-align: justify;
+          -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Chrome/Safari/Opera */
+        }
         body article, body article > section, body > footer { width: 100%; }
         article > section p, .one-line, .three-lines { min-height: 0; }
         p { padding: 0.5rem; }
