@@ -15,11 +15,6 @@
 			width: 47em;
 			margin: auto;
 		}
-		@media screen and (max-width: 600px) {
-			article {
-				width: 100%;
-			}
-		}
 
 		header {
 			text-align: center;
@@ -52,11 +47,29 @@
 		.error, input:invalid:not(:focus) {
 			background-color: #fc8181;
 		}
+
+		@media screen and (max-width: 600px) {
+			body {
+				font-size: 1.5em;
+			}
+			article {
+				width: 100%;
+			}
+			#verb-list {
+				text-align: center;
+			}
+			.verb-block {
+				margin: auto;
+			}
+		}
+
 	</style>
 
 	<script type="module" src="./verbs_in_present_tense.js"></script>
 
 	<script type="module">
+		"use strict";
+
 		import { verbsInPresentTense } from './verbs_in_present_tense.js';
 
 	  function buildPage()
@@ -64,38 +77,41 @@
 		document.getElementById("number-of-verbs").textContent = 
 			Object.keys(verbsInPresentTense).length;
 
-		  var verbList = document.getElementById("verb-list");
+		  let verbList = document.getElementById("verb-list");
 
-		  var templateVerbBlock = document.getElementById("template-verb-block")
+		  let templateVerbBlock = document.getElementById("template-verb-block")
 		  	.content.firstElementChild;
-		  var templateInputElement = document.getElementById("template-input")
+		  let templateInputElement = document.getElementById("template-input")
 		  	.content.firstElementChild;
 
 
+			let counter = 1;
+			for (let infinitive in verbsInPresentTense) {
+				let verbBlock = templateVerbBlock.cloneNode(true);
 
-			for (var infinitive in verbsInPresentTense) {
-				var verbBlock = templateVerbBlock.cloneNode(true);
+				let infinitiveElement = verbBlock.querySelector(".infinitive");
+				infinitiveElement.textContent = counter + ' - ' + infinitive;
+				counter++;
 
-				var infinitiveElement = verbBlock.querySelector(".infinitive");
-				infinitiveElement.textContent = infinitive;
+				for (let pronoun in verbsInPresentTense[infinitive]) {
 
-				for (var pronoun in verbsInPresentTense[infinitive]) {
-
-					var newInputElement = templateInputElement.cloneNode(true);
-					newInputElement.querySelector(".pronoun").textContent = pronoun;
+					let newInputBlock = templateInputElement.cloneNode(true);
+					let labelElement = newInputBlock.querySelector(".pronoun");
+					labelElement.textContent = pronoun;
+					labelElement.title = verbsInPresentTense[infinitive][pronoun];
 					
-					var id = (pronoun +
+					let id = (pronoun +
 					verbsInPresentTense[infinitive][pronoun]).replace(/\s+/g, '');;
 
-					newInputElement.querySelector(".pronoun").htmlFor = id;
-					var inputElement = newInputElement.querySelector("input");
+					labelElement.htmlFor = id;
+					let inputElement = newInputBlock.querySelector("input");
 					inputElement.id = id;
 					inputElement.pattern = verbsInPresentTense[infinitive][pronoun];
 					inputElement.onblur = function(event) {
 						event.target.value = event.target.value.trim();
 					}
 
-					verbBlock.append(newInputElement);
+					verbBlock.append(newInputBlock);
 				}
 				verbList.append(verbBlock);
 			}
