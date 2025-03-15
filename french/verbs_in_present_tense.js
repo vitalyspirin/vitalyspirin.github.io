@@ -3,6 +3,8 @@
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000289917_le_pr_sent_de_l_indicatif_exercices_et_corrig__web.pdf
 
+"use strict";
+
 export const verbsInPresentTense = {
 		  Aller: {
 			  Je: "vais",
