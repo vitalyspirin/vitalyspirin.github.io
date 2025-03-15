@@ -79,18 +79,18 @@
 				var infinitiveElement = verbBlock.querySelector(".infinitive");
 				infinitiveElement.textContent = infinitive;
 
-				for (var noun in verbsInPresentTense[infinitive]) {
+				for (var pronoun in verbsInPresentTense[infinitive]) {
 
 					var newInputElement = templateInputElement.cloneNode(true);
-					newInputElement.querySelector(".noun").textContent = noun;
+					newInputElement.querySelector(".pronoun").textContent = pronoun;
 					
-					var id = noun +
-					verbsInPresentTense[infinitive][noun];
+					var id = (pronoun +
+					verbsInPresentTense[infinitive][pronoun]).replace(/\s+/g, '');;
 
-					newInputElement.querySelector(".noun").htmlFor = id;
+					newInputElement.querySelector(".pronoun").htmlFor = id;
 					var inputElement = newInputElement.querySelector("input");
 					inputElement.id = id;
-					inputElement.pattern = verbsInPresentTense[infinitive][noun];
+					inputElement.pattern = verbsInPresentTense[infinitive][pronoun];
 					inputElement.onblur = function(event) {
 						event.target.value = event.target.value.trim();
 					}
@@ -102,8 +102,7 @@
 	  }
 
 	  buildPage();
-console.log(screen.width);
-	  //console.log(new XMLSerializer().serializeToString(document));
+//	  console.log(new XMLSerializer().serializeToString(document));
 	</script>
   </head>
 
@@ -126,7 +125,7 @@ console.log(screen.width);
 
 		<template id="template-input">
 			<div>
-				<label class="noun"></label>
+				<label class="pronoun"></label>
 				<input type="text"/>
 			</div>
 		</template>
@@ -134,4 +133,3 @@ console.log(screen.width);
 	</article>
   </body>
 </html>
-
