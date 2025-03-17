@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif
 }
+
 article {
     width: 47em;
     margin: auto;
@@ -9,9 +10,12 @@ article {
 header {
     text-align: center;
 }
-h3, .infinitive {
+
+h3,
+.infinitive {
     color: #663300;
 }
+
 header h4 {
     color: #ff3300;
     text-align: left;
@@ -21,20 +25,26 @@ header h4 {
 .verb-block {
     display: inline-block;
     margin: 0em 2em;
+    vertical-align: top;
 }
-.verb-block label{
+
+.verb-block label {
     width: 2.5em;
     font-size: 1em;
     display: inline-block;
 }
+
 input {
     font-size: 1em;
     width: 8em;
 }
+
 .verb-block div {
     margin: 1em 0;
 }
-.error, input:invalid:not(:focus) {
+
+.error,
+input:invalid:not(:focus) {
     background-color: #fc8181;
 }
 
@@ -42,14 +52,16 @@ input {
     body {
         font-size: 1.5em;
     }
+
     article {
         width: 100%;
     }
+
     #verb-list {
         text-align: center;
     }
+
     .verb-block {
         margin: auto;
     }
 }
-

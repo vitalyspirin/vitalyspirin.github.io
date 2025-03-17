@@ -429,6 +429,12 @@ export default {
         Nous: "nous apercevrons",
         Vous: "vous apercevrez",
         Ils: "s'apercevront"
+    },
+    Falloir: {
+        Il: "faudra"
+    },
+    Pleuvoir: {
+        Il: "pleuvra"
     }
 
 
