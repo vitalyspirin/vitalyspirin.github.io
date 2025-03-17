@@ -1,151 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Présent Simple</title>
-	
-	<link rel="icon" type="image/x-icon" href="https://oraprdnt.uqtr.uquebec.ca/favicon.ico">
+    
+    <link rel="icon" type="image/x-icon" href="https://oraprdnt.uqtr.uquebec.ca/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
 
-	<style>
-		body {
-			font-family: sans-serif
-		}
-		article {
-			width: 47em;
-			margin: auto;
-		}
+    <script type="module" src="./Page.js"></script>
 
-		header {
-			text-align: center;
-		}
-		h3, .infinitive {
-			color: #663300;
-		}
-		header h4 {
-			color: #ff3300;
-			text-align: left;
-			padding: 0 2em;
-		}
+    <script type="module">
+        "use strict";
 
-		.verb-block {
-			display: inline-block;
-			margin: 0em 2em;
-		}
-		.verb-block label{
-			width: 2.5em;
-			font-size: 1em;
-			display: inline-block;
-		}
-		input {
-			font-size: 1em;
-			width: 8em;
-		}
-		.verb-block div {
-			margin: 1em 0;
-		}
-		.error, input:invalid:not(:focus) {
-			background-color: #fc8181;
-		}
+        import {Page} from './Page.js';
 
-		@media screen and (max-width: 600px) {
-			body {
-				font-size: 1.5em;
-			}
-			article {
-				width: 100%;
-			}
-			#verb-list {
-				text-align: center;
-			}
-			.verb-block {
-				margin: auto;
-			}
-		}
+        const verbList = Page.getVerbList(window.location.search);
 
-	</style>
+        const title = window.decodeURIComponent(window.location.search).substring(1);
+        Page.build(verbList, title);
 
-	<script type="module" src="./verbs_in_present_tense.js"></script>
-
-	<script type="module">
-		"use strict";
-
-		import { verbsInPresentTense } from './verbs_in_present_tense.js';
-
-	  function buildPage()
-	  {
-		document.getElementById("number-of-verbs").textContent = 
-			Object.keys(verbsInPresentTense).length;
-
-		  let verbList = document.getElementById("verb-list");
-
-		  let templateVerbBlock = document.getElementById("template-verb-block")
-		  	.content.firstElementChild;
-		  let templateInputElement = document.getElementById("template-input")
-		  	.content.firstElementChild;
-
-
-			let counter = 1;
-			for (let infinitive in verbsInPresentTense) {
-				let verbBlock = templateVerbBlock.cloneNode(true);
-
-				let infinitiveElement = verbBlock.querySelector(".infinitive");
-				infinitiveElement.textContent = counter + ' - ' + infinitive;
-				counter++;
-
-				for (let pronoun in verbsInPresentTense[infinitive]) {
-
-					let newInputBlock = templateInputElement.cloneNode(true);
-					let labelElement = newInputBlock.querySelector(".pronoun");
-					labelElement.textContent = pronoun;
-					labelElement.title = verbsInPresentTense[infinitive][pronoun];
-					
-					let id = (pronoun +
-					verbsInPresentTense[infinitive][pronoun]).replace(/\s+/g, '');;
-
-					labelElement.htmlFor = id;
-					let inputElement = newInputBlock.querySelector("input");
-					inputElement.id = id;
-					inputElement.pattern = verbsInPresentTense[infinitive][pronoun];
-					inputElement.onblur = function(event) {
-						event.target.value = event.target.value.trim();
-					}
-
-					verbBlock.append(newInputBlock);
-				}
-				verbList.append(verbBlock);
-			}
-	  }
-
-	  buildPage();
 //	  console.log(new XMLSerializer().serializeToString(document));
-	</script>
+    </script>
   </head>
 
 
   <body>
-	<article>
-		<header>
-			<h3>Le présent</h3>
+    <article>
+        <header>
+            <h3 id="page-title">Le présent</h3>
 
-			<h4>Conjuguez ces <span id="number-of-verbs"></span> verbes au présent.</h5>
-		</header>
+            <h4>Conjuguez ces <span id="number-of-verbs"></span> verbes.</h5>
+        </header>
 
-		<div id="verb-list"></div>
+        <div id="verb-list"></div>
 
-		<template id="template-verb-block">
-			<div class="verb-block">
-				<h4 class="infinitive"></h4>
-			</div>
-		</template>
+        <template id="template-verb-block">
+            <div class="verb-block">
+                <h4 class="infinitive"></h4>
+            </div>
+        </template>
 
-		<template id="template-input">
-			<div>
-				<label class="pronoun"></label>
-				<input type="text"/>
-			</div>
-		</template>
+        <template id="template-input">
+            <div>
+                <label class="pronoun"></label>
+                <input type="text"/>
+            </div>
+        </template>
 
-	</article>
+    </article>
   </body>
 </html>
+
