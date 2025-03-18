@@ -4,12 +4,17 @@
 
 import verbsInPresentTense from './verbsInPresentTense.js';
 import verbsInFuturTense from './verbsInFutureTense.js';
+import verbsInImperfectTense from './verbsInImperfectTense.js';
 
 export class Page {
     static getVerbList(param) {
         let verbList;
 
         switch (param) {
+            case '?L%27imparfait':
+                verbList = verbsInImperfectTense;
+                break;
+
             case '?Le%20futur%20simple':
                 verbList = verbsInFuturTense;
                 break;

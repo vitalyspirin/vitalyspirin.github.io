@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Présent Simple</title>
-    
+
     <link rel="icon" type="image/x-icon" href="https://oraprdnt.uqtr.uquebec.ca/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 
@@ -13,19 +14,19 @@
     <script type="module">
         "use strict";
 
-        import {Page} from './Page.js';
+        import { Page } from './Page.js';
 
         const verbList = Page.getVerbList(window.location.search);
 
         const title = window.decodeURIComponent(window.location.search).substring(1);
         Page.build(verbList, title);
 
-//	  console.log(new XMLSerializer().serializeToString(document));
+        //console.log(new XMLSerializer().serializeToString(document));
     </script>
-  </head>
+</head>
 
 
-  <body>
+<body>
     <article>
         <header>
             <h3 id="page-title">Le présent</h3>
@@ -44,11 +45,11 @@
         <template id="template-input">
             <div>
                 <label class="pronoun"></label>
-                <input type="text"/>
+                <input type="text" />
             </div>
         </template>
 
     </article>
-  </body>
-</html>
+</body>
 
+</html>
