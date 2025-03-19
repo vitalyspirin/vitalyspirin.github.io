@@ -5,12 +5,17 @@
 import verbsInPresentTense from './verbsInPresentTense.js';
 import verbsInFuturTense from './verbsInFutureTense.js';
 import verbsInImperfectTense from './verbsInImperfectTense.js';
+import verbsInPresentPerfectTense from './verbsInPresentPerfectTense.js';
 
 export class Page {
     static getVerbList(param) {
         let verbList;
 
         switch (param) {
+            case '?Le%20pass%C3%A9%20compos%C3%A9':
+                verbList = verbsInPresentPerfectTense;
+                break;
+            
             case '?L%27imparfait':
                 verbList = verbsInImperfectTense;
                 break;

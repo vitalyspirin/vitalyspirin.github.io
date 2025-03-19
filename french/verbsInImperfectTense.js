@@ -279,12 +279,12 @@ export default {
         Ils: "s'asseyaient"
     },
     Attendre: {
-        "J'": "apprenais",
-        Tu: "apprenais",
-        Il: "apprenait",
-        Nous: "apprenions",
-        Vous: "appreniez",
-        Ils: "apprenaient"
+        "J'": "attendais",
+        Tu: "attendais",
+        Il: "attendait",
+        Nous: "attendions",
+        Vous: "attendiez",
+        Ils: "attendaient"
     },
     Rendre: {
         Je: "rendais",
@@ -310,7 +310,7 @@ export default {
         Vous: "appreniez",
         Ils: "apprenaient"
     },
-    Apprendre: {
+    Comprendre: {
         Je: "comprenais",
         Tu: "comprenais",
         Il: "comprenait",
