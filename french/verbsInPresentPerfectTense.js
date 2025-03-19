@@ -1,7 +1,7 @@
 // Author: Vitaly Spirin
 //
 // verb list is taken from 
-// https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0001652969_l_imparfait_conjugaison_exercices_et_corrig__web.pdf
+// https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000289928_le_pass__compos__exercices_et_corrig__web.pdf
 
 "use strict";
 
