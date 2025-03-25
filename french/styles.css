@@ -24,7 +24,7 @@ header h4 {
 
 .verb-block {
     display: inline-block;
-    margin: 0em 2em;
+    margin: 0em 1em;
     vertical-align: top;
 }
 
@@ -37,6 +37,10 @@ header h4 {
 input {
     font-size: 1em;
     width: 8em;
+}
+
+.speakerphone {
+    fill: rgb(95, 99, 104);
 }
 
 .verb-block div {
