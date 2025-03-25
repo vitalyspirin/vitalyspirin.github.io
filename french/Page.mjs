@@ -89,7 +89,7 @@ export class Page {
             verbListBlock.append(verbBlock);
         } // for (let infinitive in verbsInPresentTense)
 
-        console.log(str); // use Spell Checker to find spelling errors
+        //console.log(str); // use Spell Checker to find spelling errors
     } // static build()
 
     static fillInputBlock(newInputBlock, pronoun, verb, fileFolder) {
