@@ -121,7 +121,7 @@ export class Page {
 
 
     static getAudioFileUrl(str, fileFolder) {
-        const path = '../audio/' + fileFolder + '/';
+        const path = './audio/' + fileFolder + '/';
         return path + this.removeSpecialChars(str) + '.mp3';
     };
 
