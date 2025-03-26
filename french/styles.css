@@ -72,4 +72,9 @@ input:invalid:not(:focus) {
     .verb-block {
         margin: auto;
     }
+
+    .speakerphone svg {
+        width: 25px; /* original 20 */
+        height: 25px; /* original 20 */
+    }
 }
