@@ -2,6 +2,8 @@
 //
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000289928_le_pass__compos__exercices_et_corrig__web.pdf
+//
+// the longest verb form: "nous sommes assis"
 
 "use strict";
 
