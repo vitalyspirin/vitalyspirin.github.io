@@ -5,7 +5,7 @@ To run backend script first you need to login into Docker container with mountin
 So on Windows:
 
 `
-docker run -it --rm -v "%cd%":/home vitalyspirin/alpine-reactjs
+docker run -it --rm -v "%cd%":/home vitalyspirin/alpine-reactjs:2.0
 `
 
 Then (and you are already inside docker container) execute:
