@@ -273,7 +273,7 @@ export default {
         Ils: "promettaient"
     },
     "S'asseoir": {
-        Je: "m’asseyais",
+        Je: "m'asseyais",
         Tu: "t'asseyais",
         Il: "s'asseyait",
         Nous: "nous asseyions",
