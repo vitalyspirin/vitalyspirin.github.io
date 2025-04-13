@@ -25,6 +25,7 @@ header h4 {
 .verb-block {
     display: inline-block;
     margin: 0em 1em;
+    vertical-align: top; /* if not all pronouns are used. Example: falloir - il faudra */
 }
 
 .verb-block label {
