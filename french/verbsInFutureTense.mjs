@@ -112,6 +112,14 @@ export default {
         Vous: "vous ennuierez",
         Ils: "s'ennuieront"
     },
+    Employer: {
+        "J'": "emploierai",
+        Tu: "emploieras",
+        Il: "emploiera",
+        Nous: "emploierons",
+        Vous: "emploierez",
+        Ils: "emploieront"
+    },
     Jeter: {
         Je: "jetterai",
         Tu: "jetteras",
@@ -160,6 +168,22 @@ export default {
         Vous: "vous lèverez",
         Ils: "se lèveront"
     },
+    Soulever: {
+        Je: "soulèverai",
+        Tu: "soulèveras",
+        Il: "soulèvera",
+        Nous: "soulèverons",
+        Vous: "soulèverez",
+        Ils: "soulèveront"
+    },
+    Achever: {
+        "J'": "achèverai",
+        Tu: "achèveras",
+        Il: "achèvera",
+        Nous: "achèverons",
+        Vous: "achèverez",
+        Ils: "achèveront"
+    },
     Geler: {
         Je: "gèlerai",
         Tu: "gèleras",
@@ -167,6 +191,38 @@ export default {
         Nous: "gèlerons",
         Vous: "gèlerez",
         Ils: "gèleront"
+    },
+    Congeler: {
+        Je: "congèlerai",
+        Tu: "congèleras",
+        Il: "congèlera",
+        Nous: "congèlerons",
+        Vous: "congèlerez",
+        Ils: "congèleront"
+    },
+    Modeler: {
+        Je: "modèlerai",
+        Tu: "modèleras",
+        Il: "modèlera",
+        Nous: "modèlerons",
+        Vous: "modèlerez",
+        Ils: "modèleront"
+    },
+    Harceler: {
+        "J'": "harcèlerai",
+        Tu: "harcèleras",
+        Il: "harcèlera",
+        Nous: "harcèlerons",
+        Vous: "harcèlerez",
+        Ils: "harcèleront"
+    },
+    Peler: {
+        Je: "pèlerai",
+        Tu: "pèleras",
+        Il: "pèlera",
+        Nous: "pèlerons",
+        Vous: "pèlerez",
+        Ils: "pèleront"
     },
     Enlever: {
         "J'": "enlèverai",
@@ -304,6 +360,22 @@ export default {
         Vous: "vous servirez",
         Ils: "se serviront"
     },
+    "S'enrichir": {
+        Je: "m'enrichirai",
+        Tu: "t'enrichiras",
+        Il: "s'enrichira",
+        Nous: "nous enrichirons",
+        Vous: "vous enrichirez",
+        Ils: "s'enrichiront"
+    },
+    "S'évanouir": {
+        Je: "m'évanouirai",
+        Tu: "t'évanouiras",
+        Il: "s'évanouira",
+        Nous: "nous évanouirons",
+        Vous: "vous évanouirez",
+        Ils: "s'évanouiront"
+    },
     Mourir: {
         Je: "mourrai",
         Tu: "mourras",
@@ -319,6 +391,14 @@ export default {
         Nous: "courrons",
         Vous: "courrez",
         Ils: "courront"
+    },
+    Acquérir: {
+        "J'": "acquerrai",
+        Tu: "acquerras",
+        Il: "acquerra",
+        Nous: "acquerrons",
+        Vous: "acquerrez",
+        Ils: "acquerront"
     },
     Tenir: {
         Je: "tiendrai",
@@ -344,6 +424,38 @@ export default {
         Vous: "attendrez",
         Ils: "attendront"
     },
+    Prendre: {
+        Je: "prendrai",
+        Tu: "prendras",
+        Il: "prendra",
+        Nous: "prendrons",
+        Vous: "prendrez",
+        Ils: "prendront"
+    },
+    Répondre: {
+        Je: "répondrai",
+        Tu: "répondras",
+        Il: "répondra",
+        Nous: "répondrons",
+        Vous: "répondrez",
+        Ils: "répondront"
+    },
+    Lire: {
+        Je: "lirai",
+        Tu: "liras",
+        Il: "lira",
+        Nous: "lirons",
+        Vous: "lirez",
+        Ils: "liront"
+    },
+    Conduire: {
+        Je: "conduirai",
+        Tu: "conduiras",
+        Il: "conduira",
+        Nous: "conduirons",
+        Vous: "conduirez",
+        Ils: "conduiront"
+    },
     Dire: {
         Je: "dirai",
         Tu: "diras",
@@ -351,6 +463,38 @@ export default {
         Nous: "dirons",
         Vous: "direz",
         Ils: "diront"
+    },
+    Rire: {
+        Je: "rirai",
+        Tu: "riras",
+        Il: "rira",
+        Nous: "rirons",
+        Vous: "rirez",
+        Ils: "riront"
+    },
+    Écrire: {
+        "J'": "écrirai",
+        Tu: "écriras",
+        Il: "écrira",
+        Nous: "écrirons",
+        Vous: "écrirez",
+        Ils: "écriront"
+    },
+    Perdre: {
+        Je: "perdrai",
+        Tu: "perdras",
+        Il: "perdra",
+        Nous: "perdrons",
+        Vous: "perdrez",
+        Ils: "perdront"
+    },
+    Peindre: {
+        Je: "peindrai",
+        Tu: "peindras",
+        Il: "peindra",
+        Nous: "peindrons",
+        Vous: "peindrez",
+        Ils: "peindront"
     },
     "Se plaindre": {
         Je: "me plaindrai",
@@ -360,6 +504,30 @@ export default {
         Vous: "vous plaindrez",
         Ils: "se plaindront"
     },
+    Coudre: {
+        Je: "coudrai",
+        Tu: "coudras",
+        Il: "coudra",
+        Nous: "coudrons",
+        Vous: "coudrez",
+        Ils: "coudront"
+    },
+    Résoudre: {
+        Je: "résoudrai",
+        Tu: "résoudras",
+        Il: "résoudra",
+        Nous: "résoudrons",
+        Vous: "résoudrez",
+        Ils: "résoudront"
+    },
+    Rejoindre: {
+        Je: "rejoindrai",
+        Tu: "rejoindras",
+        Il: "rejoindra",
+        Nous: "rejoindrons",
+        Vous: "rejoindrez",
+        Ils: "rejoindront"
+    },
     Boire: {
         Je: "boirai",
         Tu: "boiras",
@@ -367,6 +535,30 @@ export default {
         Nous: "boirons",
         Vous: "boirez",
         Ils: "boiront"
+    },
+    Croire: {
+        Je: "croirai",
+        Tu: "croiras",
+        Il: "croira",
+        Nous: "croirons",
+        Vous: "croirez",
+        Ils: "croiront"
+    },
+    Interrompre: {
+        "J'": "interromprai",
+        Tu: "interrompras",
+        Il: "interrompra",
+        Nous: "interromprons",
+        Vous: "interromprez",
+        Ils: "interrompront"
+    },
+    Distraire: {
+        Je: "distrairai",
+        Tu: "distrairas",
+        Il: "distraira",
+        Nous: "distrairons",
+        Vous: "distrairez",
+        Ils: "distrairont"
     },
     Mettre: {
         Je: "mettrai",
@@ -376,6 +568,30 @@ export default {
         Vous: "mettrez",
         Ils: "mettront"
     },
+    Connaître: {
+        Je: "connaîtrai",
+        Tu: "connaîtras",
+        Il: "connaîtra",
+        Nous: "connaîtrons",
+        Vous: "connaîtrez",
+        Ils: "connaîtront"
+    },
+    Convaincre: {
+        Je: "convaincrai",
+        Tu: "convaincras",
+        Il: "convaincra",
+        Nous: "convaincrons",
+        Vous: "convaincrez",
+        Ils: "convaincront"
+    },
+    Battre: {
+        Je: "battrai",
+        Tu: "battras",
+        Il: "battra",
+        Nous: "battrons",
+        Vous: "battrez",
+        Ils: "battront"
+    },
     "Se plaire": {
         Je: "me plairai",
         Tu: "te plairas",
@@ -383,6 +599,14 @@ export default {
         Nous: "nous plairons",
         Vous: "vous plairez",
         Ils: "se plairont"
+    },
+    Déplaire: {
+        Je: "déplairai",
+        Tu: "déplairas",
+        Il: "déplaira",
+        Nous: "déplairons",
+        Vous: "déplairez",
+        Ils: "déplairont"
     },
     Naître: {
         Je: "naîtrai",
@@ -400,6 +624,30 @@ export default {
         Vous: "vivrez",
         Ils: "vivront"
     },
+    Suivre: {
+        Je: "suivrai",
+        Tu: "suivras",
+        Il: "suivra",
+        Nous: "suivrons",
+        Vous: "suivrez",
+        Ils: "suivront"
+    },
+    Conclure: {
+        Je: "conclurai",
+        Tu: "concluras",
+        Il: "conclura",
+        Nous: "conclurons",
+        Vous: "conclurez",
+        Ils: "concluront"
+    },
+    "Se taire": {
+        Je: "me tairai",
+        Tu: "te tairas",
+        Il: "se taira",
+        Nous: "nous tairons",
+        Vous: "vous tairez",
+        Ils: "se tairont"
+    },
     Voir: {
         Je: "verrai",
         Tu: "verras",
@@ -416,6 +664,14 @@ export default {
         Vous: "vaudrez",
         Ils: "vaudront"
     },
+    "Se émouvoir": {
+        Je: "m'émouvrai",
+        Tu: "t'émouvras",
+        Il: "s'émouvra",
+        Nous: "nous émouvrons",
+        Vous: "vous émouvrez",
+        Ils: "s'émouvront"
+    },
     Recevoir: {
         Je: "recevrai",
         Tu: "recevras",
@@ -423,6 +679,14 @@ export default {
         Nous: "recevrons",
         Vous: "recevrez",
         Ils: "recevront"
+    },
+    Décevoir: {
+        Je: "décevrai",
+        Tu: "décevras",
+        Il: "décevra",
+        Nous: "décevrons",
+        Vous: "décevrez",
+        Ils: "décevront"
     },
     "S'apercevoir": {
         Je: "m'apercevrai",
@@ -432,13 +696,19 @@ export default {
         Vous: "vous apercevrez",
         Ils: "s'apercevront"
     },
+    "S'asseoir": {
+        Je: "m'assiérai",
+        Tu: "t'assiéras",
+        Il: "s'assiéra",
+        Nous: "nous assiérons",
+        Vous: "vous assiérez",
+        Ils: "s'assiéront"
+    },
     Falloir: {
         Il: "faudra"
     },
     Pleuvoir: {
         Il: "pleuvra"
     }
-
-
 
 };
