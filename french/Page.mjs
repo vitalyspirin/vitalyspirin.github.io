@@ -6,11 +6,13 @@ import verbsInPresentTense, { audioFileFolder } from './verbsInPresentTense.mjs'
 import verbsInFuturTense from './verbsInFutureTense.mjs';
 import verbsInImperfectTense from './verbsInImperfectTense.mjs';
 import verbsInPresentPerfectTense from './verbsInPresentPerfectTense.mjs';
+import verbsInConditionalPresentTense from './verbsInConditionalPresentTense.mjs';
 
 import { audioFileFolder as audioFileFolderForPresentTense } from './verbsInPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForFutureTense } from './verbsInFutureTense.mjs';
 import { audioFileFolder as audioFileFolderForImperfectTense } from './verbsInImperfectTense.mjs';
 import { audioFileFolder as audioFileFolderForPresentPerfectTense } from './verbsInPresentPerfectTense.mjs';
+import { audioFileFolder as audioFileFolderForConditionalPresentTense } from './verbsInConditionalPresentTense.mjs';
 
 export class Page {
     static getVerbList(param) {
@@ -18,6 +20,11 @@ export class Page {
         let fileFolder;
 
         switch (param) {
+            case '?Le%20conditionnel%20pr%C3%A9sent':
+                verbList = verbsInConditionalPresentTense;
+                fileFolder = audioFileFolderForConditionalPresentTense;
+                break;
+
             case '?Le%20pass%C3%A9%20compos%C3%A9':
                 verbList = verbsInPresentPerfectTense;
                 fileFolder = audioFileFolderForPresentPerfectTense;
@@ -79,6 +86,7 @@ export class Page {
 
                 this.fillInputBlock(
                     newInputBlock,
+                    infinitive,
                     pronoun,
                     verbList[infinitive][pronoun],
                     fileFolder
@@ -92,7 +100,7 @@ export class Page {
         //console.log(str); // use Spell Checker to find spelling errors
     } // static build()
 
-    static fillInputBlock(newInputBlock, pronoun, verb, fileFolder) {
+    static fillInputBlock(newInputBlock, infinitive, pronoun, verb, fileFolder) {
         let labelElement = newInputBlock.querySelector(".pronoun");
         labelElement.textContent = pronoun;
         labelElement.title = verb;
@@ -109,9 +117,29 @@ export class Page {
 
         let speakerPhoneElement = newInputBlock.querySelector(".speakerphone");
 
-        speakerPhoneElement.onclick = function (event) {
+        speakerPhoneElement.onclick = async function (event) {
             let audioElement = event.currentTarget.getElementsByTagName("audio")[0];
-            audioElement.src = Page.getAudioFileUrl(pronoun + ' ' + verb, fileFolder);
+
+            if (!['conditionalpresent', 'future'].includes(fileFolder)) {
+                audioElement.src = Page.getAudioFileUrl(pronoun + ' ' + verb, fileFolder);
+            } else if (audioElement.src == '') {
+                let fullFileName = Page.getAudioFileUrl(infinitive, fileFolder, 'json');
+
+                const response = await fetch(fullFileName)
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                const json = await response.json();
+
+                let ind = pronoun;
+                if (ind.slice(-1) != "'") {
+                    ind += ' '; // compare: "J'aurai" vs "Tu aura"
+                }
+                ind += verb;
+
+                audioElement.src = json[ind];
+            }
 
             audioElement.play();
         }
@@ -120,9 +148,24 @@ export class Page {
     } // static fillInputBlock(newInputBlock, pronoun, verb)
 
 
-    static getAudioFileUrl(str, fileFolder) {
-        const path = './audio/' + fileFolder + '/';
-        return path + this.removeSpecialChars(str) + '.mp3';
+    static getAudioFileUrl(str, fileFolder, extention = 'mp3') {
+        let result;
+
+        switch (extention) {
+            case 'mp3':
+                result = 'audio/' + fileFolder + '/' +
+                    this.removeSpecialChars(str) + '.' + extention;
+                break;
+
+            case 'json':
+                result = 'audio/' + fileFolder + '/' +
+                    this.removeSpecialChars(str) + '_' + fileFolder + '.' + extention;
+                break;
+
+            default: throw new Error('Uknown extention: "' + extention + '"');
+        }
+
+        return result;
     };
 
     static removeSpecialChars(str) {
