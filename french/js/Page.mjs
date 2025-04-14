@@ -120,9 +120,7 @@ export class Page {
         speakerPhoneElement.onclick = async function (event) {
             let audioElement = event.currentTarget.getElementsByTagName("audio")[0];
 
-            if (!['present', 'imperfect', 'conditionalpresent', 'future'].includes(fileFolder)) {
-                audioElement.src = Page.getAudioFileUrl(pronoun + ' ' + verb, fileFolder);
-            } else if (audioElement.src == '') {
+            if (audioElement.src == '') {
                 let fullFileName = Page.getAudioFileUrl(infinitive, fileFolder, 'json');
 
                 const response = await fetch(fullFileName)
