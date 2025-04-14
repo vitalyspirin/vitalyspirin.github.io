@@ -6,17 +6,19 @@
 
 import { exec } from 'child_process';
 
-import { Page } from '../Page.mjs';
-import verbsInPresentTense from '../verbsInPresentTense.mjs';
-import verbsInFuturTense from '../verbsInFutureTense.mjs';
-import verbsInImperfectTense from '../verbsInImperfectTense.mjs';
-import verbsInPresentPerfectTense from '../verbsInPresentPerfectTense.mjs';
+import { Page } from '../js/Page.mjs';
+import { AudioFile } from './AudioFile.mjs';
+import verbsInPresentTense from '../js/verbsInPresentTense.mjs';
+import verbsInFuturTense from '../js/verbsInFutureTense.mjs';
+import verbsInImperfectTense from '../js/verbsInImperfectTense.mjs';
+import verbsInPresentPerfectTense from '../js/verbsInPresentPerfectTense.mjs';
+import verbsInConditionalPresentTense from '../js/verbsInConditionalPresentTense.mjs';
 
-import { audioFileFolder as audioFileFolderForPresentTense } from '../verbsInPresentTense.mjs';
-import { audioFileFolder as audioFileFolderForFutureTense } from '../verbsInFutureTense.mjs';
-import { audioFileFolder as audioFileFolderForImperfectTense } from '../verbsInImperfectTense.mjs';
-import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../verbsInPresentPerfectTense.mjs';
-
+import { audioFileFolder as audioFileFolderForPresentTense } from '../js/verbsInPresentTense.mjs';
+import { audioFileFolder as audioFileFolderForFutureTense } from '../js/verbsInFutureTense.mjs';
+import { audioFileFolder as audioFileFolderForImperfectTense } from '../js/verbsInImperfectTense.mjs';
+import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../js/verbsInPresentPerfectTense.mjs';
+import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/verbsInConditionalPresentTense.mjs';
 
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
@@ -25,29 +27,73 @@ import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../ver
 
 //saveAudioFilesForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 
-saveAudioFilesForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
+//saveAudioFilesForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
+
+//saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
+
+saveAudioFilesBase64ForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
+
+//saveAudioFilesBase64ForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
 
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
         for (let pronoun in verbList[infinitive]) {
-            let audioStr = pronoun + ' ' + verbList[infinitive][pronoun];
-            let url = getGoogleTranslateAudioUrl(audioStr);
-            let audioFileName = Page.getAudioFileUrl(audioStr, fileFolder);
-            let cmdCommand = 'wget -q -U Mozilla -O ' + audioFileName + ' "' + url + '"';
+            let audioStr = pronoun;
 
-            exec(cmdCommand, (err, stdout, stderr) => {
-                if (err) {
-                    console.log(err);
-                    return;
-                }
-                //console.log(`stdout: ${stdout}`);
-            })
-            //    return;
+            if (pronoun.slice(-1) != "'") {
+                audioStr += ' '; // compare: "J'aurai" vs "Tu aura"
+            }
+
+            audioStr += verbList[infinitive][pronoun];
+
+            saveAudioFileForStr(audioStr, fileFolder);
         }
     }
 }
 
+function saveAudioFilesBase64ForVerbList(verbList, fileFolder) {
+    let counter = 0;
+    for (let infinitive in verbList) {
+        let audioFile = new AudioFile();
+
+        for (let pronoun in verbList[infinitive]) {
+            let audioStr = pronoun;
+
+            if (pronoun.slice(-1) != "'") {
+                audioStr += ' '; // compare: "J'aurai" vs "Tu aura"
+            }
+
+            audioStr += verbList[infinitive][pronoun];
+
+            audioFile.addString(audioStr);
+        }
+
+        let audioFileName = '../' + Page.getAudioFileUrl(infinitive, fileFolder, 'json');
+
+        console.log(audioFileName);
+        audioFile.save(audioFileName);
+        counter++;
+    }
+
+    console.log("\n" + counter + ' files saved.');
+}
+
+function saveAudioFileForStr(audioStr, fileFolder) {
+    let url = getGoogleTranslateAudioUrl(audioStr);
+    let audioFileName = '../' + Page.getAudioFileUrl(audioStr, fileFolder);
+    let cmdCommand = 'wget -q -U Mozilla -O ' + audioFileName + ' "' + url + '"';
+
+    exec(cmdCommand, (err, stdout, stderr) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+        console.log(audioFileName);
+        //console.log(`stdout: ${stdout}`);
+    })
+}
 
 
 
@@ -90,4 +136,4 @@ function getGoogleTranslateAudioUrl(
     let url = host + '/translate_tts?' + searchParams.toString();
 
     return url;
-};
+}
