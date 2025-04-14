@@ -29,11 +29,12 @@ import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '..
 
 //saveAudioFilesForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
-//saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
 
-saveAudioFilesBase64ForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 
+//saveAudioFilesBase64ForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
+//saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
+saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
