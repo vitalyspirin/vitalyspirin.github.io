@@ -35,7 +35,7 @@ header h4 {
     align-items: center;
 }
 
-input {
+.verb-list input {
     font-size: 1em;
     width: 8em;
     margin: 0 0.25em;
@@ -55,6 +55,57 @@ input {
 .error,
 input:invalid:not(:focus) {
     background-color: #fc8181;
+}
+
+
+/* Text exercises */
+.text {
+    
+}
+.text h2 {
+    color: #007f00;
+    text-align: center;
+}
+.text h3 {
+    color: #2a5f6e;
+    font-size: 1.25em;
+    text-align: center;
+}
+.text h4 {
+    color: #2a5f6e;
+    font-size: 1.2em;
+    text-align: left;
+}
+.text p {
+    line-height: 2;
+    text-align: left;
+}
+
+.text section {
+    margin-bottom: 3em;
+}
+.text ol {
+    padding-left: 1em;
+}
+.text li {
+    margin-bottom: 1em;
+}
+.text section span {
+    display: inline-block;
+    width: 49%;
+}
+.text section li span:nth-of-type(2) {
+    margin-left: -0.5em;
+    display: inline-flex;
+}
+
+.text section li span input {
+    flex-grow: 1;
+    margin: 0 0.25em 0 0.5em;
+    width: 5em;
+}
+.whitespace {
+    width: 5em !important;
 }
 
 @media screen and (max-width: 600px) {
