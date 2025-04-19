@@ -21,7 +21,7 @@ export class AudioFile {
             textForFile += '"';
 
             if (i < this.stringList.length - 1) { // don't add for the last element
-                textForFile += ',';
+                textForFile += ",\n";
             }
         }
 
@@ -33,6 +33,11 @@ export class AudioFile {
 
 
     static async getAudioBase64(str) {
+
+        // Google Translate reads words beginning with é as "E accent aigu" (unless
+        // there is an apostrophe infront of it)
+        str = str.replace(" é", "'é");
+
         const result = fetch(this.getGoogleTranslateAudioUrl(str))
             .then((response) => {
                 if (response.status === 200) {

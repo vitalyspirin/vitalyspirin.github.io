@@ -2,6 +2,8 @@
 //
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1682163489_Le_futur_simple_exercices_et_corrig_.pdf
+//
+// the longest verb form: "nous promènerons"
 
 "use strict";
 

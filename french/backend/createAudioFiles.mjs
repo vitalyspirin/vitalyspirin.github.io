@@ -35,7 +35,10 @@ import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
-saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
+//saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
+
+saveAudioFilesBase64ForInfinitive("S'évanouir", verbsInFuturTense["S'évanouir"], audioFileFolderForFutureTense);
+saveAudioFilesBase64ForInfinitive("Se émouvoir", verbsInFuturTense["Se émouvoir"], audioFileFolderForFutureTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
@@ -56,28 +59,40 @@ function saveAudioFilesForVerbList(verbList, fileFolder) {
 function saveAudioFilesBase64ForVerbList(verbList, fileFolder) {
     let counter = 0;
     for (let infinitive in verbList) {
-        let audioFile = new AudioFile();
 
-        for (let pronoun in verbList[infinitive]) {
-            let audioStr = pronoun;
-
-            if (pronoun.slice(-1) != "'") {
-                audioStr += ' '; // compare: "J'aurai" vs "Tu aura"
-            }
-
-            audioStr += verbList[infinitive][pronoun];
-
-            audioFile.addString(audioStr);
-        }
-
-        let audioFileName = '../' + Page.getAudioFileUrl(infinitive, fileFolder, 'json');
+        let audioFileName = saveAudioFilesBase64ForInfinitive(
+            infinitive,
+            verbList[infinitive],
+            fileFolder
+        );
 
         console.log(audioFileName);
-        audioFile.save(audioFileName);
         counter++;
     }
 
     console.log("\n" + counter + ' files saved.');
+}
+
+function saveAudioFilesBase64ForInfinitive(infinitive, conjugationList, fileFolder) {
+    const audioFile = new AudioFile();
+
+    for (let pronoun in conjugationList) {
+        let audioStr = pronoun;
+
+        if (pronoun.slice(-1) != "'") {
+            audioStr += ' '; // compare: "J'aurai" vs "Tu aura"
+        }
+
+        audioStr += conjugationList[pronoun];
+
+        audioFile.addString(audioStr);
+    }
+
+    const audioFileName = '../' + Page.getAudioFileUrl(infinitive, fileFolder, 'json');
+
+    audioFile.save(audioFileName);
+
+    return audioFileName;
 }
 
 function saveAudioFileForStr(audioStr, fileFolder) {
