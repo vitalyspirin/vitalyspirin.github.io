@@ -37,8 +37,8 @@ import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
-saveAudioFilesBase64ForInfinitive("S'évanouir", verbsInFuturTense["S'évanouir"], audioFileFolderForFutureTense);
-saveAudioFilesBase64ForInfinitive("Se émouvoir", verbsInFuturTense["Se émouvoir"], audioFileFolderForFutureTense);
+//saveAudioFilesBase64ForInfinitive("S'évanouir", verbsInFuturTense["S'évanouir"], audioFileFolderForFutureTense);
+saveAudioFilesBase64ForInfinitive("S'émouvoir", verbsInFuturTense["S'émouvoir"], audioFileFolderForFutureTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {

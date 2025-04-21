@@ -666,7 +666,7 @@ export default {
         Vous: "vaudrez",
         Ils: "vaudront"
     },
-    "Se émouvoir": {
+    "S'émouvoir": {
         Je: "m'émouvrai",
         Tu: "t'émouvras",
         Il: "s'émouvra",
