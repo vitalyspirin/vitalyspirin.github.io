@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Présent Simple</title>
+    <title></title>
 
     <link rel="icon" type="image/x-icon" href="images/eiffel-tower.ico">
     <link rel="stylesheet" href="styles.css">
@@ -12,12 +12,17 @@
     <script type="module">
         "use strict";
 
-        import { Page } from './js/Page.mjs';
-
-        const verbListObject = Page.getVerbList(window.location.search);
+        import { Resolver } from './js/Resolver.mjs';
+        import { PageBuilder } from './js/PageBuilder.mjs';
 
         const title = window.decodeURIComponent(window.location.search).substring(1);
-        Page.build(verbListObject.verbList, verbListObject.fileFolder, title);
+
+        //const verbListObject = PageBuilder.getVerbList(title);
+
+        const audioFileFolder = Resolver.map[title].folder;
+        const verbList = Resolver.map[title].verbList;
+
+        PageBuilder.buildForOneTense(verbList, audioFileFolder, title);
 
         //console.log(new XMLSerializer().serializeToString(document));
     </script>
@@ -27,7 +32,7 @@
 <body>
     <article class="verb-list">
         <header>
-            <h3 id="page-title">Le présent</h3>
+            <h3 id="page-title"></h3>
 
             <h4>Conjuguez ces <span id="number-of-verbs"></span> verbes.</h5>
         </header>

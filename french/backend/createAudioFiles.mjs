@@ -6,7 +6,7 @@
 
 import { exec } from 'child_process';
 
-import { Page } from '../js/Page.mjs';
+import { PageBuilder } from '../js/PageBuilder.mjs';
 import { AudioFile } from './AudioFile.mjs';
 import verbsInPresentTense from '../js/verbsInPresentTense.mjs';
 import verbsInFuturTense from '../js/verbsInFutureTense.mjs';
@@ -88,7 +88,7 @@ function saveAudioFilesBase64ForInfinitive(infinitive, conjugationList, fileFold
         audioFile.addString(audioStr);
     }
 
-    const audioFileName = '../' + Page.getAudioFileUrl(infinitive, fileFolder, 'json');
+    const audioFileName = '../' + PageBuilder.getAudioFileUrl(infinitive, fileFolder, 'json');
 
     audioFile.save(audioFileName);
 
@@ -97,7 +97,7 @@ function saveAudioFilesBase64ForInfinitive(infinitive, conjugationList, fileFold
 
 function saveAudioFileForStr(audioStr, fileFolder) {
     let url = getGoogleTranslateAudioUrl(audioStr);
-    let audioFileName = '../' + Page.getAudioFileUrl(audioStr, fileFolder);
+    let audioFileName = '../' + PageBuilder.getAudioFileUrl(audioStr, fileFolder);
     let cmdCommand = 'wget -q -U Mozilla -O ' + audioFileName + ' "' + url + '"';
 
     exec(cmdCommand, (err, stdout, stderr) => {

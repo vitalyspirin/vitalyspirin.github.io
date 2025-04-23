@@ -410,14 +410,6 @@ export default {
         Vous: "tiendrez",
         Ils: "tiendront"
     },
-    Venir: {
-        Je: "viendrai",
-        Tu: "viendras",
-        Il: "viendra",
-        Nous: "viendrons",
-        Vous: "viendrez",
-        Ils: "viendront"
-    },
     Attendre: {
         "J'": "attendrai",
         Tu: "attendras",

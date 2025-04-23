@@ -2,6 +2,7 @@
 
 "use strict";
 
+// @ts-ignore
 import * as fs from 'fs';
 
 
@@ -17,6 +18,7 @@ export class AudioFile {
 
         for (let i = 0; i < this.stringList.length; i++) {
             textForFile += '"' + this.stringList[i] + '": "';
+            // @ts-ignore
             textForFile += await this.constructor.getAudioBase64(this.stringList[i]);
             textForFile += '"';
 
@@ -27,6 +29,7 @@ export class AudioFile {
 
         textForFile += "\n}";
 
+        // @ts-ignore
         this.constructor.writeToFile(textForFile, fileName);
 
     } // function save(fileName)
@@ -58,6 +61,7 @@ export class AudioFile {
         return blobPromise
             .then((blob) => blob.arrayBuffer())
             .then((arrayBuffer) =>
+                // @ts-ignore
                 'data:' + contentType + ';base64,' + Buffer.from(arrayBuffer).toString('base64')
             );
     }
@@ -101,6 +105,7 @@ export class AudioFile {
             prev: 'input',
             ttsspeed: slow ? 0.24 : 1,
         };
+        // @ts-ignore
         let searchParams = new URLSearchParams(paramsObj);
 
         let url = host + '/translate_tts?' + searchParams.toString();
