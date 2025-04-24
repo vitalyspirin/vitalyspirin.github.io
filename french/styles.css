@@ -2,15 +2,14 @@ body {
     font-family: sans-serif
 }
 
-article {
+body main {
     width: 47em;
     margin: auto;
 }
 
-header {
+#page-title {
     text-align: center;
 }
-
 h3,
 .infinitive {
     color: #663300;
@@ -19,12 +18,13 @@ h3,
 header h4 {
     color: #ff3300;
     text-align: left;
-    padding: 0 2em;
 }
-
+.verb-list {
+    margin: 0em 1em;
+}
 .verb-list .verb-block, .conjugations-for-one-tense-block {
     display: inline-block;
-    margin: 0em 1em;
+    width: 33.3%;
     vertical-align: top;
     /* if not all pronouns are used. Example: falloir - il faudra */
 }
@@ -56,6 +56,19 @@ header h4 {
 .error,
 input:invalid:not(:focus) {
     background-color: #fc8181;
+}
+
+
+/* Mixed conjugation page */
+
+header label {
+    display: inline-block;
+    width: 24%;
+    margin: 0.5em 0;
+}
+
+header label:last-of-type {
+    margin-bottom: 2em;
 }
 
 

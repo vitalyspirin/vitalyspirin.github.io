@@ -328,7 +328,7 @@ export default {
         Vous: "ouvririez",
         Ils: "ouvriraient"
     },
-    Ouvrir: {
+    Couvrir: {
         Je: "couvrirais",
         Tu: "couvrirais",
         Il: "couvrirait",
@@ -407,14 +407,6 @@ export default {
         Nous: "tiendrions",
         Vous: "tiendriez",
         Ils: "tiendraient"
-    },
-    Venir: {
-        Je: "viendrais",
-        Tu: "viendrais",
-        Il: "viendrait",
-        Nous: "viendrions",
-        Vous: "viendriez",
-        Ils: "viendraient"
     },
     Attendre: {
         "J'": "attendrais",
@@ -599,14 +591,6 @@ export default {
         Nous: "battrions",
         Vous: "battriez",
         Ils: "battraient"
-    },
-    Naître: {
-        Je: "naîtrais",
-        Tu: "naîtrais",
-        Il: "naîtrait",
-        Nous: "naîtrions",
-        Vous: "naîtriez",
-        Ils: "naîtraient"
     },
     "Se plaire": {
         Je: "me plairais",

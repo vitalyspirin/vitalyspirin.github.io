@@ -29,11 +29,18 @@ export class PageBuilderForManyTenses {
     }
 
 
-    static buildForManyTenses(verbMixedConjugationList, title, numberOfTensesPerVerb = 0) {
+    static buildForManyTenses(verbMixedConjugationList, title) {
         document.title = title;
         document.getElementById("page-title").textContent = title;
 
+        let tenseList = [];
+        document.querySelectorAll('.tense-checkbox').forEach((checkboxElement) => {
+            // @ts-ignore
+            if (checkboxElement.checked) tenseList.push(checkboxElement.id);
+        });
+
         let verbListBlock = document.getElementById("verb-list");
+        verbListBlock.textContent = '';
 
         let templateVerbBlock = document.getElementById("template-verb-block")
             // @ts-ignore
@@ -47,7 +54,11 @@ export class PageBuilderForManyTenses {
 
         for (let infinitive in verbMixedConjugationList) {
 
-            if (Object.keys(verbMixedConjugationList[infinitive]).length < numberOfTensesPerVerb) continue;
+            let infinitiveHasAllTensesInTheList = tenseList.every(tense =>
+                Object.keys(verbMixedConjugationList[infinitive]).includes(tense)
+            );
+
+            if (!infinitiveHasAllTensesInTheList) continue;
 
             let verbBlock = templateVerbBlock.cloneNode(true);
 
@@ -56,6 +67,8 @@ export class PageBuilderForManyTenses {
             counter++;
 
             for (let tense in verbMixedConjugationList[infinitive]) {
+                if (!tenseList.includes(tense)) continue;
+
                 let newConjugationsForOneTenseBlock = templateConjugationsForOneTenseBlock.cloneNode(true);
                 this.fillConjugationsForOneTenseBlock(
                     newConjugationsForOneTenseBlock,
