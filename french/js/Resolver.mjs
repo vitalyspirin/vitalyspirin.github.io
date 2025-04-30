@@ -7,13 +7,14 @@ import verbsInFutureTense, { audioFileFolder as audioFileFolderForFutureTense } 
 import verbsInImperfectTense, { audioFileFolder as audioFileFolderForImperfectTense } from './verbsInImperfectTense.mjs';
 import verbsInPresentPerfectTense, { audioFileFolder as audioFileFolderForPresentPerfectTense } from './verbsInPresentPerfectTense.mjs';
 import verbsInConditionalPresentTense, { audioFileFolder as audioFileFolderForConditionalPresentTense } from './verbsInConditionalPresentTense.mjs';
+import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './verbsInConditionalPerfectTense.mjs';
 
 
 export class Resolver {
     static map = {
-        'Le conditionnel présent': {
-            folder: audioFileFolderForConditionalPresentTense,
-            verbList: verbsInConditionalPresentTense
+        'Le présent': {
+            folder: audioFileFolderForPresentTense,
+            verbList: verbsInPresentTense
         },
         'Le passé composé': {
             folder: audioFileFolderForPresentPerfectTense,
@@ -27,9 +28,13 @@ export class Resolver {
             folder: audioFileFolderForFutureTense,
             verbList: verbsInFutureTense
         },
-        'Le présent': {
-            folder: audioFileFolderForPresentTense,
-            verbList: verbsInPresentTense
+        'Le conditionnel présent': {
+            folder: audioFileFolderForConditionalPresentTense,
+            verbList: verbsInConditionalPresentTense
+        },
+        'Le conditionnel passé': {
+            folder: audioFileFolderForConditionalPerfectTense,
+            verbList: verbsInConditionalPerfectTense
         }
     };
 
