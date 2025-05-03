@@ -2,12 +2,12 @@
 
 "use strict";
 
-import verbsInPresentTense, { audioFileFolder as audioFileFolderForPresentTense } from './verbsInPresentTense.mjs';
-import verbsInFutureTense, { audioFileFolder as audioFileFolderForFutureTense } from './verbsInFutureTense.mjs';
-import verbsInImperfectTense, { audioFileFolder as audioFileFolderForImperfectTense } from './verbsInImperfectTense.mjs';
-import verbsInPresentPerfectTense, { audioFileFolder as audioFileFolderForPresentPerfectTense } from './verbsInPresentPerfectTense.mjs';
-import verbsInConditionalPresentTense, { audioFileFolder as audioFileFolderForConditionalPresentTense } from './verbsInConditionalPresentTense.mjs';
-import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './verbsInConditionalPerfectTense.mjs';
+import verbsInPresentTense, { audioFileFolder as audioFileFolderForPresentTense } from './conjugations/verbsInPresentTense.mjs';
+import verbsInFutureTense, { audioFileFolder as audioFileFolderForFutureTense } from './conjugations/verbsInFutureTense.mjs';
+import verbsInImperfectTense, { audioFileFolder as audioFileFolderForImperfectTense } from './conjugations/verbsInImperfectTense.mjs';
+import verbsInPresentPerfectTense, { audioFileFolder as audioFileFolderForPresentPerfectTense } from './conjugations/verbsInPresentPerfectTense.mjs';
+import verbsInConditionalPresentTense, { audioFileFolder as audioFileFolderForConditionalPresentTense } from './conjugations/verbsInConditionalPresentTense.mjs';
+import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './conjugations/verbsInConditionalPerfectTense.mjs';
 
 
 export class Resolver {
