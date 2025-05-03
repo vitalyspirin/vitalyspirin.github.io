@@ -4,6 +4,7 @@
 
 "use strict";
 
+// @ts-ignore
 import { exec } from 'child_process';
 
 import { PageBuilder } from '../js/PageBuilder.mjs';
@@ -13,12 +14,14 @@ import verbsInFuturTense from '../js/verbsInFutureTense.mjs';
 import verbsInImperfectTense from '../js/verbsInImperfectTense.mjs';
 import verbsInPresentPerfectTense from '../js/verbsInPresentPerfectTense.mjs';
 import verbsInConditionalPresentTense from '../js/verbsInConditionalPresentTense.mjs';
+import verbsInConditionalPerfectTense from '../js/verbsInConditionalPerfectTense.mjs';
 
 import { audioFileFolder as audioFileFolderForPresentTense } from '../js/verbsInPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForFutureTense } from '../js/verbsInFutureTense.mjs';
 import { audioFileFolder as audioFileFolderForImperfectTense } from '../js/verbsInImperfectTense.mjs';
 import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../js/verbsInPresentPerfectTense.mjs';
 import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/verbsInConditionalPresentTense.mjs';
+import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '../js/verbsInConditionalPerfectTense.mjs';
 
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
@@ -34,11 +37,10 @@ import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
+saveAudioFilesBase64ForVerbList(verbsInConditionalPerfectTense, audioFileFolderForConditionalPerfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
-//saveAudioFilesBase64ForInfinitive("S'évanouir", verbsInFuturTense["S'évanouir"], audioFileFolderForFutureTense);
-saveAudioFilesBase64ForInfinitive("S'émouvoir", verbsInFuturTense["S'émouvoir"], audioFileFolderForFutureTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
@@ -140,12 +142,12 @@ function getGoogleTranslateAudioUrl(
         ie: 'UTF-8',
         q: text,
         tl: lang,
-        total: 1,
-        idx: 0,
-        textlen: text.length,
+        total: '1',
+        idx: '0',
+        textlen: String(text.length),
         client: 'tw-ob',
         prev: 'input',
-        ttsspeed: slow ? 0.24 : 1,
+        ttsspeed: slow ? '0.24' : '1',
     };
     let searchParams = new URLSearchParams(paramsObj);
 
