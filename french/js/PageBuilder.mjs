@@ -2,17 +2,6 @@
 
 "use strict";
 
-import verbsInPresentTense, { audioFileFolder } from './verbsInPresentTense.mjs';
-import verbsInFutureTense from './verbsInFutureTense.mjs';
-import verbsInImperfectTense from './verbsInImperfectTense.mjs';
-import verbsInPresentPerfectTense from './verbsInPresentPerfectTense.mjs';
-import verbsInConditionalPresentTense from './verbsInConditionalPresentTense.mjs';
-
-import { audioFileFolder as audioFileFolderForPresentTense } from './verbsInPresentTense.mjs';
-import { audioFileFolder as audioFileFolderForFutureTense } from './verbsInFutureTense.mjs';
-import { audioFileFolder as audioFileFolderForImperfectTense } from './verbsInImperfectTense.mjs';
-import { audioFileFolder as audioFileFolderForPresentPerfectTense } from './verbsInPresentPerfectTense.mjs';
-import { audioFileFolder as audioFileFolderForConditionalPresentTense } from './verbsInConditionalPresentTense.mjs';
 
 export class PageBuilder {
 

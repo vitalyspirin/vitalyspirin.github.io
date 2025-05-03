@@ -10,6 +10,7 @@ body main {
 #page-title {
     text-align: center;
 }
+
 h3,
 .infinitive {
     color: #663300;
@@ -19,10 +20,13 @@ header h4 {
     color: #ff3300;
     text-align: left;
 }
+
 .verb-list {
     margin: 0em 1em;
 }
-.verb-list .verb-block, .conjugations-for-one-tense-block {
+
+.verb-list .verb-block,
+.conjugations-for-one-tense-block {
     display: inline-block;
     width: 33.3%;
     vertical-align: top;
@@ -36,7 +40,8 @@ header h4 {
     align-items: center;
 }
 
-.verb-list input, .conjugations-for-one-tense-block input {
+.verb-list input,
+.conjugations-for-one-tense-block input {
     font-size: 1em;
     width: 8em;
     margin: 0 0.25em;
@@ -65,6 +70,7 @@ header label {
     display: inline-block;
     width: 24%;
     margin: 0.5em 0;
+    vertical-align: top;
 }
 
 header label:last-of-type {

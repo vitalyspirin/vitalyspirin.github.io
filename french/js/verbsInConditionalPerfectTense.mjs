@@ -153,7 +153,7 @@ export default {
         Ils: "seraient venus"
     },
     Choisir: {
-        Je: "aurais choisi",
+        "J'": "aurais choisi",
         Tu: "aurais choisi",
         Il: "aurait choisi",
         Nous: "aurions choisi",
@@ -183,5 +183,261 @@ export default {
         Nous: "aurions rempli",
         Vous: "auriez rempli",
         Ils: "auraient rempli"
+    },
+    Pouvoir: {
+        "J'": "aurais pu",
+        Tu: "aurais pu",
+        Il: "aurait pu",
+        Nous: "aurions pu",
+        Vous: "auriez pu",
+        Ils: "auraient pu"
+    },
+    Vouloir: {
+        "J'": "aurais voulu",
+        Tu: "aurais voulu",
+        Il: "aurait voulu",
+        Nous: "aurions voulu",
+        Vous: "auriez voulu",
+        Ils: "auraient voulu"
+    },
+    Devoir: {
+        "J'": "aurais dû",
+        Tu: "aurais dû",
+        Il: "aurait dû",
+        Nous: "aurions dû",
+        Vous: "auriez dû",
+        Ils: "auraient dû"
+    },
+    Savoir: {
+        "J'": "aurais su",
+        Tu: "aurais su",
+        Il: "aurait su",
+        Nous: "aurions su",
+        Vous: "auriez su",
+        Ils: "auraient su"
+    },
+    Recevoir: {
+        "J'": "aurais reçu",
+        Tu: "aurais reçu",
+        Il: "aurait reçu",
+        Nous: "aurions reçu",
+        Vous: "auriez reçu",
+        Ils: "auraient reçu"
+    },
+    Croire: {
+        "J'": "aurais cru",
+        Tu: "aurais cru",
+        Il: "aurait cru",
+        Nous: "aurions cru",
+        Vous: "auriez cru",
+        Ils: "auraient cru"
+    },
+    Voir: {
+        "J'": "aurais vu",
+        Tu: "aurais vu",
+        Il: "aurait vu",
+        Nous: "aurions vu",
+        Vous: "auriez vu",
+        Ils: "auraient vu"
+    },
+    Avoir: {
+        "J'": "aurais eu",
+        Tu: "aurais eu",
+        Il: "aurait eu",
+        Nous: "aurions eu",
+        Vous: "auriez eu",
+        Ils: "auraient eu"
+    },
+    Être: {
+        "J'": "aurais été",
+        Tu: "aurais été",
+        Il: "aurait été",
+        Nous: "aurions été",
+        Vous: "auriez été",
+        Ils: "auraient été"
+    },
+    Mettre: {
+        "J'": "aurais mis",
+        Tu: "aurais mis",
+        Il: "aurait mis",
+        Nous: "aurions mis",
+        Vous: "auriez mis",
+        Ils: "auraient mis"
+    },
+    Promettre: {
+        "J'": "aurais promis",
+        Tu: "aurais promis",
+        Il: "aurait promis",
+        Nous: "aurions promis",
+        Vous: "auriez promis",
+        Ils: "auraient promis"
+    },
+    "S'asseoir": {
+        Je: "me serais assis",
+        Tu: "te serais assis",
+        Il: "se serait assis",
+        Nous: "nous serions assis",
+        Vous: "vous seriez assis",
+        Ils: "se seraient assis"
+    },
+    Attendre: {
+        "J'": "aurais attendu",
+        Tu: "aurais attendu",
+        Il: "aurait attendu",
+        Nous: "aurions attendu",
+        Vous: "auriez attendu",
+        Ils: "auraient attendu"
+    },
+    Rendre: {
+        "J'": "aurais rendu",
+        Tu: "aurais rendu",
+        Il: "aurait rendu",
+        Nous: "aurions rendu",
+        Vous: "auriez rendu",
+        Ils: "auraient rendu"
+    },
+    Prendre: {
+        "J'": "aurais pris",
+        Tu: "aurais pris",
+        Il: "aurait pris",
+        Nous: "aurions pris",
+        Vous: "auriez pris",
+        Ils: "auraient pris"
+    },
+    Comprendre: {
+        "J'": "aurais compris",
+        Tu: "aurais compris",
+        Il: "aurait compris",
+        Nous: "aurions compris",
+        Vous: "auriez compris",
+        Ils: "auraient compris"
+    },
+    Apprendre: {
+        "J'": "aurais appris",
+        Tu: "aurais appris",
+        Il: "aurait appris",
+        Nous: "aurions appris",
+        Vous: "auriez appris",
+        Ils: "auraient appris"
+    },
+    Vendre: {
+        "J'": "aurais vendu",
+        Tu: "aurais vendu",
+        Il: "aurait vendu",
+        Nous: "aurions vendu",
+        Vous: "auriez vendu",
+        Ils: "auraient vendu"
+    },
+    Défendre: {
+        "J'": "aurais défendu",
+        Tu: "aurais défendu",
+        Il: "aurait défendu",
+        Nous: "aurions défendu",
+        Vous: "auriez défendu",
+        Ils: "auraient défendu"
+    },
+    Vivre: {
+        "J'": "aurais vécu",
+        Tu: "aurais vécu",
+        Il: "aurait vécu",
+        Nous: "aurions vécu",
+        Vous: "auriez vécu",
+        Ils: "auraient vécu"
+    },
+    Plaire: {
+        "J'": "aurais plu",
+        Tu: "aurais plu",
+        Il: "aurait plu",
+        Nous: "aurions plu",
+        Vous: "auriez plu",
+        Ils: "auraient plu"
+    },
+    Faire: {
+        "J'": "aurais fait",
+        Tu: "aurais fait",
+        Il: "aurait fait",
+        Nous: "aurions fait",
+        Vous: "auriez fait",
+        Ils: "auraient fait"
+    },
+    Entendre: {
+        "J'": "aurais entendu",
+        Tu: "aurais entendu",
+        Il: "aurait entendu",
+        Nous: "aurions entendu",
+        Vous: "auriez entendu",
+        Ils: "auraient entendu"
+    },
+    Descendre: {
+        "J'": "aurais descendu",
+        Tu: "aurais descendu",
+        Il: "aurait descendu",
+        Nous: "aurions descendu",
+        Vous: "auriez descendu",
+        Ils: "auraient descendu"
+    },
+    Conduire: {
+        "J'": "aurais conduit",
+        Tu: "aurais conduit",
+        Il: "aurait conduit",
+        Nous: "aurions conduit",
+        Vous: "auriez conduit",
+        Ils: "auraient conduit"
+    },
+    Dire: {
+        "J'": "aurais dit",
+        Tu: "aurais dit",
+        Il: "aurait dit",
+        Nous: "aurions dit",
+        Vous: "auriez dit",
+        Ils: "auraient dit"
+    },
+    Écrire: {
+        "J'": "aurais écrit",
+        Tu: "aurais écrit",
+        Il: "aurait écrit",
+        Nous: "aurions écrit",
+        Vous: "auriez écrit",
+        Ils: "auraient écrit"
+    },
+    Décrire: {
+        "J'": "aurais décrit",
+        Tu: "aurais décrit",
+        Il: "aurait décrit",
+        Nous: "aurions décrit",
+        Vous: "auriez décrit",
+        Ils: "auraient décrit"
+    },
+    Répondre: {
+        "J'": "aurais répondu",
+        Tu: "aurais répondu",
+        Il: "aurait répondu",
+        Nous: "aurions répondu",
+        Vous: "auriez répondu",
+        Ils: "auraient répondu"
+    },
+    Lire: {
+        "J'": "aurais lu",
+        Tu: "aurais lu",
+        Il: "aurait lu",
+        Nous: "aurions lu",
+        Vous: "auriez lu",
+        Ils: "auraient lu"
+    },
+    Connaître: {
+        "J'": "aurais connu",
+        Tu: "aurais connu",
+        Il: "aurait connu",
+        Nous: "aurions connu",
+        Vous: "auriez connu",
+        Ils: "auraient connu"
+    },
+    Boire: {
+        "J'": "aurais bu",
+        Tu: "aurais bu",
+        Il: "aurait bu",
+        Nous: "aurions bu",
+        Vous: "auriez bu",
+        Ils: "auraient bu"
     }
 };

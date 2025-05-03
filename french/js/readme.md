@@ -3,3 +3,5 @@ Words to add:
 
 Words to have in all tenses:
 - apprendre
+- valoir
+- s'ennuyer
