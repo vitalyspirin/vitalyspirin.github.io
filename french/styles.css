@@ -97,7 +97,8 @@ header label:last-of-type {
     text-align: left;
 }
 
-.text p {
+.text p,
+.text li {
     line-height: 2;
     text-align: left;
 }
