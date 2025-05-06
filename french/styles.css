@@ -105,6 +105,12 @@ header label:last-of-type {
 
 .text input {
     font-size: 1em;
+    width: 6em;
+}
+
+.text input.wide {
+    font-size: 1em;
+    width: 9em;
 }
 
 .text section {
@@ -132,7 +138,6 @@ header label:last-of-type {
 .text section li span input {
     flex-grow: 1;
     margin: 0 0.25em 0 0.5em;
-    width: 5em;
 }
 
 .whitespace {
