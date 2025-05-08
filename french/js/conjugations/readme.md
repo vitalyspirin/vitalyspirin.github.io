@@ -11,4 +11,4 @@ Words to have in all tenses:
 - s'ennuyer
 - rire
 - pleuvoir
-
+- perdre
