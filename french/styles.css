@@ -113,6 +113,11 @@ header label:last-of-type {
     width: 9em;
 }
 
+.text input.extra-wide {
+    font-size: 1em;
+    width: 11em;
+}
+
 .text section {
     margin-bottom: 3em;
 }
