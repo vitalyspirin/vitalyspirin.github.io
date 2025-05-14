@@ -12,3 +12,4 @@ Words to have in all tenses:
 - rire
 - pleuvoir
 - perdre
+- découvrir
