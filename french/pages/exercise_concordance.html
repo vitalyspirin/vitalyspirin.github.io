@@ -11,6 +11,18 @@
 
     <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
     <link rel="stylesheet" href="../styles.css">
+
+    <script type="module">
+        "use strict";
+
+        import { ShowHints } from '../js/ShowHints.mjs';
+
+        ShowHints.initialize('sentence-with-hint');
+
+        document.getElementById('toggle-checkbox').onclick = function () {
+            ShowHints.toggle('sentence-with-hint', this.checked);
+        }
+    </script>
 </head>
 
 <body>
@@ -18,6 +30,9 @@
         <article class="text">
             <h2>La concordance au passé</h2>
             <h3>Exercices de conjugaison</h3>
+            <label>
+                <input type="checkbox" id="toggle-checkbox">afficher tous les indices
+            </label>
 
             <section>
                 <ol>
@@ -507,25 +522,6 @@ arrive.">car</span> l’heure de fermeture des magasins
 
         </article>
     </main>
-
-    <script>
-        //<![CDATA[
-        const sentenceElements = document.getElementsByClassName('sentence-with-hint');
-
-        for (const sentence of sentenceElements) {
-            for (const element of sentence.children) {
-                if (element.tagName.toLowerCase() === 'input') {
-                    element.addEventListener("focusout", (event) => {
-                        if (event.srcElement.parentElement.className.includes(' on')) return;
-
-                        if (!event.srcElement.checkValidity())
-                            event.srcElement.parentElement.className += ' on';
-                    });
-                }
-            }
-        };
-        //]]>
-    </script>
 
 </body>
 
