@@ -1,3 +1,4 @@
+
 Words to add:
 - montir
 - se souvenir
@@ -13,3 +14,4 @@ Words to have in all tenses:
 - pleuvoir
 - perdre
 - découvrir
+- suivre
