@@ -13,6 +13,7 @@
         "use strict";
 
         import { PageBuilderForManyTenses } from '../js/PageBuilderForManyTenses.mjs';
+        import { ErrorCounter } from '../js/ErrorCounter.mjs';
 
         const verbListObject = PageBuilderForManyTenses.getVerbList();
 
@@ -26,6 +27,8 @@
 
         const title = window.decodeURIComponent(window.location.search).substring(1);
         PageBuilderForManyTenses.buildForManyTenses(verbListObject, title);
+
+        ErrorCounter.initialize();
     </script>
 </head>
 
@@ -92,6 +95,9 @@
                     </span>
                 </div>
             </template>
+
+            <iframe src="partials/errorCounter.html"
+                onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
 
         </article>
     </main>

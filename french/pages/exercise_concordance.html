@@ -16,12 +16,15 @@
         "use strict";
 
         import { ShowHints } from '../js/ShowHints.mjs';
+        import { ErrorCounter } from '../js/ErrorCounter.mjs';
 
         ShowHints.initialize('sentence-with-hint');
 
         document.getElementById('toggle-checkbox').onclick = function () {
             ShowHints.toggle('sentence-with-hint', this.checked);
         }
+
+        ErrorCounter.initialize();
     </script>
 </head>
 
@@ -525,6 +528,9 @@ arrive.">car</span> l’heure de fermeture des magasins
                     </li>
                 </ol>
             </section>
+
+            <iframe src="partials/errorCounter.html"
+                onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
 
         </article>
     </main>
