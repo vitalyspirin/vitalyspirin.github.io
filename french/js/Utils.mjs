@@ -8,12 +8,12 @@ export class Utils {
 
         switch (extention) {
             case 'mp3':
-                result = 'audio/' + fileFolder + '/' +
+                result = '../audio/' + fileFolder + '/' +
                     this.removeSpecialChars(str) + '.' + extention;
                 break;
 
             case 'json':
-                result = 'audio/' + fileFolder + '/' +
+                result = '../audio/' + fileFolder + '/' +
                     this.removeSpecialChars(str) + '_' + fileFolder + '.' + extention;
                 break;
 
