@@ -6,7 +6,7 @@
 
     <title>Conjugaison</title>
 
-    <link rel="icon" type="image/x-icon" href="images/eiffel-tower.ico">
+    <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
     <link rel="stylesheet" href="../styles.css">
 
     <script type="module">
@@ -14,16 +14,16 @@
 
         import { Resolver } from '../js/Resolver.mjs';
         import { PageBuilder } from '../js/PageBuilder.mjs';
+        import { ErrorCounter } from '../js/ErrorCounter.mjs';
 
         const title = window.decodeURIComponent(window.location.search).substring(1);
-
-        //const verbListObject = PageBuilder.getVerbList(title);
 
         const audioFileFolder = Resolver.map[title].folder;
         const verbList = Resolver.map[title].verbList;
 
         PageBuilder.buildForOneTense(verbList, audioFileFolder, title);
 
+        ErrorCounter.initialize();
         //console.log(new XMLSerializer().serializeToString(document));
     </script>
 </head>
@@ -63,6 +63,9 @@
                     </span>
                 </div>
             </template>
+
+            <iframe src="partials/errorCounter.html"
+                onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
 
         </article>
     </main>
