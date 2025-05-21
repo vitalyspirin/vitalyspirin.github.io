@@ -2,6 +2,7 @@
 
 "use strict";
 
+import { Utils } from './Utils.mjs';
 
 export class PageBuilder {
 
@@ -77,7 +78,7 @@ export class PageBuilder {
             let audioElement = event.currentTarget.getElementsByTagName("audio")[0];
 
             if (audioElement.src == '') {
-                let fullFileName = PageBuilder.getAudioFileUrl(infinitive, fileFolder, 'json');
+                let fullFileName = Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
 
                 const response = await fetch(fullFileName)
                 if (!response.ok) {
@@ -101,28 +102,4 @@ export class PageBuilder {
         return newInputBlock;
     } // static fillInputBlock(newInputBlock, pronoun, verb)
 
-
-    static getAudioFileUrl(str, fileFolder, extention = 'mp3') {
-        let result;
-
-        switch (extention) {
-            case 'mp3':
-                result = 'audio/' + fileFolder + '/' +
-                    this.removeSpecialChars(str) + '.' + extention;
-                break;
-
-            case 'json':
-                result = 'audio/' + fileFolder + '/' +
-                    this.removeSpecialChars(str) + '_' + fileFolder + '.' + extention;
-                break;
-
-            default: throw new Error('Uknown extention: "' + extention + '"');
-        }
-
-        return result;
-    };
-
-    static removeSpecialChars(str) {
-        return str.replace(/\s+|\'/g, '');
-    }
 } // class Page
