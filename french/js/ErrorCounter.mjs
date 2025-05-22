@@ -3,7 +3,7 @@
 "use strict";
 
 export class ErrorCounter {
-    static timestamp;
+    static id;
     static numberOfCompleted = 0;
     static numberOfAllInputElements;
 
@@ -15,33 +15,41 @@ export class ErrorCounter {
         }
 
         this.numberOfAllInputElements = inputElementList.length;
-        this.timestamp = Date.now();
+        this.id = Date.now();
 
-        this.showStats();
+        setTimeout(this.showStats, 10); // wait till footer iframe is processed
     }
 
     static focusOutEventHandler(event) {
         if (!(event.target instanceof HTMLInputElement)) return;
 
+        const errorCounterElement = document.getElementById('number-of-errors');
+        let errorCounter = Number(errorCounterElement.innerText);
         if (!event.target.checkValidity()) {
-            const errorCounterElement = document.getElementById('number-of-errors');
-            let errorCounter = Number(errorCounterElement.innerText);
             errorCounter++;
             errorCounterElement.textContent = String(errorCounter);
             event.target.removeEventListener("focusout", ErrorCounter.focusOutEventHandler);
-
-            if (ErrorCounter.numberOfCompleted + errorCounter > ErrorCounter.numberOfAllInputElements / 2) {
-                ErrorCounter.saveCounter(errorCounter);
-            }
         } else if (event.target.value != '') {
             ErrorCounter.numberOfCompleted++;
         }
 
+        if (ErrorCounter.numberOfCompleted + errorCounter > ErrorCounter.numberOfAllInputElements / 2) {
+            ErrorCounter.saveStats(errorCounter);
+        }
+
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = String(
+            Math.round(100 * ErrorCounter.numberOfCompleted / ErrorCounter.numberOfAllInputElements)
+        );
     }
 
-    static saveCounter(errorCounter) {
+    static saveStats(errorCounter) {
         let stats = this.retrieveStats();
-        stats[this.timestamp] = errorCounter;
+        stats[this.id] = {
+            'timestamp': Date.now(),
+            'result': Math.round(100 * ErrorCounter.numberOfCompleted / ErrorCounter.numberOfAllInputElements),
+            'errors': errorCounter
+        };
         localStorage.setItem(this.getStorageKey(), JSON.stringify(stats));
     }
 
@@ -64,19 +72,19 @@ export class ErrorCounter {
         if (!(template instanceof HTMLTemplateElement)) return;
         const statsLineElement = template.content.firstElementChild;
 
-        const stats = this.retrieveStats();
+        const stats = ErrorCounter.retrieveStats();
         const keys = Object.keys(stats).reverse();
 
         keys.forEach((key) => {
             let newStateLineElement = statsLineElement.cloneNode();
             document.getElementById('stats').appendChild(newStateLineElement);
-            let theDate = new Date(Number(key));
+            let theDate = new Date(Number(stats[key]['timestamp']));
 
             let formattedDate = theDate.getFullYear() + '-' + theDate.getMonth() + '-' +
                 theDate.getDate() + ' ' + theDate.getHours() + ':' + theDate.getMinutes();
 
-            newStateLineElement.textContent = formattedDate + ': ' + stats[key];
-
+            newStateLineElement.textContent = formattedDate + ' - ' + stats[key]['result'] +
+                '% (' + stats[key]['errors'] + ' erreurs)';
         });
     }
 
