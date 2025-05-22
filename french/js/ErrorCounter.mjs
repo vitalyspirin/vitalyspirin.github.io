@@ -30,7 +30,7 @@ export class ErrorCounter {
             errorCounterElement.textContent = String(errorCounter);
             event.target.removeEventListener("focusout", ErrorCounter.focusOutEventHandler);
 
-            if (ErrorCounter.numberOfCompleted > ErrorCounter.numberOfAllInputElements / 2) {
+            if (ErrorCounter.numberOfCompleted + errorCounter > ErrorCounter.numberOfAllInputElements / 2) {
                 ErrorCounter.saveCounter(errorCounter);
             }
         } else if (event.target.value != '') {
