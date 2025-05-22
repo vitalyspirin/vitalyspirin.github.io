@@ -30,11 +30,11 @@ export class ErrorCounter {
             errorCounterElement.textContent = String(errorCounter);
             event.target.removeEventListener("focusout", ErrorCounter.focusOutEventHandler);
 
-            if (this.numberOfCompleted > this.numberOfAllInputElements / 2) {
+            if (ErrorCounter.numberOfCompleted > ErrorCounter.numberOfAllInputElements / 2) {
                 ErrorCounter.saveCounter(errorCounter);
             }
         } else if (event.target.value != '') {
-            this.numberOfCompleted++;
+            ErrorCounter.numberOfCompleted++;
         }
 
     }
@@ -67,7 +67,7 @@ export class ErrorCounter {
         const stats = this.retrieveStats();
         const keys = Object.keys(stats).reverse();
 
-        keys.forEach( (key) => {
+        keys.forEach((key) => {
             let newStateLineElement = statsLineElement.cloneNode();
             document.getElementById('stats').appendChild(newStateLineElement);
             let theDate = new Date(Number(key));
