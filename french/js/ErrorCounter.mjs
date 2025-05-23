@@ -17,7 +17,7 @@ export class ErrorCounter {
         this.numberOfAllInputElements = inputElementList.length;
         this.id = Date.now();
 
-        setTimeout(this.showStats, 15); // wait till footer iframe is processed
+        setTimeout(this.showStats, 20); // wait till footer iframe is processed
     }
 
     static focusOutEventHandler(event) {
