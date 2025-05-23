@@ -37,8 +37,7 @@ export class ErrorCounter {
             ErrorCounter.saveStats(errorCounter);
         }
 
-        const resultElement = document.getElementById('result');
-        resultElement.textContent = String(
+        document.getElementById('result').textContent = String(
             Math.round(100 * ErrorCounter.numberOfCompleted / ErrorCounter.numberOfAllInputElements)
         );
     }
@@ -47,7 +46,7 @@ export class ErrorCounter {
         let stats = this.retrieveStats();
         stats[this.id] = {
             'timestamp': Date.now(),
-            'result': Math.round(100 * ErrorCounter.numberOfCompleted / ErrorCounter.numberOfAllInputElements),
+            'result': ErrorCounter.numberOfCompleted / ErrorCounter.numberOfAllInputElements,
             'errors': errorCounter
         };
         localStorage.setItem(this.getStorageKey(), JSON.stringify(stats));
@@ -83,7 +82,8 @@ export class ErrorCounter {
             let formattedDate = theDate.getFullYear() + '-' + theDate.getMonth() + '-' +
                 theDate.getDate() + ' ' + theDate.getHours() + ':' + theDate.getMinutes();
 
-            newStateLineElement.textContent = formattedDate + ' - ' + stats[key]['result'] +
+            const result = Math.round(100 * Number(stats[key]['result']));
+            newStateLineElement.textContent = formattedDate + ' - ' + result +
                 '% (' + stats[key]['errors'] + ' erreurs)';
         });
     }
