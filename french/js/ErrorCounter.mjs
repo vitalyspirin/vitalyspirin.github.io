@@ -79,8 +79,14 @@ export class ErrorCounter {
             document.getElementById('stats').appendChild(newStateLineElement);
             let theDate = new Date(Number(stats[key]['timestamp']));
 
-            let formattedDate = theDate.getFullYear() + '-' + theDate.getMonth() + '-' +
-                theDate.getDate() + ' ' + theDate.getHours() + ':' + theDate.getMinutes();
+            let formattedDate = theDate.toLocaleString("en-CA", {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+                hourCycle: 'h24',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
 
             const result = Math.round(100 * Number(stats[key]['result']));
             newStateLineElement.textContent = formattedDate + ' - ' + result +
