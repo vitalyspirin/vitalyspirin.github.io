@@ -17,7 +17,7 @@ export class ErrorCounter {
         this.numberOfAllInputElements = inputElementList.length;
         this.id = Date.now();
 
-        setTimeout(this.showStats, 10); // wait till footer iframe is processed
+        setTimeout(this.showStats, 15); // wait till footer iframe is processed
     }
 
     static focusOutEventHandler(event) {
@@ -68,7 +68,10 @@ export class ErrorCounter {
     static showStats() {
         const template = document.getElementById('template-stats-line')
 
-        if (!(template instanceof HTMLTemplateElement)) return;
+        if (!(template instanceof HTMLTemplateElement)) {
+            console.log('HTML element with id "template-stats-line" has not been found.');
+            return;
+        }
         const statsLineElement = template.content.firstElementChild;
 
         const stats = ErrorCounter.retrieveStats();
