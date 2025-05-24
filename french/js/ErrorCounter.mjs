@@ -72,7 +72,7 @@ export class ErrorCounter {
         const template = document.getElementById('template-stats-line')
 
         if (!(template instanceof HTMLTemplateElement)) {
-            console.log('HTML element with id "template-stats-line" has not been found.');
+            console.error('HTML element with id "template-stats-line" has not been found.');
             return;
         }
         const statsLineElement = template.content.firstElementChild;

@@ -16,3 +16,4 @@ Words to have in all tenses:
 - perdre
 - découvrir
 - suivre
+- nettoyer
