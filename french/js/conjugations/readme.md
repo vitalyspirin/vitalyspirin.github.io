@@ -5,6 +5,7 @@ Words to add:
 - pleurer
 - étudier
 - oublier
+- devenir
 
 Words to have in all tenses:
 - apprendre

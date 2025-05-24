@@ -5,6 +5,7 @@
 export class ErrorCounter {
     static id;
     static numberOfCompleted = 0;
+    static errorCounter = 0;
     static numberOfAllInputElements;
 
     static initialize() {
@@ -14,6 +15,8 @@ export class ErrorCounter {
             inputElement.addEventListener("focusout", this.focusOutEventHandler);
         }
 
+        this.numberOfCompleted = 0;
+        this.errorCounter = 0;
         this.numberOfAllInputElements = inputElementList.length;
         this.id = Date.now();
 
@@ -23,18 +26,18 @@ export class ErrorCounter {
     static focusOutEventHandler(event) {
         if (!(event.target instanceof HTMLInputElement)) return;
 
-        const errorCounterElement = document.getElementById('number-of-errors');
-        let errorCounter = Number(errorCounterElement.innerText);
         if (!event.target.checkValidity()) {
-            errorCounter++;
-            errorCounterElement.textContent = String(errorCounter);
+            ErrorCounter.errorCounter++;
+            document.getElementById('number-of-errors').textContent = String(ErrorCounter.errorCounter);
             event.target.removeEventListener("focusout", ErrorCounter.focusOutEventHandler);
         } else if (event.target.value != '') {
             ErrorCounter.numberOfCompleted++;
         }
 
-        if (ErrorCounter.numberOfCompleted + errorCounter > ErrorCounter.numberOfAllInputElements / 2) {
-            ErrorCounter.saveStats(errorCounter);
+        if (ErrorCounter.numberOfCompleted + ErrorCounter.errorCounter >
+            ErrorCounter.numberOfAllInputElements / 2
+        ) {
+            ErrorCounter.saveStats(ErrorCounter.errorCounter);
         }
 
         document.getElementById('result').textContent = String(
