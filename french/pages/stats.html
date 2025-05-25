@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statistiques</title>
+
+    <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="module">
+        "use strict";
+
+        import { StatsPageBuilder } from '../js/StatsPageBuilder.mjs';
+
+        StatsPageBuilder.buildPage();
+    </script>
+</head>
+
+
+<body>
+    <main spellcheck="false">
+        <article>
+            <table>
+                <caption>Statistiques</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2">date</th>
+                        <th colspan="2">présent</th>
+                        <th colspan="2">passé composé</th>
+                        <th colspan="2">imparfait</th>
+                        <th colspan="2">futur simple</th>
+                        <th colspan="2">conditionnel présent</th>
+                        <th colspan="2">concordance</th>
+                    </tr>
+                    <tr>
+                        <!-- présent -->
+                        <th>liste</th>
+                        <th>texte</th>
+
+                        <!-- passé composé -->
+                        <th>liste</th>
+                        <th>texte</th>
+
+                        <!-- imparfait -->
+                        <th>liste</th>
+                        <th>texte</th>
+
+                        <!-- futur simple -->
+                        <th>liste</th>
+                        <th>texte</th>
+
+                        <!-- conditionnel présent -->
+                        <th>liste</th>
+                        <th>texte</th>
+
+                        <!-- concordance -->
+                        <th>imp.- passé c.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template id="template-table-row">
+                        <tr>
+                            <td class="date"></td>
+
+                            <td class="conjugations.html?Le%20pr%C3%A9sent"></td>
+                            <td class="exercise_present.html"></td>
+
+                            <td class="conjugations.html?Le%20pass%C3%A9%20compos%C3%A9"></td>
+                            <td class="exercise_presentperfect.html"></td>
+
+                            <td class="conjugations.html?L%27imparfait"></td>
+                            <td class="exercise_imperfect.html"></td>
+
+                            <td class="conjugations.html?Le%20futur%20simple"></td>
+                            <td class="exercise_future.html"></td>
+
+                            <td></td>
+                            <td></td>
+
+                            <td class="exercise_concordance.html"></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </article>
+    </main>
+</body>
+
+</html>

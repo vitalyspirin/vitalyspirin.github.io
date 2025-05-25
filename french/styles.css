@@ -138,18 +138,22 @@ header label:last-of-type {
     display: inline-block;
     width: 49%;
 }
+
 .text section span.sentence-with-hint,
 .text section span.hint {
     width: auto;
     display: inline !important;
     margin-left: auto !important;
 }
+
 .text section span.sentence-with-hint input {
     margin: auto;
 }
+
 .on span.hint {
-background-color: yellow;
+    background-color: yellow;
 }
+
 .text section li span:nth-of-type(2) {
     margin-left: -0.5em;
     display: inline-flex;
@@ -162,6 +166,27 @@ background-color: yellow;
 
 .whitespace {
     width: 5em !important;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+caption {
+    padding: 1em;
+}
+
+th,
+td {
+    padding: 0.25em;
+    text-align: center;
+}
+
+td.date {
+    width: 5.5em;
 }
 
 @media screen and (max-width: 600px) {

@@ -2,6 +2,8 @@
 
 "use strict";
 
+import { Utils } from './Utils.mjs';
+
 export class ErrorCounter {
     static id;
     static numberOfCompleted = 0;
@@ -82,21 +84,13 @@ export class ErrorCounter {
 
         keys.forEach((key) => {
             let newStateLineElement = statsLineElement.cloneNode();
-            document.getElementById('stats').appendChild(newStateLineElement);
-            let theDate = new Date(Number(stats[key]['timestamp']));
 
-            let formattedDate = theDate.toLocaleString("en-CA", {
-                year: 'numeric',
-                month: 'numeric',
-                day: 'numeric',
-                hourCycle: 'h24',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-
+            let formattedDate = Utils.timestampToDateAndTime(Number(stats[key]['timestamp']));
             const result = Math.round(100 * Number(stats[key]['result']));
             newStateLineElement.textContent = formattedDate + ' - ' + result +
                 '% (' + stats[key]['errors'] + ' erreurs)';
+
+            document.getElementById('stats').appendChild(newStateLineElement);
         });
     }
 

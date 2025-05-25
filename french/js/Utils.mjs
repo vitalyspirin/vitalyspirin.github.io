@@ -27,4 +27,31 @@ export class Utils {
         return str.replace(/\s+|\'/g, '');
     }
 
+    static timestampToDate(timestamp) {
+        let theDate = new Date(timestamp);
+
+        let formattedDate = theDate.toLocaleString("en-CA", {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+        });
+
+        return formattedDate;
+    }
+
+    static timestampToDateAndTime(timestamp) {
+        let theDate = new Date(timestamp);
+
+        let formattedDate = theDate.toLocaleString("en-CA", {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hourCycle: 'h24',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
+        return formattedDate;
+
+    }
 }
