@@ -31,6 +31,12 @@ export class StatsPageBuilder {
 
         for (const statsPageKey in statsForOneDate) {
             let tableCell = tableRowElement.getElementsByClassName(statsPageKey)[0];
+
+            if (!(tableCell instanceof HTMLTableCellElement)) {
+                console.error('HTML element of class "' + statsPageKey + '" has not been found.');
+                continue;
+            }
+
             tableCell.innerText = Math.round(100 * statsForOneDate[statsPageKey]) + '%';
         }
     }

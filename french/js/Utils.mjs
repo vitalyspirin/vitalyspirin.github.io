@@ -54,4 +54,8 @@ export class Utils {
         return formattedDate;
 
     }
+
+    static getType(object) {
+        return Object.prototype.toString.apply(object);
+    }
 }
