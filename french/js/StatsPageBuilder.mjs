@@ -7,6 +7,7 @@ import { Utils } from './Utils.mjs';
 
 export class StatsPageBuilder {
     static stats = {};
+    static dates;
 
     static buildPage() {
         this.buildStatsObject();
@@ -17,12 +18,12 @@ export class StatsPageBuilder {
         const templateTableRow = templateElement.content.firstElementChild;
         const tbodyElement = document.getElementsByTagName('tbody')[0];
 
-        for (const key in this.stats) {
+        this.dates.forEach((date) => {
             let newTableRowElement = templateTableRow.cloneNode(true);
 
-            this.fillTableRow(newTableRowElement, key, this.stats[key]);
+            this.fillTableRow(newTableRowElement, date, this.stats[date]);
             tbodyElement.append(newTableRowElement);
-        }
+        });
     }
 
     static fillTableRow(tableRowElement, date, statsForOneDate) {
@@ -59,5 +60,8 @@ export class StatsPageBuilder {
 
         });
 
+        this.dates = Object.keys(this.stats).sort().reverse();
+
     } // function buildStatsObject()
+
 }
