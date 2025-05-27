@@ -10,7 +10,7 @@ export class StatsPageBuilder {
     static dates;
 
     static buildPage() {
-        this.buildStatsObject();
+        this.#buildStatsObject();
 
         const templateElement = document.getElementById('template-table-row');
         if (!(templateElement instanceof HTMLTemplateElement)) return;
@@ -21,12 +21,12 @@ export class StatsPageBuilder {
         this.dates.forEach((date) => {
             let newTableRowElement = templateTableRow.cloneNode(true);
 
-            this.fillTableRow(newTableRowElement, date, this.stats[date]);
+            this.#fillTableRow(newTableRowElement, date, this.stats[date]);
             tbodyElement.append(newTableRowElement);
         });
     }
 
-    static fillTableRow(tableRowElement, date, statsForOneDate) {
+    static #fillTableRow(tableRowElement, date, statsForOneDate) {
         const dateCell = tableRowElement.getElementsByClassName('date')[0];
         dateCell.innerText = date;
 
@@ -42,7 +42,7 @@ export class StatsPageBuilder {
         }
     }
 
-    static buildStatsObject() {
+    static #buildStatsObject() {
         const pagesKeys = Object.keys(localStorage);
 
         pagesKeys.forEach((pageKey) => {
