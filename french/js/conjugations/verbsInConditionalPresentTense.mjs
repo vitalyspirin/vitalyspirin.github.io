@@ -2,6 +2,8 @@
 //
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F851010166_Le_conditionnel_pr_sent_exercices_et_corrig_.pdf
+//
+// the longest verb form: "nous promènerions"
 
 "use strict";
 
@@ -185,12 +187,12 @@ export default {
         Ils: "achèveraient"
     },
     Geler: {
-        Je: "gèlerai",
-        Tu: "gèleras",
-        Il: "gèlera",
-        Nous: "gèlerons",
-        Vous: "gèlerez",
-        Ils: "gèleront"
+        Je: "gèlerais",
+        Tu: "gèlerais",
+        Il: "gèlerait",
+        Nous: "gèlerions",
+        Vous: "gèleriez",
+        Ils: "gèleraient"
     },
     Congeler: {
         Je: "congèlerais",
@@ -201,12 +203,12 @@ export default {
         Ils: "congèleraient"
     },
     Modeler: {
-        Je: "modèlerai",
-        Tu: "modèleras",
-        Il: "modèlera",
-        Nous: "modèlerons",
-        Vous: "modèlerez",
-        Ils: "modèleront"
+        Je: "modèlerais",
+        Tu: "modèlerais",
+        Il: "modèlerait",
+        Nous: "modèlerions",
+        Vous: "modèleriez",
+        Ils: "modèleraient"
     },
     Harceler: {
         "J'": "harcèlerais",
@@ -225,52 +227,52 @@ export default {
         Ils: "pèleraient"
     },
     Enlever: {
-        "J'": "enlèverai",
-        Tu: "enlèveras",
-        Il: "enlèvera",
-        Nous: "enlèverons",
-        Vous: "enlèverez",
-        Ils: "enlèveront"
+        "J'": "enlèverais",
+        Tu: "enlèverais",
+        Il: "enlèverait",
+        Nous: "enlèverions",
+        Vous: "enlèveriez",
+        Ils: "enlèveraient"
     },
     Amener: {
-        "J'": "amènerai",
-        Tu: "amèneras",
-        Il: "amènera",
-        Nous: "amènerons",
-        Vous: "amènerez",
-        Ils: "amèneront"
+        "J'": "amènerais",
+        Tu: "amènerais",
+        Il: "amènerait",
+        Nous: "amènerions",
+        Vous: "amèneriez",
+        Ils: "amèneraient"
     },
     Emmener: {
-        "J'": "emmènerai",
-        Tu: "emmèneras",
-        Il: "emmènera",
-        Nous: "emmènerons",
-        Vous: "emmènerez",
-        Ils: "emmèneront"
+        "J'": "emmènerais",
+        Tu: "emmènerais",
+        Il: "emmènerait",
+        Nous: "emmènerions",
+        Vous: "emmèneriez",
+        Ils: "emmèneraient"
     },
     Mener: {
-        Je: "mènerai",
-        Tu: "mèneras",
-        Il: "mènera",
-        Nous: "mènerons",
-        Vous: "mènerez",
-        Ils: "mèneront"
+        Je: "mènerais",
+        Tu: "mènerais",
+        Il: "mènerait",
+        Nous: "mènerions",
+        Vous: "mèneriez",
+        Ils: "mèneraient"
     },
     Semer: {
-        Je: "sèmerai",
-        Tu: "sèmeras",
-        Il: "sèmera",
-        Nous: "sèmerons",
-        Vous: "sèmerez",
-        Ils: "sèmeront"
+        Je: "sèmerais",
+        Tu: "sèmerais",
+        Il: "sèmerait",
+        Nous: "sèmerions",
+        Vous: "sèmeriez",
+        Ils: "sèmeraient"
     },
     Peser: {
-        Je: "pèserai",
-        Tu: "pèseras",
-        Il: "pèsera",
-        Nous: "pèserons",
-        Vous: "pèserez",
-        Ils: "pèseront"
+        Je: "pèserais",
+        Tu: "pèserais",
+        Il: "pèserait",
+        Nous: "pèserions",
+        Vous: "pèseriez",
+        Ils: "pèseraient"
     },
     Partir: {
         Je: "partirais",
