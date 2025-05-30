@@ -3,7 +3,7 @@ iframe {
 }
 
 body {
-    font-family: sans-serif
+    font-family: sans-serif;
 }
 
 body main {
@@ -187,6 +187,45 @@ td {
 
 td.date {
     width: 5.5em;
+}
+
+.card {
+    display: inline-block;
+    vertical-align: top;
+    width: 16rem;
+    height: 16rem;
+    margin: 1rem;
+    border: 1px solid gainsboro;
+    border-radius: 0.5rem;
+}
+
+.card header {
+    padding: 1rem;
+    border-bottom: 1px solid gainsboro;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.card a,
+a.wide {
+    display: block;
+    width: 13rem;
+    color: blue;
+    border: 1px solid blue;
+    border-radius: 0.5rem;
+    margin: 1.5rem auto;
+    padding: 0.5rem 0;
+    text-decoration: none;
+}
+
+.card a:hover,
+a.wide:hover {
+    background-color: blue;
+    color: white;
+}
+
+a.wide {
+    width: 30rem !important;
 }
 
 @media screen and (max-width: 600px) {
