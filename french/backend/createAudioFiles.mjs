@@ -7,40 +7,37 @@
 // @ts-ignore
 import { exec } from 'child_process';
 
-import { PageBuilder } from '../js/PageBuilder.mjs';
+import { Utils } from '../js/Utils.mjs';
 import { AudioFile } from './AudioFile.mjs';
-import verbsInPresentTense from '../js/verbsInPresentTense.mjs';
-import verbsInFuturTense from '../js/verbsInFutureTense.mjs';
-import verbsInImperfectTense from '../js/verbsInImperfectTense.mjs';
-import verbsInPresentPerfectTense from '../js/verbsInPresentPerfectTense.mjs';
-import verbsInConditionalPresentTense from '../js/verbsInConditionalPresentTense.mjs';
-import verbsInConditionalPerfectTense from '../js/verbsInConditionalPerfectTense.mjs';
+import verbsInPresentTense from '../js/conjugations/verbsInPresentTense.mjs';
+import verbsInFuturTense from '../js/conjugations/verbsInFutureTense.mjs';
+import verbsInImperfectTense from '../js/conjugations/verbsInImperfectTense.mjs';
+import verbsInPresentPerfectTense from '../js/conjugations/verbsInPresentPerfectTense.mjs';
+import verbsInConditionalPresentTense from '../js/conjugations/verbsInConditionalPresentTense.mjs';
+import verbsInConditionalPerfectTense from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
 
-import { audioFileFolder as audioFileFolderForPresentTense } from '../js/verbsInPresentTense.mjs';
-import { audioFileFolder as audioFileFolderForFutureTense } from '../js/verbsInFutureTense.mjs';
-import { audioFileFolder as audioFileFolderForImperfectTense } from '../js/verbsInImperfectTense.mjs';
-import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../js/verbsInPresentPerfectTense.mjs';
-import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/verbsInConditionalPresentTense.mjs';
-import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '../js/verbsInConditionalPerfectTense.mjs';
+import { audioFileFolder as audioFileFolderForPresentTense } from '../js/conjugations/verbsInPresentTense.mjs';
+import { audioFileFolder as audioFileFolderForFutureTense } from '../js/conjugations/verbsInFutureTense.mjs';
+import { audioFileFolder as audioFileFolderForImperfectTense } from '../js/conjugations/verbsInImperfectTense.mjs';
+import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../js/conjugations/verbsInPresentPerfectTense.mjs';
+import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/conjugations/verbsInConditionalPresentTense.mjs';
+import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
 
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
-
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
-
 //saveAudioFilesForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
-
 //saveAudioFilesForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
-
 
 
 //saveAudioFilesBase64ForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
-saveAudioFilesBase64ForVerbList(verbsInConditionalPerfectTense, audioFileFolderForConditionalPerfectTense);
+//saveAudioFilesBase64ForVerbList(verbsInConditionalPerfectTense, audioFileFolderForConditionalPerfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
+saveAudioFilesBase64ForInfinitive('Geler', verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
@@ -62,13 +59,12 @@ function saveAudioFilesBase64ForVerbList(verbList, fileFolder) {
     let counter = 0;
     for (let infinitive in verbList) {
 
-        let audioFileName = saveAudioFilesBase64ForInfinitive(
+        saveAudioFilesBase64ForInfinitive(
             infinitive,
             verbList[infinitive],
             fileFolder
         );
 
-        console.log(audioFileName);
         counter++;
     }
 
@@ -90,16 +86,16 @@ function saveAudioFilesBase64ForInfinitive(infinitive, conjugationList, fileFold
         audioFile.addString(audioStr);
     }
 
-    const audioFileName = '../' + PageBuilder.getAudioFileUrl(infinitive, fileFolder, 'json');
-
+    const audioFileName = Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
     audioFile.save(audioFileName);
+    console.log(audioFileName);
 
     return audioFileName;
 }
 
 function saveAudioFileForStr(audioStr, fileFolder) {
     let url = getGoogleTranslateAudioUrl(audioStr);
-    let audioFileName = '../' + PageBuilder.getAudioFileUrl(audioStr, fileFolder);
+    let audioFileName = Utils.getAudioFileUrl(audioStr, fileFolder);
     let cmdCommand = 'wget -q -U Mozilla -O ' + audioFileName + ' "' + url + '"';
 
     exec(cmdCommand, (err, stdout, stderr) => {
