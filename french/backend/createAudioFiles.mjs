@@ -37,7 +37,7 @@ import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
-saveAudioFilesBase64ForInfinitive('Geler', verbsInConditionalPresentTense['Geler'], audioFileFolderForConditionalPresentTense);
+saveAudioFilesBase64ForInfinitive('Couvrir', verbsInConditionalPresentTense['Couvrir'], audioFileFolderForConditionalPresentTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
