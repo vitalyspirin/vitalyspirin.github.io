@@ -37,7 +37,7 @@ import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
-saveAudioFilesBase64ForInfinitive('Geler', verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
+saveAudioFilesBase64ForInfinitive('Geler', verbsInConditionalPresentTense['Geler'], audioFileFolderForConditionalPresentTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
@@ -81,9 +81,15 @@ function saveAudioFilesBase64ForInfinitive(infinitive, conjugationList, fileFold
             audioStr += ' '; // compare: "J'aurai" vs "Tu aura"
         }
 
-        audioStr += conjugationList[pronoun];
-
-        audioFile.addString(audioStr);
+        if (!(typeof conjugationList[pronoun] == "string")) {
+            console.error('The following must be of type "string" but it is of type "' +
+                Utils.getType(conjugationList[pronoun]) + '" :');
+            console.error(conjugationList[pronoun]);
+            console.error();
+        } else {
+            audioStr += conjugationList[pronoun];
+            audioFile.addString(audioStr);
+        }
     }
 
     const audioFileName = Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
