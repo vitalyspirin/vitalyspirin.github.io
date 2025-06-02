@@ -189,6 +189,10 @@ td.date {
     width: 5.5em;
 }
 
+thead tr:first-child th {
+    width: 6rem;
+}
+
 .card {
     display: inline-block;
     vertical-align: top;
