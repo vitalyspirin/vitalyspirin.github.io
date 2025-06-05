@@ -168,6 +168,10 @@ header label:last-of-type {
     width: 5em !important;
 }
 
+.error-counter h4 {
+    display: none;
+}
+
 table,
 th,
 td {

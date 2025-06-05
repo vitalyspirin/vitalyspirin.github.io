@@ -16,20 +16,18 @@
         import { ErrorCounter } from '../js/ErrorCounter.mjs';
 
         const verbListObject = PageBuilderForManyTenses.getVerbList();
+        const title = window.decodeURIComponent(window.location.search).substring(1);
 
-        let tenseList = [];
-
-        document.querySelectorAll('.tense-checkbox').forEach((checkboxElement) => {
+        document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
             checkboxElement.onclick = () => {
                 PageBuilderForManyTenses.buildForManyTenses(verbListObject, title);
-                ErrorCounter.initialize();
+                ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList());
             }
         });
 
-        const title = window.decodeURIComponent(window.location.search).substring(1);
         PageBuilderForManyTenses.buildForManyTenses(verbListObject, title);
 
-        ErrorCounter.initialize();
+        ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList());
     </script>
 </head>
 
@@ -41,23 +39,23 @@
                 <h3 id="page-title">Temps de conjugaison</h3>
 
                 <label>
-                    <input type="checkbox" class="tense-checkbox" id="present" checked="checked">Le présent
+                    <input type="checkbox" class="verb-tense-checkbox" name="present" checked="checked">Le présent
                 </label>
                 <label>
-                    <input type="checkbox" class="tense-checkbox" id="presentperfect" checked="checked">Le passé composé
+                    <input type="checkbox" class="verb-tense-checkbox" name="presentperfect" checked="checked">Le passé composé
                 </label>
                 <label>
-                    <input type="checkbox" class="tense-checkbox" id="imperfect" checked="checked">L'imparfait
+                    <input type="checkbox" class="verb-tense-checkbox" name="imperfect" checked="checked">L'imparfait
                 </label>
                 <label>
-                    <input type="checkbox" class="tense-checkbox" id="future" checked="checked">Le futur simple
+                    <input type="checkbox" class="verb-tense-checkbox" name="future" checked="checked">Le futur simple
                 </label>
                 <label>
-                    <input type="checkbox" class="tense-checkbox" id="conditionalpresent" checked="checked">Le
+                    <input type="checkbox" class="verb-tense-checkbox" name="conditionalpresent" checked="checked">Le
                     conditionnel présent
                 </label>
                 <label>
-                    <input type="checkbox" class="tense-checkbox" id="conditionalperfect" checked="checked">Le
+                    <input type="checkbox" class="verb-tense-checkbox" name="conditionalperfect" checked="checked">Le
                     conditionnel passé
                 </label>
 

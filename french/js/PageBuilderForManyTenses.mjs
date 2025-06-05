@@ -29,15 +29,25 @@ export class PageBuilderForManyTenses {
     }
 
 
+    static getVerbTenseList() {
+        let verbTenseList = [];
+        document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
+            if (!(checkboxElement instanceof HTMLInputElement)) {
+                console.error("Element with selector '.verb-tense-checkbox' must be of type HTMLInputElement but it's of type:");
+                console.error(Utils.getType(checkboxElement));
+            } else if (checkboxElement.checked) {
+                verbTenseList.push(checkboxElement.getAttribute('name'));
+            }
+        });
+
+        return verbTenseList;
+    }
+
     static buildForManyTenses(verbMixedConjugationList, title) {
         document.title = title;
         document.getElementById("page-title").textContent = title;
 
-        let tenseList = [];
-        document.querySelectorAll('.tense-checkbox').forEach((checkboxElement) => {
-            // @ts-ignore
-            if (checkboxElement.checked) tenseList.push(checkboxElement.id);
-        });
+        let tenseList = this.getVerbTenseList();
 
         let verbListBlock = document.getElementById("verb-list");
         verbListBlock.textContent = '';
@@ -126,6 +136,7 @@ export class PageBuilderForManyTenses {
         labelElement.htmlFor = id;
         let inputElement = newInputBlock.querySelector("input");
         inputElement.id = id;
+        inputElement.setAttribute('data-verb-tense', fileFolder);
         inputElement.pattern = verb;
         inputElement.onblur = function (event) {
             event.target.value = event.target.value.trim();

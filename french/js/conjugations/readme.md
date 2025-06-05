@@ -17,3 +17,4 @@ Words to have in all tenses:
 - découvrir
 - suivre
 - nettoyer
+- plaindre

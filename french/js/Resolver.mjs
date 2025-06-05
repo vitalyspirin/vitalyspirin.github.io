@@ -53,4 +53,11 @@ export class Resolver {
 
         return result;
     }
+
+    static getURLEncodedTenseByFolder(folder) {
+        let result = encodeURIComponent(this.getTenseByFolder(folder)).replace(/'/g, '%27');
+
+        return result;
+    }
+
 }
