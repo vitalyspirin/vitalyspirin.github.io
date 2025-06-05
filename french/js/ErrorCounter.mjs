@@ -65,13 +65,13 @@ export class ErrorCounter {
 
         if (!event.target.checkValidity()) {
             ErrorCounter.getErrorCounter(verbTense).numberOfErrors++;
-
             event.target.removeEventListener("focusout", ErrorCounter.focusOutEventHandler);
         } else if (event.target.value != '') {
             ErrorCounter.getErrorCounter(verbTense).numberOfCompleted++;
+            event.target.removeEventListener("focusout", ErrorCounter.focusOutEventHandler);
         }
 
-        ErrorCounterLine.setError(errorLineElement, ErrorCounter.getErrorCounter(verbTense));
+        ErrorCounterLine.update(errorLineElement, ErrorCounter.getErrorCounter(verbTense));
 
         if (ErrorCounter.getErrorCounter(verbTense).numberOfCompleted +
             ErrorCounter.getErrorCounter(verbTense).numberOfErrors >

@@ -11,7 +11,7 @@ export class ErrorCounterLine {
         errorLineElement.getElementsByClassName('result').item(0).textContent = '0';
     }
 
-    static setError(errorLineElement, errorCounterObj) {
+    static update(errorLineElement, errorCounterObj) {
         errorLineElement.getElementsByClassName('number-of-errors').item(0).textContent =
             String(errorCounterObj.numberOfErrors);
 
