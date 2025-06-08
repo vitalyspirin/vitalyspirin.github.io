@@ -122,6 +122,10 @@ header label:last-of-type {
     width: 11em;
 }
 
+.text .input-sentence-width input {
+    width: 30em
+}
+
 .text section {
     margin-bottom: 3em;
 }
@@ -134,7 +138,7 @@ header label:last-of-type {
     margin-bottom: 1em;
 }
 
-.text section span {
+.text .span-half span {
     display: inline-block;
     width: 49%;
 }
