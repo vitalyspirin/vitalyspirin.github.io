@@ -169,6 +169,7 @@ header label:last-of-type {
 }
 
 .whitespace {
+    display: inline-block;
     width: 5em !important;
 }
 
