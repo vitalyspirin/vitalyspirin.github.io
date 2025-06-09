@@ -6,6 +6,7 @@ import verbsInPresentTense, { audioFileFolder as audioFileFolderForPresentTense 
 import verbsInFutureTense, { audioFileFolder as audioFileFolderForFutureTense } from './conjugations/verbsInFutureTense.mjs';
 import verbsInImperfectTense, { audioFileFolder as audioFileFolderForImperfectTense } from './conjugations/verbsInImperfectTense.mjs';
 import verbsInPresentPerfectTense, { audioFileFolder as audioFileFolderForPresentPerfectTense } from './conjugations/verbsInPresentPerfectTense.mjs';
+import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfectTense } from './conjugations/verbsInPastPerfectTense.mjs';
 import verbsInConditionalPresentTense, { audioFileFolder as audioFileFolderForConditionalPresentTense } from './conjugations/verbsInConditionalPresentTense.mjs';
 import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './conjugations/verbsInConditionalPerfectTense.mjs';
 
@@ -27,6 +28,10 @@ export class Resolver {
         'Le futur simple': {
             folder: audioFileFolderForFutureTense,
             verbList: verbsInFutureTense
+        },
+        'Le plus-que-parfait': {
+            folder: audioFileFolderForPastPerfectTense,
+            verbList: verbsInPastPerfectTense
         },
         'Le conditionnel présent': {
             folder: audioFileFolderForConditionalPresentTense,
