@@ -20,6 +20,7 @@ import { audioFileFolder as audioFileFolderForPresentTense } from '../js/conjuga
 import { audioFileFolder as audioFileFolderForFutureTense } from '../js/conjugations/verbsInFutureTense.mjs';
 import { audioFileFolder as audioFileFolderForImperfectTense } from '../js/conjugations/verbsInImperfectTense.mjs';
 import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../js/conjugations/verbsInPresentPerfectTense.mjs';
+import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfectTense } from '../js/conjugations/verbsInPastPerfectTense.mjs';
 import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/conjugations/verbsInConditionalPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
 
@@ -32,12 +33,13 @@ import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '..
 
 //saveAudioFilesBase64ForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
+saveAudioFilesBase64ForVerbList(verbsInPastPerfectTense, audioFileFolderForPastPerfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPerfectTense, audioFileFolderForConditionalPerfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
-saveAudioFilesBase64ForInfinitive('Couvrir', verbsInConditionalPresentTense['Couvrir'], audioFileFolderForConditionalPresentTense);
+// saveAudioFilesBase64ForInfinitive('Couvrir', verbsInConditionalPresentTense['Couvrir'], audioFileFolderForConditionalPresentTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {

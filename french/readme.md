@@ -13,7 +13,7 @@ Then (and you are already inside docker container) execute:
 ```
 cd /home/backend
 
-node --experimental-modules ./createAudioFiles.mjs
+node ./createAudioFiles.mjs
 ```
 
 ## Useful commands for development
