@@ -3,7 +3,7 @@
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000291756_le_plus_que_parfait_exercices_et_corrig_.pdf
 //
-
+// the longest verb form: "avaient commencé"
 
 "use strict";
 
@@ -276,7 +276,7 @@ export default {
     },
     "S'asseoir": {
         Je: "m'étais assis",
-        Tu: " t'étais assis",
+        Tu: "t'étais assis",
         Il: "s'était assis",
         Nous: "nous étions assis",
         Vous: "vous étiez assis",
@@ -405,7 +405,7 @@ export default {
     Écrire: {
         "J'": "avais écrit",
         Tu: "avais écrit",
-        Il: " avait écrit",
+        Il: "avait écrit",
         Nous: "avions écrit",
         Vous: "aviez écrit",
         Ils: "avaient écrit"
