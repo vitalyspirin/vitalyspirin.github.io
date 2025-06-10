@@ -33,13 +33,13 @@ import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '..
 
 //saveAudioFilesBase64ForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
-saveAudioFilesBase64ForVerbList(verbsInPastPerfectTense, audioFileFolderForPastPerfectTense);
+// saveAudioFilesBase64ForVerbList(verbsInPastPerfectTense, audioFileFolderForPastPerfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPresentTense, audioFileFolderForConditionalPresentTense);
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPerfectTense, audioFileFolderForConditionalPerfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 
-// saveAudioFilesBase64ForInfinitive('Couvrir', verbsInConditionalPresentTense['Couvrir'], audioFileFolderForConditionalPresentTense);
+saveAudioFilesBase64ForInfinitive("S'asseoir", verbsInPastPerfectTense["S'asseoir"], audioFileFolderForPastPerfectTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
