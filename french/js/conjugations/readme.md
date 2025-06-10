@@ -6,6 +6,7 @@ Words to add:
 - étudier
 - oublier
 - devenir
+- cueillir
 
 Words to have in all tenses:
 - apprendre
