@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<!-- exercises are taken from https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000096617_la_concordance_au_pass__exercices_et_corrig__web.pdf -->
+
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Les phrases de condition</title>
+
+    <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="module">
+        "use strict";
+
+        import { ErrorCounter } from '../js/ErrorCounter.mjs';
+
+        ErrorCounter.initialize();
+    </script>
+</head>
+
+<body>
+    <main spellcheck="false">
+        <article class="text">
+            <h2>Les phrases de condition</h2>
+
+            <section>
+                <h4>Complétez les phrases suivantes pour former une hypothèse sur le futur.</h4>
+                <div>
+                    Lorsque nous sommes incertains, nous faisons une hypothèse sur le futur :<br />
+                    Si + présent, futur simple<br /><br />
+                </div>
+                <div>
+                    Exemples :
+                </div>
+                <div>
+                    <span class="whitespace"></span>Ce matin, je ne joue pas au tennis parce qu’il pleut.
+                </div>
+                <div>
+                    <span class="whitespace"></span>Mais, demain, s’il ne <b>pleut</b> pas, je <b>jouerai</b> au tennis.
+                </div>
+
+                <ol class="input-sentence-width">
+                    <li>
+                        <span title="Mais, demain soir, s’ils ne travaillent pas, ils iront au cinéma.">Ce soir, ils ne
+                            vont pas au cinéma parce qu’ils travaillent.</span>
+                        <input type="text"
+                            pattern="Mais, demain soir, s'ils ne travaillent pas, ils iront au cinéma[.]?">
+                    </li>
+                    <li>
+                        <span title="Mais, l’hiver prochain, si elle n’a pas de rhume, elle fera du ski."> Cet hiver,
+                            elle ne fait pas de ski parce qu’elle a un rhume.</span>
+                        <input type="text"
+                            pattern="Mais, l'hiver prochain, si elle n'a pas de rhume, elle fera du ski[.]?">
+                    </li>
+                    <li>
+                        <span title="Demain, si je ne suis pas à la diète, je mangerai du dessert.">Aujourd’hui, je
+                            mange du dessert parce que je ne suis pas à la diète.</span>
+                        <input type="text" pattern="Demain, si je ne suis pas à la diète, je mangerai du dessert[.]?">
+                    </li>
+                    <li>
+                        <span title="Mais, demain soir, nous ferons la fête, si nous ne devons pas nous lever tôt.">Ce
+                            soir, nous ne faisons pas la fête parce que nous devons nous lever tôt.</span>
+                        <input type="text"
+                            pattern="Mais, demain soir, nous ferons la fête, si nous ne devons pas nous lever tôt[.]?">
+                    </li>
+                    <li>
+                        <span title="Mais, demain, s’il n’y a pas de tempête de neige, je sortirai."> Aujourd’hui, je ne
+                            sors pas parce qu’il y a une tempête de neige.</span>
+                        <input type="text" pattern="Mais, demain, s'il n'y a pas de tempête de neige, je sortirai[.]?">
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h4>Complétez les phrases suivantes pour former une hypothèse sur le futur.</h4>
+
+                <ol>
+                    <li>
+                        Si j’ai mal aux dents, (<b title="j'irai">je aller</b>)
+                        <input type="text" pattern="j'irai">
+                        chez le dentiste.
+                    </li>
+                    <li>
+                        Si nous sommes bloqués dans l’ascenseur, nous (<b title="appellerons">appeler</b>)
+                        <input type="text" pattern="appellerons">
+                        du secours.
+                    </li>
+                    <li>
+                        S’ils vont au cinéma, ils (<b title="verront">voir</b>)
+                        <input type="text" pattern="verront">
+                        le dernier film de ce réalisateur.
+                    </li>
+                    <li>
+                        Si vous désirez des informations supplémentaires, vous (<b title="m'enverrez">me envoyer</b>)
+                        <input type="text" pattern="m'enverrez">
+                        un courriel.
+                    </li>
+                    <li>
+                        Si nous sortons sous la pluie, nous (<b title="serons">être</b>)
+                        <input type="text" pattern="serons">
+                        malades.
+                    </li>
+                    <li>
+                        Si je (<b title="parle">parler</b>)
+                        <input type="text" pattern="parle">
+                        à Émilie, je l’inviterai à souper.
+                    </li>
+                    <li>
+                        S’ils (<b title="étudient">étudier</b>)
+                        <input type="text" pattern="étudient">
+                        sérieusement, ils réussiront le cours.
+                    </li>
+                    <li>
+                        Si vous (<b title="mangez">manger</b>)
+                        <input type="text" pattern="mangez">
+                        ce gâteau, vous aurez mal à l’estomac.
+                    </li>
+                    <li>
+                        Si je (<b title="gagne">gagner</b>)
+                        <input type="text" pattern="gagne">
+                        suffisamment d’argent, je voyagerai en Europe.
+                    </li>
+                    <li>
+                        Si tu (<b title="diminues">diminuer</b>)
+                        <input type="text" pattern="diminues">
+                        tes frais de gestion, tu augmenteras tes bénéfices.
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h4>Complétez les phrases suivantes pour former une hypothèse sur le présent. </h4>
+                <div>
+                    Lorsque nous imaginons quelque chose qui n’existe pas, nous faisons une hypothèse sur le présent :
+                    <br />
+                    Si + imparfait, conditionnel présent <br /><br />
+                </div>
+                <div>
+                    Exemples :
+                </div>
+                <div>
+                    <span class="whitespace"></span>Elle ne va pas à ses cours parce qu’elle est malade.
+                </div>
+                <div>
+                    <span class="whitespace"></span>Si elle n’<b>était</b> pas malade, elle <b>irait</b> à ses cours.
+                </div>
+
+                <ol class="input-sentence-width">
+                    <li>
+                        <span title="Si elles avaient le temps, elles iraient au théâtre.">Elles ne vont pas au théâtre
+                            parce qu’elles n’ont pas le temps.</span>
+
+                        <input type="text" pattern="Si elles avaient le temps, elles iraient au théâtre[.]?">
+                    </li>
+                    <li>
+                        <span title="Si la chaussée n’était pas glacée, nous ferions une promenade.">Nous ne faisons pas
+                            de promenade parce que la chaussée est glacée.</span>
+                        <input type="text" pattern="Si la chaussée n'était pas glacée, nous ferions une promenade[.]?">
+                    </li>
+                    <li>
+                        <span title="Si les voisins faisaient moins de bruit, je pourrais dormir.">Je ne peux pas dormir
+                            parce que les voisins font trop de bruit.</span>
+                        <input type="text" pattern="Si les voisins faisaient moins de bruit, je pourrais dormir[.]?">
+                    </li>
+                    <li>
+                        <span title="S’il avait un travail, il aurait de l’argent.">Il n’a pas d’argent parce qu’il n’a
+                            pas de travail.</span>
+                        <input type="text" pattern="S'il avait un travail, il aurait de l'argent[.]?">
+                    </li>
+                    <li>
+                        <span title="Si nous avions une auto, nous sortirions plus souvent.">Vous ne sortez pas souvent
+                            parce que vous n’avez pas d’auto.</span>
+                        <input type="text" pattern="Si nous avions une auto, nous sortirions plus souvent[.]?">
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h4>Complétez les phrases suivantes pour former une hypothèse sur le présent.</h4>
+
+                <ol>
+                    <li>
+                        Si nous (<b title="savions">savoir</b>)
+                        <input type="text" pattern="savions">
+                        parler votre langue, nous trouverions du travail.
+                    </li>
+                    <li>
+                        Si (<b title="j'étais">je être</b>)
+                        <input type="text" pattern="j'étais">
+                        jolie, tous les garçons tomberaient amoureux de moi.
+                    </li>
+                    <li>
+                        Si elle (<b title="avait">avoir</b>)
+                        <input type="text" pattern="avait">
+                        un bon caractère, elle aurait plus d’amies.
+                    </li>
+                    <li>
+                        Si vous (<b title="arriviez">arriver</b>)
+                        <input type="text" pattern="arriviez">
+                        tôt, vous verriez peut-être mes parents.
+                    </li>
+                    <li>
+                        Si tu (<b title="suivais">suivre</b>)
+                        <input type="text" pattern="suivais">
+                        les indications, tu trouverais plus facilement ton chemin.
+                    </li>
+                    <li>
+                        Si nous écoutions le film, nous (<b title="comprendrions">comprendre</b>)
+                        <input type="text" class="wide" pattern="comprendrions">
+                        mieux l’action.
+                    </li>
+                    <li>
+                        Si tu étais moins bavard, les gens te (<b title="confieraient">confier</b>)
+                        <input type="text" pattern="confieraient">
+                        plus de secrets.
+                    </li>
+                    <li>
+                        Si vous mangiez moins, vous (<b title="auriez">avoir</b>)
+                        <input type="text" pattern="auriez">
+                        la taille plus fine.
+                    </li>
+                    <li>
+                        Si nous (<b title="savions">savoir</b>)
+                        <input type="text" pattern="savions">
+                        conduire la voiture, nous pourrions l’emprunter le samedi soir.
+                    </li>
+                    <li>
+                        Si j’avais plus de confiance en moi, je (<b title="téléphonerais">téléphoner</b>)
+                        <input type="text" pattern="téléphonerais">
+                        à James.
+                    </li>
+                </ol>
+            </section>
+
+            <iframe src="partials/errorCounter.html"
+                onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
+
+        </article>
+    </main>
+
+</body>
+
+</html>
