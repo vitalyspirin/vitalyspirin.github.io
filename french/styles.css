@@ -11,6 +11,10 @@ body main {
     margin: auto;
 }
 
+body main.wide {
+    width: 55em;
+}
+
 #page-title {
     text-align: center;
 }
