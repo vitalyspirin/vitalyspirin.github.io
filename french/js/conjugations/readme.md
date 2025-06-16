@@ -7,6 +7,7 @@ Words to add:
 - oublier
 - devenir
 - cueillir
+- sourire
 
 Words to have in all tenses:
 - apprendre
