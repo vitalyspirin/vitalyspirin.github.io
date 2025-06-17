@@ -39,7 +39,7 @@ export class StatsPageBuilder {
             }
 
             tableCell.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
-            tableCell.title = statsForOneDate[statsPageKey]['errors'];
+            tableCell.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
         }
     }
 
