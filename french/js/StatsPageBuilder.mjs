@@ -38,7 +38,8 @@ export class StatsPageBuilder {
                 continue;
             }
 
-            tableCell.innerText = Math.round(100 * statsForOneDate[statsPageKey]) + '%';
+            tableCell.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
+            tableCell.title = statsForOneDate[statsPageKey]['errors'];
         }
     }
 
@@ -55,7 +56,10 @@ export class StatsPageBuilder {
                 if (!this.stats.hasOwnProperty(formattedDate)) {
                     this.stats[formattedDate] = {};
                 }
-                this.stats[formattedDate][pageKey] = statsForPage[pageStatsKey]['result'];
+                this.stats[formattedDate][pageKey] = {
+                    result: statsForPage[pageStatsKey]['result'],
+                    errors: statsForPage[pageStatsKey]['errors']
+                };
             });
 
         });
