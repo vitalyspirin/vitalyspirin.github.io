@@ -55,6 +55,16 @@ export class Utils {
 
     }
 
+    static getWeek(dateStr) {
+        const date = new Date(dateStr);
+
+        const a = new Date(date.getFullYear(), 0, 1);
+        const b = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        const millisec = Number(b) - Number(a);
+
+        return Math.ceil((millisec / 86400000 + 1 + a.getDay()) / 7);
+    }
+
     static getType(object) {
         return Object.prototype.toString.apply(object);
     }

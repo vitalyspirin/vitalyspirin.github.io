@@ -181,6 +181,8 @@ header label:last-of-type {
     display: none;
 }
 
+/* stats page */
+
 table,
 th,
 td {
@@ -190,6 +192,10 @@ td {
 
 caption {
     padding: 1em;
+}
+
+tr.even-week {
+    background-color: WhiteSmoke;
 }
 
 th,

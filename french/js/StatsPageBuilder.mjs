@@ -20,8 +20,16 @@ export class StatsPageBuilder {
 
         this.dates.forEach((date) => {
             let newTableRowElement = templateTableRow.cloneNode(true);
+            if (!(newTableRowElement instanceof Element)) return;
 
             this.#fillTableRow(newTableRowElement, date, this.stats[date]);
+
+            if (Utils.getWeek(date) % 2 == 0) {
+                newTableRowElement.classList.add('even-week');
+            } else {
+                newTableRowElement.classList.add('odd-week');
+            }
+
             tbodyElement.append(newTableRowElement);
         });
     }
