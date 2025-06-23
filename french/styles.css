@@ -66,9 +66,12 @@ header h4 {
     display: flex;
 }
 
-.error,
 input:invalid:not(:focus) {
     background-color: #fc8181;
+}
+
+input.failed {
+    border: 2px #fc8181 solid;
 }
 
 

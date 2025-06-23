@@ -65,6 +65,7 @@ export class ErrorCounter {
 
         if (!event.target.checkValidity()) {
             ErrorCounter.getErrorCounter(verbTense).numberOfErrors++;
+            event.target.classList.add('failed');
             event.target.removeEventListener("focusout", ErrorCounter.focusOutEventHandler);
         } else if (event.target.value != '') {
             ErrorCounter.getErrorCounter(verbTense).numberOfCompleted++;
