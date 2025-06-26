@@ -70,7 +70,7 @@ input:invalid:not(:focus) {
     background-color: #fc8181;
 }
 
-input.failed {
+input.failed:not(:invalid) {
     border: 2px #fc8181 solid;
 }
 
