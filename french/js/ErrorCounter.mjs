@@ -16,14 +16,19 @@ export class ErrorCounter {
     static id;
     static errorCounter;
 
-    static initialize(verbTenseList = []) {
-        this.id = Date.now();
-
-        // wait till footer iframe is processed
-        setTimeout(this.initializeAfterDelay, 80, verbTenseList, this);
+    static initialize(verbTenseList = [], self = this) {
+console.log(document.getElementsByTagName('iframe').length);
+        if (document.getElementsByTagName('iframe').length != 0) {
+            // wait till footer iframe is processed
+            setTimeout(self.initialize, 20, verbTenseList, self);
+        } else {
+            self.initializeAfterDelay(verbTenseList, self);
+        }
     }
 
     static initializeAfterDelay(verbTenseList, self) {
+        self.id = Date.now();
+
         document.querySelectorAll('input[type="text"]').forEach((inputElement) => {
             inputElement.addEventListener("focusout", self.focusOutEventHandler);
         });
@@ -35,7 +40,7 @@ export class ErrorCounter {
             self.errorCounter.numberOfAllInputElements =
                 document.querySelectorAll('input[type="text"]').length;
 
-            setTimeout(self.showStats, 45); // wait till footer iframe is processed
+            self.showStats();
         } else {
             self.errorCounter = {};
 
