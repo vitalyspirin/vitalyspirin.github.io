@@ -2,6 +2,8 @@
 //
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0002326188_le_conditionnel_pass__exercices_et_corrig__web.pdf
+//
+// the longest verb form: "auraient commencé"
 
 "use strict";
 
