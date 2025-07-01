@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<!-- exercises are taken from https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F851010166_Le_conditionnel_pr_sent_exercices_et_corrig_.pdf -->
+
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>La forme passive</title>
+
+    <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="module">
+        "use strict";
+        import { ErrorCounter } from '../js/ErrorCounter.mjs';
+        ErrorCounter.initialize();
+    </script>
+</head>
+
+<body>
+    <main spellcheck="false">
+        <article class="text">
+            <h2>La forme passive</h2>
+
+
+            <section class="span-half">
+                <h4> Écrivez ces phrases à la forme passive.</h4>
+
+                <div>
+                    <span>
+                        Le comptable tient les livres.
+                        <span class="whitespace"></span>
+                        --->
+                    </span>
+                    <span>Les livres sont tenus par le comptable.</span>
+                </div>
+
+                <ol>
+                    <li>
+                        <div>
+                            <span title="Le voleur est arrêté par les policiers.">Les policiers arrêtent le
+                                voleur.</span>
+                            <span><input type="text" pattern="Le voleur est arrêté par les policiers[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Les plans de maison sont dessinés par l’architecte.">L’architecte dessine les
+                                plans de maison.</span>
+                            <span><input type="text"
+                                    pattern="Les plans de maison sont dessinés par l’architecte[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Le malade est soigné par l’infirmière.">L’infirmière soigne le malade.</span>
+                            <span><input type="text" pattern="Le malade est soigné par l’infirmière[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="La princesse est réveillée par le prince.">Le prince réveille la
+                                princesse.</span>
+                            <span><input type="text" pattern="La princesse est réveillée par le prince[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="La terre est cultivée par l’agriculteur.">L’agriculteur cultive la
+                                terre.</span>
+                            <span><input type="text" pattern="La terre est cultivée par l’agriculteur[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Le miel est produit par l’abeille.">L’abeille produit le miel.</span>
+                            <span><input type="text" pattern="Le miel est produit par l’abeille[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Le chien a été renversé par une voiture.">Une voiture a renversé le
+                                chien.</span>
+                            <span><input type="text" pattern="Le chien a été renversé par une voiture[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Une maison est bâtie par l’entrepreneur.">L’entrepreneur bâtit une
+                                maison.</span>
+                            <span><input type="text" pattern="Une maison est bâtie par l’entrepreneur[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Le panier est rempli par des fruits.">Des fruits remplissent le panier.</span>
+                            <span><input type="text" pattern="Le panier est rempli par des fruits[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="L’ordinateur est dépanné par le technicien.">Le technicien dépanne
+                                l’ordinateur.</span>
+                            <span><input type="text" pattern="L’ordinateur est dépanné par le technicien[.]?"></span>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="span-half">
+                <h4>Écrivez ces phrases à la forme active.</h4>
+
+                <div>
+                    <span>
+                        La souris est mangée par le chat.
+                        <span class="whitespace"></span>
+                        --->
+                    </span>
+                    <span>Le chat mange la souris.</span>
+                </div>
+
+                <ol>
+                    <li>
+                        <div>
+                            <span title="La boulangère fait le pain.">Le pain est fait par la boulangère.</span>
+                            <span><input type="text" pattern="La boulangère fait le pain[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="La maison offre le café.">Le café est offert par la maison.</span>
+                            <span><input type="text" pattern="La maison offre le café[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Le directeur étudie les demandes.">Les demandes sont étudiées par le
+                                directeur.</span>
+                            <span><input type="text" pattern="Le directeur étudie les demandes[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Un médecin suivrait la malade.">La malade serait suivie par un médecin.</span>
+                            <span><input type="text" pattern="Un médecin suivrait la malade[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Le gouvernement aide les personnes âgées.">Les personnes âgées sont aidées par
+                                le gouvernement.</span>
+                            <span><input type="text" pattern="Le gouvernement aide les personnes âgées[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Les employés revendiquent un meilleur salaire.">Un meilleur salaire est
+                                revendiqué par les employés.</span>
+                            <span><input type="text" pattern="Les employés revendiquent un meilleur salaire[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="La direction chasse l’étudiant.">L’étudiant est chassé par la direction.</span>
+                            <span><input type="text" pattern="La direction chasse l’étudiant[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Des spécialistes enseignent le mandarin.">La mandarin est enseigné par des
+                                spécialistes.</span>
+                            <span><input type="text" pattern="Des spécialistes enseignent le mandarin[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Les mères auraient cherché leurs enfants.">Les enfants auraient été cherchés
+                                par leurs mères.</span>
+                            <span><input type="text" pattern="Les mères auraient cherché leurs enfants[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="L’infirmière a vacciné les malades.">Les malades ont été vaccinés par
+                                l’infirmière.</span>
+                            <span><input type="text" pattern="L’infirmière a vacciné les malades[.]?"></span>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+
+            <section class="span-half">
+                <h4>Écrivez ces phrases à la forme passive.</h4>
+
+                <div>
+                    <span>
+                        On engage un nouvel enseignant.
+                        <span class="whitespace"></span>
+                        --->
+                    </span>
+                    <span>Un nouvel enseignant est engagé.</span>
+                </div>
+
+                <ol>
+                    <li>
+                        <div>
+                            <span title="Un rendez-vous est pris chez le dentiste.">On prend un rendez-vous chez le
+                                dentiste.</span>
+                            <span><input type="text" pattern="Un rendez-vous est pris chez le dentiste[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Un sujet d’actualité sera discuté.">On discutera un sujet d’actualité.</span>
+                            <span><input type="text" pattern="Un sujet d’actualité sera discuté[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="La pâte a été pétrie.">On a pétrit la pâte.</span>
+                            <span><input type="text" pattern="La pâte a été pétrie[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Les membres du comité ont été prévenus.">On a prévenu les membres du
+                                comité.</span>
+                            <span><input type="text" pattern="Les membres du comité ont été prévenus[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Un repas végétarien sera préparé.">On préparera un repas végétarien.</span>
+                            <span><input type="text" pattern="Un repas végétarien sera préparé[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Du champagne serait servi.">On servirait du champagne.</span>
+                            <span><input type="text" pattern="Du champagne serait servi[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Une voiture française a été choisie.">On a choisi une voiture française.</span>
+                            <span><input type="text" pattern="Une voiture française a été choisie[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Les directives seront suivies.">On suivra les directives.</span>
+                            <span><input type="text" pattern="Les directives seront suivies[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="L’ordinateur est de plus en plus utilisé.">On utilise de plus en plus
+                                l’ordinateur.</span>
+                            <span><input type="text" pattern="L’ordinateur est de plus en plus utilisé[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Les dates du colloque seraient modifiées.">On modifierait les dates du
+                                colloque.</span>
+                            <span><input type="text" pattern="Les dates du colloque seraient modifiées[.]?"></span>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+
+            <section class="span-half">
+                <h4>Écrivez ces phrases à la forme active en utilisant <i>on</i>.</h4>
+
+                <div>
+                    <span>
+                        Les vacances sont attendues avec impatience.
+                        --->
+                    </span>
+                    <span>On attend les vacances avec impatience.</span>
+                </div>
+
+                <ol>
+                    <li>
+                        <div>
+                            <span title="On enverra les invitations.">Les invitations seront envoyées.</span>
+                            <span><input type="text" pattern="On enverra les invitations[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On décorera le gâteau.">Le gâteau sera décoré.</span>
+                            <span><input type="text" pattern="On décorera le gâteau[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On fera les courses dans les magasins.">Les courses seront faites dans les
+                                magasins.</span>
+                            <span><input type="text" pattern="On fera les courses dans les magasins[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On installerait les décorations.">Les décorations seraient installées.</span>
+                            <span><input type="text" pattern="On installerait les décorations[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On couchait le bébé.">Le bébé était couché.</span>
+                            <span><input type="text" pattern="On couchait le bébé[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On nettoyait le jardin.">Notre jardin était nettoyé.</span>
+                            <span><input type="text" pattern="On nettoyait le jardin[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On a repeint la maison.">La maison a été repeinte.</span>
+                            <span><input type="text" pattern="On a repeint la maison[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On planifiait les détails de la soirée.">Les détails de la soirée étaient
+                                planifiés.</span>
+                            <span><input type="text" pattern="On planifiait les détails de la soirée[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On ouvrait les bouteilles de vin.">Les bouteilles de vin étaient
+                                ouvertes.</span>
+                            <span><input type="text" pattern="On ouvrait les bouteilles de vin[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="On soufflerait les ballons.">Les ballons seraient soufflés.</span>
+                            <span><input type="text" pattern="On soufflerait les ballons[.]?"></span>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+
+            <section class="span-half">
+                <h4>Écrivez ces phrases à la forme passive.</h4>
+
+                <ol>
+                    <li>
+                        <div>
+                            <span title="Elle a été facilement séduite par ce jeune homme.">Ce jeune homme l’a séduite
+                                facilement.</span>
+                            <span><input type="text"
+                                    pattern="Elle a été facilement séduite par ce jeune homme[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="La banque aurait été fermée pour rénovations.">On aurait fermé la banque pour
+                                rénovations.</span>
+                            <span><input type="text" pattern="La banque aurait été fermée pour rénovations[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Ces fleurs sont cueillies par le jardinier.">Le jardinier cueille ces
+                                fleurs.</span>
+                            <span><input type="text" pattern="Ces fleurs sont cueillies par le jardinier[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Ce vêtement doit être lavé à la main.">On doit laver ce vêtement à la
+                                main.</span>
+                            <span><input type="text" pattern="Ce vêtement doit être lavé à la main[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Cette société est dirigée par un roi.">Un roi dirige cette société.</span>
+                            <span><input type="text" pattern="Cette société est dirigée par un roi[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Une reine est élue lors du carnaval d’hiver.">Lors du carnaval d’hiver, on élit
+                                une reine.</span>
+                            <span><input type="text" pattern="Une reine est élue lors du carnaval d’hiver[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Votre projet pourra être présenté.">Vous pourrez présenter votre projet.</span>
+                            <span><input type="text" pattern="Votre projet pourra être présenté[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Des étudiants chinois sont souvent reçus.">On reçoit souvent des étudiants
+                                chinois.</span>
+                            <span><input type="text" pattern="Des étudiants chinois sont souvent reçus[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Le silence doit être gardé.">Ils doivent garder le silence.</span>
+                            <span><input type="text" pattern="Le silence doit être gardé[.]?"></span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span title="Les primes au rendement seront supprimées.">On supprimera les primes au
+                                rendement.</span>
+                            <span><input type="text" pattern="Les primes au rendement seront supprimées[.]?"></span>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+
+            <iframe src="partials/errorCounter.html"
+                onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
+
+        </article>
+    </main>
+</body>
+
+</html>
