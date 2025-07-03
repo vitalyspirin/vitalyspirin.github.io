@@ -15,9 +15,9 @@ class ErrorCounterObj {
 export class ErrorCounter {
     static id;
     static errorCounter;
+    static startTimestamp;
 
     static initialize(verbTenseList = [], self = this) {
-console.log(document.getElementsByTagName('iframe').length);
         if (document.getElementsByTagName('iframe').length != 0) {
             // wait till footer iframe is processed
             setTimeout(self.initialize, 20, verbTenseList, self);
@@ -29,7 +29,10 @@ console.log(document.getElementsByTagName('iframe').length);
     static initializeAfterDelay(verbTenseList, self) {
         self.id = Date.now();
 
-        document.querySelectorAll('input[type="text"]').forEach((inputElement) => {
+        const allInputElements = document.querySelectorAll('input[type="text"]');
+        self.initializeTimer(allInputElements);
+
+        allInputElements.forEach((inputElement) => {
             inputElement.addEventListener("focusout", self.focusOutEventHandler);
         });
 
@@ -60,6 +63,26 @@ console.log(document.getElementsByTagName('iframe').length);
                 }
             });
         }
+    }
+
+    static initializeTimer(allInputElements) {
+        const firstInputElement = allInputElements.item(0);
+        firstInputElement.addEventListener("focusout", (e) => {
+            if (ErrorCounter.startTimestamp == null) {
+                ErrorCounter.startTimestamp = Date.now();
+            }
+        });
+
+        const lastInputElement = allInputElements.item(allInputElements.length - 1);
+        lastInputElement.addEventListener("focusout", (e) => {
+            if (ErrorCounter.startTimestamp != null) {
+                const timeDuration = Date.now() - ErrorCounter.startTimestamp;
+
+                document.getElementById('total-time').textContent = String(
+                    Utils.timestampToTime(timeDuration)
+                );
+            }
+        });
     }
 
     static focusOutEventHandler(event) {

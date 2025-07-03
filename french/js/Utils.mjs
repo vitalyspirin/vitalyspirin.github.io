@@ -55,6 +55,17 @@ export class Utils {
 
     }
 
+    static timestampToTime(timestamp) {
+        let theDate = new Date(timestamp);
+
+        let formattedDate = theDate.toLocaleString("en-CA", {
+            minute: '2-digit',
+            second: '2-digit'
+        });
+
+        return formattedDate;
+    }
+
     static getWeek(dateStr) {
         const date = new Date(dateStr);
 

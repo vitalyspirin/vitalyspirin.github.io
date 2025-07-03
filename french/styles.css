@@ -193,7 +193,7 @@ header label:last-of-type {
     width: 5em !important;
 }
 
-.error-counter h4 {
+.error-counter-line {
     display: none;
 }
 
