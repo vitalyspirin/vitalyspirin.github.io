@@ -20,3 +20,5 @@ Words to have in all tenses:
 - suivre
 - nettoyer
 - plaindre
+- prononcer
+

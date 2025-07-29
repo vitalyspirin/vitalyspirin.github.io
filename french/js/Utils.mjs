@@ -52,18 +52,23 @@ export class Utils {
         });
 
         return formattedDate;
-
     }
 
     static timestampToTime(timestamp) {
-        let theDate = new Date(timestamp);
+        const timestampInSeconds = Math.floor(timestamp / 1000);
 
-        let formattedDate = theDate.toLocaleString("en-CA", {
-            minute: '2-digit',
-            second: '2-digit'
-        });
+        const hours = Math.floor(timestampInSeconds / 3600);
+        const minutes = Math.floor((timestampInSeconds - hours * 3600) / 60);
+        const seconds = Math.floor(timestampInSeconds - hours * 3600 - minutes * 60);
 
-        return formattedDate;
+        let formattedTime = '';
+        if (hours > 0) {
+            formattedTime = String(hours).padStart(2, '0') + ':';
+        }
+        formattedTime += String(minutes).padStart(2, '0') + ':';
+        formattedTime += String(seconds).padStart(2, '0');
+
+        return formattedTime;
     }
 
     static getWeek(dateStr) {
