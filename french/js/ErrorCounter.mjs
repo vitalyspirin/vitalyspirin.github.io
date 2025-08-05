@@ -10,6 +10,7 @@ class ErrorCounterObj {
     numberOfErrors = 0;
     numberOfCompleted = 0;
     numberOfAllInputElements = 0;
+    duration;
 }
 
 export class ErrorCounter {
@@ -74,13 +75,17 @@ export class ErrorCounter {
         });
 
         const lastInputElement = allInputElements.item(allInputElements.length - 1);
-        lastInputElement.addEventListener("focusout", (e) => {
+        lastInputElement.addEventListener("focusout", (event) => {
             if (ErrorCounter.startTimestamp != null) {
                 const timeDuration = Date.now() - ErrorCounter.startTimestamp;
 
                 document.getElementById('total-time').textContent = String(
                     Utils.timestampToTime(timeDuration)
                 );
+
+                const verbTense = event.target.getAttribute('data-verb-tense');
+                ErrorCounter.getErrorCounter(verbTense).duration = timeDuration;
+                ErrorCounter.saveStats(ErrorCounter.getErrorCounter(verbTense), verbTense);
             }
         });
     }
@@ -133,7 +138,8 @@ export class ErrorCounter {
             'timestamp': Date.now(),
             'result': errorCounter.numberOfCompleted /
                 errorCounter.numberOfAllInputElements,
-            'errors': errorCounter.numberOfErrors
+            'errors': errorCounter.numberOfErrors,
+            'duration': errorCounter.duration
         };
         localStorage.setItem(this.getStorageKey(verbTense), JSON.stringify(stats));
 

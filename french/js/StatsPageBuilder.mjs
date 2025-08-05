@@ -38,6 +38,7 @@ export class StatsPageBuilder {
         const dateCell = tableRowElement.getElementsByClassName('date')[0];
         dateCell.innerText = date;
 
+        let duration = 0;
         for (const statsPageKey in statsForOneDate) {
             let tableCell = tableRowElement.getElementsByClassName(statsPageKey)[0];
 
@@ -48,7 +49,9 @@ export class StatsPageBuilder {
 
             tableCell.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
             tableCell.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
+            duration += statsForOneDate[statsPageKey]['duration'];
         }
+        dateCell.title = 'time spent: ' + Utils.timestampToTime(duration);
     }
 
     static #buildStatsObject() {
@@ -68,6 +71,12 @@ export class StatsPageBuilder {
                     result: statsForPage[pageStatsKey]['result'],
                     errors: statsForPage[pageStatsKey]['errors']
                 };
+
+                if (statsForPage[pageStatsKey]['duration']) {
+                    this.stats[formattedDate][pageKey]['duration'] = statsForPage[pageStatsKey]['duration'];
+                } else {
+                    this.stats[formattedDate][pageKey]['duration'] = 0;
+                }
             });
 
         });
