@@ -143,7 +143,7 @@ header label:last-of-type {
 }
 
 .text .input-sentence-width input {
-    width: 30em
+    width: 38em;
 }
 
 .text section {
@@ -168,11 +168,14 @@ header label:last-of-type {
     width: 32%;
 }
 
-.text .span-half div span:nth-of-type(2) { /* line for given example for exercise */
+.text .span-half div span:nth-of-type(2) {
+    /* line for given example for exercise */
     box-sizing: border-box;
     padding-left: 0.5em;
 }
-.text .span-third div span:nth-of-type(2) { /* line for given example for exercise */
+
+.text .span-third div span:nth-of-type(2) {
+    /* line for given example for exercise */
     box-sizing: border-box;
     padding-left: 0.5em;
 }
@@ -192,7 +195,8 @@ header label:last-of-type {
     background-color: yellow;
 }
 
-.text section li span:nth-of-type(2), .text section li span:nth-of-type(3) {
+.text section li span:nth-of-type(2),
+.text section li span:nth-of-type(3) {
     display: inline-flex;
 }
 
@@ -205,6 +209,7 @@ header label:last-of-type {
     display: inline-block;
     width: 5em !important;
 }
+
 .whitespace-mini {
     display: inline-block;
     width: 1em !important;
