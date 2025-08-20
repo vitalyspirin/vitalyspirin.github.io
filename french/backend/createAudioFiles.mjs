@@ -40,9 +40,9 @@ import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInConditionalPerfectTense, audioFileFolderForConditionalPerfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
-saveAudioFilesBase64ForVerbList(verbsInImperativeTense, audioFileFolderForImperativeTense);
+// saveAudioFilesBase64ForVerbList(verbsInImperativeTense, audioFileFolderForImperativeTense);
 
-// saveAudioFilesBase64ForInfinitive("Écrire", verbsInPastPerfectTense["Écrire"], audioFileFolderForPastPerfectTense);
+saveAudioFilesBase64ForInfinitive("Payer", verbsInFuturTense["Payer"], audioFileFolderForFutureTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {

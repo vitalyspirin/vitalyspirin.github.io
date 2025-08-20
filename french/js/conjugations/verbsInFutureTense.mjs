@@ -131,12 +131,12 @@ export default {
         Ils: "jetteront"
     },
     Payer: {
-        Je: "paierai",
-        Tu: "paieras",
-        Il: "paiera",
-        Nous: "paierons",
-        Vous: "paierez",
-        Ils: "paieront"
+        Je: "payerai",
+        Tu: "payeras",
+        Il: "payera",
+        Nous: "payerons",
+        Vous: "payerez",
+        Ils: "payeront"
     },
     Envoyer: {
         "J'": "enverrai",

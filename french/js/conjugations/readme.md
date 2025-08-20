@@ -21,4 +21,5 @@ Words to have in all tenses:
 - nettoyer
 - plaindre
 - prononcer
+- payer
 
