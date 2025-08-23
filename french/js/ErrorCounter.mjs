@@ -173,9 +173,19 @@ export class ErrorCounter {
         keys.forEach((key) => {
             let newStateLineElement = statsLineElement.cloneNode();
 
+            if (!(newStateLineElement instanceof HTMLElement)) { // typecast for .innerHTML
+                console.error('newStateLineElement must be instanceof HTMLElement.');
+                return;
+            }
+
             let formattedDate = Utils.timestampToDateAndTime(Number(stats[key]['timestamp']));
             const result = Math.round(100 * Number(stats[key]['result']));
-            newStateLineElement.textContent = formattedDate + ' - ' + result +
+            newStateLineElement.textContent = formattedDate;
+            if (Object.hasOwn(stats[key], 'duration')) {
+                newStateLineElement.textContent += ' (durée: ' +
+                    Utils.timestampToTime(stats[key]['duration']) + ')';
+            }
+            newStateLineElement.innerHTML += ' &nbsp; - &nbsp; ' + result +
                 '% (' + stats[key]['errors'] + ' erreurs)';
 
             document.getElementById('stats').appendChild(newStateLineElement);
