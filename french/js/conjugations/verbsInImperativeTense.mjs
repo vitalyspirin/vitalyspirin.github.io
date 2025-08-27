@@ -15,8 +15,8 @@ export default {
 	},
 	Être: {
 		"Tu,": "sois",
-		"Nous,": "oyons",
-		"Vous,": "oyez"
+		"Nous,": "soyons",
+		"Vous,": "soyez"
 	},
 	Vouloir: {
 		"Tu,": "veuille",
@@ -126,7 +126,7 @@ export default {
 	Sourire: {
 		"Tu,": "souris",
 		"Nous,": "sourions",
-		"Vous,": "sourions"
+		"Vous,": "souriez"
 	},
 	Dire: {
 		"Tu,": "dis",
@@ -204,7 +204,7 @@ export default {
 		"Vous,": "plaignez-vous"
 	},
 	"Se taire": {
-		"Tu,": "Tais-toi",
+		"Tu,": "tais-toi",
 		"Nous,": "taisons-nous",
 		"Vous,": "taisez-vous"
 	},
@@ -216,7 +216,7 @@ export default {
 	"Se distraire": {
 		"Tu,": "distrais-toi",
 		"Nous,": "distrayons-nous",
-		"Vous,": "distrayez-vous "
+		"Vous,": "distrayez-vous"
 	},
 	Voir: {
 		"Tu,": "vois",
