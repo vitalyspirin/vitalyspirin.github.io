@@ -42,7 +42,7 @@ import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 // saveAudioFilesBase64ForVerbList(verbsInImperativeTense, audioFileFolderForImperativeTense);
 
-saveAudioFilesBase64ForInfinitive("Payer", verbsInFuturTense["Payer"], audioFileFolderForFutureTense);
+saveAudioFilesBase64ForInfinitive("Se distraire", verbsInImperativeTense["Se distraire"], audioFileFolderForImperativeTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
