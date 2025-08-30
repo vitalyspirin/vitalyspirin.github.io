@@ -171,24 +171,25 @@ export class ErrorCounter {
         const keys = Object.keys(stats).reverse();
 
         keys.forEach((key) => {
-            let newStateLineElement = statsLineElement.cloneNode();
+            let newStatsLineElement = statsLineElement.cloneNode();
 
-            if (!(newStateLineElement instanceof HTMLElement)) { // typecast for .innerHTML
+            if (!(newStatsLineElement instanceof HTMLElement)) { // typecast for .innerHTML
                 console.error('newStateLineElement must be instanceof HTMLElement.');
                 return;
             }
 
             let formattedDate = Utils.timestampToDateAndTime(Number(stats[key]['timestamp']));
             const result = Math.round(100 * Number(stats[key]['result']));
-            newStateLineElement.textContent = formattedDate;
+
+            newStatsLineElement.innerHTML = '&nbsp;' + formattedDate; // += because template can have something
             if (Object.hasOwn(stats[key], 'duration')) {
-                newStateLineElement.textContent += ' (durée: ' +
+                newStatsLineElement.innerHTML += ' (durée: ' +
                     Utils.timestampToTime(stats[key]['duration']) + ')';
             }
-            newStateLineElement.innerHTML += ' &nbsp; - &nbsp; ' + result +
+            newStatsLineElement.innerHTML += ' &nbsp; - &nbsp; ' + result +
                 '% (' + stats[key]['errors'] + ' erreurs)';
 
-            document.getElementById('stats').appendChild(newStateLineElement);
+            document.getElementById('stats').appendChild(newStatsLineElement);
         });
     }
 

@@ -156,6 +156,30 @@ header label:last-of-type {
 
 .text li {
     margin-bottom: 1em;
+    margin-left: 0.75em;
+}
+
+ol#stats {
+    counter-reset: item;
+    list-style-type: none;
+}
+
+#stats li {
+    margin-left: -2.5em;
+}
+
+.text #stats li {
+    margin-left: -1em;
+}
+
+#stats li {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+#stats li::before {
+    content: counter(item) ") ";
+    counter-increment: item;
 }
 
 .text .span-half span {
