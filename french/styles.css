@@ -293,6 +293,13 @@ thead tr:first-child th {
     color: black;
 }
 
+.card .cefr {
+    position: absolute;
+    padding: 1em 0 0 6.6em;
+    color: black;
+    opacity: 0.25;
+}
+
 .card a,
 a.wide {
     display: block;
