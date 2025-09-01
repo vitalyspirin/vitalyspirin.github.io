@@ -162,6 +162,8 @@ header label:last-of-type {
 ol#stats {
     counter-reset: item;
     list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #stats li {

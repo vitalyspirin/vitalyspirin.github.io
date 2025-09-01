@@ -168,7 +168,7 @@ export class ErrorCounter {
         const statsLineElement = template.content.firstElementChild;
 
         const stats = ErrorCounter.retrieveStats(null);
-        const keys = Object.keys(stats).reverse();
+        const keys = Object.keys(stats);
 
         keys.forEach((key) => {
             let newStatsLineElement = statsLineElement.cloneNode();
