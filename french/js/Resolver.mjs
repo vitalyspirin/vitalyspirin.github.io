@@ -9,6 +9,7 @@ import verbsInFutureTense, { audioFileFolder as audioFileFolderForFutureTense } 
 import verbsInImperativeTense, { audioFileFolder as audioFileFolderForImperativeTense } from './conjugations/verbsInImperativeTense.mjs';
 import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfectTense } from './conjugations/verbsInPastPerfectTense.mjs';
 import verbsInConditionalPresentTense, { audioFileFolder as audioFileFolderForConditionalPresentTense } from './conjugations/verbsInConditionalPresentTense.mjs';
+import verbsInPresentSubjunctiveTense, { audioFileFolder as audioVerbsInPresentSubjunctiveTense } from './conjugations/verbsInPresentSubjunctiveTense.mjs';
 import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './conjugations/verbsInConditionalPerfectTense.mjs';
 
 
@@ -45,6 +46,10 @@ export class Resolver {
         "L'impératif": {
             folder: audioFileFolderForImperativeTense,
             verbList: verbsInImperativeTense
+        },
+        "Le subjonctif présent": {
+            folder: audioVerbsInPresentSubjunctiveTense,
+            verbList: verbsInPresentSubjunctiveTense
         }
     };
 

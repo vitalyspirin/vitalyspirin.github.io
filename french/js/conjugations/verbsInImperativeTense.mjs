@@ -229,9 +229,9 @@ export default {
 		"Vous,": "recevez"
 	},
 	"S'asseoir": {
-		"Tu,": "assois-toi",
-		"Nous,": "assoyons-nous",
-		"Vous,": "assoyez-vous"
+		"Tu,": "assieds-toi",
+		"Nous,": "asseyons-nous",
+		"Vous,": "asseyez-vous"
 	},
 	"Se lever": {
 		"Tu,": "lève-toi",
