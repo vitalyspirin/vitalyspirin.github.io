@@ -43,13 +43,13 @@ export class Resolver {
             folder: audioFileFolderForConditionalPerfectTense,
             verbList: verbsInConditionalPerfectTense
         },
-        "L'impératif": {
-            folder: audioFileFolderForImperativeTense,
-            verbList: verbsInImperativeTense
-        },
         "Le subjonctif présent": {
             folder: audioVerbsInPresentSubjunctiveTense,
             verbList: verbsInPresentSubjunctiveTense
+        },
+        "L'impératif": {
+            folder: audioFileFolderForImperativeTense,
+            verbList: verbsInImperativeTense
         }
     };
 
