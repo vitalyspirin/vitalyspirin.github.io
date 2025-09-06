@@ -3,6 +3,7 @@
 
 "use strict";
 
+import { Config } from './Config.mjs';
 import { Utils } from './Utils.mjs';
 
 export class StatsPageBuilder {
@@ -58,6 +59,8 @@ export class StatsPageBuilder {
         const pagesKeys = Object.keys(localStorage);
 
         pagesKeys.forEach((pageKey) => {
+            if (pageKey === Config.storageKey) return;
+
             const statsForPage = JSON.parse(localStorage.getItem(pageKey));
             const pageStatsKeys = Object.keys(statsForPage);
 

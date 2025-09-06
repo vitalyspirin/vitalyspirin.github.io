@@ -3,10 +3,10 @@
 "use strict";
 
 export class Config {
-    static #storageKey = 'CONFIG';
+    static storageKey = 'CONFIG';
 
     static save(key, subkey, value) {
-        let config = JSON.parse(localStorage.getItem(this.#storageKey));
+        let config = JSON.parse(localStorage.getItem(this.storageKey));
 
         if (config == null) config = {};
 
@@ -14,13 +14,13 @@ export class Config {
 
         config[key][subkey] = value;
 
-        localStorage.setItem(this.#storageKey, JSON.stringify(config));
+        localStorage.setItem(this.storageKey, JSON.stringify(config));
     }
 
     static retrieve(key, subkey) {
         let result;
 
-        let config = JSON.parse(localStorage.getItem(this.#storageKey));
+        let config = JSON.parse(localStorage.getItem(this.storageKey));
 
         if (config == null) {
             result = null;
