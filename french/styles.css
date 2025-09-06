@@ -101,6 +101,27 @@ header label:last-of-type {
     margin-bottom: 2em;
 }
 
+.conjugations-for-one-tense-block.presentsubjunctive label {
+    width: 4.2em;
+}
+
+.conjugations-for-one-tense-block.presentsubjunctive input {
+    width: 6.3em;
+}
+
+.one-tense-only hr,
+.one-tense-only .conjugations-for-one-tense-block .tense {
+    display: none;
+}
+
+.one-tense-only .verb-block {
+    display: inline-block;
+    width: 33.3%;
+}
+
+.one-tense-only .conjugations-for-one-tense-block {
+    width: auto;
+}
 
 /* Text exercises */
 
@@ -275,6 +296,9 @@ td.date {
 thead tr:first-child th {
     width: 6rem;
 }
+
+
+/* index page */
 
 .card {
     display: inline-block;

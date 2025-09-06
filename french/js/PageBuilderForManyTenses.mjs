@@ -44,13 +44,20 @@ export class PageBuilderForManyTenses {
     }
 
     static buildForManyTenses(verbMixedConjugationList, title) {
-        document.title = title;
-        document.getElementById("page-title").textContent = title;
 
         let tenseList = this.getVerbTenseList();
 
         let verbListBlock = document.getElementById("verb-list");
         verbListBlock.textContent = '';
+        if (tenseList.length === 1) {
+            verbListBlock.className = 'one-tense-only';
+            title = Resolver.getTenseByFolder(tenseList[0]);
+        } else {
+            verbListBlock.className = '';
+        }
+
+        document.title = title;
+        document.getElementById("page-title").textContent = title;
 
         let templateVerbBlock = document.getElementById("template-verb-block")
             // @ts-ignore
@@ -103,6 +110,8 @@ export class PageBuilderForManyTenses {
         conjugationList,
         tense
     ) {
+        newConjugationsForOneTenseBlock.classList.add(tense);
+
         let tenseElement = newConjugationsForOneTenseBlock.querySelector(".tense");
         tenseElement.textContent = Resolver.getTenseByFolder(tense);
 
