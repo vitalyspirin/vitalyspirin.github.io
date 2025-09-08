@@ -43,7 +43,7 @@ header h4 {
 }
 
 .verb-list {
-    margin: 0em 1em;
+    /*margin: 0em 1em;*/
 }
 
 .verb-list .verb-block,
@@ -77,6 +77,10 @@ header h4 {
 .verb-block .conjugation-line {
     margin: 1em 0;
     display: flex;
+}
+
+.conjugations-for-one-tense-block .conjugation-line:first-of-type {
+    margin-top: 0;
 }
 
 input:invalid:not(:focus) {
