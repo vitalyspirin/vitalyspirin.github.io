@@ -90,6 +90,10 @@ input.failed:not(:invalid) {
 
 /* Mixed conjugation page */
 
+#checkboxes-to-choose-tenses {
+    display: none;
+}
+
 header label {
     display: inline-block;
     width: 24%;

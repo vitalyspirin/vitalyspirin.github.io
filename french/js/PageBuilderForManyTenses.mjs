@@ -29,23 +29,29 @@ export class PageBuilderForManyTenses {
     }
 
 
-    static getVerbTenseList() {
+    static getVerbTenseList(title) {
         let verbTenseList = [];
-        document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
-            if (!(checkboxElement instanceof HTMLInputElement)) {
-                console.error("Element with selector '.verb-tense-checkbox' must be of type HTMLInputElement but it's of type:");
-                console.error(Utils.getType(checkboxElement));
-            } else if (checkboxElement.checked) {
-                verbTenseList.push(checkboxElement.getAttribute('name'));
-            }
-        });
+
+        if (Resolver.map[title] !== undefined) {
+            // checkboxes are invisible so figure out tense from title 
+            // (which is taken from query search string)
+            verbTenseList.push(Resolver.map[title].folder);
+        } else {
+            document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
+                if (!(checkboxElement instanceof HTMLInputElement)) {
+                    console.error("Element with selector '.verb-tense-checkbox' must be of type HTMLInputElement but it's of type:");
+                    console.error(Utils.getType(checkboxElement));
+                } else if (checkboxElement.checked) {
+                    verbTenseList.push(checkboxElement.getAttribute('name'));
+                }
+            });
+        }
 
         return verbTenseList;
     }
 
     static buildForManyTenses(verbMixedConjugationList, title) {
-
-        let tenseList = this.getVerbTenseList();
+        let tenseList = this.getVerbTenseList(title);
 
         let verbListBlock = document.getElementById("verb-list");
         verbListBlock.textContent = '';

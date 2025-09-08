@@ -13,11 +13,16 @@
         "use strict";
 
         import { PageBuilderForManyTenses } from '../js/PageBuilderForManyTenses.mjs';
+        import { Resolver } from '../js/Resolver.mjs';
         import { ErrorCounter } from '../js/ErrorCounter.mjs';
         import { Config } from '../js/Config.mjs';
 
         const verbListObject = PageBuilderForManyTenses.getVerbList();
         const title = window.decodeURIComponent(window.location.search).substring(1);
+
+        if (Resolver.map[title] === undefined) {
+            document.getElementById('checkboxes-to-choose-tenses').style.display = 'block';
+        }
 
         let page = window.location.pathname.split('/').pop() + window.location.search;
 
@@ -34,7 +39,7 @@
 
         PageBuilderForManyTenses.buildForManyTenses(verbListObject, title);
 
-        ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList());
+        ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList(title));
     </script>
 </head>
 
@@ -45,39 +50,47 @@
             <header>
                 <h3 id="page-title">Temps de conjugaison</h3>
 
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="present" checked="checked">Le présent
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="presentperfect" checked="checked">Le passé
-                    composé
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="imperfect" checked="checked">L'imparfait
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="future" checked="checked">Le futur simple
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="pastperfect" checked="checked">Le
-                    plus-que-parfait
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="conditionalpresent" checked="checked">Le
-                    conditionnel présent
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="presentsubjunctive" checked="checked">Le
-                    subjonctif présent
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="conditionalperfect" checked="checked">Le
-                    conditionnel passé
-                </label>
-                <label>
-                    <input type="checkbox" class="verb-tense-checkbox" name="imperative" checked="checked">L'impératif
-                </label>
-
+                <span id="checkboxes-to-choose-tenses">
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="present" checked="checked">Le présent
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="presentperfect" checked="checked">Le
+                        passé
+                        composé
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="imperfect"
+                            checked="checked">L'imparfait
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="future" checked="checked">Le futur
+                        simple
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="pastperfect" checked="checked">Le
+                        plus-que-parfait
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="conditionalpresent"
+                            checked="checked">Le
+                        conditionnel présent
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="presentsubjunctive"
+                            checked="checked">Le
+                        subjonctif présent
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="conditionalperfect"
+                            checked="checked">Le
+                        conditionnel passé
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="imperative"
+                            checked="checked">L'impératif
+                    </label>
+                </span>
                 <h4>Conjuguez ces <span id="number-of-verbs"></span> verbes.</h4>
             </header>
 
