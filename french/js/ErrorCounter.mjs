@@ -43,8 +43,6 @@ export class ErrorCounter {
             self.errorCounter = new ErrorCounterObj();
             self.errorCounter.numberOfAllInputElements =
                 document.querySelectorAll('input[type="text"]').length;
-
-            self.showStats();
         } else {
             self.errorCounter = {};
 
@@ -64,10 +62,23 @@ export class ErrorCounter {
                 }
             });
         }
+
+        if (verbTenseList.length === 0) {
+            self.showStats();
+        } else if (verbTenseList.length === 1) {
+            self.showStats(verbTenseList[0]);
+        } else {
+            self.hideStats();
+        }
     }
 
     static initializeTimer(allInputElements) {
         const firstInputElement = allInputElements.item(0);
+
+        if (firstInputElement === null) {
+            return; // probably no tense is chosen on mixed conjugation page
+        }
+
         firstInputElement.addEventListener("focusout", (e) => {
             if (ErrorCounter.startTimestamp == null) {
                 ErrorCounter.startTimestamp = Date.now();
@@ -158,7 +169,10 @@ export class ErrorCounter {
         return stats;
     }
 
-    static showStats() {
+    static showStats(verbTense = null) {
+        document.getElementById('stats-title').style.display = 'block';
+        document.getElementById('stats').textContent = '';
+
         const template = document.getElementById('template-stats-line')
 
         if (!(template instanceof HTMLTemplateElement)) {
@@ -167,7 +181,7 @@ export class ErrorCounter {
         }
         const statsLineElement = template.content.firstElementChild;
 
-        const stats = ErrorCounter.retrieveStats(null);
+        const stats = ErrorCounter.retrieveStats(verbTense);
         const keys = Object.keys(stats);
 
         keys.forEach((key) => {
@@ -191,6 +205,11 @@ export class ErrorCounter {
 
             document.getElementById('stats').appendChild(newStatsLineElement);
         });
+    }
+
+    static hideStats() {
+        document.getElementById('stats-title').style.display = 'none';
+        document.getElementById('stats').textContent = '';
     }
 
     static getStorageKey(verbTense) {
