@@ -30,13 +30,6 @@ export class ErrorCounter {
     static initializeAfterDelay(verbTenseList, self) {
         self.id = Date.now();
 
-        const allInputElements = document.querySelectorAll('input[type="text"]');
-        self.initializeTimer(allInputElements);
-
-        allInputElements.forEach((inputElement) => {
-            inputElement.addEventListener("focusout", self.focusOutEventHandler);
-        });
-
         if (verbTenseList.length === 0) {
             document.getElementById('error-counter-').style.display = 'block';
 
@@ -63,12 +56,24 @@ export class ErrorCounter {
             });
         }
 
-        if (verbTenseList.length === 0) {
-            self.showStats();
-        } else if (verbTenseList.length === 1) {
-            self.showStats(verbTenseList[0]);
-        } else {
+        const allInputElements = document.querySelectorAll('input[type="text"]');
+        if (allInputElements.length === 0) {
             self.hideStats();
+        } else {
+            self.initializeTimer(allInputElements);
+
+            allInputElements.forEach((inputElement) => {
+                inputElement.addEventListener("focusout", self.focusOutEventHandler);
+            });
+
+
+            if (verbTenseList.length === 0) {
+                self.showStats();
+            } else if (verbTenseList.length === 1) {
+                self.showStats(verbTenseList[0]);
+            } else {
+                self.hideStats(); // several tenses shown
+            }
         }
     }
 
