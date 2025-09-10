@@ -6,24 +6,27 @@ import { Resolver } from './Resolver.mjs';
 import { Utils } from './Utils.mjs';
 
 export class PageBuilderForManyTenses {
-    static getVerbList() {
+    static getVerbList(tenseList) {
         let verbMixedConjugationList = {};
 
-        for (let tense in Resolver.map) {
-            for (let infinitive in Resolver.map[tense].verbList) {
+        tenseList.forEach((tense) => {
+            let tenseName = Resolver.getTenseByFolder(tense);
+
+            let folderVerbListObj = Resolver.map[tenseName];
+            for (let infinitive in folderVerbListObj.verbList) {
 
                 if (!verbMixedConjugationList.hasOwnProperty(infinitive)) {
                     verbMixedConjugationList[infinitive] = {};
                 }
 
-                if (!verbMixedConjugationList[infinitive].hasOwnProperty(Resolver.map[tense].fileFolder)) {
-                    verbMixedConjugationList[infinitive][Resolver.map[tense].folder] = {};
+                if (!verbMixedConjugationList[infinitive].hasOwnProperty(folderVerbListObj.fileFolder)) {
+                    verbMixedConjugationList[infinitive][folderVerbListObj.folder] = {};
                 }
 
-                verbMixedConjugationList[infinitive][Resolver.map[tense].folder] =
-                    Resolver.map[tense].verbList[infinitive];
+                verbMixedConjugationList[infinitive][folderVerbListObj.folder] =
+                    folderVerbListObj.verbList[infinitive];
             }
-        }
+        });
 
         return verbMixedConjugationList;
     }
@@ -50,8 +53,9 @@ export class PageBuilderForManyTenses {
         return verbTenseList;
     }
 
-    static buildForManyTenses(verbMixedConjugationList, title) {
-        let tenseList = this.getVerbTenseList(title);
+    static buildForManyTenses(title) {
+        const tenseList = this.getVerbTenseList(title);
+        const verbMixedConjugationList = this.getVerbList(tenseList);
 
         let verbListBlock = document.getElementById("verb-list");
         verbListBlock.textContent = '';

@@ -17,7 +17,6 @@
         import { ErrorCounter } from '../js/ErrorCounter.mjs';
         import { Config } from '../js/Config.mjs';
 
-        const verbListObject = PageBuilderForManyTenses.getVerbList();
         const title = window.decodeURIComponent(window.location.search).substring(1);
 
         if (Resolver.map[title] === undefined) {
@@ -32,12 +31,12 @@
             checkboxElement.onclick = () => {
                 Config.save(page, checkboxElement.name, checkboxElement.checked);
 
-                PageBuilderForManyTenses.buildForManyTenses(verbListObject, title);
+                PageBuilderForManyTenses.buildForManyTenses(title);
                 ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList());
             }
         });
 
-        PageBuilderForManyTenses.buildForManyTenses(verbListObject, title);
+        PageBuilderForManyTenses.buildForManyTenses(title);
 
         ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList(title));
     </script>
