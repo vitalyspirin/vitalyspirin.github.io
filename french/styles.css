@@ -226,13 +226,18 @@ ol#stats {
 .text .span-half div span:nth-of-type(2) {
     /* line for given example for exercise */
     box-sizing: border-box;
-    padding-left: 0.5em;
+    padding-left: 0.8em;
 }
 
 .text .span-third div span:nth-of-type(2) {
     /* line for given example for exercise */
     box-sizing: border-box;
-    padding-left: 0.5em;
+    padding-left: 1.2em;
+}
+
+.text .span-third div span:nth-of-type(3) {
+    /* line for given example for exercise */
+    padding-left: 0.7em;
 }
 
 .text section span.sentence-with-hint,
