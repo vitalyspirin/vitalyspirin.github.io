@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Conjugaison</title>
+    <title>Conjugaisons mélangées</title>
 
     <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
     <link rel="stylesheet" href="../styles.css">
@@ -12,29 +12,84 @@
     <script type="module">
         "use strict";
 
+        import { PageBuilderForManyTenses } from '../js/PageBuilderForManyTenses.mjs';
         import { Resolver } from '../js/Resolver.mjs';
-        import { PageBuilder } from '../js/PageBuilder.mjs';
         import { ErrorCounter } from '../js/ErrorCounter.mjs';
+        import { Config } from '../js/Config.mjs';
 
         const title = window.decodeURIComponent(window.location.search).substring(1);
 
-        const audioFileFolder = Resolver.map[title].folder;
-        const verbList = Resolver.map[title].verbList;
+        if (Resolver.map[title] === undefined) {
+            document.getElementById('checkboxes-to-choose-tenses').style.display = 'block';
+        }
 
-        PageBuilder.buildForOneTense(verbList, audioFileFolder, title);
+        let page = window.location.pathname.split('/').pop() + window.location.search;
 
-        ErrorCounter.initialize();
-        //console.log(new XMLSerializer().serializeToString(document));
+        document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
+            checkboxElement.checked = Config.retrieve(page, checkboxElement.name) ?? true;
+
+            checkboxElement.onclick = () => {
+                Config.save(page, checkboxElement.name, checkboxElement.checked);
+
+                PageBuilderForManyTenses.buildForManyTenses(title);
+                ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList());
+            }
+        });
+
+        PageBuilderForManyTenses.buildForManyTenses(title);
+
+        ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList(title));
     </script>
 </head>
 
 
 <body>
     <main spellcheck="false">
-        <article class="verb-list">
+        <article class="verb-list-mixed-tenses">
             <header>
-                <h3 id="page-title">Temps de conjugaison</h3>
+                <h3 id="page-title">&nbsp;</h3>
 
+                <span id="checkboxes-to-choose-tenses">
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="present" checked="checked">Le présent
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="presentperfect" checked="checked">Le
+                        passé
+                        composé
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="imperfect"
+                            checked="checked">L'imparfait
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="future" checked="checked">Le futur
+                        simple
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="pastperfect" checked="checked">Le
+                        plus-que-parfait
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="conditionalpresent"
+                            checked="checked">Le
+                        conditionnel présent
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="presentsubjunctive"
+                            checked="checked">Le
+                        subjonctif présent
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="conditionalperfect"
+                            checked="checked">Le
+                        conditionnel passé
+                    </label>
+                    <label>
+                        <input type="checkbox" class="verb-tense-checkbox" name="imperative"
+                            checked="checked">L'impératif
+                    </label>
+                </span>
                 <h4>Conjuguez ces <span id="number-of-verbs"></span> verbes.</h4>
             </header>
 
@@ -42,7 +97,14 @@
 
             <template id="template-verb-block">
                 <div class="verb-block">
+                    <hr />
                     <h4 class="infinitive"></h4>
+                </div>
+            </template>
+
+            <template id="template-conjugations-for-one-tense-block">
+                <div class="conjugations-for-one-tense-block">
+                    <h4 class="tense"></h4>
                 </div>
             </template>
 
