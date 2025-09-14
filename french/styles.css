@@ -22,10 +22,11 @@ body main.wide {
 }
 
 .home-icon svg {
+    /* original 50 */
     width: 30px;
+
     /* original 50 */
     height: 30px;
-    /* original 50 */
 }
 
 #page-title {
@@ -50,8 +51,9 @@ header h4 {
 .conjugations-for-one-tense-block {
     display: inline-block;
     width: 33.3%;
-    vertical-align: top;
+
     /* if not all pronouns are used. Example: falloir - il faudra */
+    vertical-align: top;
 }
 
 .verb-block label {
@@ -223,20 +225,20 @@ ol#stats {
     width: 32%;
 }
 
+/* line for given example for exercise */
 .text .span-half div span:nth-of-type(2) {
-    /* line for given example for exercise */
     box-sizing: border-box;
     padding-left: 0.8em;
 }
 
+/* line for given example for exercise */
 .text .span-third div span:nth-of-type(2) {
-    /* line for given example for exercise */
     box-sizing: border-box;
     padding-left: 1.2em;
 }
 
+/* line for given example for exercise */
 .text .span-third div span:nth-of-type(3) {
-    /* line for given example for exercise */
     padding-left: 0.7em;
 }
 
@@ -260,8 +262,8 @@ ol#stats {
 }
 
 .text section li span:nth-of-type(1) {
-    float: left;
     /* for top vertical alignement of order number in <li> */
+    float: left;
 }
 
 .text section li span:nth-of-type(2),
@@ -271,7 +273,11 @@ ol#stats {
 
 .text section li span input {
     flex-grow: 1;
+    align-self: center;
     margin: 0 0.25em 0 0em;
+
+    /* or it will grow because line-height is 2 */
+    height: min-content;
 }
 
 .whitespace {
@@ -386,9 +392,10 @@ a.wide {
     }
 
     .speakerphone svg {
+        /* original 20 */
         width: 25px;
+
         /* original 20 */
         height: 25px;
-        /* original 20 */
     }
 }
