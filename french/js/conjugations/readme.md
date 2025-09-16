@@ -22,4 +22,5 @@ Words to have in all tenses:
 - plaindre
 - prononcer
 - payer
+- offrir
 
