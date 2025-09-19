@@ -139,6 +139,14 @@ export default {
 		"que vous": "envoyiez",
 		"qu'ils": "envoient"
 	},
+	Employer: {
+		"que j'": "emploie",
+		"que tu": "emploies",
+		"qu'il": "emploie",
+		"que nous": "employions",
+		"que vous": "employiez",
+		"qu'ils": "emploient"
+	},
 	Acheter: {
 		"que j'": "achète",
 		"que tu": "achètes",
@@ -171,6 +179,46 @@ export default {
 		"que vous": "geliez",
 		"qu'ils": "gèlent"
 	},
+	Congeler: {
+		"que je": "congèle",
+		"que tu": "congèles",
+		"qu'il": "congèle",
+		"que nous": "congelions",
+		"que vous": "congeliez",
+		"qu'ils": "congèlent"
+	},
+	Modeler: {
+		"que je": "modèle",
+		"que tu": "modèles",
+		"qu'il": "modèle",
+		"que nous": "modelions",
+		"que vous": "modeliez",
+		"qu'ils": "modèlent"
+	},
+	Harceler: {
+		"que je": "harcèle",
+		"que tu": "harcèles",
+		"qu'il": "harcèle",
+		"que nous": "harcelions",
+		"que vous": "harceliez",
+		"qu'ils": "harcèlent"
+	},
+	Peler: {
+		"que je": "pèle",
+		"que tu": "pèles",
+		"qu'il": "pèle",
+		"que nous": "pelions",
+		"que vous": "peliez",
+		"qu'ils": "pèlent"
+	},
+	Espérer: {
+		"que j'": "espère",
+		"que tu": "espères",
+		"qu'il": "espère",
+		"que nous": "espérions",
+		"que vous": "espériez",
+		"qu'ils": "espèrent"
+	},
 	Enlever: {
 		"que j'": "enlève",
 		"que tu": "enlèves",
@@ -187,6 +235,38 @@ export default {
 		"que vous": "meniez",
 		"qu'ils": "mènent"
 	},
+	Emmener: {
+		"que j'": "emmène",
+		"que tu": "emmènes",
+		"qu'il": "emmène",
+		"que nous": "emmenions",
+		"que vous": "emmeniez",
+		"qu'ils": "emmènent"
+	},
+	Amener: {
+		"que j'": "amène",
+		"que tu": "amènes",
+		"qu'il": "amène",
+		"que nous": "amenions",
+		"que vous": "ameniez",
+		"qu'ils": "amènent"
+	},
+	Semer: {
+		"que j'": "sème",
+		"que tu": "sèmes",
+		"qu'il": "sème",
+		"que nous": "semions",
+		"que vous": "semiez",
+		"qu'ils": "sèment"
+	},
+	Peser: {
+		"que j'": "pèse",
+		"que tu": "pèses",
+		"qu'il": "pèse",
+		"que nous": "pesions",
+		"que vous": "pesiez",
+		"qu'ils": "pèsent"
+	},
 	Finir: {
 		"que je": "finisse",
 		"que tu": "finisses",
@@ -194,6 +274,22 @@ export default {
 		"que nous": "finissions",
 		"que vous": "finissiez",
 		"qu'ils": "finissent"
+	},
+	Haïr: {
+		"que je": "haïsse",
+		"que tu": "haïsses",
+		"qu'il": "haïsse",
+		"que nous": "haïssions",
+		"que vous": "haïssiez",
+		"qu'ils": "haïssent"
+	},
+	"S’enrichir": {
+		"que je": "m'enrichisse",
+		"que tu": "t'enrichisses",
+		"qu'il": "s'enrichisse",
+		"que nous": "nous enrichissions",
+		"que vous": "vous enrichissiez",
+		"qu'ils": "s'enrichissent"
 	},
 	"Se souvenir": {
 		"que je": "me souvienne",
@@ -203,6 +299,14 @@ export default {
 		"que vous": "vous souveniez",
 		"qu'ils": "se souviennent"
 	},
+	Tenir: {
+		"que je": "tienne",
+		"que tu": "tiennes",
+		"qu'il": "tienne",
+		"que nous": "tenions",
+		"que vous": "teniez",
+		"qu'ils": "tiennent"
+	},
 	Ouvrir: {
 		"que j'": "ouvre",
 		"que tu": "ouvres",
@@ -210,6 +314,46 @@ export default {
 		"que nous": "ouvrions",
 		"que vous": "ouvriez",
 		"qu'ils": "ouvrent"
+	},
+	Cueillir: {
+		"que je": "cueille",
+		"que tu": "cueilles",
+		"qu'il": "cueille",
+		"que nous": "cueillions",
+		"que vous": "cueilliez",
+		"qu'ils": "cueillent"
+	},
+	Courir: {
+		"que je": "coure",
+		"que tu": "coures",
+		"qu'il": "coure",
+		"que nous": "courions",
+		"que vous": "couriez",
+		"qu'ils": "courent"
+	},
+	Dormir: {
+		"que je": "dorme",
+		"que tu": "dormes",
+		"qu'il": "dorme",
+		"que nous": "dormions",
+		"que vous": "dormiez",
+		"qu'ils": "dorment"
+	},
+	Mourir: {
+		"que je": "meure",
+		"que tu": "meures",
+		"qu'il": "meure",
+		"que nous": "mourions",
+		"que vous": "mouriez",
+		"qu'ils": "meurent"
+	},
+	Partir: {
+		"que je": "parte",
+		"que tu": "partes",
+		"qu'il": "parte",
+		"que nous": "partions",
+		"que vous": "partiez",
+		"qu'ils": "partent"
 	},
 	"Se servir": {
 		"que je": "me serve",
@@ -235,6 +379,22 @@ export default {
 		"que vous": "disiez",
 		"qu'ils": "disent"
 	},
+	Conduire: {
+		"que je": "conduise",
+		"que tu": "conduises",
+		"qu'il": "conduise",
+		"que nous": "conduisions",
+		"que vous": "conduisiez",
+		"qu'ils": "conduisent"
+	},
+	Lire: {
+		"que je": "lise",
+		"que tu": "lises",
+		"qu'il": "lise",
+		"que nous": "lisions",
+		"que vous": "lisiez",
+		"qu'ils": "lisent"
+	},
 	Peindre: {
 		"que je": "peigne",
 		"que tu": "peignes",
@@ -243,6 +403,14 @@ export default {
 		"que vous": "peigniez",
 		"qu'ils": "peignent"
 	},
+	"Se plaindre": {
+		"que je": "me plaigne",
+		"que tu": "te plaignes",
+		"qu'il": "se plaigne",
+		"que nous": "nous plaignions",
+		"que vous": "vous plaigniez",
+		"qu'ils": "se plaignent"
+	},
 	Prendre: {
 		"que je": "prenne",
 		"que tu": "prennes",
@@ -250,6 +418,14 @@ export default {
 		"que nous": "prenions",
 		"que vous": "preniez",
 		"qu'ils": "prennent"
+	},
+	Attendre: {
+		"que je": "attende",
+		"que tu": "attendes",
+		"qu'il": "attende",
+		"que nous": "attendions",
+		"que vous": "attendiez",
+		"qu'ils": "attendent"
 	},
 	Rejoindre: {
 		"que je": "rejoigne",
@@ -266,6 +442,14 @@ export default {
 		"que nous": "nous perdions",
 		"que vous": "vous perdiez",
 		"qu'ils": "se perdent"
+	},
+	Répondre: {
+		"que je": "réponde",
+		"que tu": "répondes",
+		"qu'il": "réponde",
+		"que nous": "répondions",
+		"que vous": "répondiez",
+		"qu'ils": "répondent"
 	},
 	Croire: {
 		"que je": "croie",
@@ -291,6 +475,22 @@ export default {
 		"que vous": "mettiez",
 		"qu'ils": "mettent"
 	},
+	"Se Battre": {
+		"que je": "me batte",
+		"que tu": "te battes",
+		"qu'il": "se batte",
+		"que nous": "nous battions",
+		"que vous": "vous battiez",
+		"qu'ils": "se battent"
+	},
+	Poursuivre: {
+		"que je": "poursuive",
+		"que tu": "poursuives",
+		"qu'il": "poursuive",
+		"que nous": "poursuivions",
+		"que vous": "poursuiviez",
+		"qu'ils": "poursuivent"
+	},
 	Connaître: {
 		"que je": "connaisse",
 		"que tu": "connaisses",
@@ -299,6 +499,22 @@ export default {
 		"que vous": "connaissiez",
 		"qu'ils": "connaissent"
 	},
+	Naître: {
+		"que je": "naisse",
+		"que tu": "naisses",
+		"qu'il": "naisse",
+		"que nous": "naissions",
+		"que vous": "naissiez",
+		"qu'ils": "naissent"
+	},
+	"Se Déplaire": {
+		"que je": "me déplaise",
+		"que tu": "te déplaises",
+		"qu'il": "se déplaise",
+		"que nous": "nous déplaisions",
+		"que vous": "vous déplaisiez",
+		"qu'ils": "se déplaisent"
+	},
 	Voir: {
 		"que je": "voie",
 		"que tu": "voies",
@@ -306,6 +522,22 @@ export default {
 		"que nous": "voyions",
 		"que vous": "voyiez",
 		"qu'ils": "voient"
+	},
+	Prévoir: {
+		"que je": "prévoie",
+		"que tu": "prévoies",
+		"qu'il": "prévoie",
+		"que nous": "prévoyions",
+		"que vous": "prévoyiez",
+		"qu'ils": "prévoient"
+	},
+	Pourvoir: {
+		"que je": "pourvoie",
+		"que tu": "pourvoies",
+		"qu'il": "pourvoie",
+		"que nous": "pourvoyions",
+		"que vous": "pourvoyiez",
+		"qu'ils": "pourvoient"
 	},
 	Recevoir: {
 		"que je": "reçoive",
@@ -322,6 +554,14 @@ export default {
 		"que nous": "nous apercevions",
 		"que vous": "vous aperceviez",
 		"qu'ils": "s'aperçoivent"
+	},
+	"S'émouvoir": {
+		"que je": "m'émeuve",
+		"que tu": "t'émeuves",
+		"qu'il": "s'émeuve",
+		"que nous": "nous émouvions",
+		"que vous": "vous émouviez",
+		"qu'ils": "s'émeuvent"
 	},
 	Valoir: {
 		"que je": "vaille",
