@@ -16,6 +16,7 @@ import verbsInImperfectTense from '../js/conjugations/verbsInImperfectTense.mjs'
 import verbsInPresentPerfectTense from '../js/conjugations/verbsInPresentPerfectTense.mjs';
 import verbsInConditionalPresentTense from '../js/conjugations/verbsInConditionalPresentTense.mjs';
 import verbsInConditionalPerfectTense from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
+import verbsInPresentSubjunctiveTense from '../js/conjugations/verbsInPresentSubjunctiveTense.mjs';
 
 import { audioFileFolder as audioFileFolderForPresentTense } from '../js/conjugations/verbsInPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForFutureTense } from '../js/conjugations/verbsInFutureTense.mjs';
@@ -25,7 +26,7 @@ import { audioFileFolder as audioFileFolderForPresentPerfectTense } from '../js/
 import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfectTense } from '../js/conjugations/verbsInPastPerfectTense.mjs';
 import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/conjugations/verbsInConditionalPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
-
+import { audioFileFolder as audioFileFolderForPresentSubjunctiveTense } from '../js/conjugations/verbsInPresentSubjunctiveTense.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
@@ -41,8 +42,9 @@ import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 // saveAudioFilesBase64ForVerbList(verbsInImperativeTense, audioFileFolderForImperativeTense);
+saveAudioFilesBase64ForVerbList(verbsInPresentSubjunctiveTense, audioFileFolderForPresentSubjunctiveTense);
 
-saveAudioFilesBase64ForInfinitive("S'asseoir", verbsInImperativeTense["S'asseoir"], audioFileFolderForImperativeTense);
+// saveAudioFilesBase64ForInfinitive("S'asseoir", verbsInImperativeTense["S'asseoir"], audioFileFolderForImperativeTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
