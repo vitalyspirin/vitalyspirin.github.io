@@ -3,7 +3,7 @@
 "use strict";
 
 import { Resolver } from './Resolver.mjs';
-import { Utils } from './Utils.mjs';
+import Utils from './Utils.mjs';
 
 export class PageBuilderForManyTenses {
     static getVerbList(tenseList) {

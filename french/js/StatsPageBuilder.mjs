@@ -4,7 +4,7 @@
 "use strict";
 
 import { Config } from './Config.mjs';
-import { Utils } from './Utils.mjs';
+import Utils from './Utils.mjs';
 
 export class StatsPageBuilder {
     static stats = {};

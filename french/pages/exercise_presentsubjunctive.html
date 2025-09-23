@@ -14,6 +14,10 @@
 
     <script type="module">
         "use strict";
+
+        import { RadioButtonValidation } from '../js/RadioButtonValidation.mjs';
+        RadioButtonValidation.initialize();
+
         import { ErrorCounter } from '../js/ErrorCounter.mjs';
         ErrorCounter.initialize();
     </script>
@@ -172,6 +176,220 @@
                         </span>
                         <span><input type="text"
                                 pattern="Nous lui pardonnerons à la condition qu'elle promette de dire la vérité[.]?"></span>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="span-third">
+                <h4>Faut-il complétez ces verbes avec un autre verbe au subjonctif ou à l’indicatif ?</h4>
+
+                <ol>
+                    <li>
+                        <span>Il vaut mieux que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Il vaut mieux que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Il vaut mieux que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Tu comprends que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Tu comprends que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Tu comprends que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Nous avons décidé que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Nous avons décidé que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Nous avons décidé que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>On dit que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="On dit que " value="subjonctif"/>subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="On dit que " value="indicatif" required="required"/>indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Il est désolé que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Il est désolé que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Il est désolé que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Nous trouvons que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Nous trouvons que" value="subjonctif" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Nous trouvons que" value="indicatif" required="required" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Il est sûr que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Il est sûr que" value="subjonctif" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Il est sûr que" value="indicatif" required="required" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>J’ai hâte que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="J’ai hâte que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="J’ai hâte que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Il semble que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Il semble que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Il semble que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Je tiens à ce que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Je tiens à ce que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Je tiens à ce que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Il paraît que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Il paraît que" value="subjonctif" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Il paraît que" value="indicatif" required="required" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Il est temps que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Il est temps que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Il est temps que" value="indicatif" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Il me semble que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Il me semble que" value="subjonctif" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Il me semble que" value="indicatif" required="required" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Tu es persuadé que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Tu es persuadé que" value="subjonctif" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Tu es persuadé que" value="indicatif" required="required" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Je ne doute pas que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Je ne doute pas que" value="subjonctif" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Je ne doute pas que" value="indicatif" required="required" />indicatif
+                            </label>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span>Elle aime que</span>
+                        <span>
+                            <label>
+                                <input type="radio" name="Elle aime que" value="subjonctif" required="required" />subjonctif
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Elle aime que" value="indicatif" />indicatif
+                            </label>
+                        </span>
                     </li>
                 </ol>
             </section>

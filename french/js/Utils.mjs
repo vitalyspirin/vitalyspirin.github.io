@@ -2,7 +2,7 @@
 
 "use strict";
 
-export class Utils {
+export default class Utils {
     static getAudioFileUrl(str, fileFolder, extention = 'mp3') {
         let result;
 

@@ -4,7 +4,7 @@
 
 import { ErrorCounterLine } from './ErrorCounterLine.mjs';
 import { Resolver } from './Resolver.mjs';
-import { Utils } from './Utils.mjs';
+import Utils from './Utils.mjs';
 
 class ErrorCounterObj {
     numberOfErrors = 0;
