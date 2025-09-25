@@ -43,10 +43,6 @@ header h4 {
     text-align: left;
 }
 
-.verb-list {
-    /*margin: 0em 1em;*/
-}
-
 .verb-list .verb-block,
 .conjugations-for-one-tense-block {
     display: inline-block;
@@ -85,16 +81,16 @@ header h4 {
     margin-top: 0;
 }
 
-input:invalid:not(:focus) {
+input[type="text"]:invalid:not(:focus) {
     background-color: #fc8181;
 }
 
-input.failed:not(:invalid) {
+input[type="text"].failed:not(:invalid) {
     border: 2px #fc8181 solid;
 }
 
 /* for radio button */
-label.failed:has(input:checked) {
+label:has(input[type="radio"]:checked:not(:required)) {
     background-color: #fc8181;
 }
 

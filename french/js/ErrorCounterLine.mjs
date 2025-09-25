@@ -3,7 +3,7 @@
 "use strict";
 
 
-export class ErrorCounterLine {
+export default class ErrorCounterLine {
     static initialize(errorLineElement) {
         errorLineElement.style.display = 'block';
 
