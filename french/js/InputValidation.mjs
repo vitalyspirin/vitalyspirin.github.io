@@ -5,7 +5,6 @@
 import { ErrorCounter } from './ErrorCounter.mjs';
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import StatsFooter from './StatsFooter.mjs';
-import Utils from './Utils.mjs';
 
 export class InputValidation {
     static verbTense;
