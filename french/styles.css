@@ -94,6 +94,12 @@ label:has(input[type="radio"]:checked:not(:required)) {
     background-color: #fc8181;
 }
 
+/* add transparent border to keep size the same */
+label:not(.failed):has(input[type="radio"]),
+li span:has(+span) {
+    border: 2px transparent solid;
+}
+
 label.failed {
     border: 2px #fc8181 solid;
 }
