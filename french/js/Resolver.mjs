@@ -11,6 +11,7 @@ import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfe
 import verbsInConditionalPresentTense, { audioFileFolder as audioFileFolderForConditionalPresentTense } from './conjugations/verbsInConditionalPresentTense.mjs';
 import verbsInPresentSubjunctiveTense, { audioFileFolder as audioVerbsInPresentSubjunctiveTense } from './conjugations/verbsInPresentSubjunctiveTense.mjs';
 import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './conjugations/verbsInConditionalPerfectTense.mjs';
+import verbsInFuturePerfectTense, { audioFileFolder as audioFileFolderForFuturePerfectTense } from './conjugations/verbsInFuturePerfectTense.mjs';
 
 
 export class Resolver {
@@ -42,6 +43,10 @@ export class Resolver {
         'Le conditionnel passé': {
             folder: audioFileFolderForConditionalPerfectTense,
             verbList: verbsInConditionalPerfectTense
+        },
+        'Le futur antérieur': {
+            folder: audioFileFolderForFuturePerfectTense,
+            verbList: verbsInFuturePerfectTense
         },
         "Le subjonctif présent": {
             folder: audioVerbsInPresentSubjunctiveTense,
