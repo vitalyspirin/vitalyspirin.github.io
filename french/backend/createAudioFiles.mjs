@@ -7,8 +7,9 @@
 // @ts-ignore
 import { exec } from 'child_process';
 
-import { Utils } from '../js/Utils.mjs';
-import { AudioFile } from './AudioFile.mjs';
+import Utils from '../js/Utils.mjs';
+import AudioFile from './AudioFile.mjs';
+
 import verbsInPresentTense from '../js/conjugations/verbsInPresentTense.mjs';
 import verbsInFuturTense from '../js/conjugations/verbsInFutureTense.mjs';
 import verbsInImperativeTense from '../js/conjugations/verbsInImperativeTense.mjs';
@@ -17,6 +18,7 @@ import verbsInPresentPerfectTense from '../js/conjugations/verbsInPresentPerfect
 import verbsInConditionalPresentTense from '../js/conjugations/verbsInConditionalPresentTense.mjs';
 import verbsInConditionalPerfectTense from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
 import verbsInPresentSubjunctiveTense from '../js/conjugations/verbsInPresentSubjunctiveTense.mjs';
+import verbsInFuturePerfectTense from '../js/conjugations/verbsInFuturePerfectTense.mjs';
 
 import { audioFileFolder as audioFileFolderForPresentTense } from '../js/conjugations/verbsInPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForFutureTense } from '../js/conjugations/verbsInFutureTense.mjs';
@@ -27,6 +29,7 @@ import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfe
 import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/conjugations/verbsInConditionalPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
 import { audioFileFolder as audioFileFolderForPresentSubjunctiveTense } from '../js/conjugations/verbsInPresentSubjunctiveTense.mjs';
+import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/conjugations/verbsInFuturePerfectTense.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
@@ -42,7 +45,8 @@ import { audioFileFolder as audioFileFolderForPresentSubjunctiveTense } from '..
 //saveAudioFilesBase64ForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 // saveAudioFilesBase64ForVerbList(verbsInImperativeTense, audioFileFolderForImperativeTense);
-saveAudioFilesBase64ForVerbList(verbsInPresentSubjunctiveTense, audioFileFolderForPresentSubjunctiveTense);
+// saveAudioFilesBase64ForVerbList(verbsInPresentSubjunctiveTense, audioFileFolderForPresentSubjunctiveTense);
+saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 
 // saveAudioFilesBase64ForInfinitive("S'asseoir", verbsInImperativeTense["S'asseoir"], audioFileFolderForImperativeTense);
 
