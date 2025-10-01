@@ -225,7 +225,7 @@ export default {
 		"qu'il": "enlève",
 		"que nous": "enlevions",
 		"que vous": "enleviez",
-		"qu'ils": "gèenlèventlent"
+		"qu'ils": "enlèvent"
 	},
 	Mener: {
 		"que je": "mène",
@@ -252,7 +252,7 @@ export default {
 		"qu'ils": "amènent"
 	},
 	Semer: {
-		"que j'": "sème",
+		"que je": "sème",
 		"que tu": "sèmes",
 		"qu'il": "sème",
 		"que nous": "semions",
@@ -260,7 +260,7 @@ export default {
 		"qu'ils": "sèment"
 	},
 	Peser: {
-		"que j'": "pèse",
+		"que je": "pèse",
 		"que tu": "pèses",
 		"qu'il": "pèse",
 		"que nous": "pesions",
@@ -420,7 +420,7 @@ export default {
 		"qu'ils": "prennent"
 	},
 	Attendre: {
-		"que je": "attende",
+		"que j'": "attende",
 		"que tu": "attendes",
 		"qu'il": "attende",
 		"que nous": "attendions",
