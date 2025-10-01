@@ -2,7 +2,7 @@
 
 "use strict";
 
-import { Utils } from './Utils.mjs';
+import Utils from './Utils.mjs';
 
 export class PageBuilder {
 

@@ -97,7 +97,7 @@ export class PageBuilderForManyTenses {
                 if (!tenseList.includes(tense)) continue;
 
                 let newConjugationsForOneTenseBlock = templateConjugationsForOneTenseBlock.cloneNode(true);
-                this.fillConjugationsForOneTenseBlock(
+                str += this.fillConjugationsForOneTenseBlock(
                     newConjugationsForOneTenseBlock,
                     infinitive,
                     verbMixedConjugationList[infinitive][tense],
@@ -111,8 +111,8 @@ export class PageBuilderForManyTenses {
 
         document.getElementById("number-of-verbs").textContent = String(counter - 1);
 
-        //console.log(str); // use Spell Checker to find spelling errors
-    } // static build()
+        // console.log(str); // use Spell Checker to find spelling errors
+    } // static buildForManyTenses()
 
     static fillConjugationsForOneTenseBlock(
         newConjugationsForOneTenseBlock,
@@ -120,6 +120,7 @@ export class PageBuilderForManyTenses {
         conjugationList,
         tense
     ) {
+        let str = ''; // for debugging
         newConjugationsForOneTenseBlock.classList.add(tense);
 
         let tenseElement = newConjugationsForOneTenseBlock.querySelector(".tense");
@@ -130,6 +131,11 @@ export class PageBuilderForManyTenses {
             .content.firstElementChild;
 
         for (let pronoun in conjugationList) {
+            // while debugging to check if all congugations typed properly
+            str += pronoun;
+            if (pronoun.slice(-1) != "'") str += ' ';
+            str += conjugationList[pronoun] + ".\n";
+
             let newInputBlock = templateInputElement.cloneNode(true);
 
             this.fillInputBlock(
@@ -141,8 +147,9 @@ export class PageBuilderForManyTenses {
             );
 
             newConjugationsForOneTenseBlock.append(newInputBlock);
-        } // for (let pronoun in verbsInPresentTense[infinitive])
+        } // for (let pronoun in conjugationList)
 
+        return str;
     }
 
     static fillInputBlock(newInputBlock, infinitive, pronoun, verb, fileFolder) {

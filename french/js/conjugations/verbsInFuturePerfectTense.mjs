@@ -37,7 +37,7 @@ export default {
     Envoyer: {
         "J'": "aurai envoyé",
         Tu: "auras envoyé",
-        Il: "aura envoyé ",
+        Il: "aura envoyé",
         Nous: "aurons envoyé",
         Vous: "aurez envoyé",
         Ils: "auront envoyé"
@@ -45,7 +45,7 @@ export default {
     Manger: {
         "J'": "aurai mangé",
         Tu: "auras mangé",
-        Il: "aura mangé ",
+        Il: "aura mangé",
         Nous: "aurons mangé",
         Vous: "aurez mangé",
         Ils: "auront mangé"
@@ -53,7 +53,7 @@ export default {
     Nettoyer: {
         "J'": "aurai nettoyé",
         Tu: "auras nettoyé",
-        Il: "aura nettoyé ",
+        Il: "aura nettoyé",
         Nous: "aurons nettoyé",
         Vous: "aurez nettoyé",
         Ils: "auront nettoyé"
@@ -61,7 +61,7 @@ export default {
     Penser: {
         "J'": "aurai pensé",
         Tu: "auras pensé",
-        Il: "aura pensé ",
+        Il: "aura pensé",
         Nous: "aurons pensé",
         Vous: "aurez pensé",
         Ils: "auront pensé"
@@ -69,7 +69,7 @@ export default {
     Regarder: {
         "J'": "aurai regardé",
         Tu: "auras regardé",
-        Il: "aura regardé ",
+        Il: "aura regardé",
         Nous: "aurons regardé",
         Vous: "aurez regardé",
         Ils: "auront regardé"
