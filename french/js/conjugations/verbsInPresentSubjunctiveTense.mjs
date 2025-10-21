@@ -2,6 +2,11 @@
 //
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000291792_le_subjonctif_pr_sent_et_pass__exercices_et_corrig_.pdf
+//
+// the longest verb form: "que nous nous enrichissions" 
+//   nous déplaisions/nous apercevions/
+//   nous dépêchions/nous promenions/nous souvenions
+//   nous émouvions                      
 
 "use strict";
 
@@ -47,9 +52,6 @@ export default {
 		"que nous": "fassions",
 		"que vous": "fassiez",
 		"qu'ils": "fassent"
-	},
-	Falloir: {
-		"qu'il": "faille"
 	},
 	Aller: {
 		"que j'": "aille",
@@ -571,15 +573,18 @@ export default {
 		"que vous": "valiez",
 		"qu'ils": "vaillent"
 	},
-	Pleuvoir: {
-		"qu'il": "pleuve"
-	},
-	"S'asseoir ": {
+	"S'asseoir": {
 		"que je": "m'asseye",
-		"que tu": "tu t'asseyes",
+		"que tu": "t'asseyes",
 		"qu'il": "s'asseye",
 		"que nous": "nous asseyions",
 		"que vous": "vous asseyiez",
 		"qu'ils": "s'asseyent"
+	},
+	Falloir: {
+		"qu'il": "faille"
+	},
+	Pleuvoir: {
+		"qu'il": "pleuve"
 	}
 };

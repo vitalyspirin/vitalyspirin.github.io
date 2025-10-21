@@ -48,7 +48,7 @@ import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/c
 // saveAudioFilesBase64ForVerbList(verbsInPresentSubjunctiveTense, audioFileFolderForPresentSubjunctiveTense);
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 
-saveAudioFilesBase64ForInfinitive("Attendre", verbsInPresentSubjunctiveTense["Attendre"], audioFileFolderForPresentSubjunctiveTense);
+saveAudioFilesBase64ForInfinitive("S'asseoir", verbsInPresentSubjunctiveTense["S'asseoir"], audioFileFolderForPresentSubjunctiveTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
