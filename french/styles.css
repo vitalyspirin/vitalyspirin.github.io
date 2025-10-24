@@ -317,11 +317,25 @@ ol#stats {
 
 /* stats page */
 
-table,
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
 th,
 td {
-    border: 1px solid black;
-    border-collapse: collapse;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+thead tr:first-child th:first-of-type,
+thead tr:nth-child(2) th:first-of-type,
+td:first-of-type {
+    border-left: 1px solid black;
+}
+
+thead tr:first-child th {
+    border-top: 1px solid black;
 }
 
 caption {
@@ -346,6 +360,27 @@ thead tr:first-child th {
     width: 6rem;
 }
 
+/* freeze table header during scrolling */
+table {
+    position: relative;
+}
+
+th {
+    position: sticky;
+    background-color: white;
+}
+
+thead tr:nth-child(1) th {
+    top: 0;
+}
+
+thead tr:nth-child(2) th {
+    top: 2em;
+}
+
+thead tr:nth-child(3) th {
+    top: 5em;
+}
 
 /* index page */
 

@@ -3,10 +3,7 @@
 // verb list is taken from 
 // https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000291792_le_subjonctif_pr_sent_et_pass__exercices_et_corrig_.pdf
 //
-// the longest verb form: "que nous nous enrichissions" 
-//   nous déplaisions/nous apercevions/
-//   nous dépêchions/nous promenions/nous souvenions
-//   nous émouvions                      
+// the longest verb form: "que nous nous enrichissions"  
 
 "use strict";
 
