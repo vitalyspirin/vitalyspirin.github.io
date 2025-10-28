@@ -9,6 +9,7 @@ import Utils from './Utils.mjs';
 export class StatsPageBuilder {
     static stats = {};
     static dates;
+    static earlestDates = {};
 
     static buildPage() {
         this.#buildStatsObject();
@@ -35,23 +36,25 @@ export class StatsPageBuilder {
         });
     }
 
-    static #fillTableRow(tableRowElement, date, statsForOneDate) {
-        const dateCell = tableRowElement.getElementsByClassName('date')[0];
-        dateCell.innerText = date;
-
+    static #fillTableRow(tableRowElement, formattedDate, statsForOneDate) {
         let duration = 0;
-        for (const statsPageKey in statsForOneDate) {
-            let tableCell = tableRowElement.getElementsByClassName(statsPageKey)[0];
 
-            if (!(tableCell instanceof HTMLTableCellElement)) {
-                console.error('HTML element of class "' + statsPageKey + '" has not been found.');
-                continue;
+        for (const tdElement of tableRowElement.children) {
+            let statsPageKey = tdElement.getAttribute('data-key');
+
+            if (statsForOneDate.hasOwnProperty(statsPageKey)) {
+                tdElement.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
+                tdElement.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
+                duration += statsForOneDate[statsPageKey]['duration'];
             }
 
-            tableCell.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
-            tableCell.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
-            duration += statsForOneDate[statsPageKey]['duration'];
+            if (this.earlestDates[statsPageKey] <= formattedDate) {
+                tdElement.classList.add('done-earlier');
+            }
         }
+
+        const dateCell = tableRowElement.querySelector('[data-key="date"]');
+        dateCell.innerText = formattedDate;
         dateCell.title = 'time spent: ' + Utils.timestampToTime(duration);
     }
 
@@ -80,6 +83,8 @@ export class StatsPageBuilder {
                 } else {
                     this.stats[formattedDate][pageKey]['duration'] = 0;
                 }
+
+                this.#setEarlestDate(pageKey, formattedDate);
             });
 
         });
@@ -88,4 +93,13 @@ export class StatsPageBuilder {
 
     } // function buildStatsObject()
 
+    static #setEarlestDate(pageKey, date) {
+        if (!this.earlestDates.hasOwnProperty(pageKey)) {
+            this.earlestDates[pageKey] = date;
+        } else {
+            if (date < this.earlestDates[pageKey]) {
+                this.earlestDates[pageKey] = date;
+            }
+        }
+    }
 }

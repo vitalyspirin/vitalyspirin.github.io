@@ -342,7 +342,11 @@ caption {
     padding: 1em;
 }
 
-tr.even-week {
+tr.even-week td:first-child {
+    background-color: azure;
+}
+
+td.done-earlier {
     background-color: WhiteSmoke;
 }
 
