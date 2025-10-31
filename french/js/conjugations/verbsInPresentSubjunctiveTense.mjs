@@ -128,7 +128,7 @@ export default {
 		"qu'il": "paye",
 		"que nous": "payions",
 		"que vous": "payiez",
-		"qu'ils": "paient"
+		"qu'ils": "payent"
 	},
 	Envoyer: {
 		"que j'": "envoie",
