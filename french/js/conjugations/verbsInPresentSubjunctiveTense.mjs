@@ -123,9 +123,9 @@ export default {
 		"qu'ils": "jettent"
 	},
 	Payer: {
-		"que je": "paie",
-		"que tu": "paies",
-		"qu'il": "paie",
+		"que je": "paye",
+		"que tu": "payes",
+		"qu'il": "paye",
 		"que nous": "payions",
 		"que vous": "payiez",
 		"qu'ils": "paient"
