@@ -4,7 +4,7 @@
 
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import { Resolver } from './Resolver.mjs';
-import {ErrorCounter, ErrorCounterObj} from './ErrorCounter.mjs';
+import { ErrorCounter, ErrorCounterObj } from './ErrorCounter.mjs';
 import Utils from './Utils.mjs';
 
 export default class StatsFooter {
@@ -52,6 +52,8 @@ export default class StatsFooter {
         const statsLineElement = template.content.firstElementChild;
 
         const stats = StatsFooter.retrieveStats(verbTense);
+        const bestResult = this.getBestResult(stats);
+
         const keys = Object.keys(stats);
 
         keys.forEach((key) => {
@@ -60,6 +62,10 @@ export default class StatsFooter {
             if (!(newStatsLineElement instanceof HTMLElement)) { // typecast for .innerHTML
                 console.error('newStateLineElement must be instanceof HTMLElement.');
                 return;
+            }
+
+            if (stats[key]['result'] == bestResult) {
+                newStatsLineElement.classList.add('best-result');
             }
 
             let formattedDate = Utils.timestampToDateAndTime(Number(stats[key]['timestamp']));
@@ -94,4 +100,15 @@ export default class StatsFooter {
         return storageKey;
     }
 
+    static getBestResult(stats) {
+        let bestResult = 0;
+
+        Object.values(stats).forEach((statsLine) => {
+            if (statsLine.result > bestResult) {
+                bestResult = statsLine.result;
+            }
+        });
+
+        return bestResult;
+    }
 }

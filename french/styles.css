@@ -225,6 +225,9 @@ ol#stats {
     content: counter(item) ") ";
     counter-increment: item;
 }
+#stats .best-result {
+    font-weight: bold;
+}
 
 .text .span-half span {
     display: inline-block;
