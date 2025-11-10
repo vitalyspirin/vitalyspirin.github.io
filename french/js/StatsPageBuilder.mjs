@@ -10,6 +10,7 @@ export class StatsPageBuilder {
     static stats = {};
     static dates;
     static earlestDates = {};
+    static bestResults = {};
 
     static buildPage() {
         this.#buildStatsObject();
@@ -46,6 +47,10 @@ export class StatsPageBuilder {
                 tdElement.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
                 tdElement.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
                 duration += statsForOneDate[statsPageKey]['duration'];
+
+                if (this.bestResults[statsPageKey] == statsForOneDate[statsPageKey]['result']) {
+                    tdElement.classList.add('best-result');
+                }
             }
 
             if (this.earlestDates[statsPageKey] <= formattedDate) {
@@ -85,6 +90,7 @@ export class StatsPageBuilder {
                 }
 
                 this.#setEarlestDate(pageKey, formattedDate);
+                this.#setBestResults(pageKey, statsForPage[pageStatsKey]['result']);
             });
 
         });
@@ -99,6 +105,16 @@ export class StatsPageBuilder {
         } else {
             if (date < this.earlestDates[pageKey]) {
                 this.earlestDates[pageKey] = date;
+            }
+        }
+    }
+
+    static #setBestResults(pageKey, result) {
+        if (!this.bestResults.hasOwnProperty(pageKey)) {
+            this.bestResults[pageKey] = result;
+        } else {
+            if (result > this.bestResults[pageKey]) {
+                this.bestResults[pageKey] = result;
             }
         }
     }

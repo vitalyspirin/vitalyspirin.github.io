@@ -225,7 +225,9 @@ ol#stats {
     content: counter(item) ") ";
     counter-increment: item;
 }
-#stats .best-result {
+
+#stats .best-result,
+td.best-result {
     font-weight: bold;
 }
 
