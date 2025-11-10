@@ -54,9 +54,7 @@ export default class StatsFooter {
         const stats = StatsFooter.retrieveStats(verbTense);
         const bestResult = this.getBestResult(stats);
 
-        const keys = Object.keys(stats);
-
-        keys.forEach((key) => {
+        Object.values(stats).forEach((statsLine) => {
             let newStatsLineElement = statsLineElement.cloneNode();
 
             if (!(newStatsLineElement instanceof HTMLElement)) { // typecast for .innerHTML
@@ -64,20 +62,20 @@ export default class StatsFooter {
                 return;
             }
 
-            if (stats[key]['result'] == bestResult) {
+            if (statsLine['result'] == bestResult) {
                 newStatsLineElement.classList.add('best-result');
             }
 
-            let formattedDate = Utils.timestampToDateAndTime(Number(stats[key]['timestamp']));
-            const result = Math.round(100 * Number(stats[key]['result']));
+            let formattedDate = Utils.timestampToDateAndTime(Number(statsLine['timestamp']));
+            const result = Math.round(100 * Number(statsLine['result']));
 
             newStatsLineElement.innerHTML = '&nbsp;' + formattedDate; // += because template can have something
-            if (Object.hasOwn(stats[key], 'duration')) {
+            if (Object.hasOwn(statsLine, 'duration')) {
                 newStatsLineElement.innerHTML += ' (durée: ' +
-                    Utils.timestampToTime(stats[key]['duration']) + ')';
+                    Utils.timestampToTime(statsLine['duration']) + ')';
             }
             newStatsLineElement.innerHTML += ' &nbsp; - &nbsp; ' + result +
-                '% (' + stats[key]['errors'] + ' erreurs)';
+                '% (' + statsLine['errors'] + ' erreurs)';
 
             document.getElementById('stats').appendChild(newStatsLineElement);
         });
