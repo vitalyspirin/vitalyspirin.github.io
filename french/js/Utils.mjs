@@ -85,4 +85,14 @@ export default class Utils {
     static getType(object) {
         return Object.prototype.toString.apply(object);
     }
+
+    static getElementById(id) {
+        const element = document.getElementById(id);
+
+        if (!(element instanceof HTMLElement)) {
+            console.error('HTML element with id "' + id + '" has not been found.');
+        }
+
+        return element;
+    }
 }

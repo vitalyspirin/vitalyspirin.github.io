@@ -5,9 +5,22 @@
     </svg>
 </a>
 
-<footer class="error-counter">
-    <hr />
-    <h4 id="error-counter-" class="error-counter-line">Résultat:
+<hr />
+<footer>
+    <span id="error-counter-section"></span>
+    <template id="template-error-counter-line">
+        <h4 id="error-counter-" class="error-counter-line">
+            Résultat<span class="resultat-for-which-tense"></span>:
+
+            <span class="result">0</span>%
+            (<span class="number-of-errors">0</span> erreurs,
+            <span class="number-correct">0</span> correctes)
+        </h4>
+    </template>
+<!--
+    <h4 id="error-counter-" class="error-counter-line">
+        Résultat<span class="resultat-for-which-tense"></span>:
+
         <span class="result">0</span>%
         (<span class="number-of-errors">0</span> erreurs,
         <span class="number-correct">0</span> correctes)
@@ -72,7 +85,7 @@
         (<span class="number-of-errors">0</span> erreurs,
         <span class="number-correct">0</span> correctes)
     </h4>
-
+-->
     <h4>Durée: <span id="total-time"></span></h4>
 
     <span id="stats-title">Statistiques:</span>

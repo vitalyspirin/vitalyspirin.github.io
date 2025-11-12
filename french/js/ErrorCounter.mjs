@@ -4,6 +4,7 @@
 
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import { InputValidation } from './InputValidation.mjs';
+import { Resolver } from './Resolver.mjs';
 import StatsFooter from './StatsFooter.mjs';
 import Utils from './Utils.mjs';
 
@@ -31,8 +32,10 @@ export class ErrorCounter {
     static initializeAfterDelay(verbTenseList, self) {
         self.id = Date.now();
 
+        this.#buildErrorCounterLines();
+
         if (verbTenseList.length === 0) {
-            document.getElementById('error-counter-').style.display = 'block';
+            Utils.getElementById('error-counter-').style.display = 'block';
 
             self.errorCounter = new ErrorCounterObj();
             self.errorCounter.numberOfAllInputElements =
@@ -118,6 +121,29 @@ export class ErrorCounter {
                 });
             });
         }
+    }
+
+    static #buildErrorCounterLines() {
+        const template = document.getElementById('template-error-counter-line')
+
+        if (!(template instanceof HTMLTemplateElement)) {
+            console.error('HTML element with id "template-error-counter-line" has not been found.');
+            return;
+        }
+
+        const errorCounterSection = document.getElementById('error-counter-section');
+
+        const errorCounterLineTemplate = template.content.firstElementChild;
+        let newErrorCounterLine = errorCounterLineTemplate.cloneNode(true);
+        errorCounterSection.appendChild(newErrorCounterLine);
+
+        Object.entries(Resolver.map).forEach(([tenseName, element]) => {
+            let newErrorCounterLine = errorCounterLineTemplate.cloneNode(true);
+            newErrorCounterLine.id += element.folder;
+            const resultatStr = newErrorCounterLine.getElementsByClassName('resultat-for-which-tense').item(0);
+            resultatStr.innerText = ' pour ' + tenseName.toLowerCase();
+            errorCounterSection.appendChild(newErrorCounterLine);
+        });
     }
 
     static #updateTimer(event) {
