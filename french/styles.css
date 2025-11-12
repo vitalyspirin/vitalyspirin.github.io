@@ -277,7 +277,7 @@ td.best-result {
     clear: both;
 }
 
-.text section li span:nth-of-type(1) {
+.text section.span-half li span:nth-of-type(1) {
     /* for top vertical alignement of order number in <li> */
     float: left;
 }
