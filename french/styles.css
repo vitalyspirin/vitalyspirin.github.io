@@ -290,6 +290,8 @@ td.best-result {
 .text section li span input[type="text"] {
     flex-grow: 1;
     align-self: center;
+    /* exercise_conditionalpresent.html has question marks at the end of 
+       text input so we need margin-right */
     margin: 0 0.25em 0 0em;
 
     /* or it will grow because line-height is 2 */
