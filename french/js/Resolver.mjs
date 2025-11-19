@@ -58,6 +58,46 @@ export class Resolver {
         }
     };
 
+
+    static infoForPages = {
+        "conjugations.html?Le%20pr%C3%A9sent": "pdf/present.pdf",
+        "exercise_present.html": "pdf/present.pdf",
+
+        "conjugations.html?Le%20pass%C3%A9%20compos%C3%A9": "pdf/presentperfect.pdf",
+        "exercise_presentperfect.html": "pdf/presentperfect.pdf",
+
+        "conjugations.html?L%27imparfait": "pdf/imperfect.pdf",
+        "exercise_imperfect.html": "pdf/imperfect.pdf",
+
+        "conjugations.html?Le%20futur%20simple": "pdf/future.pdf",
+        "exercise_future.html": "pdf/future.pdf",
+
+        "conjugations.html?L%27imp%C3%A9ratif": "pdf/imperative.pdf",
+        "exercise_imperative.html": "pdf/imperative.pdf",
+
+        "conjugations.html?Le%20plus-que-parfait": "pdf/plus-que-parfait.pdf",
+        "exercise_pastperfect.html": "pdf/plus-que-parfait.pdf",
+
+        "conjugations.html?Le%20conditionnel%20pr%C3%A9sent": "pdf/conditionalpresent.pdf",
+        "exercise_conditionalpresent.html": "pdf/conditionalpresent.pdf",
+
+        "conjugations.html?Le%20subjonctif%20pr%C3%A9sent": "pdf/presentsubjunctive.pdf",
+        "exercise_presentsubjunctive.html": "pdf/presentsubjunctive.pdf",
+
+        "conjugations.html?Le%20conditionnel%20pass%C3%A9": "pdf/conditionalperfect.pdf",
+        "exercise_conditionalperfect.html": "pdf/conditionalperfect.pdf",
+
+        "conjugations.html?Le%20futur%20ant%C3%A9rieur": "pdf/futureperfect.pdf",
+        "exercise_futureperfect.html": "pdf/futureperfect.pdf",
+
+        "exercise_concordance.html": "pdf/concordance2.pdf",
+        "exercise_concordance3.html": "pdf/concordance3.pdf",
+        "exercise_passive.html": "pdf/passive.pdf",
+        "exercise_concordance_conditional.html": "pdf/concordance_conditional.pdf",
+        "exercise_concordance_future.html": "pdf/concordance_future.pdf"
+    };
+
+
     /**
      * @param {string} folder
      */

@@ -29,6 +29,16 @@ body main.wide {
     height: 30px;
 }
 
+.info-icon {
+    position: absolute;
+    right: 0.5em;
+    top: 0em;
+    font-size: 250%;
+    color: black;
+    opacity: 75%;
+    text-decoration: none;
+}
+
 #page-title {
     text-align: center;
 }

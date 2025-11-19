@@ -32,6 +32,8 @@ export class ErrorCounter {
     static initializeAfterDelay(verbTenseList, self) {
         self.id = Date.now();
 
+        this.#setInfoLink();
+
         this.#buildErrorCounterLines();
 
         if (verbTenseList.length === 0) {
@@ -172,4 +174,16 @@ export class ErrorCounter {
         return resultat;
     }
 
+    static #setInfoLink() {
+        let infoLink = '#';
+
+        const page = window.location.pathname.split('/').pop() + window.location.search;
+        if (!Object.hasOwn(Resolver.infoForPages, page)) {
+            console.error('There is no Info Link for page "' + page + '"');
+        } else {
+            infoLink = '..\\' + Resolver.infoForPages[page];
+        }
+
+        document.getElementsByClassName('info-icon').item(0).href = infoLink;
+    }
 }
