@@ -16,6 +16,21 @@
       color: #007f00;
     }
   </style>
+
+  <script type="module">
+    "use strict";
+    
+    import { Resolver } from './js/Resolver.mjs';
+
+    const aElements = document.getElementsByClassName('theory');
+
+    Object.values(aElements).forEach((theoryAElement) => {
+      const pageLink = theoryAElement.nextElementSibling.href.split('/').pop();
+      const theoryFileLink = Resolver.infoForPages[pageLink];
+      theoryAElement.href = theoryFileLink;
+    });
+
+  </script>
 </head>
 
 <body>
@@ -24,7 +39,7 @@
   <div class="card">
     <span class="cefr">A1</span>
     <header>Le présent</header>
-    <a href="pdf/present.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20pr%C3%A9sent">exercice de liste de verbes</a>
     <a href="pages/exercise_present.html">exercice de texte</a>
   </div>
@@ -32,7 +47,7 @@
   <div class="card">
     <span class="cefr">A1</span>
     <header>Le passé composé</header>
-    <a href="pdf/presentperfect.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20pass%C3%A9%20compos%C3%A9">exercice de liste de verbes</a>
     <a href="pages/exercise_presentperfect.html">exercice de texte</a>
   </div>
@@ -40,7 +55,7 @@
   <div class="card">
     <span class="cefr">A2</span>
     <header>L'imparfait</header>
-    <a href="pdf/imperfect.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?L'imparfait">exercice de liste de verbes</a>
     <a href="pages/exercise_imperfect.html">exercice de texte</a>
   </div>
@@ -48,7 +63,7 @@
   <div class="card">
     <span class="cefr">A2</span>
     <header>Le futur simple</header>
-    <a href="pdf/future.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20futur%20simple">exercice de liste de verbes</a>
     <a href="pages/exercise_future.html">exercice de texte</a>
   </div>
@@ -56,7 +71,7 @@
   <div class="card">
     <span class="cefr">A2</span>
     <header>L'impératif</header>
-    <a href="pdf/imperative.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?L%27impératif">exercice de liste de verbes</a>
     <a href="pages/exercise_imperative.html">exercice de texte</a>
   </div>
@@ -64,7 +79,7 @@
   <div class="card">
     <span class="cefr">B1</span>
     <header>Le plus-que-parfait</header>
-    <a href="pdf/plus-que-parfait.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20plus-que-parfait">exercice de liste de verbes</a>
     <a href="pages/exercise_pastperfect.html">exercice de texte</a>
   </div>
@@ -72,7 +87,7 @@
   <div class="card">
     <span class="cefr">B1</span>
     <header>Le conditionnel présent</header>
-    <a href="pdf/conditionalpresent.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20conditionnel%20pr%C3%A9sent">exercice de liste de verbes</a>
     <a href="pages/exercise_conditionalpresent.html">exercice de texte</a>
   </div>
@@ -80,7 +95,7 @@
   <div class="card">
     <span class="cefr">B1</span>
     <header>Le subjonctif présent</header>
-    <a href="pdf/presentsubjunctive.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20subjonctif%20présent">exercice de liste de verbes</a>
     <a href="pages/exercise_presentsubjunctive.html">exercice de texte</a>
   </div>
@@ -88,7 +103,7 @@
   <div class="card">
     <span class="cefr">B2</span>
     <header>Le conditionnel passé</header>
-    <a href="pdf/conditionalperfect.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20conditionnel%20passé">exercice de liste de verbes</a>
     <a href="pages/exercise_conditionalperfect.html">exercice de texte</a>
   </div>
@@ -96,7 +111,7 @@
   <div class="card">
     <span class="cefr">B2</span>
     <header>Le futur antérieur</header>
-    <a href="pdf/futureperfect.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20futur%20antérieur">exercice de liste de verbes</a>
     <a href="pages/exercise_futureperfect.html">exercice de texte</a>
   </div>
@@ -110,35 +125,35 @@
   <div class="card">
     <span class="cefr">A2</span>
     <header>La concordance du passé composé et de l'imparfait</header>
-    <a href="pdf/concordance2.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/exercise_concordance.html">exercice de texte</a>
   </div>
 
   <div class="card">
     <span class="cefr">B1</span>
     <header>La concordance du passé composé, de l'imparfait et du plus-que-parfait</header>
-    <a href="pdf/concordance3.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/exercise_concordance3.html">exercice de texte</a>
   </div>
 
   <div class="card">
     <span class="cefr">B1</span>
     <header>La forme passive</header>
-    <a href="pdf/passive.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/exercise_passive.html">exercice de texte</a>
   </div>
 
   <div class="card">
     <span class="cefr">B2</span>
     <header>Les phrases de condition</header>
-    <a href="pdf/concordance_conditional.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/exercise_concordance_conditional.html">exercice de texte</a>
   </div>
 
   <div class="card">
     <span class="cefr">B2</span>
     <header>La concordance au futur</header>
-    <a href="pdf/concordance_future.pdf">théorie</a>
+    <a class="theory">théorie</a>
     <a href="pages/exercise_concordance_future.html">exercice de texte</a>
   </div>
   <hr />
