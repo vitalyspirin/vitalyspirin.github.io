@@ -4,6 +4,8 @@ iframe {
 
 body {
     font-family: sans-serif;
+    /* color of regular text in GMail */
+    color: #222;
 }
 
 body main {
@@ -239,7 +241,8 @@ ol#stats {
 #stats .best-result,
 td.best-result {
     font-weight: bold;
-    opacity: 75%;
+    /* color of title in GMail */
+    color: #1f1f1f;
 }
 
 .text .span-half span {
