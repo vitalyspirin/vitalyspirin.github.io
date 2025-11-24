@@ -254,6 +254,7 @@ td.best-result {
 
 .text .span-third span.info-icon {
     font-size: x-large;
+    line-height: 100%;
     margin-left: -2em;
 }
 
