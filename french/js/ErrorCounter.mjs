@@ -184,6 +184,6 @@ export class ErrorCounter {
             infoLink = '..\\' + Resolver.infoForPages[page];
         }
 
-        document.getElementsByClassName('info-icon').item(0).href = infoLink;
+        document.querySelector('a.info-icon').href = infoLink;
     }
 }
