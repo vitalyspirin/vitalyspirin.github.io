@@ -258,7 +258,7 @@ td.best-result {
 .text .span-third span.info-icon {
     font-size: x-large;
     line-height: 100%;
-    margin-left: -2em;
+    margin-left: -1em;
 }
 
 /* line for given example for exercise */
@@ -325,7 +325,7 @@ td.best-result {
 }
 
 .text section li label:first-of-type {
-    margin-left: -4em;
+    margin-left: -3em;
 }
 
 .whitespace {
