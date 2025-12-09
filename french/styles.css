@@ -255,6 +255,11 @@ td.best-result {
     width: 32%;
 }
 
+.text .span-third.three-radio-buttons span:nth-child(2) {
+    display: inline-block;
+    width: 45%;
+}
+
 .text .span-third span.info-icon {
     font-size: x-large;
     line-height: 100%;
