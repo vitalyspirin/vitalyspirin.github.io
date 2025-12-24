@@ -178,6 +178,7 @@ header label:last-of-type {
 .text i {
     color: chocolate;
 }
+
 .text p,
 .text li {
     line-height: 2;
@@ -352,15 +353,22 @@ td.best-result {
 
 /* stats page */
 
+#checkboxes {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
 table {
     border-collapse: separate;
     border-spacing: 0;
     margin: 0 -0.75em;
 }
+
 table small {
     /* for star symbol */
     /*display: none;*/
 }
+
 th,
 td {
     border-right: 1px solid black;
@@ -376,6 +384,7 @@ td:first-of-type {
 thead tr:first-child th {
     border-top: 1px solid black;
 }
+
 thead tr:first-child th:first-of-type {
     /* date column */
     width: 5.25em;
@@ -435,6 +444,16 @@ thead tr:nth-child(2) th {
 
 thead tr:nth-child(3) th {
     top: 5em;
+}
+
+/* hide stats columns based on checkbox selection */
+table:not(.others) .others,
+table:not(.conjugations) .conjugations,
+table:not(.tense-sequence) .tense-sequence {
+    max-width: 0;
+    padding: 0;
+    border: 0;
+    visibility: hidden;
 }
 
 /* index page */

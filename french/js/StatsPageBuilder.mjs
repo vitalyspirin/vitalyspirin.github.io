@@ -118,4 +118,19 @@ export class StatsPageBuilder {
             }
         }
     }
+
+    static showHideColumns() {
+        document.querySelectorAll('#checkboxes input').forEach((checkboxElement) => {
+
+            if (!(checkboxElement instanceof HTMLInputElement)) return;
+
+            const table = document.getElementById('stats-table');
+
+            if (checkboxElement.checked) {
+                table.classList.add(checkboxElement.name);
+            } else {
+                table.classList.remove(checkboxElement.name);
+            }
+        });
+    }
 }
