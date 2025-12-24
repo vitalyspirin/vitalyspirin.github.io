@@ -175,6 +175,9 @@ header label:last-of-type {
     text-align: left;
 }
 
+.text i {
+    color: chocolate;
+}
 .text p,
 .text li {
     line-height: 2;
@@ -352,8 +355,12 @@ td.best-result {
 table {
     border-collapse: separate;
     border-spacing: 0;
+    margin: 0 -0.75em;
 }
-
+table small {
+    /* for star symbol */
+    /*display: none;*/
+}
 th,
 td {
     border-right: 1px solid black;
@@ -368,6 +375,10 @@ td:first-of-type {
 
 thead tr:first-child th {
     border-top: 1px solid black;
+}
+thead tr:first-child th:first-of-type {
+    /* date column */
+    width: 5.25em;
 }
 
 caption {
@@ -406,10 +417,12 @@ th {
     background-color: white;
 
     /* attempt to fix rendering issue when some borders in the headers are not shown */
+    /*
     will-change: transform;
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     backface-visibility: hidden;
+    */
 }
 
 thead tr:nth-child(1) th {
