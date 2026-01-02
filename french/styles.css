@@ -361,7 +361,7 @@ td.best-result {
 table {
     border-collapse: separate;
     border-spacing: 0;
-    margin: 0 -0.75em;
+    margin: auto;
 }
 
 table small {
@@ -387,7 +387,8 @@ thead tr:first-child th {
 
 thead tr:first-child th:first-of-type {
     /* date column */
-    width: 5.25em;
+    min-width: 5.25em;
+    max-width: 5.25em;
 }
 
 caption {
@@ -447,13 +448,23 @@ thead tr:nth-child(3) th {
 }
 
 /* hide stats columns based on checkbox selection */
-table:not(.others) .others,
-table:not(.conjugations) .conjugations,
-table:not(.tense-sequence) .tense-sequence {
+table .others,
+table .conjugations,
+table .tense-sequence {
     max-width: 0;
+    visibility: hidden;
     padding: 0;
     border: 0;
-    visibility: hidden;
+}
+
+table.others .others,
+table.conjugations .conjugations,
+table.tense-sequence .tense-sequence {
+    max-width: none;
+    visibility: visible;
+    padding: 0.25em;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 /* index page */
