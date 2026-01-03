@@ -60,7 +60,11 @@ export class StatsPageBuilder {
 
         const dateCell = tableRowElement.querySelector('[data-key="date"]');
         dateCell.innerText = formattedDate;
-        dateCell.title = 'time spent: ' + Utils.timestampToTime(duration);
+        const durationStr = Utils.timestampToTime(duration);
+        dateCell.title = 'time spent: ' + durationStr;
+
+        const durationCell = tableRowElement.querySelector('[data-key="duration"]');
+        durationCell.innerText = durationStr;
     }
 
     static #buildStatsObject() {

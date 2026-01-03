@@ -354,8 +354,10 @@ td.best-result {
 /* stats page */
 
 #checkboxes {
-    text-align: center;
+    width: 60em;
+    margin: auto;
     margin-bottom: 1em;
+    text-align: center;
 }
 
 table {
@@ -376,7 +378,6 @@ td {
 }
 
 thead tr:first-child th:first-of-type,
-thead tr:nth-child(2) th:first-of-type,
 td:first-of-type {
     border-left: 1px solid black;
 }
@@ -390,9 +391,11 @@ thead tr:first-child th:first-of-type {
     min-width: 5.25em;
     max-width: 5.25em;
 }
+
 thead tr:nth-of-type(3) th {
     width: 3em;
 }
+
 caption {
     padding: 1em;
 }
@@ -450,6 +453,7 @@ thead tr:nth-child(3) th {
 }
 
 /* hide stats columns based on checkbox selection */
+table .duration,
 table .others,
 table .conjugations,
 table .tense-sequence {
@@ -459,6 +463,7 @@ table .tense-sequence {
     border: 0;
 }
 
+table.duration .duration,
 table.others .others,
 table.conjugations .conjugations,
 table.tense-sequence .tense-sequence {
