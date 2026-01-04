@@ -6,6 +6,7 @@ body {
     font-family: sans-serif;
     /* color of regular text in GMail */
     color: #222;
+    --section-header-color: #2a5f6e;
 }
 
 body main {
@@ -164,7 +165,7 @@ header label:last-of-type {
 }
 
 .text h3 {
-    color: #2a5f6e;
+    color: var(--section-header-color);
     font-size: 1.25em;
     text-align: center;
 }
@@ -208,13 +209,28 @@ header label:last-of-type {
     margin-bottom: 3em;
 }
 
+.text ol.nested>li::marker {
+    color: var(--section-header-color);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .text ol {
     padding-left: 1em;
+}
+
+.text ol.nested ol {
+    padding-left: 0;
+    margin-left: -0.5em;
 }
 
 .text li {
     margin-bottom: 1em;
     margin-left: 0.75em;
+}
+
+.text .example {
+    margin-bottom: 1em;
 }
 
 ol#stats {
