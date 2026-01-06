@@ -2,6 +2,13 @@ iframe {
     display: none;
 }
 
+#xhtml-validator {
+    display: block;
+    width: 100px;
+    margin: auto;
+    margin-top: 3em;
+}
+
 body {
     font-family: sans-serif;
     /* color of regular text in GMail */
