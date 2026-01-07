@@ -96,7 +96,8 @@ export class Resolver {
         "exercise_concordance_conditional.html": "pdf/concordance_conditional.pdf",
         "exercise_concordance_future.html": "pdf/concordance_future.pdf",
 
-        "exercise_time_prepositions.html": "pdf/time_prepositions.pdf"
+        "exercise_time_prepositions.html": "pdf/time_prepositions.pdf",
+        "exercise_negation.html": "pdf/negation.pdf"
     };
 
 
