@@ -178,7 +178,7 @@ header label:last-of-type {
 }
 
 .text h4 {
-    color: #2a5f6e;
+    color: var(--section-header-color);
     font-size: 1.2em;
     text-align: left;
 }
