@@ -75,6 +75,7 @@ export class Resolver {
         "conjugations.html?L%27imp%C3%A9ratif": "pdf/imperative.pdf",
         "exercise_imperative.html": "pdf/imperative.pdf",
 
+        "exercise_avoir_etre.html": "pdf/avoir_etre.pdf",
         "conjugations.html?Le%20plus-que-parfait": "pdf/plus-que-parfait.pdf",
         "exercise_pastperfect.html": "pdf/plus-que-parfait.pdf",
 
