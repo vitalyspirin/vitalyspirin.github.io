@@ -45,7 +45,10 @@ export class ErrorCounter {
 
             // page for present subjunctive text exercise also has radio buttons
             self.errorCounter.numberOfAllInputElements +=
-                document.querySelectorAll('input[type="radio"]').length / 2;
+                document.querySelectorAll('input[type="radio"][data-type="three-choices"]').length / 3;
+
+            self.errorCounter.numberOfAllInputElements +=
+                document.querySelectorAll('input[type="radio"][data-type="two-choices"]').length / 2;
         } else {
             self.errorCounter = {};
 
