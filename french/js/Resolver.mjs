@@ -63,6 +63,8 @@ export class Resolver {
         "conjugations.html?Le%20pr%C3%A9sent": "pdf/present.pdf",
         "exercise_present.html": "pdf/present.pdf",
 
+        "exercise_devoir_pouvoir_falloir_vouloir.html": "pdf/devoir_pouvoir_falloir_vouloir.pdf",
+
         "conjugations.html?Le%20pass%C3%A9%20compos%C3%A9": "pdf/presentperfect.pdf",
         "exercise_presentperfect.html": "pdf/presentperfect.pdf",
 

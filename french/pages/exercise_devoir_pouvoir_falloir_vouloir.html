@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<!-- exercises are taken from https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000096617_la_concordance_au_pass__exercices_et_corrig__web.pdf -->
+
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Les auxiliaires modaux</title>
+
+    <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="module">
+        "use strict";
+
+        import { ErrorCounter } from '../js/ErrorCounter.mjs';
+
+        ErrorCounter.initialize();
+    </script>
+</head>
+
+<body>
+    <main spellcheck="false">
+        <article class="text">
+            <h2>Les auxiliaires modaux</h2>
+            <h3>Exercices et corrigé</h3>
+
+            <ol class="nested">
+                <li>
+                    <section>
+                        <h4>Conjuguez le verbe <i>pouvoir</i> au présent.</h4>
+                        <div class="span-third-two-thirds">
+                            Le verbe <i>pouvoir</i> indique :<br />
+                            <ul>
+                                <li>
+                                    <span><b>la possibilité</b></span>
+                                    <span>Je <i>peux</i> vous aider.</span>
+                                </li>
+                                <li>
+                                    <span><b>l’impossibilité</b></span>
+                                    <span>Je ne <i>peux</i> pas dormir : les gens parlent fort. </span>
+                                </li>
+                                <li>
+                                    <span><b>la permission</b></span>
+                                    <span>Est-ce que je <ipeux< /i> sortir ?</span>
+                                </li>
+                                <li>
+                                    <span><b>la demande</b></span>
+                                    <span>Est-ce que je <i>peux</i> avoir un café s’il vous plaît ?</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ol>
+                            <li>
+                                <b title="peut">Possibilité</b> – Sylvie a beaucoup d’énergie : elle
+                                <input type="text" pattern="peut">
+                                travailler longtemps.
+                            </li>
+                            <li>
+                                <b title="pouvez">demande</b> – Il fait froid : est-ce que vous
+                                <input type="text" pattern="pouvez">
+                                fermer la fenêtre ?
+                            </li>
+                            <li>
+                                <b title="pouvons">permission</b> – Nous sommes fatigués : est-ce que nous
+                                <input type="text" pattern="pouvons">
+                                partir ?
+                            </li>
+                            <li>
+                                <b title="peut - pouvez">impossibilité</b> – Il ne
+                                <input type="text" pattern="peut">
+                                pas enlever son manteau. Vous
+                                <input type="text" pattern="pouvez">
+                                l’aider ?
+                            </li>
+                            <li>
+                                <b title="peuvent">possibilité</b> – Certains jeunes
+                                <input type="text" pattern="peuvent">
+                                rester plusieurs jours sans dormir.
+                            </li>
+                            <li>
+                                <b title="peut">permission</b> – On
+                                <input type="text" pattern="peut">
+                                boire de l’alcool à dix-huit ans.
+                            </li>
+                            <li>
+                                <b title="peux">demande</b> – Je n’ai pas d’argent. Est-ce que tu
+                                <input type="text" pattern="peux">
+                                m’en prêter ?
+                            </li>
+
+                        </ol>
+                    </section>
+                </li>
+
+            </ol>
+
+            <iframe src="partials/errorCounter.html"
+                onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
+
+        </article>
+    </main>
+
+</body>
+
+</html>

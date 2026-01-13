@@ -282,6 +282,28 @@ td.best-result {
     width: 32%;
 }
 
+/* exercise_devoir_pouvoir_falloir_vouloir.html */
+.text .span-third-two-thirds {
+    margin-bottom: 1em;
+}
+
+.text .span-third-two-thirds span:first-of-type {
+    display: inline-block;
+    width: 20%;
+}
+
+.text .span-third-two-thirds span:nth-child(2) {
+    display: inline-block;
+}
+
+.text .span-third-two-thirds ul {
+    list-style-type: "- ";
+}
+
+.text .span-third-two-thirds ul li {
+    margin-bottom: 0;
+}
+
 .text .span-third.three-radio-buttons span:nth-child(2) {
     display: inline-block;
     width: 45%;
@@ -510,7 +532,7 @@ table.tense-sequence .tense-sequence {
 }
 
 .card header {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid gainsboro;
     background-color: whitesmoke;
     color: black;
