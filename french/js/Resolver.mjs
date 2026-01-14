@@ -65,6 +65,8 @@ export class Resolver {
 
         "exercise_devoir_pouvoir_falloir_vouloir.html": "pdf/devoir_pouvoir_falloir_vouloir.pdf",
 
+        "exercise_qui_quel_quelle.html": "pdf/qui_quel_quelle.pdf",
+
         "conjugations.html?Le%20pass%C3%A9%20compos%C3%A9": "pdf/presentperfect.pdf",
         "exercise_presentperfect.html": "pdf/presentperfect.pdf",
 

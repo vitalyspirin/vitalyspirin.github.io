@@ -272,7 +272,7 @@ td.best-result {
     color: #1f1f1f;
 }
 
-.text .span-half span {
+.text .span-half li>span {
     display: inline-block;
     width: 49%;
 }
@@ -351,7 +351,7 @@ td.best-result {
     clear: both;
 }
 
-.text section.span-half li span:nth-of-type(1) {
+.text section.span-half li>span:nth-of-type(1) {
     /* for top vertical alignement of order number in <li> */
     float: left;
 }
