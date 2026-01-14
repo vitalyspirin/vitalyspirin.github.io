@@ -399,10 +399,15 @@ td.best-result {
 /* stats page */
 
 #checkboxes {
-    width: 60em;
+    width: 75em;
     margin: auto;
     margin-bottom: 1em;
     text-align: center;
+}
+
+#checkboxes label {
+    display: inline-block;
+    width: 19%;
 }
 
 table {
@@ -501,6 +506,7 @@ thead tr:nth-child(3) th {
 table .duration,
 table .others,
 table .conjugations,
+table .conjugations-plus,
 table .tense-sequence {
     max-width: 0;
     visibility: hidden;
@@ -511,6 +517,7 @@ table .tense-sequence {
 table.duration .duration,
 table.others .others,
 table.conjugations .conjugations,
+table.conjugations-plus .conjugations-plus,
 table.tense-sequence .tense-sequence {
     max-width: none;
     visibility: visible;
