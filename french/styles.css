@@ -361,6 +361,12 @@ td.best-result {
     display: inline-flex;
 }
 
+.text section.first-span-grow li span:nth-of-type(1) {
+    display: inline-flex;
+    width: calc(49% - 2em);
+    margin-right: 2em;
+}
+
 .text section li span input[type="text"] {
     flex-grow: 1;
     align-self: center;

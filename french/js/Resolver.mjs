@@ -67,6 +67,8 @@ export class Resolver {
 
         "exercise_qui_quel_quelle.html": "pdf/qui_quel_quelle.pdf",
 
+        "exercise_quand_comment_combien.html": "pdf/quand_comment_combien.pdf",
+
         "conjugations.html?Le%20pass%C3%A9%20compos%C3%A9": "pdf/presentperfect.pdf",
         "exercise_presentperfect.html": "pdf/presentperfect.pdf",
 
