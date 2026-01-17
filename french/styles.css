@@ -282,6 +282,12 @@ td.best-result {
     width: 32%;
 }
 
+/* exercise_qui_quel_quelle.html */
+.text .span-two-thrids-third li>span:first-of-type {
+    display: inline-block;
+    width: 55%;
+}
+
 /* exercise_devoir_pouvoir_falloir_vouloir.html */
 .text .span-third-two-thirds {
     margin-bottom: 1em;
@@ -356,12 +362,13 @@ td.best-result {
     float: left;
 }
 
-.text section li span:nth-of-type(2),
+.text section:not(.first-span-grows) li span:nth-of-type(2),
 .text section li span:nth-of-type(3) {
     display: inline-flex;
 }
 
-.text section.first-span-grow li span:nth-of-type(1) {
+/* first-span-grows is in exercise_quand_comment_combien.html */
+.text section.first-span-grows li span:nth-of-type(1) {
     display: inline-flex;
     width: calc(49% - 2em);
     margin-right: 2em;
