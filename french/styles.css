@@ -362,7 +362,8 @@ td.best-result {
     float: left;
 }
 
-.text section:not(.first-span-grows) li span:nth-of-type(2),
+/* we need not(.span-third-two-thirds) for exercise_devoir_pouvoir_falloir_vouloir.html */
+.text section:not(.first-span-grows)>*:not(.span-third-two-thirds) li span:nth-of-type(2),
 .text section li span:nth-of-type(3) {
     display: inline-flex;
 }
