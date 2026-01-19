@@ -65,6 +65,8 @@ export class Resolver {
 
         "exercise_devoir_pouvoir_falloir_vouloir.html": "pdf/devoir_pouvoir_falloir_vouloir.pdf",
 
+        "exercise_de_du_des.html": "pdf/de_du_des.pdf",
+
         "exercise_qui_quel_quelle.html": "pdf/qui_quel_quelle.pdf",
 
         "exercise_quand_comment_combien.html": "pdf/quand_comment_combien.pdf",

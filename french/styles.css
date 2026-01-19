@@ -193,6 +193,9 @@ header label:last-of-type {
     text-align: left;
 }
 
+.text .short-input input[type="text"] {
+    width: 2.5em;
+}
 .text input[type="text"] {
     font-size: 1em;
     width: 6em;
