@@ -185,6 +185,7 @@ header label:last-of-type {
 
 .text i {
     color: chocolate;
+    font-weight: bold;
 }
 
 .text p,
@@ -196,6 +197,7 @@ header label:last-of-type {
 .text .short-input input[type="text"] {
     width: 2.5em;
 }
+
 .text input[type="text"] {
     font-size: 1em;
     width: 6em;
@@ -366,7 +368,7 @@ td.best-result {
 }
 
 /* we need not(.span-third-two-thirds) for exercise_devoir_pouvoir_falloir_vouloir.html */
-.text section:not(.first-span-grows)>*:not(.span-third-two-thirds) li span:nth-of-type(2),
+.text section:not(.first-span-grows):not(.no-growth)>*:not(.span-third-two-thirds) li span:nth-of-type(2),
 .text section li span:nth-of-type(3) {
     display: inline-flex;
 }
