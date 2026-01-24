@@ -64,10 +64,9 @@
                         <th rowspan="3">date</th>
                         <th class="duration" rowspan="3">durée <br /><br />(heure:) min: sec</th>
                         <th class="conjugations conjugations-plus others" colspan="10">A1</th>
-                        <th class="conjugations conjugations-plus others" colspan="12">A2</th>
-                        <th class="conjugations" colspan="6">B1</th>
-                        <th class="conjugations conjugations-plus" colspan="7">B2</th>
-                        <th class="tense-sequence" colspan="4"></th>
+                        <th class="conjugations conjugations-plus others tense-sequence" colspan="13">A2</th>
+                        <th class="conjugations tense-sequence" colspan="7">B1</th>
+                        <th class="conjugations conjugations-plus tense-sequence" colspan="9">B2</th>
                     </tr>
                     <tr>
                         <!-- A1 -->
@@ -84,6 +83,7 @@
                         <th class="conjugations-plus" colspan="1">Avoir ou Être</th>
                         <th class="others" colspan="1">Mien Sien</th>
                         <th class="conjugations" colspan="2">imparfait</th>
+                        <th class="tense-sequence" colspan="1" title="imparfait - passé composé">i.-p.c.</th>
                         <th class="conjugations" colspan="2">futur simple</th>
                         <th class="others" colspan="1" title="prépositions de temps">prép. de temps</th>
                         <th class="others" colspan="1">Ceci Cela Celui</th>
@@ -93,16 +93,17 @@
 
                         <!-- B1 -->
                         <th class="conjugations" colspan="2">plus-que-parfait</th>
+                        <th class="tense-sequence" title="imparfait - passé composé - plus-que-parfait">i-pc-pqp</th>
                         <th class="conjugations" colspan="2">conditionnel présent</th>
                         <th class="conjugations" colspan="2">subjonctif présent</th>
 
                         <!-- B2 -->
                         <th class="conjugations" colspan="2">subjonctif passé</th>
                         <th class="conjugations" colspan="2">conditionnel passé</th>
+                        <th class="tense-sequence" colspan="1" title="Les phrases de condition">si...</th>
                         <th class="conjugations-plus" colspan="1">passif</th>
                         <th class="conjugations" colspan="2">futur antérieur</th>
-
-                        <th class="tense-sequence" colspan="4">concordance des temps</th>
+                        <th class="tense-sequence" title="futur simple - futur antérieur">f.s.-f.a.</th>
                     </tr>
                     <tr>
                         <!-- A1 -->
@@ -133,6 +134,8 @@
                         <th class="conjugations"><a href="conjugations.html?L%27imparfait">liste</a></th>
                         <th class="conjugations"><a href="exercise_imperfect.html">texte</a></th>
 
+                        <th class="tense-sequence"><a href="exercise_concordance.html">texte</a></th>
+
                         <!-- futur simple -->
                         <th class="conjugations"><a href="conjugations.html?Le%20futur%20simple">liste</a></th>
                         <th class="conjugations"><a href="exercise_future.html">texte</a><small>*</small></th>
@@ -150,6 +153,8 @@
                         <!-- plus-que-parfait -->
                         <th class="conjugations"><a href="conjugations.html?Le%20plus-que-parfait">liste</a></th>
                         <th class="conjugations"><a href="exercise_pastperfect.html">texte</a></th>
+
+                        <th class="tense-sequence"><a href="exercise_concordance3.html">texte</a></th>
 
                         <!-- conditionnel présent -->
                         <th class="conjugations"><a href="conjugations.html?Le%20conditionnel%20pr%C3%A9sent">liste</a>
@@ -174,6 +179,7 @@
                         <th class="conjugations"><a href="conjugations.html?Le%20conditionnel%20passé">liste</a></th>
                         <th class="conjugations"><a href="exercise_conditionalperfect.html">texte</a></th>
 
+                        <th class="tense-sequence"><a href="exercise_concordance_conditional.html">texte</a></th>
                         <!-- passif -->
                         <th class="conjugations-plus"><a href="exercise_passive.html">texte</a><small>*</small></th>
 
@@ -181,16 +187,7 @@
                         <th class="conjugations"><a href="conjugations.html?Le%20futur%20antérieur">liste</a></th>
                         <th class="conjugations"><a href="exercise_futureperfect.html">texte</a></th>
 
-                        <!-- concordance -->
-                        <th class="tense-sequence"><a href="exercise_concordance.html"
-                                title="imparfait - passé composé">i.-p.c.</a></th>
-                        <th class="tense-sequence"><a href="exercise_concordance3.html"
-                                title="imparfait - passé composé - plus-que-parfait">i-pc-pqp</a></th>
-                        <th class="tense-sequence">
-                            <a href="exercise_concordance_conditional.html" title="Les phrases de condition">si...</a>
-                        </th>
-                        <th class="tense-sequence"><a href="exercise_concordance_future.html"
-                                title="futur simple - futur antérieur">f.s.-f.a.</a></th>
+                        <th class="tense-sequence"><a href="exercise_concordance_future.html">texte</a></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -221,6 +218,8 @@
                             <td class="conjugations" data-key="conjugations.html?L%27imparfait"></td>
                             <td class="conjugations" data-key="exercise_imperfect.html"></td>
 
+                            <td class="tense-sequence" data-key="exercise_concordance.html"></td>
+
                             <td class="conjugations" data-key="conjugations.html?Le%20futur%20simple"></td>
                             <td class="conjugations" data-key="exercise_future.html"></td>
 
@@ -236,6 +235,8 @@
                             <td class="conjugations" data-key="conjugations.html?Le%20plus-que-parfait"></td>
                             <td class="conjugations" data-key="exercise_pastperfect.html"></td>
 
+                            <td class="tense-sequence" data-key="exercise_concordance3.html"></td>
+
                             <td class="conjugations" data-key="conjugations.html?Le%20conditionnel%20pr%C3%A9sent"></td>
                             <td class="conjugations" data-key="exercise_conditionalpresent.html"></td>
 
@@ -249,14 +250,13 @@
                             <td class="conjugations" data-key="conjugations.html?Le%20conditionnel%20pass%C3%A9"></td>
                             <td class="conjugations" data-key="exercise_conditionalperfect.html"></td>
 
+                            <td class="tense-sequence" data-key="exercise_concordance_conditional.html"></td>
+
                             <td class="conjugations-plus" data-key="exercise_passive.html"></td>
 
                             <td class="conjugations" data-key="conjugations.html?Le%20futur%20ant%C3%A9rieur"></td>
                             <td class="conjugations" data-key="exercise_futureperfect.html"></td>
 
-                            <td class="tense-sequence" data-key="exercise_concordance.html"></td>
-                            <td class="tense-sequence" data-key="exercise_concordance3.html"></td>
-                            <td class="tense-sequence" data-key="exercise_concordance_conditional.html"></td>
                             <td class="tense-sequence" data-key="exercise_concordance_future.html"></td>
                         </tr>
                     </template>
