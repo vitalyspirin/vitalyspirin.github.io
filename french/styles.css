@@ -415,6 +415,8 @@ td.best-result {
     display: none;
 }
 
+
+/* ------------------------------------------------ */
 /* stats page */
 
 #checkboxes {
@@ -521,6 +523,24 @@ thead tr:nth-child(3) th {
     top: 5em;
 }
 
+table.tense-sequence:not(.conjugations):not(.others) .tense-sequence .full-name {
+    display: block;
+    width: 9em;
+    white-space: break-spaces;
+}
+
+table.tense-sequence:not(.conjugations):not(.others) .tense-sequence .short-name {
+    display: none;
+}
+
+table.tense-sequence:is(.conjugations, .others) .tense-sequence .full-name {
+    display: none;
+}
+
+table.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
+    display: block;
+}
+
 /* hide stats columns based on checkbox selection */
 table .duration,
 table .others,
@@ -545,6 +565,9 @@ table.tense-sequence .tense-sequence {
     border-bottom: 1px solid black;
 }
 
+
+
+/* ------------------------------------------------ */
 /* index page */
 
 .card {
