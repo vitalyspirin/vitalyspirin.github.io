@@ -110,6 +110,7 @@ export class Resolver {
 
         "exercise_time_prepositions.html": "pdf/time_prepositions.pdf",
         "exercise_ceci_cela_celui.html": "pdf/ce_ces_cet.pdf",
+        "exercise_lui_leur.html": "pdf/lui_leur.pdf",
         "exercise_negation.html": "pdf/negation.pdf"
     };
 
