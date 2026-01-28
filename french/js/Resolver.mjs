@@ -109,6 +109,7 @@ export class Resolver {
         "exercise_concordance_future.html": "pdf/concordance_future.pdf",
 
         "exercise_time_prepositions.html": "pdf/time_prepositions.pdf",
+        "exercise_y_en.html": "pdf/y_en.pdf",
         "exercise_ceci_cela_celui.html": "pdf/ce_ces_cet.pdf",
         "exercise_lui_leur.html": "pdf/lui_leur.pdf",
         "exercise_negation.html": "pdf/negation.pdf"
