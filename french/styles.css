@@ -549,11 +549,8 @@ table.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 }
 
 /* hide stats columns based on checkbox selection */
-table .duration,
-table .others,
-table .conjugations,
-table .conjugations-plus,
-table .tense-sequence {
+table th:not([data-key="date"]),
+table td:not([data-key="date"]) {
     max-width: 0;
     visibility: hidden;
     padding: 0;
