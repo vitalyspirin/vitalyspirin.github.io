@@ -419,6 +419,11 @@ td.best-result {
 /* ------------------------------------------------ */
 /* stats page */
 
+/* show user that there is a hint when mouse over */
+#stats-page *[title] {
+    font-style: italic;
+}
+
 #checkboxes {
     width: 75em;
     margin: auto;
@@ -533,7 +538,9 @@ table.tense-sequence:not(.conjugations):not(.others) .tense-sequence .short-name
     display: none;
 }
 
-table.tense-sequence:is(.conjugations, .others) .tense-sequence .full-name {
+table.tense-sequence:is(.conjugations, .others) .tense-sequence .full-name,
+/* add below otherwise column height will be big */
+table:not(.tense-sequence) .tense-sequence .full-name {
     display: none;
 }
 
