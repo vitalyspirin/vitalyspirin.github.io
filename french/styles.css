@@ -427,13 +427,17 @@ td.best-result {
 #checkboxes {
     width: 75em;
     margin: auto;
-    margin-bottom: 1em;
     text-align: center;
 }
 
-#checkboxes label {
+#checkboxes #exercise-types label {
     display: inline-block;
     width: 19%;
+}
+
+#checkboxes #language-levels label {
+    display: inline-block;
+    width: 7%;
 }
 
 table {
@@ -553,6 +557,17 @@ table th:not([data-key="date"]),
 table td:not([data-key="date"]) {
     max-width: 0;
     visibility: hidden;
+    padding: 0;
+    border: 0;
+}
+
+table:not(.A1) th.A1, table:not(.A1) td.A1,
+table:not(.A2) th.A2, table:not(.A2) td.A2,
+table:not(.B1) th.B1, table:not(.B1) td.B1,
+table:not(.B2) th.B2, table:not(.B2) td.B2,
+table:not(.C1) th.C1, table:not(.C1) td.C1 {
+    max-width: 0 !important;
+    visibility: hidden !important;
     padding: 0;
     border: 0;
 }
