@@ -12,6 +12,11 @@ export class StatsPageBuilder {
     static earlestDates = {};
     static bestResults = {};
 
+    static TD_ATTRIBUTE = 'data-key';
+    static TD_ATTRIBUTE_DATE_VALUE = 'date';
+    static RECENT_DATES_CLASS_NAME = 'recent-dates';
+    static LEVEL_LIST = ['A1', 'A2', 'B1', 'B2', 'C1'];
+
     static buildPage() {
         this.#buildStatsObject();
 
@@ -35,6 +40,8 @@ export class StatsPageBuilder {
 
             tbodyElement.append(newTableRowElement);
         });
+
+        this.#ProcessRecentDates();
     }
 
     static #fillTableRow(tableRowElement, formattedDate, statsForOneDate) {
@@ -123,17 +130,54 @@ export class StatsPageBuilder {
         }
     }
 
+    static #ProcessRecentDates() {
+        const trElement = document.querySelector('tbody tr:first-of-type');
+        let tdList = trElement.querySelectorAll('[title]');
+        tdList.forEach((tdTopElement) => {
+            if (tdTopElement.getAttribute(this.TD_ATTRIBUTE) != this.TD_ATTRIBUTE_DATE_VALUE) {
+
+                // add class to stats column (with percent value)
+                let cssStr = 'tbody td[' + this.TD_ATTRIBUTE + '="' +
+                    tdTopElement.getAttribute(this.TD_ATTRIBUTE) + '"]';
+                const tdElementList = document.querySelectorAll(cssStr);
+                tdElementList.forEach((tdElement) => {
+                    tdElement.classList.add(this.RECENT_DATES_CLASS_NAME);
+                });
+
+                // add class to level header cell (A1 or A2 or B1 ...)
+                let level = Array.from(tdTopElement.classList).filter(
+                    value => this.LEVEL_LIST.includes(value)
+                )[0];
+                const thLevelElement = document.querySelector(
+                    'thead th[' + this.TD_ATTRIBUTE + '="' + level + '"]');
+                thLevelElement?.classList.add(this.RECENT_DATES_CLASS_NAME);
+
+                // add class to link header cell ('texte')
+                const aElement = document.querySelector(
+                    'thead a[href="' + tdTopElement.getAttribute(this.TD_ATTRIBUTE) + '"]');
+                aElement?.parentElement?.classList.add(this.RECENT_DATES_CLASS_NAME);
+
+                // add class to subject name header cell ('imparfait' or 'futur simple' etc)
+                cssStr = 'thead th[' + this.TD_ATTRIBUTE + '="' +
+                    tdTopElement.getAttribute(this.TD_ATTRIBUTE) + '"]';
+                const thSubjectElement = document.querySelector(cssStr);
+                thSubjectElement?.classList.add(this.RECENT_DATES_CLASS_NAME);
+            }
+
+        });
+    }
+
     static showHideColumns() {
         document.querySelectorAll('#checkboxes input').forEach((checkboxElement) => {
 
             if (!(checkboxElement instanceof HTMLInputElement)) return;
 
-            const table = document.getElementById('stats-table');
+            const element = document.getElementsByTagName('article')[0];
 
             if (checkboxElement.checked) {
-                table.classList.add(checkboxElement.name);
+                element.classList.add(checkboxElement.name);
             } else {
-                table.classList.remove(checkboxElement.name);
+                element.classList.remove(checkboxElement.name);
             }
         });
     }

@@ -440,6 +440,15 @@ td.best-result {
     width: 7%;
 }
 
+.recent-dates #checkboxes label:not(.not-disableable) {
+    color: dimgrey;
+    pointer-events: none;
+}
+
+.recent-dates #checkboxes label:not(.not-disableable) input {
+    accent-color: silver;
+}
+
 table {
     border-collapse: separate;
     border-spacing: 0;
@@ -532,23 +541,23 @@ thead tr:nth-child(3) th {
     top: 5em;
 }
 
-table.tense-sequence:not(.conjugations):not(.others) .tense-sequence .full-name {
+article.tense-sequence:not(.conjugations):not(.others) .tense-sequence .full-name {
     display: block;
     width: 9em;
     white-space: break-spaces;
 }
 
-table.tense-sequence:not(.conjugations):not(.others) .tense-sequence .short-name {
+article.tense-sequence:not(.conjugations):not(.others) .tense-sequence .short-name {
     display: none;
 }
 
-table.tense-sequence:is(.conjugations, .others) .tense-sequence .full-name,
+article.tense-sequence:is(.conjugations, .others) .tense-sequence .full-name,
 /* add below otherwise column height will be big */
-table:not(.tense-sequence) .tense-sequence .full-name {
+article:not(.tense-sequence) .tense-sequence .full-name {
     display: none;
 }
 
-table.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
+article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
     display: block;
 }
 
@@ -561,27 +570,28 @@ table td:not([data-key="date"]) {
     border: 0;
 }
 
-table:not(.A1) th.A1,
-table:not(.A1) td.A1,
-table:not(.A2) th.A2,
-table:not(.A2) td.A2,
-table:not(.B1) th.B1,
-table:not(.B1) td.B1,
-table:not(.B2) th.B2,
-table:not(.B2) td.B2,
-table:not(.C1) th.C1,
-table:not(.C1) td.C1 {
+#stats-page article:not(.A1) th.A1,
+#stats-page article:not(.A1) td.A1,
+#stats-page article:not(.A2) th.A2,
+#stats-page article:not(.A2) td.A2,
+#stats-page article:not(.B1) th.B1,
+#stats-page article:not(.B1) td.B1,
+#stats-page article:not(.B2) th.B2,
+#stats-page article:not(.B2) td.B2,
+#stats-page article:not(.C1) th.C1,
+#stats-page article:not(.C1) td.C1 {
     max-width: 0;
     visibility: hidden;
     padding: 0;
     border: 0;
 }
 
-table.duration .duration,
-table.others .others,
-table.conjugations .conjugations,
-table.conjugations-plus .conjugations-plus,
-table.tense-sequence .tense-sequence {
+article.duration .duration,
+article.others:not(.recent-dates) .others,
+article.conjugations:not(.recent-dates) .conjugations,
+article.conjugations-plus:not(.recent-dates) .conjugations-plus,
+article.tense-sequence:not(.recent-dates) .tense-sequence,
+article.recent-dates .recent-dates {
     max-width: none;
     visibility: visible;
     padding: 0.25em;
