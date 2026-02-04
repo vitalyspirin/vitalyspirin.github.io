@@ -163,7 +163,7 @@ export class StatsPageBuilder {
                     aElement?.parentElement?.classList.add(this.RECENT_DATES_CLASS_NAME);
 
                     // add class to subject name header cell ('imparfait' or 'futur simple' etc)
-                    cssStr = 'thead th[' + this.TD_ATTRIBUTE + '="' +
+                    cssStr = 'thead th[' + this.TD_ATTRIBUTE + '*="' +
                         tdTopElement.getAttribute(this.TD_ATTRIBUTE) + '"]';
                     const thSubjectElement = document.querySelector(cssStr);
                     thSubjectElement?.classList.add(this.RECENT_DATES_CLASS_NAME);

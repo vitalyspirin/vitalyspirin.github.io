@@ -586,19 +586,23 @@ table td:not([data-key="date"]) {
     border: 0;
 }
 
+/* for the top row (showing levels A1, A2, B1, B2, C1) */
+#stats-page article.recent-dates thead tr:first-child th.recent-dates {
+    border-top: 1px solid black;
+}
+
 article.duration .duration,
 article.others:not(.recent-dates) .others,
 article.conjugations:not(.recent-dates) .conjugations,
 article.conjugations-plus:not(.recent-dates) .conjugations-plus,
 article.tense-sequence:not(.recent-dates) .tense-sequence,
-article.recent-dates .recent-dates {
+#stats-page article.recent-dates table .recent-dates {
     max-width: none;
     visibility: visible;
     padding: 0.25em;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
-
 
 
 /* ------------------------------------------------ */
