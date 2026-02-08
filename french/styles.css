@@ -198,6 +198,10 @@ header label:last-of-type {
     width: 2.5em;
 }
 
+.text .medium-input input[type="text"] {
+    width: 3.5em;
+}
+
 .text input[type="text"] {
     font-size: 1em;
     width: 6em;

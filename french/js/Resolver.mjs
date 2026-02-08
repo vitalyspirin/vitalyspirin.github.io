@@ -114,6 +114,7 @@ export class Resolver {
         "exercise_ceci_cela_celui.html": "pdf/ce_ces_cet.pdf",
         "exercise_lui_leur.html": "pdf/lui_leur.pdf",
         "exercise_negation.html": "pdf/negation.pdf",
+        "exercise_tout.html": "pdf/tout.pdf",
         "exercise_que_dont.html": "pdf/que_dont.pdf",
         "exercise_qui_que_dont_ou.html": "pdf/qui_que_dont_ou.pdf"
     };
