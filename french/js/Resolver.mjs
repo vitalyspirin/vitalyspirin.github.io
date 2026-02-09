@@ -108,6 +108,7 @@ export class Resolver {
         "exercise_concordance_conditional.html": "pdf/concordance_conditional.pdf",
         "exercise_concordance_future.html": "pdf/concordance_future.pdf",
 
+        "exercise_il_est.html": "pdf/il_est.pdf",
         "exercise_time_prepositions.html": "pdf/time_prepositions.pdf",
         "exercise_y_en.html": "pdf/y_en.pdf",
         "exercise_qui_que.html": "pdf/qui_que.pdf",
