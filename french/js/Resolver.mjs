@@ -117,7 +117,8 @@ export class Resolver {
         "exercise_negation.html": "pdf/negation.pdf",
         "exercise_tout.html": "pdf/tout.pdf",
         "exercise_que_dont.html": "pdf/que_dont.pdf",
-        "exercise_qui_que_dont_ou.html": "pdf/qui_que_dont_ou.pdf"
+        "exercise_qui_que_dont_ou.html": "pdf/qui_que_dont_ou.pdf",
+        "exercise_savoir_connaitre.html": "pdf/savoir_connaitre.pdf"
     };
 
 
