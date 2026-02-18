@@ -26,6 +26,7 @@
 
     Object.values(aElements).forEach((theoryAElement) => {
       const pageLink = theoryAElement.nextElementSibling.href.split('/').pop();
+console.log(pageLink);
       const theoryFileLink = Resolver.infoForPages[pageLink];
       theoryAElement.href = theoryFileLink;
     });
@@ -111,6 +112,14 @@
     <header>Le subjonctif présent</header>
     <a class="theory">théorie</a>
     <a href="pages/conjugations.html?Le%20subjonctif%20présent">exercice de liste de verbes</a>
+    <a href="pages/exercise_presentsubjunctive.html">exercice de texte</a>
+  </div>
+
+  <div class="card">
+    <span class="cefr">B2</span>
+    <header>Le subjonctif passé</header>
+    <a class="theory">théorie</a>
+    <a href="pages/conjugations.html?Le%20subjonctif%20passé">exercice de liste de verbes</a>
     <a href="pages/exercise_presentsubjunctive.html">exercice de texte</a>
   </div>
 

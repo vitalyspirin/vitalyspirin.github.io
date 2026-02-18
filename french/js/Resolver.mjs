@@ -10,6 +10,7 @@ import verbsInImperativeTense, { audioFileFolder as audioFileFolderForImperative
 import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfectTense } from './conjugations/verbsInPastPerfectTense.mjs';
 import verbsInConditionalPresentTense, { audioFileFolder as audioFileFolderForConditionalPresentTense } from './conjugations/verbsInConditionalPresentTense.mjs';
 import verbsInPresentSubjunctiveTense, { audioFileFolder as audioVerbsInPresentSubjunctiveTense } from './conjugations/verbsInPresentSubjunctiveTense.mjs';
+import verbsInPresentPerfectSubjunctiveTense, { audioFileFolder as audioVerbsInPresentPerfectSubjunctiveTense } from './conjugations/verbsInPresentPerfectSubjunctiveTense.mjs';
 import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './conjugations/verbsInConditionalPerfectTense.mjs';
 import verbsInFuturePerfectTense, { audioFileFolder as audioFileFolderForFuturePerfectTense } from './conjugations/verbsInFuturePerfectTense.mjs';
 
@@ -51,6 +52,10 @@ export class Resolver {
         "Le subjonctif présent": {
             folder: audioVerbsInPresentSubjunctiveTense,
             verbList: verbsInPresentSubjunctiveTense
+        },
+        "Le subjonctif passé": {
+            folder: audioVerbsInPresentPerfectSubjunctiveTense,
+            verbList: verbsInPresentPerfectSubjunctiveTense
         },
         "L'impératif": {
             folder: audioFileFolderForImperativeTense,
@@ -95,6 +100,7 @@ export class Resolver {
 
         "conjugations.html?Le%20subjonctif%20pr%C3%A9sent": "pdf/presentsubjunctive.pdf",
         "exercise_presentsubjunctive.html": "pdf/presentsubjunctive.pdf",
+        "conjugations.html?Le%20subjonctif%20pass%C3%A9": "pdf/presentsubjunctive.pdf",
 
         "conjugations.html?Le%20conditionnel%20pass%C3%A9": "pdf/conditionalperfect.pdf",
         "exercise_conditionalperfect.html": "pdf/conditionalperfect.pdf",

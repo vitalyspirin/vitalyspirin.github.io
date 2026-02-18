@@ -142,11 +142,13 @@ header label:last-of-type {
     margin-bottom: 2em;
 }
 
-.conjugations-for-one-tense-block.presentsubjunctive label {
+.conjugations-for-one-tense-block.presentsubjunctive label,
+.conjugations-for-one-tense-block.presentperfectsubjunctive label {
     width: 4.2em;
 }
 
-.conjugations-for-one-tense-block.presentsubjunctive input {
+.conjugations-for-one-tense-block.presentsubjunctive input,
+.conjugations-for-one-tense-block.presentperfectsubjunctive input {
     width: 7.8em;
 }
 
