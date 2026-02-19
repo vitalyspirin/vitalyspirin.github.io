@@ -291,297 +291,297 @@ export default {
 		"qu'ils": "se soient enrichis"
 	},
 	"Se souvenir": {
-		"que je": "me souvienne",
-		"que tu": "te souviennes",
-		"qu'il": "se souvienne",
-		"que nous": "nous souvenions",
-		"que vous": "vous souveniez",
-		"qu'ils": "se souviennent"
+		"que je": "me sois souvenu",
+		"que tu": "te sois souvenu",
+		"qu'il": "se soit souvenu",
+		"que nous": "nous soyons souvenus",
+		"que vous": "vous soyez souvenus",
+		"qu'ils": "se soient souvenus"
 	},
 	Tenir: {
-		"que je": "tienne",
-		"que tu": "tiennes",
-		"qu'il": "tienne",
-		"que nous": "tenions",
-		"que vous": "teniez",
-		"qu'ils": "tiennent"
+		"que j'": "aie tenu",
+		"que tu": "aies tenu",
+		"qu'il": "ait tenu",
+		"que nous": "ayons tenu",
+		"que vous": "ayez tenu",
+		"qu'ils": "aient tenu"
 	},
 	Ouvrir: {
-		"que j'": "ouvre",
-		"que tu": "ouvres",
-		"qu'il": "ouvre",
-		"que nous": "ouvrions",
-		"que vous": "ouvriez",
-		"qu'ils": "ouvrent"
+		"que j'": "aie ouvert",
+		"que tu": "aies ouvert",
+		"qu'il": "ait ouvert",
+		"que nous": "ayons ouvert",
+		"que vous": "ayez ouvert",
+		"qu'ils": "aient ouvert"
 	},
 	Cueillir: {
-		"que je": "cueille",
-		"que tu": "cueilles",
-		"qu'il": "cueille",
-		"que nous": "cueillions",
-		"que vous": "cueilliez",
-		"qu'ils": "cueillent"
+		"que j'": "aie cueilli",
+		"que tu": "aies cueilli",
+		"qu'il": "ait cueilli",
+		"que nous": "ayons cueilli",
+		"que vous": "ayez cueilli",
+		"qu'ils": "aient cueilli"
 	},
 	Courir: {
-		"que je": "coure",
-		"que tu": "coures",
-		"qu'il": "coure",
-		"que nous": "courions",
-		"que vous": "couriez",
-		"qu'ils": "courent"
+		"que j'": "aie couru",
+		"que tu": "aies couru",
+		"qu'il": "ait couru",
+		"que nous": "ayons couru",
+		"que vous": "ayez couru",
+		"qu'ils": "aient couru"
 	},
 	Dormir: {
-		"que je": "dorme",
-		"que tu": "dormes",
-		"qu'il": "dorme",
-		"que nous": "dormions",
-		"que vous": "dormiez",
-		"qu'ils": "dorment"
+		"que j'": "aie dormi",
+		"que tu": "aies dormi",
+		"qu'il": "ait dormi",
+		"que nous": "ayons dormi",
+		"que vous": "ayez dormi",
+		"qu'ils": "aient dormi"
 	},
 	Mourir: {
-		"que je": "meure",
-		"que tu": "meures",
-		"qu'il": "meure",
-		"que nous": "mourions",
-		"que vous": "mouriez",
-		"qu'ils": "meurent"
+		"que je": "sois mort",
+		"que tu": "sois mort",
+		"qu'il": "soit mort",
+		"que nous": "soyons morts",
+		"que vous": "soyez morts",
+		"qu'ils": "soient morts"
 	},
 	Partir: {
-		"que je": "parte",
-		"que tu": "partes",
-		"qu'il": "parte",
-		"que nous": "partions",
-		"que vous": "partiez",
-		"qu'ils": "partent"
+		"que je": "sois parti",
+		"que tu": "sois parti",
+		"qu'il": "soit parti",
+		"que nous": "soyons partis",
+		"que vous": "soyez partis",
+		"qu'ils": "soient partis"
 	},
 	"Se servir": {
-		"que je": "me serve",
-		"que tu": "te serves",
-		"qu'il": "se serve",
-		"que nous": "nous servions",
-		"que vous": "vous serviez",
-		"qu'ils": "se servent"
+		"que je": "me sois servi",
+		"que tu": "te sois servi",
+		"qu'il": "se soit servi",
+		"que nous": "nous soyons servis",
+		"que vous": "vous soyez servis",
+		"qu'ils": "se soient servis"
 	},
 	Rire: {
-		"que je": "rie",
-		"que tu": "ries",
-		"qu'il": "rie",
-		"que nous": "riions",
-		"que vous": "riiez",
-		"qu'ils": "rient"
+		"que j'": "aie ri",
+		"que tu": "aies ri",
+		"qu'il": "ait ri",
+		"que nous": "ayons ri",
+		"que vous": "ayez ri",
+		"qu'ils": "aient ri"
 	},
 	Dire: {
-		"que je": "dise",
-		"que tu": "dises",
-		"qu'il": "dise",
-		"que nous": "disions",
-		"que vous": "disiez",
-		"qu'ils": "disent"
+		"que j'": "aie dit",
+		"que tu": "aies dit",
+		"qu'il": "ait dit",
+		"que nous": "ayons dit",
+		"que vous": "ayez dit",
+		"qu'ils": "aient dit"
 	},
 	Conduire: {
-		"que je": "conduise",
-		"que tu": "conduises",
-		"qu'il": "conduise",
-		"que nous": "conduisions",
-		"que vous": "conduisiez",
-		"qu'ils": "conduisent"
+		"que j'": "aie conduit",
+		"que tu": "aies conduit",
+		"qu'il": "ait conduit",
+		"que nous": "ayons conduit",
+		"que vous": "ayez conduit",
+		"qu'ils": "aient conduit"
 	},
 	Lire: {
-		"que je": "lise",
-		"que tu": "lises",
-		"qu'il": "lise",
-		"que nous": "lisions",
-		"que vous": "lisiez",
-		"qu'ils": "lisent"
+		"que j'": "aie lu",
+		"que tu": "aies lu",
+		"qu'il": "ait lu",
+		"que nous": "ayons lu",
+		"que vous": "ayez lu",
+		"qu'ils": "aient lu"
 	},
 	Peindre: {
-		"que je": "peigne",
-		"que tu": "peignes",
-		"qu'il": "peigne",
-		"que nous": "peignions",
-		"que vous": "peigniez",
-		"qu'ils": "peignent"
+		"que j'": "aie peint",
+		"que tu": "aies peint",
+		"qu'il": "ait peint",
+		"que nous": "ayons peint",
+		"que vous": "ayez peint",
+		"qu'ils": "aient peint"
 	},
 	"Se plaindre": {
-		"que je": "me plaigne",
-		"que tu": "te plaignes",
-		"qu'il": "se plaigne",
-		"que nous": "nous plaignions",
-		"que vous": "vous plaigniez",
-		"qu'ils": "se plaignent"
+		"que je": "me sois plaint",
+		"que tu": "te sois plaint",
+		"qu'il": "se soit plaint",
+		"que nous": "nous soyons plaints",
+		"que vous": "vous soyez plaints",
+		"qu'ils": "se soient plaints"
 	},
 	Prendre: {
-		"que je": "prenne",
-		"que tu": "prennes",
-		"qu'il": "prenne",
-		"que nous": "prenions",
-		"que vous": "preniez",
-		"qu'ils": "prennent"
+		"que j'": "aie pris",
+		"que tu": "aies pris",
+		"qu'il": "ait pris",
+		"que nous": "ayons pris",
+		"que vous": "ayez pris",
+		"qu'ils": "aient pris"
 	},
 	Attendre: {
-		"que j'": "attende",
-		"que tu": "attendes",
-		"qu'il": "attende",
-		"que nous": "attendions",
-		"que vous": "attendiez",
-		"qu'ils": "attendent"
+		"que j'": "aie attendu",
+		"que tu": "aies attendu",
+		"qu'il": "ait attendu",
+		"que nous": "ayons attendu",
+		"que vous": "ayez attendu",
+		"qu'ils": "aient attendu"
 	},
 	Rejoindre: {
-		"que je": "rejoigne",
-		"que tu": "rejoignes",
-		"qu'il": "rejoigne",
-		"que nous": "rejoignions",
-		"que vous": "rejoigniez",
-		"qu'ils": "rejoignent"
+		"que j'": "aie rejoint",
+		"que tu": "aies rejoint",
+		"qu'il": "ait rejoint",
+		"que nous": "ayons rejoint",
+		"que vous": "ayez rejoint",
+		"qu'ils": "aient rejoint"
 	},
 	"Se perdre": {
-		"que je": "me perde",
-		"que tu": "te perdes",
-		"qu'il": "se perde",
-		"que nous": "nous perdions",
-		"que vous": "vous perdiez",
-		"qu'ils": "se perdent"
+		"que je": "me sois perdu",
+		"que tu": "te sois perdu",
+		"qu'il": "se soit perdu",
+		"que nous": "nous soyons perdus",
+		"que vous": "vous soyez perdus",
+		"qu'ils": "se soient perdus"
 	},
 	Répondre: {
-		"que je": "réponde",
-		"que tu": "répondes",
-		"qu'il": "réponde",
-		"que nous": "répondions",
-		"que vous": "répondiez",
-		"qu'ils": "répondent"
+		"que j'": "aie répondu",
+		"que tu": "aies répondu",
+		"qu'il": "ait répondu",
+		"que nous": "ayons répondu",
+		"que vous": "ayez répondu",
+		"qu'ils": "aient répondu"
 	},
 	Croire: {
-		"que je": "croie",
-		"que tu": "croies",
-		"qu'il": "croie",
-		"que nous": "croyions",
-		"que vous": "croyiez",
-		"qu'ils": "croient"
+		"que j'": "aie cru",
+		"que tu": "aies cru",
+		"qu'il": "ait cru",
+		"que nous": "ayons cru",
+		"que vous": "ayez cru",
+		"qu'ils": "aient cru"
 	},
 	Boire: {
-		"que je": "boive",
-		"que tu": "boives",
-		"qu'il": "boive",
-		"que nous": "buvions",
-		"que vous": "buviez",
-		"qu'ils": "boivent"
+		"que j'": "aie bu",
+		"que tu": "aies bu",
+		"qu'il": "ait bu",
+		"que nous": "ayons bu",
+		"que vous": "ayez bu",
+		"qu'ils": "aient bu"
 	},
 	Mettre: {
-		"que je": "mette",
-		"que tu": "mettes",
-		"qu'il": "mette",
-		"que nous": "mettions",
-		"que vous": "mettiez",
-		"qu'ils": "mettent"
+		"que j'": "aie mis",
+		"que tu": "aies mis",
+		"qu'il": "ait mis",
+		"que nous": "ayons mis",
+		"que vous": "ayez mis",
+		"qu'ils": "aient mis"
 	},
 	"Se Battre": {
-		"que je": "me batte",
-		"que tu": "te battes",
-		"qu'il": "se batte",
-		"que nous": "nous battions",
-		"que vous": "vous battiez",
-		"qu'ils": "se battent"
+		"que je": "me sois battu",
+		"que tu": "te sois battu",
+		"qu'il": "se soit battu",
+		"que nous": "nous soyons battus",
+		"que vous": "vous soyez battus",
+		"qu'ils": "se soient battus"
 	},
 	Poursuivre: {
-		"que je": "poursuive",
-		"que tu": "poursuives",
-		"qu'il": "poursuive",
-		"que nous": "poursuivions",
-		"que vous": "poursuiviez",
-		"qu'ils": "poursuivent"
+		"que j'": "aie poursuivi",
+		"que tu": "aies poursuivi",
+		"qu'il": "ait poursuivi",
+		"que nous": "ayons poursuivi",
+		"que vous": "ayez poursuivi",
+		"qu'ils": "aient poursuivi"
 	},
 	Connaître: {
-		"que je": "connaisse",
-		"que tu": "connaisses",
-		"qu'il": "connaisse",
-		"que nous": "connaissions",
-		"que vous": "connaissiez",
-		"qu'ils": "connaissent"
+		"que j'": "aie connu",
+		"que tu": "aies connu",
+		"qu'il": "ait connu",
+		"que nous": "ayons connu",
+		"que vous": "ayez connu",
+		"qu'ils": "aient connu"
 	},
 	Naître: {
-		"que je": "naisse",
-		"que tu": "naisses",
-		"qu'il": "naisse",
-		"que nous": "naissions",
-		"que vous": "naissiez",
-		"qu'ils": "naissent"
+		"que je": "sois né",
+		"que tu": "sois né",
+		"qu'il": "soit né",
+		"que nous": "soyons nés",
+		"que vous": "soyez nés",
+		"qu'ils": "soient nés"
 	},
 	"Se Déplaire": {
-		"que je": "me déplaise",
-		"que tu": "te déplaises",
-		"qu'il": "se déplaise",
-		"que nous": "nous déplaisions",
-		"que vous": "vous déplaisiez",
-		"qu'ils": "se déplaisent"
+		"que je": "me sois déplu",
+		"que tu": "te sois déplu",
+		"qu'il": "se soit déplu",
+		"que nous": "nous soyons déplu",
+		"que vous": "vous soyez déplu",
+		"qu'ils": "se soient déplu"
 	},
 	Voir: {
-		"que je": "voie",
-		"que tu": "voies",
-		"qu'il": "voie",
-		"que nous": "voyions",
-		"que vous": "voyiez",
-		"qu'ils": "voient"
+		"que j'": "aie vu",
+		"que tu": "aies vu",
+		"qu'il": "ait vu",
+		"que nous": "ayons vu",
+		"que vous": "ayez vu",
+		"qu'ils": "aient vu"
 	},
 	Prévoir: {
-		"que je": "prévoie",
-		"que tu": "prévoies",
-		"qu'il": "prévoie",
-		"que nous": "prévoyions",
-		"que vous": "prévoyiez",
-		"qu'ils": "prévoient"
+		"que j'": "aie prévu",
+		"que tu": "aies prévu",
+		"qu'il": "ait prévu",
+		"que nous": "ayons prévu",
+		"que vous": "ayez prévu",
+		"qu'ils": "aient prévu"
 	},
 	Pourvoir: {
-		"que je": "pourvoie",
-		"que tu": "pourvoies",
-		"qu'il": "pourvoie",
-		"que nous": "pourvoyions",
-		"que vous": "pourvoyiez",
-		"qu'ils": "pourvoient"
+		"que j'": "aie pourvu",
+		"que tu": "aies pourvu",
+		"qu'il": "ait pourvu",
+		"que nous": "ayons pourvu",
+		"que vous": "ayez pourvu",
+		"qu'ils": "aient pourvu"
 	},
 	Recevoir: {
-		"que je": "reçoive",
-		"que tu": "reçoives",
-		"qu'il": "reçoive",
-		"que nous": "recevions",
-		"que vous": "receviez",
-		"qu'ils": "reçoivent"
+		"que j'": "aie reçu",
+		"que tu": "aies reçu",
+		"qu'il": "ait reçu",
+		"que nous": "ayons reçu",
+		"que vous": "ayez reçu",
+		"qu'ils": "aient reçu"
 	},
 	"S'apercevoir": {
-		"que je": "m'aperçoive",
-		"que tu": "t'aperçoives",
-		"qu'il": "s'aperçoive",
-		"que nous": "nous apercevions",
-		"que vous": "vous aperceviez",
-		"qu'ils": "s'aperçoivent"
+		"que je": "me sois aperçu",
+		"que tu": "te sois aperçu",
+		"qu'il": "se soit aperçu",
+		"que nous": "nous soyons aperçus",
+		"que vous": "vous soyez aperçus",
+		"qu'ils": "se soient aperçus"
 	},
 	"S'émouvoir": {
-		"que je": "m'émeuve",
-		"que tu": "t'émeuves",
-		"qu'il": "s'émeuve",
-		"que nous": "nous émouvions",
+		"que je": "me sois ému",
+		"que tu": "te sois ému",
+		"qu'il": "se soit ému",
+		"que nous": "nous soyons émus",
 		"que vous": "vous émouviez",
-		"qu'ils": "s'émeuvent"
+		"qu'ils": "se soient émus"
 	},
 	Valoir: {
-		"que je": "vaille",
-		"que tu": "vailles",
-		"qu'il": "vaille",
-		"que nous": "valions",
-		"que vous": "valiez",
-		"qu'ils": "vaillent"
+		"que je": "aie valu",
+		"que tu": "aies valu",
+		"qu'il": "ait valu",
+		"que nous": "ayons valu",
+		"que vous": "ayez valu",
+		"qu'ils": "aient valu"
 	},
 	"S'asseoir": {
-		"que je": "m'asseye",
-		"que tu": "t'asseyes",
-		"qu'il": "s'asseye",
-		"que nous": "nous asseyions",
-		"que vous": "vous asseyiez",
-		"qu'ils": "s'asseyent"
+		"que je": "me sois assis",
+		"que tu": "te sois assis",
+		"qu'il": "se soit assis",
+		"que nous": "nous soyons assis",
+		"que vous": "vous soyez assis",
+		"qu'ils": "se soient assis"
 	},
 	Falloir: {
-		"qu'il": "faille"
+		"qu'il": "ait fallu"
 	},
 	Pleuvoir: {
-		"qu'il": "pleuve"
+		"qu'il": "ait plu"
 	}
 };
