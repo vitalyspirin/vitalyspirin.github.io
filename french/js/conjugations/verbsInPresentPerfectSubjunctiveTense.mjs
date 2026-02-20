@@ -45,21 +45,21 @@ export default {
 	Faire: {
 		"que j'": "aie fait",
 		"que tu": "aies fait",
-		"qu'il": "ait fait ",
+		"qu'il": "ait fait",
 		"que nous": "ayons fait",
 		"que vous": "ayez fait",
 		"qu'ils": "aient fait"
 	},
 	Aller: {
-		"que j'": "sois allé",
+		"que je": "sois allé",
 		"que tu": "sois allé",
-		"qu'il": "ait allé",
+		"qu'il": "soit allé",
 		"que nous": "soyons allés",
 		"que vous": "soyez allés",
 		"qu'ils": " soient allés"
 	},
 	Vouloir: {
-		"que je": "aie voulu",
+		"que j'": "aie voulu",
 		"que tu": "aies voulu",
 		"qu'il": "ait voulu",
 		"que nous": "ayons voulu",
@@ -75,7 +75,7 @@ export default {
 		"qu'ils": "soient venus"
 	},
 	Devoir: {
-		"que je": "aie dû",
+		"que j'": "aie dû",
 		"que tu": "aies dû",
 		"qu'il": "ait dû",
 		"que nous": "ayons dû",
@@ -88,10 +88,10 @@ export default {
 		"qu'il": "ait aimé",
 		"que nous": "ayons aimé",
 		"que vous": "ayez aimé",
-		"qu'ils": "ayez aimé"
+		"qu'ils": "aient aimé"
 	},
 	Parler: {
-		"que je": "aie parlé",
+		"que j'": "aie parlé",
 		"que tu": "aies parlé",
 		"qu'il": "ait parlé",
 		"que nous": "ayons parlé",
@@ -115,7 +115,7 @@ export default {
 		"qu'ils": "se soient dépêchés"
 	},
 	Jeter: {
-		"que je": "aie jeté",
+		"que j'": "aie jeté",
 		"que tu": "aies jeté",
 		"qu'il": "ait jeté",
 		"que nous": "ayons jeté",
@@ -123,7 +123,7 @@ export default {
 		"qu'ils": "aient jeté"
 	},
 	Payer: {
-		"que je": "aie payé",
+		"que j'": "aie payé",
 		"que tu": "aies payé",
 		"qu'il": "ait payé",
 		"que nous": "ayons payé",
@@ -219,7 +219,7 @@ export default {
 		"qu'ils": "aient espéré"
 	},
 	Enlever: {
-		"que j'": "aie enlevé ",
+		"que j'": "aie enlevé",
 		"que tu": "aies enlevé",
 		"qu'il": "ait enlevé",
 		"que nous": "ayons enlevé",
@@ -251,7 +251,7 @@ export default {
 		"qu'ils": "aient amené"
 	},
 	Semer: {
-		"que je": "aie semé",
+		"que j'": "aie semé",
 		"que tu": "aies semé",
 		"qu'il": "ait semé",
 		"que nous": "ayons semé",
@@ -259,7 +259,7 @@ export default {
 		"qu'ils": "aient semé"
 	},
 	Peser: {
-		"que je": "aie pesé",
+		"que j'": "aie pesé",
 		"que tu": "aies pesé",
 		"qu'il": "ait pesé",
 		"que nous": "ayons pesé",
@@ -563,7 +563,7 @@ export default {
 		"qu'ils": "se soient émus"
 	},
 	Valoir: {
-		"que je": "aie valu",
+		"que j'": "aie valu",
 		"que tu": "aies valu",
 		"qu'il": "ait valu",
 		"que nous": "ayons valu",
