@@ -101,6 +101,7 @@ export class Resolver {
         "conjugations.html?Le%20subjonctif%20pr%C3%A9sent": "pdf/presentsubjunctive.pdf",
         "exercise_presentsubjunctive.html": "pdf/presentsubjunctive.pdf",
         "conjugations.html?Le%20subjonctif%20pass%C3%A9": "pdf/presentsubjunctive.pdf",
+        "exercise_presentperfectsubjunctive.html": "../pdf/presentsubjunctive.pdf",
 
         "conjugations.html?Le%20conditionnel%20pass%C3%A9": "pdf/conditionalperfect.pdf",
         "exercise_conditionalperfect.html": "pdf/conditionalperfect.pdf",
