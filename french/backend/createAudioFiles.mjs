@@ -29,6 +29,7 @@ import verbsInPastPerfectTense, { audioFileFolder as audioFileFolderForPastPerfe
 import { audioFileFolder as audioFileFolderForConditionalPresentTense } from '../js/conjugations/verbsInConditionalPresentTense.mjs';
 import { audioFileFolder as audioFileFolderForConditionalPerfectTense } from '../js/conjugations/verbsInConditionalPerfectTense.mjs';
 import { audioFileFolder as audioFileFolderForPresentSubjunctiveTense } from '../js/conjugations/verbsInPresentSubjunctiveTense.mjs';
+import verbsInPresentPerfectSubjunctiveTense, { audioFileFolder as audioFileFolderForPresentPerfectSubjunctiveTense } from '../js/conjugations/verbsInPresentPerfectSubjunctiveTense.mjs';
 import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/conjugations/verbsInFuturePerfectTense.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
@@ -46,9 +47,10 @@ import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/c
 //saveAudioFilesBase64ForVerbList(verbsInPresentPerfectTense, audioFileFolderForPresentPerfectTense);
 // saveAudioFilesBase64ForVerbList(verbsInImperativeTense, audioFileFolderForImperativeTense);
 // saveAudioFilesBase64ForVerbList(verbsInPresentSubjunctiveTense, audioFileFolderForPresentSubjunctiveTense);
+saveAudioFilesBase64ForVerbList(verbsInPresentPerfectSubjunctiveTense, audioFileFolderForPresentPerfectSubjunctiveTense);
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 
-saveAudioFilesBase64ForInfinitive("Payer", verbsInPresentSubjunctiveTense["Payer"], audioFileFolderForPresentSubjunctiveTense);
+// saveAudioFilesBase64ForInfinitive("Payer", verbsInPresentSubjunctiveTense["Payer"], audioFileFolderForPresentSubjunctiveTense);
 
 function saveAudioFilesForVerbList(verbList, fileFolder) {
     for (let infinitive in verbList) {
