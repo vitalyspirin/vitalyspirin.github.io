@@ -26,7 +26,12 @@
 
     Object.values(aElements).forEach((theoryAElement) => {
       const pageLink = theoryAElement.nextElementSibling.href.split('/').pop();
-      const theoryFileLink = Resolver.infoForPages[pageLink];
+
+      let theoryFileLink = Resolver.infoForPages[pageLink];
+      if (typeof theoryFileLink !== "undefined") {
+        // some exercise files are in subfolders ('conjugations'..) so adjust the doc path
+        theoryFileLink = theoryFileLink.replace('../pdf', 'pdf');
+      }
       theoryAElement.href = theoryFileLink;
     });
 
@@ -298,6 +303,13 @@
   <hr />
 
   <h2>Le vocabulaire</h2>
+
+  <div class="card">
+    <span class="cefr">A2</span>
+    <header>La place de l’adjectif</header>
+    <a class="theory">théorie</a>
+    <a href="pages/vocabulary/exercise_adjectives.html">exercice de texte</a>
+  </div>
 
   <div class="card">
     <span class="cefr">A2</span>

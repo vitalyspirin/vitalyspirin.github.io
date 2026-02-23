@@ -287,6 +287,17 @@ td.best-result {
     display: inline-block;
     width: 49%;
 }
+/*
+    "example" block is used in 
+        exercise_imperative.html
+        exercise_presentperfectsubjunctive.html
+        exercise_passive.html
+        exercise_adjectives.html
+*/
+.text .span-half .example>span {
+    display: inline-block;
+    width: 49%;
+}
 
 .text .span-third span {
     display: inline-block;
@@ -333,20 +344,22 @@ td.best-result {
 }
 
 /* line for given example for exercise */
+/*
 .text .span-half div span:nth-of-type(2) {
     box-sizing: border-box;
     padding-left: 0.5em;
 }
-
+*/
 /* line for given example for exercise */
+/*
 .text .span-third div span:nth-of-type(2) {
     box-sizing: border-box;
     padding-left: 0.9em;
 }
-
+*/
 /* line for given example for exercise */
 .text .span-third div span:nth-of-type(3) {
-    padding-left: 0.4em;
+    /* padding-left: 0.4em; */
 }
 
 .text section span.sentence-with-hint,
