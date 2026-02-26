@@ -159,7 +159,7 @@ export class StatsPageBuilder {
 
                     // add class to link header cell ('texte')
                     const aElement = document.querySelector(
-                        'thead a[href="' + tdTopElement.getAttribute(this.TD_ATTRIBUTE) + '"]');
+                        'thead a[href*="' + tdTopElement.getAttribute(this.TD_ATTRIBUTE) + '"]');
                     aElement?.parentElement?.classList.add(this.RECENT_DATES_CLASS_NAME);
 
                     // add class to subject name header cell ('imparfait' or 'futur simple' etc)
