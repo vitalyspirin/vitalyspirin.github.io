@@ -287,6 +287,7 @@ td.best-result {
     display: inline-block;
     width: 49%;
 }
+
 /*
     "example" block is used in 
         exercise_imperative.html
@@ -611,10 +612,11 @@ table td:not([data-key="date"]) {
 }
 
 article.duration .duration,
-article.others:not(.recent-dates) .others,
 article.conjugations:not(.recent-dates) .conjugations,
 article.conjugations-plus:not(.recent-dates) .conjugations-plus,
 article.tense-sequence:not(.recent-dates) .tense-sequence,
+article.others:not(.recent-dates) .others,
+article.vocabulary:not(.recent-dates) .vocabulary,
 #stats-page article.recent-dates table .recent-dates {
     max-width: none;
     visibility: visible;

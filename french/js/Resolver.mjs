@@ -116,18 +116,18 @@ export class Resolver {
         "exercise_concordance_future.html": "pdf/concordance_future.pdf",
 
         "exercise_adjectives.html": "../pdf/adjectives.pdf",
-        "exercise_il_est.html": "pdf/il_est.pdf",
+        "exercise_il_est.html": "../pdf/il_est.pdf",
         "exercise_time_prepositions.html": "pdf/time_prepositions.pdf",
         "exercise_y_en.html": "pdf/y_en.pdf",
         "exercise_qui_que.html": "pdf/qui_que.pdf",
         "exercise_ceci_cela_celui.html": "pdf/ce_ces_cet.pdf",
         "exercise_lui_leur.html": "pdf/lui_leur.pdf",
         "exercise_negation.html": "pdf/negation.pdf",
-        "exercise_tout.html": "pdf/tout.pdf",
+        "exercise_tout.html": "../pdf/tout.pdf",
         "exercise_que_dont.html": "pdf/que_dont.pdf",
         "exercise_qui_que_dont_ou.html": "pdf/qui_que_dont_ou.pdf",
-        "exercise_savoir_connaitre.html": "pdf/savoir_connaitre.pdf",
-        "exercise_amener_emmener.html": "pdf/amener_emmener.pdf"
+        "exercise_savoir_connaitre.html": "../pdf/savoir_connaitre.pdf",
+        "exercise_amener_emmener.html": "../pdf/amener_emmener.pdf"
     };
 
 

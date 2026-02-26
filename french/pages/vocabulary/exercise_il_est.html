@@ -9,12 +9,12 @@
 
     <title>Il est, c'est</title>
 
-    <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/x-icon" href="../../images/eiffel-tower.ico">
+    <link rel="stylesheet" href="../../styles.css">
 
     <script type="module">
         "use strict";
-        import { ErrorCounter } from '../js/ErrorCounter.mjs';
+        import { ErrorCounter } from '../../js/ErrorCounter.mjs';
         ErrorCounter.initialize();
     </script>
 </head>
@@ -259,7 +259,7 @@
 
             </ol>
 
-            <iframe src="partials/errorCounter.html"
+            <iframe src="../partials/errorCounter.html"
                 onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
 
         </article>
