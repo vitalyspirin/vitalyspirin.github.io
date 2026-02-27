@@ -209,7 +209,7 @@ header label:last-of-type {
     width: 6em;
 }
 
-.text input.wide {
+.text input.wide,  .text .wide-input input[type="text"] {
     font-size: 1em;
     width: 9em;
 }
