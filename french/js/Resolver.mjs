@@ -118,6 +118,7 @@ export class Resolver {
         "exercise_gender.html": "../pdf/gender_number.pdf",
         "exercise_number.html": "../pdf/gender_number.pdf",
         "exercise_adjectives.html": "../pdf/adjectives.pdf",
+        "exercise_adjective_gender.html": "../pdf/adjective_gender.pdf",
         "exercise_il_est.html": "../pdf/il_est.pdf",
         "exercise_time_prepositions.html": "pdf/time_prepositions.pdf",
         "exercise_y_en.html": "pdf/y_en.pdf",
