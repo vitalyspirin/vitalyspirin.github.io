@@ -117,7 +117,7 @@ export class Resolver {
 
         "exercise_noun_gender.html": "../pdf/noun_gender_number.pdf",
         "exercise_noun_number.html": "../pdf/noun_gender_number.pdf",
-        "exercise_adjectives.html": "../pdf/adjectives.pdf",
+        "exercise_adjective_position.html": "../pdf/adjective_position.pdf",
         "exercise_adjective_gender.html": "../pdf/adjective_gender_number.pdf",
         "exercise_adjective_number.html": "../pdf/adjective_gender_number.pdf",
         "exercise_il_est.html": "../pdf/il_est.pdf",
