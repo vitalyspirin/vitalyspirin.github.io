@@ -115,8 +115,8 @@ export class Resolver {
         "exercise_concordance_conditional.html": "pdf/concordance_conditional.pdf",
         "exercise_concordance_future.html": "pdf/concordance_future.pdf",
 
-        "exercise_gender.html": "../pdf/gender_number.pdf",
-        "exercise_number.html": "../pdf/gender_number.pdf",
+        "exercise_noun_gender.html": "../pdf/noun_gender_number.pdf",
+        "exercise_noun_number.html": "../pdf/noun_gender_number.pdf",
         "exercise_adjectives.html": "../pdf/adjectives.pdf",
         "exercise_adjective_gender.html": "../pdf/adjective_gender_number.pdf",
         "exercise_adjective_number.html": "../pdf/adjective_gender_number.pdf",
