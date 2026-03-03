@@ -12,22 +12,10 @@
     <script type="module">
         "use strict";
 
-        import { Config } from '../js/Config.mjs';
         import { StatsPageBuilder } from '../js/StatsPageBuilder.mjs';
 
-        let page = window.location.pathname.split('/').pop() + window.location.search;
-
-        document.querySelectorAll('#checkboxes input').forEach((checkboxElement) => {
-            checkboxElement.checked = Config.retrieve(page, checkboxElement.name) ?? true;
-
-            checkboxElement.onclick = () => {
-                Config.save(page, checkboxElement.name, checkboxElement.checked);
-                StatsPageBuilder.showHideColumns();
-            }
-        });
-
         StatsPageBuilder.buildPage();
-        StatsPageBuilder.showHideColumns();
+        StatsPageBuilder.setCheckboxesBasedOnConfig();
     </script>
 </head>
 
@@ -38,43 +26,8 @@
             <header>
                 <h3 id="page-title">Statistiques</h3>
 
-                <div id="checkboxes">
-                    <div id="exercise-types">
-                        <label>
-                            <input type="checkbox" name="conjugations" />Conjugaisons de base
-                        </label>
-                        <label>
-                            <input type="checkbox" name="conjugations-plus" />Conjugaisons plus
-                        </label>
-                        <label>
-                            <input type="checkbox" name="tense-sequence" />Concordance des temps
-                        </label>
-                        <label title="prépositions, conjonctions, déterminant">
-                            <input type="checkbox" name="others" />Prép./conj./déterm
-                        </label>
-                        <label>
-                            <input type="checkbox" name="vocabulary" />Vocabulaire
-                        </label>
-                    </div>
-
-                    <label class="not-disableable" style="float: left">
-                        <input type="checkbox" name="duration" />Colonne de durée
-                    </label>
-
-                    <label class="not-disableable" style="float: right"><input type="checkbox"
-                            name="recent-dates" />Exercices des derniers
-                        jours</label>
-
-                    <div id="language-levels">
-                        <label><input type="checkbox" name="A1" />A1</label>
-
-                        <label><input type="checkbox" name="A2" />A2</label>
-
-                        <label><input type="checkbox" name="B1" />B1</label>
-
-                        <label><input type="checkbox" name="B2" />B2</label>
-                    </div>
-                </div>
+                <iframe src="partials/cefr_checkboxes.html"
+                    onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
             </header>
 
 

@@ -176,7 +176,31 @@ export class StatsPageBuilder {
         } while (dateCounter < this.NUMBER_OF_RECENT_DATES);
     }
 
-    static showHideColumns() {
+    static setCheckboxesBasedOnConfig(self = this) {
+        let page = window.location.pathname.split('/').pop() + window.location.search;
+
+        const checkboxList = document.querySelectorAll('#checkboxes input');
+
+        if (checkboxList.length == 0) {
+            // iframe with checkboxes is not loaded yet, so wait...
+            setTimeout(self.setCheckboxesBasedOnConfig, 20, self);
+        } else {
+            checkboxList.forEach((checkboxElement) => {
+                if (!(checkboxElement instanceof HTMLInputElement)) return;
+
+                checkboxElement.checked = Config.retrieve(page, checkboxElement.name) ?? true;
+
+                checkboxElement.onclick = () => {
+                    Config.save(page, checkboxElement.name, checkboxElement.checked);
+                    self.addCssClassesBasedOnCheckboxSelection();
+                }
+            });
+
+            self.addCssClassesBasedOnCheckboxSelection();
+        }
+    }
+
+    static addCssClassesBasedOnCheckboxSelection() {
         document.querySelectorAll('#checkboxes input').forEach((checkboxElement) => {
 
             if (!(checkboxElement instanceof HTMLInputElement)) return;
