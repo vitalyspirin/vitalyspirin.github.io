@@ -13,15 +13,16 @@
         "use strict";
 
         import { StatsPageBuilder } from '../js/StatsPageBuilder.mjs';
+        import { Checkboxes } from '../js/Checkboxes.mjs';
 
         StatsPageBuilder.buildPage();
-        StatsPageBuilder.setCheckboxesBasedOnConfig();
+        Checkboxes.setCheckboxesBasedOnConfig();
     </script>
 </head>
 
 
 <body id="stats-page">
-    <main spellcheck="false" class="wide">
+    <main class="wide">
         <article>
             <header>
                 <h3 id="page-title">Statistiques</h3>

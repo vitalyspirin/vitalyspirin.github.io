@@ -209,7 +209,8 @@ header label:last-of-type {
     width: 6em;
 }
 
-.text input.wide,  .text .wide-input input[type="text"] {
+.text input.wide,
+.text .wide-input input[type="text"] {
     font-size: 1em;
     width: 9em;
 }
@@ -600,10 +601,10 @@ table td:not([data-key="date"]) {
 #stats-page article:not(.B2) td.B2,
 #stats-page article:not(.C1) th.C1,
 #stats-page article:not(.C1) td.C1 {
-    max-width: 0;
-    visibility: hidden;
-    padding: 0;
-    border: 0;
+    max-width: 0 !important;
+    visibility: hidden !important;
+    padding: 0 !important;
+    border: 0 !important;
 }
 
 /* for the top row (showing levels A1, A2, B1, B2, C1) */
@@ -611,12 +612,12 @@ table td:not([data-key="date"]) {
     border-top: 1px solid black;
 }
 
-article.duration .duration,
-article.conjugations:not(.recent-dates) .conjugations,
-article.conjugations-plus:not(.recent-dates) .conjugations-plus,
-article.tense-sequence:not(.recent-dates) .tense-sequence,
-article.others:not(.recent-dates) .others,
-article.vocabulary:not(.recent-dates) .vocabulary,
+#stats-page article.duration .duration,
+#stats-page article.conjugations:not(.recent-dates) .conjugations,
+#stats-page article.conjugations-plus:not(.recent-dates) .conjugations-plus,
+#stats-page article.tense-sequence:not(.recent-dates) .tense-sequence,
+#stats-page article.others:not(.recent-dates) .others,
+#stats-page article.vocabulary:not(.recent-dates) .vocabulary,
 #stats-page article.recent-dates table .recent-dates {
     max-width: none;
     visibility: visible;
@@ -628,6 +629,21 @@ article.vocabulary:not(.recent-dates) .vocabulary,
 
 /* ------------------------------------------------ */
 /* index page */
+
+body#index {
+    text-align: center;
+}
+
+body#index section,
+body#index header #page-title {
+    color: #007f00;
+}
+
+body#index label:has(input[name="duration"]),
+body#index label:has(input[name="recent-dates"]),
+body#index label:has(input[name="conjugations-plus"]) {
+    display: none !important;
+}
 
 .card {
     display: inline-block;
@@ -673,6 +689,30 @@ a.wide:hover {
 
 a.wide {
     width: 30rem !important;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.card {
+    display: none;
+}
+
+article.A1 .card.A1,
+article.A2 .card.A2,
+article.B1 .card.B1,
+article.B2 .card.B2 {
+    display: inline-block;
+}
+
+section {
+    display: none;
+}
+
+article.conjugations section.conjugations,
+article.tense-sequence section.tense-sequence,
+article.others section.others,
+article.vocabulary section.vocabulary {
+    display: block;
 }
 
 @media screen and (max-width: 600px) {
