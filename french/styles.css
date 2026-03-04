@@ -704,7 +704,7 @@ article.B2 .card.B2 {
     display: inline-block;
 }
 
-section {
+body#index section {
     display: none;
 }
 
