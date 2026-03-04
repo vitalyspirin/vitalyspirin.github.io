@@ -708,10 +708,10 @@ body#index section {
     display: none;
 }
 
-article.conjugations section.conjugations,
-article.tense-sequence section.tense-sequence,
-article.others section.others,
-article.vocabulary section.vocabulary {
+body#index article.conjugations section.conjugations,
+body#index article.tense-sequence section.tense-sequence,
+body#index article.others section.others,
+body#index article.vocabulary section.vocabulary {
     display: block;
 }
 
