@@ -591,24 +591,24 @@ table td:not([data-key="date"]) {
     border: 0;
 }
 
-#stats-page article:not(.A1) th.A1,
-#stats-page article:not(.A1) td.A1,
-#stats-page article:not(.A2) th.A2,
-#stats-page article:not(.A2) td.A2,
-#stats-page article:not(.B1) th.B1,
-#stats-page article:not(.B1) td.B1,
-#stats-page article:not(.B2) th.B2,
-#stats-page article:not(.B2) td.B2,
-#stats-page article:not(.C1) th.C1,
-#stats-page article:not(.C1) td.C1 {
-    max-width: 0 !important;
-    visibility: hidden !important;
-    padding: 0 !important;
-    border: 0 !important;
+#stats-page article:not(.A1) #stats-table th.A1,
+#stats-page article:not(.A1) #stats-table td.A1,
+#stats-page article:not(.A2) #stats-table th.A2,
+#stats-page article:not(.A2) #stats-table td.A2,
+#stats-page article:not(.B1) #stats-table th.B1,
+#stats-page article:not(.B1) #stats-table td.B1,
+#stats-page article:not(.B2) #stats-table th.B2,
+#stats-page article:not(.B2) #stats-table td.B2,
+#stats-page article:not(.C1) #stats-table th.C1,
+#stats-page article:not(.C1) #stats-table td.C1 {
+    max-width: 0;
+    visibility: hidden;
+    padding: 0;
+    border: 0;
 }
 
 /* for the top row (showing levels A1, A2, B1, B2, C1) */
-#stats-page article.recent-dates thead tr:first-child th.recent-dates {
+#stats-page article.recent-dates table#stats-table thead tr:first-child th.recent-dates {
     border-top: 1px solid black;
 }
 
@@ -618,7 +618,7 @@ table td:not([data-key="date"]) {
 #stats-page article.tense-sequence:not(.recent-dates) .tense-sequence,
 #stats-page article.others:not(.recent-dates) .others,
 #stats-page article.vocabulary:not(.recent-dates) .vocabulary,
-#stats-page article.recent-dates table .recent-dates {
+#stats-page article.recent-dates table#stats-table .recent-dates {
     max-width: none;
     visibility: visible;
     padding: 0.25em;
