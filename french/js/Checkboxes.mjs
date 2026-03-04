@@ -18,7 +18,14 @@ export class Checkboxes {
             checkboxList.forEach((checkboxElement) => {
                 if (!(checkboxElement instanceof HTMLInputElement)) return;
 
-                checkboxElement.checked = Config.retrieve(page, checkboxElement.name) ?? true;
+                if (Config.retrieve(page, checkboxElement.name) != null) {
+                    checkboxElement.checked = Config.retrieve(page, checkboxElement.name);
+                } else if (checkboxElement.hasAttribute('data-unchecked')) {
+                    // uncheck 'recent-dates' checkbox
+                    checkboxElement.checked = false;
+                } else {
+                    checkboxElement.checked = true;
+                }
 
                 checkboxElement.onclick = () => {
                     Config.save(page, checkboxElement.name, checkboxElement.checked);
