@@ -68,7 +68,7 @@ export class Resolver {
         "conjugations.html?Le%20pr%C3%A9sent": "pdf/present.pdf",
         "exercise_present.html": "../pdf/present.pdf",
 
-        "exercise_devoir_pouvoir_falloir_vouloir.html": "pdf/devoir_pouvoir_falloir_vouloir.pdf",
+        "exercise_devoir_pouvoir_falloir_vouloir.html": "../../pdf/devoir_pouvoir_falloir_vouloir.pdf",
 
         "exercise_mon_ton_son.html": "pdf/mon_ton_son.pdf",
         "exercise_mien_sien.html": "pdf/mon_ton_son.pdf",
@@ -91,7 +91,7 @@ export class Resolver {
         "conjugations.html?L%27imp%C3%A9ratif": "pdf/imperative.pdf",
         "exercise_imperative.html": "../pdf/imperative.pdf",
 
-        "exercise_avoir_etre.html": "pdf/avoir_etre.pdf",
+        "exercise_avoir_etre.html": "../../pdf/avoir_etre.pdf",
         "conjugations.html?Le%20plus-que-parfait": "pdf/plus-que-parfait.pdf",
         "exercise_pastperfect.html": "../pdf/plus-que-parfait.pdf",
 
@@ -111,7 +111,7 @@ export class Resolver {
 
         "exercise_concordance.html": "pdf/concordance2.pdf",
         "exercise_concordance3.html": "pdf/concordance3.pdf",
-        "exercise_passive.html": "pdf/passive.pdf",
+        "exercise_passive.html": "../../pdf/passive.pdf",
         "exercise_concordance_conditional.html": "pdf/concordance_conditional.pdf",
         "exercise_concordance_future.html": "pdf/concordance_future.pdf",
 

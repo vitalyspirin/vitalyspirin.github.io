@@ -23,7 +23,7 @@
       let theoryFileLink = Resolver.infoForPages[pageLink];
       if (typeof theoryFileLink !== "undefined") {
         // some exercise files are in subfolders ('conjugations'..) so adjust the doc path
-        theoryFileLink = theoryFileLink.replace('../pdf', 'pdf');
+        theoryFileLink = theoryFileLink.replace(/.*\/pdf/, 'pdf');
       }
       theoryAElement.href = theoryFileLink;
     });
@@ -64,7 +64,7 @@
           <span class="cefr">A1</span>
           <header>Devoir, Pouvoir, Falloir, Vouloir</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercise_devoir_pouvoir_falloir_vouloir.html">exercice de texte</a>
+          <a href="pages/conjugations/extra/exercise_devoir_pouvoir_falloir_vouloir.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
@@ -79,7 +79,7 @@
           <span class="cefr">A2</span>
           <header>Avoir ou Être ?</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercise_avoir_etre.html">exercice de texte</a>
+          <a href="pages/conjugations/extra/exercise_avoir_etre.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
@@ -150,7 +150,7 @@
           <span class="cefr">B2</span>
           <header>La forme passive</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercise_passive.html">exercice de texte</a>
+          <a href="pages/conjugations/extra/exercise_passive.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
