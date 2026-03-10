@@ -109,11 +109,11 @@ export class Resolver {
         "conjugations.html?Le%20futur%20ant%C3%A9rieur": "pdf/futureperfect.pdf",
         "exercise_futureperfect.html": "../pdf/futureperfect.pdf",
 
-        "exercise_concordance.html": "pdf/concordance2.pdf",
-        "exercise_concordance3.html": "pdf/concordance3.pdf",
+        "exercise_concordance.html": "../pdf/concordance2.pdf",
+        "exercise_concordance3.html": "../pdf/concordance3.pdf",
         "exercise_passive.html": "../../pdf/passive.pdf",
-        "exercise_concordance_conditional.html": "pdf/concordance_conditional.pdf",
-        "exercise_concordance_future.html": "pdf/concordance_future.pdf",
+        "exercise_concordance_conditional.html": "../pdf/concordance_conditional.pdf",
+        "exercise_concordance_future.html": "../pdf/concordance_future.pdf",
 
         "exercise_noun_gender.html": "../pdf/noun_gender_number.pdf",
         "exercise_noun_number.html": "../pdf/noun_gender_number.pdf",
