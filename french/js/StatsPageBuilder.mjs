@@ -3,7 +3,7 @@
 
 "use strict";
 
-import { Config } from './Config.mjs';
+import { Storage } from './Storage.mjs';
 import Utils from './Utils.mjs';
 
 export class StatsPageBuilder {
@@ -76,12 +76,10 @@ export class StatsPageBuilder {
     }
 
     static #buildStatsObject() {
-        const pagesKeys = Object.keys(localStorage);
+        const pagesKeys = Storage.getStatsKeyList();
 
         pagesKeys.forEach((pageKey) => {
-            if (pageKey === Config.storageKey) return;
-
-            const statsForPage = JSON.parse(localStorage.getItem(pageKey));
+            const statsForPage = JSON.parse(Storage.getStatsDataForKey(pageKey));
             const pageStatsKeys = Object.keys(statsForPage);
 
             pageStatsKeys.forEach((pageStatsKey) => {
@@ -176,42 +174,42 @@ export class StatsPageBuilder {
         } while (dateCounter < this.NUMBER_OF_RECENT_DATES);
     }
 
-    static setCheckboxesBasedOnConfig(self = this) {
-        let page = window.location.pathname.split('/').pop() + window.location.search;
+    // static setCheckboxesBasedOnConfig(self = this) {
+    //     let page = window.location.pathname.split('/').pop() + window.location.search;
 
-        const checkboxList = document.querySelectorAll('#checkboxes input');
+    //     const checkboxList = document.querySelectorAll('#checkboxes input');
 
-        if (checkboxList.length == 0) {
-            // iframe with checkboxes is not loaded yet, so wait...
-            setTimeout(self.setCheckboxesBasedOnConfig, 20, self);
-        } else {
-            checkboxList.forEach((checkboxElement) => {
-                if (!(checkboxElement instanceof HTMLInputElement)) return;
+    //     if (checkboxList.length == 0) {
+    //         // iframe with checkboxes is not loaded yet, so wait...
+    //         setTimeout(self.setCheckboxesBasedOnConfig, 20, self);
+    //     } else {
+    //         checkboxList.forEach((checkboxElement) => {
+    //             if (!(checkboxElement instanceof HTMLInputElement)) return;
 
-                checkboxElement.checked = Config.retrieve(page, checkboxElement.name) ?? true;
+    //             checkboxElement.checked = Storage.retrieveConfig(page, checkboxElement.name) ?? true;
 
-                checkboxElement.onclick = () => {
-                    Config.save(page, checkboxElement.name, checkboxElement.checked);
-                    self.addCssClassesBasedOnCheckboxSelection();
-                }
-            });
+    //             checkboxElement.onclick = () => {
+    //                 Storage.saveConfig(page, checkboxElement.name, checkboxElement.checked);
+    //                 self.addCssClassesBasedOnCheckboxSelection();
+    //             }
+    //         });
 
-            self.addCssClassesBasedOnCheckboxSelection();
-        }
-    }
+    //         self.addCssClassesBasedOnCheckboxSelection();
+    //     }
+    // }
 
-    static addCssClassesBasedOnCheckboxSelection() {
-        document.querySelectorAll('#checkboxes input').forEach((checkboxElement) => {
+    // static addCssClassesBasedOnCheckboxSelection() {
+    //     document.querySelectorAll('#checkboxes input').forEach((checkboxElement) => {
 
-            if (!(checkboxElement instanceof HTMLInputElement)) return;
+    //         if (!(checkboxElement instanceof HTMLInputElement)) return;
 
-            const element = document.getElementsByTagName('article')[0];
+    //         const element = document.getElementsByTagName('article')[0];
 
-            if (checkboxElement.checked) {
-                element.classList.add(checkboxElement.name);
-            } else {
-                element.classList.remove(checkboxElement.name);
-            }
-        });
-    }
+    //         if (checkboxElement.checked) {
+    //             element.classList.add(checkboxElement.name);
+    //         } else {
+    //             element.classList.remove(checkboxElement.name);
+    //         }
+    //     });
+    // }
 }

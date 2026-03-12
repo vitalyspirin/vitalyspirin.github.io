@@ -3,7 +3,7 @@
 
 "use strict";
 
-import { Config } from './Config.mjs';
+import { Storage } from './Storage.mjs';
 
 export class Checkboxes {
     static setCheckboxesBasedOnConfig(self = this) {
@@ -18,8 +18,8 @@ export class Checkboxes {
             checkboxList.forEach((checkboxElement) => {
                 if (!(checkboxElement instanceof HTMLInputElement)) return;
 
-                if (Config.retrieve(page, checkboxElement.name) != null) {
-                    checkboxElement.checked = Config.retrieve(page, checkboxElement.name);
+                if (Storage.retrieveConfig(page, checkboxElement.name) != null) {
+                    checkboxElement.checked = Storage.retrieveConfig(page, checkboxElement.name);
                 } else if (checkboxElement.hasAttribute('data-unchecked')) {
                     // uncheck 'recent-dates' checkbox
                     checkboxElement.checked = false;
@@ -28,7 +28,7 @@ export class Checkboxes {
                 }
 
                 checkboxElement.onclick = () => {
-                    Config.save(page, checkboxElement.name, checkboxElement.checked);
+                    Storage.saveConfig(page, checkboxElement.name, checkboxElement.checked);
                     self.addCssClassesBasedOnCheckboxSelection();
                 }
             });
