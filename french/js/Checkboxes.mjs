@@ -28,7 +28,7 @@ export class Checkboxes {
                 }
 
                 checkboxElement.onclick = () => {
-                    Storage.saveConfig(page, checkboxElement.name, checkboxElement.checked);
+                    Storage.saveConfigForKey(page, checkboxElement.name, checkboxElement.checked);
                     self.addCssClassesBasedOnCheckboxSelection();
                 }
             });

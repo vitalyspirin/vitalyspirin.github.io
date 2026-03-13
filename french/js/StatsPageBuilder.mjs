@@ -3,7 +3,7 @@
 
 "use strict";
 
-import { Storage } from './Storage.mjs';
+import Storage from './Storage.mjs';
 import Utils from './Utils.mjs';
 
 export class StatsPageBuilder {

@@ -25,7 +25,7 @@ export default class StatsFooter {
             'total': errorCounter.numberOfAllInputElements,
             'duration': errorCounter.duration
         };
-        localStorage.setItem(this.getStorageKey(verbTense), JSON.stringify(stats));
+        Storage.saveStatsDataForKey(this.getStorageKey(verbTense), JSON.stringify(stats));
 
     }
 

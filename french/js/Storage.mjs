@@ -17,7 +17,11 @@ export default class Storage {
         return localStorage.getItem(statsKey);
     }
 
-    static saveConfig(key, subkey, value) {
+    static saveStatsDataForKey(statsKey, value) {
+        localStorage.setItem(statsKey, value);
+    }
+
+    static saveConfigForKey(key, subkey, value) {
         let config = JSON.parse(localStorage.getItem(this.ConfigKey));
 
         if (config == null) config = {};
