@@ -15,7 +15,7 @@
 
     import { System } from '../js/System.mjs';
 
-    System.initialize(document.getElementById('stats'));
+    System.initialize(document.getElementById('stats'), document.getElementById('download-stats'));
 
   </script>
 </head>
@@ -27,7 +27,7 @@
         <h2 id="page-title">System</h2>
       </header>
 
-      <textarea id="stats"></textarea>
+      <textarea id="stats" readonly="readonly"></textarea>
 
       <a id="download-stats" class="wide" href="#" download="french_conjugations_stats.json">Download</a>
     </article>

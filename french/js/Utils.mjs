@@ -39,6 +39,7 @@ export default class Utils {
         return formattedDate;
     }
 
+    // output format: 2026-03-13, 01:34 p.m.
     static timestampToDateAndTime(timestamp) {
         let theDate = new Date(timestamp);
 
@@ -51,6 +52,16 @@ export default class Utils {
             minute: '2-digit',
             hour12: true
         });
+
+        return formattedDate;
+    }
+
+    // output format: 2026213_1355
+    static timestampToDateAndTimeSystemFormat(timestamp) {
+        let theDate = new Date(timestamp);
+
+        let formattedDate = '' + theDate.getFullYear() + theDate.getMonth() + theDate.getDate()
+            + '_' + theDate.getHours() + theDate.getMinutes();
 
         return formattedDate;
     }

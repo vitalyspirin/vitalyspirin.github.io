@@ -3,7 +3,7 @@
 "use strict";
 
 
-export class Storage {
+export default class Storage {
     static ConfigKey = 'CONFIG';
 
     static getStatsKeyList() {
@@ -29,7 +29,7 @@ export class Storage {
         localStorage.setItem(this.ConfigKey, JSON.stringify(config));
     }
 
-    static retrieveConfig(key, subkey) {
+    static getConfigDataForKey(key, subkey) {
         let result;
 
         let config = JSON.parse(localStorage.getItem(this.ConfigKey));

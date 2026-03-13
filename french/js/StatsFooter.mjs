@@ -6,6 +6,7 @@ import ErrorCounterLine from './ErrorCounterLine.mjs';
 import { Resolver } from './Resolver.mjs';
 import { ErrorCounter, ErrorCounterObj } from './ErrorCounter.mjs';
 import Utils from './Utils.mjs';
+import Storage from './Storage.mjs';
 
 export default class StatsFooter {
     /**
@@ -31,7 +32,7 @@ export default class StatsFooter {
     static retrieveStats(verbTense) {
         let stats;
 
-        const storageValue = localStorage.getItem(this.getStorageKey(verbTense));
+        const storageValue = Storage.getStatsDataForKey(this.getStorageKey(verbTense));
         if (storageValue == null) {
             stats = {};
         } else {

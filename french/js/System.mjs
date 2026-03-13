@@ -2,18 +2,22 @@
 
 "use strict";
 
-import { Storage } from './Storage.mjs';
+import Storage from './Storage.mjs';
+import Utils from './Utils.mjs';
 
 export class System {
 
-    static initialize(htmlElement) {
+    static initialize(textAreaHtmlElement, AButtonHtmlElement) {
         const statsObj = this.buildObjectWithStatsData();
         const jsonStr = JSON.stringify(statsObj, null, 2);
 
-        htmlElement.value = jsonStr;
+        textAreaHtmlElement.value = jsonStr;
 
         const blob = new Blob([jsonStr], { type: "application/json" });
-        document.getElementById('download-stats').href = URL.createObjectURL(blob);
+        AButtonHtmlElement.href = URL.createObjectURL(blob);
+
+        const dateTimeStr = Utils.timestampToDateAndTimeSystemFormat(Date.now());
+        AButtonHtmlElement.download = AButtonHtmlElement.download.replace(/(.*)\.(.*)/, "$1_" + dateTimeStr + ".$2");
     }
 
     static buildObjectWithStatsData() {

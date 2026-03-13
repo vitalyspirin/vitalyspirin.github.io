@@ -16,6 +16,7 @@
         import { Resolver } from '../../js/Resolver.mjs';
         import { ErrorCounter } from '../../js/ErrorCounter.mjs';
         import { Config } from '../../js/Config.mjs';
+        import Storage from '../../js/Storage.mjs';
 
         const title = window.decodeURIComponent(window.location.search).substring(1);
 
@@ -26,7 +27,7 @@
         let page = window.location.pathname.split('/').pop() + window.location.search;
 
         document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
-            checkboxElement.checked = Config.retrieve(page, checkboxElement.name) ?? true;
+            checkboxElement.checked = Storage.getConfigDataForKey(page, checkboxElement.name) ?? true;
 
             checkboxElement.onclick = () => {
                 Config.save(page, checkboxElement.name, checkboxElement.checked);
