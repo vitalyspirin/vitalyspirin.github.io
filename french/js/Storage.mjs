@@ -8,7 +8,8 @@ export default class Storage {
     static STATS_KEY = 'STATS';
 
     static getStatsKeyList() {
-        const data = JSON.parse(localStorage.getItem(this.STATS_KEY));
+        const data = JSON.parse(localStorage.getItem(this.STATS_KEY)) ?? [];
+
         const pagesKeys = Object.keys(data);
 
         return pagesKeys;
