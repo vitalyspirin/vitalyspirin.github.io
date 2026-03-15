@@ -12,7 +12,8 @@ iframe {
 body {
     font-family: sans-serif;
     /* color of regular text in GMail */
-    color: #222;
+    --text-color: #222;
+    color: var(--text-color);
     --section-header-color: #2a5f6e;
 }
 
@@ -674,8 +675,9 @@ body#index label:has(input[name="conjugations-plus"]) {
 a.wide {
     display: block;
     width: 13rem;
-    color: blue;
-    border: 1px solid blue;
+    color: var(--text-color);
+    background-color: rgb(194 231 255);
+    border: 1px solid rgb(194 231 255);
     border-radius: 0.5rem;
     margin: 1.5rem auto;
     padding: 0.5rem 0;
@@ -685,14 +687,12 @@ a.wide {
 
 .card a:hover,
 a.wide:hover {
-    background-color: blue;
-    color: white;
+    background-color: #B3D7EF;
 }
 
 a.wide {
     width: 30rem !important;
     font-size: 1.17em;
-    font-weight: bold;
 }
 
 .card {
