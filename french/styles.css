@@ -307,7 +307,14 @@ td.best-result {
     display: inline-block;
     width: 32%;
 }
-
+/* for noun-gender2 */
+.text .span-fifth span {
+    display: inline-block;
+    width: 20%;
+}
+.text .span-fifth span label {
+    margin-right: 1em;
+}
 /* exercise_qui_quel_quelle.html */
 .text .span-two-thrids-third li>span:first-of-type {
     display: inline-block;
@@ -415,12 +422,12 @@ td.best-result {
 }
 
 /* for input[type="radio"] in present subjunctive */
-.text section li label {
+.text section.span-third li label {
     width: 6em;
     margin-right: 2em;
 }
 
-.text section li label:first-of-type {
+.text section li span:nth-child(2) label:first-of-type {
     margin-left: -3em;
 }
 
