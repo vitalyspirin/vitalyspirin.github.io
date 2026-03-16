@@ -82,6 +82,7 @@ export class Resolver {
 
         // A2
         "exercise_noun_gender.html": "../pdf/noun_gender_number.pdf",
+        "exercise-noun-gender2.html": "../pdf/noun-gender2.pdf",
         "exercise_avoir_etre.html": "../../pdf/avoir_etre.pdf",
         "exercise_adjective_position.html": "../pdf/adjective_position.pdf",
         "exercise_adjective_gender.html": "../pdf/adjective_gender_number.pdf",
