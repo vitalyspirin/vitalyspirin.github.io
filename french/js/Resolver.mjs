@@ -119,6 +119,7 @@ export class Resolver {
         "exercise_presentsubjunctive.html": "../pdf/presentsubjunctive.pdf",
 
         // B2
+        "exercise-noun-gender-3.html": "../pdf/noun-gender2.pdf",
         "conjugations.html?Le%20subjonctif%20pass%C3%A9": "../pdf/presentsubjunctive.pdf",
         "exercise_presentperfectsubjunctive.html": "../pdf/presentsubjunctive.pdf",
         "conjugations.html?Le%20conditionnel%20pass%C3%A9": "../pdf/conditionalperfect.pdf",
