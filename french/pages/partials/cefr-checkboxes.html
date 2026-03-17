@@ -1,38 +1,41 @@
 <div id="checkboxes">
     <div id="exercise-types">
-        <label>
+        <label class="for-checkbox">
             <input type="checkbox" name="conjugations" />Conjugaisons de base
         </label>
-        <label>
+        <label class="for-checkbox">
             <input type="checkbox" name="conjugations-plus" />Conjugaisons plus
         </label>
-        <label>
+        <label class="for-checkbox">
             <input type="checkbox" name="tense-sequence" />Concordance des temps
         </label>
-        <label title="prépositions, conjonctions, déterminant">
+        <label  class="for-checkbox"title="prépositions, conjonctions, déterminant">
             <input type="checkbox" name="others" />Prép./conj./déterm
         </label>
-        <label>
+        <label class="for-checkbox">
             <input type="checkbox" name="vocabulary" />Vocabulaire
         </label>
     </div>
 
-    <label class="not-disableable" style="float: left">
+    <label class="for-checkbox not-disableable" style="float: left">
         <input type="checkbox" name="duration" />Colonne de durée
     </label>
 
-    <label class="not-disableable" style="float: right">
-        <input type="checkbox" name="recent-dates" data-unchecked="1" />
-        Exercices des derniers jours
-    </label>
+    <span class="recent-days" style="float: right">
+        <label class="not-disableable">
+            <input type="checkbox" name="recent-dates" data-unchecked="1" />
+            Exercices
+        </label>
+        des <input type="number" name="number-of-days" value="10" /> derniers jours
+    </span>
 
     <div id="language-levels">
-        <label><input type="checkbox" name="A1" />A1</label>
+        <label class="for-checkbox"><input type="checkbox" name="A1" />A1</label>
 
-        <label><input type="checkbox" name="A2" />A2</label>
+        <label class="for-checkbox"><input type="checkbox" name="A2" />A2</label>
 
-        <label><input type="checkbox" name="B1" />B1</label>
+        <label class="for-checkbox"><input type="checkbox" name="B1" />B1</label>
 
-        <label><input type="checkbox" name="B2" />B2</label>
+        <label class="for-checkbox"><input type="checkbox" name="B2" />B2</label>
     </div>
 </div>

@@ -4,12 +4,13 @@
 "use strict";
 
 import Storage from './Storage.mjs';
+import StatsPageBuilder from './StatsPageBuilder.mjs';
 
 export class Checkboxes {
     static setCheckboxesBasedOnConfig(self = this) {
         let page = window.location.pathname.split('/').pop() + window.location.search;
 
-        const checkboxList = document.querySelectorAll('#checkboxes input');
+        const checkboxList = document.querySelectorAll('#checkboxes input[type="checkbox"]');
 
         if (checkboxList.length == 0) {
             // iframe with checkboxes is not loaded yet, so wait...
@@ -34,11 +35,23 @@ export class Checkboxes {
             });
 
             self.addCssClassesBasedOnCheckboxSelection();
-        }
+
+            const numberOfDaysElement = document.getElementsByName('number-of-days').item(0);
+            if (!(numberOfDaysElement instanceof HTMLInputElement)) return;
+
+            if (Storage.getConfigDataForKey(page, numberOfDaysElement.name) !== null) {
+                numberOfDaysElement.value = Storage.getConfigDataForKey(page, numberOfDaysElement.name);
+            }
+            numberOfDaysElement.onblur = () => {
+                Storage.saveConfigForKey(page, numberOfDaysElement.name, numberOfDaysElement.value);
+                window.location.reload();
+            }
+
+        } // if (checkboxList.length == 0) {
     }
 
     static addCssClassesBasedOnCheckboxSelection() {
-        document.querySelectorAll('#checkboxes input').forEach((checkboxElement) => {
+        document.querySelectorAll('#checkboxes input[type="checkbox"]').forEach((checkboxElement) => {
 
             if (!(checkboxElement instanceof HTMLInputElement)) return;
 

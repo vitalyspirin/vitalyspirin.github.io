@@ -133,7 +133,7 @@ label.failed {
     display: none;
 }
 
-header label {
+header label.for-checkbox {
     display: inline-block;
     width: 24%;
     margin: 0.5em 0;
@@ -142,6 +142,11 @@ header label {
 
 header label:last-of-type {
     margin-bottom: 2em;
+}
+
+span.recent-days {
+    margin: 0.5em 0;
+    vertical-align: top;
 }
 
 .conjugations-for-one-tense-block.presentsubjunctive label,
@@ -307,14 +312,17 @@ td.best-result {
     display: inline-block;
     width: 32%;
 }
+
 /* for noun-gender2 */
 .text .span-fifth span {
     display: inline-block;
     width: 20%;
 }
+
 .text .span-fifth span label {
     margin-right: 1em;
 }
+
 /* exercise_qui_quel_quelle.html */
 .text .span-two-thrids-third li>span:first-of-type {
     display: inline-block;
@@ -468,6 +476,10 @@ td.best-result {
 #checkboxes #language-levels label {
     display: inline-block;
     width: 7%;
+}
+
+#checkboxes input[name="number-of-days"] {
+    width: 2.5em;
 }
 
 .recent-dates #checkboxes label:not(.not-disableable) {

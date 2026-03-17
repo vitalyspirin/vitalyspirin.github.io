@@ -6,7 +6,7 @@
 import Storage from './Storage.mjs';
 import Utils from './Utils.mjs';
 
-export class StatsPageBuilder {
+export default class StatsPageBuilder {
     static stats = {};
     static dates;
     static earlestDates = {};
@@ -16,7 +16,6 @@ export class StatsPageBuilder {
     static TD_ATTRIBUTE_DATE_VALUE = 'date';
     static RECENT_DATES_CLASS_NAME = 'recent-dates';
     static LEVEL_LIST = ['A1', 'A2', 'B1', 'B2', 'C1'];
-    static NUMBER_OF_RECENT_DATES = 10;
 
     static buildPage() {
         this.#buildStatsObject();
@@ -42,7 +41,8 @@ export class StatsPageBuilder {
             tbodyElement.append(newTableRowElement);
         });
 
-        this.#ProcessRecentDates();
+        const numberOfRecentDays = document.getElementsByName('number-of-days').item(0).value;
+        this.#ProcessRecentDates(numberOfRecentDays);
     }
 
     static #fillTableRow(tableRowElement, formattedDate, statsForOneDate) {
@@ -129,7 +129,7 @@ export class StatsPageBuilder {
         }
     }
 
-    static #ProcessRecentDates() {
+    static #ProcessRecentDates(numberOfRecentDays) {
         let dateCounter = 0;
 
         let trElement = document.querySelector('tbody tr:first-of-type');
@@ -171,7 +171,7 @@ export class StatsPageBuilder {
             trElement = trElement?.nextSibling;
             dateCounter++;
 
-        } while (dateCounter < this.NUMBER_OF_RECENT_DATES);
+        } while (dateCounter < numberOfRecentDays);
     }
 
     // static setCheckboxesBasedOnConfig(self = this) {
