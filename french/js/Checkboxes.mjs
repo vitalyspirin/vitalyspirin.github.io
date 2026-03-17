@@ -47,7 +47,7 @@ export class Checkboxes {
                 window.location.reload();
             }
 
-        } // if (checkboxList.length == 0) {
+        } // if (checkboxList.length == 0) else {
     }
 
     static addCssClassesBasedOnCheckboxSelection() {
