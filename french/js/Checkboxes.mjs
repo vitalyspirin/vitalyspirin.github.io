@@ -42,7 +42,7 @@ export class Checkboxes {
             if (Storage.getConfigDataForKey(page, numberOfDaysElement.name) !== null) {
                 numberOfDaysElement.value = Storage.getConfigDataForKey(page, numberOfDaysElement.name);
             }
-            numberOfDaysElement.onblur = () => {
+            numberOfDaysElement.onchange = () => {
                 Storage.saveConfigForKey(page, numberOfDaysElement.name, numberOfDaysElement.value);
                 window.location.reload();
             }

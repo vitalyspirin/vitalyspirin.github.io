@@ -661,7 +661,7 @@ body#index header #page-title {
 }
 
 body#index label:has(input[name="duration"]),
-body#index label:has(input[name="recent-dates"]),
+body#index span.recent-dates,
 body#index label:has(input[name="conjugations-plus"]) {
     display: none !important;
 }
