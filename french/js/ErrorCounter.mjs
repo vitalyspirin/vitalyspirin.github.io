@@ -21,7 +21,7 @@ export class ErrorCounter {
     static startTimestamp;
 
     static initialize(verbTenseList = [], self = this) {
-        if (document.getElementsByTagName('iframe').length != 0) {
+        if (document.getElementById('error-counter') !== null) {
             // wait till footer iframe is processed
             setTimeout(self.initialize, 20, verbTenseList, self);
         } else {
