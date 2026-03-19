@@ -75,7 +75,7 @@ export class ErrorCounter {
         if (allInputElements.length === 0) {
             self.hideStats();
         } else {
-            self.initializeTimer(allInputElements);
+            self.#initializeTimer(allInputElements);
 
             allInputElements.forEach((inputElement) => {
                 if (!(inputElement instanceof HTMLInputElement)) return;
@@ -100,7 +100,7 @@ export class ErrorCounter {
         }
     }
 
-    static initializeTimer(allInputElements) {
+    static #initializeTimer(allInputElements) {
         const firstInputElement = allInputElements.item(0);
 
         if (firstInputElement === null) {
@@ -127,10 +127,8 @@ export class ErrorCounter {
     }
 
     static #addEventListenerToInputElement(eventName, inputElement, eventListenerFunction) {
-        console.log('#addEventListenerToInputElement 1');
         if (inputElement.type == 'text') {
             inputElement.addEventListener(eventName, (event) => {
-                console.log('#addEventListenerToInputElement 2');
                 eventListenerFunction(event);
             });
         } else { // radio button
