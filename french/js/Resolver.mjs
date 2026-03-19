@@ -16,6 +16,8 @@ import verbsInFuturePerfectTense, { audioFileFolder as audioFileFolderForFutureP
 
 
 export class Resolver {
+    static AUDIO_BASE_PATH = '../';
+    
     static map = {
         'Le présent': {
             folder: audioFileFolderForPresentTense,

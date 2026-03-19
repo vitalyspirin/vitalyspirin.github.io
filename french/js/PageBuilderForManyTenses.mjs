@@ -174,7 +174,7 @@ export class PageBuilderForManyTenses {
             let audioElement = event.currentTarget.getElementsByTagName("audio")[0];
 
             if (audioElement.src == '') {
-                let fullFileName = Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
+                let fullFileName = Resolver.AUDIO_BASE_PATH + Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
 
                 const response = await fetch(fullFileName)
                 if (!response.ok) {
