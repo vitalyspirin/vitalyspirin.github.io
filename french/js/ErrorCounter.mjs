@@ -107,22 +107,37 @@ export class ErrorCounter {
             return; // probably no tense is chosen on mixed conjugation page
         }
 
-        firstInputElement.addEventListener("focusout", (e) => {
-            if (ErrorCounter.startTimestamp == null) {
-                ErrorCounter.startTimestamp = Date.now();
+        this.#addEventListenerToInputElement(
+            'change',
+            firstInputElement,
+            (event) => {
+                if (ErrorCounter.startTimestamp == null) {
+                    ErrorCounter.startTimestamp = Date.now();
+                }
             }
-        });
+        );
 
         const lastInputElement = allInputElements.item(allInputElements.length - 1);
-        if (lastInputElement.type == 'text') {
-            lastInputElement.addEventListener("focusout", (event) => {
-                this.#updateTimer(event);
+
+        this.#addEventListenerToInputElement(
+            'change',
+            lastInputElement,
+            (event) => { this.#updateTimer(event); }
+        );
+    }
+
+    static #addEventListenerToInputElement(eventName, inputElement, eventListenerFunction) {
+        console.log('#addEventListenerToInputElement 1');
+        if (inputElement.type == 'text') {
+            inputElement.addEventListener(eventName, (event) => {
+                console.log('#addEventListenerToInputElement 2');
+                eventListenerFunction(event);
             });
         } else { // radio button
             // two radio button with the same name (with correct and with wrong answer)
-            document.getElementsByName(lastInputElement.name).forEach((element) => {
-                element.addEventListener('click', (event) => {
-                    this.#updateTimer(event);
+            document.getElementsByName(inputElement.name).forEach((element) => {
+                element.addEventListener(eventName, (event) => {
+                    eventListenerFunction(event);
                 });
             });
         }
