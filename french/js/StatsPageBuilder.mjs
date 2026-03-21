@@ -107,6 +107,13 @@ export default class StatsPageBuilder {
 
         this.dates = Object.keys(this.stats).sort().reverse();
 
+        if (this.dates.length == 0) {
+            // if no stats then show one empty line with current date
+            const formattedDate = Utils.timestampToDate(Date.now());
+            this.dates.push(formattedDate);
+            this.stats[formattedDate] = {};
+        }
+
     } // function buildStatsObject()
 
     static #setEarlestDate(pageKey, date) {
