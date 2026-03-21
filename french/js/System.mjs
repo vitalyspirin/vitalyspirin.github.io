@@ -32,6 +32,8 @@ export class System {
         fileInput.addEventListener('change', System.uploadFileEventHandler);
 
         fileInput?.click();
+
+        fileInput.value = null; // to trigger 'change' event if the same file is reuploaded.
     }
 
     static uploadFileEventHandler(event) {
