@@ -54,6 +54,7 @@ export default class StatsPageBuilder {
             if (statsForOneDate.hasOwnProperty(statsPageKey)) {
                 tdElement.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
                 tdElement.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
+                tdElement.title += ', ' + Utils.timestampToTime(statsForOneDate[statsPageKey]['duration']);
                 duration += statsForOneDate[statsPageKey]['duration'];
 
                 if (this.bestResults[statsPageKey] == statsForOneDate[statsPageKey]['result']) {
