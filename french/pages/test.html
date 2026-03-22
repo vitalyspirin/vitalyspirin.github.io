@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Test</title>
+
+  <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="module">
+    "use strict";
+
+    import { Test } from '../js/Test.mjs';
+
+    Test.initialize(
+        document.getElementById('start-tests'),
+        document.getElementById('test-bed'),
+        document.getElementById('test-results')
+    );
+
+  </script>
+</head>
+
+<body>
+  <main class="wide">
+    <article>
+      <header>
+        <h2 id="page-title">Test</h2>
+      </header>
+
+      <button id="start-tests">Lancer des tests</button>
+
+      <div id="test-results"></div>
+
+      <iframe id="test-bed" style="display: block; margin: auto; width:90%; height: 30em;"></iframe>
+    </article>
+  </main>
+
+  <iframe src="partials/home-icon.html"
+    onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
+
+</body>
+
+</html>
