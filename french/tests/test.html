@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Test</title>
+
+  <!-- from https://icons8.com/icons/set/favicon-tests -->
+  <link rel="icon"
+    href='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxsaW5lYXJHcmFkaWVudCBpZD0iSG9pSkN1NDNRdHNoeklyWUN4T2ZDYSIgeDE9IjIxLjI0MSIgeDI9IjMuNTQxIiB5MT0iMzkuMjQxIiB5Mj0iMjEuNTQxIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIuMTA4IiBzdG9wLWNvbG9yPSIjMGQ3MDQ0Ii8+PHN0b3Agb2Zmc2V0PSIuNDMzIiBzdG9wLWNvbG9yPSIjMTE5NDVhIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBmaWxsPSJ1cmwoI0hvaUpDdTQzUXRzaHpJcllDeE9mQ2EpIiBkPSJNMTYuNTk5LDQxLjQyTDEuNTgsMjYuNDAxYy0wLjc3NC0wLjc3NC0wLjc3NC0yLjAyOCwwLTIuODAybDQuMDE5LTQuMDE5CWMwLjc3NC0wLjc3NCwyLjAyOC0wLjc3NCwyLjgwMiwwTDIzLjQyLDM0LjU5OWMwLjc3NCwwLjc3NCwwLjc3NCwyLjAyOCwwLDIuODAybC00LjAxOSw0LjAxOQlDMTguNjI3LDQyLjE5MywxNy4zNzMsNDIuMTkzLDE2LjU5OSw0MS40MnoiLz48bGluZWFyR3JhZGllbnQgaWQ9IkhvaUpDdTQzUXRzaHpJcllDeE9mQ2IiIHgxPSItMTUuNzciIHgyPSIyNi40MDMiIHkxPSI0My4yMjgiIHkyPSI0My4yMjgiIGdyYWRpZW50VHJhbnNmb3JtPSJyb3RhdGUoMTM0Ljk5OSAyMS4yODcgMzguODczKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzJhYzc4MiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzIxYjg3NiIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggZmlsbD0idXJsKCNIb2lKQ3U0M1F0c2h6SXJZQ3hPZkNiKSIgZD0iTTEyLjU4LDM0LjU5OUwzOS41OTksNy41OGMwLjc3NC0wLjc3NCwyLjAyOC0wLjc3NCwyLjgwMiwwbDQuMDE5LDQuMDE5CWMwLjc3NCwwLjc3NCwwLjc3NCwyLjAyOCwwLDIuODAyTDE5LjQwMSw0MS40MmMtMC43NzQsMC43NzQtMi4wMjgsMC43NzQtMi44MDIsMGwtNC4wMTktNC4wMTkJQzExLjgwNywzNi42MjcsMTEuODA3LDM1LjM3MywxMi41OCwzNC41OTl6Ii8+PC9zdmc+'>
+
+  <style>
+    main {
+      width: 50em;
+      margin: auto;
+      --error-color: red;
+      font-family: sans-serif;
+      line-height: 1.5;
+    }
+
+    #test-progress {
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    iframe {
+      display: block;
+      margin: auto;
+      width: 100%;
+      height: 30em;
+    }
+
+    button {
+      width: 30rem;
+      font-size: 1.17em;
+      display: block;
+      color: #222;
+      background-color: rgb(194 231 255);
+      border: 1px solid rgb(194 231 255);
+      border-radius: 0.5rem;
+      margin: 1.5rem auto;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .failed {
+      color: var(--error-color);
+    }
+
+    .passed-test .failed {
+      display: none;
+    }
+
+    .failed-test .passed {
+      display: none;
+    }
+
+    .http-response-code:not(.failed) {
+      display: none;
+    }
+
+    .css:not(.failed) {
+      display: none;
+    }
+
+    .favicon:not(.failed) {
+      display: none;
+    }
+
+    .broken-links:not(.failed) {
+      display: none;
+    }
+  </style>
+
+  <script type="module">
+    "use strict";
+
+    import { Test } from './Test.mjs';
+
+    Test.initialize(
+      document.getElementById('start-tests'),
+      document.getElementById('test-bed'),
+      document.getElementById('test-progress'),
+      document.getElementById('test-results')
+    );
+
+    document.getElementById('test-test-system').onclick = () => { Test.testSystem() };
+  </script>
+</head>
+
+<body>
+  <main>
+    <article>
+      <header>
+        <h2 id="page-title">Test</h2>
+      </header>
+
+      <button id="start-tests">Launch tests</button>
+      <button id="test-test-system">Test test system</button>
+
+      <div>
+        Progress: <span id="test-progress"></span>
+      </div>
+
+      <template id="test-result-template">
+        <li>
+          <div>
+            <span class="page-url"></span> :
+            <span class="passed">PASSED</span>
+            <span class="failed">FAILED</span>
+            <div class="http-response-code">HttpResponseCode : </div>
+            <div class="css">Loading CSS</div>
+            <div class="favicon">Loading Favicon : </div>
+            <div class="broken-links">Broken A links : </div>
+          </div>
+        </li>
+      </template>
+
+      <h3>Test results:</h3>
+      <ol id="test-results"></ol>
+
+      <iframe id="test-bed"></iframe>
+    </article>
+  </main>
+
+
+</body>
+
+</html>
