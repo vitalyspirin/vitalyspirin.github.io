@@ -14,29 +14,37 @@ class TestResult {
     isFaviconLoaded = null;
     faviconURL = null;
     brokenALinks = []; // will be array
+    isDomValid = null;
+    DomErrorMessage = null;
 }
 
 export class Test {
     static INDEX_PAGE = '../index.html';
     static FAILED_TESTS = [
         './failed-tests/abcdef.html',
-        './failed-tests/failed-test4.html',
-        './failed-tests/failed-test3.html',
-        './failed-tests/failed-test2.html',
-        './failed-tests/failed-test1.html',
+        './failed-tests/passed-test.html',
     ];
     //pages/vocabulary/exercise_tout.html
     static PAGE_EXTENTIONS_LIST = ['html'];
     static TIME_DELAY_TO_LOAD_PAGE = 100;
     static CSS_VARIABLE = '--text-color';
     static NO_TESTING_CLASS = 'no-testing'; // href of A tags with such CSS class will not be tested
+    static PROXY = 'https://proxy.corsfix.com/?'; // proxy to fetch external url
 
+    static numberOfPagesInput;
     static iframe;
     static testProgressArea;
     static testResultsArea;
 
 
-    static initialize(startTestsHtmlButton, iframe, testProgressArea, testResultsArea) {
+    static initialize(
+        startTestsHtmlButton,
+        numberOfPagesInput,
+        iframe,
+        testProgressArea,
+        testResultsArea
+    ) {
+        this.numberOfPagesInput = numberOfPagesInput;
         startTestsHtmlButton.onclick = this.startTests;
         this.iframe = iframe;
         this.testProgressArea = testProgressArea;
@@ -65,7 +73,8 @@ export class Test {
     }
 
     static #nextPage() {
-        if (TestResult.testResultList.length > 10) return;
+        if (Test.numberOfPagesInput.value !== ''
+            && TestResult.testResultList.length >= Test.numberOfPagesInput.value) return;
 
         if (TestResult.untestedPageUrlList.length > 0) {
             Test.iframe.src = TestResult.untestedPageUrlList.pop();
@@ -89,6 +98,7 @@ export class Test {
                 await Test.#testFavicon(testResult, iframeWindow);
                 Test.#testCSS(testResult, iframeWindow);
                 await Test.#testALinks(testResult, iframeWindow);
+                await Test.#testDOM(testResult, iframeWindow);
             }
             TestResult.testResultList.push(testResult);
             TestResult.testedPageUrlList.push(testResult.pageUrl);
@@ -147,16 +157,23 @@ export class Test {
             if (aLink.classList.contains(Test.NO_TESTING_CLASS)) continue;
 
             try {
-                const response = await fetch(aLink.href, { method: 'HEAD' });
-                console.log(response);
+                let url = aLink.href;
+                if (window.location.hostname !== (new URL(url)).hostname) {
+                    url = Test.#addProxyToExternalUrl(url);
+                }
+
+                const response = await fetch(url, { method: 'HEAD' });
+
                 // Manually check for HTTP errors (fetch() only rejects on network failures)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 } else {
-                    if (!TestResult.testedPageUrlList.includes(aLink.href) &&
-                        !TestResult.untestedPageUrlList.includes(aLink.href)
+                    if (url === aLink.href && // the same domain
+                        Test.PAGE_EXTENTIONS_LIST.includes(url.split('.').pop()) &&
+                        !TestResult.testedPageUrlList.includes(url) &&
+                        !TestResult.untestedPageUrlList.includes(url)
                     ) {
-                        TestResult.untestedPageUrlList.push(aLink.href);
+                        TestResult.untestedPageUrlList.push(url);
                     }
                 }
             } catch (err) {
@@ -166,13 +183,35 @@ export class Test {
         };
     }
 
+    static async #testDOM(testResult, iframeWindow) {
+        const response = await fetch(testResult.pageUrl);
+        const documentStr = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(documentStr, 'application/xml');
+
+        // Check for parser errors in the parsed document
+        const parseErrorList = doc.getElementsByTagName('parsererror');
+        if (parseErrorList.length > 0) {
+            testResult.isDomValid = false;
+            testResult.DomErrorMessage = parseErrorList.item(0).textContent;
+        } else {
+            testResult.isDomValid = true;
+        }
+    }
+
+    static #addProxyToExternalUrl(url) {
+        return Test.PROXY + url;
+    }
+
     static #showProgress(testResult) {
         let isPassed;
 
         if (testResult.isHttpResponseCodeOK !== false &&
             testResult.isCSSLoaded !== false &&
             testResult.isFaviconLoaded !== false &&
-            testResult.brokenALinks.length === 0
+            testResult.brokenALinks.length === 0 &&
+            testResult.isDomValid !== false
         ) {
             isPassed = true;
             Test.testProgressArea.innerHTML += '.';
@@ -210,9 +249,14 @@ export class Test {
             brokenLinksElement.innerHTML += testResult.brokenALinks;
         }
 
+        if (testResult.isDomValid === false) {
+            const domElement = testResultElement.getElementsByClassName('dom').item(0);
+            domElement.classList.add('failed');
+            domElement.innerHTML += testResult.DomErrorMessage;
+        }
+
         const testResultArea = document.getElementById('test-results');
         testResultArea?.appendChild(testResultElement);
-        console.log(testResultElement);
     }
 
     static #showResults(testList) {

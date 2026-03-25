@@ -53,29 +53,25 @@
       color: var(--error-color);
     }
 
-    .passed-test .failed {
+    .passed-test .failed,
+    .failed-test .passed,
+    .http-response-code:not(.failed),
+    .css:not(.failed),
+    .favicon:not(.failed),
+    .broken-links:not(.failed),
+    .dom:not(.failed) {
       display: none;
     }
 
-    .failed-test .passed {
-      display: none;
+    #number-of-pages {
+      width: 3em;
     }
 
-    .http-response-code:not(.failed) {
-      display: none;
+    section#start-button {
+      display: flex;
+      align-items: center;
     }
 
-    .css:not(.failed) {
-      display: none;
-    }
-
-    .favicon:not(.failed) {
-      display: none;
-    }
-
-    .broken-links:not(.failed) {
-      display: none;
-    }
   </style>
 
   <script type="module">
@@ -85,6 +81,7 @@
 
     Test.initialize(
       document.getElementById('start-tests'),
+      document.getElementById('number-of-pages'),
       document.getElementById('test-bed'),
       document.getElementById('test-progress'),
       document.getElementById('test-results')
@@ -101,12 +98,15 @@
         <h2 id="page-title">Test</h2>
       </header>
 
-      <button id="start-tests">Launch tests</button>
+      <section id="start-button" class="clear">
+        <button id="start-tests">Launch tests</button>
+        <span>Process only <input id="number-of-pages" type="number" value="4" /> pages.</span>
+      </section>
       <button id="test-test-system">Test test system</button>
 
-      <div>
+      <section>
         Progress: <span id="test-progress"></span>
-      </div>
+      </section>
 
       <template id="test-result-template">
         <li>
@@ -118,6 +118,7 @@
             <div class="css">Loading CSS</div>
             <div class="favicon">Loading Favicon : </div>
             <div class="broken-links">Broken A links : </div>
+            <div class="dom">Invalid DOM : </div>
           </div>
         </li>
       </template>
