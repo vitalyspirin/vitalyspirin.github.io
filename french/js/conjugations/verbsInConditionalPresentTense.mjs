@@ -163,7 +163,7 @@ export default {
         Ils: "se promèneraient"
     },
     "Se lever": {
-        "J'": "me lèverais",
+        Je: "me lèverais",
         Tu: "te lèverais",
         Il: "se lèverait",
         Nous: "nous lèverions",
