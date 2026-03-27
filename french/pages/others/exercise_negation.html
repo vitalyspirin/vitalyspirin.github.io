@@ -286,7 +286,7 @@
                                 <span title="ce professeur ne connaît ni ma sœur ni mon frère.">Ce professeur connaît ta
                                     sœur et ton frère ?</span>
                                 <div>Non,&nbsp;<input type="text"
-                                        pattern="ce professeur ne connaît ni ma sœur ni mon frère[.]?"></div>
+                                        pattern="ce professeur ne connaît ni ma (sœur|soeur) ni mon frère[.]?"></div>
                             </li>
 
                             <li>
@@ -320,9 +320,11 @@
 
                         <ol>
                             <li>
-                                <span title="nous ne prenons qu'une salade.">Vous prenez seulement une salade pour dîner
+                                <span title="nous ne prenons qu'une salade pour dîner.">Vous prenez seulement une salade
+                                    pour dîner
                                     ?</span>
-                                <span>Oui,&nbsp;<input type="text" pattern="nous ne prenons qu'une salade[.]?"></span>
+                                <span>Oui,&nbsp;<input type="text"
+                                        pattern="nous ne prenons qu'une salade pour dîner[.]?"></span>
                             </li>
 
                             <li>
