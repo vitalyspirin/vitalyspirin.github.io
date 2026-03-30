@@ -8,6 +8,8 @@ Words to add:
 - devenir
 - cueillir
 - sourire
+- visiter
+- rencontrer
 
 Words to have in all tenses:
 - apprendre
@@ -23,4 +25,5 @@ Words to have in all tenses:
 - prononcer
 - payer
 - offrir
+- amener
 
