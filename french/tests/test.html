@@ -11,83 +11,32 @@
   <link rel="icon"
     href='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxsaW5lYXJHcmFkaWVudCBpZD0iSG9pSkN1NDNRdHNoeklyWUN4T2ZDYSIgeDE9IjIxLjI0MSIgeDI9IjMuNTQxIiB5MT0iMzkuMjQxIiB5Mj0iMjEuNTQxIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIuMTA4IiBzdG9wLWNvbG9yPSIjMGQ3MDQ0Ii8+PHN0b3Agb2Zmc2V0PSIuNDMzIiBzdG9wLWNvbG9yPSIjMTE5NDVhIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBmaWxsPSJ1cmwoI0hvaUpDdTQzUXRzaHpJcllDeE9mQ2EpIiBkPSJNMTYuNTk5LDQxLjQyTDEuNTgsMjYuNDAxYy0wLjc3NC0wLjc3NC0wLjc3NC0yLjAyOCwwLTIuODAybDQuMDE5LTQuMDE5CWMwLjc3NC0wLjc3NCwyLjAyOC0wLjc3NCwyLjgwMiwwTDIzLjQyLDM0LjU5OWMwLjc3NCwwLjc3NCwwLjc3NCwyLjAyOCwwLDIuODAybC00LjAxOSw0LjAxOQlDMTguNjI3LDQyLjE5MywxNy4zNzMsNDIuMTkzLDE2LjU5OSw0MS40MnoiLz48bGluZWFyR3JhZGllbnQgaWQ9IkhvaUpDdTQzUXRzaHpJcllDeE9mQ2IiIHgxPSItMTUuNzciIHgyPSIyNi40MDMiIHkxPSI0My4yMjgiIHkyPSI0My4yMjgiIGdyYWRpZW50VHJhbnNmb3JtPSJyb3RhdGUoMTM0Ljk5OSAyMS4yODcgMzguODczKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzJhYzc4MiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzIxYjg3NiIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggZmlsbD0idXJsKCNIb2lKQ3U0M1F0c2h6SXJZQ3hPZkNiKSIgZD0iTTEyLjU4LDM0LjU5OUwzOS41OTksNy41OGMwLjc3NC0wLjc3NCwyLjAyOC0wLjc3NCwyLjgwMiwwbDQuMDE5LDQuMDE5CWMwLjc3NCwwLjc3NCwwLjc3NCwyLjAyOCwwLDIuODAyTDE5LjQwMSw0MS40MmMtMC43NzQsMC43NzQtMi4wMjgsMC43NzQtMi44MDIsMGwtNC4wMTktNC4wMTkJQzExLjgwNywzNi42MjcsMTEuODA3LDM1LjM3MywxMi41OCwzNC41OTl6Ii8+PC9zdmc+'>
 
-  <style>
-    main {
-      width: 50em;
-      margin: auto;
-      --error-color: red;
-      font-family: sans-serif;
-      line-height: 1.5;
-    }
-
-    #test-progress {
-      font-family: "Courier New", Courier, monospace;
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    iframe {
-      display: block;
-      margin: auto;
-      width: 100%;
-      height: 30em;
-    }
-
-    button {
-      width: 30rem;
-      font-size: 1.17em;
-      display: block;
-      color: #222;
-      background-color: rgb(194 231 255);
-      border: 1px solid rgb(194 231 255);
-      border-radius: 0.5rem;
-      margin: 1.5rem auto;
-      padding: 0.5rem 0;
-      text-decoration: none;
-      text-align: center;
-    }
-
-    .failed {
-      color: var(--error-color);
-    }
-
-    .passed-test .failed,
-    .failed-test .passed,
-    .http-response-code:not(.failed),
-    .css:not(.failed),
-    .favicon:not(.failed),
-    .broken-links:not(.failed),
-    .dom:not(.failed) {
-      display: none;
-    }
-
-    #number-of-pages {
-      width: 3em;
-    }
-
-    section#start-button {
-      display: flex;
-      align-items: center;
-    }
-
-  </style>
+  <link rel="stylesheet" href="test.css" />
 
   <script type="module">
     "use strict";
 
-    import { Test } from './Test.mjs';
+    import { Test } from './js/Test.mjs';
+    import ViewModel from './js/ViewModel.mjs';
 
     Test.initialize(
-      document.getElementById('start-tests'),
-      document.getElementById('number-of-pages'),
+      // document.getElementById('start-tests'),
+      // document.getElementById('number-of-pages'),
       document.getElementById('test-bed'),
       document.getElementById('test-progress'),
       document.getElementById('test-results')
     );
 
-    document.getElementById('test-test-system').onclick = () => { Test.testSystem() };
+    document.getElementById('start-tests').onclick = () => {
+      const viewModel = new ViewModel(document.getElementsByTagName('input'));
+      Test.startTests(viewModel);
+    };
+
+    document.getElementById('test-test-system').onclick = () => {
+      const viewModel = new ViewModel(document.getElementsByTagName('input'));
+      Test.testSystem(viewModel);
+    };
+
   </script>
 </head>
 
@@ -98,11 +47,34 @@
         <h2 id="page-title">Test</h2>
       </header>
 
-      <section id="start-button" class="clear">
-        <button id="start-tests">Launch tests</button>
-        <span>Process only <input id="number-of-pages" type="number" value="4" /> pages.</span>
-      </section>
-      <button id="test-test-system">Test test system</button>
+      <form id="start-button" class="clear">
+
+        <fieldset>
+          <legend>Test types:</legend>
+
+          <div class="justify">
+            <label class="wide">
+              <input type="checkbox" name="httpResponseCode" checked="checked" disabled="disabled" />Http Response Code
+            </label>
+            <label><input type="checkbox" name="aLinks" checked="checked" />A links</label>
+            <label><input type="checkbox" name="favicon" checked="checked" />Favicon</label>
+            <label><input type="checkbox" name="domXml" checked="checked" />DOM XML</label>
+          </div>
+
+          <div>
+            <label><input type="checkbox" name="css" checked="checked" />CSS</label>
+            <label class="extra-wide">variable to check:
+              <code>var(<input type="text" name="cssVar" value="--text-color"/>)</code>
+            </label>
+          </div>
+        </fieldset>
+
+        <span>Process only <input id="number-of-pages" name="numberOfPages" type="number" value="4" /> pages.</span>
+
+        <button id="start-tests" type="button">Launch tests</button>
+      </form>
+
+      <button id="test-test-system" class="secondary" type="button">Test test system</button>
 
       <section>
         Progress: <span id="test-progress"></span>

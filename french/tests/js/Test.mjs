@@ -16,13 +16,19 @@ class TestResult {
     brokenALinks = []; // will be array
     isDomValid = null;
     DomErrorMessage = null;
+
+    static init(pageForTestingList) {
+        TestResult.testResultList = [];
+        TestResult.untestedPageUrlList = pageForTestingList;
+        TestResult.testedPageUrlList = [];
+    }
 }
 
 export class Test {
     static INDEX_PAGE = '../index.html';
     static FAILED_TESTS = [
-        './failed-tests/abcdef.html',
-        './failed-tests/passed-test.html',
+        './sample-tests/abcdef.html',
+        './sample-tests/passed-test.html',
     ];
     //pages/vocabulary/exercise_tout.html
     static PAGE_EXTENTIONS_LIST = ['html'];
@@ -31,6 +37,8 @@ export class Test {
     static NO_TESTING_CLASS = 'no-testing'; // href of A tags with such CSS class will not be tested
     static PROXY = 'https://proxy.corsfix.com/?'; // proxy to fetch external url
 
+    static viewModel;
+
     static numberOfPagesInput;
     static iframe;
     static testProgressArea;
@@ -38,14 +46,14 @@ export class Test {
 
 
     static initialize(
-        startTestsHtmlButton,
-        numberOfPagesInput,
+        // startTestsHtmlButton,
+        // numberOfPagesInput,
         iframe,
         testProgressArea,
         testResultsArea
     ) {
-        this.numberOfPagesInput = numberOfPagesInput;
-        startTestsHtmlButton.onclick = this.startTests;
+        // this.numberOfPagesInput = numberOfPagesInput;
+        // startTestsHtmlButton.onclick = this.startTests;
         this.iframe = iframe;
         this.testProgressArea = testProgressArea;
         this.testResultsArea = testResultsArea;
@@ -60,21 +68,32 @@ export class Test {
     }
 
 
-    static testSystem() {
-        TestResult.untestedPageUrlList = Test.FAILED_TESTS;
+    static init(pageForTestingList) {
+        TestResult.init(pageForTestingList);
+
+        Test.testResultsArea.innerHTML = '';
+        Test.testProgressArea.innerHTML = '';
+    }
+
+    static testSystem(viewModel) {
+        Test.viewModel = viewModel;
+
+        Test.init(Array.from(Test.FAILED_TESTS));
 
         Test.#nextPage();
     }
 
-    static startTests() {
-        TestResult.untestedPageUrlList.push(Test.INDEX_PAGE);
+    static startTests(viewModel) {
+        Test.viewModel = viewModel;
+
+        Test.init(Array.from([Test.INDEX_PAGE]));
 
         Test.#nextPage();
     }
 
     static #nextPage() {
-        if (Test.numberOfPagesInput.value !== ''
-            && TestResult.testResultList.length >= Test.numberOfPagesInput.value) return;
+        if (Test.viewModel.numberOfPages.value !== ''
+            && TestResult.testResultList.length >= Test.viewModel.numberOfPages.value) return;
 
         if (TestResult.untestedPageUrlList.length > 0) {
             Test.iframe.src = TestResult.untestedPageUrlList.pop();
@@ -95,10 +114,21 @@ export class Test {
         if (Test.#testHttpResponseCode(testResult, iframeWindow)) {
 
             if (Test.PAGE_EXTENTIONS_LIST.includes(testResult.pageUrl.split('.').pop())) {
-                await Test.#testFavicon(testResult, iframeWindow);
-                Test.#testCSS(testResult, iframeWindow);
-                await Test.#testALinks(testResult, iframeWindow);
-                await Test.#testDOM(testResult, iframeWindow);
+                if (Test.viewModel.favicon) {
+                    await Test.#testFavicon(testResult, iframeWindow);
+                }
+
+                if (Test.viewModel.css) {
+                    Test.#testCSS(testResult, iframeWindow);
+                }
+
+                if (Test.viewModel.aLinks) {
+                    await Test.#testALinks(testResult, iframeWindow);
+                }
+
+                if (Test.viewModel.domXml) {
+                    await Test.#testDOM(testResult, iframeWindow);
+                }
             }
             TestResult.testResultList.push(testResult);
             TestResult.testedPageUrlList.push(testResult.pageUrl);
@@ -255,8 +285,7 @@ export class Test {
             domElement.innerHTML += testResult.DomErrorMessage;
         }
 
-        const testResultArea = document.getElementById('test-results');
-        testResultArea?.appendChild(testResultElement);
+        Test.testResultsArea?.appendChild(testResultElement);
     }
 
     static #showResults(testList) {
