@@ -12,6 +12,7 @@ export default class ViewModel extends ViewModelBase {
     css;
     cssVar;
     numberOfPages;
+    startingPage;
 
     constructor(formInput) {
         super();

@@ -17,24 +17,34 @@
     "use strict";
 
     import { Test } from './js/Test.mjs';
+    import View from './js/View.mjs';
     import ViewModel from './js/ViewModel.mjs';
+    import Controller from './js/Controller.mjs';
 
-    Test.initialize(
-      // document.getElementById('start-tests'),
-      // document.getElementById('number-of-pages'),
+    // Test.initialize(
+    //   // document.getElementById('start-tests'),
+    //   // document.getElementById('number-of-pages'),
+    //   document.getElementById('test-bed'),
+    //   document.getElementById('test-progress'),
+    //   document.getElementById('test-results')
+    // );
+
+    const view = new View(
       document.getElementById('test-bed'),
       document.getElementById('test-progress'),
       document.getElementById('test-results')
     );
 
+    const controller = new Controller(view);
+
     document.getElementById('start-tests').onclick = () => {
       const viewModel = new ViewModel(document.getElementsByTagName('input'));
-      Test.startTests(viewModel);
+      controller.startTests(viewModel);
     };
 
     document.getElementById('test-test-system').onclick = () => {
       const viewModel = new ViewModel(document.getElementsByTagName('input'));
-      Test.testSystem(viewModel);
+      Controller.testSystem(viewModel);
     };
 
   </script>
@@ -69,7 +79,8 @@
           </div>
         </fieldset>
 
-        <span>Process only <input id="number-of-pages" name="numberOfPages" type="number" value="4" /> pages.</span>
+        <div>Process only <input id="number-of-pages" name="numberOfPages" type="number" value="4" /> pages.</div>
+        <div>Starting page <input id="numb er-of-pages" name="startingPage" type="text" value="../index.html" /></div>
 
         <button id="start-tests" type="button">Launch tests</button>
       </form>

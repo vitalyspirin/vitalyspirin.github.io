@@ -53,8 +53,11 @@ code {
     font-size: 1rem;
 }
 
-code input {
+input {
     font-size: 1rem;
+}
+
+input[type="text"] {
     width: 7rem;
 }
 
