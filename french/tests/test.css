@@ -6,7 +6,7 @@ main {
     line-height: 2;
 }
 
-#test-progress {
+#test-progress, input[type="text"] {
     font-family: "Courier New", Courier, monospace;
 }
 
@@ -58,7 +58,10 @@ input {
 }
 
 input[type="text"] {
-    width: 7rem;
+    width: 10rem;
+}
+input[type="text"].wide {
+    width: 20rem;
 }
 
 button {

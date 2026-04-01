@@ -2,19 +2,30 @@
 
 "use strict";
 
+import TestResult from "./TestResult.mjs";
+
 export default class View {
     iframe;
     #testProgressArea;
     #testResultsArea;
+    #templateForResultArea;
 
+    /**
+     * @param {HTMLIFrameElement} iframe
+     * @param {HTMLElement} testProgressArea
+     * @param {HTMLElement} testResultsArea
+     * @param {HTMLTemplateElement} templateForResultArea
+     */
     constructor(
         iframe,
         testProgressArea,
-        testResultsArea
+        testResultsArea,
+        templateForResultArea
     ) {
         this.iframe = iframe;
         this.#testProgressArea = testProgressArea;
         this.#testResultsArea = testResultsArea;
+        this.#templateForResultArea = templateForResultArea;
     }
 
     clear() {
@@ -22,6 +33,7 @@ export default class View {
         this.#testProgressArea.innerHTML = '';
     }
 
+    /** @param {TestResult} testResult */
     showProgress(testResult) {
         let isPassed;
 
@@ -38,8 +50,8 @@ export default class View {
             this.#testProgressArea.innerHTML += 'F';
         }
 
-        const testResultElement = document.getElementById('test-result-template')
-            ?.cloneNode(true).content.firstElementChild;
+        // @ts-ignore
+        const testResultElement = this.#templateForResultArea?.cloneNode(true).content.firstElementChild;
         testResultElement.getElementsByClassName('page-url').item(0).textContent = testResult.pageUrl;
 
         if (isPassed) {

@@ -3,20 +3,30 @@
 "use strict";
 
 import TestResult from "./TestResult.mjs";
+import ViewModel from "./ViewModel.mjs";
 
-Array.prototype.removeOnce = function (value) {
-    const index = this.indexOf('mouse');
-    if (index > -1) {
-        this.splice(index, 1);
+if (!('removeOnce' in Array.prototype)) {
+    Array.prototype.removeOnce = function (value) {
+        const index = this.indexOf('mouse');
+        if (index > -1) {
+            this.splice(index, 1);
+        }
+        return this;
     }
-    return this;
 };
 
 export default class TestEngine {
     static TIME_DELAY_TO_LOAD_PAGE = 100;
     static PAGE_EXTENTIONS_LIST = ['html'];
     static NO_TESTING_CLASS = 'no-testing'; // href of A tags with such CSS class will not be tested
+    static PROXY = 'https://proxy.corsfix.com/?'; // proxy to fetch external url
 
+
+    /**
+     * @param {Window} iframeWindow - The window object of the iframe.
+     * @param {ViewModel} viewModel
+     * @param {function} callbackFunction
+     */
     static async testPage(iframeWindow, viewModel, callbackFunction) {
         console.log('testPage() : ' + iframeWindow.location.href);
 
@@ -25,7 +35,7 @@ export default class TestEngine {
 
         if (this.#testHttpResponseCode(testResult, iframeWindow)) {
 
-            if (this.PAGE_EXTENTIONS_LIST.includes(testResult.pageUrl.split('.').pop())) {
+            if (this.PAGE_EXTENTIONS_LIST.includes(testResult.pageUrl.split('.').pop() + '')) {
                 if (viewModel.favicon) {
                     await this.#testFavicon(testResult, iframeWindow);
                 }
@@ -53,7 +63,12 @@ export default class TestEngine {
         // Test.#nextPage();
     }
 
+    /**
+     * @param {TestResult} testResult
+     * @param {Window} iframeWindow - The window object of the iframe.
+     */
     static #testHttpResponseCode(testResult, iframeWindow) {
+        // @ts-ignore
         const iframeResponseCode = iframeWindow.performance.getEntriesByType("navigation")[0].responseStatus;
 
         testResult.isHttpResponseCodeOK = (iframeResponseCode == 200);
@@ -62,15 +77,24 @@ export default class TestEngine {
         return testResult.isHttpResponseCodeOK;
     }
 
+    /**
+     * @param {TestResult} testResult
+     * @param {Window} iframeWindow - The window object of the iframe.
+     * @param {ViewModel} viewModel
+     */
     static #testCSS(testResult, iframeWindow, viewModel) {
         const computedStyle = iframeWindow.getComputedStyle(iframeWindow.document.body);
         const cssVar = computedStyle.getPropertyValue(viewModel.cssVar);
         testResult.isCSSLoaded = cssVar !== '';
     }
 
+    /**
+     * @param {TestResult} testResult
+     * @param {Window} iframeWindow - The window object of the iframe.
+     */
     static async #testFavicon(testResult, iframeWindow) {
         const faviconElement = iframeWindow.document.querySelector('link[rel="icon"]');
-        if (faviconElement === null) return;
+        if (!(faviconElement instanceof HTMLLinkElement)) return;
 
         const faviconUrl = faviconElement.href;
 
@@ -94,6 +118,10 @@ export default class TestEngine {
         });
     }
 
+    /**
+     * @param {TestResult} testResult
+     * @param {Window} iframeWindow - The window object of the iframe.
+     */
     static async #testALinks(testResult, iframeWindow) {
         const aLinkList = iframeWindow.document.getElementsByTagName('a');
         for (const aLink of aLinkList) {
@@ -112,7 +140,7 @@ export default class TestEngine {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 } else {
                     if (url === aLink.href && // the same domain
-                        this.PAGE_EXTENTIONS_LIST.includes(url.split('.').pop()) &&
+                        this.PAGE_EXTENTIONS_LIST.includes(url.split('.').pop() + '') &&
                         !TestResult.testedPageUrlList.includes(url) &&
                         !TestResult.untestedPageUrlList.includes(url)
                     ) {
@@ -126,25 +154,32 @@ export default class TestEngine {
         };
     }
 
+    /**
+     * @param {TestResult} testResult
+     * @param {Window} iframeWindow - The window object of the iframe.
+     */
     static async #testDOM(testResult, iframeWindow) {
-        const response = await fetch(testResult.pageUrl);
+        const response = await fetch(testResult.pageUrl ?? '');
         const documentStr = await response.text();
 
         const parser = new DOMParser();
         const doc = parser.parseFromString(documentStr, 'application/xml');
 
         // Check for parser errors in the parsed document
-        const parseErrorList = doc.getElementsByTagName('parsererror');
-        if (parseErrorList.length > 0) {
+        const parseError = doc.getElementsByTagName('parsererror').item(0);
+        if (parseError !== null) {
             testResult.isDomValid = false;
-            testResult.DomErrorMessage = parseErrorList.item(0).textContent;
+            testResult.DomErrorMessage = parseError.textContent;
         } else {
             testResult.isDomValid = true;
         }
     }
 
+    /**
+     * @param {string} url
+     */
     static #addProxyToExternalUrl(url) {
-        return Test.PROXY + url;
+        return this.PROXY + url;
     }
 
 }

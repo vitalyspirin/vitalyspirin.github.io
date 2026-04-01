@@ -16,7 +16,7 @@
   <script type="module">
     "use strict";
 
-    import { Test } from './js/Test.mjs';
+    // import { Test } from './js/Test.mjs';
     import View from './js/View.mjs';
     import ViewModel from './js/ViewModel.mjs';
     import Controller from './js/Controller.mjs';
@@ -32,7 +32,8 @@
     const view = new View(
       document.getElementById('test-bed'),
       document.getElementById('test-progress'),
-      document.getElementById('test-results')
+      document.getElementById('test-results'),
+      document.getElementById('test-result-template')
     );
 
     const controller = new Controller(view);
@@ -40,11 +41,6 @@
     document.getElementById('start-tests').onclick = () => {
       const viewModel = new ViewModel(document.getElementsByTagName('input'));
       controller.startTests(viewModel);
-    };
-
-    document.getElementById('test-test-system').onclick = () => {
-      const viewModel = new ViewModel(document.getElementsByTagName('input'));
-      Controller.testSystem(viewModel);
     };
 
   </script>
@@ -80,12 +76,13 @@
         </fieldset>
 
         <div>Process only <input id="number-of-pages" name="numberOfPages" type="number" value="4" /> pages.</div>
-        <div>Starting page <input id="numb er-of-pages" name="startingPage" type="text" value="../index.html" /></div>
+        <div>
+          Starting page 
+            <input class="wide" name="startingPage" type="text" value="./sample-tests/passed-test.html" />
+        </div>
 
         <button id="start-tests" type="button">Launch tests</button>
       </form>
-
-      <button id="test-test-system" class="secondary" type="button">Test test system</button>
 
       <section>
         Progress: <span id="test-progress"></span>
