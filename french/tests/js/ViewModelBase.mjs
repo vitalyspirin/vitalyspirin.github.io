@@ -6,6 +6,9 @@ export default class ViewModelBase {
 
     constructor() { }
 
+    /**
+     * @param {HTMLCollectionOf<HTMLInputElement>} formInput
+     */
     setFrom(formInput) {
         if (!(formInput instanceof HTMLCollection)) {
             console.error("'formInput' parameter must be of type HTMLCollection but it's of type " +
@@ -21,8 +24,10 @@ export default class ViewModelBase {
             } else {
                 if (Object.hasOwn(this, inputName)) {
                     if (inputElement.type === 'checkbox') {
+                        // @ts-ignore
                         this[inputName] = inputElement.checked;
                     } else {
+                        // @ts-ignore
                         this[inputName] = inputElement.value;
                     }
                 }

@@ -5,15 +5,34 @@
 import ViewModelBase from "./ViewModelBase.mjs";
 
 export default class ViewModel extends ViewModelBase {
-    httpResponseCode;
-    aLinks;
-    favicon;
-    domXml;
-    css;
-    cssVar;
-    numberOfPages;
-    startingPage;
 
+    /** @type {boolean?} */
+    httpResponseCode = null;
+
+    /** @type {boolean?} */
+    aLinks = null;
+
+    /** @type {boolean?} */
+    favicon = null;
+
+    /** @type {boolean?} */
+    domXml = null;
+
+    /** @type {boolean?} */
+    css = null;
+
+    /** @type {string?} */
+    cssVar = null;
+
+    /** @type {number|string?} */
+    numberOfPages = null;
+
+    /** @type {string?} */
+    startingPage = null;
+
+    /**
+     * @param {HTMLCollectionOf<HTMLInputElement>} formInput
+     */
     constructor(formInput) {
         super();
 

@@ -12,8 +12,8 @@ export default class TestResult {
     /** @type {string[]} */
     static testedPageUrlList = [];
 
-    /** @type {string?} */
-    pageUrl = null;
+    /** @type {string} */
+    pageUrl = '';
 
     /** @type {boolean?} */
     isHttpResponseCodeOK = null;
@@ -38,6 +38,13 @@ export default class TestResult {
 
     /** @type {string?} */
     DomErrorMessage = null;
+
+    /** 
+     * @param {string} pageUrl
+     */
+    constructor(pageUrl = '') {
+        this.pageUrl = pageUrl;
+    }
 
     /** 
      * @param {string[]} pageForTestingList - The window object of the iframe. 

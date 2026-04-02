@@ -16,18 +16,9 @@
   <script type="module">
     "use strict";
 
-    // import { Test } from './js/Test.mjs';
     import View from './js/View.mjs';
     import ViewModel from './js/ViewModel.mjs';
     import Controller from './js/Controller.mjs';
-
-    // Test.initialize(
-    //   // document.getElementById('start-tests'),
-    //   // document.getElementById('number-of-pages'),
-    //   document.getElementById('test-bed'),
-    //   document.getElementById('test-progress'),
-    //   document.getElementById('test-results')
-    // );
 
     const view = new View(
       document.getElementById('test-bed'),
@@ -77,8 +68,8 @@
 
         <div>Process only <input id="number-of-pages" name="numberOfPages" type="number" value="4" /> pages.</div>
         <div>
-          Starting page 
-            <input class="wide" name="startingPage" type="text" value="./sample-tests/passed-test.html" />
+          Starting page
+          <input class="wide" name="startingPage" type="text" value="./sample-tests/passed-test.html" />
         </div>
 
         <button id="start-tests" type="button">Launch tests</button>

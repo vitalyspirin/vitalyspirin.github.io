@@ -5,15 +5,6 @@
 import TestResult from "./TestResult.mjs";
 import ViewModel from "./ViewModel.mjs";
 
-if (!('removeOnce' in Array.prototype)) {
-    Array.prototype.removeOnce = function (value) {
-        const index = this.indexOf('mouse');
-        if (index > -1) {
-            this.splice(index, 1);
-        }
-        return this;
-    }
-};
 
 export default class TestEngine {
     static TIME_DELAY_TO_LOAD_PAGE = 100;
@@ -30,12 +21,12 @@ export default class TestEngine {
     static async testPage(iframeWindow, viewModel, callbackFunction) {
         console.log('testPage() : ' + iframeWindow.location.href);
 
-        const testResult = new TestResult();
-        testResult.pageUrl = iframeWindow.location.href;
+        const testResult = new TestResult(iframeWindow.location.href);
+        // testResult.pageUrl = iframeWindow.location.href;
 
         if (this.#testHttpResponseCode(testResult, iframeWindow)) {
 
-            if (this.PAGE_EXTENTIONS_LIST.includes(testResult.pageUrl.split('.').pop() + '')) {
+            if (this.PAGE_EXTENTIONS_LIST.includes(testResult.pageUrl?.split('.').pop() + '')) {
                 if (viewModel.favicon) {
                     await this.#testFavicon(testResult, iframeWindow);
                 }
@@ -54,13 +45,10 @@ export default class TestEngine {
             }
             TestResult.testResultList.push(testResult);
             TestResult.testedPageUrlList.push(testResult.pageUrl);
-            TestResult.untestedPageUrlList.removeOnce(testResult.pageUrl);
         }
 
 
         callbackFunction(testResult);
-        // Test.#showProgress(testResult);
-        // Test.#nextPage();
     }
 
     /**
@@ -84,8 +72,8 @@ export default class TestEngine {
      */
     static #testCSS(testResult, iframeWindow, viewModel) {
         const computedStyle = iframeWindow.getComputedStyle(iframeWindow.document.body);
-        const cssVar = computedStyle.getPropertyValue(viewModel.cssVar);
-        testResult.isCSSLoaded = cssVar !== '';
+        const cssVar = computedStyle.getPropertyValue(viewModel.cssVar ?? '');
+        testResult.isCSSLoaded = (cssVar !== '');
     }
 
     /**

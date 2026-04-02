@@ -26,18 +26,11 @@ export default class Controller {
     startTests(viewModel) {
         this.#viewModel = viewModel;
 
-        this.#init(Array.from([viewModel.startingPage]));
+        this.#init(Array.from([viewModel.startingPage ?? '']));
 
         this.#nextPage();
     }
 
-    // static testSystem(viewModel) {
-    //     Test.viewModel = viewModel;
-
-    //     Test.#init(Array.from(Test.FAILED_TESTS));
-
-    //     Test.#nextPage();
-    // }
 
     /**
      * @param {string[]} pageForTestingList
@@ -51,7 +44,7 @@ export default class Controller {
     #nextPage() {
 
         if (this.#viewModel?.numberOfPages !== ''
-            && TestResult.testResultList.length >= this.#viewModel?.numberOfPages) return;
+            && TestResult.testResultList.length >= Number(this.#viewModel?.numberOfPages)) return;
 
         if (TestResult.untestedPageUrlList.length > 0) {
             this.#view.iframe.src = TestResult.untestedPageUrlList.pop() ?? '';
@@ -59,13 +52,13 @@ export default class Controller {
             const iframeWindow = this.#view.iframe.contentWindow;
             if (iframeWindow === null) return;
 
-            setTimeout(() => { // to be able to use 'this' inside TestEngine.testPage()
+            setTimeout(() => { // anonymous function to be able to use 'this' inside TestEngine.testPage()
                 TestEngine.testPage(
                     iframeWindow,
                     // @ts-ignore
                     this.#viewModel,
-                    (/** @type {TestResult} */ testResult) => { 
-                        this.afterPageHasBeenTested(testResult); 
+                    (/** @type {TestResult} */ testResult) => {
+                        this.afterPageHasBeenTested(testResult);
                     }
                 );
             },
