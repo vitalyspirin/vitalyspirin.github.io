@@ -407,9 +407,13 @@ td.best-result {
 }
 
 /* we need not(.span-third-two-thirds) for exercise_devoir_pouvoir_falloir_vouloir.html */
-.text section:not(.first-span-grows):not(.no-growth)>*:not(.span-third-two-thirds) li span:nth-of-type(2),
+.text section:not(.first-span-grows):not(.no-growth)>*:not(.span-third-two-thirds) li span:nth-of-type(2):not(:has(i)),
 .text section li span:nth-of-type(3) {
     display: inline-flex;
+}
+.text section:not(.first-span-grows):not(.no-growth)>*:not(.span-third-two-thirds) li span:nth-of-type(2):not(:has(i)) input {
+    /* otherwise because of inline-flex there will be no space between text and input tag */
+    margin-left: 0.5em;
 }
 
 /* first-span-grows is in exercise_quand_comment_combien.html */
