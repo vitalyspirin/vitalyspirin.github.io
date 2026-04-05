@@ -34,6 +34,11 @@
       controller.startTests(viewModel);
     };
 
+    document.getElementsByTagName('form').item(0).addEventListener("keydown", (e) => { 
+      if (e.key === "Enter") {
+        document.getElementById('start-tests').click();
+      }
+    });
   </script>
 </head>
 
@@ -44,7 +49,7 @@
         <h2 id="page-title">Test</h2>
       </header>
 
-      <form id="start-button" class="clear">
+      <form class="clear"  onsubmit="console.log('form')">
 
         <fieldset>
           <legend>Test types:</legend>
