@@ -63,6 +63,9 @@ input[type="text"] {
 input[type="text"].wide {
     width: 20rem;
 }
+input[type="text"].extra-wide {
+    width: 40rem;
+}
 
 button {
     width: 30rem;
