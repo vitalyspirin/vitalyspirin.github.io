@@ -38,7 +38,7 @@ fieldset div.justify {
 
 label {
     display: inline-block;
-    width: 6em;
+    width: 8em;
 }
 
 label.wide {
@@ -96,7 +96,7 @@ button.secondary {
 .css:not(.failed),
 .favicon:not(.failed),
 .broken-links:not(.failed),
-.dom:not(.failed) {
+.xml:not(.failed) {
     display: none;
 }
 

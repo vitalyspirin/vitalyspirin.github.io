@@ -41,7 +41,7 @@ export default class View {
             testResult.isCSSLoaded !== false &&
             testResult.isFaviconLoaded !== false &&
             testResult.brokenALinks.length === 0 &&
-            testResult.isDomValid !== false
+            testResult.isXmlValid !== false
         ) {
             isPassed = true;
             this.#testProgressArea.innerHTML += '.';
@@ -63,7 +63,7 @@ export default class View {
         if (testResult.isHttpResponseCodeOK === false) {
             const httpResponseCodeElement = testResultElement.getElementsByClassName('http-response-code').item(0);
             httpResponseCodeElement.classList.add('failed');
-            httpResponseCodeElement.innerHTML += testResult.httpResponseCode;
+            httpResponseCodeElement.textContent += testResult.httpResponseCode;
         }
         if (testResult.isCSSLoaded === false) {
             testResultElement.getElementsByClassName('css').item(0).classList.add('failed');
@@ -71,18 +71,18 @@ export default class View {
         if (testResult.isFaviconLoaded === false) {
             const faviconElement = testResultElement.getElementsByClassName('favicon').item(0);
             faviconElement.classList.add('failed');
-            faviconElement.innerHTML += testResult.faviconURL;
+            faviconElement.textContent += testResult.faviconURL;
         }
         if (testResult.brokenALinks.length !== 0) {
             const brokenLinksElement = testResultElement.getElementsByClassName('broken-links').item(0);
             brokenLinksElement.classList.add('failed');
-            brokenLinksElement.innerHTML += testResult.brokenALinks;
+            brokenLinksElement.textContent += testResult.brokenALinks;
         }
 
-        if (testResult.isDomValid === false) {
-            const domElement = testResultElement.getElementsByClassName('dom').item(0);
-            domElement.classList.add('failed');
-            domElement.innerHTML += testResult.DomErrorMessage;
+        if (testResult.isXmlValid === false) {
+            const xmlElement = testResultElement.getElementsByClassName('xml').item(0);
+            xmlElement.classList.add('failed');
+            xmlElement.textContent += testResult.xmlErrorMessage;
         }
 
         this.#testResultsArea?.appendChild(testResultElement);

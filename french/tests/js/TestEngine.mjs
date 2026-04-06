@@ -39,8 +39,8 @@ export default class TestEngine {
                     await this.#testALinks(testResult, iframeWindow);
                 }
 
-                if (viewModel.domXml) {
-                    await this.#testDOM(testResult, iframeWindow);
+                if (viewModel.xml) {
+                    await this.#testXML(testResult, iframeWindow);
                 }
             }
             TestResult.testResultList.push(testResult);
@@ -146,7 +146,7 @@ export default class TestEngine {
      * @param {TestResult} testResult
      * @param {Window} iframeWindow - The window object of the iframe.
      */
-    static async #testDOM(testResult, iframeWindow) {
+    static async #testXML(testResult, iframeWindow) {
         const response = await fetch(testResult.pageUrl ?? '');
         const documentStr = await response.text();
 
@@ -163,10 +163,10 @@ export default class TestEngine {
         }
 
         if (parseError !== null) {
-            testResult.isDomValid = false;
-            testResult.DomErrorMessage = parseError.textContent;
+            testResult.isXmlValid = false;
+            testResult.xmlErrorMessage = parseError.textContent;
         } else {
-            testResult.isDomValid = true;
+            testResult.isXmlValid = true;
         }
     }
 

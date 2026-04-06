@@ -16,7 +16,7 @@ export default class ViewModel extends ViewModelBase {
     favicon = null;
 
     /** @type {boolean?} */
-    domXml = null;
+    xml = null;
 
     /** @type {boolean?} */
     css = null;

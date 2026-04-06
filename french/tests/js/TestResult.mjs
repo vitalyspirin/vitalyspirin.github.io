@@ -34,10 +34,10 @@ export default class TestResult {
     brokenALinks = []; // will be array
 
     /** @type {boolean?} */
-    isDomValid = null;
+    isXmlValid = null;
 
     /** @type {string?} */
-    DomErrorMessage = null;
+    xmlErrorMessage = null;
 
     /** 
      * @param {string} pageUrl
