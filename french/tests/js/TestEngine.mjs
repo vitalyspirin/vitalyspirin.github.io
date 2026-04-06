@@ -128,7 +128,7 @@ export default class TestEngine {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 } else {
                     if (url === aLink.href && // the same domain
-                        this.PAGE_EXTENTIONS_LIST.includes(url.split('.').pop() + '') &&
+                        this.PAGE_EXTENTIONS_LIST.includes(url.split(/[?#]/)[0].split('.').pop() + '') &&
                         !TestResult.testedPageUrlList.includes(url) &&
                         !TestResult.untestedPageUrlList.includes(url)
                     ) {
@@ -151,10 +151,17 @@ export default class TestEngine {
         const documentStr = await response.text();
 
         const parser = new DOMParser();
-        const doc = parser.parseFromString(documentStr, 'application/xml');
+        let doc = parser.parseFromString(documentStr, 'application/xml');
 
         // Check for parser errors in the parsed document
-        const parseError = doc.getElementsByTagName('parsererror').item(0);
+        let parseError = doc.getElementsByTagName('parsererror').item(0);
+        if (parseError !== null && parseError.textContent.includes("'nbsp'")) {
+            const documentStr2 = documentStr.replace('<!DOCTYPE html>',
+                '<!DOCTYPE html [ <!ENTITY nbsp "&#160;"> ]>');
+            doc = parser.parseFromString(documentStr2, 'application/xml');
+            parseError = doc.getElementsByTagName('parsererror').item(0);
+        }
+
         if (parseError !== null) {
             testResult.isDomValid = false;
             testResult.DomErrorMessage = parseError.textContent;
