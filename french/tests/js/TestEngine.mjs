@@ -73,25 +73,10 @@ export default class TestEngine {
     static async #testCSS(testResult, iframeWindow, viewModel) {
         /** @type {NodeListOf<HTMLLinkElement>} */
         const cssLinkList = iframeWindow.document.querySelectorAll('link[rel="stylesheet"]');
+
+        testResult.isCSSLoaded = true;
         for (const cssLink of cssLinkList) {
-            try {
-                let url = cssLink.href;
-                if (window.location.hostname !== (new URL(url)).hostname) {
-                    url = this.#addProxyToExternalUrl(url);
-                }
-
-                const response = await fetch(url, { method: 'HEAD' });
-
-                // Manually check for HTTP errors (fetch() only rejects on network failures)
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                } else {
-                    testResult.isCSSLoaded = true;
-                }
-            } catch (err) {
-                // This catch block handles network errors or a bad scheme
-                testResult.isCSSLoaded = false;
-            }
+            testResult.isCSSLoaded &&= await this.#isFetchSuccess(cssLink.href);
         };
     }
 
@@ -134,29 +119,18 @@ export default class TestEngine {
         for (const aLink of aLinkList) {
             if (aLink.classList.contains(this.NO_TESTING_CLASS)) continue;
 
-            try {
-                let url = aLink.href;
-                if (window.location.hostname !== (new URL(url)).hostname) {
-                    url = this.#addProxyToExternalUrl(url);
+            const url = aLink.href;
+            if (await this.#isFetchSuccess(url)) {
+                if (window.location.hostname === (new URL(url)).hostname && // the same domain
+                    this.PAGE_EXTENTIONS_LIST.includes(url.split(/[?#]/)[0].split('.').pop() + '') &&
+                    !TestResult.testedPageUrlList.includes(url) &&
+                    !TestResult.untestedPageUrlList.includes(url)
+                ) {
+                    TestResult.untestedPageUrlList.push(url);
                 }
-
-                const response = await fetch(url, { method: 'HEAD' });
-
-                // Manually check for HTTP errors (fetch() only rejects on network failures)
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                } else {
-                    if (url === aLink.href && // the same domain
-                        this.PAGE_EXTENTIONS_LIST.includes(url.split(/[?#]/)[0].split('.').pop() + '') &&
-                        !TestResult.testedPageUrlList.includes(url) &&
-                        !TestResult.untestedPageUrlList.includes(url)
-                    ) {
-                        TestResult.untestedPageUrlList.push(url);
-                    }
-                }
-            } catch (err) {
+            } else {
                 // This catch block handles network errors or a bad scheme
-                testResult.brokenALinks.push(aLink.outerHTML);
+                testResult.brokenALinks.push(url);
             }
         };
     }
@@ -187,6 +161,33 @@ export default class TestEngine {
         } else {
             testResult.isXmlValid = true;
         }
+    }
+
+    /**
+     * @param {string} url
+     */
+    static async #isFetchSuccess(url) {
+        let result;
+
+        try {
+            if (window.location.hostname !== (new URL(url)).hostname) {
+                url = this.#addProxyToExternalUrl(url);
+            }
+
+            const response = await fetch(url, { method: 'HEAD' });
+
+            // Manually check for HTTP errors (fetch() only rejects on network failures)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            } else {
+                result = true;
+            }
+        } catch (err) {
+            // This catch block handles network errors or a bad scheme
+            result = false;
+        }
+
+        return result;
     }
 
     /**
