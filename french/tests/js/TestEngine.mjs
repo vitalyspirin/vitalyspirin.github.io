@@ -32,7 +32,7 @@ export default class TestEngine {
                 }
 
                 if (viewModel.css) {
-                    this.#testCSS(testResult, iframeWindow, viewModel);
+                    await this.#testCSS(testResult, iframeWindow, viewModel);
                 }
 
                 if (viewModel.aLinks) {
@@ -70,10 +70,29 @@ export default class TestEngine {
      * @param {Window} iframeWindow - The window object of the iframe.
      * @param {ViewModel} viewModel
      */
-    static #testCSS(testResult, iframeWindow, viewModel) {
-        const computedStyle = iframeWindow.getComputedStyle(iframeWindow.document.body);
-        const cssVar = computedStyle.getPropertyValue(viewModel.cssVar ?? '');
-        testResult.isCSSLoaded = (cssVar !== '');
+    static async #testCSS(testResult, iframeWindow, viewModel) {
+        /** @type {NodeListOf<HTMLLinkElement>} */
+        const cssLinkList = iframeWindow.document.querySelectorAll('link[rel="stylesheet"]');
+        for (const cssLink of cssLinkList) {
+            try {
+                let url = cssLink.href;
+                if (window.location.hostname !== (new URL(url)).hostname) {
+                    url = this.#addProxyToExternalUrl(url);
+                }
+
+                const response = await fetch(url, { method: 'HEAD' });
+
+                // Manually check for HTTP errors (fetch() only rejects on network failures)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                } else {
+                    testResult.isCSSLoaded = true;
+                }
+            } catch (err) {
+                // This catch block handles network errors or a bad scheme
+                testResult.isCSSLoaded = false;
+            }
+        };
     }
 
     /**

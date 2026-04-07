@@ -21,9 +21,6 @@ export default class ViewModel extends ViewModelBase {
     /** @type {boolean?} */
     css = null;
 
-    /** @type {string?} */
-    cssVar = null;
-
     /** @type {number|string?} */
     numberOfPages = null;
 
