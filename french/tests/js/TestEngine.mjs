@@ -74,10 +74,14 @@ export default class TestEngine {
         /** @type {NodeListOf<HTMLLinkElement>} */
         const cssLinkList = iframeWindow.document.querySelectorAll('link[rel="stylesheet"]');
 
-        testResult.isCSSLoaded = true;
+        testResult.isCssLoaded = true;
         for (const cssLink of cssLinkList) {
-            testResult.isCSSLoaded &&= await this.#isFetchSuccess(cssLink.href);
+            if (! await this.#isFetchSuccess(cssLink.href)) {
+                testResult.brokenCssLinks.push(cssLink.href);
+            }
         };
+
+        testResult.isCssLoaded = (testResult.brokenCssLinks.length == 0);
     }
 
     /**
@@ -93,7 +97,7 @@ export default class TestEngine {
             testResult.isFaviconLoaded = true;
         } else {
             testResult.isFaviconLoaded = false;
-            testResult.faviconURL = faviconElement.href;
+            testResult.faviconUrl = faviconElement.href;
         }
     }
 

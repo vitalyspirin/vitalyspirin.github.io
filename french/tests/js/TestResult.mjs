@@ -22,16 +22,19 @@ export default class TestResult {
     httpResponseCode = null;
 
     /** @type {boolean?} */
-    isCSSLoaded = null;
+    isCssLoaded = null;
+
+    /** @type {string[]} */
+    brokenCssLinks = [];
 
     /** @type {boolean?} */
     isFaviconLoaded = null;
 
     /** @type {string?} */
-    faviconURL = null;
+    faviconUrl = null;
 
     /** @type {string[]} */
-    brokenALinks = []; // will be array
+    brokenALinks = [];
 
     /** @type {boolean?} */
     isXmlValid = null;

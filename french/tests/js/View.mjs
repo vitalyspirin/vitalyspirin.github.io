@@ -38,7 +38,7 @@ export default class View {
         let isPassed;
 
         if (testResult.isHttpResponseCodeOK !== false &&
-            testResult.isCSSLoaded !== false &&
+            testResult.isCssLoaded !== false &&
             testResult.isFaviconLoaded !== false &&
             testResult.brokenALinks.length === 0 &&
             testResult.isXmlValid !== false
@@ -65,13 +65,16 @@ export default class View {
             httpResponseCodeElement.classList.add('failed');
             httpResponseCodeElement.textContent += testResult.httpResponseCode;
         }
-        if (testResult.isCSSLoaded === false) {
-            testResultElement.getElementsByClassName('css').item(0).classList.add('failed');
+        if (testResult.isCssLoaded === false) {
+            const brokenCssLinksElement = testResultElement.getElementsByClassName('css').item(0);
+            brokenCssLinksElement.classList.add('failed');
+            console.log(brokenCssLinksElement.textContent);
+            brokenCssLinksElement.textContent += testResult.brokenCssLinks;
         }
         if (testResult.isFaviconLoaded === false) {
             const faviconElement = testResultElement.getElementsByClassName('favicon').item(0);
             faviconElement.classList.add('failed');
-            faviconElement.textContent += testResult.faviconURL;
+            faviconElement.textContent += testResult.faviconUrl;
         }
         if (testResult.brokenALinks.length !== 0) {
             const brokenLinksElement = testResultElement.getElementsByClassName('broken-links').item(0);
