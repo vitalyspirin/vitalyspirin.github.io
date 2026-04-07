@@ -34,7 +34,7 @@
       controller.startTests(viewModel);
     };
 
-    document.getElementsByTagName('form').item(0).addEventListener("keydown", (e) => { 
+    document.getElementsByTagName('form').item(0).addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         document.getElementById('start-tests').click();
       }
@@ -49,7 +49,7 @@
         <h2 id="page-title">Test</h2>
       </header>
 
-      <form class="clear"  onsubmit="console.log('form')">
+      <form class="clear" onsubmit="console.log('form')">
 
         <fieldset>
           <legend>Test types:</legend>
@@ -66,7 +66,10 @@
 
         </fieldset>
 
-        <div>Process only <input id="number-of-pages" name="numberOfPages" type="number" value="4" /> pages.</div>
+        <div>Process only 
+          <input id="number-of-pages" name="numberOfPages" type="number" value="5" /> pages.
+        </div>
+
         <div>
           Starting page
           <input class="extra-wide" name="startingPage" type="text" value="./sample-tests/passed-test.html" />

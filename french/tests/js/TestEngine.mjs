@@ -85,29 +85,16 @@ export default class TestEngine {
      * @param {Window} iframeWindow - The window object of the iframe.
      */
     static async #testFavicon(testResult, iframeWindow) {
+        /** @type {HTMLLinkElement?} */
         const faviconElement = iframeWindow.document.querySelector('link[rel="icon"]');
-        if (!(faviconElement instanceof HTMLLinkElement)) return;
+        if (faviconElement === null) return;
 
-        const faviconUrl = faviconElement.href;
-
-        await new Promise((resolve, reject) => {
-            const img = new Image();
-
-            img.onload = () => resolve(true);
-            img.onerror = (e) => reject(e);
-
-            img.src = faviconUrl;
-
-            // Handle cases where the image might already be complete
-            if (img.complete) {
-                resolve(true);
-            }
-        }).then(() => {
+        if (await this.#isFetchSuccess(faviconElement.href)) {
             testResult.isFaviconLoaded = true;
-        }).catch((e) => {
+        } else {
             testResult.isFaviconLoaded = false;
-            testResult.faviconURL = e.srcElement.src;
-        });
+            testResult.faviconURL = faviconElement.href;
+        }
     }
 
     /**
