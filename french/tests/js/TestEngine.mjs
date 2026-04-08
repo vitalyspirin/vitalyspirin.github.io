@@ -11,6 +11,7 @@ export default class TestEngine {
     static PAGE_EXTENTIONS_LIST = ['html'];
     static NO_TESTING_CLASS = 'no-testing'; // href of A tags with such CSS class will not be tested
     static PROXY = 'https://proxy.corsfix.com/?'; // proxy to fetch external url
+    static HTML_VALIDATOR_SERVICE = 'https://validator.w3.org/nu/?out=json'; // https://github.com/validator/validator/wiki/Service-%C2%BB-Input-%C2%BB-POST-body
 
 
     /**
@@ -40,7 +41,11 @@ export default class TestEngine {
                 }
 
                 if (viewModel.xml) {
-                    await this.#testXML(testResult, iframeWindow);
+                    await this.#testXml(testResult, iframeWindow);
+                }
+
+                if (viewModel.html) {
+                    await this.#testHtml(testResult, iframeWindow);
                 }
             }
             TestResult.testResultList.push(testResult);
@@ -130,17 +135,19 @@ export default class TestEngine {
      * @param {TestResult} testResult
      * @param {Window} iframeWindow - The window object of the iframe.
      */
-    static async #testXML(testResult, iframeWindow) {
-        const response = await fetch(testResult.pageUrl ?? '');
-        const documentStr = await response.text();
+    static async #testXml(testResult, iframeWindow) {
+        if (testResult.pageContent === null) {
+            const response = await fetch(testResult.pageUrl);
+            testResult.pageContent = await response.text();
+        }
 
         const parser = new DOMParser();
-        let doc = parser.parseFromString(documentStr, 'application/xml');
+        let doc = parser.parseFromString(testResult.pageContent, 'application/xml');
 
         // Check for parser errors in the parsed document
         let parseError = doc.getElementsByTagName('parsererror').item(0);
         if (parseError !== null && parseError.textContent.includes("'nbsp'")) {
-            const documentStr2 = documentStr.replace('<!DOCTYPE html>',
+            const documentStr2 = testResult.pageContent.replace('<!DOCTYPE html>',
                 '<!DOCTYPE html [ <!ENTITY nbsp "&#160;"> ]>');
             doc = parser.parseFromString(documentStr2, 'application/xml');
             parseError = doc.getElementsByTagName('parsererror').item(0);
@@ -151,6 +158,56 @@ export default class TestEngine {
             testResult.xmlErrorMessage = parseError.textContent;
         } else {
             testResult.isXmlValid = true;
+        }
+    }
+
+    /**
+     * @param {TestResult} testResult
+     * @param {Window} iframeWindow - The window object of the iframe.
+     */
+    static async #testHtml(testResult, iframeWindow) {
+        if (testResult.pageContent === null) {
+            const response = await fetch(testResult.pageUrl);
+            testResult.pageContent = await response.text();
+        }
+
+        try {
+            const responseFromValidator = await fetch(
+                this.#addProxyToExternalUrl(this.HTML_VALIDATOR_SERVICE),
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "text/html; charset=utf-8",
+                        'User-Agent': 'MyValidatorClient/1.0' // Recommended to identify your script
+                    },
+                    body: testResult.pageContent
+                }
+            );
+
+            // Manually check for HTTP errors (fetch() only rejects on network failures)
+            if (!responseFromValidator.ok) {
+                throw new Error(`HTTP error! status: ${responseFromValidator.status}`);
+            } else {
+                const responseObj = await responseFromValidator.json();
+
+                testResult.isHtmlValid = true;
+                if (responseObj.messages.length !== 0) {
+                    for (let i = 0; i < responseObj.messages.length; i++) {
+                        if (responseObj.messages[i].type == 'error') {
+                            testResult.isHtmlValid = false;
+                            testResult.htmlErrorMessageList.push(
+                                responseObj.messages[i].lastLine + ':' +
+                                responseObj.messages[i].lastColumn + ' - ' +
+                                responseObj.messages[i].message);
+                            console.log(responseObj.messages[i]);
+                        }
+                    } // for
+                } // if (responseObj.messages.length !== 0) {
+            } // if else (!responseFromValidator.ok) {
+        } catch (err) {
+            // This catch block handles network errors or a bad scheme
+            testResult.isHtmlValid = false;
+            testResult.htmlErrorMessageList.push(err.message);
         }
     }
 

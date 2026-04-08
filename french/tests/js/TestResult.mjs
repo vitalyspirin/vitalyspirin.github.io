@@ -15,6 +15,9 @@ export default class TestResult {
     /** @type {string} */
     pageUrl = '';
 
+    /** @type {string?} */
+    pageContent = null;
+
     /** @type {boolean?} */
     isHttpResponseCodeOK = null;
 
@@ -42,6 +45,13 @@ export default class TestResult {
     /** @type {string?} */
     xmlErrorMessage = null;
 
+    /** @type {boolean?} */
+    isHtmlValid = null;
+
+    /** @type {string[]} */
+    htmlErrorMessageList = [];
+
+    
     /** 
      * @param {string} pageUrl
      */

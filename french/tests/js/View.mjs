@@ -41,7 +41,8 @@ export default class View {
             testResult.isCssLoaded !== false &&
             testResult.isFaviconLoaded !== false &&
             testResult.brokenALinks.length === 0 &&
-            testResult.isXmlValid !== false
+            testResult.isXmlValid !== false &&
+            testResult.isHtmlValid !== false
         ) {
             isPassed = true;
             this.#testProgressArea.innerHTML += '.';
@@ -68,7 +69,6 @@ export default class View {
         if (testResult.isCssLoaded === false) {
             const brokenCssLinksElement = testResultElement.getElementsByClassName('css').item(0);
             brokenCssLinksElement.classList.add('failed');
-            console.log(brokenCssLinksElement.textContent);
             brokenCssLinksElement.textContent += testResult.brokenCssLinks;
         }
         if (testResult.isFaviconLoaded === false) {
@@ -86,6 +86,12 @@ export default class View {
             const xmlElement = testResultElement.getElementsByClassName('xml').item(0);
             xmlElement.classList.add('failed');
             xmlElement.textContent += testResult.xmlErrorMessage;
+        }
+
+        if (testResult.isHtmlValid === false) {
+            const hmlElement = testResultElement.getElementsByClassName('html').item(0);
+            hmlElement.classList.add('failed');
+            hmlElement.textContent += testResult.htmlErrorMessageList;
         }
 
         this.#testResultsArea?.appendChild(testResultElement);

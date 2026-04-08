@@ -16,10 +16,13 @@ export default class ViewModel extends ViewModelBase {
     favicon = null;
 
     /** @type {boolean?} */
+    css = null;
+
+    /** @type {boolean?} */
     xml = null;
 
     /** @type {boolean?} */
-    css = null;
+    html = null;
 
     /** @type {number|string?} */
     numberOfPages = null;

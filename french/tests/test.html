@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="test.css" />
 
   <script type="module">
+/* <![CDATA[ */
     "use strict";
 
     import View from './js/View.mjs';
@@ -39,6 +40,45 @@
         document.getElementById('start-tests').click();
       }
     });
+
+// async function validateHTML(htmlContent) {
+//   const url = 'https://validator.w3.org/nu/?out=json';
+  
+//   try {
+//     const response = await fetch(url, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'text/html; charset=utf-8',
+//         'User-Agent': 'MyValidatorClient/1.0' // Recommended to identify your script
+//       },
+//       body: htmlContent
+//     });
+
+//     const data = await response.json();
+// console.log(data);
+//     if (data.messages.length === 0) {
+//       console.log("Document is valid!");
+//     } else {
+//       console.log("Validation issues found:");
+//       data.messages.forEach(msg => {
+//         console.log(`[${msg.type.toUpperCase()}] Line ${msg.lastLine}: ${msg.message}`);
+//       });
+//     }
+//   } catch (error) {
+//     console.error('Error connecting to W3C Validator:', error);
+//   }
+// }
+
+// // Example usage:
+// const myHTML = "<!DOCTYPE html>"+
+// "<html>"+
+// "<head><title>Test</title></head>"+
+// "<body><p>Hello World</p><" +"/body>"+
+// "</html>";
+
+// validateHTML(myHTML);
+
+/* ]]> */
   </script>
 </head>
 
@@ -55,13 +95,14 @@
           <legend>Test types:</legend>
 
           <div class="justify">
-            <label class="wide">
+            <label>
               <input type="checkbox" name="httpResponseCode" checked="checked" disabled="disabled" />Http Response Code
             </label>
             <label><input type="checkbox" name="aLinks" checked="checked" />A links</label>
             <label><input type="checkbox" name="favicon" checked="checked" />Favicon</label>
-            <label><input type="checkbox" name="xml" checked="checked" />XML validation</label>
             <label><input type="checkbox" name="css" checked="checked" />CSS</label>
+            <label><input type="checkbox" name="xml" checked="checked" />XML validation</label>
+            <label><input type="checkbox" name="html" checked="checked" />HTML validation</label>
           </div>
 
         </fieldset>
@@ -93,6 +134,7 @@
             <div class="favicon">Loading Favicon : </div>
             <div class="broken-links">Broken A links : </div>
             <div class="xml">Invalid XML : </div>
+            <div class="html">Invalid HTML : </div>
           </div>
         </li>
       </template>

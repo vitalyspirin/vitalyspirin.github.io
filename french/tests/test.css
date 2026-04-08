@@ -32,17 +32,14 @@ fieldset {
 
 fieldset div.justify {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 1em 0;
 }
 
 label {
     display: inline-block;
-    width: 8em;
-}
-
-label.wide {
-    width: 11em;
+    width: 12em;
 }
 
 label.extra-wide {
@@ -96,7 +93,8 @@ button.secondary {
 .css:not(.failed),
 .favicon:not(.failed),
 .broken-links:not(.failed),
-.xml:not(.failed) {
+.xml:not(.failed),
+.html:not(.failed) {
     display: none;
 }
 
