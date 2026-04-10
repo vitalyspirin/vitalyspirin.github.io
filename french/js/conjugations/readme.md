@@ -10,6 +10,7 @@ Words to add:
 - sourire
 - visiter
 - rencontrer
+- ajouter
 
 Words to have in all tenses:
 - apprendre
