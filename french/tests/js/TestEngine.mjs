@@ -173,7 +173,7 @@ export default class TestEngine {
 
         try {
             const responseFromValidator = await fetch(
-                this.#addProxyToExternalUrl(this.HTML_VALIDATOR_SERVICE),
+                this.#addProxyToExternalUrlIfNeeded(this.HTML_VALIDATOR_SERVICE),
                 {
                     method: "POST",
                     headers: {
@@ -205,6 +205,7 @@ export default class TestEngine {
                 } // if (responseObj.messages.length !== 0) {
             } // if else (!responseFromValidator.ok) {
         } catch (err) {
+            console.log(err);
             // This catch block handles network errors or a bad scheme
             testResult.isHtmlValid = false;
             testResult.htmlErrorMessageList.push(err.message);
@@ -218,9 +219,7 @@ export default class TestEngine {
         let result;
 
         try {
-            if (window.location.hostname !== (new URL(url)).hostname) {
-                url = this.#addProxyToExternalUrl(url);
-            }
+            url = this.#addProxyToExternalUrlIfNeeded(url);
 
             const response = await fetch(url, { method: 'HEAD' });
 
@@ -241,8 +240,11 @@ export default class TestEngine {
     /**
      * @param {string} url
      */
-    static #addProxyToExternalUrl(url) {
-        return this.PROXY + url;
+    static #addProxyToExternalUrlIfNeeded(url) {
+        if (window.location.hostname !== (new URL(url)).hostname) {
+            url = this.PROXY + url;
+        }
+        return url;
     }
 
 }

@@ -69,7 +69,7 @@ export default class View {
         if (testResult.isCssLoaded === false) {
             const brokenCssLinksElement = testResultElement.getElementsByClassName('css').item(0);
             brokenCssLinksElement.classList.add('failed');
-            brokenCssLinksElement.textContent += testResult.brokenCssLinks;
+            this.#showErrorList(brokenCssLinksElement.firstElementChild, testResult.brokenCssLinks);
         }
         if (testResult.isFaviconLoaded === false) {
             const faviconElement = testResultElement.getElementsByClassName('favicon').item(0);
@@ -79,7 +79,7 @@ export default class View {
         if (testResult.brokenALinks.length !== 0) {
             const brokenLinksElement = testResultElement.getElementsByClassName('broken-links').item(0);
             brokenLinksElement.classList.add('failed');
-            brokenLinksElement.textContent += testResult.brokenALinks;
+            this.#showErrorList(brokenLinksElement.firstElementChild, testResult.brokenALinks);
         }
 
         if (testResult.isXmlValid === false) {
@@ -91,11 +91,22 @@ export default class View {
         if (testResult.isHtmlValid === false) {
             const hmlElement = testResultElement.getElementsByClassName('html').item(0);
             hmlElement.classList.add('failed');
-            hmlElement.textContent += testResult.htmlErrorMessageList;
+            this.#showErrorList(hmlElement.firstElementChild, testResult.htmlErrorMessageList);
         }
 
         this.#testResultsArea?.appendChild(testResultElement);
     }
 
-
+    /** 
+     * @param {HTMLOListElement} olElement 
+     * @param {string[]} errorList 
+    */
+    #showErrorList(olElement, errorList) {
+        errorList.forEach((error) => {
+            /** @type HTMLLIElement */
+            const liElement = document.createElement('li');
+            liElement.textContent = error;
+            olElement.appendChild(liElement);
+        })
+    }
 }
