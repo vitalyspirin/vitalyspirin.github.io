@@ -65,7 +65,7 @@ export class Resolver {
         }
     };
 
-
+    /** @type Record<string, string> */
     static infoForPages = {
         // A1
         "exercise_noun_number.html": "../pdf/noun_gender_number.pdf",

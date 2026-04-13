@@ -200,6 +200,12 @@ export class ErrorCounter {
             infoLink = '..\\' + Resolver.infoForPages[page];
         }
 
-        document.querySelector('a.info-icon').href = infoLink;
+        /** @type HTMLAnchorElement? */
+        const infoLinkElement = document.querySelector('a.info-icon');
+
+        if (infoLinkElement === null) return;
+
+        infoLinkElement.href = infoLink;
+        infoLinkElement.style.visibility = 'visible';
     }
 }

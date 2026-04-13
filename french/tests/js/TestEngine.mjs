@@ -199,7 +199,6 @@ export default class TestEngine {
                                 responseObj.messages[i].lastLine + ':' +
                                 responseObj.messages[i].lastColumn + ' - ' +
                                 responseObj.messages[i].message);
-                            console.log(responseObj.messages[i]);
                         }
                     } // for
                 } // if (responseObj.messages.length !== 0) {

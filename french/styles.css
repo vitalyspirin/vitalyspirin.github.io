@@ -49,6 +49,8 @@ a.info-icon {
     color: black;
     opacity: 75%;
     text-decoration: none;
+    /* to see that JS script is loaded (and make Info icon visible) */
+    visibility: hidden;
 }
 
 
