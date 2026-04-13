@@ -6,7 +6,8 @@ main {
     line-height: 2;
 }
 
-#test-progress, input[type="text"] {
+#test-progress,
+input[type="text"] {
     font-family: "Courier New", Courier, monospace;
 }
 
@@ -57,9 +58,11 @@ input {
 input[type="text"] {
     width: 10rem;
 }
+
 input[type="text"].wide {
     width: 20rem;
 }
+
 input[type="text"].extra-wide {
     width: 40rem;
 }
@@ -105,4 +108,24 @@ button.secondary {
 section#start-button {
     display: flex;
     align-items: center;
+}
+
+ol {
+    counter-reset: item;
+    list-style-type: none;
+}
+
+ol li::before {
+    content: counter(item) ") ";
+    counter-increment: item;
+}
+
+/* list of tested page links */
+ol li div:first-child {
+    display: inline;
+}
+
+/* list failed tests for a particular page link */
+ol li div div {
+    margin-left: 3em;
 }
