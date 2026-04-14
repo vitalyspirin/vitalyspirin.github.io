@@ -22,6 +22,9 @@ export default class ViewModel extends ViewModelBase {
     xml = null;
 
     /** @type {boolean?} */
+    js = null;
+
+    /** @type {boolean?} */
     html = null;
 
     /** @type {number|string?} */

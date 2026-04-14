@@ -7,7 +7,7 @@ import ViewModel from "./ViewModel.mjs";
 
 
 export default class TestEngineBase {
-    static TIME_DELAY_TO_LOAD_PAGE = 150;
+    static TIME_DELAY_TO_LOAD_PAGE = 200;
     static PAGE_EXTENTIONS_LIST = ['html'];
     static NO_TESTING_CLASS = 'no-testing'; // href of A tags with such CSS class will not be tested
     static PROXY = 'https://proxy.corsfix.com/?'; // proxy to fetch external url
@@ -48,7 +48,9 @@ export default class TestEngineBase {
                     await this.testHtml(testResult, iframeWindow);
                 }
 
-                this.testJs(testResult, iframeWindow);
+                if (viewModel.js) {
+                    this.testJs(testResult, iframeWindow);
+                }
             }
             TestResult.testResultList.push(testResult);
             TestResult.testedPageUrlList.push(testResult.pageUrl);

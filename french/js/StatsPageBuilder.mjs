@@ -43,6 +43,8 @@ export default class StatsPageBuilder {
 
         const numberOfRecentDays = document.getElementsByName('number-of-days').item(0).value;
         this.#ProcessRecentDates(numberOfRecentDays);
+
+        document.querySelector('a.info-icon').style.visibility = 'visible';
     }
 
     static #fillTableRow(tableRowElement, formattedDate, statsForOneDate) {
