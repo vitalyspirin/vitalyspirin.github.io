@@ -97,7 +97,8 @@ button.secondary {
 .favicon:not(.failed),
 .broken-links:not(.failed),
 .xml:not(.failed),
-.html:not(.failed) {
+.html:not(.failed),
+.js:not(.failed) {
     display: none;
 }
 

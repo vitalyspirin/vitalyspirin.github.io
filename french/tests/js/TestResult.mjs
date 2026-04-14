@@ -51,6 +51,8 @@ export default class TestResult {
     /** @type {string[]} */
     htmlErrorMessageList = [];
 
+    /** @type {boolean?} */
+    isJsValid = null;
     
     /** 
      * @param {string} pageUrl

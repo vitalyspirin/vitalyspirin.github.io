@@ -42,7 +42,8 @@ export default class View {
             testResult.isFaviconLoaded !== false &&
             testResult.brokenALinks.length === 0 &&
             testResult.isXmlValid !== false &&
-            testResult.isHtmlValid !== false
+            testResult.isHtmlValid !== false &&
+            testResult.isJsValid !== false
         ) {
             isPassed = true;
             this.#testProgressArea.innerHTML += '.';
@@ -89,9 +90,14 @@ export default class View {
         }
 
         if (testResult.isHtmlValid === false) {
-            const hmlElement = testResultElement.getElementsByClassName('html').item(0);
-            hmlElement.classList.add('failed');
-            this.#showErrorList(hmlElement.firstElementChild, testResult.htmlErrorMessageList);
+            const htmlElement = testResultElement.getElementsByClassName('html').item(0);
+            htmlElement.classList.add('failed');
+            this.#showErrorList(htmlElement.firstElementChild, testResult.htmlErrorMessageList);
+        }
+
+        if (testResult.isJsValid === false) {
+            const jsElement = testResultElement.getElementsByClassName('js').item(0);
+            jsElement.classList.add('failed');
         }
 
         this.#testResultsArea?.appendChild(testResultElement);
@@ -100,7 +106,7 @@ export default class View {
     /** 
      * @param {HTMLOListElement} olElement 
      * @param {string[]} errorList 
-    */
+     */
     #showErrorList(olElement, errorList) {
         errorList.forEach((error) => {
             /** @type HTMLLIElement */
