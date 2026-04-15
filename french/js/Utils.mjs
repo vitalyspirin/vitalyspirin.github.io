@@ -3,6 +3,12 @@
 "use strict";
 
 export default class Utils {
+
+    /**
+      * @param {string} str
+      * @param {string} fileFolder
+      * @param {string} extention
+      */
     static getAudioFileUrl(str, fileFolder, extention = 'mp3') {
         let result;
 
@@ -23,10 +29,16 @@ export default class Utils {
         return result;
     };
 
+    /**
+      * @param {string} str
+      */
     static removeSpecialChars(str) {
         return str.replace(/\s+|\'/g, '');
     }
 
+    /**
+     * @param {number} timestamp
+     */
     static timestampToDate(timestamp) {
         let theDate = new Date(timestamp);
 
@@ -39,7 +51,11 @@ export default class Utils {
         return formattedDate;
     }
 
-    // output format: 2026-03-13, 01:34 p.m.
+    /**
+     * @param {number} timestamp
+     * 
+     * output format: 2026-03-13, 01:34 p.m.
+     */
     static timestampToDateAndTime(timestamp) {
         let theDate = new Date(timestamp);
 
@@ -56,7 +72,11 @@ export default class Utils {
         return formattedDate;
     }
 
-    // output format: 2026213_1355
+    /**
+     * @param {number} timestamp
+     * 
+     * output format: 2026213_1355
+     */
     static timestampToDateAndTimeSystemFormat(timestamp) {
         let theDate = new Date(timestamp);
 
@@ -66,6 +86,9 @@ export default class Utils {
         return formattedDate;
     }
 
+    /**
+     * @param {number} timestamp
+     */
     static timestampToTime(timestamp) {
         const timestampInSeconds = Math.floor(timestamp / 1000);
 
@@ -83,6 +106,9 @@ export default class Utils {
         return formattedTime;
     }
 
+    /**
+     * @param {string} dateStr
+     */
     static getWeek(dateStr) {
         const date = new Date(dateStr);
 
@@ -93,10 +119,16 @@ export default class Utils {
         return Math.ceil((millisec / 86400000 + 1 + a.getDay()) / 7);
     }
 
+    /**
+     * @param {object} object
+     */
     static getType(object) {
         return Object.prototype.toString.apply(object);
     }
 
+    /**
+     * @param {string} id
+     */
     static getElementById(id) {
         const element = document.getElementById(id);
 

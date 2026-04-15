@@ -5,11 +5,33 @@
 
 import Storage from './Storage.mjs';
 import Utils from './Utils.mjs';
+import Types from './Types.mjs';
 
 export default class StatsPageBuilder {
+
+    /**
+     * @typedef {Record<string, {result: number, errors: number, duration: number}>} StatsForOneDate
+     */
+
+    /** 
+     * @type Record< string, StatsForOneDate> > 
+     * 
+     * Example: 
+     *  2025-05-23: 
+     *      exercise_concordance.html: {result: 0.8878504672897196, errors: 14, duration: 0}
+     *      exercise_future.html: {result: 0.8481012658227848, errors: 12, duration: 0}
+     *  2025-05-24: 
+     *      conjugations_mixed.html?Conjugaisons%20m%C3%A9lang%C3%A9es: {result: 0.9431524547803618, errors: 39, duration: 0}
+     */
     static stats = {};
+
+    /** @type string[] */
     static dates;
+
+    /** @type Record<string, string> */
     static earlestDates = {};
+
+    /** @type Record<string, number> */
     static bestResults = {};
 
     static TD_ATTRIBUTE = 'data-key';
@@ -20,15 +42,21 @@ export default class StatsPageBuilder {
     static buildPage() {
         this.#buildStatsObject();
 
-        const templateElement = document.getElementById('template-table-row');
-        if (!(templateElement instanceof HTMLTemplateElement)) return;
+        const templateElement = Types.assertType(
+            document.getElementById('template-table-row'),
+            HTMLTemplateElement
+        );
 
-        const templateTableRow = templateElement.content.firstElementChild;
+        const templateTableRow = Types.assertType(
+            templateElement.content.firstElementChild,
+            HTMLTableRowElement
+        );
+
         const tbodyElement = document.getElementsByTagName('tbody')[0];
 
         this.dates.forEach((date) => {
             let newTableRowElement = templateTableRow.cloneNode(true);
-            if (!(newTableRowElement instanceof Element)) return;
+            if (!(newTableRowElement instanceof HTMLTableRowElement)) return;
 
             this.#fillTableRow(newTableRowElement, date, this.stats[date]);
 
@@ -41,20 +69,31 @@ export default class StatsPageBuilder {
             tbodyElement.append(newTableRowElement);
         });
 
-        const numberOfRecentDays = document.getElementsByName('number-of-days').item(0).value;
+        const numberOfRecentDays = Types.assertType(
+            document.getElementsByName('number-of-days').item(0),
+            HTMLInputElement
+        ).value;
         this.#ProcessRecentDates(numberOfRecentDays);
 
-        document.querySelector('a.info-icon').style.visibility = 'visible';
+        Types.assertType(document.querySelector('a.info-icon'), HTMLElement)
+            .style.visibility = 'visible';
     }
 
+    /**
+     * @param {HTMLTableRowElement} tableRowElement
+     * @param {string} formattedDate
+     * @param {StatsForOneDate} statsForOneDate
+     */
     static #fillTableRow(tableRowElement, formattedDate, statsForOneDate) {
         let duration = 0;
 
         for (const tdElement of tableRowElement.children) {
-            let statsPageKey = tdElement.getAttribute('data-key');
+            if (!(tdElement instanceof HTMLTableCellElement)) continue;
+
+            let statsPageKey = Types.assertNotNull(tdElement.getAttribute('data-key'));
 
             if (statsForOneDate.hasOwnProperty(statsPageKey)) {
-                tdElement.innerText = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
+                tdElement.textContent = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
                 tdElement.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
                 tdElement.title += ', ' + Utils.timestampToTime(statsForOneDate[statsPageKey]['duration']);
                 duration += statsForOneDate[statsPageKey]['duration'];
@@ -69,12 +108,18 @@ export default class StatsPageBuilder {
             }
         }
 
-        const dateCell = tableRowElement.querySelector('[data-key="date"]');
+        const dateCell = Types.assertType(
+            tableRowElement.querySelector('[data-key="date"]'),
+            HTMLElement
+        );
         dateCell.innerText = formattedDate;
         const durationStr = Utils.timestampToTime(duration);
         dateCell.title = 'time spent: ' + durationStr;
 
-        const durationCell = tableRowElement.querySelector('[data-key="duration"]');
+        const durationCell = Types.assertType(
+            tableRowElement.querySelector('[data-key="duration"]'),
+            HTMLElement
+        );
         durationCell.innerText = durationStr;
     }
 
@@ -93,13 +138,12 @@ export default class StatsPageBuilder {
                 }
                 this.stats[formattedDate][pageKey] = {
                     result: statsForPage[pageStatsKey]['result'],
-                    errors: statsForPage[pageStatsKey]['errors']
+                    errors: statsForPage[pageStatsKey]['errors'],
+                    duration: 0
                 };
 
                 if (statsForPage[pageStatsKey]['duration']) {
                     this.stats[formattedDate][pageKey]['duration'] = statsForPage[pageStatsKey]['duration'];
-                } else {
-                    this.stats[formattedDate][pageKey]['duration'] = 0;
                 }
 
                 this.#setEarlestDate(pageKey, formattedDate);
@@ -119,6 +163,10 @@ export default class StatsPageBuilder {
 
     } // function buildStatsObject()
 
+    /**
+     * @param {string} pageKey
+     * @param {string} date
+     */
     static #setEarlestDate(pageKey, date) {
         if (!this.earlestDates.hasOwnProperty(pageKey)) {
             this.earlestDates[pageKey] = date;
@@ -129,6 +177,10 @@ export default class StatsPageBuilder {
         }
     }
 
+    /**
+     * @param {string} pageKey
+     * @param {number} result
+     */
     static #setBestResults(pageKey, result) {
         if (!this.bestResults.hasOwnProperty(pageKey)) {
             this.bestResults[pageKey] = result;
@@ -139,6 +191,9 @@ export default class StatsPageBuilder {
         }
     }
 
+    /**
+     * @param {number} numberOfRecentDays
+     */
     static #ProcessRecentDates(numberOfRecentDays) {
         let dateCounter = 0;
 
@@ -178,7 +233,8 @@ export default class StatsPageBuilder {
                 }
             });
 
-            trElement = trElement?.nextSibling;
+            trElement = Types.assertType(trElement?.nextElementSibling, HTMLTableRowElement);
+
             dateCounter++;
 
         } while (dateCounter < numberOfRecentDays);
