@@ -17,7 +17,7 @@ import verbsInFuturePerfectTense, { audioFileFolder as audioFileFolderForFutureP
 
 export class Resolver {
     static AUDIO_BASE_PATH = '../';
-    
+
     static map = {
         'Le présent': {
             folder: audioFileFolderForPresentTense,
@@ -122,6 +122,7 @@ export class Resolver {
 
         // B2
         "exercise-noun-gender-3.html": "../pdf/noun-gender2.pdf",
+        "exercise_ce_qui_ce_que.html": "../pdf/ce-qui-ce-que.pdf",
         "conjugations.html?Le%20subjonctif%20pass%C3%A9": "../pdf/presentsubjunctive.pdf",
         "exercise_presentperfectsubjunctive.html": "../pdf/presentsubjunctive.pdf",
         "conjugations.html?Le%20conditionnel%20pass%C3%A9": "../pdf/conditionalperfect.pdf",
