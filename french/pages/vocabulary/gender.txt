@@ -9,3 +9,4 @@ un hôpital
 un âge
 un choix
 une vague
+une façon
