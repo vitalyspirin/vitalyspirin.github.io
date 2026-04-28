@@ -417,7 +417,7 @@ td.best-result {
     display: inline-flex;
 }
 
-.text section:not(.first-span-grows):not(.no-growth)>*:not(.span-third-two-thirds) li span:nth-of-type(2):not(:has(i)) input {
+.text section:not(.first-span-grows):not(.no-growth):not(.no-left-margin-in-right-span)>*:not(.span-third-two-thirds) li span:nth-of-type(2):not(:has(i)) input {
     /* otherwise because of inline-flex there will be no space between text and input tag */
     margin-left: 0.5em;
 }
