@@ -18,6 +18,7 @@ import verbsInFuturePerfectTense, { audioFileFolder as audioFileFolderForFutureP
 export class Resolver {
     static AUDIO_BASE_PATH = '../';
 
+    /** @type Record<string, {folder: string, verbList: any}> */
     static map = {
         'Le présent': {
             folder: audioFileFolderForPresentTense,
@@ -154,6 +155,10 @@ export class Resolver {
         return result;
     }
 
+    /**
+     * @param {string} folder
+     * @return {string}
+     */
     static getURLEncodedTenseByFolder(folder) {
         let result = encodeURIComponent(this.getTenseByFolder(folder)).replace(/'/g, '%27');
 
