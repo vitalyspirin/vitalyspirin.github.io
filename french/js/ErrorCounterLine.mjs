@@ -2,8 +2,14 @@
 
 "use strict";
 
+import { ErrorCounterObj } from "./ErrorCounter.mjs";
+
 
 export default class ErrorCounterLine {
+
+    /**
+     * @param {HTMLElement} errorLineElement
+     */
     static initialize(errorLineElement) {
         errorLineElement.style.display = 'block';
 
@@ -12,6 +18,10 @@ export default class ErrorCounterLine {
         errorLineElement.getElementsByClassName('result').item(0).textContent = '0';
     }
 
+    /**
+     * @param {HTMLElement} errorLineElement
+     * @param {ErrorCounterObj} errorCounterObj
+     */
     static update(errorLineElement, errorCounterObj) {
         errorLineElement.getElementsByClassName('number-of-errors').item(0).textContent =
             String(errorCounterObj.numberOfErrors);
