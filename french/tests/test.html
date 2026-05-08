@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="test.css" />
 
   <script type="module">
-/* <![CDATA[ */
+    /* <![CDATA[ */
     "use strict";
 
     import View from './js/View.mjs';
@@ -41,44 +41,7 @@
       }
     });
 
-// async function validateHTML(htmlContent) {
-//   const url = 'https://validator.w3.org/nu/?out=json';
-  
-//   try {
-//     const response = await fetch(url, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'text/html; charset=utf-8',
-//         'User-Agent': 'MyValidatorClient/1.0' // Recommended to identify your script
-//       },
-//       body: htmlContent
-//     });
-
-//     const data = await response.json();
-// console.log(data);
-//     if (data.messages.length === 0) {
-//       console.log("Document is valid!");
-//     } else {
-//       console.log("Validation issues found:");
-//       data.messages.forEach(msg => {
-//         console.log(`[${msg.type.toUpperCase()}] Line ${msg.lastLine}: ${msg.message}`);
-//       });
-//     }
-//   } catch (error) {
-//     console.error('Error connecting to W3C Validator:', error);
-//   }
-// }
-
-// // Example usage:
-// const myHTML = "<!DOCTYPE html>"+
-// "<html>"+
-// "<head><title>Test</title></head>"+
-// "<body><p>Hello World</p><" +"/body>"+
-// "</html>";
-
-// validateHTML(myHTML);
-
-/* ]]> */
+    /* ]]> */
   </script>
 </head>
 
@@ -94,7 +57,7 @@
         <fieldset>
           <legend>Test types:</legend>
 
-          <div class="justify">
+          <div class="justify short-label">
             <label>
               <input type="checkbox" name="httpResponseCode" checked="checked" disabled="disabled" />Http Response Code
             </label>
@@ -108,18 +71,29 @@
 
         </fieldset>
 
-        <div>CORS proxy (to test external links):
-          <input class="wide" id="cors-proxy" name="corsProxy" type="text" value="https://proxy.corsfix.com/?" />
-        </div>
+        <fieldset>
+          <legend>Additional parameters:</legend>
+          <div>
+            <label>
+              CORS proxy (to test external links):
+              <input class="wide" id="cors-proxy" name="corsProxy" type="text" value="https://proxy.corsfix.com/?" />
+            </label>
+          </div>
 
-        <div>Process only
-          <input id="number-of-pages" name="numberOfPages" type="number" value="7" /> pages.
-        </div>
+          <div>
+            <label>
+              Process only
+              <input id="number-of-pages" name="numberOfPages" type="number" value="7" /> pages.
+            </label>
+          </div>
 
-        <div>
-          Starting page:
-          <input class="extra-wide" name="startingPage" type="text" value="./sample-tests/passed-test.html" />
-        </div>
+          <div>
+            <label>
+              Starting page:
+              <input class="extra-wide" name="startingPage" type="text" value="./sample-tests/passed-test.html" />
+            </label>
+          </div>
+        </fieldset>
 
         <button id="start-tests" type="button">Launch tests</button>
       </form>
@@ -135,15 +109,15 @@
             <span class="passed">PASSED</span>
             <span class="failed">FAILED</span>
             <div class="http-response-code">HttpResponseCode : </div>
-            <div class="css">Broken CSS links : 
+            <div class="css">Broken CSS links :
               <ol></ol>
             </div>
             <div class="favicon">Loading Favicon : </div>
-            <div class="broken-links">Broken A links : 
+            <div class="broken-links">Broken A links :
               <ol></ol>
             </div>
             <div class="xml">Invalid XML : </div>
-            <div class="html">Invalid HTML : 
+            <div class="html">Invalid HTML :
               <ol></ol>
             </div>
             <div class="js">Invalid JavaScript</div>
