@@ -2,16 +2,38 @@
 
 "use strict";
 
-import ErrorCounterLine from './ErrorCounterLine.mjs';
 import { Resolver } from './Resolver.mjs';
 import { ErrorCounter, ErrorCounterObj } from './ErrorCounter.mjs';
 import Utils from './Utils.mjs';
 import Storage from './Storage.mjs';
 
 export default class StatsFooter {
+
     /**
+     * @typedef {Record<string, {timestamp: number, result: number, errors: number, correct: number, total: number, duration: number}>} StatsForOnePage
+     * 
+     * Example:
+     *  1773192410882:
+     *      correct: 44
+     *      duration: 343758
+     *      errors: 16
+     *      result: 0.7333333333333333
+     *      timestamp: 1773192765458
+     *      total: 60
+     *  1773273856909: 
+     *      correct: 52
+     *      duration: 303006
+     *      errors: 8
+     *      result: 0.8666666666666667
+     *      timestamp: 1773274177794
+     *      total: 60
+     */
+
+
+    /**
+     * @param {number} statsId
      * @param {ErrorCounterObj} errorCounter
-     * @param {boolean} verbTense
+     * @param {string?} verbTense
      */
     static saveStats(statsId, errorCounter, verbTense) {
         let stats = this.retrieveStats(verbTense);
@@ -26,9 +48,12 @@ export default class StatsFooter {
             'duration': errorCounter.duration
         };
         Storage.saveStatsDataForKey(this.getStorageKey(verbTense), JSON.stringify(stats));
-
     }
 
+    /**
+     * @param {string?} verbTense
+     * @return {StatsForOnePage}
+     */
     static retrieveStats(verbTense) {
         let stats;
 
@@ -42,6 +67,9 @@ export default class StatsFooter {
         return stats;
     }
 
+    /**
+     * @param {string?} verbTense
+     */
     static showStats(verbTense = null) {
         document.getElementById('stats-title').style.display = 'block';
         document.getElementById('stats').textContent = '';
@@ -89,6 +117,10 @@ export default class StatsFooter {
         document.getElementById('stats').textContent = '';
     }
 
+    /**
+     * @param {string?} verbTense
+     * @return {string}
+     */
     static getStorageKey(verbTense) {
         let storageKey;
 
@@ -101,6 +133,10 @@ export default class StatsFooter {
         return storageKey;
     }
 
+    /**
+     * @param {StatsForOnePage} stats
+     * @return {number}
+     */
     static getBestResult(stats) {
         let bestResult = 0;
 
