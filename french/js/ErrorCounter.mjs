@@ -6,20 +6,29 @@ import ErrorCounterLine from './ErrorCounterLine.mjs';
 import { InputValidation } from './InputValidation.mjs';
 import { Resolver } from './Resolver.mjs';
 import StatsFooter from './StatsFooter.mjs';
+import Types from './Types.mjs';
 import Utils from './Utils.mjs';
 
 export class ErrorCounterObj {
     numberOfErrors = 0;
     numberOfCompleted = 0;
     numberOfAllInputElements = 0;
-    duration;
+    duration = 0;
 }
 
 export class ErrorCounter {
+    /** @type {number} */
     static id;
+
+    /** @type ErrorCounterObj|Record<string, ErrorCounterObj> */
     static errorCounter;
+
+    /** @type {number} */
     static startTimestamp;
 
+    /**
+     * @param {string[]} verbTenseList
+     */
     static initialize(verbTenseList = [], self = this) {
         if (document.getElementById('error-counter') !== null) {
             // wait till footer iframe is processed
@@ -29,6 +38,10 @@ export class ErrorCounter {
         }
     }
 
+    /**
+     * @param {string[]} verbTenseList
+     * @param {any} self
+     */
     static initializeAfterDelay(verbTenseList, self) {
         self.id = Date.now();
 
@@ -100,32 +113,41 @@ export class ErrorCounter {
         }
     }
 
+    /**
+     * @param {HTMLCollection} allInputElements
+     */
     static #initializeTimer(allInputElements) {
         const firstInputElement = allInputElements.item(0);
 
-        if (firstInputElement === null) {
+        if (!(firstInputElement instanceof HTMLInputElement)) {
             return; // probably no tense is chosen on mixed conjugation page
         }
 
         this.#addEventListenerToInputElement(
             'change',
             firstInputElement,
-            (event) => {
+            (/*event*/) => {
                 if (ErrorCounter.startTimestamp == null) {
                     ErrorCounter.startTimestamp = Date.now();
                 }
             }
         );
 
-        const lastInputElement = allInputElements.item(allInputElements.length - 1);
+        const lastInputElement = Types.assertType(
+            allInputElements.item(allInputElements.length - 1), HTMLInputElement);
 
         this.#addEventListenerToInputElement(
             'change',
             lastInputElement,
-            (event) => { this.#updateTimer(event); }
+            (/** @type Event */ event) => { this.#updateTimer(event); }
         );
     }
 
+    /**
+     * @param {string} eventName
+     * @param {HTMLInputElement} inputElement
+     * @param {function} eventListenerFunction
+     */
     static #addEventListenerToInputElement(eventName, inputElement, eventListenerFunction) {
         if (inputElement.type == 'text') {
             inputElement.addEventListener(eventName, (event) => {
@@ -156,7 +178,9 @@ export class ErrorCounter {
         errorCounterSection.appendChild(newErrorCounterLine);
 
         Object.entries(Resolver.map).forEach(([tenseName, element]) => {
-            let newErrorCounterLine = errorCounterLineTemplate.cloneNode(true);
+            let newErrorCounterLine = Types.assertType(
+                errorCounterLineTemplate.cloneNode(true), HTMLElement);
+
             newErrorCounterLine.id += element.folder;
             const resultatStr = newErrorCounterLine.getElementsByClassName('resultat-for-which-tense').item(0);
             resultatStr.innerText = ' pour ' + tenseName.toLowerCase();
@@ -164,6 +188,9 @@ export class ErrorCounter {
         });
     }
 
+    /**
+     * @param {Event} event
+     */
     static #updateTimer(event) {
         if (ErrorCounter.startTimestamp != null) {
             const timeDuration = Date.now() - ErrorCounter.startTimestamp;
@@ -172,18 +199,23 @@ export class ErrorCounter {
                 Utils.timestampToTime(timeDuration)
             );
 
-            const verbTense = event.target.getAttribute('data-verb-tense');
+            const verbTense = Types.assertType(event.target, HTMLElement)
+                .getAttribute('data-verb-tense');
             ErrorCounter.getErrorCounter(verbTense).duration = timeDuration;
             StatsFooter.saveStats(this.id, ErrorCounter.getErrorCounter(verbTense), verbTense);
         }
     }
 
+    /**
+     * @param {string?} verbTense
+     */
     static getErrorCounter(verbTense) {
         let resultat;
 
         if (verbTense === null) {
             resultat = ErrorCounter.errorCounter;
         } else {
+            // @ts-ignore
             resultat = ErrorCounter.errorCounter[verbTense];
         }
 
