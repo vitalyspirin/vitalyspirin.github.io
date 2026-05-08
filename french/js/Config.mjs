@@ -5,6 +5,11 @@
 export class Config {
     static storageKey = 'CONFIG';
 
+    /**
+     * @param {string} key
+     * @param {string} subkey
+     * @param {any} value
+     */
     static save(key, subkey, value) {
         let config = JSON.parse(localStorage.getItem(this.storageKey));
 
@@ -17,6 +22,11 @@ export class Config {
         localStorage.setItem(this.storageKey, JSON.stringify(config));
     }
 
+    /**
+     * @param {string} key
+     * @param {string} subkey
+     * @return {any}
+     */
     static retrieve(key, subkey) {
         let result;
 
