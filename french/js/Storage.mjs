@@ -15,6 +15,10 @@ export default class Storage {
         return pagesKeys;
     }
 
+    /**
+     * @param {string} key
+     * @returns {string?}
+     */
     static getStatsDataForKey(key) {
         let result;
 
@@ -31,6 +35,10 @@ export default class Storage {
         return result;
     }
 
+    /**
+     * @param {string} key
+     * @param {string} value
+     */
     static saveStatsDataForKey(key, value) {
         let data = JSON.parse(localStorage.getItem(this.STATS_KEY));
 
@@ -42,10 +50,18 @@ export default class Storage {
 
     }
 
+    /**
+     * @param {string} value
+     */
     static replaceStatsData(value) {
         localStorage.setItem(this.STATS_KEY, value);
     }
 
+    /**
+     * @param {string} key
+     * @param {string} subkey
+     * @param {string} value
+     */
     static saveConfigForKey(key, subkey, value) {
         let config = JSON.parse(localStorage.getItem(this.CONFIG_KEY));
 
@@ -58,6 +74,10 @@ export default class Storage {
         localStorage.setItem(this.CONFIG_KEY, JSON.stringify(config));
     }
 
+    /**
+     * @param {string} key
+     * @param {string} subkey
+     */
     static getConfigDataForKey(key, subkey) {
         let result;
 
