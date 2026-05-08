@@ -5,13 +5,21 @@
 import { ErrorCounter } from './ErrorCounter.mjs';
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import StatsFooter from './StatsFooter.mjs';
+import Types from './Types.mjs';
 
 export class InputValidation {
+
+    /** @type string */
     static verbTense;
+
+    /** @type HTMLElement */
     static errorLineElement;
 
+    /**
+     * @param {Event} event
+     */
     static #initialize(event) {
-        this.verbTense = event.target.getAttribute('data-verb-tense');
+        this.verbTense = Types.assertType(event.target, HTMLElement).getAttribute('data-verb-tense');
         this.errorLineElement = document.getElementById('error-counter-' + (this.verbTense ?? ''));
     }
 
@@ -34,6 +42,9 @@ export class InputValidation {
 
     }
 
+    /**
+     * @param {Event} event
+     */
     static onClickEventHandler(event) {
         if (!(event.target instanceof HTMLInputElement)) return;
 
@@ -54,6 +65,9 @@ export class InputValidation {
         self.#finalize();
     }
 
+    /**
+     * @param {Event} event
+     */
     static focusOutEventHandler(event) {
         if (!(event.target instanceof HTMLInputElement)) return;
 
