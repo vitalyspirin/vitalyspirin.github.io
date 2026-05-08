@@ -60,7 +60,7 @@ export default class Storage {
     /**
      * @param {string} key
      * @param {string} subkey
-     * @param {string} value
+     * @param {string|boolean} value
      */
     static saveConfigForKey(key, subkey, value) {
         let config = JSON.parse(localStorage.getItem(this.CONFIG_KEY));

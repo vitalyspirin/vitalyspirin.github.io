@@ -3,8 +3,12 @@
 "use strict";
 
 export class ShowHints {
-    static initialize(sentenceWithHintClassName) {
-        document.querySelectorAll('.' + sentenceWithHintClassName).forEach(
+
+    /**
+     * @param {string} sentenceWithHintCSSClassName
+     */
+    static initialize(sentenceWithHintCSSClassName) {
+        document.querySelectorAll('.' + sentenceWithHintCSSClassName).forEach(
             function (sentence) {
 
                 for (const element of sentence.children) {
@@ -22,8 +26,12 @@ export class ShowHints {
             });
     }
 
-    static toggle(sentenceWithHintClassName, isEnabled) {
-        document.querySelectorAll('.' + sentenceWithHintClassName).forEach(
+    /**
+     * @param {string} sentenceWithHintCSSClassName
+     * @param {boolean} isEnabled
+     */
+    static toggle(sentenceWithHintCSSClassName, isEnabled) {
+        document.querySelectorAll('.' + sentenceWithHintCSSClassName).forEach(
             function (element) {
                 if (isEnabled) {
                     if (element.className.includes(' on')) return;
