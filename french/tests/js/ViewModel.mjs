@@ -27,6 +27,9 @@ export default class ViewModel extends ViewModelBase {
     /** @type {boolean?} */
     html = null;
 
+    /** @type {string?} */
+    corsProxy = null;
+
     /** @type {number|string?} */
     numberOfPages = null;
 

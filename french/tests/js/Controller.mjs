@@ -26,7 +26,7 @@ export default class Controller {
     startTests(viewModel) {
         this.#viewModel = viewModel;
 
-        this.#init(Array.from([viewModel.startingPage ?? '']));
+        this.#init(Array.from([viewModel.startingPage ?? '']), viewModel.corsProxy);
 
         this.#nextPage();
     }
@@ -34,9 +34,11 @@ export default class Controller {
 
     /**
      * @param {string[]} pageForTestingList
+     * @param {string} corsProxy
      */
-    #init(pageForTestingList) {
+    #init(pageForTestingList, corsProxy) {
         TestResult.init(pageForTestingList);
+        TestEngine.corsProxy = corsProxy;
 
         this.#view.clear();
     }

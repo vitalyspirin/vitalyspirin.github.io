@@ -10,9 +10,10 @@ export default class TestEngineBase {
     static TIME_DELAY_TO_LOAD_PAGE = 200;
     static PAGE_EXTENTIONS_LIST = ['html'];
     static NO_TESTING_CLASS = 'no-testing'; // href of A tags with such CSS class will not be tested
-    static PROXY = 'https://proxy.corsfix.com/?'; // proxy to fetch external url
     static HTML_VALIDATOR_SERVICE = 'https://validator.w3.org/nu/?out=json'; // https://github.com/validator/validator/wiki/Service-%C2%BB-Input-%C2%BB-POST-body
 
+    /** @type {string?} */
+    static corsProxy = null; // proxy to fetch external url
 
     /**
      * @param {Window} iframeWindow - The window object of the iframe.
@@ -254,7 +255,7 @@ export default class TestEngineBase {
      */
     static addProxyToExternalUrlIfNeeded(url) {
         if (window.location.hostname !== (new URL(url)).hostname) {
-            url = this.PROXY + url;
+            url = this.corsProxy + url;
         }
         return url;
     }
