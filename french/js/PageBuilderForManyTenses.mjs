@@ -3,10 +3,31 @@
 "use strict";
 
 import { Resolver } from './Resolver.mjs';
+import Types from './Types.mjs';
 import Utils from './Utils.mjs';
 
 export class PageBuilderForManyTenses {
+    /** 
+     * @typedef {Record<string, string>} ConjugationsForOneVerb
+     * 
+     * Example: {J': 'achèterais', Tu: 'achèterais', Il: 'achèterait', Nous: 'achèterions', Vous: 'achèteriez', …}
+     */
+
+    /**
+     * @param {string[]} tenseList
+     */
     static getVerbList(tenseList) {
+        /** 
+         * @type Record<string, Record<string, ConjugationsForOneVerb>> 
+         * 
+         * Example: 
+         *  {Acheter: 
+         *      conditionalpresent: {J': 'achèterais', Tu: 'achèterais', Il: 'achèterait', Nous: 'achèterions', Vous: 'achèteriez', …}
+         *      future: {J': 'achèterai', Tu: 'achèteras', Il: 'achètera', Nous: 'achèterons', Vous: 'achèterez', …}
+         *  Achever: 
+         *      conditionalpresent: {J': 'achèverais', Tu: 'achèverais', Il: 'achèverait', Nous: 'achèverions', Vous: 'achèveriez', …}
+         *      future: {J': 'achèverai', Tu: 'achèveras', Il: 'achèvera', Nous: 'achèverons', Vous: 'achèverez', …}
+         */
         let verbMixedConjugationList = {};
 
         tenseList.forEach((tense) => {
@@ -19,9 +40,9 @@ export class PageBuilderForManyTenses {
                     verbMixedConjugationList[infinitive] = {};
                 }
 
-                if (!verbMixedConjugationList[infinitive].hasOwnProperty(folderVerbListObj.fileFolder)) {
-                    verbMixedConjugationList[infinitive][folderVerbListObj.folder] = {};
-                }
+                // if (!verbMixedConjugationList[infinitive].hasOwnProperty(folderVerbListObj.folder)) {
+                //     verbMixedConjugationList[infinitive][folderVerbListObj.folder] = {};
+                // }
 
                 verbMixedConjugationList[infinitive][folderVerbListObj.folder] =
                     folderVerbListObj.verbList[infinitive];
@@ -31,7 +52,9 @@ export class PageBuilderForManyTenses {
         return verbMixedConjugationList;
     }
 
-
+    /**
+     * @param {string} title
+     */
     static getVerbTenseList(title) {
         let verbTenseList = [];
 
@@ -53,6 +76,9 @@ export class PageBuilderForManyTenses {
         return verbTenseList;
     }
 
+    /**
+     * @param {string} title
+     */
     static buildForManyTenses(title) {
         const tenseList = this.getVerbTenseList(title);
         const verbMixedConjugationList = this.getVerbList(tenseList);
@@ -114,6 +140,12 @@ export class PageBuilderForManyTenses {
         // console.log(str); // use Spell Checker to find spelling errors
     } // static buildForManyTenses()
 
+    /**
+     * @param {HTMLElement} newConjugationsForOneTenseBlock
+     * @param {string} infinitive
+     * @param {ConjugationsForOneVerb} conjugationList
+     * @param {string} tense
+     */
     static fillConjugationsForOneTenseBlock(
         newConjugationsForOneTenseBlock,
         infinitive,
@@ -152,8 +184,16 @@ export class PageBuilderForManyTenses {
         return str;
     }
 
+    /**
+     * @param {HTMLElement} newInputBlock
+     * @param {string} infinitive
+     * @param {string} pronoun
+     * @param {string} verb
+     * @param {string} fileFolder
+     */
     static fillInputBlock(newInputBlock, infinitive, pronoun, verb, fileFolder) {
-        let labelElement = newInputBlock.querySelector(".pronoun");
+        let labelElement = Types.assertType(
+            newInputBlock.querySelector(".pronoun"), HTMLLabelElement);
         labelElement.textContent = pronoun;
         labelElement.title = verb;
 
@@ -164,14 +204,17 @@ export class PageBuilderForManyTenses {
         inputElement.id = id;
         inputElement.setAttribute('data-verb-tense', fileFolder);
         inputElement.pattern = verb;
-        inputElement.onblur = function (event) {
-            event.target.value = event.target.value.trim();
+        inputElement.onblur = (/** @type Event */event) => {
+            const inputElement = Types.assertType(event.target, HTMLInputElement);
+            inputElement.value = inputElement.value.trim();
         }
 
+        /** @type HTMLElement */
         let speakerPhoneElement = newInputBlock.querySelector(".speakerphone");
 
-        speakerPhoneElement.onclick = async function (event) {
-            let audioElement = event.currentTarget.getElementsByTagName("audio")[0];
+        speakerPhoneElement.onclick = async (/** @type Event */event) => {
+            let audioElement = Types.assertType(event.currentTarget, HTMLElement)
+                .getElementsByTagName("audio")[0];
 
             if (audioElement.src == '') {
                 let fullFileName = Resolver.AUDIO_BASE_PATH + Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
@@ -198,4 +241,4 @@ export class PageBuilderForManyTenses {
         return newInputBlock;
     } // static fillInputBlock(newInputBlock, pronoun, verb)
 
-} // class Page
+}
