@@ -28,10 +28,36 @@ export default class StatsPageBuilder {
     /** @type string[] */
     static dates;
 
-    /** @type Record<string, string> */
+    /** 
+     * @type Record<string, string> 
+     * 
+     * Example:
+     *  exercise_avoir_etre.html: "2026-01-12"
+     *  exercise_ce_ces_cet.html: "2026-01-26"
+     */
     static earlestDates = {};
 
-    /** @type Record<string, number> */
+    /** 
+     * @type Record<string, Record<string, number>> 
+     * 
+     * Example:
+     *  exercise_de_du_des.html: 
+     *      2026-01-21: 1
+     *      2026-01-22: 2
+     *      2026-01-23: 3
+     *  exercise_future.html: 
+     *      2025-05-23: 1
+     *      2025-05-24: 2
+     */
+    static datesForPage = {};
+
+    /** 
+     * @type Record<string, number> 
+     * 
+     * Example:
+     *  exercise_il_est.html: 0.9772727272727273
+     *  exercise_imperative.html: 1
+     */
     static bestResults = {};
 
     static TD_ATTRIBUTE = 'data-key';
@@ -93,8 +119,9 @@ export default class StatsPageBuilder {
             let statsPageKey = Types.assertNotNull(tdElement.getAttribute('data-key'));
 
             if (statsForOneDate.hasOwnProperty(statsPageKey)) {
+                tdElement.title = this.datesForPage[statsPageKey][formattedDate] + ' fois: ';
                 tdElement.textContent = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
-                tdElement.title = statsForOneDate[statsPageKey]['errors'] + ' errors';
+                tdElement.title += statsForOneDate[statsPageKey]['errors'] + ' erreurs';
                 tdElement.title += ', ' + Utils.timestampToTime(statsForOneDate[statsPageKey]['duration']);
                 duration += statsForOneDate[statsPageKey]['duration'];
 
@@ -128,7 +155,7 @@ export default class StatsPageBuilder {
 
         pagesKeys.forEach((pageKey) => {
             const statsForPage = JSON.parse(Storage.getStatsDataForKey(pageKey));
-            const pageStatsKeys = Object.keys(statsForPage);
+            const pageStatsKeys = Object.keys(statsForPage).sort();
 
             pageStatsKeys.forEach((pageStatsKey) => {
                 const formattedDate = Utils.timestampToDate(Number(statsForPage[pageStatsKey]['timestamp']));
@@ -147,7 +174,9 @@ export default class StatsPageBuilder {
                 }
 
                 this.#setEarlestDate(pageKey, formattedDate);
+                this.#setDatesForPage(pageKey, formattedDate);
                 this.#setBestResults(pageKey, statsForPage[pageStatsKey]['result']);
+                // return;
             });
 
         });
@@ -175,6 +204,19 @@ export default class StatsPageBuilder {
                 this.earlestDates[pageKey] = date;
             }
         }
+    }
+
+    /**
+     * @param {string} pageKey
+     * @param {string} date
+     */
+    static #setDatesForPage(pageKey, date) {
+        if (!this.datesForPage.hasOwnProperty(pageKey)) {
+            this.datesForPage[pageKey] = {};
+        }
+
+        this.datesForPage[pageKey][date] =
+            Object.keys(this.datesForPage[pageKey]).length + 1;
     }
 
     /**
@@ -233,7 +275,7 @@ export default class StatsPageBuilder {
                 }
             });
 
-            trElement = Types.assertType(trElement?.nextElementSibling, HTMLTableRowElement);
+            trElement = trElement?.nextElementSibling;
 
             dateCounter++;
 

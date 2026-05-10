@@ -716,6 +716,11 @@ button {
     text-align: center;
 }
 
+button.danger {
+    background-color: #dc3545;
+    color: white;
+}
+
 .card a:hover,
 a.wide:hover {
     background-color: #B3D7EF;
