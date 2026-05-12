@@ -24,6 +24,8 @@
       if (typeof theoryFileLink !== "undefined") {
         // exercise files are in different subfolders so adjust the doc path
         theoryFileLink = theoryFileLink.replace(/.*\/pdf/, 'pdf');
+      } else {
+        console.error('There is no matching doc file for link "' + pageLink + '".');
       }
       theoryAElement.href = theoryFileLink;
     });
@@ -50,36 +52,38 @@
         <hr />
         <h2>La conjugaison des temps de verbes</h2>
 
-        <a class="wide" href="pages/exercises/conjugations/conjugations.html?Conjugaisons%20mélangées">Conjugaisons mélangées</a>
+        <a class="wide" href="pages/exercises/conjugations/conjugations.html?Conjugaisons%20mélangées">Conjugaisons
+          mélangées</a>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>Le présent</header>
           <a class="theory">théorie</a>
           <a href="pages/exercises/conjugations/conjugations.html?Le%20pr%C3%A9sent">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_present.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/present.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>Devoir, Pouvoir, Falloir, Vouloir</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/extra/exercise_devoir_pouvoir_falloir_vouloir.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/extra/devoir-pouvoir-falloir-vouloir.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>Le passé composé</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/conjugations.html?Le%20pass%C3%A9%20compos%C3%A9">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_presentperfect.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/conjugations.html?Le%20pass%C3%A9%20compos%C3%A9">exercice de liste de
+            verbes</a>
+          <a href="pages/exercises/conjugations/present-perfect.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Avoir ou Être ?</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/extra/exercise_avoir_etre.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/extra/avoir-etre.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
@@ -87,7 +91,7 @@
           <header>L'imparfait</header>
           <a class="theory">théorie</a>
           <a href="pages/exercises/conjugations/conjugations.html?L'imparfait">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_imperfect.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/imperfect.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
@@ -95,7 +99,7 @@
           <header>Le futur simple</header>
           <a class="theory">théorie</a>
           <a href="pages/exercises/conjugations/conjugations.html?Le%20futur%20simple">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_future.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/future.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
@@ -103,7 +107,7 @@
           <header>L'impératif</header>
           <a class="theory">théorie</a>
           <a href="pages/exercises/conjugations/conjugations.html?L%27impératif">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_imperative.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/imperative.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
@@ -111,7 +115,7 @@
           <header>Le plus-que-parfait</header>
           <a class="theory">théorie</a>
           <a href="pages/exercises/conjugations/conjugations.html?Le%20plus-que-parfait">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_pastperfect.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/past-perfect.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
@@ -120,46 +124,50 @@
           <a class="theory">théorie</a>
           <a href="pages/exercises/conjugations/conjugations.html?Le%20conditionnel%20pr%C3%A9sent">exercice de liste de
             verbes</a>
-          <a href="pages/exercises/conjugations/exercise_conditionalpresent.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/conditional-present.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>Le subjonctif présent</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/conjugations.html?Le%20subjonctif%20présent">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_presentsubjunctive.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/conjugations.html?Le%20subjonctif%20présent">exercice de liste de
+            verbes</a>
+          <a href="pages/exercises/conjugations/present-subjunctive.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Le subjonctif passé</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/conjugations.html?Le%20subjonctif%20passé">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_presentperfectsubjunctive.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/conjugations.html?Le%20subjonctif%20passé">exercice de liste de
+            verbes</a>
+          <a href="pages/exercises/conjugations/present-perfect-subjunctive.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Le conditionnel passé</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/conjugations.html?Le%20conditionnel%20passé">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_conditionalperfect.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/conjugations.html?Le%20conditionnel%20passé">exercice de liste de
+            verbes</a>
+          <a href="pages/exercises/conjugations/conditional-perfect.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>La forme passive</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/extra/exercise_passive.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/extra/passive.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Le futur antérieur</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/conjugations/conjugations.html?Le%20futur%20antérieur">exercice de liste de verbes</a>
-          <a href="pages/exercises/conjugations/exercise_futureperfect.html">exercice de texte</a>
+          <a href="pages/exercises/conjugations/conjugations.html?Le%20futur%20antérieur">exercice de liste de
+            verbes</a>
+          <a href="pages/exercises/conjugations/future-perfect.html">exercice de texte</a>
         </div>
       </section>
 
@@ -171,35 +179,36 @@
           <span class="cefr">A2</span>
           <header>La concordance du passé composé et de l'imparfait</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/tense-sequence/exercise_concordance.html">exercice de texte</a>
+          <a href="pages/exercises/tense-sequence/concordance.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>La concordance du passé composé, de l'imparfait et du plus-que-parfait</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/tense-sequence/exercise_concordance3.html">exercice de texte</a>
+          <a href="pages/exercises/tense-sequence/concordance-3.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Les phrases de condition</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/tense-sequence/exercise_concordance_conditional.html">exercice de texte</a>
+          <a href="pages/exercises/tense-sequence/concordance-conditional.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>La concordance au futur</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/tense-sequence/exercise_concordance_future.html">exercice de texte</a>
+          <a href="pages/exercises/tense-sequence/concordance-future.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>La concordance des temps: Simultanéité - Postériorité - Antériorité</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/tense-sequence/concordance-simultaneity-posteriority-anteriority.html">exercice de texte</a>
+          <a href="pages/exercises/tense-sequence/concordance-simultaneity-posteriority-anteriority.html">exercice de
+            texte</a>
         </div>
       </section>
 
@@ -212,126 +221,126 @@
           <span class="cefr">A1</span>
           <header>Mon, ton, son</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_mon_ton_son.html">exercice de texte</a>
+          <a href="pages/exercises/others/mon-ton-son.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>De, du, des</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_de_du_des.html">exercice de texte</a>
+          <a href="pages/exercises/others/de-du-des.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>Ce, ces, cet</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_ce_ces_cet.html">exercice de texte</a>
+          <a href="pages/exercises/others/ce-ces-cet.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>Quand, comment, combien</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_quand_comment_combien.html">exercice de texte</a>
+          <a href="pages/exercises/others/quand-comment-combien.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>Qui, quel, quelle</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_qui_quel_quelle.html">exercice de texte</a>
+          <a href="pages/exercises/others/qui-quel-quelle.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Les prépositions de temps</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_time_prepositions.html">exercice de texte</a>
+          <a href="pages/exercises/others/time-prepositions.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Mien, sien</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_mien_sien.html">exercice de texte</a>
+          <a href="pages/exercises/others/mien-sien.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Y, en</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_y_en.html">exercice de texte</a>
+          <a href="pages/exercises/others/y-en.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Qui, que</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_qui_que.html">exercice de texte</a>
+          <a href="pages/exercises/others/qui-que.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Ceci, cela, celui</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_ceci_cela_celui.html">exercice de texte</a>
+          <a href="pages/exercises/others/ceci-cela-celui.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Lui, leur</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_lui_leur.html">exercice de texte</a>
+          <a href="pages/exercises/others/lui-leur.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>La négation</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_negation.html">exercice de texte</a>
+          <a href="pages/exercises/others/negation.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>La négation 2</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_negation2.html">exercice de texte</a>
+          <a href="pages/exercises/others/negation-2.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>Que ou Dont</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_que_dont.html">exercice de texte</a>
+          <a href="pages/exercises/others/que-dont.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>Qui, Que, Dont, Où</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_qui_que_dont_ou.html">exercice de texte</a>
+          <a href="pages/exercises/others/qui-que-dont-ou.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Ce qui, Ce que, Ce dont, Ce&nbsp;à quoi</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_ce_qui_ce_que.html">exercice de texte</a>
+          <a href="pages/exercises/others/ce-qui-ce-que.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Dont ou Duquel, de laquelle, desquels, desquelles</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_dont_duquel.html">exercice de texte</a>
+          <a href="pages/exercises/others/dont-duquel.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Lequel, Duquel, Auquel</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/others/exercise_lequel_duquel_auquel.html">exercice de texte</a>
+          <a href="pages/exercises/others/lequel-duquel-auquel.html">exercice de texte</a>
         </div>
       </section>
 
@@ -344,91 +353,91 @@
           <span class="cefr">A1</span>
           <header>Le nombre des noms communs</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_noun_number.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/noun-number.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>La météo</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_meteo.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/meteo.html">exercice de texte</a>
         </div>
 
         <div class="card A1">
           <span class="cefr">A1</span>
           <header>Calendrier</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_calendar.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/calendar.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Le genre des noms communs</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_noun_gender.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/noun-gender.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Le genre des noms communs 2</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise-noun-gender2.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/noun-gender-2.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>La place de l’adjectif</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_adjective_position.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/adjective-position.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>L’accord des adjectifs en genre</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_adjective_gender.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/adjective-gender.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>L’accord des adjectifs en nombre</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_adjective_number.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/adjective-number.html">exercice de texte</a>
         </div>
 
         <div class="card A2">
           <span class="cefr">A2</span>
           <header>Il est, c'est</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_il_est.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/il-est.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>Tout</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_tout.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/tout.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>Savoir ou Connaître</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_savoir_connaitre.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/savoir-connaitre.html">exercice de texte</a>
         </div>
 
         <div class="card B1">
           <span class="cefr">B1</span>
           <header>Apporter ou Emporter, Amener ou Emmener</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise_amener_emmener.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/amener-emmener.html">exercice de texte</a>
         </div>
 
         <div class="card B2">
           <span class="cefr">B2</span>
           <header>Le genre des noms communs 3</header>
           <a class="theory">théorie</a>
-          <a href="pages/exercises/vocabulary/exercise-noun-gender-3.html">exercice de texte</a>
+          <a href="pages/exercises/vocabulary/noun-gender-3.html">exercice de texte</a>
         </div>
       </section>
 

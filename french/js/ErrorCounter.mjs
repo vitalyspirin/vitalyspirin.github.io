@@ -228,9 +228,8 @@ export class ErrorCounter {
         const page = window.location.pathname.split('/').pop() + window.location.search;
         if (!Object.hasOwn(Resolver.infoForPages, page)) {
             console.error('There is no Info Link for page "' + page + '"');
-        } else {
-            infoLink = '..\\' + Resolver.infoForPages[page];
         }
+        infoLink = Resolver.infoForPages[page];
 
         /** @type HTMLAnchorElement? */
         const infoLinkElement = document.querySelector('a.info-icon');
