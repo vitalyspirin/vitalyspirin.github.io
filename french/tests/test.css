@@ -89,6 +89,9 @@ button.secondary {
 .failed {
     color: var(--error-color);
 }
+#test-progress .failed {
+    font-weight: bold;
+}
 
 .passed-test .failed,
 .failed-test .passed,

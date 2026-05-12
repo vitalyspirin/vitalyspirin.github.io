@@ -49,7 +49,7 @@ export default class View {
             this.#testProgressArea.innerHTML += '.';
         } else {
             isPassed = false;
-            this.#testProgressArea.innerHTML += 'F';
+            this.#testProgressArea.innerHTML += '<span class="failed">F</span>';
         }
 
         // @ts-ignore
