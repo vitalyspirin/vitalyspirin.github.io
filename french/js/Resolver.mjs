@@ -124,8 +124,8 @@ export class Resolver {
         // B2
         "exercise-noun-gender-3.html": "../pdf/noun-gender-2.pdf",
         "exercise_ce_qui_ce_que.html": "../pdf/ce-qui-ce-que.pdf",
-        "exercise_dont_duquel.html": "../pdf/dont_duquel.pdf",
-        "exercise_lequel_duquel_auquel.html": "../pdf/lequel_duquel_auquel.pdf",
+        "exercise_dont_duquel.html": "../pdf/dont-duquel.pdf",
+        "exercise_lequel_duquel_auquel.html": "../pdf/lequel-duquel-auquel.pdf",
         "conjugations.html?Le%20subjonctif%20pass%C3%A9": "../pdf/present-subjunctive.pdf",
         "exercise_presentperfectsubjunctive.html": "../pdf/present-subjunctive.pdf",
         "conjugations.html?Le%20conditionnel%20pass%C3%A9": "../pdf/conditional-perfect.pdf",
@@ -135,7 +135,7 @@ export class Resolver {
         "conjugations.html?Le%20futur%20ant%C3%A9rieur": "../pdf/future-perfect.pdf",
         "exercise_futureperfect.html": "../pdf/future-perfect.pdf",
         "exercise_concordance_future.html": "../pdf/concordance-future.pdf",
-
+        "concordance-simultaneity-posteriority-anteriority.html": "../pdf/concordance-simultaneity-posteriority-anteriority.pdf"
     };
 
 
