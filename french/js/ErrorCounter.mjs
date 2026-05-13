@@ -20,8 +20,8 @@ export class ErrorCounter {
     /** @type {number} */
     static id;
 
-    /** @type ErrorCounterObj|Record<string, ErrorCounterObj> */
-    static errorCounter;
+    /** @type Record<string, ErrorCounterObj> */
+    static errorCounterObjList;
 
     /** @type {number} */
     static startTimestamp;
@@ -29,7 +29,7 @@ export class ErrorCounter {
     /**
      * @param {string[]} verbTenseList
      */
-    static initialize(verbTenseList = [], self = this) {
+    static initialize(verbTenseList = [''], self = this) {
         if (document.getElementById('error-counter') !== null) {
             // wait till footer iframe is processed
             setTimeout(self.initialize, 20, verbTenseList, self);
@@ -49,38 +49,36 @@ export class ErrorCounter {
 
         this.#buildErrorCounterLines();
 
-        if (verbTenseList.length === 0) {
-            Utils.getElementById('error-counter-').style.display = 'block';
 
-            self.errorCounter = new ErrorCounterObj();
-            self.errorCounter.numberOfAllInputElements =
-                document.querySelectorAll('input[type="text"]').length;
+        self.errorCounterObjList = {};
 
-            // page for present subjunctive text exercise also has radio buttons
-            self.errorCounter.numberOfAllInputElements +=
-                document.querySelectorAll('input[type="radio"][data-type="three-choices"]').length / 3;
+        document.querySelectorAll('.error-counter-line').forEach(errorLineElement => {
+            if (!(errorLineElement instanceof HTMLElement)) return;
 
-            self.errorCounter.numberOfAllInputElements +=
-                document.querySelectorAll('input[type="radio"][data-type="two-choices"]').length / 2;
-        } else {
-            self.errorCounter = {};
+            const verbTense = errorLineElement.id.replace('error-counter-', '');
+            if (!verbTenseList.includes(verbTense)) {
+                errorLineElement.style.display = 'none';
+            } else {
+                ErrorCounterLine.initialize(errorLineElement);
 
-            document.querySelectorAll('.error-counter-line').forEach(errorLineElement => {
-                if (!(errorLineElement instanceof HTMLElement)) return;
+                self.errorCounterObjList[verbTense] = new ErrorCounterObj();
 
-                const verbTense = errorLineElement.id.replace('error-counter-', '');
-                if (!verbTenseList.includes(verbTense)) {
-                    errorLineElement.style.display = 'none';
-                } else {
-                    ErrorCounterLine.initialize(errorLineElement);
-
-                    self.errorCounter[verbTense] = new ErrorCounterObj();
-                    const cssSelector = 'input[type="text"][data-verb-tense="' + verbTense + '"]';
-                    self.errorCounter[verbTense].numberOfAllInputElements =
-                        document.querySelectorAll(cssSelector).length;
+                let cssSelector = 'input[type="text"]';
+                if (verbTense !== '') {
+                    let cssSelector = 'input[type="text"][data-verb-tense="' + verbTense + '"]';
                 }
-            });
-        }
+                self.getErrorCounterObj(verbTense).numberOfAllInputElements =
+                    document.querySelectorAll(cssSelector).length;
+
+                // page for present subjunctive text exercise also has radio buttons
+                self.getErrorCounterObj(verbTense).numberOfAllInputElements +=
+                    document.querySelectorAll('input[type="radio"][data-type="three-choices"]').length / 3;
+
+                self.getErrorCounterObj(verbTense).numberOfAllInputElements +=
+                    document.querySelectorAll('input[type="radio"][data-type="two-choices"]').length / 2;
+            }
+        }); // forEach(errorLineElement
+
 
         const allInputElements = document.
             querySelectorAll(':is(input[type="text"], input[type="radio"])');
@@ -201,25 +199,16 @@ export class ErrorCounter {
 
             const verbTense = Types.assertType(event.target, HTMLElement)
                 .getAttribute('data-verb-tense');
-            ErrorCounter.getErrorCounter(verbTense).duration = timeDuration;
-            StatsFooter.saveStats(this.id, ErrorCounter.getErrorCounter(verbTense), verbTense);
+            ErrorCounter.getErrorCounterObj(verbTense).duration = timeDuration;
+            StatsFooter.saveStats(this.id, ErrorCounter.getErrorCounterObj(verbTense), verbTense);
         }
     }
 
     /**
      * @param {string?} verbTense
      */
-    static getErrorCounter(verbTense) {
-        let resultat;
-
-        if (verbTense === null) {
-            resultat = ErrorCounter.errorCounter;
-        } else {
-            // @ts-ignore
-            resultat = ErrorCounter.errorCounter[verbTense];
-        }
-
-        return resultat;
+    static getErrorCounterObj(verbTense) {
+        return ErrorCounter.errorCounterObjList[verbTense ?? ''];
     }
 
     static #setInfoLink() {

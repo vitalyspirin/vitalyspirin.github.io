@@ -19,23 +19,24 @@ export class InputValidation {
      * @param {Event} event
      */
     static #initialize(event) {
-        this.verbTense = Types.assertType(event.target, HTMLElement).getAttribute('data-verb-tense');
-        this.errorLineElement = document.getElementById('error-counter-' + (this.verbTense ?? ''));
+        this.verbTense = Types.assertType(event.target, HTMLElement)
+            .getAttribute('data-verb-tense') ?? '';
+        this.errorLineElement = document.getElementById('error-counter-' + this.verbTense);
     }
 
     static #finalize() {
         ErrorCounterLine.update(
             this.errorLineElement,
-            ErrorCounter.getErrorCounter(this.verbTense)
+            ErrorCounter.getErrorCounterObj(this.verbTense)
         );
 
-        if (ErrorCounter.getErrorCounter(this.verbTense).numberOfCompleted +
-            ErrorCounter.getErrorCounter(this.verbTense).numberOfErrors >
-            ErrorCounter.getErrorCounter(this.verbTense).numberOfAllInputElements / 2
+        if (ErrorCounter.getErrorCounterObj(this.verbTense).numberOfCompleted +
+            ErrorCounter.getErrorCounterObj(this.verbTense).numberOfErrors >
+            ErrorCounter.getErrorCounterObj(this.verbTense).numberOfAllInputElements / 2
         ) {
             StatsFooter.saveStats(
                 ErrorCounter.id,
-                ErrorCounter.getErrorCounter(this.verbTense),
+                ErrorCounter.getErrorCounterObj(this.verbTense),
                 this.verbTense
             );
         }
@@ -52,10 +53,10 @@ export class InputValidation {
         self.#initialize(event);
 
         if (!event.target.required) {
-            ErrorCounter.getErrorCounter(self.verbTense).numberOfErrors++;
+            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
             event.target.parentElement.classList.add('failed');
         } else {
-            ErrorCounter.getErrorCounter(self.verbTense).numberOfCompleted++;
+            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfCompleted++;
         }
 
         document.getElementsByName(event.target.name).forEach((element) => {
@@ -75,11 +76,11 @@ export class InputValidation {
         self.#initialize(event);
 
         if (!event.target.checkValidity()) {
-            ErrorCounter.getErrorCounter(self.verbTense).numberOfErrors++;
+            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
             event.target.classList.add('failed');
             event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
         } else if (event.target.value != '') {
-            ErrorCounter.getErrorCounter(self.verbTense).numberOfCompleted++;
+            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfCompleted++;
             event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
         }
 
