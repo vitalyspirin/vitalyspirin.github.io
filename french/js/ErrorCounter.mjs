@@ -223,13 +223,8 @@ export class ErrorCounter {
     }
 
     static #setInfoLink() {
-        let infoLink = '#';
-
         const page = window.location.pathname.split('/').pop() + window.location.search;
-        if (!Object.hasOwn(Resolver.infoForPages, page)) {
-            console.error('There is no Info Link for page "' + page + '"');
-        }
-        infoLink = Resolver.infoForPages[page];
+        const infoLink = Resolver.getInfoLinkForPage(page);
 
         /** @type HTMLAnchorElement? */
         const infoLinkElement = document.querySelector('a.info-icon');
