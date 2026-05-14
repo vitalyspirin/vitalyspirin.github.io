@@ -8,11 +8,15 @@ export default class Types {
     /**
       * @param {any} element
       * @param {any} type
+      * @param {string?} errorMessage
       */
-    static assertType(element, type) {
+    static assertType(element, type, errorMessage = null) {
         if (!(element instanceof type)) {
-            throw new Error('Element "' + element + '" must be of type "' + type +
-                '" but it is of type "' + Object.prototype.toString.apply(element) + '".');
+            if (errorMessage == null) {
+                errorMessage = 'Element "' + element + '" must be of type "' + type +
+                '" but it is of type "' + Object.prototype.toString.apply(element) + '".';
+            }
+            throw new Error(errorMessage);
         }
 
         return element;
@@ -21,9 +25,9 @@ export default class Types {
     /**
       * @param {any} element
       */
-    static assertNotNull(element) {
+    static assertNotNull(element, comment = 'Element must not be null.') {
         if (element === null) {
-            throw new Error('Element "' + element + '" must not be null.');
+            throw new Error(comment);
         }
 
         return element;

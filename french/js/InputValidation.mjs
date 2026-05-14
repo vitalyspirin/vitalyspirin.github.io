@@ -7,7 +7,7 @@ import ErrorCounterLine from './ErrorCounterLine.mjs';
 import StatsFooter from './StatsFooter.mjs';
 import Types from './Types.mjs';
 
-export class InputValidation {
+export default class InputValidation {
 
     /** @type string */
     static verbTense;
@@ -15,32 +15,45 @@ export class InputValidation {
     /** @type HTMLElement */
     static errorLineElement;
 
+    /** @type HTMLInputElement */
+    static inputElement;
+
     /**
      * @param {Event} event
      */
     static #initialize(event) {
-        this.verbTense = Types.assertType(event.target, HTMLElement)
-            .getAttribute('data-verb-tense') ?? '';
+        this.inputElement = Types.assertType(event.target, HTMLInputElement);
+
+        this.verbTense = this.inputElement.getAttribute('data-verb-tense') ?? '';
         this.errorLineElement = document.getElementById('error-counter-' + this.verbTense);
     }
 
     static #finalize() {
+        const errorCounterObj = ErrorCounter.getErrorCounterObj(this.verbTense);
+
         ErrorCounterLine.update(
             this.errorLineElement,
-            ErrorCounter.getErrorCounterObj(this.verbTense)
+            errorCounterObj
         );
 
-        if (ErrorCounter.getErrorCounterObj(this.verbTense).numberOfCompleted +
-            ErrorCounter.getErrorCounterObj(this.verbTense).numberOfErrors >
-            ErrorCounter.getErrorCounterObj(this.verbTense).numberOfAllInputElements / 2
-        ) {
-            StatsFooter.saveStats(
-                ErrorCounter.id,
-                ErrorCounter.getErrorCounterObj(this.verbTense),
-                this.verbTense
-            );
+        if (this.inputElement.getAttribute('last-input-element') !== null) {
+            ErrorCounter.updateTimer();
         }
 
+        if (
+            (errorCounterObj.numberOfCompleted + errorCounterObj.numberOfErrors >
+                errorCounterObj.numberOfAllInputElements / 2) ||
+            (this.inputElement.getAttribute('last-input-element') !== null)
+        ) {
+            Object.entries(ErrorCounter.errorCounterObjList)
+                .forEach(([verbeTense, errorCounterObj]) => {
+                    StatsFooter.saveStats(
+                        ErrorCounter.id,
+                        errorCounterObj,
+                        verbeTense
+                    );
+                });
+        }
     }
 
     /**
@@ -51,6 +64,10 @@ export class InputValidation {
 
         const self = InputValidation;
         self.#initialize(event);
+
+        if (ErrorCounter.startTimestamp === null) {
+            ErrorCounter.startTimestamp = Date.now();
+        }
 
         if (!event.target.required) {
             ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
@@ -69,20 +86,38 @@ export class InputValidation {
     /**
      * @param {Event} event
      */
+    static focusEventHandler(event) {
+        ErrorCounter.startTimestamp = Date.now();
+    }
+
+    /**
+     * @param {Event} event
+     */
     static focusOutEventHandler(event) {
         if (!(event.target instanceof HTMLInputElement)) return;
 
         const self = InputValidation;
         self.#initialize(event);
 
-        if (!event.target.checkValidity()) {
-            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
-            event.target.classList.add('failed');
-            event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
-        } else if (event.target.value != '') {
-            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfCompleted++;
-            event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
+        const errorCounterObj = ErrorCounter.getErrorCounterObj(self.verbTense);
+        if (event.target.type === 'text') {
+            if (!event.target.checkValidity()) {
+                errorCounterObj.numberOfErrors++;
+                event.target.classList.add('failed');
+                event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
+            } else if (event.target.value != '') {
+                errorCounterObj.numberOfCompleted++;
+                event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
+            }
+        } else {
+            // for radio button validity is checked in onClickEventHandler
+            document.getElementsByName(event.target.name).forEach((element) => {
+                element.removeEventListener('focusout', InputValidation.focusOutEventHandler);
+            });
         }
+
+        errorCounterObj.duration += Date.now() - ErrorCounter.startTimestamp;
+        ErrorCounter.startTimestamp = null;
 
         self.#finalize();
     }

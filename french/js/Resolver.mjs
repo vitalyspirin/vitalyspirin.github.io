@@ -153,7 +153,7 @@ export class Resolver {
     }
 
     /**
-     * @param {string} folder
+     * @param {string?} folder
      */
     static getTenseByFolder(folder) {
         let result = null;

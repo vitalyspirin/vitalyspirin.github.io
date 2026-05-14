@@ -3,7 +3,8 @@
 "use strict";
 
 import { Resolver } from './Resolver.mjs';
-import { ErrorCounter, ErrorCounterObj } from './ErrorCounter.mjs';
+import { ErrorCounter} from './ErrorCounter.mjs';
+import ErrorCounterObj from './ErrorCounterObj.mjs';
 import Utils from './Utils.mjs';
 import Storage from './Storage.mjs';
 
@@ -124,7 +125,7 @@ export default class StatsFooter {
     static getStorageKey(verbTense) {
         let storageKey;
 
-        if (verbTense === null) {
+        if (verbTense === null || verbTense === '') {
             storageKey = window.location.pathname.split('/').pop() + window.location.search;
         } else {
             storageKey = 'conjugations.html?' + Resolver.getURLEncodedTenseByFolder(verbTense);

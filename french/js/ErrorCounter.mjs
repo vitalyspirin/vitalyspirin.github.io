@@ -3,18 +3,13 @@
 "use strict";
 
 import ErrorCounterLine from './ErrorCounterLine.mjs';
-import { InputValidation } from './InputValidation.mjs';
+import ErrorCounterObj from './ErrorCounterObj.mjs';
+import InputValidation from './InputValidation.mjs';
 import { Resolver } from './Resolver.mjs';
 import StatsFooter from './StatsFooter.mjs';
 import Types from './Types.mjs';
 import Utils from './Utils.mjs';
 
-export class ErrorCounterObj {
-    numberOfErrors = 0;
-    numberOfCompleted = 0;
-    numberOfAllInputElements = 0;
-    duration = 0;
-}
 
 export class ErrorCounter {
     /** @type {number} */
@@ -23,8 +18,8 @@ export class ErrorCounter {
     /** @type Record<string, ErrorCounterObj> */
     static errorCounterObjList;
 
-    /** @type {number} */
-    static startTimestamp;
+    /** @type {number?} */
+    static startTimestamp = null;
 
     /**
      * @param {string[]} verbTenseList
@@ -92,11 +87,16 @@ export class ErrorCounter {
                 if (!(inputElement instanceof HTMLInputElement)) return;
 
                 if (inputElement.type == 'text') {
+                    inputElement.addEventListener("focus", InputValidation.focusEventHandler);
+                }
+
+                if (inputElement.type == 'text') {
                     inputElement.addEventListener("focusout", InputValidation.focusOutEventHandler);
                 }
 
                 if (inputElement.type == 'radio') {
                     inputElement.addEventListener("click", InputValidation.onClickEventHandler);
+                    inputElement.addEventListener("focusout", InputValidation.focusOutEventHandler);
                 }
             });
 
@@ -115,30 +115,16 @@ export class ErrorCounter {
      * @param {HTMLCollection} allInputElements
      */
     static #initializeTimer(allInputElements) {
-        const firstInputElement = allInputElements.item(0);
-
-        if (!(firstInputElement instanceof HTMLInputElement)) {
-            return; // probably no tense is chosen on mixed conjugation page
-        }
-
-        this.#addEventListenerToInputElement(
-            'change',
-            firstInputElement,
-            (/*event*/) => {
-                if (ErrorCounter.startTimestamp == null) {
-                    ErrorCounter.startTimestamp = Date.now();
-                }
-            }
-        );
-
         const lastInputElement = Types.assertType(
             allInputElements.item(allInputElements.length - 1), HTMLInputElement);
 
-        this.#addEventListenerToInputElement(
-            'change',
-            lastInputElement,
-            (/** @type Event */ event) => { this.#updateTimer(event); }
-        );
+        if (lastInputElement.type == 'radio') {
+            document.getElementsByName(lastInputElement.name).forEach((element) => {
+                element.setAttribute('last-input-element', 'true');
+            });
+        } else { /* type == 'text' */
+            lastInputElement.setAttribute('last-input-element', 'true');
+        }
     }
 
     /**
@@ -186,22 +172,15 @@ export class ErrorCounter {
         });
     }
 
-    /**
-     * @param {Event} event
-     */
-    static #updateTimer(event) {
-        if (ErrorCounter.startTimestamp != null) {
-            const timeDuration = Date.now() - ErrorCounter.startTimestamp;
+    static updateTimer() {
+        let timeDuration = 0;
+        Object.entries(this.errorCounterObjList).forEach(([verbeTense, errorCounterObj]) => {
+            timeDuration += errorCounterObj.duration;
+        });
 
-            document.getElementById('total-time').textContent = String(
-                Utils.timestampToTime(timeDuration)
-            );
-
-            const verbTense = Types.assertType(event.target, HTMLElement)
-                .getAttribute('data-verb-tense');
-            ErrorCounter.getErrorCounterObj(verbTense).duration = timeDuration;
-            StatsFooter.saveStats(this.id, ErrorCounter.getErrorCounterObj(verbTense), verbTense);
-        }
+        document.getElementById('total-time').textContent = String(
+            Utils.timestampToTime(timeDuration)
+        );
     }
 
     /**
