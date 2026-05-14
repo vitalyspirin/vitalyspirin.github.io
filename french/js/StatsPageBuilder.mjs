@@ -188,7 +188,6 @@ export default class StatsPageBuilder {
             this.dates.push(formattedDate);
             this.stats[formattedDate] = {};
         }
-
     } // function buildStatsObject()
 
     /**
@@ -214,8 +213,10 @@ export default class StatsPageBuilder {
             this.datesForPage[pageKey] = {};
         }
 
-        this.datesForPage[pageKey][date] =
-            Object.keys(this.datesForPage[pageKey]).length + 1;
+        if (!this.datesForPage[pageKey].hasOwnProperty(date)) {
+            this.datesForPage[pageKey][date] =
+                Object.keys(this.datesForPage[pageKey]).length + 1;
+        }
     }
 
     /**
