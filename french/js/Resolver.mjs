@@ -84,6 +84,7 @@ export class Resolver {
         "conjugations.html?Le%20pass%C3%A9%20compos%C3%A9": "pdf/present-perfect.pdf",
         "present-perfect.html": "pdf/present-perfect.pdf",
         "qui-quel-quelle.html": "pdf/qui-quel-quelle.pdf",
+        "au-en.html": "pdf/au-en.doc.html",
 
         // A2
         "noun-gender.html": "pdf/noun-gender-number.pdf",
