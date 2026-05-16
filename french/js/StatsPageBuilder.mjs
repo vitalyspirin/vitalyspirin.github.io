@@ -64,6 +64,7 @@ export default class StatsPageBuilder {
     static TD_ATTRIBUTE_DATE_VALUE = 'date';
     static RECENT_DATES_CLASS_NAME = 'recent-dates';
     static LEVEL_LIST = ['A1', 'A2', 'B1', 'B2', 'C1'];
+    static BREAK_LENGTH = 10; // number of days without doing exercises
 
     static buildPage() {
         this.#buildStatsObject();
@@ -80,7 +81,7 @@ export default class StatsPageBuilder {
 
         const tbodyElement = document.getElementsByTagName('tbody')[0];
 
-        this.dates.forEach((date) => {
+        this.dates.forEach((date, index) => {
             let newTableRowElement = templateTableRow.cloneNode(true);
             if (!(newTableRowElement instanceof HTMLTableRowElement)) return;
 
@@ -90,6 +91,12 @@ export default class StatsPageBuilder {
                 newTableRowElement.classList.add('even-week');
             } else {
                 newTableRowElement.classList.add('odd-week');
+            }
+
+            if ((index < this.dates.length - 1) 
+                && Utils.subtractDates(date, this.dates[index+1]) > this.BREAK_LENGTH
+            ) {
+                newTableRowElement.classList.add('long-break');
             }
 
             tbodyElement.append(newTableRowElement);

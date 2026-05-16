@@ -107,6 +107,20 @@ export default class Utils {
     }
 
     /**
+     * @param {string} date1
+     * @param {string} date2
+     * 
+     * from https://medium.com/@ryan_forrester_/how-to-subtract-dates-in-javascript-7cb41ca6b06c
+     */
+    static subtractDates(date1, date2) {
+        const oneDay = 24 * 60 * 60 * 1000; // milliseconds in one day
+        const diffInMilliseconds = new Date(date1).getTime() - new Date(date2).getTime();
+
+        return Math.round(diffInMilliseconds / oneDay); // Convert milliseconds to days
+    }
+
+
+    /**
      * @param {string} dateStr
      */
     static getWeek(dateStr) {

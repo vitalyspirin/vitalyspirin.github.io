@@ -556,6 +556,11 @@ tr.even-week td:first-child {
     background-color: azure;
 }
 
+tr.long-break td {
+    border-bottom-color: red !important;
+    border-bottom-width: 2px !important;
+}
+
 td.done-earlier {
     background-color: WhiteSmoke;
 }
