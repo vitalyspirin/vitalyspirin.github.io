@@ -87,6 +87,7 @@ export class Resolver {
         "au-en.html": "pdf/au-en.doc.html",
 
         // A2
+        "aller-venir.html": "pdf/aller-venir.doc.html",
         "noun-gender.html": "pdf/noun-gender-number.pdf",
         "noun-gender-2.html": "pdf/noun-gender-2.pdf",
         "avoir-etre.html": "../pdf/avoir-etre.pdf",
