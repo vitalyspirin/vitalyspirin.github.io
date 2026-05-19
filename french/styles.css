@@ -537,28 +537,28 @@ table small {
     /*display: none;*/
 }
 
-th,
-td {
+#stats-page th,
+#stats-page td {
     border-right: 1px solid black;
     border-bottom: 1px solid black;
 }
 
-thead tr:first-child th:first-of-type,
-td:first-of-type {
+#stats-page thead tr:first-child th:first-of-type,
+#stats-page td:first-of-type {
     border-left: 1px solid black;
 }
 
-thead tr:first-child th {
+#stats-page thead tr:first-child th {
     border-top: 1px solid black;
 }
 
-thead tr:first-child th:first-of-type {
+#stats-page thead tr:first-child th:first-of-type {
     /* date column */
     min-width: 5.25em;
     max-width: 5.25em;
 }
 
-thead tr:nth-of-type(3) th {
+#stats-page thead tr:nth-of-type(3) th {
     width: 3em;
 }
 
@@ -579,8 +579,8 @@ td.done-earlier {
     background-color: WhiteSmoke;
 }
 
-th,
-td {
+#stats-page th,
+#stats-page td {
     padding: 0.25em;
     text-align: center;
 }
@@ -589,7 +589,7 @@ td.date {
     width: 5.5em;
 }
 
-thead tr:first-child th {
+#stats-page thead tr:first-child th {
     width: 6rem;
 }
 
@@ -644,8 +644,8 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 }
 
 /* hide stats columns based on checkbox selection */
-table th:not([data-key="date"]),
-table td:not([data-key="date"]) {
+#stats-page table th:not([data-key="date"]),
+#stats-page table td:not([data-key="date"]) {
     max-width: 0;
     visibility: hidden;
     padding: 0;
@@ -805,6 +805,42 @@ textarea#stats {
     height: 20em;
 }
 
+/* ------------------------------------------------ */
+/* doc page */
+
+.doc table {
+    border-collapse: collapse;
+    margin: 4em auto;
+}
+.doc table tr:nth-child(odd) {
+    background-color: #e6edd4;
+}
+.doc table tr:nth-child(even) {
+    background-color: #cdddac;
+}
+
+.doc table, th, td {
+    border: 1px solid black;
+    padding: 0.5em;
+}
+.doc table td:first-child, .doc table td:last-child{
+    text-align: left;
+}
+.doc table [colspan] {
+    font-weight: bold;
+    background-color: white;
+}
+
+/* row counter */
+.doc table {
+    counter-reset: rowNumber;
+}
+.doc table tbody tr:not(:has([colspan])) {
+    counter-increment: rowNumber;
+}
+.doc tr td:not([colspan]):first-child::before {
+    content: counter(rowNumber);
+}
 /* ------------------------------------------------ */
 /* test page */
 
