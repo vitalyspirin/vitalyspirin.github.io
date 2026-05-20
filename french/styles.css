@@ -808,24 +808,32 @@ textarea#stats {
 /* ------------------------------------------------ */
 /* doc page */
 
+/*.doc td:not(:nth-child(3)) {visibility: hidden;}*/
 .doc table {
     border-collapse: collapse;
     margin: 4em auto;
 }
+
 .doc table tr:nth-child(odd) {
     background-color: #e6edd4;
 }
+
 .doc table tr:nth-child(even) {
     background-color: #cdddac;
 }
 
-.doc table, th, td {
+.doc table,
+th,
+td {
     border: 1px solid black;
     padding: 0.5em;
 }
-.doc table td:first-child, .doc table td:last-child{
+
+.doc table td:first-child,
+.doc table td:last-child {
     text-align: left;
 }
+
 .doc table [colspan] {
     font-weight: bold;
     background-color: white;
@@ -835,12 +843,15 @@ textarea#stats {
 .doc table {
     counter-reset: rowNumber;
 }
+
 .doc table tbody tr:not(:has([colspan])) {
     counter-increment: rowNumber;
 }
+
 .doc tr td:not([colspan]):first-child::before {
     content: counter(rowNumber);
 }
+
 /* ------------------------------------------------ */
 /* test page */
 
