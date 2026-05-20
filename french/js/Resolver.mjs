@@ -122,8 +122,8 @@ export class Resolver {
         "conditional-present.html": "pdf/conditional-present.pdf",
         "savoir-connaitre.html": "pdf/savoir-connaitre.pdf",
         "amener-emmener.html": "pdf/amener-emmener.pdf",
-        "verbs_and_prepositions.html": "pdf/verbs_and_prepositions.doc.html",
-        "manquer-penser-servir-jouer.html": "pdf/verbs_and_prepositions.doc.html",
+        "verbs-and-prepositions.html": "pdf/verbs-and-prepositions.doc.html",
+        "manquer-penser-servir-jouer.html": "pdf/verbs-and-prepositions.doc.html",
         "conjugations.html?Le%20subjonctif%20pr%C3%A9sent": "pdf/present-subjunctive.pdf",
         "present-subjunctive.html": "pdf/present-subjunctive.pdf",
 
