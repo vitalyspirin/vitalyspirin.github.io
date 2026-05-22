@@ -14,8 +14,11 @@
 
     <script type="module">
         "use strict";
-        import { ErrorCounter } from '../../../js/ErrorCounter.mjs';
-        ErrorCounter.initialize();
+        // import { ErrorCounter } from '../../../js/ErrorCounter.mjs';
+        // ErrorCounter.initialize();
+
+        import Exercise from '../../../js/Exercise.mjs';
+        Exercise.init();
     </script>
 </head>
 
@@ -33,13 +36,13 @@
                         </h3>
 
                         <ol>
-                            <li>
+                            <li class="B1">
                                 Elles se sont mises (<b title="à chanter">chanter</b>)
                                 <input type="text" pattern="à chanter" />
                                 sans plus attendre.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Je demanderai (<b title="à cet étudiant">cet étudiant</b>)
                                 <input type="text" pattern="à cet étudiant" />
                                 (<b title="d'arriver">arriver</b>)
@@ -47,26 +50,26 @@
                                 à l’heure.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Jean aimerait (<b title="obtenir">obtenir</b>)
                                 <input type="text" pattern="obtenir" />
                                 son diplôme.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Mélisa a pensé (<b title="à faire">faire</b>)
                                 <input type="text" pattern="à faire" />
                                 son marché avant de rentrer.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 On les a cambriolés, car ils avaient oublié
                                 (<b title="de verrouiller">verrouiller</b>)
                                 <input type="text" pattern="de verrouiller" />
                                 la porte.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 J’ose (<b title="croire">croire</b>)
                                 <input type="text" pattern="croire" />
                                 qu’il dit (<b title="la vérité">la vérité</b>)
@@ -74,28 +77,28 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Les voisins ont l’intention
                                 (<b title="de faire">faire</b>)
                                 <input type="text" pattern="de faire" />
                                 une vente-débarras.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Le patron a répondu
                                 (<b title="aux questions">les questions</b>)
                                 <input type="text" pattern="aux questions" />
                                 du journaliste.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Il téléphone
                                 (<b title="à Alexandra">Alexandra</b>)
                                 <input type="text" pattern="à Alexandra" />
                                 tous les premiers du mois.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il envoie
                                 (<b title="un cadeau">un cadeau</b>)
                                 <input type="text" pattern="un cadeau" />
@@ -107,21 +110,21 @@
                                 avoir reçus.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Pouvez-vous excuser
                                 (<b title="le retard">le retard</b>)
                                 <input type="text" pattern="le retard" />
                                 de Simon ?
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Tout le monde a entendu parler
                                 (<b title="de ce fait">ce fait</b>)
                                 <input type="text" pattern="de ce fait" />
                                 historique.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Ai-je tort
                                 (<b title="de dire">dire</b>)
                                 <input type="text" pattern="de dire" />
@@ -131,7 +134,7 @@
                                 allemand ?
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Je préfère
                                 (<b title="ne pas penser">ne pas penser</b>)
                                 <input type="text" pattern="ne pas penser" />
@@ -140,28 +143,28 @@
                                 qui m’attend.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 J’irai bientôt en France et j’espère
                                 (<b title="vous">vous</b>)
                                 <input type="text" pattern="vous" />
                                 y voir.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Chaque année nous partons
                                 (<b title="faire">faire</b>)
                                 <input type="text" pattern="faire" />
                                 de l’escalade.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 L’enseignant est satisfait
                                 (<b title="de ses">ses</b>)
                                 <input type="text" pattern="de ses" />
                                 nouveaux étudiants.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il regrette
                                 (<b title="d'avoir oublié">avoir oublié</b>)
                                 <input type="text" pattern="d'avoir oublié" />
@@ -170,7 +173,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il est interdit
                                 (<b title="aux visiteurs">les visiteurs</b>)
                                 <input type="text" pattern="aux visiteurs" />
@@ -179,14 +182,14 @@
                                 les animaux.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Tu dois pardonner
                                 (<b title="la méchanceté">la méchanceté</b>)
                                 <input type="text" pattern="la méchanceté" />
                                 humaine.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Depuis que j’ai laissé
                                 (<b title="Louise">Louise</b>)
                                 <input type="text" pattern="Louise" />
@@ -196,14 +199,14 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Les gens pauvres manquent souvent
                                 (<b title="de nourriture">nourriture</b>)
                                 <input type="text" pattern="de nourriture" />
                                 saine.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 N’hésitez pas
                                 (<b title="à critiquer">critiquer</b>)
                                 <input type="text" pattern="à critiquer" />
@@ -212,7 +215,7 @@
                                 de ce film.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Il appellera
                                 (<b title="Caroline">Caroline</b>)
                                 <input type="text" pattern="Caroline" />
@@ -222,28 +225,28 @@
                                 de son comportement.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Le patron s’est aperçu
                                 (<b title="de votre">votre</b>)
                                 <input type="text" pattern="de votre" />
                                 absence.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 À l’automne, il est important
                                 (<b title="de bien nettoyer">bien nettoyer</b>)
                                 <input type="text" pattern="de bien nettoyer" />
                                 le terrain.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Il a l’habitude
                                 (<b title="de ne pas manger">ne pas manger</b>)
                                 <input type="text" pattern="de ne pas manger" />
                                 de viande.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Je sais
                                 (<b title="tricoter">tricoter</b>)
                                 <input type="text" pattern="tricoter" />
@@ -253,7 +256,7 @@
                                 la laine.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Ce père refuse
                                 (<b title="à ses enfants">ses enfants</b>)
                                 <input type="text" pattern="à ses enfants" />
@@ -262,7 +265,7 @@
                                 le soir.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il est bon
                                 (<b title="de réfléchir">réfléchir</b>)
                                 <input type="text" pattern="de réfléchir" />
@@ -271,21 +274,21 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 As-tu entendu
                                 (<b title="le discours">le discours</b>)
                                 <input type="text" pattern="le discours" />
                                 du conférencier ?
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Sophie rêve
                                 (<b title="de prendre">prendre</b>)
                                 <input type="text" pattern="de prendre" />
                                 des vacances au soleil.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Le gérant a suggéré
                                 (<b title="à René">René</b>)
                                 <input type="text" pattern="à René" />
@@ -294,35 +297,35 @@
                                 plus sérieusement.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il risque
                                 (<b title="de perdre">perdre</b>)
                                 <input type="text" pattern="de perdre" />
                                 beaucoup d’argent à la bourse.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Je peux
                                 (<b title="écrire">écrire</b>)
                                 <input type="text" pattern="écrire" />
                                 cinquante mots à la minute.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Daniel prend soin
                                 (<b title="de son père">son père</b>)
                                 <input type="text" pattern="de son père" />
                                 malade.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 As-tu reçu
                                 (<b title="une lettre">une lettre</b>)
                                 <input type="text" pattern="une lettre" />
                                 de cette compagnie ?
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Tu tiens
                                 (<b title="à parler">parler</b>)
                                 <input type="text" pattern="à parler" />
@@ -331,14 +334,14 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 J’ai pris
                                 (<b title="l'autobus">l’autobus</b>)
                                 <input type="text" pattern="l'autobus" />
                                 l’autobus au coin de la rue.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Le Président se prépare
                                 (<b title="à parler">parler</b>)
                                 <input type="text" pattern="à parler" />
@@ -356,7 +359,7 @@
                         <h3>Complétez les phrases suivantes par les prépositions qui conviennent.</h3>
 
                         <ol>
-                            <li>
+                            <li class="A2">
                                 Sans tarder, j’ai remis (<b title="l'état">l’état</b>)
                                 <input type="text" pattern="l'état" />
                                 l’état de compte (<b title="à Philippe">Philippe</b>)
@@ -364,13 +367,13 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il a cessé (<b title="de voir">voir</b>)
                                 <input type="text" pattern="de voir" />
                                 la fille qu’il fréquentait.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 J’ai suggéré (<b title="à Sébastien">Sébastien</b>)
                                 <input type="text" pattern="à Sébastien" />
                                 (<b title="de terminer">terminer</b>)
@@ -378,19 +381,19 @@
                                 ses études.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il se fie toujours (<b title="à mon bon goût">mon bon goût</b>)
                                 <input type="text" pattern="à mon bon goût" />
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Mon frère hésite souvent (<b title="à parler">parler</b>)
                                 <input type="text" pattern="à parler" />
                                 en public.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Ce professeur enseigne (<b title="la grammaire">la grammaire</b>)
                                 <input type="text" pattern="la grammaire " />
                                 (<b title="à des enfants">des enfants</b>)
@@ -398,25 +401,25 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il s’oppose (<b title="à voter">voter</b>)
                                 <input type="text" pattern="à voter" />
                                 en faveur de la proposition.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il est censé (<b title="prendre">prendre</b>)
                                 <input type="text" pattern="prendre" />
                                 la parole à vingt heures.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Tu as négligé (<b title="de prendre">prendre</b>)
                                 <input type="text" pattern="de prendre" />
                                 rendez-vous chez le médecin.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il faut (<b title="perdre">perdre</b>)
                                 <input type="text" pattern="perdre" />
                                 (<b title="la santé">la santé</b>)
@@ -424,13 +427,13 @@
                                 pour l’apprécier vraiment.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Ce jeune homme a fini (<b title="sa pratique">sa pratique</b>)
                                 <input type="text" pattern="sa pratique" />
                                 de natation.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Les voleurs ont menacé (<b title="le caissier">le caissier</b>)
                                 <input type="text" pattern="le caissier" />
                                 (<b title="de tout détruire">tout détruire</b>)
@@ -438,25 +441,25 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 David a mérité (<b title="le premier">le premier</b>)
                                 <input type="text" pattern="le premier" />
                                 prix au concours annuel.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il faut se fier (<b title="à la sagesse">la sagesse</b>)
                                 <input type="text" pattern="à la sagesse" />
                                 des personnes âgées.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 J’ai mis beaucoup de temps à lire (<b title="l'oeuvre">l’œuvre</b>)
                                 <input type="text" pattern="l'oeuvre" />
                                 de Proust.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 L’entraîneur encourage (<b title="les athlètes">les athlètes</b>)
                                 <input type="text" pattern="les athlètes" />
                                 (<b title="à mieux performer">mieux performer</b>)
@@ -464,19 +467,19 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Par superstition, il évite (<b title="de croiser">croiser</b>)
                                 <input type="text" pattern="de croiser" />
                                 les chats noirs dans la rue.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Elle s’intéresse (<b title="à la littérature">la littérature</b>)
                                 <input type="text" pattern="à la littérature" />
                                 espagnole.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Cet enseignant aide (<b title="Paul">Paul</b>)
                                 <input type="text" pattern="Paul" />
                                 (<b title="à écrire">écrire</b>)
@@ -484,32 +487,32 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Vincent a choisi (<b title="de compléter">compléter</b>)
                                 <input type="text" pattern="de compléter" />
                                 ses études en France.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Le pianiste s’est arrêté (<b title="de jouer">jouer</b>)
                                 <input type="text" pattern="de jouer" />
                                 tout doucement.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Il s’amuse (<b title="à raconter">raconter</b>)
                                 <input type="text" pattern="à raconter" />
                                 des histoires effrayantes.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 La variété de cette boutique dépend
                                 (<b title="de la période">la période</b>)
                                 <input type="text" pattern="de la période" />
                                 de l’année.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il craint (<b title="de ne plus pouvoir">ne plus pouvoir</b>)
                                 <input type="text" pattern="de ne plus pouvoir" />
                                 (<b title="rentrer">rentrer</b>)
@@ -517,13 +520,13 @@
                                 au pays.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Notre travail contribue (<b title="à faire">faire</b>)
                                 <input type="text" pattern="à faire" />
                                 le succès de notre entreprise.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Les enfants ont eu la chance
                                 (<b title="de rencontrer">rencontrer</b>)
                                 <input type="text" pattern="de rencontrer" />
@@ -532,14 +535,14 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Ce n’est pas la peine
                                 (<b title="de me le répéter">me le répéter</b>)
                                 <input type="text" pattern="de me le répéter" />
                                 , j’ai compris.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Les filles ont l’intention
                                 (<b title="de présenter">présenter</b>)
                                 <input type="text" pattern="de présenter" />
@@ -548,33 +551,33 @@
                                 commun.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Sa boussole magnétique lui sert
                                 (<b title="de guide">guide</b>)
                                 <input type="text" pattern="de guide" />
                                 en forêt.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Les jeunes s’intéressent
                                 (<b title="à la nouvelle technologie">la nouvelle technologie</b>)
                                 <input type="text" pattern="à la nouvelle technologie" />
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 J’ai l’habitude (<b title="de manger">manger</b>)
                                 <input type="text" pattern="de manger" />
                                 devant la télévision.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il s’adresse (<b title="à la population">la population</b>)
                                 <input type="text" pattern="à la population" />
                                 avec le plus grand calme.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 À l’école, on apprend (<b title="à lire">lire</b>)
                                 <input type="text" pattern="à lire" />
                                 et (<b title="à écrire">écrire</b>)
@@ -582,13 +585,13 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Je venais (<b title="de rentrer">rentrer</b>)
                                 <input type="text" pattern="de rentrer" />
                                 chez moi quand la pluie a commencé.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Pensez (<b title="à lui faire">lui faire</b>)
                                 <input type="text" pattern="à lui faire" />
                                 mes salutations.
@@ -603,19 +606,19 @@
                         <h3>Complétez ces phrases par les prépositions appropriées.</h3>
 
                         <ol>
-                            <li>
+                            <li class="B2">
                                 Si tu laisses (<b title="passer">passer</b>)
                                 <input type="text" pattern="passer" />
                                 trop de temps avant de le revoir, il t’oubliera.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Je me suis décidée (<b title="à prendre">prendre</b>)
                                 <input type="text" pattern="à prendre" />
                                 des leçons de guitare.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Demandez (<b title="à Olivier">Olivier</b>)
                                 <input type="text" pattern="à Olivier" />
                                 (<b title="de vous conduire">vous conduire</b>)
@@ -623,46 +626,46 @@
                                 au centre-ville.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Notre équipe de soccer a réussi
                                 (<b title="à participer">participer</b>)
                                 <input type="text" pattern="à participer" />
                                 au championnat.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Je me rappelle
                                 (<b title="nos dernières vacances">nos dernières vacances</b>)
                                 <input type="text" pattern="nos dernières vacances" />
                                 au bord de la mer.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il n’est pas bon (<b title="de manger">manger</b>)
                                 <input type="text" pattern="de manger" />
                                 autant de sucre raffiné.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Lisez les questions avant de commencer
                                 (<b title="à répondre">répondre</b>)
                                 <input type="text" pattern="à répondre" />
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Êtes-vous satisfait (<b title="de la réponse">la réponse</b>)
                                 <input type="text" pattern="de la réponse" />
                                 du professeur ?
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il ressemble (<b title="à cet acteur">cet acteur</b>)
                                 <input type="text" pattern="à cet acteur" />
                                 québécois que tu aimes tant.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Je vais essayer (<b title="de parler">parler</b>)
                                 <input type="text" pattern="de parler" />
                                 (<b title="à la rédactrice">la rédactrice</b>)
@@ -670,7 +673,7 @@
                                 en chef.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Arrêtez (<b title="de jouer">jouer</b>)
                                 <input type="text" pattern="de jouer" />
                                 (<b title="de la musique">la musique</b>)
@@ -680,7 +683,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Conseillez (<b title="à ce vacancier">ce vacancier </b>)
                                 <input type="text" pattern="à ce vacancier" />
                                 (<b title="de prendre">prendre</b>)
@@ -688,13 +691,13 @@
                                 des photos.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 J’ai envie (<b title="de faire">faire</b>)
                                 <input type="text" pattern="de faire" />
                                 de la course à pied depuis des années.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il a regretté (<b title="les paroles">les paroles</b>)
                                 <input type="text" pattern="les paroles" />
                                 qu’il a dites (<b title="à son frère">son frère</b>)
@@ -702,7 +705,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Cet étudiant hésite (<b title="à répondre">répondre</b>)
                                 <input type="text" pattern="à répondre" />
                                 (<b title="à la question">la question</b>)
@@ -710,14 +713,14 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Nous avons accepté
                                 (<b title="de ne pas assister">ne pas assister</b>)
                                 <input type="text" pattern="de ne pas assister" />
                                 à la réunion.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il a décidé (<b title="le directeur">le directeur</b>)
                                 <input type="text" pattern="le directeur" />
                                 (<b title="à faire">faire</b>)
@@ -725,13 +728,13 @@
                                 des changements.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Je n’ai pas eu le temps (<b title="de remplir">remplir</b>)
                                 <input type="text" pattern="de remplir" />
                                 le questionnaire.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Ce garçon a empêché (<b title="le chat">le chat</b>)
                                 <input type="text" pattern="le chat" />
                                 (<b title="de tomber">tomber</b>)
@@ -739,13 +742,13 @@
                                 de l’arbre.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il s’attend (<b title="à être acclamé">être acclamé</b>)
                                 <input type="text" pattern="à être acclamé" />
                                 pour sa victoire.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 On doit (<b title="parler">parler</b>)
                                 <input type="text" pattern="parler" />
                                 davantage (<b title="de ce sujet">ce sujet</b>)
@@ -753,14 +756,14 @@
                                 d’actualité.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il faut s’adapter
                                 (<b title="à la nouvelle culture">la nouvelle culture</b>)
                                 <input type="text" pattern="à la nouvelle culture" />
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Les enfants ont décidé (<b title="de se mettre">se mettre</b>)
                                 <input type="text" pattern="de se mettre" />
                                 (<b title="à l'abri">l’abri</b>)
@@ -768,7 +771,7 @@
                                 l’abri de la pluie.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Quand j’ai besoin (<b title="de bouger">bouger</b>)
                                 <input type="text" pattern="de bouger" />
                                 , je sors faire
@@ -777,7 +780,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Ce vieux moine s’applique (<b title="à bien écrire">bien écrire</b>)
                                 <input type="text" pattern="à bien écrire" />
                                 .
@@ -792,7 +795,7 @@
                         <h3>Ajoutez les prépositions qui conviennent.</h3>
 
                         <ol>
-                            <li>
+                            <li class="A1">
                                 Je voudrais (<b title="utiliser">utiliser</b>)
                                 <input type="text" pattern="utiliser" />
                                 (<b title="ma carte">ma carte</b>)
@@ -800,7 +803,7 @@
                                 de débit pour payer.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 J’ai réussi (<b title="à passer">passer</b>)
                                 <input type="text" pattern="à passer" />
                                 l’examen et je suis assez satisfaite
@@ -809,7 +812,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Il regarde (<b title="le spectacle">le spectacle</b>)
                                 <input type="text" pattern="le spectacle" />
                                 (<b title="à la télévision">la télévision</b>)
@@ -817,7 +820,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Jérémie a appris (<b title="à travailler">travailler</b>)
                                 <input type="text" pattern="à travailler" />
                                 le bois (<b title="de son père">son père</b>)
@@ -825,7 +828,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Je manque (<b title="de beurre">beurre</b>)
                                 <input type="text" pattern="de beurre" />
                                 et
@@ -836,7 +839,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Les gardiens ont obligé
                                 (<b title="les prisonniers">les prisonniers</b>)
                                 <input type="text" pattern="les prisonniers" />
@@ -845,20 +848,20 @@
                                 dans leur cellule.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Le propriétaire s’est décidé
                                 (<b title="à rénover">rénover</b>)
                                 <input type="text" pattern="à rénover" />
                                 la maison.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Cet athlète contribue (<b title="à faire">faire</b>)
                                 <input type="text" pattern="à faire" />
                                 le succès de son équipe.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Elle a choisi (<b title="de donner">donner</b>)
                                 <input type="text" pattern="de donner" />
                                 (<b title="ce bijou">ce bijou</b>)
@@ -866,7 +869,7 @@
                                 à Lucie.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Quand on est petit, il faut demander
                                 (<b title="la permission">la permission</b>)
                                 <input type="text" pattern="la permission" />
@@ -875,7 +878,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Le policier a arrêté (<b title="le voleur">le voleur</b>)
                                 <input type="text" pattern="le voleur" />
                                 (<b title="de courir">courir</b>)
@@ -883,19 +886,19 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Simon continue (<b title="de pratiquer">pratiquer</b>)
                                 <input type="text" pattern="de pratiquer" />
                                 le karaté.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Il doit être prêt (<b title="à affronter">affronter</b>)
                                 <input type="text" pattern="à affronter" />
                                 le public.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Le maire veut empêcher (<b title="les gens">les gens</b>)
                                 <input type="text" pattern="les gens" />
                                 (<b title="de manifester">manifester</b>)
@@ -903,7 +906,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Le professeur nous a donné
                                 (<b title="des devoirs">des devoirs</b>)
                                 <input type="text" pattern="des devoirs" />
@@ -912,7 +915,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Ils ont félicité (<b title="le chef">le chef</b>)
                                 <input type="text" pattern="le chef" />
                                 (<b title="de donner">donner</b>)
@@ -920,7 +923,7 @@
                                 autant de son temps.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Chaque mois, il faut payer (<b title="le loyer">le loyer</b>)
                                 <input type="text" pattern="le loyer" />
                                 (<b title="à la concierge">la concierge</b>)
@@ -928,20 +931,20 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Selon son père, Julien perd son temps
                                 (<b title="à pratiquer">pratiquer</b>)
                                 <input type="text" pattern="à pratiquer" />
                                 la musique.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Il songe (<b title="à démissionner">démissionner</b>)
                                 <input type="text" pattern="à démissionner" />
                                 depuis des années.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Marie-Andrée s’est abstenue
                                 (<b title="de parler">parler</b>)
                                 <input type="text" pattern="de parler" />
@@ -957,13 +960,13 @@
                         <h3>Complétez les phrases suivantes par les prépositions appropriées.</h3>
 
                         <ol>
-                            <li>
+                            <li class="A2">
                                 Confirmez (<b title="votre présence">votre présence</b>)
                                 <input type="text" pattern="votre présence" />
                                 à la secrétaire.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 La population veut convaincre
                                 (<b title="les gouvernements">les gouvernements</b>)
                                 <input type="text" pattern="les gouvernements" />
@@ -972,20 +975,20 @@
                                 les impôts.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Il désire (<b title="une maison">une maison</b>)
                                 <input type="text" pattern="une maison" />
                                 de style cottage.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Par son absence prolongée, il a manqué
                                 (<b title="à son chien">son chien</b>)
                                 <input type="text" pattern="à son chien" />
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 J’ai décidé (<b title="de continuer">continuer</b>)
                                 <input type="text" pattern="de continuer" />
                                 (<b title="à prendre">prendre</b>)
@@ -993,7 +996,7 @@
                                 des cours de danse.
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Je ne peux (<b title="voir">voir</b>)
                                 <input type="text" pattern="voir" />
                                 Francis aujourd’hui. Il a un texte
@@ -1013,14 +1016,14 @@
                             personnelles et faites les contractions nécessaires.</h3>
 
                         <ol>
-                            <li>
+                            <li class="B1">
                                 Ce n’est pas la peine
                                 (<b title="de me reconduire">me reconduire</b>)
                                 <input type="text" pattern="de me reconduire" />
                                 , je connais le chemin.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Il faut engager (<b title="un gardien">un gardien</b>)
                                 <input type="text" pattern="un gardien" />
                                 (<b title="pour assurer">assurer</b>)
@@ -1028,26 +1031,26 @@
                                 la sécurité.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il vaut mieux (<b title="finir">finir</b>)
                                 <input type="text" pattern="finir" />
                                 ce travail aujourd’hui.
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Il est minuit. Il est temps
                                 (<b title="de rentrer">rentrer</b>)
                                 <input type="text" pattern="de rentrer" />
                                 à la maison.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 L’été, il est bon (<b title="de prendre">prendre</b>)
                                 <input type="text" pattern="de prendre" />
                                 le temps de vivre.
                             </li>
 
-                            <li>
+                            <li class="B1">
                                 Il s’agit (<b title="de l'accident">l’accident</b>)
                                 <input type="text" pattern="de l'accident" />
                                 (<b title="de Sonia">Sonia</b>)
@@ -1055,7 +1058,7 @@
                                 . Comment pouvons-nous l’aider ?
                             </li>
 
-                            <li>
+                            <li class="A1">
                                 Il faut (<b title="travailler">travailler</b>)
                                 <input type="text" pattern="travailler" />
                                 avec sérieux (<b title="pour réussir">réussir</b>)
@@ -1063,13 +1066,13 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Il est important (<b title="de s'inscrire">s’inscrire</b>)
                                 <input type="text" pattern="de s'inscrire" />
                                 à l’activité avant la date limite.
                             </li>
 
-                            <li>
+                            <li class="B2">
                                 Dans ce cours, il s’agit
                                 (<b title="d'apprendre">apprendre</b>)
                                 <input type="text" pattern="d'apprendre" />
@@ -1078,7 +1081,7 @@
                                 .
                             </li>
 
-                            <li>
+                            <li class="A2">
                                 Le dimanche, il est bon (<b title="de manger">manger</b>)
                                 <input type="text" pattern="de manger" />
                                 tous ensemble.
