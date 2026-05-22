@@ -47,32 +47,9 @@ export class ErrorCounter {
 
         self.errorCounterObjList = {};
 
-        document.querySelectorAll('.error-counter-line').forEach(errorLineElement => {
-            if (!(errorLineElement instanceof HTMLElement)) return;
-
-            const verbTense = errorLineElement.id.replace('error-counter-', '');
-            if (!verbTenseList.includes(verbTense)) {
-                errorLineElement.style.display = 'none';
-            } else {
-                ErrorCounterLine.initialize(errorLineElement);
-
-                self.errorCounterObjList[verbTense] = new ErrorCounterObj();
-
-                let cssSelector = 'input[type="text"]';
-                if (verbTense !== '') {
-                    let cssSelector = 'input[type="text"][data-verb-tense="' + verbTense + '"]';
-                }
-                self.getErrorCounterObj(verbTense).numberOfAllInputElements =
-                    document.querySelectorAll(cssSelector).length;
-
-                // page for present subjunctive text exercise also has radio buttons
-                self.getErrorCounterObj(verbTense).numberOfAllInputElements +=
-                    document.querySelectorAll('input[type="radio"][data-type="three-choices"]').length / 3;
-
-                self.getErrorCounterObj(verbTense).numberOfAllInputElements +=
-                    document.querySelectorAll('input[type="radio"][data-type="two-choices"]').length / 2;
-            }
-        }); // forEach(errorLineElement
+        verbTenseList.forEach(verbTense => {
+            self.errorCounterObjList[verbTense] = new ErrorCounterObj();
+        });
 
 
         const allInputElements = document.
@@ -81,25 +58,41 @@ export class ErrorCounter {
         if (allInputElements.length === 0) {
             self.hideStats();
         } else {
-            self.#initializeTimer(allInputElements);
+            let lastInputElement = null;
 
             allInputElements.forEach((inputElement) => {
                 if (!(inputElement instanceof HTMLInputElement)) return;
 
-                if (inputElement.type == 'text') {
-                    inputElement.addEventListener("focus", InputValidation.focusEventHandler);
-                }
+                // verbs-and-prepositions.html can have display:none for some input based on query params
+                if (!inputElement.checkVisibility()) return;
+
+                const errorCounterObj = self.getErrorCounterObj(inputElement.getAttribute('data-verb-tense'));
 
                 if (inputElement.type == 'text') {
+                    inputElement.addEventListener("focus", InputValidation.focusEventHandler);
                     inputElement.addEventListener("focusout", InputValidation.focusOutEventHandler);
+
+                    errorCounterObj.numberOfAllInputElements++;
                 }
 
                 if (inputElement.type == 'radio') {
                     inputElement.addEventListener("click", InputValidation.onClickEventHandler);
                     inputElement.addEventListener("focusout", InputValidation.focusOutEventHandler);
-                }
-            });
 
+                    if (inputElement.getAttribute('data-type') === 'two-choices') {
+                        errorCounterObj.numberOfAllInputElements += 1 / 2;
+                    } else if (inputElement.getAttribute('data-type') === 'three-choices') {
+                        errorCounterObj.numberOfAllInputElements += 1 / 3;
+                    } else {
+                        console.error('Input element of "radio" type must have attribute ' +
+                            '"data-type" with values "two-choices" or "three-choices"');
+                    }
+                }
+
+                lastInputElement = inputElement;
+            }); // allInputElements.forEach
+
+            self.#initializeTimer(lastInputElement);
 
             if (verbTenseList.length === 0) {
                 StatsFooter.showStats();
@@ -108,16 +101,27 @@ export class ErrorCounter {
             } else {
                 StatsFooter.hideStats(); // several tenses shown
             }
-        }
+        } // if (allInputElements.length === 0) else 
+
+        document.querySelectorAll('.error-counter-line').forEach(errorLineElement => {
+            if (!(errorLineElement instanceof HTMLElement)) return;
+
+            const verbTense = errorLineElement.id.replace('error-counter-', '');
+            if (!verbTenseList.includes(verbTense)) {
+                errorLineElement.style.display = 'none';
+            } else {
+                const errorCounterObj = self.getErrorCounterObj(verbTense);
+
+                ErrorCounterLine.initialize(errorLineElement, errorCounterObj.numberOfAllInputElements);
+            }
+        }); // forEach(errorLineElement
+
     }
 
     /**
-     * @param {HTMLCollection} allInputElements
+     * @param {HTMLInputElement} lastInputElement
      */
-    static #initializeTimer(allInputElements) {
-        const lastInputElement = Types.assertType(
-            allInputElements.item(allInputElements.length - 1), HTMLInputElement);
-
+    static #initializeTimer(lastInputElement) {
         if (lastInputElement.type == 'radio') {
             document.getElementsByName(lastInputElement.name).forEach((element) => {
                 element.setAttribute('last-input-element', 'true');

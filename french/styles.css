@@ -488,6 +488,40 @@ td.best-result {
     display: none;
 }
 
+article.A1 li li,
+article.A1 li.section-to-practice-one-verbe,
+article.A2 li li,
+article.A2 li.section-to-practice-one-verbe,
+article.B1 li li,
+article.B1 li.section-to-practice-one-verbe,
+article.B2 li li,
+article.B2 li.section-to-practice-one-verbe,
+article.manquer ol.nested>li,
+article.penser ol.nested>li,
+article.servir ol.nested>li,
+article.jouer ol.nested>li,
+article.apprendre ol.nested>li,
+article.demander ol.nested>li,
+article.parler ol.nested>li {
+    display: none;
+}
+
+article.A1 li.A1,
+article.A2 li.A2,
+article.B1 li.B1,
+article.B2 li.B2 {
+    display: list-item;
+}
+
+article.manquer ol.nested>li.manquer,
+article.penser ol.nested>li.penser,
+article.servir ol.nested>li.servir,
+article.jouer ol.nested>li.jouer,
+article.apprendre ol.nested>li.apprendre,
+article.demander ol.nested>li.demander,
+article.parler ol.nested>li.parler {
+    display: list-item;
+}
 
 /* ------------------------------------------------ */
 /* stats page */
