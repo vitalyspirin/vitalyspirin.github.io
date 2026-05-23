@@ -712,6 +712,7 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 #stats-page article.conjugations-plus:not(.recent-dates) .conjugations-plus,
 #stats-page article.tense-sequence:not(.recent-dates) .tense-sequence,
 #stats-page article.others:not(.recent-dates) .others,
+#stats-page article.prepositions:not(.recent-dates) .prepositions,
 #stats-page article.vocabulary:not(.recent-dates) .vocabulary,
 #stats-page article.recent-dates table#stats-table .recent-dates {
     max-width: none;
@@ -813,6 +814,7 @@ body#index section {
 body#index article.conjugations section.conjugations,
 body#index article.tense-sequence section.tense-sequence,
 body#index article.others section.others,
+body#index article.prepositions section.prepositions,
 body#index article.vocabulary section.vocabulary {
     display: block;
 }
