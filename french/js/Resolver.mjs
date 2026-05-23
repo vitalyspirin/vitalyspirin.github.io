@@ -136,6 +136,7 @@ export class Resolver {
         "dont-duquel.html": "pdf/dont-duquel.pdf",
         "lequel-duquel-auquel.html": "pdf/lequel-duquel-auquel.pdf",
         "verbs-and-prepositions.html?B2": "pdf/verbs-and-prepositions.doc.html",
+        "verbs-and-prepositions.html?revision": "pdf/verbs-and-prepositions.doc.html",
         "conjugations.html?Le%20subjonctif%20pass%C3%A9": "pdf/present-subjunctive.pdf",
         "present-perfect-subjunctive.html": "pdf/present-subjunctive.pdf",
         "conjugations.html?Le%20conditionnel%20pass%C3%A9": "pdf/conditional-perfect.pdf",

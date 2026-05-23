@@ -490,19 +490,24 @@ td.best-result {
 
 article.A1 li li,
 article.A1 li.section-to-practice-one-verbe,
+article.A1 li.revision,
 article.A2 li li,
 article.A2 li.section-to-practice-one-verbe,
+article.A2 li.revision,
 article.B1 li li,
 article.B1 li.section-to-practice-one-verbe,
+article.B1 li.revision,
 article.B2 li li,
 article.B2 li.section-to-practice-one-verbe,
+article.B2 li.revision,
 article.manquer ol.nested>li,
 article.penser ol.nested>li,
 article.servir ol.nested>li,
 article.jouer ol.nested>li,
 article.apprendre ol.nested>li,
 article.demander ol.nested>li,
-article.parler ol.nested>li {
+article.parler ol.nested>li,
+article.revision ol.nested>li {
     display: none;
 }
 
@@ -519,7 +524,8 @@ article.servir ol.nested>li.servir,
 article.jouer ol.nested>li.jouer,
 article.apprendre ol.nested>li.apprendre,
 article.demander ol.nested>li.demander,
-article.parler ol.nested>li.parler {
+article.parler ol.nested>li.parler,
+article.revision ol.nested>li.revision {
     display: list-item;
 }
 
