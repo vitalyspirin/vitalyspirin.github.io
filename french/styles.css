@@ -761,15 +761,12 @@ body#index label:has(input[name="conjugations-plus"]) {
 .card header {
     padding: 1rem 1.5rem;
     border-bottom: 1px solid gainsboro;
-    background-color: whitesmoke;
     color: black;
     position: relative;
 }
 
 .card.A1 header {
-    background-color: #c58585
-        /*rosybrown*/
-    ;
+    background-color: #c58585;
 }
 
 .card.A1 header:after {
@@ -777,9 +774,7 @@ body#index label:has(input[name="conjugations-plus"]) {
 }
 
 .card.A2 header {
-    background-color: #e1b70d
-        /*goldenrod*/
-    ;
+    background-color: #e1b70d;
 }
 
 .card.A2 header:after {
@@ -787,9 +782,7 @@ body#index label:has(input[name="conjugations-plus"]) {
 }
 
 .card.B1 header {
-    background-color: #33b632
-        /*limegreen*/
-    ;
+    background-color: #33b632;
 }
 
 .card.B1 header:after {
@@ -797,9 +790,7 @@ body#index label:has(input[name="conjugations-plus"]) {
 }
 
 .card.B2 header {
-    background-color: #e14d4d
-        /*indianred*/
-    ;
+    background-color: #e14d4d;
 }
 
 .card.B2 header:after {
