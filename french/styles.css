@@ -755,6 +755,7 @@ body#index label:has(input[name="conjugations-plus"]) {
     margin: 1rem;
     border: 1px solid gainsboro;
     border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .card header {
@@ -762,13 +763,54 @@ body#index label:has(input[name="conjugations-plus"]) {
     border-bottom: 1px solid gainsboro;
     background-color: whitesmoke;
     color: black;
+    position: relative;
 }
 
-.card .cefr {
+.card.A1 header {
+    background-color: #c58585
+        /*rosybrown*/
+    ;
+}
+
+.card.A1 header:after {
+    content: "A1";
+}
+
+.card.A2 header {
+    background-color: #e1b70d
+        /*goldenrod*/
+    ;
+}
+
+.card.A2 header:after {
+    content: "A2";
+}
+
+.card.B1 header {
+    background-color: #33b632
+        /*limegreen*/
+    ;
+}
+
+.card.B1 header:after {
+    content: "B1";
+}
+
+.card.B2 header {
+    background-color: #e14d4d
+        /*indianred*/
+    ;
+}
+
+.card.B2 header:after {
+    content: "B2";
+}
+
+.card header:after {
     position: absolute;
-    padding: 1em 0 0 6.6em;
-    color: black;
-    opacity: 0.25;
+    right: 0.25em;
+    top: 1em;
+    opacity: 0.5;
 }
 
 .card a,
