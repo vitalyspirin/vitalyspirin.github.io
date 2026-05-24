@@ -634,11 +634,11 @@ td.date {
 }
 
 /* freeze table header during scrolling */
-table {
+#stats-page table {
     position: relative;
 }
 
-th {
+#stats-page th {
     position: sticky;
     background-color: white;
 
@@ -656,11 +656,11 @@ thead tr:nth-child(1) th {
 }
 
 thead tr:nth-child(2) th {
-    top: 2em;
+    top: 1.75em;
 }
 
 thead tr:nth-child(3) th {
-    top: 5em;
+    top: 6.97em;
 }
 
 article.tense-sequence:not(.conjugations):not(.others) .tense-sequence .full-name {
@@ -850,23 +850,28 @@ textarea#stats {
 /* ------------------------------------------------ */
 /* doc page */
 
-/*.doc td:not(:nth-child(3)) {visibility: hidden;}*/
 .doc table {
     border-collapse: collapse;
     margin: 4em auto;
+    position: relative;
 }
 
-.doc table tr:nth-child(odd) {
+.doc table th {
+    position: sticky;
+    background-color: #cdddac;
+}
+
+.doc table tbody tr:nth-child(odd) {
     background-color: #e6edd4;
 }
 
-.doc table tr:nth-child(even) {
+.doc table tbody tr:nth-child(even) {
     background-color: #cdddac;
 }
 
 .doc table,
-th,
-td {
+.doc table th,
+.doc table td {
     border: 1px solid black;
     padding: 0.5em;
 }
