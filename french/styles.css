@@ -797,6 +797,14 @@ body#index label:has(input[name="conjugations-plus"]) {
     content: "B2";
 }
 
+.card.C1 header {
+    background-color: #1f76df;
+}
+
+.card.C1 header:after {
+    content: "C1";
+}
+
 .card header:after {
     position: absolute;
     right: 0.25em;
@@ -842,7 +850,8 @@ button {
 article.A1 .card.A1,
 article.A2 .card.A2,
 article.B1 .card.B1,
-article.B2 .card.B2 {
+article.B2 .card.B2, 
+article.C1 .card.C1 {
     display: inline-block;
 }
 

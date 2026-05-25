@@ -13,6 +13,7 @@ import verbsInPresentSubjunctiveTense, { audioFileFolder as audioVerbsInPresentS
 import verbsInPresentPerfectSubjunctiveTense, { audioFileFolder as audioVerbsInPresentPerfectSubjunctiveTense } from './conjugations/verbsInPresentPerfectSubjunctiveTense.mjs';
 import verbsInConditionalPerfectTense, { audioFileFolder as audioFileFolderForConditionalPerfectTense } from './conjugations/verbsInConditionalPerfectTense.mjs';
 import verbsInFuturePerfectTense, { audioFileFolder as audioFileFolderForFuturePerfectTense } from './conjugations/verbsInFuturePerfectTense.mjs';
+import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHistoricTense } from './conjugations/verbsInPastHistoricTense.mjs';
 
 
 export class Resolver {
@@ -63,6 +64,10 @@ export class Resolver {
         "L'impératif": {
             folder: audioFileFolderForImperativeTense,
             verbList: verbsInImperativeTense
+        },
+        "Le passé simple": {
+            folder: audioFileFolderForPastHistoricTense,
+            verbList: verbsInPastHistoricTense
         }
     };
 
@@ -146,7 +151,10 @@ export class Resolver {
         "conjugations.html?Le%20futur%20ant%C3%A9rieur": "pdf/future-perfect.pdf",
         "future-perfect.html": "pdf/future-perfect.pdf",
         "concordance-future.html": "pdf/concordance-future.pdf",
-        "concordance-simultaneity-posteriority-anteriority.html": "pdf/concordance-simultaneity-posteriority-anteriority.pdf"
+        "concordance-simultaneity-posteriority-anteriority.html": "pdf/concordance-simultaneity-posteriority-anteriority.pdf",
+
+        // C1
+        "conjugations.html?Le%20pass%C3%A9%20simple": "pdf/past-historic.pdf"
     };
 
     /**
