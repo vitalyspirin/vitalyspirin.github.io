@@ -35,7 +35,7 @@
     <main class="wide">
         <article>
             <header>
-                <h3 id="page-title">Statistiques</h3>
+                <h1>Statistiques</h1>
 
                 <iframe src="partials/cefr-checkboxes.html"
                     onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
@@ -54,6 +54,7 @@
                         <th data-key="B1" class="B1 conjugations tense-sequence others vocabulary" colspan="15">B1</th>
                         <th data-key="B2" class="B2 conjugations tense-sequence vocabulary others" colspan="14">
                             B2</th>
+                        <th data-key="C1" class="C1 conjugations" colspan="2">C1</th>
                     </tr>
                     <tr>
                         <!-- A1 -->
@@ -159,6 +160,9 @@
                             <span class="short-name"
                                 title="Simultanéité - Postériorité - Antériorité">simult.-postér.-antér.</span>
                         </th>
+
+                        <!-- C1 -->
+                        <th data-key="past-historic.html" class="C1 conjugations" colspan="2">passé simple</th>
                     </tr>
                     <tr>
                         <!-- A1 -->
@@ -307,6 +311,14 @@
                             <a
                                 href="exercises/tense-sequence/concordance-simultaneity-posteriority-anteriority.html">texte</a>
                         </th>
+
+                        <!-- C1 -->
+                        <!-- passé simple -->
+                        <th class="C1 conjugations">
+                            <a href="exercises/conjugations/conjugations.html?Le%20pass%C3%A9%20simple">liste</a>
+                        </th>
+                        <th class="C1 conjugations"><a href="exercises/conjugations/past-historic.html">texte</a></th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -413,6 +425,10 @@
                         <td class="B2 tense-sequence" data-key="concordance-future.html"></td>
                         <td class="B2 tense-sequence" data-key="concordance-simultaneity-posteriority-anteriority.html">
                         </td>
+
+                        <!-- C1 -->
+                        <td class="C1 conjugations" data-key="conjugations.html?Le%20pass%C3%A9%20simple"></td>
+                        <td class="C1 conjugations" data-key="past-historic.html"></td>
                     </tr>
                 </template>
 
