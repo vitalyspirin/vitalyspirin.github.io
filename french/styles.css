@@ -183,6 +183,7 @@ span.recent-days {
 .text h1,
 .text h2 {
     font-size: 1.5em;
+    margin: 0.83em 0;
     color: #007f00;
     text-align: center;
 }
@@ -193,7 +194,8 @@ span.recent-days {
     text-align: center;
 }
 
-.text h1+h2+ol li section h3 {
+.text h1+h2+ol li section h3,
+.text h1+h2+section h3 {
     color: var(--section-header-color);
     font-size: 1.2em;
     text-align: left;
@@ -850,7 +852,7 @@ button {
 article.A1 .card.A1,
 article.A2 .card.A2,
 article.B1 .card.B1,
-article.B2 .card.B2, 
+article.B2 .card.B2,
 article.C1 .card.C1 {
     display: inline-block;
 }
