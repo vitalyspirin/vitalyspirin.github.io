@@ -154,7 +154,8 @@ export class Resolver {
         "concordance-simultaneity-posteriority-anteriority.html": "pdf/concordance-simultaneity-posteriority-anteriority.pdf",
 
         // C1
-        "conjugations.html?Le%20pass%C3%A9%20simple": "pdf/past-historic.pdf"
+        "conjugations.html?Le%20pass%C3%A9%20simple": "pdf/past-historic.pdf",
+        "past-historic.html": "pdf/past-historic.pdf"
     };
 
     /**
