@@ -2,9 +2,11 @@
 
 "use strict";
 
-
 export default class GoogleTranslateAudio {
 
+    /**
+     * @param {string} str
+     */
     static async getAudioBase64(str) {
 
         // Google Translate reads words beginning with é as "E accent aigu" (unless
@@ -27,6 +29,10 @@ export default class GoogleTranslateAudio {
     } // function getAudioBase64(text)
 
 
+    /**
+     * @param {string} contentType
+     * @param {Promise<Blob>} blobPromise
+     */
     static blobToBase64(blobPromise, contentType) {
         return blobPromise
             .then((blob) => blob.arrayBuffer())

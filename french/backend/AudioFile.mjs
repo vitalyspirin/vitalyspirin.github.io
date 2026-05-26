@@ -8,12 +8,19 @@ import GoogleTranslateAudio from './GoogleTranslateAudio.mjs';
 
 
 export default class AudioFile {
+    /** @type string[] */
     stringList = [];
 
+    /**
+     * @param {string} str
+     */
     addString(str) {
         this.stringList.push(str);
     }
 
+    /**
+     * @param {string} fileName
+     */
     async save(fileName) {
         let textForFile = "{\n";
 
@@ -36,6 +43,10 @@ export default class AudioFile {
     } // function save(fileName)
 
 
+    /**
+     * @param {string} str
+     * @param {string} fileName
+     */
     static writeToFile(str, fileName) {
         fs.writeFileSync(fileName, str);
     }
