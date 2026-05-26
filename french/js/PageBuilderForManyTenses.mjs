@@ -137,7 +137,7 @@ export class PageBuilderForManyTenses {
 
         document.getElementById("number-of-verbs").textContent = String(counter - 1);
 
-        console.log(str); // use Spell Checker to find spelling errors
+        // console.log(str); // use Spell Checker to find spelling errors
     } // static buildForManyTenses()
 
     /**
