@@ -25,6 +25,19 @@
 
         let page = window.location.pathname.split('/').pop() + window.location.search;
 
+        const containerForCheckboxes = document.getElementById('checkboxes-to-choose-tenses');
+
+        const templateCheckbox = document.getElementById('template-checkbox-to-choose-tense')
+            .content.firstElementChild;
+
+        Object.keys(Resolver.map).forEach(tenseName => {
+            const checkboxForTense = templateCheckbox.cloneNode(true);
+            checkboxForTense.querySelector('input').name = Resolver.map[tenseName].folder;
+            checkboxForTense.append(document.createTextNode(tenseName));
+
+            containerForCheckboxes.append(checkboxForTense);
+        });
+
         document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
             checkboxElement.checked = Storage.getConfigDataForKey(page, checkboxElement.name) ?? true;
 
@@ -43,63 +56,21 @@
 </head>
 
 
-<body>
+<body id="conjugations">
     <main spellcheck="false">
         <article class="verb-list-mixed-tenses">
             <header>
-                <h3 id="page-title">&nbsp;</h3>
+                <h1 id="page-title">&nbsp;</h1>
 
                 <span id="checkboxes-to-choose-tenses">
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="present" checked="checked">Le présent
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="presentperfect" checked="checked">Le
-                        passé
-                        composé
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="imperfect"
-                            checked="checked">L'imparfait
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="future" checked="checked">Le futur
-                        simple
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="pastperfect" checked="checked">Le
-                        plus-que-parfait
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="conditionalpresent"
-                            checked="checked">Le
-                        conditionnel présent
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="presentsubjunctive"
-                            checked="checked">Le
-                        subjonctif présent
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="presentperfectsubjunctive"
-                            checked="checked">Le
-                        subjonctif passé
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="conditionalperfect"
-                            checked="checked">Le
-                        conditionnel passé
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="futureperfect" checked="checked">Le
-                        futur antérieur
-                    </label>
-                    <label class="for-checkbox">
-                        <input type="checkbox" class="verb-tense-checkbox" name="imperative"
-                            checked="checked">L'impératif
-                    </label>
+                    <template id="template-checkbox-to-choose-tense">
+                        <label class="for-checkbox">
+                            <input type="checkbox" class="verb-tense-checkbox" name="tense-name" checked="checked">
+                        </label>
+                    </template>
+
                 </span>
-                <h4>Conjuguez ces <span id="number-of-verbs"></span> verbes.</h4>
+                <h2>Conjuguez ces <span id="number-of-verbs"></span> verbes.</h2>
             </header>
 
             <div id="verb-list"></div>
@@ -107,7 +78,7 @@
             <template id="template-verb-block">
                 <div class="verb-block">
                     <hr />
-                    <h4 class="infinitive"></h4>
+                    <h3 class="infinitive"></h3>
                 </div>
             </template>
 

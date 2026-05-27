@@ -54,19 +54,23 @@ a.info-icon {
 }
 
 
-#stats-page h1 {
+#stats-page h1,
+#conjugations h1 {
     color: #663300;
     font-size: 1.17em;
     margin: 1em 0;
+    text-align: center;
 }
 
 h3,
 .infinitive {
     color: #663300;
+    font-size: 1em;
 }
 
-header h4 {
+header h2 {
     color: #ff3300;
+    font-size: 1em;
     text-align: left;
 }
 

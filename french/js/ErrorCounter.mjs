@@ -56,7 +56,7 @@ export class ErrorCounter {
             querySelectorAll(':is(input[type="text"], input[type="radio"])');
 
         if (allInputElements.length === 0) {
-            self.hideStats();
+            StatsFooter.hideStats();
         } else {
             let lastInputElement = null;
 
