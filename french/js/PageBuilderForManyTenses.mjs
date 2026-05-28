@@ -95,12 +95,15 @@ export class PageBuilderForManyTenses {
         document.title = title;
         document.getElementById("page-title").textContent = title;
 
-        let templateVerbBlock = document.getElementById("template-verb-block")
-            // @ts-ignore
-            .content.firstElementChild;
-        let templateConjugationsForOneTenseBlock = document.getElementById("template-conjugations-for-one-tense-block")
-            // @ts-ignore
-            .content.firstElementChild;
+        let templateVerbBlock = Types.assertType(
+            document.getElementById("template-verb-block"),
+            HTMLTemplateElement
+        ).content.firstElementChild;
+
+        let templateConjugationsForOneTenseBlock = Types.assertType(
+            document.getElementById("template-conjugations-for-one-tense-block"),
+            HTMLTemplateElement
+        ).content.firstElementChild;
 
         let counter = 1;
         let str = ''; // for debugging
@@ -158,9 +161,10 @@ export class PageBuilderForManyTenses {
         let tenseElement = newConjugationsForOneTenseBlock.querySelector(".tense");
         tenseElement.textContent = Resolver.getTenseByFolder(tense);
 
-        let templateInputElement = document.getElementById("template-input")
-            // @ts-ignore
-            .content.firstElementChild;
+        let templateInputElement = Types.assertType(
+            document.getElementById("template-input"),
+            HTMLTemplateElement
+        ).content.firstElementChild;
 
         for (let pronoun in conjugationList) {
             // while debugging to check if all congugations typed properly

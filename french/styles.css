@@ -186,6 +186,7 @@ span.recent-days {
 
 /* Text exercises */
 
+#index h1,
 .text h1,
 .text h2 {
     font-size: 1.5em;
@@ -745,8 +746,7 @@ body#index {
     text-align: center;
 }
 
-body#index section,
-body#index header #page-title {
+body#index section {
     color: #007f00;
 }
 

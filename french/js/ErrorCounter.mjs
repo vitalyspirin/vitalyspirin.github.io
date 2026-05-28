@@ -160,6 +160,7 @@ export class ErrorCounter {
         }
 
         const errorCounterSection = document.getElementById('error-counter-section');
+        errorCounterSection.textContent = '';
 
         const errorCounterLineTemplate = template.content.firstElementChild;
         let newErrorCounterLine = errorCounterLineTemplate.cloneNode(true);

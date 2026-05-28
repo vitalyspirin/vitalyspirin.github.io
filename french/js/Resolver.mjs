@@ -155,7 +155,9 @@ export class Resolver {
 
         // C1
         "conjugations.html?Le%20pass%C3%A9%20simple": "pdf/past-historic.pdf",
-        "past-historic.html": "pdf/past-historic.pdf"
+        "past-historic.html": "pdf/past-historic.pdf",
+
+        "conjugations.html?Conjugaisons%20m%C3%A9lang%C3%A9es": "#"
     };
 
     /**
