@@ -14,7 +14,35 @@ export default class Exercise {
             htmlElement.classList.add(value);
         });
 
+        this.setTitle(urlParams);
+
         ErrorCounter.initialize();
+    }
+
+    /**
+     * @param {URLSearchParams} urlParams
+     */
+    static setTitle(urlParams) {
+        const titleElement = document.getElementsByTagName('h1').item(0);
+
+        if (urlParams.has('title')) {
+            titleElement.innerText += ' ' + urlParams.get('title');
+        } else if (urlParams.size > 3) {
+            let titleStr = '';
+
+            let i = 0;
+            urlParams.forEach((key, value) => {
+                console.log(value);
+                titleStr += value;
+                i++;
+                if (i < urlParams.size) {
+                    titleStr += ', ';
+                }
+            });
+
+            titleElement.innerText = titleStr;
+        }
+
     }
 }
 
