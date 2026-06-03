@@ -739,6 +739,10 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 }
 
 
+#stats-page article.difficult-exercise .difficult-exercise {
+    background-color: AntiqueWhite;
+}
+
 /* ------------------------------------------------ */
 /* index page */
 
