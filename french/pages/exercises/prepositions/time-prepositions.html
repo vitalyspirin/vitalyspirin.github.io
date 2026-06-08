@@ -300,7 +300,7 @@
                 <li>
                     <section>
                         <h4>Complétez avec <i>hier</i>, <i>demain</i>, <i>ce jour-là</i>,
-                            <i>le lendemain</i> ou <i>la veille</i>.
+                            <i>le lendemain</i>, <i>la veille</i> ou <i>prochain</i>, <i>suivant</i>.
                         </h4>
 
                         <ol>
@@ -311,9 +311,9 @@
                             </li>
 
                             <li>
-                                Aujourd’hui, nous sommes <b title="demain">le 20 septembre</b> :
+                                Aujourd’hui, nous sommes le 20 septembre :
                                 <input type="text" pattern="demain" />
-                                , le 21, c’est le début de l’automne.
+                                , <b title="demain">le 21</b>, c’est le début de l’automne.
                             </li>
 
                             <li>
@@ -335,9 +335,21 @@
                             </li>
 
                             <li>
+                                En 2018, Marie a eu son bac. <b title="suivante">L'année</b>
+                                <input type="text" pattern="suivante" />
+                                , elle est entrée à l'université.
+                            </li>
+
+                            <li>
                                 <b title="ce jour-là">Il aura dix ans jeudi prochain</b> :
                                 <input type="text" pattern="ce jour-là" />
                                 , nous lui ferons une fête surprise.
+                            </li>
+
+                            <li>
+                                C'est ma dernière année d'études. <b title="prochaine">L'année</b>
+                                <input type="text" pattern="prochaine" />
+                                , je chercherai un travail.
                             </li>
 
                             <li>
@@ -353,6 +365,12 @@
                             </li>
 
                             <li>
+                                <b title="prochain">Dimanche</b>
+                                <input type="text" pattern="prochain" />
+                                , nous organisons un grand barbecue en famille, tu viens ?
+                            </li>
+
+                            <li>
                                 J’ai obtenu mon diplôme le <b title="le lendemain">28 avril</b>
                                 et j’ai commencé à travailler
                                 <input type="text" pattern="le lendemain" />
@@ -363,6 +381,13 @@
                                 <b title="la veille">Hier</b>, nous nous sommes couchés très tôt parce que
                                 <input type="text" pattern="la veille" />
                                 nous nous étions couchés vraiment très tard.
+                            </li>
+
+                            <li>
+                                Le samedi 12 mai, il a fait très beau. Mais le
+                                <b title="suivant">samedi</b>
+                                <input type="text" pattern="suivant" />
+                                , il a plu toute la journée.
                             </li>
                         </ol>
                     </section>
