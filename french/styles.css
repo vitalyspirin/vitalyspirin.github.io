@@ -748,6 +748,20 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 
 body#index {
     text-align: center;
+
+    --a1-color: #c58585;
+    --a2-color: #e1b70d;
+    --b1-color: #33b632;
+    --b2-color: #e14d4d;
+    --c1-color: #1f76df;
+
+    /*
+    --a1-color: #CF81FF;
+    --a2-color: #1BAFF6;
+    --b1-color: #56CD01;
+    --b2-color: #FF4B4B;
+    --c1-color: #FF9602;
+    */
 }
 
 body#index section {
@@ -776,10 +790,12 @@ body#index label:has(input[name="conjugations-plus"]) {
     border-bottom: 1px solid gainsboro;
     color: black;
     position: relative;
+    color: white;
+    font-weight: bold;
 }
 
 .card.A1 header {
-    background-color: #c58585;
+    background-color: var(--a1-color);
 }
 
 .card.A1 header:after {
