@@ -498,6 +498,7 @@ td.best-result {
     display: none;
 }
 
+/* verbs-and-prepositions.html */
 article.A1 li li,
 article.A1 li.section-to-practice-one-verbe,
 article.A1 li.revision,
@@ -517,7 +518,12 @@ article.jouer ol.nested>li,
 article.apprendre ol.nested>li,
 article.demander ol.nested>li,
 article.parler ol.nested>li,
-article.revision ol.nested>li {
+article.revision ol.nested>li,
+/* locative-prepositions.html */
+article.part-1 ol.nested>li,
+article.part-2 ol.nested>li,
+article.part-3 ol.nested>li,
+article.part-4 ol.nested>li {
     display: none;
 }
 
@@ -528,6 +534,7 @@ article.B2 li.B2 {
     display: list-item;
 }
 
+/* verbs-and-prepositions.html */
 article.manquer ol.nested>li.manquer,
 article.penser ol.nested>li.penser,
 article.servir ol.nested>li.servir,
@@ -535,7 +542,12 @@ article.jouer ol.nested>li.jouer,
 article.apprendre ol.nested>li.apprendre,
 article.demander ol.nested>li.demander,
 article.parler ol.nested>li.parler,
-article.revision ol.nested>li.revision {
+article.revision ol.nested>li.revision,
+/* locative-prepositions.html */
+article.part-1 ol.nested>li.part-1,
+article.part-2 ol.nested>li.part-2,
+article.part-3 ol.nested>li.part-3,
+article.part-4 ol.nested>li.part-4 {
     display: list-item;
 }
 
@@ -748,20 +760,20 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 
 body#index {
     text-align: center;
-
+    /*
     --a1-color: #c58585;
     --a2-color: #e1b70d;
     --b1-color: #33b632;
     --b2-color: #e14d4d;
     --c1-color: #1f76df;
+*/
 
-    /*
     --a1-color: #CF81FF;
     --a2-color: #1BAFF6;
     --b1-color: #56CD01;
     --b2-color: #FF4B4B;
     --c1-color: #FF9602;
-    */
+
 }
 
 body#index section {
