@@ -127,6 +127,7 @@ export class Resolver {
         "conditional-present.html": "pdf/conditional-present.pdf",
         "savoir-connaitre.html": "pdf/savoir-connaitre.pdf",
         "amener-emmener.html": "pdf/amener-emmener.pdf",
+        "locative-prepositions.html?part-1": "pdf/locative-prepositions.doc.html",
         "verbs-and-prepositions.html": "pdf/verbs-and-prepositions.doc.html",
         "verbs-and-prepositions.html?B1&title=2": "pdf/verbs-and-prepositions.doc.html",
         "manquer-penser-servir-jouer.html": "pdf/verbs-and-prepositions.doc.html",
