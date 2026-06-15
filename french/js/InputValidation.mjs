@@ -116,8 +116,14 @@ export default class InputValidation {
             });
         }
 
-        errorCounterObj.duration += Date.now() - ErrorCounter.startTimestamp;
+        const timeDiff = Date.now() - ErrorCounter.startTimestamp;
+        errorCounterObj.duration += timeDiff;
         ErrorCounter.startTimestamp = null;
+
+        // to catch a bug when duration becomes huge
+        if (timeDiff > 1000 * 60 * 60) {
+            alert('time difference between "focus in" and "focus out" is ' + timeDiff + '. That is more than an hour.');
+        }
 
         self.#finalize();
     }

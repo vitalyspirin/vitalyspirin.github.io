@@ -92,7 +92,7 @@ export class ErrorCounter {
                 lastInputElement = inputElement;
             }); // allInputElements.forEach
 
-            self.#initializeTimer(lastInputElement);
+            self.#markLastInputElement(lastInputElement);
 
             if (verbTenseList.length === 0) {
                 StatsFooter.showStats();
@@ -121,7 +121,7 @@ export class ErrorCounter {
     /**
      * @param {HTMLInputElement} lastInputElement
      */
-    static #initializeTimer(lastInputElement) {
+    static #markLastInputElement(lastInputElement) {
         if (lastInputElement.type == 'radio') {
             document.getElementsByName(lastInputElement.name).forEach((element) => {
                 element.setAttribute('last-input-element', 'true');
