@@ -498,7 +498,7 @@ td.best-result {
     display: none;
 }
 
-/* verbs-and-prepositions.html */
+/* verbs-and-prepositions.html, h-muet.html */
 article.A1 li li,
 article.A1 li.section-to-practice-one-verbe,
 article.A1 li.revision,
@@ -511,6 +511,7 @@ article.B1 li.revision,
 article.B2 li li,
 article.B2 li.section-to-practice-one-verbe,
 article.B2 li.revision,
+article.C1 li li,
 article.manquer ol.nested>li,
 article.penser ol.nested>li,
 article.servir ol.nested>li,
@@ -530,7 +531,8 @@ article.part-4 ol.nested>li {
 article.A1 li.A1,
 article.A2 li.A2,
 article.B1 li.B1,
-article.B2 li.B2 {
+article.B2 li.B2,
+article.C1 li.C1 {
     display: list-item;
 }
 
