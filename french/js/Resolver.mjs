@@ -99,6 +99,7 @@ export class Resolver {
         "adjective-gender.html": "pdf/adjective-gender-number.pdf",
         "adjective-number.html": "pdf/adjective-gender-number.pdf",
         "il-est.html": "pdf/il-est.pdf",
+        "h-muet.html?A1&A2": "pdf/h-muet.doc.html",
         "mien-sien.html": "pdf/mon-ton-son.pdf",
         "conjugations.html?L%27imparfait": "pdf/imperfect.pdf",
         "imperfect.html": "pdf/imperfect.pdf",
@@ -140,6 +141,7 @@ export class Resolver {
 
         // B2
         "noun-gender-3.html": "pdf/noun-gender-2.pdf",
+        "h-muet.html?B1&B2&C1&title=2": "pdf/h-muet.doc.html",
         "ce-qui-ce-que.html": "pdf/ce-qui-ce-que.pdf",
         "dont-duquel.html": "pdf/dont-duquel.pdf",
         "lequel-duquel-auquel.html": "pdf/lequel-duquel-auquel.pdf",

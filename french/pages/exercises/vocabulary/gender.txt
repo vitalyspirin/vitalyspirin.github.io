@@ -16,3 +16,4 @@ une poche
 une dent
 une nourriture
 une mémoire
+un effet
