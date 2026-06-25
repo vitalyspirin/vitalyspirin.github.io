@@ -39,6 +39,41 @@
 
                 <iframe src="partials/cefr-checkboxes.html"
                     onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
+
+                <div id="number-of-exercises-stats">
+                    Exercices terminés:
+
+                    <span>
+                        Total:
+                        <span id="percent-of-completed-exercises-"></span>%
+                        (<span id="number-of-completed-exercises-"></span> sur
+                        <span id="number-of-all-exercises-"></span>).
+                    </span>
+
+                    <span>
+                        A1: <span id="percent-of-completed-exercises-A1"></span>%
+                        (<span id="number-of-completed-exercises-A1"></span> sur
+                        <span id="number-of-all-exercises-A1"></span>).
+                    </span>
+
+                    <span>
+                        A2: <span id="percent-of-completed-exercises-A2"></span>%
+                        (<span id="number-of-completed-exercises-A2"></span> sur
+                        <span id="number-of-all-exercises-A2"></span>).
+                    </span>
+
+                    <span>
+                        B1: <span id="percent-of-completed-exercises-B1"></span>%
+                        (<span id="number-of-completed-exercises-B1"></span> sur
+                        <span id="number-of-all-exercises-B1"></span>).
+                    </span>
+
+                    <span>
+                        B2: <span id="percent-of-completed-exercises-B2"></span>%
+                        (<span id="number-of-completed-exercises-B2"></span> sur
+                        <span id="number-of-all-exercises-B2"></span>).
+                    </span>
+                </div>
             </header>
 
 
@@ -82,7 +117,8 @@
                         <th data-key="noun-gender.html" class="A2 vocabulary" colspan="1">genre des noms</th>
                         <th data-key="noun-gender-2.html" class="A2 vocabulary" colspan="1">genre des noms 2
                         </th>
-                        <th data-key="h-muet.html?A1&amp;A2" class="A2 vocabulary" colspan="1">H&nbsp;muet ou aspiré</th>
+                        <th data-key="h-muet.html?A1&amp;A2" class="A2 vocabulary" colspan="1">H&nbsp;muet ou aspiré
+                        </th>
                         <th data-key="avoir-etre.html" class="A2 conjugations" colspan="1">Avoir ou Être
                         </th>
                         <th data-key="adjective-position.html" class="A2 vocabulary difficult-exercise" colspan="1">
@@ -123,7 +159,8 @@
                         <th data-key="qui-que-dont-ou.html" class="B1 others" colspan="1">Qui Que Dont Où</th>
                         <th data-key="locative-prepositions.html?part-1" class="B1 prepositions" colspan="1">Espace et
                             ses prép.</th>
-                        <th data-key="locative-prepositions.html?part-2&amp;title=2" class="B1 prepositions" colspan="1">Espace et
+                        <th data-key="locative-prepositions.html?part-2&amp;title=2" class="B1 prepositions"
+                            colspan="1">Espace et
                             ses prép. 2</th>
                         <th data-key="locative-prepositions.html?part-3" class="B1 prepositions" colspan="1">Espace et
                             ses prép. 3</th>
@@ -155,7 +192,8 @@
                         <!-- B2 -->
                         <th data-key="noun-gender-3.html" class="B2 vocabulary" colspan="1">genre des noms 3
                         </th>
-                        <th data-key="h-muet.html?B1&amp;B2&amp;C1&amp;title=2" class="B2 vocabulary" colspan="1">H&nbsp;muet ou aspiré 2
+                        <th data-key="h-muet.html?B1&amp;B2&amp;C1&amp;title=2" class="B2 vocabulary" colspan="1">
+                            H&nbsp;muet ou aspiré 2
                         </th>
                         <th data-key="ce-qui-ce-que.html" class="B2 others" colspan="1">Ce&nbsp;qui Ce&nbsp;que
                             Ce&nbsp;dont Ce&nbsp;à&nbsp;quoi</th>
@@ -314,7 +352,8 @@
 
                         <!-- B2 -->
                         <th class="B2 vocabulary"><a href="exercises/vocabulary/noun-gender-3.html">texte</a></th>
-                        <th class="B2 vocabulary"><a href="exercises/vocabulary/h-muet.html?B1&amp;B2&amp;C1&amp;title=2">texte</a></th>
+                        <th class="B2 vocabulary"><a
+                                href="exercises/vocabulary/h-muet.html?B1&amp;B2&amp;C1&amp;title=2">texte</a></th>
 
                         <th class="B2 others"><a href="exercises/others/ce-qui-ce-que.html">texte</a></th>
                         <th class="B2 others"><a href="exercises/others/dont-duquel.html">texte</a></th>
@@ -463,7 +502,7 @@
                         <!-- B2 -->
                         <td class="B2 vocabulary" data-key="noun-gender-3.html"></td>
                         <td class="B2 vocabulary" data-key="h-muet.html?B1&amp;B2&amp;C1&amp;title=2"></td>
-                        
+
                         <td class="B2 others" data-key="ce-qui-ce-que.html"></td>
                         <td class="B2 others" data-key="dont-duquel.html"></td>
                         <td class="B2 others" data-key=""></td>

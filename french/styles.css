@@ -590,6 +590,17 @@ article.part-4 ol.nested>li.part-4 {
     accent-color: silver;
 }
 
+#number-of-exercises-stats {
+    margin: 0 0 2em 6em;
+    width: 75em;
+    text-align: left;
+}
+
+#number-of-exercises-stats>span {
+    display: inline-block;
+    width: 12em;
+}
+
 table {
     border-collapse: separate;
     border-spacing: 0;

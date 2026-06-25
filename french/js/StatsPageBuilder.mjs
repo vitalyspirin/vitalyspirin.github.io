@@ -93,8 +93,8 @@ export default class StatsPageBuilder {
                 newTableRowElement.classList.add('odd-week');
             }
 
-            if ((index < this.dates.length - 1) 
-                && Utils.subtractDates(date, this.dates[index+1]) > this.BREAK_LENGTH
+            if ((index < this.dates.length - 1)
+                && Utils.subtractDates(date, this.dates[index + 1]) > this.BREAK_LENGTH
             ) {
                 newTableRowElement.classList.add('long-break');
             }
@@ -106,7 +106,9 @@ export default class StatsPageBuilder {
             document.getElementsByName('number-of-days').item(0),
             HTMLInputElement
         ).value;
-        this.#ProcessRecentDates(numberOfRecentDays);
+        this.#processRecentDates(numberOfRecentDays);
+
+        this.#fillPercentStats();
 
         Types.assertType(document.querySelector('a.info-icon'), HTMLElement)
             .style.visibility = 'visible';
@@ -243,7 +245,7 @@ export default class StatsPageBuilder {
     /**
      * @param {number} numberOfRecentDays
      */
-    static #ProcessRecentDates(numberOfRecentDays) {
+    static #processRecentDates(numberOfRecentDays) {
         let dateCounter = 0;
 
         let trElement = document.querySelector('tbody tr:first-of-type');
@@ -287,5 +289,33 @@ export default class StatsPageBuilder {
             dateCounter++;
 
         } while (dateCounter < numberOfRecentDays);
+    }
+
+
+    static #fillPercentStats() {
+        ['', 'A1', 'A2', 'B1', 'B2'].forEach((value) => { this.#fillPercentStatsPerLevel(value) });
+    }
+
+
+    /**
+     * @param {string} level
+     */
+    static #fillPercentStatsPerLevel(level) {
+        let allExercises;
+        let completedExercises;
+
+        if (level == '') {
+            allExercises = document.querySelectorAll(`table thead tr:nth-child(3) th`).length;
+            completedExercises = document.querySelectorAll(`table tbody tr:first-child td.done-earlier`).length;
+        } else {
+            allExercises = document.querySelectorAll(`table thead tr:nth-child(3) th.${level}`).length;
+            completedExercises = document.querySelectorAll(`table tbody tr:first-child td.done-earlier.${level}`).length;
+        }
+
+        document.getElementById(`percent-of-completed-exercises-${level}`).innerText =
+            String(Math.floor(100 * completedExercises / allExercises));
+
+        document.getElementById(`number-of-completed-exercises-${level}`).innerText = String(completedExercises);
+        document.getElementById(`number-of-all-exercises-${level}`).innerText = String(allExercises);
     }
 }
