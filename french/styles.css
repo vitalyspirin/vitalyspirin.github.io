@@ -217,8 +217,12 @@ span.recent-days {
 
 .text h4 {
     color: var(--section-header-color);
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: left;
+}
+
+.text h3+h4 {
+    margin-top: -0.5em;
 }
 
 .text i {
