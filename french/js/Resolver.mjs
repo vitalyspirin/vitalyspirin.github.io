@@ -132,7 +132,6 @@ export class Resolver {
         "geographical-prepositions.html?part-2&title=2": "pdf/geographical-prepositions.doc.html",
         "geographical-prepositions.html?part-3&title=3": "pdf/geographical-prepositions.doc.html",
         "geographical-prepositions.html?part-4&title=4": "pdf/geographical-prepositions.doc.html",
-        "verbs-and-prepositions.html": "pdf/verbs-and-prepositions.doc.html",
         "verbs-and-prepositions.html?B1&title=2": "pdf/verbs-and-prepositions.doc.html",
         "manquer-penser-servir-jouer.html": "pdf/verbs-and-prepositions.doc.html",
         "verbs-and-prepositions.html?manquer&penser&servir&jouer&apprendre&demander&parler": "pdf/verbs-and-prepositions.doc.html",
@@ -162,7 +161,11 @@ export class Resolver {
         "conjugations.html?Le%20pass%C3%A9%20simple": "pdf/past-historic.pdf",
         "past-historic.html": "pdf/past-historic.pdf",
 
-        "conjugations.html?Conjugaisons%20m%C3%A9lang%C3%A9es": "#"
+        "conjugations.html?Conjugaisons%20m%C3%A9lang%C3%A9es": "#",
+
+        // full files (which parts are used for different levels)
+        "geographical-prepositions.html": "pdf/geographical-prepositions.doc.html",
+        "verbs-and-prepositions.html": "pdf/verbs-and-prepositions.doc.html"
     };
 
     /**
