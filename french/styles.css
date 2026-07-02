@@ -605,6 +605,10 @@ article.part-4 ol.nested>li.part-4 {
     width: 12em;
 }
 
+.stats-summary-ratio {
+    opacity: 0.5;
+}
+
 table {
     border-collapse: separate;
     border-spacing: 0;
