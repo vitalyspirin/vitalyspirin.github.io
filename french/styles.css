@@ -99,8 +99,17 @@ header h2 {
 
 .speakerphone {
     fill: rgb(95, 99, 104);
+}
+
+section:not(.radio-buttons) .speakerphone {
     display: flex;
     align-items: center;
+}
+
+/* for page h-muet.html */
+section.radio-buttons .speakerphone {
+    position: relative;
+    top: 0.30em;
 }
 
 .verb-block .conjugation-line {
@@ -442,8 +451,8 @@ td.best-result {
 }
 
 /* we need not(.span-third-two-thirds) for exercise_devoir_pouvoir_falloir_vouloir.html */
-.text section:not(.first-span-grows):not(.no-growth)>*:not(.span-third-two-thirds) li span:nth-of-type(2):not(:has(i)),
-.text section li span:nth-of-type(3) {
+.text section:not(.first-span-grows):not(.no-growth):not(.radio-buttons)>*:not(.span-third-two-thirds) li span:nth-of-type(2):not(:has(i)),
+.text section:not(.radio-buttons) li span:nth-of-type(3) {
     display: inline-flex;
 }
 
@@ -479,7 +488,8 @@ td.best-result {
 }
 
 /* for input[type="radio"] in present subjunctive */
-.text section.span-third li label {
+.text section.span-third li label,
+.text section.radio-buttons li label {
     width: 6em;
     margin-right: 2em;
 }
@@ -503,19 +513,19 @@ td.best-result {
 }
 
 /* verbs-and-prepositions.html, h-muet.html */
-article.A1 li li,
+article.A1 li.CEFR,
 article.A1 li.section-to-practice-one-verbe,
 article.A1 li.revision,
-article.A2 li li,
+article.A2 li.CEFR,
 article.A2 li.section-to-practice-one-verbe,
 article.A2 li.revision,
-article.B1 li li,
+article.B1 li.CEFR,
 article.B1 li.section-to-practice-one-verbe,
 article.B1 li.revision,
-article.B2 li li,
+article.B2 li.CEFR,
 article.B2 li.section-to-practice-one-verbe,
 article.B2 li.revision,
-article.C1 li li,
+article.C1 li.CEFR,
 article.manquer ol.nested>li,
 article.penser ol.nested>li,
 article.servir ol.nested>li,
@@ -524,7 +534,7 @@ article.apprendre ol.nested>li,
 article.demander ol.nested>li,
 article.parler ol.nested>li,
 article.revision ol.nested>li,
-/* locative-prepositions.html */
+/* geographical-prepositions.html */
 article.part-1 ol.nested>li,
 article.part-2 ol.nested>li,
 article.part-3 ol.nested>li,
@@ -549,7 +559,7 @@ article.apprendre ol.nested>li.apprendre,
 article.demander ol.nested>li.demander,
 article.parler ol.nested>li.parler,
 article.revision ol.nested>li.revision,
-/* locative-prepositions.html */
+/* geographical-prepositions.html */
 article.part-1 ol.nested>li.part-1,
 article.part-2 ol.nested>li.part-2,
 article.part-3 ol.nested>li.part-3,
