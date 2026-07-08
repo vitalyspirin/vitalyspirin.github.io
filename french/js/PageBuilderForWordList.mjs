@@ -40,7 +40,8 @@ export default class PageBuilderForWordList {
 
             /** @type HTMLElement */
             let speakerPhoneElement = worldLiBlock.querySelector(".speakerphone");
-            let audioFullFileName = Resolver.AUDIO_BASE_PATH + Utils.getAudioFileUrl(word, fileFolder, 'mp3');
+            let audioFullFileName = Resolver.AUDIO_BASE_PATH +
+                Utils.getAudioFileUrl(word, fileFolder, 'mp3');
 
             SpeakerPhone.init(speakerPhoneElement, audioFullFileName);
 

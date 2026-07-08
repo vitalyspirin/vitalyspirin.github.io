@@ -3,6 +3,7 @@
 "use strict";
 
 import { Resolver } from './Resolver.mjs';
+import { SpeakerPhone } from './SpeakerPhone.mjs';
 import Types from './Types.mjs';
 import Utils from './Utils.mjs';
 
@@ -201,7 +202,7 @@ export class PageBuilderForManyTenses {
         labelElement.textContent = pronoun;
         labelElement.title = verb;
 
-        let id = (pronoun + verb).replace(/\s+/g, '');;
+        let id = (pronoun + verb).replace(/\s+/g, '');
 
         labelElement.htmlFor = id;
         let inputElement = newInputBlock.querySelector("input");
@@ -215,32 +216,11 @@ export class PageBuilderForManyTenses {
 
         /** @type HTMLElement */
         let speakerPhoneElement = newInputBlock.querySelector(".speakerphone");
+        let audioFullFileName = Resolver.AUDIO_BASE_PATH +
+            Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
+        let jsonIndex = (pronoun + ' ' + verb).replace(/' /g, "'"); // compare: "J'aurai" vs "Tu aura"
 
-        speakerPhoneElement.onclick = async (/** @type Event */event) => {
-            let audioElement = Types.assertType(event.currentTarget, HTMLElement)
-                .getElementsByTagName("audio")[0];
-
-            if (audioElement.src == '') {
-                let fullFileName = Resolver.AUDIO_BASE_PATH + Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
-
-                const response = await fetch(fullFileName)
-                if (!response.ok) {
-                    throw new Error(`Response status: ${response.status}`);
-                }
-
-                const json = await response.json();
-
-                let ind = pronoun;
-                if (ind.slice(-1) != "'") {
-                    ind += ' '; // compare: "J'aurai" vs "Tu aura"
-                }
-                ind += verb;
-
-                audioElement.src = json[ind];
-            }
-
-            audioElement.play();
-        }
+        SpeakerPhone.init(speakerPhoneElement, audioFullFileName, jsonIndex);
 
         return newInputBlock;
     } // static fillInputBlock(newInputBlock, pronoun, verb)
