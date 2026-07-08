@@ -4,6 +4,8 @@
 
 // @ts-ignore
 import * as fs from 'fs';
+// @ts-ignore
+import { Buffer } from 'buffer';
 import GoogleTranslateAudio from './GoogleTranslateAudio.mjs';
 
 
@@ -16,6 +18,15 @@ export default class AudioFile {
      */
     addString(str) {
         this.stringList.push(str);
+    }
+
+    /**
+     * @param {string} fileName
+     */
+    async saveAsBinary(fileName) {
+        const binaryForFile = await GoogleTranslateAudio.getAudioBinary(this.stringList[0]);
+
+        AudioFile.writeToFile(Buffer.from(binaryForFile), fileName);
     }
 
     /**
@@ -37,8 +48,7 @@ export default class AudioFile {
 
         textForFile += "\n}";
 
-        // @ts-ignore
-        this.constructor.writeToFile(textForFile, fileName);
+        AudioFile.writeToFile(textForFile, fileName);
 
     } // function save(fileName)
 

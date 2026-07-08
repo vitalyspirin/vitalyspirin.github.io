@@ -13,10 +13,10 @@
     <script type="module">
         "use strict";
 
-        import hMuet from '../../../js/vocabulary/hMuet.mjs';
+        import hMuet, { audioFileFolder } from '../../../js/vocabulary/hMuet.mjs';
         import PageBuilderForWordList from '../../../js/PageBuilderForWordList.mjs';
 
-        PageBuilderForWordList.build(hMuet);
+        PageBuilderForWordList.build(hMuet, audioFileFolder);
 
         import Exercise from '../../../js/Exercise.mjs';
         Exercise.init();

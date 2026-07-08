@@ -34,6 +34,8 @@ import verbsInPresentPerfectSubjunctiveTense, { audioFileFolder as audioFileFold
 import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/conjugations/verbsInFuturePerfectTense.mjs';
 import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHistoricTense } from '../js/conjugations/verbsInPastHistoricTense.mjs';
 
+import wordList, { audioFileFolder } from '../js/vocabulary/hMuet.mjs';
+
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
 //saveAudioFilesForVerbList(verbsInImperfectTense, audioFileFolderForImperfectTense);
@@ -51,10 +53,38 @@ import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHist
 // saveAudioFilesBase64ForVerbList(verbsInPresentSubjunctiveTense, audioFileFolderForPresentSubjunctiveTense);
 // saveAudioFilesBase64ForVerbList(verbsInPresentPerfectSubjunctiveTense, audioFileFolderForPresentPerfectSubjunctiveTense);
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
- saveAudioFilesBase64ForVerbList(verbsInPastHistoricTense, audioFileFolderForPastHistoricTense);
+//  saveAudioFilesBase64ForVerbList(verbsInPastHistoricTense, audioFileFolderForPastHistoricTense);
 
 // saveAudioFilesBase64ForInfinitive("Se lever", verbsInConditionalPresentTense["Se lever"], audioFileFolderForConditionalPresentTense);
 
+saveAudioFilesForWordList(wordList, audioFileFolder);
+
+/**
+ * @param {Record<string, Record<string, string>>} wordList
+ * @param {string} fileFolder
+ */
+function saveAudioFilesForWordList(wordList, fileFolder) {
+    let counter = 0;
+    for (let word in wordList) {
+
+        let audioStr;
+        if (wordList[word]['article'] === "l'") {
+            audioStr = wordList[word]['article'] + word;
+        } else {
+            audioStr = wordList[word]['article'] + ' ' + word;
+        }
+
+        const audioFile = new AudioFile();
+        audioFile.addString(audioStr);
+        const audioFileName = Utils.getAudioFileUrl(word, fileFolder, 'mp3');
+        audioFile.saveAsBinary(audioFileName);
+        console.log(audioFileName);
+
+        counter++;
+    }
+
+    console.log("\n" + counter + ' files saved.');
+}
 
 /**
  * @param {Record<string, Record<string, string>>} verbList

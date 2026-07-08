@@ -7,6 +7,30 @@ export default class GoogleTranslateAudio {
     /**
      * @param {string} str
      */
+    static async getAudioBinary(str) {
+
+        // Google Translate reads words beginning with é as "E accent aigu" (unless
+        // there is an apostrophe infront of it)
+        str = str.replace(" é", "'é");
+
+        const result = fetch(this.getAudioUrl(str))
+            .then((response) => {
+                if (response.status === 200) {
+                    return response.arrayBuffer();
+                } else {
+                    throw new Error("Something went wrong on API server!");
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
+        return result;
+    }
+
+    /**
+     * @param {string} str
+     */
     static async getAudioBase64(str) {
 
         // Google Translate reads words beginning with é as "E accent aigu" (unless
@@ -26,7 +50,7 @@ export default class GoogleTranslateAudio {
             });
 
         return result;
-    } // function getAudioBase64(text)
+    }
 
 
     /**
