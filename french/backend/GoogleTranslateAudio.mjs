@@ -6,6 +6,7 @@ export default class GoogleTranslateAudio {
 
     /**
      * @param {string} str
+     * @return {Promise<ArrayBuffer>}
      */
     static async getAudioBinary(str) {
 
@@ -23,6 +24,7 @@ export default class GoogleTranslateAudio {
             })
             .catch((error) => {
                 console.error(error);
+                throw error;
             });
 
         return result;
@@ -30,6 +32,7 @@ export default class GoogleTranslateAudio {
 
     /**
      * @param {string} str
+     * @return {Promise<string>}
      */
     static async getAudioBase64(str) {
 
@@ -47,6 +50,7 @@ export default class GoogleTranslateAudio {
             })
             .catch((error) => {
                 console.error(error);
+                throw error;
             });
 
         return result;
