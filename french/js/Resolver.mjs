@@ -93,7 +93,7 @@ export class Resolver {
 
         // A2
         "noun-gender.html": "pdf/noun-gender-number.pdf",
-        "noun-gender-2.html": "pdf/noun-gender-2.pdf",
+        "noun-gender-2.html?A1&A2&title=2": "pdf/noun-gender-2.pdf",
         "avoir-etre.html": "../pdf/avoir-etre.pdf",
         "adjective-position.html": "pdf/adjective-position.pdf",
         "adjective-gender.html": "pdf/adjective-gender-number.pdf",
@@ -139,7 +139,7 @@ export class Resolver {
         "present-subjunctive.html": "pdf/present-subjunctive.pdf",
 
         // B2
-        "noun-gender-3.html": "pdf/noun-gender-2.pdf",
+        "noun-gender-2.html?B1&B2&title=3": "pdf/noun-gender-2.pdf",
         "h-muet.html?B1&B2&C1&title=2": "pdf/h-muet.doc.html",
         "ce-qui-ce-que.html": "pdf/ce-qui-ce-que.pdf",
         "dont-duquel.html": "pdf/dont-duquel.pdf",

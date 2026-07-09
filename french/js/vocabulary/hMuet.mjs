@@ -7,7 +7,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'vocabulary/hmuet';
+export const audioFileFolder = 'vocabulary/h-muet';
 
 export default {
     "habileté": {

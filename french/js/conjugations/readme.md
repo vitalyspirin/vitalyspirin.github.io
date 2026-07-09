@@ -27,4 +27,4 @@ Words to have in all tenses:
 - payer
 - offrir
 - amener
-
+- choisir

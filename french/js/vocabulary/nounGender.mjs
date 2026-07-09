@@ -6,7 +6,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'vocabulary/noungender';
+export const audioFileFolder = 'vocabulary/noun-gender';
 
 export default {
     "casquette": {
@@ -19,7 +19,7 @@ export default {
     },
     "cheval": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "poire": {
         article: "une",
@@ -35,23 +35,23 @@ export default {
     },
     "leçon": {
         article: "une",
-        level: "A2"
+        level: "A1"
     },
     "pluie": {
         article: "une",
-        level: "A2"
+        level: "A1"
     },
     "eau": {
         article: "une",
-        level: "A2"
+        level: "A1"
     },
     "paille": {
         article: "une",
-        level: "A2"
+        level: "B1"
     },
     "restaurant": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "chandail": {
         article: "un",
@@ -63,43 +63,43 @@ export default {
     },
     "été": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "musée": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "portable": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "devoir": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "exercice": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "chapeau": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "glaçon": {
         article: "un",
-        level: "A2"
+        level: "B1"
     },
     "princesse": {
         article: "une",
-        level: "A2"
+        level: "B1"
     },
     "page": {
         article: "une",
-        level: "A2"
+        level: "A1"
     },
     "parapluie": {
         article: "un",
-        level: "A2"
+        level: "A1"
     },
     "garage": {
         article: "un",
@@ -115,7 +115,7 @@ export default {
     },
     "plage": {
         article: "une",
-        level: "A2"
+        level: "A1"
     },
     "année": {
         article: "une",
@@ -127,7 +127,7 @@ export default {
     },
     "fleur": {
         article: "une",
-        level: "A2"
+        level: "A1"
     },
     "cartable": {
         article: "un",
@@ -139,7 +139,7 @@ export default {
     },
     "sucrier": {
         article: "un",
-        level: "A2"
+        level: "B1"
     },
     "sable": {
         article: "un",
@@ -151,23 +151,23 @@ export default {
     },
     "dizaine": {
         article: "une",
-        level: "A2"
+        level: "B1"
     },
     "épice": {
         article: "une",
-        level: "A2"
+        level: "B1"
     },
     "karaté": {
         article: "un",
-        level: "A2"
+        level: "B1"
     },
     "érable": {
         article: "un",
-        level: "A2"
+        level: "B1"
     },
     "carnaval": {
         article: "un",
-        level: "A2"
+        level: "B1"
     },
     "calendrier": {
         article: "un",
@@ -179,23 +179,23 @@ export default {
     },
     "promenade": {
         article: "une",
-        level: "B2"
+        level: "A1"
     },
     "laboratoire": {
         article: "un",
-        level: "B2"
+        level: "B1"
     },
     "cendrier": {
         article: "un",
-        level: "B2"
+        level: "B1"
     },
     "pneu": {
         article: "un",
-        level: "B2"
+        level: "A2"
     },
     "préparation": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "célébration": {
         article: "une",
@@ -207,39 +207,39 @@ export default {
     },
     "parade": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "présence": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "confiance": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "câble": {
         article: "un",
-        level: "B2"
+        level: "B1"
     },
     "crochet": {
         article: "un",
-        level: "B2"
+        level: "B1"
     },
     "rage": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "flamme": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "fable": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "messe": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "jugement": {
         article: "un",
@@ -255,15 +255,15 @@ export default {
     },
     "police": {
         article: "une",
-        level: "B2"
+        level: "A1"
     },
     "squelette": {
         article: "un",
-        level: "B2"
+        level: "B1"
     },
     "parenté": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "domaine": {
         article: "un",
@@ -279,7 +279,7 @@ export default {
     },
     "justice": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "colisée": {
         article: "un",
@@ -287,7 +287,7 @@ export default {
     },
     "sueur": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "pauvreté": {
         article: "une",
@@ -295,7 +295,7 @@ export default {
     },
     "paresse": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "capitalisme": {
         article: "un",
@@ -315,7 +315,7 @@ export default {
     },
     "silence": {
         article: "un",
-        level: "B2"
+        level: "A1"
     },
     "statuette": {
         article: "une",
@@ -323,7 +323,7 @@ export default {
     },
     "affaire": {
         article: "une",
-        level: "B2"
+        level: "B1"
     },
     "parlement": {
         article: "un",

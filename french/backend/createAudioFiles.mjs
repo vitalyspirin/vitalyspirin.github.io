@@ -35,6 +35,7 @@ import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/c
 import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHistoricTense } from '../js/conjugations/verbsInPastHistoricTense.mjs';
 
 import wordList, { audioFileFolder } from '../js/vocabulary/hMuet.mjs';
+import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/nounGender.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
@@ -57,7 +58,9 @@ import wordList, { audioFileFolder } from '../js/vocabulary/hMuet.mjs';
 
 // saveAudioFilesBase64ForInfinitive("Se lever", verbsInConditionalPresentTense["Se lever"], audioFileFolderForConditionalPresentTense);
 
-saveAudioFilesForWordList(wordList, audioFileFolder);
+// saveAudioFilesForWordList(wordList, audioFileFolder);
+saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+
 
 /**
  * @param {Record<string, Record<string, string>>} wordList
