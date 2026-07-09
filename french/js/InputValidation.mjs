@@ -118,7 +118,6 @@ export default class InputValidation {
 
         const timeDiff = Date.now() - ErrorCounter.startTimestamp;
         errorCounterObj.duration += timeDiff;
-        ErrorCounter.startTimestamp = null;
 
         // to catch a bug when duration becomes huge
         if (timeDiff > 1000 * 60 * 60) {
