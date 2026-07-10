@@ -381,5 +381,11 @@ export default {
     "habilleuse": {
         article: "l'",
         level: "B2"
+    },
+
+    // added by me =>
+    "hymne": {
+        article: "l'",
+        level: "B1"
     }
 }

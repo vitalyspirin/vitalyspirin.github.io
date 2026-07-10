@@ -164,6 +164,8 @@ export class Resolver {
         "conjugations.html?Conjugaisons%20m%C3%A9lang%C3%A9es": "#",
 
         // full files (which parts are used for different levels)
+        "noun-gender-2.html": "pdf/noun-gender-2.pdf",
+        "h-muet.html": "pdf/h-muet.doc.html",
         "geographical-prepositions.html": "pdf/geographical-prepositions.doc.html",
         "verbs-and-prepositions.html": "pdf/verbs-and-prepositions.doc.html"
     };

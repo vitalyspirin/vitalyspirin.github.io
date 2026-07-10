@@ -328,5 +328,15 @@ export default {
     "parlement": {
         article: "un",
         level: "B2"
+    },
+
+    // added by me =>
+    "entreprise": {
+        article: "une",
+        level: "A2"
+    },
+    "evenement": {
+        article: "un",
+        level: "A2"
     }
 }
