@@ -18,6 +18,7 @@ import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHist
 
 export class Resolver {
     static AUDIO_BASE_PATH = '../../';
+    static AUDIO_SUBFOLDER_FOR_CONJUGATIONS = 'conjugations';
 
     /** @type Record<string, {folder: string, verbList: any}> */
     static map = {

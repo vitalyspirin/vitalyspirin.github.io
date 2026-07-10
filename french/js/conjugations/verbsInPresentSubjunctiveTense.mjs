@@ -7,7 +7,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'presentsubjunctive';
+export const audioFileFolder = 'present-subjunctive';
 
 export default {
 	Avoir: {

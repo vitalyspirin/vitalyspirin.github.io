@@ -7,7 +7,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'futureperfect';
+export const audioFileFolder = 'future-perfect';
 
 export default {
     Aller: {

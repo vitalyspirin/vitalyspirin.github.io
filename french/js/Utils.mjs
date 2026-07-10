@@ -2,6 +2,8 @@
 
 "use strict";
 
+import { Resolver } from "./Resolver.mjs";
+
 export default class Utils {
 
     /**
@@ -19,8 +21,11 @@ export default class Utils {
                 break;
 
             case 'json':
-                result = '../audio/' + fileFolder + '/' +
-                    this.removeSpecialChars(str) + '_' + fileFolder + '.' + extention;
+                // fileFolder can be 'present-perfect-subjunctive' so to form a file name
+                // remove dashes
+                result = '../audio/' + Resolver.AUDIO_SUBFOLDER_FOR_CONJUGATIONS + '/' +
+                    fileFolder + '/' + this.removeSpecialChars(str) + '_' +
+                    fileFolder.replace(/-/g, '') + '.' + extention;
                 break;
 
             default: throw new Error('Uknown extention: "' + extention + '"');

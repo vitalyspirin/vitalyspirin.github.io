@@ -5,7 +5,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'pasthistoric';
+export const audioFileFolder = 'past-historic';
 
 export default {
 	Aller: {

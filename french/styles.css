@@ -169,13 +169,13 @@ span.recent-days {
     vertical-align: top;
 }
 
-.conjugations-for-one-tense-block.presentsubjunctive label,
-.conjugations-for-one-tense-block.presentperfectsubjunctive label {
+.conjugations-for-one-tense-block.present-subjunctive label,
+.conjugations-for-one-tense-block.present-perfect-subjunctive label {
     width: 4.2em;
 }
 
-.conjugations-for-one-tense-block.presentsubjunctive input,
-.conjugations-for-one-tense-block.presentperfectsubjunctive input {
+.conjugations-for-one-tense-block.present-subjunctive input,
+.conjugations-for-one-tense-block.present-perfect-subjunctive input {
     width: 7.8em;
 }
 

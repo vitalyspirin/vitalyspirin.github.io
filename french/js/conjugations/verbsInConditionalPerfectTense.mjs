@@ -7,7 +7,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'conditionalperfect';
+export const audioFileFolder = 'conditional-perfect';
 
 export default {
     Aller: {

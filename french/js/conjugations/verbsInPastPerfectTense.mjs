@@ -7,7 +7,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'pastperfect';
+export const audioFileFolder = 'past-perfect';
 
 export default {
     Aller: {
