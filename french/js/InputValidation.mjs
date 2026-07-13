@@ -65,9 +65,7 @@ export default class InputValidation {
         const self = InputValidation;
         self.#initialize(event);
 
-        if (ErrorCounter.startTimestamp === null) {
-            ErrorCounter.startTimestamp = Date.now();
-        }
+        ErrorCounter.startTimestamp = Date.now();
 
         if (!event.target.required) {
             ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
