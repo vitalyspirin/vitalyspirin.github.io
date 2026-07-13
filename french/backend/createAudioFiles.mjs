@@ -59,7 +59,8 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 // saveAudioFilesBase64ForInfinitive("Se lever", verbsInConditionalPresentTense["Se lever"], audioFileFolderForConditionalPresentTense);
 
 // saveAudioFilesForWordList(wordList, audioFileFolder);
-saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+saveAudioFileForOneWord('evenement', audioFileFolderNounGender);
 
 
 /**
@@ -77,16 +78,24 @@ function saveAudioFilesForWordList(wordList, fileFolder) {
             audioStr = wordList[word]['article'] + ' ' + word;
         }
 
-        const audioFile = new AudioFile();
-        audioFile.addString(audioStr);
-        const audioFileName = Utils.getAudioFileUrl(word, fileFolder, 'mp3');
-        audioFile.saveAsBinary(audioFileName);
-        console.log(audioFileName);
+        saveAudioFileForOneWord(audioStr, fileFolder);
 
         counter++;
     }
 
     console.log("\n" + counter + ' files saved.');
+}
+
+/**
+ * @param {string} audioStr 
+ * @param {string} fileFolder 
+ */
+function saveAudioFileForOneWord(audioStr, fileFolder) {
+    const audioFile = new AudioFile();
+    audioFile.addString(audioStr);
+    const audioFileName = Utils.getAudioFileUrl(audioStr, fileFolder, 'mp3');
+    audioFile.saveAsBinary(audioFileName);
+    console.log(audioFileName);
 }
 
 /**
