@@ -23,26 +23,11 @@ export default class Exercise {
      * @param {URLSearchParams} urlParams
      */
     static setTitle(urlParams) {
-        const titleElement = document.getElementsByTagName('h1').item(0);
-
         if (urlParams.has('title')) {
-            titleElement.innerText += ' ' + urlParams.get('title');
-        } else if (urlParams.size > 3) {
-            let titleStr = '';
+            document.getElementsByTagName('h1').item(0).innerText += ' ' + urlParams.get('title');
 
-            let i = 0;
-            urlParams.forEach((key, value) => {
-                console.log(value);
-                titleStr += value;
-                i++;
-                if (i < urlParams.size) {
-                    titleStr += ', ';
-                }
-            });
-
-            titleElement.innerText = titleStr;
+            document.getElementsByTagName('title').item(0).innerText += ' ' + urlParams.get('title');
         }
-
     }
 }
 
