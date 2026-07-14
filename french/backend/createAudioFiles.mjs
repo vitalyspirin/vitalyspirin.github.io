@@ -60,7 +60,7 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 
 // saveAudioFilesForWordList(wordList, audioFileFolder);
 // saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
-saveAudioFileForOneWord('evenement', audioFileFolderNounGender);
+saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
 
 
 /**
@@ -78,7 +78,7 @@ function saveAudioFilesForWordList(wordList, fileFolder) {
             audioStr = wordList[word]['article'] + ' ' + word;
         }
 
-        saveAudioFileForOneWord(audioStr, fileFolder);
+        saveAudioFileForOneWord(audioStr, word, fileFolder);
 
         counter++;
     }
@@ -88,14 +88,15 @@ function saveAudioFilesForWordList(wordList, fileFolder) {
 
 /**
  * @param {string} audioStr 
- * @param {string} fileFolder 
+ * @param {string} fileName
+ * @param {string} fileFolder
  */
-function saveAudioFileForOneWord(audioStr, fileFolder) {
+function saveAudioFileForOneWord(audioStr, fileName, fileFolder) {
     const audioFile = new AudioFile();
     audioFile.addString(audioStr);
-    const audioFileName = Utils.getAudioFileUrl(audioStr, fileFolder, 'mp3');
-    audioFile.saveAsBinary(audioFileName);
-    console.log(audioFileName);
+    const audioFileFullName = Utils.getAudioFileUrl(fileName, fileFolder, 'mp3');
+    audioFile.saveAsBinary(audioFileFullName);
+    console.log(audioFileFullName);
 }
 
 /**
