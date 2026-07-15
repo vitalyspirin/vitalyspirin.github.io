@@ -7,6 +7,7 @@ import Storage from './Storage.mjs';
 import StatsPageBuilder from './StatsPageBuilder.mjs';
 
 export class CheckboxesAndRadioButtons {
+
     static setValuesBasedOnConfig(self = this) {
         let page = window.location.pathname.split('/').pop() + window.location.search;
 
