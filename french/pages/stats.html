@@ -13,7 +13,7 @@
         "use strict";
 
         import StatsPageBuilder from '../js/StatsPageBuilder.mjs';
-        import { Checkboxes } from '../js/Checkboxes.mjs';
+        import { CheckboxesAndRadioButtons } from '../js/CheckboxesAndRadioButtons.mjs';
 
         initialize();
 
@@ -22,7 +22,7 @@
                 // wait till checkbox iframe is loaded
                 setTimeout(initialize, 20, self);
             } else {
-                Checkboxes.setCheckboxesBasedOnConfig();
+                CheckboxesAndRadioButtons.setValuesBasedOnConfig();
                 StatsPageBuilder.buildPage();
             }
         }
@@ -36,6 +36,27 @@
         <article class="difficult-exercise">
             <header>
                 <h1>Statistiques</h1>
+
+                <fieldset>
+                    <legend>Type de tableau</legend>
+
+                    <label class="mini not-disableable for-radio">
+                        <input type="radio" name="table-type" value="full" checked="checked" />Complet
+                    </label>
+
+                    <label class="mini not-disableable for-radio">
+                        <input type="radio" name="table-type" value="mini" />Mini
+                    </label>
+
+                    <span class="recent-dates">
+                        <label class="not-disableable for-radio">
+                            <input type="radio" name="table-type" value="recent-dates" data-unchecked="1" />
+                            Exercices
+                        </label>
+                        des <input type="number" name="number-of-days" value="10" /> derniers jours
+                    </span>
+
+                </fieldset>
 
                 <iframe src="partials/cefr-checkboxes.html"
                     onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
@@ -82,6 +103,7 @@
                         </span>
                     </span>
                 </div>
+
             </header>
 
 
@@ -90,6 +112,8 @@
                     <tr>
                         <th data-key="date" rowspan="3">date</th>
                         <th class="duration" rowspan="3">durée <br /><br />(heure:) min: sec</th>
+                        <th class="mini" rowspan="3">les exercices</th>
+
                         <th data-key="A1" class="A1 conjugations others vocabulary" colspan="14">A1
                         </th>
                         <th data-key="A2" class="A2 conjugations others tense-sequence prepositions vocabulary"
@@ -101,7 +125,7 @@
                             B2</th>
                         <th data-key="C1" class="C1 conjugations" colspan="2">C1</th>
                     </tr>
-                    <tr>
+                    <tr id="exercise-title">
                         <!-- A1 -->
                         <th data-key="noun-number.html" class="A1 vocabulary" colspan="1">nombre des noms</th>
                         <th data-key="present.html conjugations.html?Le%20pr%C3%A9sent" class="A1 conjugations"
@@ -238,7 +262,7 @@
                         <th data-key="past-historic.html conjugations.html?Le%20pass%C3%A9%20simple"
                             class="C1 conjugations" colspan="2">passé simple</th>
                     </tr>
-                    <tr>
+                    <tr id="exercise-type">
                         <!-- A1 -->
                         <th class="A1 vocabulary"><a href="exercises/vocabulary/noun-number.html">texte</a></th>
 
@@ -431,6 +455,7 @@
                     <tr>
                         <td data-key="date"></td>
                         <td class="duration" data-key="duration"></td>
+                        <td class="mini" data-key="mini"></td>
 
                         <!-- A1 -->
                         <td class="A1 vocabulary" data-key="noun-number.html"></td>

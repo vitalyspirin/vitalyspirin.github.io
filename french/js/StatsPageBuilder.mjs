@@ -60,6 +60,15 @@ export default class StatsPageBuilder {
      */
     static bestResults = {};
 
+    /** 
+     * @type Record<string, string> 
+     * 
+     * Example:
+     *  exercise_il_est.html: "Il est"
+     *  exercise_imperative.html: "Impératif"
+     */
+    static exerciseTitle = {};
+
     static TD_ATTRIBUTE = 'data-key';
     static TD_ATTRIBUTE_DATE_VALUE = 'date';
     static RECENT_DATES_CLASS_NAME = 'recent-dates';
@@ -122,6 +131,11 @@ export default class StatsPageBuilder {
     static #fillTableRow(tableRowElement, formattedDate, statsForOneDate) {
         let duration = 0;
 
+        const tdMiniElement = Types.assertType(
+            tableRowElement.querySelector('[data-key="mini"]'),
+            HTMLElement
+        );
+
         for (const tdElement of tableRowElement.children) {
             if (!(tdElement instanceof HTMLTableCellElement)) continue;
 
@@ -137,6 +151,11 @@ export default class StatsPageBuilder {
                 if (this.bestResults[statsPageKey] == statsForOneDate[statsPageKey]['result']) {
                     tdElement.classList.add('best-result');
                 }
+
+                if (tdMiniElement.innerText !== '') {
+                    tdMiniElement.innerText += '; ';
+                }
+                tdMiniElement.innerText += this.#getExerciseTitleFromStatsPageKey(statsPageKey);
             }
 
             if (this.earlestDates[statsPageKey] <= formattedDate) {
@@ -317,5 +336,25 @@ export default class StatsPageBuilder {
 
         document.getElementById(`number-of-completed-exercises-${level}`).innerText = String(completedExercises);
         document.getElementById(`number-of-all-exercises-${level}`).innerText = String(allExercises);
+    }
+
+    /**
+     * @param {string} statsPageKey 
+     * @returns string
+     */
+    static #getExerciseTitleFromStatsPageKey(statsPageKey) {
+        if (!this.exerciseTitle.hasOwnProperty(statsPageKey)) {
+
+            // tr#exercise-title - second row in a table (after row of A1, A2, B1...)
+            let trElement = document.getElementById('exercise-title');
+            const exerciseTitle = trElement.querySelector('[data-key*="' + statsPageKey + '"]').textContent;
+            this.exerciseTitle[statsPageKey] = exerciseTitle;
+
+            trElement = document.getElementById('exercise-type');
+            const exerciseType = trElement.querySelector('[href*="' + statsPageKey + '"]').textContent;
+            this.exerciseTitle[statsPageKey] += ' (' + exerciseType + ')';
+        }
+
+        return this.exerciseTitle[statsPageKey];
     }
 }

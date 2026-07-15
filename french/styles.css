@@ -130,12 +130,12 @@ input[type="text"].failed:not(:invalid) {
 }
 
 /* for radio button */
-label:has(input[type="radio"]:checked:not(:required)) {
+article.text label:has(input[type="radio"]:checked:not(:required)) {
     background-color: #fc8181;
 }
 
 /* add transparent border to keep size the same */
-label:not(.failed):has(input[type="radio"]),
+article.text label:not(.failed):has(input[type="radio"]),
 li span:has(+span),
 /* for concordance-future.html => */
 div span:has(+span) {
@@ -153,14 +153,14 @@ label.failed {
     display: none;
 }
 
-header label.for-checkbox {
+header #checkboxes-to-choose-tenses label.for-checkbox {
     display: inline-block;
     width: 24%;
     margin: 0.5em 0;
     vertical-align: top;
 }
 
-header label:last-of-type {
+header #checkboxes-to-choose-tenses label:last-of-type {
     margin-bottom: 2em;
 }
 
@@ -575,32 +575,74 @@ article.part-4 ol.nested>li.part-4 {
     font-style: italic;
 }
 
+/* for Stats and Index pages */
+/*#stats-page*/
+fieldset {
+    width: 64em;
+    margin: 2em auto;
+    padding: 1em 1em;
+    text-align: left;
+}
+
+#stats-page legend {
+    text-align: left;
+}
+
+#stats-page legend label:last-of-type {
+    margin-left: 3em;
+}
+
 #checkboxes {
-    width: 75em;
-    margin: auto;
+    te xt-align: center;
+}
+
+fieldset
+
+/*#checkboxes #exercise-types*/
+label {
+    display: inline-block;
+    width: 12.5em;
+}
+
+fieldset
+
+/*#checkboxes #exercise-types*/
+label.for-radio {
+    display: inline-block;
+    width: 6em;
+}
+
+fieldset #exercise-types label.for-checkbox {
+    margin-bottom: 2em;
+    display: inline-block;
+    width: 12.5em;
+    text-align: left;
+}
+
+#checkboxes #language-levels {
     text-align: center;
 }
 
-#checkboxes #exercise-types label {
-    display: inline-block;
-    width: 19%;
-}
-
 #checkboxes #language-levels label {
-    display: inline-block;
     width: 7%;
 }
 
-#checkboxes input[name="number-of-days"] {
+#checkboxes label.mini {
+    margin-right: 2em;
+}
+
+input[name="number-of-days"] {
     width: 2.5em;
 }
 
-.recent-dates #checkboxes label:not(.not-disableable) {
+.recent-dates #checkboxes label:not(.not-disableable),
+.mini #checkboxes label:not(.not-disableable) {
     color: dimgrey;
     pointer-events: none;
 }
 
-.recent-dates #checkboxes label:not(.not-disableable) input {
+.recent-dates #checkboxes label:not(.not-disableable) input,
+.mini #checkboxes label:not(.not-disableable) input {
     accent-color: silver;
 }
 
@@ -680,6 +722,15 @@ td.done-earlier {
 
 td.date {
     width: 5.5em;
+}
+
+td.mini {
+    width: 50em;
+}
+
+#stats-page article:not(.mini) td.mini {
+    /* otherwise other columns will have big height because of this column */
+    white-space: nowrap;
 }
 
 #stats-page thead tr:first-child th {
@@ -767,13 +818,14 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 }
 
 #stats-page article.duration .duration,
-#stats-page article.conjugations:not(.recent-dates) .conjugations,
-#stats-page article.conjugations-plus:not(.recent-dates) .conjugations-plus,
-#stats-page article.tense-sequence:not(.recent-dates) .tense-sequence,
-#stats-page article.others:not(.recent-dates) .others,
-#stats-page article.prepositions:not(.recent-dates) .prepositions,
-#stats-page article.vocabulary:not(.recent-dates) .vocabulary,
-#stats-page article.recent-dates table#stats-table .recent-dates {
+#stats-page article.conjugations:not(.recent-dates):not(.mini) .conjugations,
+/*#stats-page article.conjugations-plus:not(.recent-dates) .conjugations-plus,*/
+#stats-page article.tense-sequence:not(.recent-dates):not(.mini) .tense-sequence,
+#stats-page article.others:not(.recent-dates):not(.mini) .others,
+#stats-page article.prepositions:not(.recent-dates):not(.mini) .prepositions,
+#stats-page article.vocabulary:not(.recent-dates):not(.mini) .vocabulary,
+#stats-page article.recent-dates table#stats-table .recent-dates,
+#stats-page article.mini table#stats-table .mini {
     max-width: none;
     visibility: visible;
     padding: 0.25em;
