@@ -160,17 +160,18 @@ export default class StatsPageBuilder {
 
                 let miniElementForExercise = miniElementForExerciseInTemplate.cloneNode(true);
                 miniElementForExercise.innerHTML = this.#getExerciseTitleFromStatsPageKey(statsPageKey);
-                tdMiniElement.append(miniElementForExercise);
 
-                if (this.earlestDates[statsPageKey] < formattedDate) {
-                    tdElement.classList.add('done-earlier');
-                } else if (this.earlestDates[statsPageKey] == formattedDate) {
-                    tdElement.classList.add('done-earlier');
+                if (this.earlestDates[statsPageKey] == formattedDate) {
                     miniElementForExercise.classList.add('first-time');
                 }
+
+                tdMiniElement.append(miniElementForExercise);
             }
 
-        }
+            if (this.earlestDates[statsPageKey] <= formattedDate) {
+                tdElement.classList.add('done-earlier');
+            }
+        } // for (const tdElement of tableRowElement.children) {
 
         const dateCell = Types.assertType(
             tableRowElement.querySelector('[data-key="date"]'),
