@@ -136,6 +136,12 @@ export default class StatsPageBuilder {
             HTMLElement
         );
 
+        const templateMiniElementForExerciseTitle = Types.assertType(
+            document.getElementById('template-exercise-title-for-mini'),
+            HTMLElement
+        );
+        const miniElementForExerciseInTemplate = templateMiniElementForExerciseTitle.content.firstElementChild;
+
         for (const tdElement of tableRowElement.children) {
             if (!(tdElement instanceof HTMLTableCellElement)) continue;
 
@@ -152,15 +158,18 @@ export default class StatsPageBuilder {
                     tdElement.classList.add('best-result');
                 }
 
-                if (tdMiniElement.innerText !== '') {
-                    tdMiniElement.innerText += '; ';
+                let miniElementForExercise = miniElementForExerciseInTemplate.cloneNode(true);
+                miniElementForExercise.innerHTML = this.#getExerciseTitleFromStatsPageKey(statsPageKey);
+                tdMiniElement.append(miniElementForExercise);
+
+                if (this.earlestDates[statsPageKey] < formattedDate) {
+                    tdElement.classList.add('done-earlier');
+                } else if (this.earlestDates[statsPageKey] == formattedDate) {
+                    tdElement.classList.add('done-earlier');
+                    miniElementForExercise.classList.add('first-time');
                 }
-                tdMiniElement.innerText += this.#getExerciseTitleFromStatsPageKey(statsPageKey);
             }
 
-            if (this.earlestDates[statsPageKey] <= formattedDate) {
-                tdElement.classList.add('done-earlier');
-            }
         }
 
         const dateCell = Types.assertType(
@@ -347,7 +356,8 @@ export default class StatsPageBuilder {
 
             // tr#exercise-title - second row in a table (after row of A1, A2, B1...)
             let trElement = document.getElementById('exercise-title');
-            const exerciseTitle = trElement.querySelector('[data-key*="' + statsPageKey + '"]').textContent;
+            const thElement = trElement.querySelector('[data-key*="' + statsPageKey + '"]');
+            const exerciseTitle = thElement.textContent.replace(/\n/g, '');
             this.exerciseTitle[statsPageKey] = exerciseTitle;
 
             trElement = document.getElementById('exercise-type');
