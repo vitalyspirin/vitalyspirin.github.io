@@ -363,7 +363,9 @@ export default class StatsPageBuilder {
 
             trElement = document.getElementById('exercise-type');
             const exerciseType = trElement.querySelector('[href*="' + statsPageKey + '"]').textContent;
-            this.exerciseTitle[statsPageKey] += ' (' + exerciseType + ')';
+            if (exerciseType === 'liste') {
+                this.exerciseTitle[statsPageKey] += ' (' + exerciseType + ')';
+            }
         }
 
         return this.exerciseTitle[statsPageKey];
