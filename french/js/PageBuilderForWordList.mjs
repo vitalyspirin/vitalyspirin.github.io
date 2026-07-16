@@ -2,6 +2,7 @@
 
 "use strict";
 
+import HtmlHelper from './HtmlHelper.mjs';
 import { Resolver } from './Resolver.mjs';
 import { SpeakerPhone } from './SpeakerPhone.mjs';
 import Types from './Types.mjs';
@@ -48,7 +49,7 @@ export default class PageBuilderForWordList {
             wordList.append(worldLiBlock);
         };
 
-
+        HtmlHelper.randomizeLiList(wordList);
     }
 
 }
