@@ -5,6 +5,8 @@
 "use strict";
 
 // @ts-ignore
+import * as fs from 'fs';
+// @ts-ignore
 import { exec } from 'child_process';
 
 import Utils from '../js/Utils.mjs';
@@ -59,15 +61,16 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 // saveAudioFilesBase64ForInfinitive("Se lever", verbsInConditionalPresentTense["Se lever"], audioFileFolderForConditionalPresentTense);
 
 // saveAudioFilesForWordList(wordList, audioFileFolder);
-// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
-saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
+saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+// saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
 
 
 /**
  * @param {Record<string, Record<string, string>>} wordList
  * @param {string} fileFolder
+ * @param {boolean} onlyIfNotExists
  */
-function saveAudioFilesForWordList(wordList, fileFolder) {
+function saveAudioFilesForWordList(wordList, fileFolder, onlyIfNotExists = true) {
     let counter = 0;
     for (let word in wordList) {
 
@@ -78,7 +81,7 @@ function saveAudioFilesForWordList(wordList, fileFolder) {
             audioStr = wordList[word]['article'] + ' ' + word;
         }
 
-        saveAudioFileForOneWord(audioStr, word, fileFolder);
+        saveAudioFileForOneWord(audioStr, word, fileFolder, onlyIfNotExists);
 
         counter++;
     }
@@ -90,13 +93,16 @@ function saveAudioFilesForWordList(wordList, fileFolder) {
  * @param {string} audioStr 
  * @param {string} fileName
  * @param {string} fileFolder
+ * @param {boolean} onlyIfNotExists
  */
-function saveAudioFileForOneWord(audioStr, fileName, fileFolder) {
+function saveAudioFileForOneWord(audioStr, fileName, fileFolder, onlyIfNotExists = true) {
     const audioFile = new AudioFile();
     audioFile.addString(audioStr);
     const audioFileFullName = Utils.getAudioFileUrl(fileName, fileFolder, 'mp3');
-    audioFile.saveAsBinary(audioFileFullName);
-    console.log(audioFileFullName);
+    if (onlyIfNotExists && !fs.existsSync(audioFileFullName)) {
+        audioFile.saveAsBinary(audioFileFullName);
+        console.log(audioFileFullName);
+    }
 }
 
 /**

@@ -338,5 +338,73 @@ export default {
     "evenement": {
         article: "un",
         level: "A2"
+    },
+    "commentaire": {
+        article: "un",
+        level: "A2"
+    },
+    "coiffure": {
+        article: "une",
+        level: "A2"
+    },
+    "choix": {
+        article: "un",
+        level: "A2"
+    },
+    "dent": {
+        article: "une",
+        level: "A1"
+    },
+    "mémoire": {
+        article: "une",
+        level: "B1"
+    },
+    "vague": {
+        article: "une",
+        level: "A2"
+    },
+    "personnalité": {
+        article: "une",
+        level: "A2"
+    },
+    "conseil": {
+        article: "un",
+        level: "A2"
+    },
+    "avis": {
+        article: "un",
+        level: "A2"
+    },
+    "sorte": {
+        article: "une",
+        level: "A2"
+    },
+    "nourriture": {
+        article: "une",
+        level: "A1"
+    },
+    "poche": {
+        article: "une",
+        level: "A2"
+    },
+    "verre": {
+        article: "un",
+        level: "A1"
+    },
+    "façon": {
+        article: "une",
+        level: "A2"
+    },
+    "âge": {
+        article: "un",
+        level: "A1"
+    },
+    "rabais": {
+        article: "un",
+        level: "A2"
+    },
+    "expérience": {
+        article: "une",
+        level: "A2"
     }
 }
