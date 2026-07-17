@@ -406,5 +406,9 @@ export default {
     "expérience": {
         article: "une",
         level: "A2"
-    }
+    },
+    "horaire": {
+        article: "un",
+        level: "A2"
+    },
 }

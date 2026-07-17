@@ -60,8 +60,8 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 
 // saveAudioFilesBase64ForInfinitive("Se lever", verbsInConditionalPresentTense["Se lever"], audioFileFolderForConditionalPresentTense);
 
-saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
-// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+// saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
+saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
 // saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
 
 
