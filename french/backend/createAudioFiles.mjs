@@ -36,7 +36,7 @@ import verbsInPresentPerfectSubjunctiveTense, { audioFileFolder as audioFileFold
 import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/conjugations/verbsInFuturePerfectTense.mjs';
 import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHistoricTense } from '../js/conjugations/verbsInPastHistoricTense.mjs';
 
-import wordList, { audioFileFolder } from '../js/vocabulary/hMuet.mjs';
+import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vocabulary/hMuet.mjs';
 import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/nounGender.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
@@ -60,8 +60,8 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 
 // saveAudioFilesBase64ForInfinitive("Se lever", verbsInConditionalPresentTense["Se lever"], audioFileFolderForConditionalPresentTense);
 
-// saveAudioFilesForWordList(wordList, audioFileFolder);
-saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
+// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
 // saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
 
 
@@ -99,7 +99,7 @@ function saveAudioFileForOneWord(audioStr, fileName, fileFolder, onlyIfNotExists
     const audioFile = new AudioFile();
     audioFile.addString(audioStr);
     const audioFileFullName = Utils.getAudioFileUrl(fileName, fileFolder, 'mp3');
-    if (onlyIfNotExists && !fs.existsSync(audioFileFullName)) {
+    if (!onlyIfNotExists || !fs.existsSync(audioFileFullName)) {
         audioFile.saveAsBinary(audioFileFullName);
         console.log(audioFileFullName);
     }
