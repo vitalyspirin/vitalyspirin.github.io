@@ -415,4 +415,8 @@ export default {
         article: "une",
         level: "A1"
     },
+    "soupe": {
+        article: "une",
+        level: "A1"
+    },
 }
