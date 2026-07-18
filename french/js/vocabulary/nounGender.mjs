@@ -411,4 +411,8 @@ export default {
         article: "un",
         level: "A2"
     },
+    "fin": {
+        article: "une",
+        level: "A1"
+    },
 }
