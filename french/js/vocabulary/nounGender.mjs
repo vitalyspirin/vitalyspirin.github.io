@@ -419,4 +419,8 @@ export default {
         article: "une",
         level: "A1"
     },
+    "vocabulaire": {
+        article: "un",
+        level: "A2"
+    },
 }
