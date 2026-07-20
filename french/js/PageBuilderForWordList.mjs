@@ -11,7 +11,7 @@ import Utils from './Utils.mjs';
 export default class PageBuilderForWordList {
 
     /**
-     * @param {Record<string, {article: string, level: string}>} wordListStructure 
+     * @param {Record<string, {article: string, level: string, translation?: string}>} wordListStructure 
      * @param {string} fileFolder 
      */
     static build(wordListStructure, fileFolder) {
@@ -29,7 +29,11 @@ export default class PageBuilderForWordList {
 
             let wordElement = worldLiBlock.querySelector('[title="article"]');
             wordElement.textContent = word;
-            wordElement.setAttribute('title', wordListStructure[word].article);
+            let titleHint = wordListStructure[word].article;
+            if (wordListStructure[word].hasOwnProperty('translation')) {
+                titleHint += ' - ' + wordListStructure[word].translation;
+            }
+            wordElement.setAttribute('title', titleHint);
 
             worldLiBlock.querySelectorAll('input')
                 .forEach((/** @type {HTMLInputElement} */ inputElement) => {
