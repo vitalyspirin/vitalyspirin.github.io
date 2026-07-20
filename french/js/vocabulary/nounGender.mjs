@@ -75,7 +75,7 @@ export default {
     },
     "devoir": {
         article: "un",
-        level: "A1"
+        level: "B2"
     },
     "exercice": {
         article: "un",
@@ -315,7 +315,7 @@ export default {
     },
     "silence": {
         article: "un",
-        level: "A1"
+        level: "A2"
     },
     "statuette": {
         article: "une",
@@ -422,5 +422,9 @@ export default {
     "vocabulaire": {
         article: "un",
         level: "A2"
+    },
+    "pâtisserie": {
+        article: "une",
+        level: "A1"
     },
 }
