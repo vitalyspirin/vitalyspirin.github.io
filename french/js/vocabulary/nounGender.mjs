@@ -431,4 +431,8 @@ export default {
         article: "un",
         level: "A1"
     },
+    "siège": {
+        article: "un",
+        level: "A2"
+    },
 }
