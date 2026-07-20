@@ -427,4 +427,8 @@ export default {
         article: "une",
         level: "A1"
     },
+    "oiseau": {
+        article: "un",
+        level: "A1"
+    },
 }
