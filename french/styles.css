@@ -592,30 +592,20 @@ fieldset {
     margin-left: 3em;
 }
 
-#checkboxes {
-    te xt-align: center;
+#checkboxes #exercise-types {
+    text-align-last: justify;
 }
 
-fieldset
-
-/*#checkboxes #exercise-types*/
-label {
+fieldset label {
     display: inline-block;
-    width: 12.5em;
 }
 
-fieldset
-
-/*#checkboxes #exercise-types*/
-label.for-radio {
-    display: inline-block;
+fieldset label.for-radio {
     width: 6em;
 }
 
 fieldset #exercise-types label.for-checkbox {
     margin-bottom: 2em;
-    display: inline-block;
-    width: 12.5em;
     text-align: left;
 }
 
@@ -803,6 +793,7 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 #stats-page table td:not([data-key="date"]) {
     max-width: 0;
     visibility: hidden;
+    overflow: hidden;
     padding: 0;
     border: 0;
 }
