@@ -4,6 +4,7 @@
 
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import ErrorCounterObj from './ErrorCounterObj.mjs';
+import HtmlHelper from './HtmlHelper.mjs';
 import InputValidation from './InputValidation.mjs';
 import { Resolver } from './Resolver.mjs';
 import StatsFooter from './StatsFooter.mjs';
@@ -110,7 +111,7 @@ export class ErrorCounter {
                 lastInputElement = inputElement;
             }); // allInputElements.forEach
 
-            self.#markLastInputElement(lastInputElement);
+            HtmlHelper.markLastInputElement(lastInputElement);
 
             if (verbTenseList.length === 0) {
                 StatsFooter.showStats();
@@ -136,18 +137,6 @@ export class ErrorCounter {
 
     }
 
-    /**
-     * @param {HTMLInputElement} lastInputElement
-     */
-    static #markLastInputElement(lastInputElement) {
-        if (lastInputElement.type == 'radio') {
-            document.getElementsByName(lastInputElement.name).forEach((element) => {
-                element.setAttribute('last-input-element', 'true');
-            });
-        } else { /* type == 'text' */
-            lastInputElement.setAttribute('last-input-element', 'true');
-        }
-    }
 
     /**
      * @param {string} eventName

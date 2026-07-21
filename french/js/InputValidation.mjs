@@ -7,6 +7,7 @@ import ErrorCounterObj from './ErrorCounterObj.mjs';
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import StatsFooter from './StatsFooter.mjs';
 import Types from './Types.mjs';
+import HtmlHelper from './HtmlHelper.mjs';
 
 export default class InputValidation {
 
@@ -37,14 +38,15 @@ export default class InputValidation {
             errorCounterObj
         );
 
-        if (this.inputElement.getAttribute('last-input-element') !== null) {
+
+        if (HtmlHelper.isLastInputElement(this.inputElement)) {
             ErrorCounter.updateTimer();
         }
 
         if (
             (errorCounterObj.numberOfCompleted + errorCounterObj.numberOfErrors >
                 errorCounterObj.numberOfAllInputElements / 2) ||
-            (this.inputElement.getAttribute('last-input-element') !== null)
+            HtmlHelper.isLastInputElement(this.inputElement)
         ) {
             Object.entries(ErrorCounter.errorCounterObjList)
                 .forEach(([verbeTense, errorCounterObj]) => {
