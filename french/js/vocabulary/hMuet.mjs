@@ -110,7 +110,8 @@ export default {
     },
     "harpe": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "harp (musical instrument)"
     },
     "habitat": {
         article: "l'",
@@ -122,7 +123,8 @@ export default {
     },
     "hache": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "ax"
     },
     "horoscope": {
         article: "l'",
@@ -139,7 +141,8 @@ export default {
     },
     "huile": {
         article: "l'",
-        level: "A1"
+        level: "A1",
+        translation: "oil"
     },
     "hamburger": {
         article: "le",
@@ -152,7 +155,8 @@ export default {
     },
     "haie": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "hedge"
     },
     "homicide": {
         article: "l'",
@@ -173,7 +177,8 @@ export default {
     },
     "hanche": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "hip"
     },
     "herbivore": {
         article: "l'",
@@ -202,7 +207,8 @@ export default {
     },
     "hasard": {
         article: "l'",
-        level: "A2"
+        level: "A2",
+        translation: "chance, coincidence"
     },
     "haschich": {
         article: "l'",
@@ -266,11 +272,13 @@ export default {
     },
     "huître": {
         article: "l'",
-        level: "A2"
+        level: "A2",
+        translation: "oyster"
     },
     "haricot": {
         article: "le",
-        level: "A1"
+        level: "A1",
+        translation: "bean"
     },
     "hélice": {
         article: "l'",
@@ -279,7 +287,8 @@ export default {
     },
     "housse": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "cover (of a sofа/couch)"
     },
     "hôpital": {
         article: "l'",
@@ -303,7 +312,8 @@ export default {
     },
     "homard": {
         article: "le",
-        level: "B1"
+        level: "B1",
+        translation: "lobster"
     },
     "habitant": {
         article: "l'",
@@ -320,7 +330,8 @@ export default {
     },
     "honte": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "shame"
     },
     "hystérie": {
         article: "l'",
@@ -352,11 +363,13 @@ export default {
     },
     "hauteur": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "height"
     },
     "hâte": {
         article: "la",
-        level: "A2"
+        level: "A2",
+        translation: "haste, impatience"
     },
     "hommage": {
         article: "l'",
