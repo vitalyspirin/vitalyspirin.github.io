@@ -186,13 +186,19 @@ export class ErrorCounter {
 
     static updateTimer() {
         let timeDuration = 0;
+        let title = '';
         Object.entries(this.errorCounterObjList).forEach(([verbeTense, errorCounterObj]) => {
             timeDuration += errorCounterObj.duration;
+
+            if (verbeTense !== '') {
+                title += Resolver.getTenseByFolder(verbeTense) + ': ' +
+                    String(Utils.timestampToTime(errorCounterObj.duration)) + "\n";
+            }
         });
 
-        document.getElementById('total-time').textContent = String(
-            Utils.timestampToTime(timeDuration)
-        );
+        const totalTimeElement = document.getElementById('total-time');
+        totalTimeElement.textContent = String(Utils.timestampToTime(timeDuration));
+        totalTimeElement.title = title;
     }
 
     /**
