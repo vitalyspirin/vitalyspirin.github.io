@@ -3,6 +3,7 @@
 "use strict";
 
 import { ErrorCounter } from './ErrorCounter.mjs';
+import ErrorCounterObj from './ErrorCounterObj.mjs';
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import StatsFooter from './StatsFooter.mjs';
 import Types from './Types.mjs';
@@ -57,6 +58,8 @@ export default class InputValidation {
     }
 
     /**
+     * for radio buttons
+     * 
      * @param {Event} event
      */
     static onClickEventHandler(event) {
@@ -65,7 +68,9 @@ export default class InputValidation {
         const self = InputValidation;
         self.#initialize(event);
 
-        ErrorCounter.startTimestamp = Date.now();
+        if (ErrorCounter.startTimestamp === null || !ErrorCounter.isOneTimerOnly) {
+            ErrorCounter.startTimestamp = Date.now();
+        }
 
         if (!event.target.required) {
             ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
@@ -77,6 +82,8 @@ export default class InputValidation {
         document.getElementsByName(event.target.name).forEach((element) => {
             element.removeEventListener('click', InputValidation.onClickEventHandler);
         });
+
+        self.setDuration();
 
         self.#finalize();
     }
@@ -107,6 +114,8 @@ export default class InputValidation {
                 errorCounterObj.numberOfCompleted++;
                 event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
             }
+
+            self.setDuration();
         } else {
             // for radio button validity is checked in onClickEventHandler
             document.getElementsByName(event.target.name).forEach((element) => {
@@ -114,15 +123,25 @@ export default class InputValidation {
             });
         }
 
-        const timeDiff = Date.now() - ErrorCounter.startTimestamp;
-        errorCounterObj.duration += timeDiff;
-
-        // to catch a bug when duration becomes huge
-        if (timeDiff > 1000 * 60 * 60) {
-            alert('time difference between "focus in" and "focus out" is ' + timeDiff + '. That is more than an hour.');
-        }
-
         self.#finalize();
     }
 
+    /**
+     */
+    static setDuration() {
+        const errorCounterObj = ErrorCounter.getErrorCounterObj(this.verbTense);
+
+        if (ErrorCounter.isOneTimerOnly) {
+            errorCounterObj.duration = Date.now() - ErrorCounter.startTimestamp;
+        } else {
+            const timeDiff = Date.now() - ErrorCounter.startTimestamp;
+            errorCounterObj.duration += timeDiff;
+
+            // to catch a bug when duration becomes huge
+            if (timeDiff > 1000 * 60 * 60) {
+                alert('time difference between "focus in" and "focus out" is ' + timeDiff + '. That is more than an hour.');
+            }
+        }
+
+    }
 }

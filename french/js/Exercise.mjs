@@ -16,7 +16,7 @@ export default class Exercise {
 
         this.setTitle(urlParams);
 
-        ErrorCounter.initialize();
+        return ErrorCounter.initialize();
     }
 
     /**

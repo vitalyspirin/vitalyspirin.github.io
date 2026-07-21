@@ -21,17 +21,35 @@ export class ErrorCounter {
     /** @type {number?} */
     static startTimestamp = null;
 
+    /** @type {boolean} */
+    static isOneTimerOnly = false;
+
     /**
      * @param {string[]} verbTenseList
      */
-    static initialize(verbTenseList = [''], self = this) {
+    static initialize(verbTenseList = ['']) {
+        this.waitForIframeToLoad(verbTenseList);
+
+        return this;
+    }
+
+    static useOneTimerOnly() {
+        this.isOneTimerOnly = true;
+    }
+
+    /**
+     * @param {string[]} verbTenseList
+     * @param {ErrorCounter} self
+     */
+    static waitForIframeToLoad(verbTenseList, self = this) {
         if (document.getElementById('error-counter') !== null) {
             // wait till footer iframe is processed
-            setTimeout(self.initialize, 20, verbTenseList, self);
+            setTimeout(ErrorCounter.waitForIframeToLoad, 20, verbTenseList, self);
         } else {
-            self.initializeAfterDelay(verbTenseList, self);
+            ErrorCounter.initializeAfterDelay(verbTenseList, self);
         }
     }
+
 
     /**
      * @param {string[]} verbTenseList
@@ -190,6 +208,7 @@ export class ErrorCounter {
 
     /**
      * @param {string?} verbTense
+     * @return ErrorCounterObj
      */
     static getErrorCounterObj(verbTense) {
         return ErrorCounter.errorCounterObjList[verbTense ?? ''];
