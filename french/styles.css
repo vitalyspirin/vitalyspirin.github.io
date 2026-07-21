@@ -647,14 +647,13 @@ input[name="number-of-days"] {
 }
 
 #number-of-exercises-stats {
-    margin: 0 0 2em 6em;
-    width: 75em;
-    text-align: left;
+    margin: 0 auto 2em;
+    width: 67em;
+    text-align-last: justify;
 }
 
 #number-of-exercises-stats>span {
     display: inline-block;
-    width: 12em;
 }
 
 .stats-summary-ratio {
