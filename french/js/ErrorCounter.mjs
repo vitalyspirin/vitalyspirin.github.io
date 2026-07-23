@@ -184,7 +184,7 @@ export class ErrorCounter {
         });
     }
 
-    static updateTimer() {
+    static showTotalTime() {
         let timeDuration = 0;
         let title = '';
         Object.entries(this.errorCounterObjList).forEach(([verbeTense, errorCounterObj]) => {

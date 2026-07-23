@@ -101,6 +101,18 @@ header h2 {
     fill: rgb(95, 99, 104);
 }
 
+button.speakerphone {
+    background-color: white;
+    padding: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 3px;
+}
+
+button.speakerphone:not(:focus) {
+    border-color: white;
+}
+
 article.verb-list-mixed-tenses .speakerphone {
     display: flex;
     align-items: center;
@@ -944,7 +956,7 @@ body#index label:has(input[name="conjugations-plus"]) {
 
 .card a,
 a.wide,
-button {
+button.wide {
     display: block;
     width: 13rem;
     color: var(--text-color);
@@ -968,7 +980,7 @@ a.wide:hover {
 }
 
 a.wide,
-button {
+button.wide {
     width: 30rem !important;
     font-size: 1.17em;
 }

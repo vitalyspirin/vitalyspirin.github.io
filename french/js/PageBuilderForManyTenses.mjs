@@ -220,7 +220,7 @@ export class PageBuilderForManyTenses {
             Utils.getAudioFileUrl(infinitive, fileFolder, 'json');
         let jsonIndex = (pronoun + ' ' + verb).replace(/' /g, "'"); // compare: "J'aurai" vs "Tu aura"
 
-        SpeakerPhone.init(speakerPhoneElement, audioFullFileName, jsonIndex);
+        SpeakerPhone.init(speakerPhoneElement, fileFolder, audioFullFileName, jsonIndex);
 
         return newInputBlock;
     } // static fillInputBlock(newInputBlock, pronoun, verb)

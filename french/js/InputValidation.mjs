@@ -8,6 +8,7 @@ import ErrorCounterLine from './ErrorCounterLine.mjs';
 import StatsFooter from './StatsFooter.mjs';
 import Types from './Types.mjs';
 import HtmlHelper from './HtmlHelper.mjs';
+import Timer from './Timer.mjs';
 
 export default class InputValidation {
 
@@ -40,7 +41,7 @@ export default class InputValidation {
 
 
         if (HtmlHelper.isLastInputElement(this.inputElement)) {
-            ErrorCounter.updateTimer();
+            ErrorCounter.showTotalTime();
         }
 
         if (
@@ -85,7 +86,7 @@ export default class InputValidation {
             element.removeEventListener('click', InputValidation.onClickEventHandler);
         });
 
-        self.setDuration();
+        Timer.setDuration(self.verbTense);
 
         self.#finalize();
     }
@@ -117,7 +118,7 @@ export default class InputValidation {
                 event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
             }
 
-            self.setDuration();
+            Timer.setDuration(self.verbTense);
         } else {
             // for radio button validity is checked in onClickEventHandler
             document.getElementsByName(event.target.name).forEach((element) => {
@@ -130,20 +131,20 @@ export default class InputValidation {
 
     /**
      */
-    static setDuration() {
-        const errorCounterObj = ErrorCounter.getErrorCounterObj(this.verbTense);
+    // static setDuration() {
+    //     const errorCounterObj = ErrorCounter.getErrorCounterObj(this.verbTense);
 
-        if (ErrorCounter.isOneTimerOnly) {
-            errorCounterObj.duration = Date.now() - ErrorCounter.startTimestamp;
-        } else {
-            const timeDiff = Date.now() - ErrorCounter.startTimestamp;
-            errorCounterObj.duration += timeDiff;
+    //     if (ErrorCounter.isOneTimerOnly) {
+    //         errorCounterObj.duration = Date.now() - ErrorCounter.startTimestamp;
+    //     } else {
+    //         const timeDiff = Date.now() - ErrorCounter.startTimestamp;
+    //         errorCounterObj.duration += timeDiff;
 
-            // to catch a bug when duration becomes huge
-            if (timeDiff > 1000 * 60 * 60) {
-                alert('time difference between "focus in" and "focus out" is ' + timeDiff + '. That is more than an hour.');
-            }
-        }
+    //         // to catch a bug when duration becomes huge
+    //         if (timeDiff > 1000 * 60 * 60) {
+    //             alert('time difference between "focus in" and "focus out" is ' + timeDiff + '. That is more than an hour.');
+    //         }
+    //     }
 
-    }
+    // }
 }
