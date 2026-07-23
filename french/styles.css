@@ -101,7 +101,7 @@ header h2 {
     fill: rgb(95, 99, 104);
 }
 
-section:not(.radio-buttons) .speakerphone {
+article.verb-list-mixed-tenses .speakerphone {
     display: flex;
     align-items: center;
 }
