@@ -220,5 +220,8 @@ export class ErrorCounter {
 
         infoLinkElement.href = infoLink;
         infoLinkElement.style.visibility = 'visible';
+
+        // to show user that JS executed without any errors
+        document.getElementsByTagName('article').item(0).style.opacity = '100%';
     }
 }

@@ -195,6 +195,10 @@ span.recent-days {
 
 /* Text exercises */
 
+article.text {
+    opacity: 60%;
+}
+
 #index h1,
 .text h1,
 .text h2 {
