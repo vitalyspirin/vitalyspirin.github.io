@@ -186,7 +186,8 @@ export default {
     },
     "hérisson": {
         article: "le",
-        level: "A2"
+        level: "A2",
+        translation: "hedgehog"
     },
     "handball": {
         article: "le",
@@ -199,7 +200,8 @@ export default {
     },
     "huit": {
         article: "le",
-        level: "A1"
+        level: "A1",
+        translation: "eight"
     },
     "héroïsme": {
         article: "l'",
