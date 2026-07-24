@@ -71,9 +71,7 @@ export default class InputValidation {
         const self = InputValidation;
         self.#initialize(event);
 
-        if (ErrorCounter.startTimestamp === null || !ErrorCounter.isOneTimerOnly) {
-            ErrorCounter.startTimestamp = Date.now();
-        }
+        Timer.restartIfNecessary();
 
         if (!event.target.required) {
             ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
@@ -95,7 +93,7 @@ export default class InputValidation {
      * @param {Event} event
      */
     static focusEventHandler(event) {
-        ErrorCounter.startTimestamp = Date.now();
+        Timer.restartIfNecessary();
     }
 
     /**

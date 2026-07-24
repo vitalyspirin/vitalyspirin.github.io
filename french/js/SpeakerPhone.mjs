@@ -18,7 +18,7 @@ export class SpeakerPhone {
     static init(speakerPhoneElement, fileFolder, fullFileName, jsonIndex = null) {
 
         speakerPhoneElement.onfocus = () => {
-            ErrorCounter.startTimestamp = Date.now();
+            Timer.restartIfNecessary();
         }
 
         speakerPhoneElement.onblur = () => {

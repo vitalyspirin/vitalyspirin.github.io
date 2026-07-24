@@ -6,6 +6,19 @@ import { ErrorCounter } from './ErrorCounter.mjs';
 
 export default class Timer {
 
+    /** @type {number?} */
+    static startTimestamp = null;
+
+    /** @type {boolean} */
+    static isOneTimerOnly = false;
+
+
+    static restartIfNecessary() {
+        if (this.startTimestamp === null || !this.isOneTimerOnly) {
+            this.startTimestamp = Date.now();
+        }
+    }
+
     /**
      * 
      * @param {string} verbTense 
@@ -13,10 +26,10 @@ export default class Timer {
     static setDuration(verbTense) {
         const errorCounterObj = ErrorCounter.getErrorCounterObj(verbTense);
 
-        if (ErrorCounter.isOneTimerOnly) {
-            errorCounterObj.duration = Date.now() - ErrorCounter.startTimestamp;
+        if (this.isOneTimerOnly) {
+            errorCounterObj.duration = Date.now() - this.startTimestamp;
         } else {
-            const timeDiff = Date.now() - ErrorCounter.startTimestamp;
+            const timeDiff = Date.now() - this.startTimestamp;
             errorCounterObj.duration += timeDiff;
 
             // to catch a bug when duration becomes huge

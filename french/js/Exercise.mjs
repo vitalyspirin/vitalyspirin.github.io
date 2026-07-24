@@ -3,6 +3,7 @@
 "use strict";
 
 import { ErrorCounter } from './ErrorCounter.mjs';
+import Timer from './Timer.mjs';
 
 export default class Exercise {
 
@@ -14,15 +15,22 @@ export default class Exercise {
             htmlElement.classList.add(value);
         });
 
-        this.setTitle(urlParams);
+        this.#setTitle(urlParams);
 
-        return ErrorCounter.initialize();
+        ErrorCounter.initialize();
+
+        return this;
     }
+
+    static useOneTimerOnly() {
+        Timer.isOneTimerOnly = true;
+    }
+
 
     /**
      * @param {URLSearchParams} urlParams
      */
-    static setTitle(urlParams) {
+    static #setTitle(urlParams) {
         if (urlParams.has('title')) {
             document.getElementsByTagName('h1').item(0).innerText += ' ' + urlParams.get('title');
 

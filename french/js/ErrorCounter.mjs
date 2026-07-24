@@ -34,10 +34,6 @@ export class ErrorCounter {
         return this;
     }
 
-    static useOneTimerOnly() {
-        this.isOneTimerOnly = true;
-    }
-
     /**
      * @param {string[]} verbTenseList
      * @param {ErrorCounter} self
