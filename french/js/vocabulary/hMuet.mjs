@@ -265,7 +265,7 @@ export default {
     "hennissement": {
         article: "le",
         level: "C1",
-        translation: "neighing"
+        translation: "neighing (of a horse)"
     },
     "hachoir": {
         article: "le",
