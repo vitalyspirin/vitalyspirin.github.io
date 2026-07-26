@@ -14,7 +14,7 @@ export default class Types {
         if (!(element instanceof type)) {
             if (errorMessage == null) {
                 errorMessage = 'Element "' + element + '" must be of type "' + type +
-                '" but it is of type "' + Object.prototype.toString.apply(element) + '".';
+                    '" but it is of type "' + Object.prototype.toString.apply(element) + '".';
             }
             throw new Error(errorMessage);
         }

@@ -20,6 +20,8 @@ export class ErrorCounter {
      * @param {string[]} verbTenseList
      */
     static initialize(verbTenseList = ['']) {
+        this.id = Date.now();
+
         this.waitForIframeToLoad(verbTenseList);
 
         return this;
@@ -27,25 +29,21 @@ export class ErrorCounter {
 
     /**
      * @param {string[]} verbTenseList
-     * @param {ErrorCounter} self
      */
-    static waitForIframeToLoad(verbTenseList, self = this) {
+    static waitForIframeToLoad(verbTenseList) {
         if (document.getElementById('error-counter') !== null) {
             // wait till footer iframe is processed
-            setTimeout(ErrorCounter.waitForIframeToLoad, 20, verbTenseList, self);
+            setTimeout(ErrorCounter.waitForIframeToLoad, 20, verbTenseList);
         } else {
-            ErrorCounter.initializeAfterDelay(verbTenseList, self);
+            ErrorCounter.initializeAfterDelay(verbTenseList);
         }
     }
 
 
     /**
      * @param {string[]} verbTenseList
-     * @param {any} self
      */
-    static initializeAfterDelay(verbTenseList, self) {
-        self.id = Date.now();
-
+    static initializeAfterDelay(verbTenseList) {
         this.#setInfoLink();
 
         this.#buildErrorCounterLines();
@@ -119,25 +117,25 @@ export class ErrorCounter {
     }
 
 
-    /**
-     * @param {string} eventName
-     * @param {HTMLInputElement} inputElement
-     * @param {function} eventListenerFunction
-     */
-    static #addEventListenerToInputElement(eventName, inputElement, eventListenerFunction) {
-        if (inputElement.type == 'text') {
-            inputElement.addEventListener(eventName, (event) => {
-                eventListenerFunction(event);
-            });
-        } else { // radio button
-            // two radio button with the same name (with correct and with wrong answer)
-            document.getElementsByName(inputElement.name).forEach((element) => {
-                element.addEventListener(eventName, (event) => {
-                    eventListenerFunction(event);
-                });
-            });
-        }
-    }
+    // /**
+    //  * @param {string} eventName
+    //  * @param {HTMLInputElement} inputElement
+    //  * @param {function} eventListenerFunction
+    //  */
+    // static #addEventListenerToInputElement(eventName, inputElement, eventListenerFunction) {
+    //     if (inputElement.type == 'text') {
+    //         inputElement.addEventListener(eventName, (event) => {
+    //             eventListenerFunction(event);
+    //         });
+    //     } else { // radio button
+    //         // two radio button with the same name (with correct and with wrong answer)
+    //         document.getElementsByName(inputElement.name).forEach((element) => {
+    //             element.addEventListener(eventName, (event) => {
+    //                 eventListenerFunction(event);
+    //             });
+    //         });
+    //     }
+    // }
 
     static #buildErrorCounterLines() {
         const template = document.getElementById('template-error-counter-line')

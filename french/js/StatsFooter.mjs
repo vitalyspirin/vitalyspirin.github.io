@@ -3,7 +3,6 @@
 "use strict";
 
 import { Resolver } from './Resolver.mjs';
-import { ErrorCounter} from './ErrorCounter.mjs';
 import ErrorCounterObj from './ErrorCounterObj.mjs';
 import Utils from './Utils.mjs';
 import Storage from './Storage.mjs';
@@ -33,20 +32,20 @@ export default class StatsFooter {
 
     /**
      * @param {number} statsId
-     * @param {ErrorCounterObj} errorCounter
+     * @param {ErrorCounterObj} errorCounterObj
      * @param {string?} verbTense
      */
-    static saveStats(statsId, errorCounter, verbTense) {
+    static saveStats(statsId, errorCounterObj, verbTense) {
         let stats = this.retrieveStats(verbTense);
 
         stats[statsId] = {
             'timestamp': Date.now(),
-            'result': errorCounter.numberOfCompleted /
-                errorCounter.numberOfAllInputElements,
-            'errors': errorCounter.numberOfErrors,
-            'correct': errorCounter.numberOfCompleted,
-            'total': errorCounter.numberOfAllInputElements,
-            'duration': errorCounter.duration
+            'result': errorCounterObj.numberOfCompleted /
+                errorCounterObj.numberOfAllInputElements,
+            'errors': errorCounterObj.numberOfErrors,
+            'correct': errorCounterObj.numberOfCompleted,
+            'total': errorCounterObj.numberOfAllInputElements,
+            'duration': errorCounterObj.duration
         };
         Storage.saveStatsDataForKey(this.getStorageKey(verbTense), JSON.stringify(stats));
     }
