@@ -48,7 +48,11 @@ export default class PageBuilderForWordList {
             let audioFullFileName = Resolver.AUDIO_BASE_PATH +
                 Utils.getAudioFileUrl(word, fileFolder, 'mp3');
 
-            SpeakerPhone.init(speakerPhoneElement, fileFolder, audioFullFileName);
+            SpeakerPhone.init(
+                speakerPhoneElement, 
+                '', // for ErrorCounter.getErrorCounterObj('')
+                audioFullFileName
+            );
 
             wordList.append(worldLiBlock);
         };
