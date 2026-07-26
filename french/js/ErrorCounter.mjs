@@ -19,12 +19,6 @@ export class ErrorCounter {
     /** @type Record<string, ErrorCounterObj> */
     static errorCounterObjList;
 
-    /** @type {number?} */
-    static startTimestamp = null;
-
-    /** @type {boolean} */
-    static isOneTimerOnly = false;
-
     /**
      * @param {string[]} verbTenseList
      */
