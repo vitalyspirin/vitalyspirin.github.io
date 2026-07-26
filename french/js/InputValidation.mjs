@@ -32,7 +32,7 @@ export default class InputValidation {
     }
 
     static #finalize() {
-        const errorCounterObj = ErrorCounter.getErrorCounterObj(this.verbTense);
+        const errorCounterObj = ErrorCounterObj.getErrorCounterObj(this.verbTense);
 
         ErrorCounterLine.update(
             this.errorLineElement,
@@ -49,7 +49,7 @@ export default class InputValidation {
                 errorCounterObj.numberOfAllInputElements / 2) ||
             HtmlHelper.isLastInputElement(this.inputElement)
         ) {
-            Object.entries(ErrorCounter.errorCounterObjList)
+            Object.entries(ErrorCounterObj.errorCounterObjList)
                 .forEach(([verbeTense, errorCounterObj]) => {
                     StatsFooter.saveStats(
                         ErrorCounter.id,
@@ -74,10 +74,10 @@ export default class InputValidation {
         Timer.restartIfNecessary();
 
         if (!event.target.required) {
-            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfErrors++;
+            ErrorCounterObj.getErrorCounterObj(self.verbTense).numberOfErrors++;
             event.target.parentElement.classList.add('failed');
         } else {
-            ErrorCounter.getErrorCounterObj(self.verbTense).numberOfCompleted++;
+            ErrorCounterObj.getErrorCounterObj(self.verbTense).numberOfCompleted++;
         }
 
         document.getElementsByName(event.target.name).forEach((element) => {
@@ -105,7 +105,7 @@ export default class InputValidation {
         const self = InputValidation;
         self.#initialize(event);
 
-        const errorCounterObj = ErrorCounter.getErrorCounterObj(self.verbTense);
+        const errorCounterObj = ErrorCounterObj.getErrorCounterObj(self.verbTense);
         if (event.target.type === 'text') {
             if (!event.target.checkValidity()) {
                 errorCounterObj.numberOfErrors++;

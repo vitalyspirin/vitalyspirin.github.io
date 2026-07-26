@@ -16,9 +16,6 @@ export class ErrorCounter {
     /** @type {number} */
     static id;
 
-    /** @type Record<string, ErrorCounterObj> */
-    static errorCounterObjList;
-
     /**
      * @param {string[]} verbTenseList
      */
@@ -53,13 +50,7 @@ export class ErrorCounter {
 
         this.#buildErrorCounterLines();
 
-
-        self.errorCounterObjList = {};
-
-        verbTenseList.forEach(verbTense => {
-            self.errorCounterObjList[verbTense] = new ErrorCounterObj();
-        });
-
+        ErrorCounterObj.init(verbTenseList);
 
         const allInputElements = document.
             querySelectorAll(':is(input[type="text"], input[type="radio"])');
@@ -75,7 +66,7 @@ export class ErrorCounter {
                 // verbs-and-prepositions.html can have display:none for some input based on query params
                 if (!inputElement.checkVisibility()) return;
 
-                const errorCounterObj = self.getErrorCounterObj(inputElement.getAttribute('data-verb-tense'));
+                const errorCounterObj = ErrorCounterObj.getErrorCounterObj(inputElement.getAttribute('data-verb-tense'));
 
                 if (inputElement.type == 'text') {
                     inputElement.addEventListener("focus", InputValidation.focusEventHandler);
@@ -119,7 +110,7 @@ export class ErrorCounter {
             if (!verbTenseList.includes(verbTense)) {
                 errorLineElement.style.display = 'none';
             } else {
-                const errorCounterObj = self.getErrorCounterObj(verbTense);
+                const errorCounterObj = ErrorCounterObj.getErrorCounterObj(verbTense);
 
                 ErrorCounterLine.initialize(errorLineElement, errorCounterObj.numberOfAllInputElements);
             }
@@ -177,26 +168,19 @@ export class ErrorCounter {
     static showTotalTime() {
         let timeDuration = 0;
         let title = '';
-        Object.entries(this.errorCounterObjList).forEach(([verbeTense, errorCounterObj]) => {
-            timeDuration += errorCounterObj.duration;
+        Object.entries(ErrorCounterObj.errorCounterObjList)
+            .forEach(([verbeTense, errorCounterObj]) => {
+                timeDuration += errorCounterObj.duration;
 
-            if (verbeTense !== '') {
-                title += Resolver.getTenseByFolder(verbeTense) + ': ' +
-                    String(Utils.timestampToTime(errorCounterObj.duration)) + "\n";
-            }
-        });
+                if (verbeTense !== '') {
+                    title += Resolver.getTenseByFolder(verbeTense) + ': ' +
+                        String(Utils.timestampToTime(errorCounterObj.duration)) + "\n";
+                }
+            });
 
         const totalTimeElement = document.getElementById('total-time');
         totalTimeElement.textContent = String(Utils.timestampToTime(timeDuration));
         totalTimeElement.title = title;
-    }
-
-    /**
-     * @param {string?} verbTense
-     * @return ErrorCounterObj
-     */
-    static getErrorCounterObj(verbTense) {
-        return ErrorCounter.errorCounterObjList[verbTense ?? ''];
     }
 
     static #setInfoLink() {

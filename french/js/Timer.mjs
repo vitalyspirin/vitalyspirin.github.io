@@ -3,6 +3,7 @@
 "use strict";
 
 import { ErrorCounter } from './ErrorCounter.mjs';
+import ErrorCounterObj from './ErrorCounterObj.mjs';
 
 export default class Timer {
 
@@ -24,7 +25,7 @@ export default class Timer {
      * @param {string} verbTense 
      */
     static setDuration(verbTense) {
-        const errorCounterObj = ErrorCounter.getErrorCounterObj(verbTense);
+        const errorCounterObj = ErrorCounterObj.getErrorCounterObj(verbTense);
 
         if (this.isOneTimerOnly) {
             errorCounterObj.duration = Date.now() - this.startTimestamp;
