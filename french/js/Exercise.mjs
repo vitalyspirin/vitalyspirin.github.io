@@ -3,9 +3,12 @@
 "use strict";
 
 import { ErrorCounter } from './ErrorCounter.mjs';
+import HtmlHelper from './HtmlHelper.mjs';
 import Timer from './Timer.mjs';
+import Types from './Types.mjs';
 
 export default class Exercise {
+    static RANDOMIZE_CLASS_NAME = 'randomize';
 
     static init(params = window.location.search) {
         const htmlElement = document.getElementsByTagName('article').item(0);
@@ -16,6 +19,8 @@ export default class Exercise {
         });
 
         this.#setTitle(urlParams);
+
+        this.#randomizeIfNecessary();
 
         ErrorCounter.initialize();
 
@@ -36,6 +41,13 @@ export default class Exercise {
 
             document.getElementsByTagName('title').item(0).innerText += ' ' + urlParams.get('title');
         }
+    }
+
+    static #randomizeIfNecessary() {
+        const listsToRandomize = document.getElementsByClassName(this.RANDOMIZE_CLASS_NAME);
+        Array.from(listsToRandomize).forEach((listBlock) => {
+            HtmlHelper.randomizeLiList(Types.assertType(listBlock, HTMLElement));
+        });
     }
 }
 
