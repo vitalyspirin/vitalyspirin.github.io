@@ -435,8 +435,12 @@ export default {
         article: "un",
         level: "A2"
     },
-   "main": {
+    "main": {
         article: "une",
         level: "A1"
+    },
+    "chapitre": {
+        article: "un",
+        level: "A2"
     },
 }

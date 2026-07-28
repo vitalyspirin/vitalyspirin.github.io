@@ -43,7 +43,9 @@ export default {
     },
     "humeur": {
         article: "l'",
-        level: "A2"
+        level: "A2",
+        translation: "mood"
+
     },
     "hutte": {
         article: "la",
@@ -132,7 +134,8 @@ export default {
     },
     "humour": {
         article: "l'",
-        level: "A2"
+        level: "A2",
+        translation: "humour"
     },
     "haine": {
         article: "la",
