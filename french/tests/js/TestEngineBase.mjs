@@ -28,7 +28,9 @@ export default class TestEngineBase {
 
         if (this.testHttpResponseCode(testResult, iframeWindow)) {
 
-            if (this.PAGE_EXTENTIONS_LIST.includes(testResult.pageUrl?.split('.').pop() + '')) {
+            const pageExtention = testResult.pageUrl?.split('.').pop().split('?')[0];
+            if (this.PAGE_EXTENTIONS_LIST.includes(pageExtention)) {
+
                 if (viewModel.favicon) {
                     await this.testFavicon(testResult, iframeWindow);
                 }
@@ -38,6 +40,7 @@ export default class TestEngineBase {
                 }
 
                 if (viewModel.aLinks) {
+
                     await this.testALinks(testResult, iframeWindow);
                 }
 
