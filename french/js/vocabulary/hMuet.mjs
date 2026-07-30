@@ -12,7 +12,8 @@ export const audioFileFolder = 'vocabulary/h-muet';
 export default {
     "habileté": {
         article: "l'",
-        level: "B2"
+        level: "B2",
+        translation: "skill, skillfulness"
     },
     "handicap": {
         article: "le",

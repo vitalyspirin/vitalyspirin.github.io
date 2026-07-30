@@ -187,7 +187,8 @@ export default {
     },
     "cendrier": {
         article: "un",
-        level: "B1"
+        level: "B1",
+        translation: "ashtray"
     },
     "pneu": {
         article: "un",
@@ -223,7 +224,8 @@ export default {
     },
     "crochet": {
         article: "un",
-        level: "B1"
+        level: "B1",
+        translation: "hook (for Knitting)"
     },
     "rage": {
         article: "une",
@@ -263,7 +265,8 @@ export default {
     },
     "parenté": {
         article: "une",
-        level: "B1"
+        level: "B1",
+        translation: "relationship, kinship"
     },
     "domaine": {
         article: "un",
@@ -442,5 +445,9 @@ export default {
     "chapitre": {
         article: "un",
         level: "A2"
+    },
+    "fraîcheur": {
+        article: "une",
+        level: "B1"
     },
 }

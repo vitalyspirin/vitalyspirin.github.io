@@ -11,6 +11,7 @@ Words to add:
 - visiter
 - rencontrer
 - ajouter
+- disparaître
 
 Words to have in all tenses:
 - apprendre
