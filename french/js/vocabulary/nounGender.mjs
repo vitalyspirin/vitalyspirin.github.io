@@ -450,4 +450,8 @@ export default {
         article: "une",
         level: "B1"
     },
+    "mosquée": {
+        article: "une",
+        level: "A2"
+    },
 }
