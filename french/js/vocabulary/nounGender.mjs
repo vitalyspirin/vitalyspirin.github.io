@@ -454,4 +454,8 @@ export default {
         article: "une",
         level: "A2"
     },
+    "anniversaire": {
+        article: "un",
+        level: "A1"
+    },
 }
