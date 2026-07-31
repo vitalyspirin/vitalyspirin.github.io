@@ -109,6 +109,7 @@ export class ErrorCounter {
                 errorLineElement.style.display = 'none';
             } else {
                 const errorCounterObj = ErrorCounterObj.getErrorCounterObj(verbTense);
+                errorCounterObj.numberOfAllInputElements = Math.round(errorCounterObj.numberOfAllInputElements);
 
                 ErrorCounterLine.initialize(errorLineElement, errorCounterObj.numberOfAllInputElements);
             }
