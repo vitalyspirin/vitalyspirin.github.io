@@ -458,4 +458,8 @@ export default {
         article: "un",
         level: "A1"
     },
+    "équipe": {
+        article: "une",
+        level: "A1"
+    },
 }
