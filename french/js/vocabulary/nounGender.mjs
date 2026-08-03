@@ -462,4 +462,16 @@ export default {
         article: "une",
         level: "A1"
     },
+    "quartier": {
+        article: "un",
+        level: "A1"
+    },
+    "vie": {
+        article: "une",
+        level: "A1"
+    },
+    "membre": {
+        article: "un",
+        level: "A1"
+    },
 }
