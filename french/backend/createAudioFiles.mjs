@@ -58,10 +58,10 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 //  saveAudioFilesBase64ForVerbList(verbsInPastHistoricTense, audioFileFolderForPastHistoricTense);
 
-// saveAudioFilesBase64ForInfinitive("Se lever", verbsInConditionalPresentTense["Se lever"], audioFileFolderForConditionalPresentTense);
+saveAudioFilesBase64ForInfinitive("S'émouvoir", verbsInPresentPerfectSubjunctiveTense["S'émouvoir"], audioFileFolderForPresentPerfectSubjunctiveTense);
 
 // saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
-saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
 // saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
 
 

@@ -11,7 +11,7 @@ export const audioFileFolder = 'present-perfect-subjunctive';
 
 export default {
 	Avoir: {
-		"que j'": "ai eu",
+		"que j'": "aie eu",
 		"que tu": "aies eu",
 		"qu'il": "ait eu",
 		"que nous": "ayons eu",
@@ -56,7 +56,7 @@ export default {
 		"qu'il": "soit allé",
 		"que nous": "soyons allés",
 		"que vous": "soyez allés",
-		"qu'ils": " soient allés"
+		"qu'ils": "soient allés"
 	},
 	Vouloir: {
 		"que j'": "aie voulu",
@@ -101,7 +101,7 @@ export default {
 	Appeler: {
 		"que j'": "aie appelé",
 		"que tu": "aies appelé",
-		"qu'il": " ait appelé",
+		"qu'il": "ait appelé",
 		"que nous": "ayons appelé",
 		"que vous": "ayez appelé",
 		"qu'ils": "aient appelé"
@@ -184,7 +184,7 @@ export default {
 		"qu'il": "ait congelé",
 		"que nous": "ayons congelé",
 		"que vous": "ayez congelé",
-		"qu'ils": " aient congelé"
+		"qu'ils": "aient congelé"
 	},
 	Modeler: {
 		"que j'": "aie modelé",
@@ -559,7 +559,7 @@ export default {
 		"que tu": "te sois ému",
 		"qu'il": "se soit ému",
 		"que nous": "nous soyons émus",
-		"que vous": "vous émouviez",
+		"que vous": "vous soyez émus",
 		"qu'ils": "se soient émus"
 	},
 	Valoir: {
