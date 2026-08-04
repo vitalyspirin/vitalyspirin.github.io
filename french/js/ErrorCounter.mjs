@@ -10,6 +10,7 @@ import { Resolver } from './Resolver.mjs';
 import StatsFooter from './StatsFooter.mjs';
 import Types from './Types.mjs';
 import Utils from './Utils.mjs';
+import VerbTenseResolver from './VerbTenseResolver.mjs';
 
 
 export class ErrorCounter {
@@ -153,7 +154,7 @@ export class ErrorCounter {
         let newErrorCounterLine = errorCounterLineTemplate.cloneNode(true);
         errorCounterSection.appendChild(newErrorCounterLine);
 
-        Object.entries(Resolver.map).forEach(([tenseName, element]) => {
+        Object.entries(VerbTenseResolver.map).forEach(([tenseName, element]) => {
             let newErrorCounterLine = Types.assertType(
                 errorCounterLineTemplate.cloneNode(true), HTMLElement);
 
@@ -172,7 +173,7 @@ export class ErrorCounter {
                 timeDuration += errorCounterObj.duration;
 
                 if (verbeTense !== '') {
-                    title += Resolver.getTenseByFolder(verbeTense) + ': ' +
+                    title += VerbTenseResolver.getTenseByFolder(verbeTense) + ': ' +
                         String(Utils.timestampToTime(errorCounterObj.duration)) + "\n";
                 }
             });

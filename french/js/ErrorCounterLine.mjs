@@ -2,8 +2,8 @@
 
 "use strict";
 
-import ErrorCounterObj from "./ErrorCounterObj.mjs";
-import Types from "./Types.mjs";
+import ErrorCounterObj from './ErrorCounterObj.mjs';
+import Types from './Types.mjs';
 
 
 export default class ErrorCounterLine {

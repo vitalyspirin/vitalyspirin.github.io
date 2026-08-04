@@ -12,6 +12,7 @@
     <script type="module">
         "use strict";
 
+        import VerbTenseResolver from '../../../js/VerbTenseResolver.mjs';
         import { PageBuilderForManyTenses } from '../../../js/PageBuilderForManyTenses.mjs';
         import { Resolver } from '../../../js/Resolver.mjs';
         import { ErrorCounter } from '../../../js/ErrorCounter.mjs';
@@ -19,7 +20,7 @@
 
         const title = window.decodeURIComponent(window.location.search).substring(1);
 
-        if (Resolver.map[title] === undefined) {
+        if (VerbTenseResolver.map[title] === undefined) {
             document.getElementById('checkboxes-to-choose-tenses').style.display = 'block';
         }
 
@@ -30,9 +31,9 @@
         const templateCheckbox = document.getElementById('template-checkbox-to-choose-tense')
             .content.firstElementChild;
 
-        Object.keys(Resolver.map).forEach(tenseName => {
+        Object.keys(VerbTenseResolver.map).forEach(tenseName => {
             const checkboxForTense = templateCheckbox.cloneNode(true);
-            checkboxForTense.querySelector('input').name = Resolver.map[tenseName].folder;
+            checkboxForTense.querySelector('input').name = VerbTenseResolver.map[tenseName].folder;
             checkboxForTense.append(document.createTextNode(tenseName));
 
             containerForCheckboxes.append(checkboxForTense);
@@ -45,13 +46,13 @@
                 Storage.saveConfigForKey(page, checkboxElement.name, checkboxElement.checked);
 
                 PageBuilderForManyTenses.buildForManyTenses(title);
-                ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList());
+                ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseListFromTitleOrCheckboxes());
             }
         });
 
         PageBuilderForManyTenses.buildForManyTenses(title);
 
-        ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseList(title));
+        ErrorCounter.initialize(PageBuilderForManyTenses.getVerbTenseListFromTitleOrCheckboxes(title));
     </script>
 </head>
 

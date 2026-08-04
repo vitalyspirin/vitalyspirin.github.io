@@ -58,10 +58,10 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 //  saveAudioFilesBase64ForVerbList(verbsInPastHistoricTense, audioFileFolderForPastHistoricTense);
 
-saveAudioFilesBase64ForInfinitive("S'émouvoir", verbsInPresentPerfectSubjunctiveTense["S'émouvoir"], audioFileFolderForPresentPerfectSubjunctiveTense);
+// saveAudioFilesBase64ForInfinitive("S'émouvoir", verbsInPresentPerfectSubjunctiveTense["S'émouvoir"], audioFileFolderForPresentPerfectSubjunctiveTense);
 
 // saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
-// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
 // saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
 
 
@@ -81,9 +81,9 @@ function saveAudioFilesForWordList(wordList, fileFolder, onlyIfNotExists = true)
             audioStr = wordList[word]['article'] + ' ' + word;
         }
 
-        saveAudioFileForOneWord(audioStr, word, fileFolder, onlyIfNotExists);
-
-        counter++;
+        if (saveAudioFileForOneWord(audioStr, word, fileFolder, onlyIfNotExists)) {
+            counter++;
+        }
     }
 
     console.log("\n" + counter + ' files saved.');
@@ -94,15 +94,24 @@ function saveAudioFilesForWordList(wordList, fileFolder, onlyIfNotExists = true)
  * @param {string} fileName
  * @param {string} fileFolder
  * @param {boolean} onlyIfNotExists
+ * 
+ * @returns {boolean} true if file saved, false if file already exists and onlyIfNotExists is true
  */
 function saveAudioFileForOneWord(audioStr, fileName, fileFolder, onlyIfNotExists = true) {
+    let result;
+
     const audioFile = new AudioFile();
     audioFile.addString(audioStr);
     const audioFileFullName = Utils.getAudioFileUrl(fileName, fileFolder, 'mp3');
     if (!onlyIfNotExists || !fs.existsSync(audioFileFullName)) {
         audioFile.saveAsBinary(audioFileFullName);
         console.log(audioFileFullName);
+        result = true;
+    } else {
+        result = false;
     }
+
+    return result;
 }
 
 /**

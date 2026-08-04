@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!-- exercises are taken from https://www.podcastfrancaisfacile.com/grammaire/exercice-preposition-ville-pays.html -->
+
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tous les verbes</title>
+
+    <link rel="icon" type="image/x-icon" href="../../../images/eiffel-tower.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <script type="module">
+        "use strict";
+        import PageBuilderForAllVerbs from '../js/PageBuilderForAllVerbs.mjs';
+        PageBuilderForAllVerbs.build(
+            document.getElementById('th-template'),
+            document.getElementById('tr-template'),
+            document.getElementById('td-template')
+        );
+    </script>
+</head>
+
+<body id="all-verbs">
+    <main class="wide">
+        <article>
+            <header>
+                <h1>Tous les verbes</h1>
+            </header>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Verbe</th>
+                        <template id="th-template">
+                            <th></th>
+                        </template>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <template id="td-template">
+                        <td></td>
+                    </template>
+
+                    <template id="tr-template">
+                        <tr>
+                            <td class="index"></td>
+                            <td class="verb-name"></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+        </article>
+    </main>
+</body>
+
+</html>

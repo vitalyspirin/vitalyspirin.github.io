@@ -6,89 +6,22 @@ import { Resolver } from './Resolver.mjs';
 import { SpeakerPhone } from './SpeakerPhone.mjs';
 import Types from './Types.mjs';
 import Utils from './Utils.mjs';
+import VerbTenseResolver from './VerbTenseResolver.mjs';
 
 export class PageBuilderForManyTenses {
-    /** 
-     * @typedef {Record<string, string>} ConjugationsForOneVerb
-     * 
-     * Example: {J': 'achèterais', Tu: 'achèterais', Il: 'achèterait', Nous: 'achèterions', Vous: 'achèteriez', …}
-     */
-
-    /**
-     * @param {string[]} tenseList
-     */
-    static getVerbList(tenseList) {
-        /** 
-         * @type Record<string, Record<string, ConjugationsForOneVerb>> 
-         * 
-         * Example: 
-         *  {Acheter: 
-         *      conditionalpresent: {J': 'achèterais', Tu: 'achèterais', Il: 'achèterait', Nous: 'achèterions', Vous: 'achèteriez', …}
-         *      future: {J': 'achèterai', Tu: 'achèteras', Il: 'achètera', Nous: 'achèterons', Vous: 'achèterez', …}
-         *  Achever: 
-         *      conditionalpresent: {J': 'achèverais', Tu: 'achèverais', Il: 'achèverait', Nous: 'achèverions', Vous: 'achèveriez', …}
-         *      future: {J': 'achèverai', Tu: 'achèveras', Il: 'achèvera', Nous: 'achèverons', Vous: 'achèverez', …}
-         */
-        let verbMixedConjugationList = {};
-
-        tenseList.forEach((tense) => {
-            let tenseName = Resolver.getTenseByFolder(tense);
-
-            let folderVerbListObj = Resolver.map[tenseName];
-            for (let infinitive in folderVerbListObj.verbList) {
-
-                if (!verbMixedConjugationList.hasOwnProperty(infinitive)) {
-                    verbMixedConjugationList[infinitive] = {};
-                }
-
-                // if (!verbMixedConjugationList[infinitive].hasOwnProperty(folderVerbListObj.folder)) {
-                //     verbMixedConjugationList[infinitive][folderVerbListObj.folder] = {};
-                // }
-
-                verbMixedConjugationList[infinitive][folderVerbListObj.folder] =
-                    folderVerbListObj.verbList[infinitive];
-            }
-        });
-
-        return verbMixedConjugationList;
-    }
-
-    /**
-     * @param {string} title
-     */
-    static getVerbTenseList(title) {
-        let verbTenseList = [];
-
-        if (Resolver.map[title] !== undefined) {
-            // checkboxes are invisible so figure out tense from title 
-            // (which is taken from query search string)
-            verbTenseList.push(Resolver.map[title].folder);
-        } else {
-            document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
-                if (!(checkboxElement instanceof HTMLInputElement)) {
-                    console.error("Element with selector '.verb-tense-checkbox' must be of type HTMLInputElement but it's of type:");
-                    console.error(Utils.getType(checkboxElement));
-                } else if (checkboxElement.checked) {
-                    verbTenseList.push(checkboxElement.getAttribute('name'));
-                }
-            });
-        }
-
-        return verbTenseList;
-    }
 
     /**
      * @param {string} title
      */
     static buildForManyTenses(title) {
-        const tenseList = this.getVerbTenseList(title);
-        const verbMixedConjugationList = this.getVerbList(tenseList);
+        const tenseList = this.getVerbTenseListFromTitleOrCheckboxes(title);
+        const verbMixedConjugationList = VerbTenseResolver.getVerbList(tenseList);
 
         let verbListBlock = document.getElementById("verb-list");
         verbListBlock.textContent = '';
         if (tenseList.length === 1) {
             verbListBlock.className = 'one-tense-only';
-            title = Resolver.getTenseByFolder(tenseList[0]);
+            title = VerbTenseResolver.getTenseByFolder(tenseList[0]);
         } else {
             verbListBlock.className = '';
         }
@@ -144,10 +77,12 @@ export class PageBuilderForManyTenses {
         // console.log(str); // use Spell Checker to find spelling errors
     } // static buildForManyTenses()
 
+    
     /**
+     * 
      * @param {HTMLElement} newConjugationsForOneTenseBlock
      * @param {string} infinitive
-     * @param {ConjugationsForOneVerb} conjugationList
+     * @param {import("./VerbTenseResolver.mjs").ConjugationsForOneVerb} conjugationList
      * @param {string} tense
      */
     static fillConjugationsForOneTenseBlock(
@@ -160,7 +95,7 @@ export class PageBuilderForManyTenses {
         newConjugationsForOneTenseBlock.classList.add(tense);
 
         let tenseElement = newConjugationsForOneTenseBlock.querySelector(".tense");
-        tenseElement.textContent = Resolver.getTenseByFolder(tense);
+        tenseElement.textContent = VerbTenseResolver.getTenseByFolder(tense);
 
         let templateInputElement = Types.assertType(
             document.getElementById("template-input"),
@@ -224,5 +159,30 @@ export class PageBuilderForManyTenses {
 
         return newInputBlock;
     } // static fillInputBlock(newInputBlock, pronoun, verb)
+
+
+    /**
+     * @param {string} title
+     */
+    static getVerbTenseListFromTitleOrCheckboxes(title) {
+        let verbTenseList = [];
+
+        if (VerbTenseResolver.map[title] !== undefined) {
+            // checkboxes are invisible so figure out tense from title 
+            // (which is taken from query search string)
+            verbTenseList.push(VerbTenseResolver.map[title].folder);
+        } else {
+            document.querySelectorAll('.verb-tense-checkbox').forEach((checkboxElement) => {
+                if (!(checkboxElement instanceof HTMLInputElement)) {
+                    console.error("Element with selector '.verb-tense-checkbox' must be of type HTMLInputElement but it's of type:");
+                    console.error(Utils.getType(checkboxElement));
+                } else if (checkboxElement.checked) {
+                    verbTenseList.push(checkboxElement.getAttribute('name'));
+                }
+            });
+        }
+
+        return verbTenseList;
+    }
 
 }

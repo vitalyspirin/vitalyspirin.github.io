@@ -2,11 +2,8 @@
 
 "use strict";
 
-import { ErrorCounter } from './ErrorCounter.mjs';
-import { Resolver } from './Resolver.mjs';
 import Timer from './Timer.mjs';
 import Types from './Types.mjs';
-import Utils from './Utils.mjs';
 
 export class SpeakerPhone {
     /**

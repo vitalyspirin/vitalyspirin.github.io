@@ -4,7 +4,6 @@
 "use strict";
 
 import Storage from './Storage.mjs';
-import StatsPageBuilder from './StatsPageBuilder.mjs';
 
 export class CheckboxesAndRadioButtons {
 
@@ -25,7 +24,7 @@ export class CheckboxesAndRadioButtons {
 
         if (checkboxList.length == 0) {
             // iframe with checkboxes is not loaded yet, so wait...
-            setTimeout(self.setCheckboxesBasedOnConfig, 20, self);
+            setTimeout(self.setCheckboxesBasedOnConfig, 20, page, self);
         } else {
             checkboxList.forEach((checkboxElement) => {
                 if (!(checkboxElement instanceof HTMLInputElement)) return;

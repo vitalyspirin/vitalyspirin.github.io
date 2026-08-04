@@ -55,6 +55,7 @@ a.info-icon {
 
 
 #stats-page h1,
+#all-verbs h1,
 #conjugations h1 {
     color: #663300;
     font-size: 1.17em;
@@ -666,7 +667,7 @@ input[name="number-of-days"] {
     opacity: 0.5;
 }
 
-table {
+#stats-page table {
     border-collapse: separate;
     border-spacing: 0;
     margin: auto;
@@ -1009,6 +1010,39 @@ body#index article.vocabulary section.vocabulary {
     display: block;
 }
 
+/* ------------------------------------------------ */
+/* all verbs page */
+#all-verbs table {
+    border-collapse: collapse;
+    margin: 2em 0;
+}
+
+#all-verbs table th,
+#all-verbs table td {
+    border: 1px solid black;
+}
+
+#all-verbs table th {
+    padding: 0.25em 0.25em;
+
+    /* Make the header sticky */
+    position: sticky;
+
+    /* Stick to the top of the container */
+    top: 0;
+
+    /* Background color for visibility */
+    background-color: white;
+}
+
+#all-verbs table td {
+    padding: 0.5em;
+}
+
+#all-verbs table td[data-exist="true"] {
+    background-color: #cdddac;
+
+}
 
 /* ------------------------------------------------ */
 /* system page */

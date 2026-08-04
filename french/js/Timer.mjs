@@ -2,7 +2,6 @@
 
 "use strict";
 
-import { ErrorCounter } from './ErrorCounter.mjs';
 import ErrorCounterObj from './ErrorCounterObj.mjs';
 
 export default class Timer {
