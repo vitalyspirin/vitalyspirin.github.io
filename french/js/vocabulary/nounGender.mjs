@@ -87,7 +87,8 @@ export default {
     },
     "glaçon": {
         article: "un",
-        level: "B1"
+        level: "B1",
+        translation: "ice cube"
     },
     "princesse": {
         article: "une",
@@ -253,7 +254,8 @@ export default {
     },
     "soupçon": {
         article: "un",
-        level: "B2"
+        level: "B2",
+        translation: "suspicion"
     },
     "police": {
         article: "une",
@@ -290,7 +292,8 @@ export default {
     },
     "sueur": {
         article: "une",
-        level: "B1"
+        level: "B1",
+        translation: "sweat"
     },
     "pauvreté": {
         article: "une",
