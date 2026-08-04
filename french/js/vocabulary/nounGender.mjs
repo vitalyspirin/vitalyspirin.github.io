@@ -474,4 +474,8 @@ export default {
         article: "un",
         level: "A1"
     },
+    "banque": {
+        article: "une",
+        level: "A1"
+    },
 }
