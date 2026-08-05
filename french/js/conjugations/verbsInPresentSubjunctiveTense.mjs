@@ -474,7 +474,15 @@ export default {
 		"que vous": "mettiez",
 		"qu'ils": "mettent"
 	},
-	"Se Battre": {
+	"Battre": {
+		"que je": "batte",
+		"que tu": "battes",
+		"qu'il": "batte",
+		"que nous": "battions",
+		"que vous": "battiez",
+		"qu'ils": "battent"
+	},
+	"Se battre": {
 		"que je": "me batte",
 		"que tu": "te battes",
 		"qu'il": "se batte",
@@ -506,7 +514,15 @@ export default {
 		"que vous": "naissiez",
 		"qu'ils": "naissent"
 	},
-	"Se Déplaire": {
+	"Déplaire": {
+		"que je": "déplaise",
+		"que tu": "déplaises",
+		"qu'il": "déplaise",
+		"que nous": "déplaisions",
+		"que vous": "déplaisiez",
+		"qu'ils": "déplaisent"
+	},
+	"Se déplaire": {
 		"que je": "me déplaise",
 		"que tu": "te déplaises",
 		"qu'il": "se déplaise",

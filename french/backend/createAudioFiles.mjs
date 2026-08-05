@@ -58,7 +58,7 @@ import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vo
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 //  saveAudioFilesBase64ForVerbList(verbsInPastHistoricTense, audioFileFolderForPastHistoricTense);
 
-saveAudioFilesBase64ForInfinitive("Congeler", verbsInPresentPerfectSubjunctiveTense["Congeler"], audioFileFolderForPresentPerfectSubjunctiveTense);
+saveAudioFilesBase64ForInfinitive("Se déplaire", verbsInPresentSubjunctiveTense["Se déplaire"], audioFileFolderForPresentSubjunctiveTense);
 
 // saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
 // saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
