@@ -95,7 +95,7 @@
 
                             <li>
                                 Mon amoureux est fâché que je (<b title="n'aie pas téléphoné">ne pas téléphoner</b>)
-                                <input type="text" pattern="n'aie pas téléphoné" />
+                                <input type="text" class="wide" pattern="n'aie pas téléphoné" />
                                 hier soir.
                             </li>
 
@@ -112,22 +112,19 @@
                     <section class="span-half no-left-margin-in-right-span">
                         <h4>Faites des phrases selon le modèle à partir des éléments donnés.</h4>
 
-                        <div class="example">
-                            <span>
-                                Il n’a pas neigé... On a eu de la chance !
-                                --->
-                            </span>
-                            <span>On a eu de la chance qu’il n’ait pas neigé !</span>
-                        </div>
-
                         <ol>
+                            <li>
+                                <span>Il n’a pas neigé... On a eu de la chance !</span>
+                                <span>On a eu de la chance <i>qu’il n’ait</i> pas neigé !</span>
+                            </li>
+
                             <li>
                                 <span title="Je suis très surprise que tu n’aies pas reçu mon courriel.">
                                     Tu n’as pas reçu mon courriel ? Je suis très surprise.
                                 </span>
                                 <span>
                                     <input type="text"
-                                        pattern="Je suis très surprise que tu n’aies pas reçu mon courriel[.]?" />
+                                        pattern="Je suis très surprise que tu n'aies pas reçu mon courriel[.]?" />
                                 </span>
                             </li>
 
@@ -180,10 +177,11 @@
                             </li>
 
                             <li>
-                                <span title="Je suis désolé qu'il ait été malade.">
+                                <span title="Je suis désolé qu'il ait été très malade.">
                                     Il a été très malade. Je suis désolé.
                                 </span>
-                                <span><input type="text" pattern="Je suis désolé qu'il ait été malade[.]?" /></span>
+                                <span><input type="text"
+                                        pattern="Je suis désolé qu'il ait été très malade[.]?" /></span>
                             </li>
 
                             <li>
