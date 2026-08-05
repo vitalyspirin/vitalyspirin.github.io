@@ -37,7 +37,7 @@ import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/c
 import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHistoricTense } from '../js/conjugations/verbsInPastHistoricTense.mjs';
 
 import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vocabulary/hMuet.mjs';
-import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/nounGender.mjs';
+// import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/nounGender.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
@@ -58,11 +58,11 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 //  saveAudioFilesBase64ForVerbList(verbsInPastHistoricTense, audioFileFolderForPastHistoricTense);
 
-// saveAudioFilesBase64ForInfinitive("S'émouvoir", verbsInPresentPerfectSubjunctiveTense["S'émouvoir"], audioFileFolderForPresentPerfectSubjunctiveTense);
+saveAudioFilesBase64ForInfinitive("Congeler", verbsInPresentPerfectSubjunctiveTense["Congeler"], audioFileFolderForPresentPerfectSubjunctiveTense);
 
 // saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
-saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
-// saveAudioFileForOneWord('une entreprise', 'entreprise', audioFileFolderNounGender);
+// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+
 
 
 /**

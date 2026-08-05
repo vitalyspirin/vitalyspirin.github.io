@@ -6,6 +6,7 @@ import { Resolver } from './Resolver.mjs';
 import ErrorCounterObj from './ErrorCounterObj.mjs';
 import Utils from './Utils.mjs';
 import Storage from './Storage.mjs';
+import VerbTenseResolver from './VerbTenseResolver.mjs';
 
 export default class StatsFooter {
 
@@ -127,7 +128,7 @@ export default class StatsFooter {
         if (verbTense === null || verbTense === '') {
             storageKey = window.location.pathname.split('/').pop() + window.location.search;
         } else {
-            storageKey = 'conjugations.html?' + Resolver.getURLEncodedTenseByFolder(verbTense);
+            storageKey = 'conjugations.html?' + VerbTenseResolver.getURLEncodedTenseByFolder(verbTense);
         }
 
         return storageKey;
