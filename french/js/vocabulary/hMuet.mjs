@@ -226,7 +226,8 @@ export default {
     },
     "héroïne": {
         article: "l'",
-        level: "B1"
+        level: "B1",
+        translation: "heroine (character), heroin (drug)"
     },
     "honnêteté": {
         article: "l'",

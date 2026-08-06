@@ -383,7 +383,8 @@ export default {
     },
     "sorte": {
         article: "une",
-        level: "A2"
+        level: "A2",
+        translation: "kind, sort"
     },
     "nourriture": {
         article: "une",
