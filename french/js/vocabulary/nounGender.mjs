@@ -482,4 +482,8 @@ export default {
         article: "une",
         level: "A1"
     },
+    "marché": {
+        article: "un",
+        level: "A1"
+    },
 }

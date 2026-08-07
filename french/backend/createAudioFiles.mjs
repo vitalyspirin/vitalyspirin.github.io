@@ -37,7 +37,7 @@ import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/c
 import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHistoricTense } from '../js/conjugations/verbsInPastHistoricTense.mjs';
 
 import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vocabulary/hMuet.mjs';
-// import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/nounGender.mjs';
+import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/nounGender.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
@@ -58,10 +58,10 @@ import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vo
 // saveAudioFilesBase64ForVerbList(verbsInFuturePerfectTense, audioFileFolderForFuturePerfectTense);
 //  saveAudioFilesBase64ForVerbList(verbsInPastHistoricTense, audioFileFolderForPastHistoricTense);
 
-saveAudioFilesBase64ForInfinitive("Se déplaire", verbsInPresentSubjunctiveTense["Se déplaire"], audioFileFolderForPresentSubjunctiveTense);
+// saveAudioFilesBase64ForInfinitive("Se déplaire", verbsInPresentSubjunctiveTense["Se déplaire"], audioFileFolderForPresentSubjunctiveTense);
 
 // saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
-// saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
+saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
 
 
 

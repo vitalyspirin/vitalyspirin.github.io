@@ -212,12 +212,12 @@ export default {
         level: "B2"
     },
     "hasard": {
-        article: "l'",
+        article: "le",
         level: "A2",
         translation: "chance, coincidence"
     },
     "haschich": {
-        article: "l'",
+        article: "le",
         level: "C1"
     },
     "hémorragie": {
