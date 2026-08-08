@@ -486,4 +486,8 @@ export default {
         article: "un",
         level: "A1"
     },
+    "programme": {
+        article: "un",
+        level: "A2"
+    },
 }
