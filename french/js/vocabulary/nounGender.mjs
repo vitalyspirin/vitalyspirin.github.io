@@ -490,4 +490,8 @@ export default {
         article: "un",
         level: "A2"
     },
+    "chanson": {
+        article: "une",
+        level: "A1"
+    },
 }
