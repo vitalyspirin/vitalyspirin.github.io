@@ -416,9 +416,13 @@ td.best-result {
 }
 
 .text .span-third span.info-icon {
+    margin-left: -1em;
+}
+
+.text span.info-icon {
     font-size: x-large;
     line-height: 100%;
-    margin-left: -1em;
+    margin-left: 1em;
 }
 
 /* line for given example for exercise */
