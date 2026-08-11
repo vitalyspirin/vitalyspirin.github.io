@@ -68,7 +68,8 @@ export default {
     },
     "hibou": {
         article: "le",
-        level: "A2"
+        level: "A2",
+        translation: "owl"
     },
     "hérédité": {
         article: "l'",
