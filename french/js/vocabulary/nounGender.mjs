@@ -494,4 +494,12 @@ export default {
         article: "une",
         level: "A1"
     },
+    "section": {
+        article: "une",
+        level: "B1"
+    },
+    "problème": {
+        article: "un",
+        level: "A1"
+    },
 }
