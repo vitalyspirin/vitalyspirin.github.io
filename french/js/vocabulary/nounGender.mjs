@@ -301,7 +301,8 @@ export default {
     },
     "paresse": {
         article: "une",
-        level: "B1"
+        level: "B1",
+        translation: "laziness"
     },
     "capitalisme": {
         article: "un",
