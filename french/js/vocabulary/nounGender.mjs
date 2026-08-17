@@ -503,4 +503,8 @@ export default {
         article: "un",
         level: "A1"
     },
+    "liste": {
+        article: "une",
+        level: "A1"
+    },
 }
