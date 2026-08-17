@@ -12,6 +12,27 @@ export class CheckboxesAndRadioButtons {
 
         self.setCheckboxesBasedOnConfig(page, self);
         self.setRadioButtonsBasedOnConfig(page, self);
+
+        self.setNumberOfDays(page);
+    }
+
+    /**
+     * @param {string} page 
+     */
+    static setNumberOfDays(page) {
+        const numberOfDaysElement = /** @type HTMLInputElement */
+            (document.getElementsByName('number-of-days').item(0));
+
+        if (numberOfDaysElement === null) return; // index page (so no numberOfDaysElement)
+
+        if (Storage.getConfigDataForKey(page, numberOfDaysElement.name) !== null) {
+            numberOfDaysElement.value = Storage.getConfigDataForKey(page, numberOfDaysElement.name);
+        }
+
+        numberOfDaysElement.onchange = () => {
+            Storage.saveConfigForKey(page, numberOfDaysElement.name, numberOfDaysElement.value);
+            window.location.reload();
+        }
     }
 
     /**
@@ -20,15 +41,14 @@ export class CheckboxesAndRadioButtons {
      * @returns 
      */
     static setCheckboxesBasedOnConfig(page, self = this) {
-        const checkboxList = document.querySelectorAll('#checkboxes input[type="checkbox"]');
+        const checkboxList = /** @type {NodeListOf<HTMLInputElement>} */
+            (document.querySelectorAll('#checkboxes input[type="checkbox"]'));
 
         if (checkboxList.length == 0) {
             // iframe with checkboxes is not loaded yet, so wait...
             setTimeout(self.setCheckboxesBasedOnConfig, 20, page, self);
         } else {
             checkboxList.forEach((checkboxElement) => {
-                if (!(checkboxElement instanceof HTMLInputElement)) return;
-
                 if (Storage.getConfigDataForKey(page, checkboxElement.name) != null) {
                     checkboxElement.checked = Storage.getConfigDataForKey(page, checkboxElement.name);
                 } else if (checkboxElement.hasAttribute('data-unchecked')) {
@@ -46,17 +66,6 @@ export class CheckboxesAndRadioButtons {
 
             self.addCssClassesBasedOnSelection();
 
-            const numberOfDaysElement = document.getElementsByName('number-of-days').item(0);
-            if (!(numberOfDaysElement instanceof HTMLInputElement)) return;
-
-            if (Storage.getConfigDataForKey(page, numberOfDaysElement.name) !== null) {
-                numberOfDaysElement.value = Storage.getConfigDataForKey(page, numberOfDaysElement.name);
-            }
-            numberOfDaysElement.onchange = () => {
-                Storage.saveConfigForKey(page, numberOfDaysElement.name, numberOfDaysElement.value);
-                window.location.reload();
-            }
-
         } // if (checkboxList.length == 0) else {
     }
 
@@ -67,11 +76,10 @@ export class CheckboxesAndRadioButtons {
      */
     static setRadioButtonsBasedOnConfig(page, self = this) {
 
-        const radioList = document.querySelectorAll('input[type="radio"]');
+        const radioList = /** @type {NodeListOf<HTMLInputElement>} */
+            (document.querySelectorAll('input[type="radio"]'));
 
         radioList.forEach((radioElement) => {
-            if (!(radioElement instanceof HTMLInputElement)) return;
-
             if (Storage.getConfigDataForKey(page, radioElement.name) != null) {
                 if (radioElement.value === Storage.getConfigDataForKey(page, radioElement.name)) {
                     radioElement.checked = true;
@@ -88,26 +96,25 @@ export class CheckboxesAndRadioButtons {
     }
 
     static addCssClassesBasedOnSelection() {
-        document.querySelectorAll('#checkboxes input[type="checkbox"], input[type="radio"]')
-            .forEach((checkboxOrRadioElement) => {
+        const checkboxOrRadioElementList = /** @type {NodeListOf<HTMLInputElement>} */
+            (document.querySelectorAll('#checkboxes input[type="checkbox"], input[type="radio"]'));
 
-                if (!(checkboxOrRadioElement instanceof HTMLInputElement)) return;
+        checkboxOrRadioElementList.forEach((checkboxOrRadioElement) => {
+            const element = document.getElementsByTagName('article')[0];
 
-                const element = document.getElementsByTagName('article')[0];
+            let cssClass;
+            if (checkboxOrRadioElement.type === 'checkbox') {
+                cssClass = checkboxOrRadioElement.name;
+            } else {
+                cssClass = checkboxOrRadioElement.value;
+            }
 
-                let cssClass;
-                if (checkboxOrRadioElement.type === 'checkbox') {
-                    cssClass = checkboxOrRadioElement.name;
-                } else {
-                    cssClass = checkboxOrRadioElement.value;
-                }
-
-                if (checkboxOrRadioElement.checked) {
-                    element.classList.add(cssClass);
-                } else {
-                    element.classList.remove(cssClass);
-                }
-            });
+            if (checkboxOrRadioElement.checked) {
+                element.classList.add(cssClass);
+            } else {
+                element.classList.remove(cssClass);
+            }
+        });
     }
 
 

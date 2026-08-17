@@ -92,7 +92,6 @@ export default class StatsPageBuilder {
 
         this.dates.forEach((date, index) => {
             let newTableRowElement = templateTableRow.cloneNode(true);
-            if (!(newTableRowElement instanceof HTMLTableRowElement)) return;
 
             this.#fillTableRow(newTableRowElement, date, this.stats[date]);
 
@@ -142,9 +141,10 @@ export default class StatsPageBuilder {
         );
         const miniElementForExerciseInTemplate = templateMiniElementForExerciseTitle.content.firstElementChild;
 
-        for (const tdElement of tableRowElement.children) {
-            if (!(tdElement instanceof HTMLTableCellElement)) continue;
-
+        const tableCellList = /** @type {HTMLCollectionOf<HTMLTableCellElement>} */ 
+            (tableRowElement.children);
+            
+        for (const  tdElement of tableCellList) {
             let statsPageKey = Types.assertNotNull(tdElement.getAttribute('data-key'));
 
             if (statsForOneDate.hasOwnProperty(statsPageKey)) {

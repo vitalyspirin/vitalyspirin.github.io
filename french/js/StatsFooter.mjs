@@ -75,24 +75,16 @@ export default class StatsFooter {
         document.getElementById('stats-title').style.display = 'block';
         document.getElementById('stats').textContent = '';
 
-        const template = document.getElementById('template-stats-line')
+        const template = /** @type HTMLTemplateElement */
+            (document.getElementById('template-stats-line'));
 
-        if (!(template instanceof HTMLTemplateElement)) {
-            console.error('HTML element with id "template-stats-line" has not been found.');
-            return;
-        }
         const statsLineElement = template.content.firstElementChild;
 
         const stats = StatsFooter.retrieveStats(verbTense);
         const bestResult = this.getBestResult(stats);
 
         Object.values(stats).forEach((statsLine) => {
-            let newStatsLineElement = statsLineElement.cloneNode();
-
-            if (!(newStatsLineElement instanceof HTMLElement)) { // typecast for .innerHTML
-                console.error('newStateLineElement must be instanceof HTMLElement.');
-                return;
-            }
+            let newStatsLineElement = /** @type HTMLElement */ (statsLineElement.cloneNode());
 
             if (statsLine['result'] == bestResult) {
                 newStatsLineElement.classList.add('best-result');

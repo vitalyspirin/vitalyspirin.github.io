@@ -14,12 +14,12 @@ export class ShowHints {
                 for (const element of sentence.children) {
                     if (element.tagName.toLowerCase() === 'input') {
                         element.addEventListener("focusout", (event) => {
-                            if (!(event.target instanceof HTMLInputElement)) return;
+                            const target = /** @type {HTMLInputElement} */ (event.target);
 
-                            if (event.target.parentElement.className.includes(' on')) return;
+                            if (target.parentElement.className.includes(' on')) return;
 
-                            if (!event.target.checkValidity())
-                                event.target.parentElement.className += ' on';
+                            if (!target.checkValidity())
+                                target.parentElement.className += ' on';
                         });
                     }
                 }

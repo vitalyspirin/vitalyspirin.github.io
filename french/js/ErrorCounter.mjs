@@ -51,8 +51,8 @@ export class ErrorCounter {
 
         ErrorCounterObj.init(verbTenseList);
 
-        const allInputElements = document.
-            querySelectorAll(':is(input[type="text"], input[type="radio"])');
+        const allInputElements = /** @type {NodeListOf<HTMLInputElement>} */ (document.
+            querySelectorAll(':is(input[type="text"], input[type="radio"])'));
 
         if (allInputElements.length === 0) {
             StatsFooter.hideStats();
@@ -60,8 +60,6 @@ export class ErrorCounter {
             let lastInputElement = null;
 
             allInputElements.forEach((inputElement) => {
-                if (!(inputElement instanceof HTMLInputElement)) return;
-
                 // verbs-and-prepositions.html can have display:none for some input based on query params
                 if (!inputElement.checkVisibility()) return;
 
@@ -102,9 +100,10 @@ export class ErrorCounter {
             }
         } // if (allInputElements.length === 0) else 
 
-        document.querySelectorAll('.error-counter-line').forEach(errorLineElement => {
-            if (!(errorLineElement instanceof HTMLElement)) return;
+        const errorLineElementList = /** @type {NodeListOf<HTMLElement>} */
+            (document.querySelectorAll('.error-counter-line'));
 
+        errorLineElementList.forEach((errorLineElement) => {
             const verbTense = errorLineElement.id.replace('error-counter-', '');
             if (!verbTenseList.includes(verbTense)) {
                 errorLineElement.style.display = 'none';
@@ -118,34 +117,9 @@ export class ErrorCounter {
 
     }
 
-
-    // /**
-    //  * @param {string} eventName
-    //  * @param {HTMLInputElement} inputElement
-    //  * @param {function} eventListenerFunction
-    //  */
-    // static #addEventListenerToInputElement(eventName, inputElement, eventListenerFunction) {
-    //     if (inputElement.type == 'text') {
-    //         inputElement.addEventListener(eventName, (event) => {
-    //             eventListenerFunction(event);
-    //         });
-    //     } else { // radio button
-    //         // two radio button with the same name (with correct and with wrong answer)
-    //         document.getElementsByName(inputElement.name).forEach((element) => {
-    //             element.addEventListener(eventName, (event) => {
-    //                 eventListenerFunction(event);
-    //             });
-    //         });
-    //     }
-    // }
-
     static #buildErrorCounterLines() {
-        const template = document.getElementById('template-error-counter-line')
-
-        if (!(template instanceof HTMLTemplateElement)) {
-            console.error('HTML element with id "template-error-counter-line" has not been found.');
-            return;
-        }
+        const template = /** @type HTMLTemplateElement*/ 
+            (document.getElementById('template-error-counter-line'));
 
         const errorCounterSection = document.getElementById('error-counter-section');
         errorCounterSection.textContent = '';
@@ -155,11 +129,11 @@ export class ErrorCounter {
         errorCounterSection.appendChild(newErrorCounterLine);
 
         Object.entries(VerbTenseResolver.map).forEach(([tenseName, element]) => {
-            let newErrorCounterLine = Types.assertType(
-                errorCounterLineTemplate.cloneNode(true), HTMLElement);
+            let newErrorCounterLine = /** @type {HTMLElement} */ (errorCounterLineTemplate.cloneNode(true));
 
             newErrorCounterLine.id += element.folder;
-            const resultatStr = newErrorCounterLine.getElementsByClassName('resultat-for-which-tense').item(0);
+            const resultatStr = /** @type {HTMLElement} */
+                (newErrorCounterLine.getElementsByClassName('resultat-for-which-tense').item(0));
             resultatStr.innerText = ' pour ' + tenseName.toLowerCase();
             errorCounterSection.appendChild(newErrorCounterLine);
         });

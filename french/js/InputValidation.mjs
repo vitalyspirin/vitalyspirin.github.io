@@ -66,21 +66,22 @@ export default class InputValidation {
      * @param {Event} event
      */
     static onClickEventHandler(event) {
-        if (!(event.target instanceof HTMLInputElement)) return;
 
         const self = InputValidation;
         self.#initialize(event);
 
         Timer.restartIfNecessary();
 
-        if (!event.target.required) {
+        const target = /** @type {HTMLInputElement} */ (event.target);
+
+        if (!target.required) {
             ErrorCounterObj.getErrorCounterObj(self.verbTense).numberOfErrors++;
-            event.target.parentElement.classList.add('failed');
+            target.parentElement.classList.add('failed');
         } else {
             ErrorCounterObj.getErrorCounterObj(self.verbTense).numberOfCompleted++;
         }
 
-        document.getElementsByName(event.target.name).forEach((element) => {
+        document.getElementsByName(target.name).forEach((element) => {
             element.removeEventListener('click', InputValidation.onClickEventHandler);
         });
 
@@ -100,49 +101,31 @@ export default class InputValidation {
      * @param {Event} event
      */
     static focusOutEventHandler(event) {
-        if (!(event.target instanceof HTMLInputElement)) return;
-
         const self = InputValidation;
         self.#initialize(event);
 
         const errorCounterObj = ErrorCounterObj.getErrorCounterObj(self.verbTense);
-        if (event.target.type === 'text') {
-            if (!event.target.checkValidity()) {
+
+        const target = /** @type {HTMLInputElement} */ (event.target);
+
+        if (target.type === 'text') {
+            if (!target.checkValidity()) {
                 errorCounterObj.numberOfErrors++;
-                event.target.classList.add('failed');
-                event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
-            } else if (event.target.value != '') {
+                target.classList.add('failed');
+                target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
+            } else if (target.value != '') {
                 errorCounterObj.numberOfCompleted++;
-                event.target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
+                target.removeEventListener("focusout", InputValidation.focusOutEventHandler);
             }
 
             Timer.setDuration(self.verbTense);
         } else {
             // for radio button validity is checked in onClickEventHandler
-            document.getElementsByName(event.target.name).forEach((element) => {
+            document.getElementsByName(target.name).forEach((element) => {
                 element.removeEventListener('focusout', InputValidation.focusOutEventHandler);
             });
         }
 
         self.#finalize();
     }
-
-    /**
-     */
-    // static setDuration() {
-    //     const errorCounterObj = ErrorCounter.getErrorCounterObj(this.verbTense);
-
-    //     if (ErrorCounter.isOneTimerOnly) {
-    //         errorCounterObj.duration = Date.now() - ErrorCounter.startTimestamp;
-    //     } else {
-    //         const timeDiff = Date.now() - ErrorCounter.startTimestamp;
-    //         errorCounterObj.duration += timeDiff;
-
-    //         // to catch a bug when duration becomes huge
-    //         if (timeDiff > 1000 * 60 * 60) {
-    //             alert('time difference between "focus in" and "focus out" is ' + timeDiff + '. That is more than an hour.');
-    //         }
-    //     }
-
-    // }
 }
