@@ -78,20 +78,16 @@ export default class StatsPageBuilder {
     static buildPage() {
         this.#buildStatsObject();
 
-        const templateElement = Types.assertType(
-            document.getElementById('template-table-row'),
-            HTMLTemplateElement
-        );
+        const templateElement = /** @type {HTMLTemplateElement} */
+            (document.getElementById('template-table-row'));
 
-        const templateTableRow = Types.assertType(
-            templateElement.content.firstElementChild,
-            HTMLTableRowElement
-        );
+        const templateTableRow = templateElement.content.firstElementChild;
 
         const tbodyElement = document.getElementsByTagName('tbody')[0];
 
         this.dates.forEach((date, index) => {
-            let newTableRowElement = templateTableRow.cloneNode(true);
+            let newTableRowElement = /** @type {HTMLTableRowElement} */
+                (templateTableRow.cloneNode(true));
 
             this.#fillTableRow(newTableRowElement, date, this.stats[date]);
 
@@ -110,15 +106,14 @@ export default class StatsPageBuilder {
             tbodyElement.append(newTableRowElement);
         });
 
-        const numberOfRecentDays = Types.assertType(
-            document.getElementsByName('number-of-days').item(0),
-            HTMLInputElement
-        ).value;
-        this.#processRecentDates(numberOfRecentDays);
+        const numberOfRecentDays = /** @type {HTMLInputElement} */
+            (document.getElementsByName('number-of-days').item(0))
+                .value;
+        this.#processRecentDates(Number(numberOfRecentDays));
 
         this.#fillPercentStats();
 
-        Types.assertType(document.querySelector('a.info-icon'), HTMLElement)
+        /** @type {HTMLElement} */ (document.querySelector('a.info-icon'))
             .style.visibility = 'visible';
     }
 
@@ -130,21 +125,18 @@ export default class StatsPageBuilder {
     static #fillTableRow(tableRowElement, formattedDate, statsForOneDate) {
         let duration = 0;
 
-        const tdMiniElement = Types.assertType(
-            tableRowElement.querySelector('[data-key="mini"]'),
-            HTMLElement
-        );
+        const tdMiniElement = /** @type {HTMLElement} */
+            (tableRowElement.querySelector('[data-key="mini"]'));
 
-        const templateMiniElementForExerciseTitle = Types.assertType(
-            document.getElementById('template-exercise-title-for-mini'),
-            HTMLElement
-        );
-        const miniElementForExerciseInTemplate = templateMiniElementForExerciseTitle.content.firstElementChild;
+        const templateMiniElementForExerciseTitle = /** @type {HTMLTemplateElement} */
+            (document.getElementById('template-exercise-title-for-mini'));
+        const miniElementForExerciseInTemplate =
+            templateMiniElementForExerciseTitle.content.firstElementChild;
 
-        const tableCellList = /** @type {HTMLCollectionOf<HTMLTableCellElement>} */ 
+        const tableCellList = /** @type {HTMLCollectionOf<HTMLTableCellElement>} */
             (tableRowElement.children);
-            
-        for (const  tdElement of tableCellList) {
+
+        for (const tdElement of tableCellList) {
             let statsPageKey = Types.assertNotNull(tdElement.getAttribute('data-key'));
 
             if (statsForOneDate.hasOwnProperty(statsPageKey)) {
@@ -158,7 +150,8 @@ export default class StatsPageBuilder {
                     tdElement.classList.add('best-result');
                 }
 
-                let miniElementForExercise = miniElementForExerciseInTemplate.cloneNode(true);
+                let miniElementForExercise = /** @type {HTMLElement} */
+                    (miniElementForExerciseInTemplate.cloneNode(true));
                 miniElementForExercise.innerHTML = this.#getExerciseTitleFromStatsPageKey(statsPageKey);
 
                 if (this.earlestDates[statsPageKey] == formattedDate) {
@@ -173,18 +166,14 @@ export default class StatsPageBuilder {
             }
         } // for (const tdElement of tableRowElement.children) {
 
-        const dateCell = Types.assertType(
-            tableRowElement.querySelector('[data-key="date"]'),
-            HTMLElement
-        );
+        const dateCell = /** @type {HTMLElement} */
+            (tableRowElement.querySelector('[data-key="date"]'));
         dateCell.innerText = formattedDate;
         const durationStr = Utils.timestampToTime(duration);
         dateCell.title = 'time spent: ' + durationStr;
 
-        const durationCell = Types.assertType(
-            tableRowElement.querySelector('[data-key="duration"]'),
-            HTMLElement
-        );
+        const durationCell = /** @type {HTMLElement} */
+            (tableRowElement.querySelector('[data-key="duration"]'));
         durationCell.innerText = durationStr;
     }
 

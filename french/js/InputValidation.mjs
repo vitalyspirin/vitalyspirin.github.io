@@ -6,7 +6,6 @@ import { ErrorCounter } from './ErrorCounter.mjs';
 import ErrorCounterObj from './ErrorCounterObj.mjs';
 import ErrorCounterLine from './ErrorCounterLine.mjs';
 import StatsFooter from './StatsFooter.mjs';
-import Types from './Types.mjs';
 import HtmlHelper from './HtmlHelper.mjs';
 import Timer from './Timer.mjs';
 
@@ -25,7 +24,7 @@ export default class InputValidation {
      * @param {Event} event
      */
     static #initialize(event) {
-        this.inputElement = Types.assertType(event.target, HTMLInputElement);
+        this.inputElement = /** @type {HTMLInputElement} */ (event.target);
 
         this.verbTense = this.inputElement.getAttribute('data-verb-tense') ?? '';
         this.errorLineElement = document.getElementById('error-counter-' + this.verbTense);

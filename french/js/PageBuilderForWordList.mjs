@@ -5,7 +5,6 @@
 import HtmlHelper from './HtmlHelper.mjs';
 import { Resolver } from './Resolver.mjs';
 import { SpeakerPhone } from './SpeakerPhone.mjs';
-import Types from './Types.mjs';
 import Utils from './Utils.mjs';
 
 export default class PageBuilderForWordList {
@@ -17,13 +16,12 @@ export default class PageBuilderForWordList {
     static build(wordListStructure, fileFolder) {
         const wordList = document.getElementById('word-list');
 
-        let templateBlock = Types.assertType(
-            document.getElementById('template-li-for-one-word'),
-            HTMLTemplateElement
+        let templateBlock = /** @type {HTMLTemplateElement} */ (
+            document.getElementById('template-li-for-one-word')
         ).content.firstElementChild;
 
         for (let word in wordListStructure) {
-            let worldLiBlock = templateBlock.cloneNode(true);
+            let worldLiBlock = /** @type {HTMLElement} */ (templateBlock.cloneNode(true));
 
             worldLiBlock.classList.add(wordListStructure[word].level);
 
@@ -49,7 +47,7 @@ export default class PageBuilderForWordList {
                 Utils.getAudioFileUrl(word, fileFolder, 'mp3');
 
             SpeakerPhone.init(
-                speakerPhoneElement, 
+                speakerPhoneElement,
                 '', // for ErrorCounter.getErrorCounterObj('')
                 audioFullFileName
             );

@@ -3,7 +3,6 @@
 "use strict";
 
 import ErrorCounterObj from './ErrorCounterObj.mjs';
-import Types from './Types.mjs';
 
 
 export default class ErrorCounterLine {
@@ -18,9 +17,8 @@ export default class ErrorCounterLine {
         errorLineElement.getElementsByClassName('number-of-errors').item(0).textContent = '0';
         errorLineElement.getElementsByClassName('result').item(0).textContent = '0';
 
-        const numberCorrect = Types.assertType(
-            errorLineElement.getElementsByClassName('number-correct').item(0),
-            HTMLElement
+        const numberCorrect = /** @type {HTMLElement} */ (
+            errorLineElement.getElementsByClassName('number-correct').item(0)
         );
         numberCorrect.textContent = '0';
         numberCorrect.title = 'out of ' + numberOfAllInputElements;

@@ -5,7 +5,6 @@
 import { ErrorCounter } from './ErrorCounter.mjs';
 import HtmlHelper from './HtmlHelper.mjs';
 import Timer from './Timer.mjs';
-import Types from './Types.mjs';
 
 export default class Exercise {
     static RANDOMIZE_CLASS_NAME = 'randomize';
@@ -44,9 +43,11 @@ export default class Exercise {
     }
 
     static #randomizeIfNecessary() {
-        const listsToRandomize = document.getElementsByClassName(this.RANDOMIZE_CLASS_NAME);
+        const listsToRandomize = /** @type {HTMLCollectionOf<HTMLElement>} */ (
+            document.getElementsByClassName(this.RANDOMIZE_CLASS_NAME)
+        );
         Array.from(listsToRandomize).forEach((listBlock) => {
-            HtmlHelper.randomizeLiList(Types.assertType(listBlock, HTMLElement));
+            HtmlHelper.randomizeLiList(listBlock);
         });
     }
 }

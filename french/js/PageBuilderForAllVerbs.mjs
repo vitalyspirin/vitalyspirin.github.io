@@ -2,8 +2,6 @@
 
 "use strict";
 
-
-import Types from './Types.mjs';
 import VerbTenseResolver from './VerbTenseResolver.mjs';
 
 export default class PageBuilderForAllVerbs {
@@ -32,8 +30,8 @@ export default class PageBuilderForAllVerbs {
 
         const verbFolderList = [];
         for (let verbName in VerbTenseResolver.map) {
-            let newThElement = Types.assertType(
-                thElementFromTemplate.cloneNode(true), HTMLTableCellElement);
+            let newThElement = /** @type {HTMLTableCellElement} */
+                (thElementFromTemplate.cloneNode(true));
             newThElement.innerText = verbName;
 
             thTemplate.insertAdjacentElement('beforebegin', newThElement);
@@ -57,16 +55,18 @@ export default class PageBuilderForAllVerbs {
 
         let index = 1;
         verbList.forEach((verbName) => {
-            let newTrElement = Types.assertType(
-                trElementFromTemplate.cloneNode(true), HTMLTableRowElement);
-            newTrElement.getElementsByClassName('index')[0].innerText = index;
-            newTrElement.getElementsByClassName('verb-name')[0].innerText = verbName;
+            let newTrElement = /** @type {HTMLTableRowElement} */
+                (trElementFromTemplate.cloneNode(true));
+            /** @type {HTMLTableCellElement} */
+            (newTrElement.getElementsByClassName('index')[0]).innerText = String(index);
+            /** @type {HTMLTableCellElement} */
+            (newTrElement.getElementsByClassName('verb-name')[0]).innerText = verbName;
 
             for (let verbFolder in verbListObj[verbName]) {
                 let tdElement = newTrElement.querySelector(`td[data-verb-name="${verbFolder}"]`);
 
                 if (verbListObj[verbName].hasOwnProperty(verbFolder)) {
-                    tdElement.setAttribute('data-exist', true);
+                    tdElement.setAttribute('data-exist', String(true));
                 }
 
             }
@@ -74,24 +74,6 @@ export default class PageBuilderForAllVerbs {
             tbodyElement.append(newTrElement);
             index++;
         });
-        // for (let verbName in verbListObj) {
-        //     let newTrElement = Types.assertType(
-        //         trElementFromTemplate.cloneNode(true), HTMLTableRowElement);
-        //     newTrElement.getElementsByClassName('index')[0].innerText = index;
-        //     newTrElement.getElementsByClassName('verb-name')[0].innerText = verbName;
-
-        //     for (let verbFolder in verbListObj[verbName]) {
-        //         let tdElement = newTrElement.querySelector(`td[data-verb-name="${verbFolder}"]`);
-
-        //         if (verbListObj[verbName].hasOwnProperty(verbFolder)) {
-        //             tdElement.setAttribute('data-exist', true);
-        //         }
-
-        //     }
-
-        //     tbodyElement.append(newTrElement);
-        //     index++;
-        // };
     }
 
 
@@ -103,13 +85,13 @@ export default class PageBuilderForAllVerbs {
      * @returns {HTMLTableRowElement}
      */
     static #buildTrTemplate(trTemplate, tdTemplate) {
-        const trElementFromTemplate = Types.assertType(
-            trTemplate.content.firstElementChild, HTMLTableRowElement);
+        const trElementFromTemplate = /** @type {HTMLTableRowElement} */
+            (trTemplate.content.firstElementChild);
         const tdElementFromTemplate = tdTemplate.content.firstElementChild;
 
         for (let verbName in VerbTenseResolver.map) {
-            let newTdElement = Types.assertType(
-                tdElementFromTemplate.cloneNode(true), HTMLTableCellElement);
+            let newTdElement = /** @type {HTMLTableCellElement} */
+                (tdElementFromTemplate.cloneNode(true));
             newTdElement.setAttribute('data-verb-name', VerbTenseResolver.map[verbName].folder);
 
             trElementFromTemplate.append(newTdElement);

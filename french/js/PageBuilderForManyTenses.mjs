@@ -4,7 +4,6 @@
 
 import { Resolver } from './Resolver.mjs';
 import { SpeakerPhone } from './SpeakerPhone.mjs';
-import Types from './Types.mjs';
 import Utils from './Utils.mjs';
 import VerbTenseResolver from './VerbTenseResolver.mjs';
 
@@ -29,15 +28,12 @@ export class PageBuilderForManyTenses {
         document.title = title;
         document.getElementById("page-title").textContent = title;
 
-        let templateVerbBlock = Types.assertType(
-            document.getElementById("template-verb-block"),
-            HTMLTemplateElement
-        ).content.firstElementChild;
+        let templateVerbBlock = /** @type {HTMLTemplateElement} */
+            (document.getElementById("template-verb-block")).content.firstElementChild;
 
-        let templateConjugationsForOneTenseBlock = Types.assertType(
-            document.getElementById("template-conjugations-for-one-tense-block"),
-            HTMLTemplateElement
-        ).content.firstElementChild;
+        let templateConjugationsForOneTenseBlock = /** @type {HTMLTemplateElement} */
+            (document.getElementById("template-conjugations-for-one-tense-block"))
+                .content.firstElementChild;
 
         let counter = 1;
         let str = ''; // for debugging
@@ -50,7 +46,7 @@ export class PageBuilderForManyTenses {
 
             if (!infinitiveHasAllTensesInTheList) continue;
 
-            let verbBlock = templateVerbBlock.cloneNode(true);
+            let verbBlock = /** @type {HTMLElement} */ (templateVerbBlock.cloneNode(true));
 
             let infinitiveElement = verbBlock.querySelector(".infinitive");
             infinitiveElement.textContent = counter + ' - ' + infinitive;
@@ -59,7 +55,8 @@ export class PageBuilderForManyTenses {
             for (let tense in verbMixedConjugationList[infinitive]) {
                 if (!tenseList.includes(tense)) continue;
 
-                let newConjugationsForOneTenseBlock = templateConjugationsForOneTenseBlock.cloneNode(true);
+                let newConjugationsForOneTenseBlock = /** @type {HTMLElement} */
+                    (templateConjugationsForOneTenseBlock.cloneNode(true));
                 str += this.fillConjugationsForOneTenseBlock(
                     newConjugationsForOneTenseBlock,
                     infinitive,
@@ -77,7 +74,7 @@ export class PageBuilderForManyTenses {
         // console.log(str); // use Spell Checker to find spelling errors
     } // static buildForManyTenses()
 
-    
+
     /**
      * 
      * @param {HTMLElement} newConjugationsForOneTenseBlock
@@ -97,10 +94,9 @@ export class PageBuilderForManyTenses {
         let tenseElement = newConjugationsForOneTenseBlock.querySelector(".tense");
         tenseElement.textContent = VerbTenseResolver.getTenseByFolder(tense);
 
-        let templateInputElement = Types.assertType(
-            document.getElementById("template-input"),
-            HTMLTemplateElement
-        ).content.firstElementChild;
+        let templateInputElement = /** @type {HTMLTemplateElement} */
+            (document.getElementById("template-input"))
+                .content.firstElementChild;
 
         for (let pronoun in conjugationList) {
             // while debugging to check if all congugations typed properly
@@ -108,7 +104,8 @@ export class PageBuilderForManyTenses {
             if (pronoun.slice(-1) != "'") str += ' ';
             str += conjugationList[pronoun] + ".\n";
 
-            let newInputBlock = templateInputElement.cloneNode(true);
+            let newInputBlock = /** @type {HTMLElement} */
+                (templateInputElement.cloneNode(true));
 
             this.fillInputBlock(
                 newInputBlock,
@@ -132,8 +129,8 @@ export class PageBuilderForManyTenses {
      * @param {string} fileFolder
      */
     static fillInputBlock(newInputBlock, infinitive, pronoun, verb, fileFolder) {
-        let labelElement = Types.assertType(
-            newInputBlock.querySelector(".pronoun"), HTMLLabelElement);
+        let labelElement = /** @type {HTMLLabelElement} */
+            (newInputBlock.querySelector(".pronoun"));
         labelElement.textContent = pronoun;
         labelElement.title = verb;
 
@@ -145,7 +142,7 @@ export class PageBuilderForManyTenses {
         inputElement.setAttribute('data-verb-tense', fileFolder);
         inputElement.pattern = verb;
         inputElement.onblur = (/** @type Event */event) => {
-            const inputElement = Types.assertType(event.target, HTMLInputElement);
+            const inputElement = /** @type {HTMLInputElement} */ (event.target);
             inputElement.value = inputElement.value.trim();
         }
 

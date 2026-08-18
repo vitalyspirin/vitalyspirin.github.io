@@ -3,7 +3,6 @@
 "use strict";
 
 import Timer from './Timer.mjs';
-import Types from './Types.mjs';
 
 export class SpeakerPhone {
     /**
@@ -23,8 +22,8 @@ export class SpeakerPhone {
         }
 
         speakerPhoneElement.onclick = async (/** @type Event */event) => {
-            let audioElement = Types.assertType(event.currentTarget, HTMLElement)
-                .getElementsByTagName("audio")[0];
+            let audioElement = /** @type {HTMLElement} */
+                (event.currentTarget).getElementsByTagName("audio")[0];
 
             if (audioElement.src == '') {
                 const response = await fetch(fullFileName)

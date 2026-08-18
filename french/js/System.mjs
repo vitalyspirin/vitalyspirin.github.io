@@ -3,7 +3,6 @@
 "use strict";
 
 import Storage from './Storage.mjs';
-import Types from './Types.mjs';
 import Utils from './Utils.mjs';
 import StatsForOnePage from './StatsFooter.mjs';
 
@@ -37,7 +36,7 @@ export class System {
     }
 
     static uploadButtonClickEventHandler() {
-        const fileInput = Types.assertType(document.getElementById('file-input'), HTMLInputElement);
+        const fileInput = /** @type {HTMLInputElement} */ (document.getElementById('file-input'));
 
         fileInput.addEventListener('change', System.uploadFileEventHandler);
 
@@ -52,7 +51,8 @@ export class System {
      */
     static uploadFileEventHandler(event) {
         // Get the first selected file
-        const file = Types.assertType(event.target, HTMLInputElement).files[0];
+        const fileInput = /** @type {HTMLInputElement} */ (event.target);
+        const file = fileInput.files[0];
 
         if (file) {
             const reader = new FileReader(); // Create a FileReader instance
