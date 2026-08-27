@@ -507,4 +507,8 @@ export default {
         article: "une",
         level: "A1"
     },
+    "parole": {
+        article: "une",
+        level: "A1"
+    },
 }
