@@ -19,6 +19,7 @@ export class Resolver {
         "devoir-pouvoir-falloir-vouloir.html": "../pdf/devoir-pouvoir-falloir-vouloir.pdf",
         "meteo.html": "pdf/meteo.pdf",
         "calendar.html": "pdf/calendar.pdf",
+        "masculine-feminine.html?A1&title=1": "pdf/masculine-feminine.pdf",
         "mon-ton-son.html": "pdf/mon-ton-son.pdf",
         "de-du-des.html": "pdf/de-du-des.pdf",
         "ce-ces-cet.html": "pdf/ce-ces-cet.pdf",
@@ -30,7 +31,7 @@ export class Resolver {
 
         // A2
         "noun-gender.html": "pdf/noun-gender-number.pdf",
-        "noun-gender-2.html?A1&A2&title=2": "pdf/noun-gender-2.pdf",
+        "masculine-feminine.html?A2&title=2": "pdf/masculine-feminine.pdf",
         "avoir-etre.html": "../pdf/avoir-etre.pdf",
         "adjective-position.html": "pdf/adjective-position.pdf",
         "adjective-gender.html": "pdf/adjective-gender-number.pdf",
@@ -76,7 +77,7 @@ export class Resolver {
         "present-subjunctive.html": "pdf/present-subjunctive.pdf",
 
         // B2
-        "noun-gender-2.html?B1&B2&title=3": "pdf/noun-gender-2.pdf",
+        "masculine-feminine.html?B1&B2&title=3": "pdf/masculine-feminine.pdf",
         "h-muet.html?B1&B2&C1&title=2": "pdf/h-muet.doc.html",
         "ce-qui-ce-que.html": "pdf/ce-qui-ce-que.pdf",
         "dont-duquel.html": "pdf/dont-duquel.pdf",
@@ -101,7 +102,7 @@ export class Resolver {
         "conjugations.html?Conjugaisons%20m%C3%A9lang%C3%A9es": "#",
 
         // full files (which parts are used for different levels)
-        "noun-gender-2.html": "pdf/noun-gender-2.pdf",
+        "masculine-feminine.html": "pdf/noun-gender-2.pdf",
         "h-muet.html": "pdf/h-muet.doc.html",
         "geographical-prepositions.html": "pdf/geographical-prepositions.doc.html",
         "verbs-and-prepositions.html": "pdf/verbs-and-prepositions.doc.html"

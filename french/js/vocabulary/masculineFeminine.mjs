@@ -6,7 +6,7 @@
 
 "use strict";
 
-export const audioFileFolder = 'vocabulary/noun-gender';
+export const audioFileFolder = 'vocabulary/masculine-feminine';
 
 export default {
     "casquette": {
@@ -509,6 +509,110 @@ export default {
     },
     "parole": {
         article: "une",
+        level: "A1"
+    },
+    "hiver": {
+        article: "un",
+        level: "A1"
+    },
+    "visage": {
+        article: "un",
+        level: "A1"
+    },
+    "gare": {
+        article: "une",
+        level: "A1"
+    },
+    "rêve": {
+        article: "un",
+        level: "A2"
+    },
+    "valeur": {
+        article: "une",
+        level: "A2"
+    },
+    "lecture": {
+        article: "une",
+        level: "A1"
+    },
+    "médaille": {
+        article: "une",
+        level: "A2"
+    },
+    "signe": {
+        article: "un",
+        level: "A1"
+    },
+    "douleur": {
+        article: "une",
+        level: "A2"
+    },
+    "santé": {
+        article: "une",
+        level: "A1"
+    },
+    "bouche": {
+        article: "une",
+        level: "A1"
+    },
+    "scandale": {
+        article: "un",
+        level: "B1"
+    },
+    "loi": {
+        article: "une",
+        level: "A2"
+    },
+    "croix": {
+        article: "une",
+        level: "A1"
+    },
+    "musique": {
+        article: "une",
+        level: "A1"
+    },
+    "siècle": {
+        article: "un",
+        level: "A1"
+    },
+    "inondation": {
+        article: "une",
+        level: "A2"
+    },
+    "pierre": {
+        article: "une",
+        level: "A1"
+    },
+    "valise": {
+        article: "une",
+        level: "A1"
+    },
+    "possibilité": {
+        article: "une",
+        level: "A1"
+    },
+    "bonheur": {
+        article: "une",
+        level: "A1"
+    },
+    "barbe": {
+        article: "une",
+        level: "A1"
+    },
+    "sentence": {
+        article: "un",
+        level: "B1"
+    },
+    "sujet": {
+        article: "un",
+        level: "A1"
+    },
+    "verbe": {
+        article: "un",
+        level: "A1"
+    },
+    "air": {
+        article: "un",
         level: "A1"
     },
 }

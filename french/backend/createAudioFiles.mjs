@@ -37,7 +37,7 @@ import { audioFileFolder as audioFileFolderForFuturePerfectTense } from '../js/c
 import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHistoricTense } from '../js/conjugations/verbsInPastHistoricTense.mjs';
 
 import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vocabulary/hMuet.mjs';
-import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/nounGender.mjs';
+import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/masculineFeminine.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);

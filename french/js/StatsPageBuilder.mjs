@@ -152,13 +152,18 @@ export default class StatsPageBuilder {
 
                 let miniElementForExercise = /** @type {HTMLElement} */
                     (miniElementForExerciseInTemplate.cloneNode(true));
-                miniElementForExercise.innerHTML = this.#getExerciseTitleFromStatsPageKey(statsPageKey);
+                miniElementForExercise.innerHTML = 
+                    // check for nulls if Stats html page got changed but 
+                    // Stats data in localStorage is still old
+                    this.#getExerciseTitleFromStatsPageKey(statsPageKey) ?? '';
 
                 if (this.earlestDates[statsPageKey] == formattedDate) {
                     miniElementForExercise.classList.add('first-time');
                 }
 
-                tdMiniElement.append(miniElementForExercise);
+                if (miniElementForExercise.innerHTML != '') {
+                    tdMiniElement.append(miniElementForExercise);
+                }
             }
 
             if (this.earlestDates[statsPageKey] <= formattedDate) {
@@ -339,7 +344,7 @@ export default class StatsPageBuilder {
 
     /**
      * @param {string} statsPageKey 
-     * @returns string
+     * @returns string?
      */
     static #getExerciseTitleFromStatsPageKey(statsPageKey) {
         if (!this.exerciseTitle.hasOwnProperty(statsPageKey)) {
@@ -347,6 +352,10 @@ export default class StatsPageBuilder {
             // tr#exercise-title - second row in a table (after row of A1, A2, B1...)
             let trElement = document.getElementById('exercise-title');
             const thElement = trElement.querySelector('[data-key*="' + statsPageKey + '"]');
+            if (!thElement) {
+                console.error('StatsPageBuilder: cannot find exercise title for statsPageKey: ' + statsPageKey);
+                return null;
+            }
             const exerciseTitle = thElement.textContent.replace(/\n/g, '');
             this.exerciseTitle[statsPageKey] = exerciseTitle;
 

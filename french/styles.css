@@ -749,6 +749,7 @@ td.mini {
     border-radius: 0.5em;
     padding: 0.5em;
     margin: 0.5em 1em;
+    vertical-align: middle;
 }
 
 #stats-page article.mini .exercise-title.first-time {
