@@ -615,4 +615,8 @@ export default {
         article: "un",
         level: "A1"
     },
+    "terre": {
+        article: "une",
+        level: "A1"
+    },
 }
