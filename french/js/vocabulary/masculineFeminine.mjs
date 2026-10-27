@@ -619,4 +619,8 @@ export default {
         article: "une",
         level: "A1"
     },
+    "croissant": {
+        article: "un",
+        level: "A1"
+    },
 }
