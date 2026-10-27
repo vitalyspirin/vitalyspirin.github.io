@@ -208,7 +208,7 @@ span.recent-days {
 
 /* Text exercises */
 
-article.text {
+article.text:not(.doc) {
     opacity: 60%;
 }
 

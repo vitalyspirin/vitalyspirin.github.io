@@ -37,7 +37,7 @@ export class Resolver {
         "adjective-gender.html": "pdf/adjective-gender-number.pdf",
         "adjective-number.html": "pdf/adjective-gender-number.pdf",
         "il-est.html": "pdf/il-est.pdf",
-        "h-muet.html?A1&A2": "pdf/h-muet.doc.html",
+        "h-muet.html?A1&A2&title=1": "pdf/h-muet.doc.html",
         "mien-sien.html": "pdf/mon-ton-son.pdf",
         "conjugations.html?L%27imparfait": "pdf/imperfect.pdf",
         "imperfect.html": "pdf/imperfect.pdf",
