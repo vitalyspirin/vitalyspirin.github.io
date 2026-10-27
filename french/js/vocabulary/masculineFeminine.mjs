@@ -623,4 +623,8 @@ export default {
         article: "un",
         level: "A1"
     },
+    "raison": {
+        article: "une",
+        level: "A1"
+    },
 }
