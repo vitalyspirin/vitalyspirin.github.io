@@ -581,7 +581,8 @@ export default {
     },
     "pierre": {
         article: "une",
-        level: "A1"
+        level: "A1",
+        translation: "stone"
     },
     "valise": {
         article: "une",

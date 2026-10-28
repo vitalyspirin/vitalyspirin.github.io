@@ -36,7 +36,7 @@ export default {
     "hardiesse": {
         article: "la",
         level: "C1",
-        translation: "boldness"
+        translation: "boldness, audacity"
     },
     "horaire": {
         article: "l'",
