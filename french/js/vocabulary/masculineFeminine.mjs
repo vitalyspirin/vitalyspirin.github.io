@@ -342,7 +342,7 @@ export default {
         article: "une",
         level: "A2"
     },
-    "evenement": {
+    "événement": {
         article: "un",
         level: "A2"
     },
@@ -627,5 +627,14 @@ export default {
     "raison": {
         article: "une",
         level: "A1"
+    },
+    "village": {
+        article: "un",
+        level: "A1"
+    },
+    "tâche": {
+        article: "une",
+        level: "A2",
+        translation: "task"
     },
 }
