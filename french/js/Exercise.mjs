@@ -36,9 +36,9 @@ export default class Exercise {
      */
     static #setTitle(urlParams) {
         if (urlParams.has('title')) {
-            document.getElementsByTagName('h1').item(0).innerText += ' ' + urlParams.get('title');
+            document.getElementsByTagName('h1').item(0).innerText += ' - ' + urlParams.get('title');
 
-            document.getElementsByTagName('title').item(0).innerText += ' ' + urlParams.get('title');
+            document.getElementsByTagName('title').item(0).innerText += ' - ' + urlParams.get('title');
         }
     }
 
