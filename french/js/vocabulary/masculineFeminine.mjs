@@ -250,7 +250,8 @@ export default {
     },
     "conscience": {
         article: "une",
-        level: "B2"
+        level: "B2",
+        translation: "conscience, consciousness"
     },
     "soupçon": {
         article: "un",
@@ -352,7 +353,8 @@ export default {
     },
     "coiffure": {
         article: "une",
-        level: "A2"
+        level: "A2",
+        translation: "hairstyle"
     },
     "choix": {
         article: "un",
@@ -393,7 +395,8 @@ export default {
     },
     "poche": {
         article: "une",
-        level: "A2"
+        level: "A2",
+        translation: "pocket"
     },
     "verre": {
         article: "un",
