@@ -637,4 +637,8 @@ export default {
         level: "A2",
         translation: "task"
     },
+    "groupe": {
+        article: "un",
+        level: "A1"
+    },
 }
