@@ -103,6 +103,9 @@ export default class StatsPageBuilder extends BaseObject {
         this.dates.forEach((date, index) => {
             let newTableRowElement = /** @type {HTMLTableRowElement} */
                 (templateTableRow.cloneNode(true));
+            if (index === 0) {
+                newTableRowElement.classList.add('first-date');
+            }
 
             this.#fillTableRow(newTableRowElement, date, this.stats[date]);
 
@@ -420,10 +423,10 @@ export default class StatsPageBuilder extends BaseObject {
 
         if (level == '') {
             allExercises = document.querySelectorAll(`table thead tr:nth-child(3) th`).length;
-            completedExercises = document.querySelectorAll(`table tbody tr:first-child td.done-earlier`).length;
+            completedExercises = document.querySelectorAll(`table tbody tr.first-date td.done-earlier`).length;
         } else {
             allExercises = document.querySelectorAll(`table thead tr:nth-child(3) th.${level}`).length;
-            completedExercises = document.querySelectorAll(`table tbody tr:first-child td.done-earlier.${level}`).length;
+            completedExercises = document.querySelectorAll(`table tbody tr.first-date td.done-earlier.${level}`).length;
         }
 
         document.getElementById(`percent-of-completed-exercises-${level}`).innerText =
