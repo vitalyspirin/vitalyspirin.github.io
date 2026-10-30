@@ -4,10 +4,11 @@
 "use strict";
 
 import Storage from './Storage.mjs';
-import Utils from './Utils.mjs';
+import DateTimeUtils from './DateTimeUtils.mjs';
 import Types from './Types.mjs';
+import BaseObject from './BaseObject.mjs';
 
-export default class StatsPageBuilder {
+export default class StatsPageBuilder extends BaseObject {
 
     /**
      * @typedef {Record<string, {result: number, errors: number, duration: number}>} StatsForOneDate
@@ -36,6 +37,15 @@ export default class StatsPageBuilder {
      *  exercise_ce_ces_cet.html: "2026-01-26"
      */
     static earlestDates = {};
+
+    /** 
+     * @type Record<string, string> 
+     * 
+     * Example:
+     *  exercise_avoir_etre.html: "2026-01-12"
+     *  exercise_ce_ces_cet.html: "2026-01-26"
+     */
+    static latestDates = {};
 
     /** 
      * @type Record<string, Record<string, number>> 
@@ -74,6 +84,8 @@ export default class StatsPageBuilder {
     static RECENT_DATES_CLASS_NAME = 'recent-dates';
     static LEVEL_LIST = ['A1', 'A2', 'B1', 'B2', 'C1'];
     static BREAK_LENGTH = 10; // number of days without doing exercises
+    static DAYS_WITHOUT_EXERCISE_FOR_CRITICAL_BREAK = 30 * 6; // number of days without doing particular exercise
+    static DAYS_WITHOUT_EXERCISE_FOR_VERY_CRITICAL_BREAK = 30 * 9; // number of days without doing particular exercise
 
     static buildPage() {
         this.#buildStatsObject();
@@ -81,9 +93,12 @@ export default class StatsPageBuilder {
         const templateElement = /** @type {HTMLTemplateElement} */
             (document.getElementById('template-table-row'));
 
-        const templateTableRow = templateElement.content.firstElementChild;
+        const templateTableRow = /** @type {HTMLTableRowElement} */
+            (templateElement.content.firstElementChild);
 
         const tbodyElement = document.getElementsByTagName('tbody')[0];
+
+        this.#fillRowsForFirstAndLastDates(tbodyElement, templateTableRow);
 
         this.dates.forEach((date, index) => {
             let newTableRowElement = /** @type {HTMLTableRowElement} */
@@ -91,14 +106,14 @@ export default class StatsPageBuilder {
 
             this.#fillTableRow(newTableRowElement, date, this.stats[date]);
 
-            if (Utils.getWeek(date) % 2 == 0) {
+            if (DateTimeUtils.getWeek(date) % 2 == 0) {
                 newTableRowElement.classList.add('even-week');
             } else {
                 newTableRowElement.classList.add('odd-week');
             }
 
             if ((index < this.dates.length - 1)
-                && Utils.subtractDates(date, this.dates[index + 1]) > this.BREAK_LENGTH
+                && DateTimeUtils.subtractDates(date, this.dates[index + 1]) > this.BREAK_LENGTH
             ) {
                 newTableRowElement.classList.add('long-break');
             }
@@ -115,6 +130,71 @@ export default class StatsPageBuilder {
 
         /** @type {HTMLElement} */ (document.querySelector('a.info-icon'))
             .style.visibility = 'visible';
+    }
+
+    /**
+     * @param {HTMLTableSectionElement} tbodyElement
+     * @param {HTMLTableRowElement} templateTableRow
+     */
+    static #fillRowsForFirstAndLastDates(tbodyElement, templateTableRow) {
+
+        this.#fillRowForFirstOrLastDates(
+            tbodyElement,
+            templateTableRow,
+            this.latestDates,
+            'dernières dates'
+        );
+
+        // this.#fillRowForFirstOrLastDates(
+        //     tbodyElement, 
+        //     templateTableRow, 
+        //     this.earlestDates, 
+        //     'premières dates'
+        // );
+
+    }
+
+    /**
+     * @param {HTMLTableSectionElement} tbodyElement
+     * @param {HTMLTableRowElement} templateTableRow
+     * @param {Record<string, string>} datesForPage
+     * @param {string} titleForDateCell
+     */
+    static #fillRowForFirstOrLastDates(
+        tbodyElement,
+        templateTableRow,
+        datesForPage,
+        titleForDateCell
+    ) {
+        let newTableRowElement = /** @type {HTMLTableRowElement} */
+            (templateTableRow.cloneNode(true));
+        newTableRowElement.classList.add('latest-dates');
+
+        const tableCellList = /** @type {HTMLCollectionOf<HTMLTableCellElement>} */
+            (newTableRowElement.children);
+
+        const todayDate = DateTimeUtils.timestampToDate(Date.now());
+
+        for (const tdElement of tableCellList) {
+            let statsPageKey = Types.assertNotNull(tdElement.getAttribute('data-key'));
+
+            if (datesForPage.hasOwnProperty(statsPageKey)) {
+                tdElement.textContent = datesForPage[statsPageKey];
+                let dateDiff = DateTimeUtils.subtractDates(
+                    todayDate, datesForPage[statsPageKey]);
+
+                if (dateDiff >= this.DAYS_WITHOUT_EXERCISE_FOR_VERY_CRITICAL_BREAK) {
+                    tdElement.classList.add('very-critical-break');
+                } else if (dateDiff >= this.DAYS_WITHOUT_EXERCISE_FOR_CRITICAL_BREAK) {
+                    tdElement.classList.add('critical-break');
+                }
+            }
+        };
+        const dateCell = /** @type {HTMLElement} */
+            (newTableRowElement.querySelector('[data-key="date"]'));
+        dateCell.innerText = titleForDateCell;
+
+        tbodyElement.append(newTableRowElement);
     }
 
     /**
@@ -143,7 +223,7 @@ export default class StatsPageBuilder {
                 tdElement.title = this.datesForPage[statsPageKey][formattedDate] + ' fois: ';
                 tdElement.textContent = Math.round(100 * statsForOneDate[statsPageKey]['result']) + '%';
                 tdElement.title += statsForOneDate[statsPageKey]['errors'] + ' erreurs';
-                tdElement.title += ', ' + Utils.timestampToTime(statsForOneDate[statsPageKey]['duration']);
+                tdElement.title += ', ' + DateTimeUtils.timestampToTime(statsForOneDate[statsPageKey]['duration']);
                 duration += statsForOneDate[statsPageKey]['duration'];
 
                 if (this.bestResults[statsPageKey] == statsForOneDate[statsPageKey]['result']) {
@@ -152,7 +232,7 @@ export default class StatsPageBuilder {
 
                 let miniElementForExercise = /** @type {HTMLElement} */
                     (miniElementForExerciseInTemplate.cloneNode(true));
-                miniElementForExercise.innerHTML = 
+                miniElementForExercise.innerHTML =
                     // check for nulls if Stats html page got changed but 
                     // Stats data in localStorage is still old
                     this.#getExerciseTitleFromStatsPageKey(statsPageKey) ?? '';
@@ -174,7 +254,7 @@ export default class StatsPageBuilder {
         const dateCell = /** @type {HTMLElement} */
             (tableRowElement.querySelector('[data-key="date"]'));
         dateCell.innerText = formattedDate;
-        const durationStr = Utils.timestampToTime(duration);
+        const durationStr = DateTimeUtils.timestampToTime(duration);
         dateCell.title = 'time spent: ' + durationStr;
 
         const durationCell = /** @type {HTMLElement} */
@@ -190,7 +270,7 @@ export default class StatsPageBuilder {
             const pageStatsKeys = Object.keys(statsForPage).sort();
 
             pageStatsKeys.forEach((pageStatsKey) => {
-                const formattedDate = Utils.timestampToDate(Number(statsForPage[pageStatsKey]['timestamp']));
+                const formattedDate = DateTimeUtils.timestampToDate(Number(statsForPage[pageStatsKey]['timestamp']));
 
                 if (!this.stats.hasOwnProperty(formattedDate)) {
                     this.stats[formattedDate] = {};
@@ -205,7 +285,7 @@ export default class StatsPageBuilder {
                     this.stats[formattedDate][pageKey]['duration'] = statsForPage[pageStatsKey]['duration'];
                 }
 
-                this.#setEarlestDate(pageKey, formattedDate);
+                this.#setEarlestAndLatestDates(pageKey, formattedDate);
                 this.#setDatesForPage(pageKey, formattedDate);
                 this.#setBestResults(pageKey, statsForPage[pageStatsKey]['result']);
             });
@@ -216,7 +296,7 @@ export default class StatsPageBuilder {
 
         if (this.dates.length == 0) {
             // if no stats then show one empty line with current date
-            const formattedDate = Utils.timestampToDate(Date.now());
+            const formattedDate = DateTimeUtils.timestampToDate(Date.now());
             this.dates.push(formattedDate);
             this.stats[formattedDate] = {};
         }
@@ -226,12 +306,20 @@ export default class StatsPageBuilder {
      * @param {string} pageKey
      * @param {string} date
      */
-    static #setEarlestDate(pageKey, date) {
+    static #setEarlestAndLatestDates(pageKey, date) {
         if (!this.earlestDates.hasOwnProperty(pageKey)) {
             this.earlestDates[pageKey] = date;
         } else {
             if (date < this.earlestDates[pageKey]) {
                 this.earlestDates[pageKey] = date;
+            }
+        }
+
+        if (!this.latestDates.hasOwnProperty(pageKey)) {
+            this.latestDates[pageKey] = date;
+        } else {
+            if (date > this.latestDates[pageKey]) {
+                this.latestDates[pageKey] = date;
             }
         }
     }
@@ -274,7 +362,10 @@ export default class StatsPageBuilder {
         let trElement = document.querySelector('tbody tr:first-of-type');
 
         do {
+            // "title" attribute was set before to cells with stats values (with percent value)
+            // "title" shows number of times exercise was done, number of errors and time spent
             let tdList = trElement?.querySelectorAll('[title]');
+
             tdList?.forEach((tdTopElement) => {
                 if (tdTopElement.getAttribute(this.TD_ATTRIBUTE) != this.TD_ATTRIBUTE_DATE_VALUE) {
 
@@ -343,6 +434,8 @@ export default class StatsPageBuilder {
     }
 
     /**
+     * This method is used to populate the "mini" table with exercise titles (like "Il est", "Impératif" etc)
+     * 
      * @param {string} statsPageKey 
      * @returns string?
      */

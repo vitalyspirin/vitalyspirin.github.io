@@ -112,8 +112,9 @@ export default class Utils {
     }
 
     /**
-     * @param {string} date1
-     * @param {string} date2
+     * @param {string} date1 for example: 2025-05-31
+     * @param {string} date2 for example: 2025-05-27
+     * @returns {number} the difference in days
      * 
      * from https://medium.com/@ryan_forrester_/how-to-subtract-dates-in-javascript-7cb41ca6b06c
      */

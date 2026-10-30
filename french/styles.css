@@ -622,7 +622,7 @@ fieldset label {
 }
 
 fieldset label.for-radio {
-    width: 6em;
+    margin-right: 3em;
 }
 
 fieldset #exercise-types label.for-checkbox {
@@ -857,10 +857,26 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
     border-bottom: 1px solid black;
 }
 
+#stats-page article:not(.full) tr.latest-dates,
+#stats-page article:not(.latest-dates) tr.latest-dates {
+    display: none;
+}
+
+#stats-page tr.latest-dates td:not([data-key="date"]) {
+    white-space: nowrap;
+}
+
+#stats-page tr.latest-dates td.critical-break {
+    background-color: AntiqueWhite;
+}
+#stats-page tr.latest-dates td.very-critical-break {
+    background-color: Moccasin;
+}
 
 #stats-page article.difficult-exercise .difficult-exercise {
     background-color: AntiqueWhite;
 }
+
 
 /* ------------------------------------------------ */
 /* index page */

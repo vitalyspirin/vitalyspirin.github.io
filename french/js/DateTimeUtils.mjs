@@ -1,0 +1,105 @@
+// Author: Vitaly Spirin
+
+"use strict";
+
+export default class DateTimeUtils {
+
+    /**
+     * @param {number} timestamp
+     */
+    static timestampToDate(timestamp) {
+        let theDate = new Date(timestamp);
+
+        let formattedDate = theDate.toLocaleString("en-CA", {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+        });
+
+        return formattedDate;
+    }
+
+    /**
+     * @param {number} timestamp
+     * 
+     * output format: 2026-03-13, 01:34 p.m.
+     */
+    static timestampToDateAndTime(timestamp) {
+        let theDate = new Date(timestamp);
+
+        let formattedDate = theDate.toLocaleString("en-CA", {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hourCycle: 'h24',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+
+        return formattedDate;
+    }
+
+    /**
+     * @param {number} timestamp
+     * 
+     * output format: 2026213_1355
+     */
+    static timestampToDateAndTimeSystemFormat(timestamp) {
+        let theDate = new Date(timestamp);
+
+        let formattedDate = '' + theDate.getFullYear() + theDate.getMonth() + theDate.getDate()
+            + '_' + theDate.getHours() + theDate.getMinutes();
+
+        return formattedDate;
+    }
+
+    /**
+     * @param {number} timestamp
+     */
+    static timestampToTime(timestamp) {
+        const timestampInSeconds = Math.floor(timestamp / 1000);
+
+        const hours = Math.floor(timestampInSeconds / 3600);
+        const minutes = Math.floor((timestampInSeconds - hours * 3600) / 60);
+        const seconds = Math.floor(timestampInSeconds - hours * 3600 - minutes * 60);
+
+        let formattedTime = '';
+        if (hours > 0) {
+            formattedTime = String(hours).padStart(2, '0') + ':';
+        }
+        formattedTime += String(minutes).padStart(2, '0') + ':';
+        formattedTime += String(seconds).padStart(2, '0');
+
+        return formattedTime;
+    }
+
+    /**
+     * @param {string} date1 for example: 2025-05-31
+     * @param {string} date2 for example: 2025-05-27
+     * @returns {number} the difference in days
+     * 
+     * from https://medium.com/@ryan_forrester_/how-to-subtract-dates-in-javascript-7cb41ca6b06c
+     */
+    static subtractDates(date1, date2) {
+        const oneDay = 24 * 60 * 60 * 1000; // milliseconds in one day
+        const diffInMilliseconds = new Date(date1).getTime() - new Date(date2).getTime();
+
+        return Math.round(diffInMilliseconds / oneDay); // Convert milliseconds to days
+    }
+
+
+    /**
+     * @param {string} dateStr
+     */
+    static getWeek(dateStr) {
+        const date = new Date(dateStr);
+
+        const a = new Date(date.getFullYear(), 0, 1);
+        const b = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        const millisec = Number(b) - Number(a);
+
+        return Math.ceil((millisec / 86400000 + 1 + a.getDay()) / 7);
+    }
+
+}
