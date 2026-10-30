@@ -132,7 +132,8 @@ export default {
     },
     "cartable": {
         article: "un",
-        level: "A2"
+        level: "A2",
+        translation: "school bag"
     },
     "peau": {
         article: "une",
@@ -643,5 +644,9 @@ export default {
     "groupe": {
         article: "un",
         level: "A1"
+    },
+    "espace": {
+        article: "un",
+        level: "A2"
     },
 }
