@@ -278,7 +278,8 @@ export default {
     },
     "naufrage": {
         article: "un",
-        level: "B2"
+        level: "B2",
+        translation: "shipwreck"
     },
     "prédiction": {
         article: "une",
@@ -457,7 +458,8 @@ export default {
     },
     "fraîcheur": {
         article: "une",
-        level: "B1"
+        level: "B1",
+        translation: "freshness"
     },
     "mosquée": {
         article: "une",
