@@ -654,4 +654,8 @@ export default {
         article: "un",
         level: "A2"
     },
+    "voix": {
+        article: "une",
+        level: "A1"
+    },
 }
