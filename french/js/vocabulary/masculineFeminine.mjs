@@ -23,7 +23,8 @@ export default {
     },
     "poire": {
         article: "une",
-        level: "A2"
+        level: "A2",
+        translation: "pear"
     },
     "couloir": {
         article: "un",
@@ -157,7 +158,8 @@ export default {
     },
     "épice": {
         article: "une",
-        level: "B1"
+        level: "B1",
+        translation: "spice"
     },
     "karaté": {
         article: "un",
@@ -239,7 +241,8 @@ export default {
     },
     "fable": {
         article: "une",
-        level: "B1"
+        level: "B1",
+        translation: "fable, story, tale"
     },
     "messe": {
         article: "une",
