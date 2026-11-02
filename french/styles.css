@@ -318,6 +318,11 @@ article.text:not(.doc) {
     margin-bottom: 1em;
 }
 
+.text span[title] {
+    font-style: italic;
+    cursor: help;
+}
+
 ol#stats {
     counter-reset: item;
     list-style-type: none;
