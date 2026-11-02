@@ -658,4 +658,12 @@ export default {
         article: "une",
         level: "A1"
     },
+    "adresse": {
+        article: "une",
+        level: "A1"
+    },
+    "date": {
+        article: "une",
+        level: "A1"
+    },
 }
