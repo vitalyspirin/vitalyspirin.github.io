@@ -318,10 +318,13 @@ article.text:not(.doc) {
     margin-bottom: 1em;
 }
 
+*[title] {
+    cursor: help;
+}
+
 /* for tooltips in lequel-duquel-auquel.html, dont-duquel.html */
 .text span.tooltip[title] {
     font-style: italic;
-    cursor: help;
 }
 
 ol#stats {
