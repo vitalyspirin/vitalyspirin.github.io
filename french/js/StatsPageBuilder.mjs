@@ -145,15 +145,17 @@ export default class StatsPageBuilder extends BaseObject {
             tbodyElement,
             templateTableRow,
             this.latestDates,
+            true, // markCriticalBreaks
             'dernières dates'
         );
 
-        // this.#fillRowForFirstOrLastDates(
-        //     tbodyElement, 
-        //     templateTableRow, 
-        //     this.earlestDates, 
-        //     'premières dates'
-        // );
+        this.#fillRowForFirstOrLastDates(
+            tbodyElement,
+            templateTableRow,
+            this.earlestDates,
+            false, // markCriticalBreaks
+            'premières dates'
+        );
 
     }
 
@@ -161,12 +163,14 @@ export default class StatsPageBuilder extends BaseObject {
      * @param {HTMLTableSectionElement} tbodyElement
      * @param {HTMLTableRowElement} templateTableRow
      * @param {Record<string, string>} datesForPage
+     * @param {boolean} markCriticalBreaks
      * @param {string} titleForDateCell
      */
     static #fillRowForFirstOrLastDates(
         tbodyElement,
         templateTableRow,
         datesForPage,
+        markCriticalBreaks,
         titleForDateCell
     ) {
         let newTableRowElement = /** @type {HTMLTableRowElement} */
@@ -186,10 +190,12 @@ export default class StatsPageBuilder extends BaseObject {
                 let dateDiff = DateTimeUtils.subtractDates(
                     todayDate, datesForPage[statsPageKey]);
 
-                if (dateDiff >= this.DAYS_WITHOUT_EXERCISE_FOR_VERY_CRITICAL_BREAK) {
-                    tdElement.classList.add('very-critical-break');
-                } else if (dateDiff >= this.DAYS_WITHOUT_EXERCISE_FOR_CRITICAL_BREAK) {
-                    tdElement.classList.add('critical-break');
+                if (markCriticalBreaks) {
+                    if (dateDiff >= this.DAYS_WITHOUT_EXERCISE_FOR_VERY_CRITICAL_BREAK) {
+                        tdElement.classList.add('very-critical-break');
+                    } else if (dateDiff >= this.DAYS_WITHOUT_EXERCISE_FOR_CRITICAL_BREAK) {
+                        tdElement.classList.add('critical-break');
+                    }
                 }
             }
         };
