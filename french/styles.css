@@ -656,13 +656,15 @@ input[name="number-of-days"] {
 }
 
 .recent-dates #checkboxes label:not(.not-disableable),
-.mini #checkboxes label:not(.not-disableable) {
+.mini #checkboxes label:not(.not-disableable),
+.first-dates #checkboxes label:not(.not-disableable) {
     color: dimgrey;
     pointer-events: none;
 }
 
 .recent-dates #checkboxes label:not(.not-disableable) input,
-.mini #checkboxes label:not(.not-disableable) input {
+.mini #checkboxes label:not(.not-disableable) input,
+.first-dates #checkboxes label:not(.not-disableable) input {
     accent-color: silver;
 }
 
@@ -743,11 +745,15 @@ td.date {
     width: 5.5em;
 }
 
-td.mini {
+#stats-page article:not(.first-dates) td.mini {
     width: 50em;
 }
 
-#stats-page article:not(.mini) td.mini {
+#stats-page article.first-dates td.mini {
+    width: 25em;
+}
+
+#stats-page article:not(.mini):not(.first-dates) td.mini {
     /* otherwise other columns will have big height because of this column */
     white-space: nowrap;
 }
@@ -764,6 +770,15 @@ td.mini {
 #stats-page article.mini .exercise-title.first-time {
     font-weight: bold;
 }
+
+#stats-page article.first-dates .exercise-title:not(.first-time) {
+    display: none;
+}
+
+#stats-page article.first-dates .exercise-title.first-time {
+    padding: 0 1em;
+}
+
 
 #stats-page thead tr:first-child th {
     width: 6rem;
@@ -851,14 +866,15 @@ article.tense-sequence:is(.conjugations, .others) .tense-sequence .short-name {
 }
 
 #stats-page article.duration .duration,
-#stats-page article.conjugations:not(.recent-dates):not(.mini) .conjugations,
+#stats-page article.conjugations:not(.recent-dates):not(.mini):not(.first-dates) .conjugations,
 /*#stats-page article.conjugations-plus:not(.recent-dates) .conjugations-plus,*/
-#stats-page article.tense-sequence:not(.recent-dates):not(.mini) .tense-sequence,
-#stats-page article.others:not(.recent-dates):not(.mini) .others,
-#stats-page article.prepositions:not(.recent-dates):not(.mini) .prepositions,
-#stats-page article.vocabulary:not(.recent-dates):not(.mini) .vocabulary,
+#stats-page article.tense-sequence:not(.recent-dates):not(.mini):not(.first-dates) .tense-sequence,
+#stats-page article.others:not(.recent-dates):not(.mini):not(.first-dates) .others,
+#stats-page article.prepositions:not(.recent-dates):not(.mini):not(.first-dates) .prepositions,
+#stats-page article.vocabulary:not(.recent-dates):not(.mini):not(.first-dates) .vocabulary,
 #stats-page article.recent-dates table#stats-table .recent-dates,
-#stats-page article.mini table#stats-table .mini {
+#stats-page article.mini table#stats-table .mini,
+#stats-page article.first-dates table#stats-table .mini {
     max-width: none;
     visibility: visible;
     padding: 0.25em;
