@@ -656,7 +656,8 @@ export default {
     },
     "voix": {
         article: "une",
-        level: "A1"
+        level: "A1",
+        translation: "voice"
     },
     "adresse": {
         article: "une",
