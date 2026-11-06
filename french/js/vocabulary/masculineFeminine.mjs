@@ -518,7 +518,8 @@ export default {
     },
     "parole": {
         article: "une",
-        level: "A1"
+        level: "A1",
+        translation: "word, speech"
     },
     "hiver": {
         article: "un",
@@ -610,7 +611,7 @@ export default {
         level: "A1"
     },
     "sentence": {
-        article: "un",
+        article: "une",
         level: "B1"
     },
     "sujet": {
