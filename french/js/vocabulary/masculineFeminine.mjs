@@ -603,7 +603,7 @@ export default {
         level: "A1"
     },
     "bonheur": {
-        article: "une",
+        article: "un",
         level: "A1"
     },
     "barbe": {
