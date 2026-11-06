@@ -668,4 +668,12 @@ export default {
         article: "une",
         level: "A1"
     },
+    "clé": {
+        article: "une",
+        level: "A1"
+    },
+    "genre": {
+        article: "un",
+        level: "A2"
+    },
 }
