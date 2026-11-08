@@ -167,7 +167,8 @@ export default {
     },
     "érable": {
         article: "un",
-        level: "B1"
+        level: "B1",
+        translation: "maple"
     },
     "carnaval": {
         article: "un",
@@ -449,7 +450,8 @@ export default {
     },
     "siège": {
         article: "un",
-        level: "A2"
+        level: "A2",
+        translation: "seat"
     },
     "main": {
         article: "une",
