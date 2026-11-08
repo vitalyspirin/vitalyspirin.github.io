@@ -598,6 +598,15 @@ article.part-4 ol.nested>li.part-4 {
 }
 
 /* ------------------------------------------------ */
+/* fruits-vegetables page */
+#fruits-vegetables-page img {
+    width: 5em;
+    height: 5em;
+    margin-right: 1em;
+    vertical-align: middle;
+}
+
+/* ------------------------------------------------ */
 /* stats page */
 
 /* show user that there is a hint when mouse over */

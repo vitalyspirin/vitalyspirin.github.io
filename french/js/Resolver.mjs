@@ -19,6 +19,7 @@ export class Resolver {
         "devoir-pouvoir-falloir-vouloir.html": "../pdf/devoir-pouvoir-falloir-vouloir.pdf",
         "meteo.html": "pdf/meteo.pdf",
         "calendar.html": "pdf/calendar.pdf",
+        "fruits-vegetables.html": "pdf/fruits-vegetables.pdf",
         "masculine-feminine.html?A1&title=1": "pdf/masculine-feminine.pdf",
         "mon-ton-son.html": "pdf/mon-ton-son.pdf",
         "de-du-des.html": "pdf/de-du-des.pdf",
