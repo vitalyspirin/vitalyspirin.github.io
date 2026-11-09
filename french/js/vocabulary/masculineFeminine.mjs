@@ -585,7 +585,8 @@ export default {
     },
     "siècle": {
         article: "un",
-        level: "A1"
+        level: "A1",
+        translation: "century"
     },
     "inondation": {
         article: "une",
