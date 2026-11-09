@@ -150,20 +150,25 @@ export default class TestEngineBase {
         }
 
         const parser = new DOMParser();
-        let doc = parser.parseFromString(testResult.pageContent, 'application/xml');
+        // &nbsp is an HTML entity, not a predefined XML entity, 
+        // so DOMParser rejects &nbsp; when parsing as application/xml. 
+        // Replacing it with the equivalent numeric character reference (&#160;) 
+        // before parsing.
+        const xmlContent = testResult.pageContent.replace(/&nbsp;/g, "&#160;");
+
+        let doc = parser.parseFromString(xmlContent, 'application/xml');
 
         // Check for parser errors in the parsed document
         let parseError = doc.getElementsByTagName('parsererror').item(0);
-        if (parseError !== null && parseError.textContent.includes("'nbsp'")) {
-            const documentStr2 = testResult.pageContent.replace('<!DOCTYPE html>',
-                '<!DOCTYPE html [ <!ENTITY nbsp "&#160;"> ]>');
-            doc = parser.parseFromString(documentStr2, 'application/xml');
-            parseError = doc.getElementsByTagName('parsererror').item(0);
-        }
 
         if (parseError !== null) {
             testResult.isXmlValid = false;
-            testResult.xmlErrorMessage = parseError.textContent;
+
+            // replace all HTML tags with a space (otherwise words can be concatenated)
+            const errorHtml = parseError.innerHTML.replace(/<[^>]*>/g, " ");
+            const errorDoc = new DOMParser().parseFromString(errorHtml, "text/html");
+            testResult.xmlErrorMessage =
+                (errorDoc.body.textContent ?? "").replace(/\s+/g, " ").trim();
         } else {
             testResult.isXmlValid = true;
         }
