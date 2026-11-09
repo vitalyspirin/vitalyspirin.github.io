@@ -21,7 +21,7 @@ export default {
     },
     "hoquet": {
         article: "le",
-        level: "B1",
+        level: "B2",
         translation: "hiccups"
     },
     "harfang": {
@@ -50,7 +50,7 @@ export default {
     },
     "hutte": {
         article: "la",
-        level: "B1",
+        level: "B2",
         translation: "hut"
     },
     "haut-parleur": {
@@ -59,7 +59,7 @@ export default {
     },
     "haltère": {
         article: "l'",
-        level: "B1",
+        level: "B2",
         translation: "dumbbell"
     },
     "héron": {
@@ -68,7 +68,7 @@ export default {
     },
     "hibou": {
         article: "le",
-        level: "A2",
+        level: "B1",
         translation: "owl"
     },
     "hérédité": {
@@ -95,7 +95,7 @@ export default {
     },
     "hareng": {
         article: "le",
-        level: "B1",
+        level: "B2",
         translation: "herring (fish)"
     },
     "haleine": {
@@ -114,7 +114,7 @@ export default {
     },
     "harpe": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "harp (musical instrument)"
     },
     "habitat": {
@@ -127,7 +127,7 @@ export default {
     },
     "hache": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "ax"
     },
     "horoscope": {
@@ -155,12 +155,12 @@ export default {
     },
     "hebdomadaire": {
         article: "l'",
-        level: "B1",
+        level: "B2",
         translation: "weekly"
     },
     "haie": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "hedge"
     },
     "homicide": {
@@ -182,16 +182,16 @@ export default {
     },
     "hanche": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "hip"
     },
     "herbivore": {
         article: "l'",
-        level: "B1"
+        level: "B2"
     },
     "hérisson": {
         article: "le",
-        level: "A2",
+        level: "B1",
         translation: "hedgehog"
     },
     "handball": {
@@ -214,7 +214,7 @@ export default {
     },
     "hasard": {
         article: "le",
-        level: "A2",
+        level: "B1",
         translation: "chance, coincidence"
     },
     "haschich": {
@@ -244,7 +244,7 @@ export default {
     },
     "hors-d’oeuvre": {
         article: "le",
-        level: "B1",
+        level: "B2",
         translation: "starter (food)"
     },
     "humidité": {
@@ -280,7 +280,7 @@ export default {
     },
     "huître": {
         article: "l'",
-        level: "A2",
+        level: "B1",
         translation: "oyster"
     },
     "haricot": {
@@ -290,12 +290,12 @@ export default {
     },
     "hélice": {
         article: "l'",
-        level: "B1",
+        level: "B2",
         translation: "propeller, spirale"
     },
     "housse": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "cover (of a sofа/couch)"
     },
     "hôpital": {
@@ -325,7 +325,8 @@ export default {
     },
     "habitant": {
         article: "l'",
-        level: "A2"
+        level: "A2",
+        translation: "inhabitant"
     },
     "hirondelle": {
         article: "l'",
@@ -334,11 +335,11 @@ export default {
     },
     "héritage": {
         article: "l'",
-        level: "B1"
+        level: "B2"
     },
     "honte": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "shame"
     },
     "hystérie": {
@@ -371,22 +372,22 @@ export default {
     },
     "hauteur": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "height"
     },
     "hâte": {
         article: "la",
-        level: "A2",
+        level: "B1",
         translation: "haste, impatience"
     },
     "hommage": {
         article: "l'",
-        level: "B1",
+        level: "B2",
         translation: "tribute"
     },
     "horreur": {
         article: "l'",
-        level: "A2"
+        level: "B1"
     },
     "héritier": {
         article: "l'",
@@ -395,7 +396,7 @@ export default {
     },
     "honneur": {
         article: "l'",
-        level: "B1",
+        level: "B2",
         translation: "honor"
     },
     "hygiène": {

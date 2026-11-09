@@ -60,6 +60,7 @@ export class Resolver {
         "tout.html": "pdf/tout.pdf",
         "que-dont.html": "pdf/que-dont.pdf",
         "qui-que-dont-ou.html": "pdf/qui-que-dont-ou.pdf",
+        "h-muet.html?B1&title=2": "pdf/h-muet.doc.html",
         "conjugations.html?Le%20plus-que-parfait": "pdf/plus-que-parfait.pdf",
         "past-perfect.html": "pdf/plus-que-parfait.pdf",
         "concordance-3.html": "pdf/concordance-3.pdf",
@@ -79,7 +80,6 @@ export class Resolver {
 
         // B2
         "masculine-feminine.html?B1&B2&title=3": "pdf/masculine-feminine.pdf",
-        "h-muet.html?B1&B2&C1&title=2": "pdf/h-muet.doc.html",
         "ce-qui-ce-que.html": "pdf/ce-qui-ce-que.pdf",
         "dont-duquel.html": "pdf/dont-duquel.pdf",
         "lequel-duquel-auquel.html": "pdf/lequel-duquel-auquel.pdf",
@@ -97,6 +97,7 @@ export class Resolver {
         "concordance-simultaneity-posteriority-anteriority.html": "pdf/concordance-simultaneity-posteriority-anteriority.pdf",
 
         // C1
+        "h-muet.html?B2&C1&title=3": "pdf/h-muet.doc.html",
         "conjugations.html?Le%20pass%C3%A9%20simple": "pdf/past-historic.pdf",
         "past-historic.html": "pdf/past-historic.pdf",
 
