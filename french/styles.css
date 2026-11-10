@@ -607,6 +607,18 @@ article.part-4 ol.nested>li.part-4 {
 }
 
 /* ------------------------------------------------ */
+/* colors page */
+.color {
+    border: 1px solid black;
+}
+
+
+#colors-page ol.nested li ol li:first-child {
+    /* start counting from second <li> because first <li> is for table header */
+    display: block;
+}
+
+/* ------------------------------------------------ */
 /* stats page */
 
 /* show user that there is a hint when mouse over */
