@@ -5,6 +5,7 @@
 
 export class Resolver {
     static AUDIO_BASE_PATH = '../../';
+    static IMAGE_BASE_PATH = '../../../images/';
     static AUDIO_SUBFOLDER_FOR_CONJUGATIONS = 'conjugations';
 
 

@@ -17,6 +17,22 @@
 
     <script type="module">
         "use strict";
+        import wordList, { imageFileFolder, audioFileFolder } from '../../../js/vocabulary/fruitsVegetables.mjs';
+        import PageBuilderForWordListWithImages from '../../../js/PageBuilderForWordListWithImages.mjs';
+        PageBuilderForWordListWithImages.build(
+            wordList,
+            'fruits',
+            imageFileFolder,
+            audioFileFolder
+        );
+
+        PageBuilderForWordListWithImages.build(
+            wordList,
+            'vegetables',
+            imageFileFolder,
+            audioFileFolder
+        );
+
         import { ErrorCounter } from '../../../js/ErrorCounter.mjs';
         ErrorCounter.initialize();
     </script>
@@ -28,153 +44,33 @@
             <h1>Fruits et légumes</h1>
             <h2>Exercices et corrigé</h2>
 
+            <template id="template-li-for-one-word">
+                <li>
+                    <img />
+                    <input type="text" class="wide" pattern="" />
+                </li>
+
+                <button class="speakerphone" tabindex="-1">
+                    <audio></audio>
+                    <svg width="20" height="20" viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                        <path
+                            d="M3 9v6h4l5 5V4L7 9H3zm7-.17v6.34L7.83 13H5v-2h2.83L10 8.83zM16.5 12A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z">
+                        </path>
+                        <path
+                            d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z">
+                        </path>
+                    </svg>
+                </button>
+
+                </li>
+            </template>
+
             <ol class="nested">
                 <li>
                     <section>
                         <h3>Identifiez ces fruits.</h3>
 
-                        <ol>
-                            <li>
-                                <img src="../../../images/fruits-vegetables/banana.svg" alt="banana"
-                                    title="une banane" />
-                                <input type="text" pattern="une banane" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/watermelon.svg" alt="watermelon"
-                                    title="une pastèque" />
-                                <input type="text" pattern="une pastèque" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/melon.svg" alt="melon" title="un melon" />
-                                <input type="text" pattern="un melon" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/apple.svg" alt="apple" title="une pomme" />
-                                <input type="text" pattern="une pomme" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/strawberry.svg" alt="strawberry"
-                                    title="une fraise" />
-                                <input type="text" pattern="une fraise" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/lemon.svg" alt="lemon" title="un citron" />
-                                <input type="text" pattern="un citron" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/lime.svg" alt="lime"
-                                    title="un citron vert" />
-                                <input type="text" pattern="un citron vert" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/orange.svg" alt="orange"
-                                    title="une orange" />
-                                <input type="text" pattern="une orange" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/grapefruit.svg" alt="grapefruit"
-                                    title="un pamplemousse" />
-                                <input type="text" class="wide" pattern="un pamplemousse" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/peach.svg" alt="peach" title="une pêche" />
-                                <input type="text" pattern="une pêche" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/apricot.svg" alt="apricot"
-                                    title="un abricot" />
-                                <input type="text" pattern="un abricot" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/pear.svg" alt="pear" title="une poire" />
-                                <input type="text" pattern="une poire" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/raspberry.svg" alt="raspberry"
-                                    title="une framboise" />
-                                <input type="text" class="wide" pattern="une framboise" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/grapes.svg" alt="grapes"
-                                    title="du raisin" />
-                                <input type="text" pattern="du raisin" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/pineapple.svg" alt="pineapple"
-                                    title="un ananas" />
-                                <input type="text" pattern="un ananas" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/kiwi.svg" alt="kiwi" title="un kiwi" />
-                                <input type="text" pattern="un kiwi" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/blueberry.svg" alt="blueberry"
-                                    title="un bleuet" />
-                                <input type="text" pattern="un bleuet" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/cherry.svg" alt="cherry"
-                                    title="une cerise" />
-                                <input type="text" pattern="une cerise" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/pomegranate.svg" alt="pomegranate"
-                                    title="une grenade" />
-                                <input type="text" pattern="une grenade" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/walnut.svg" alt="walnut" title="une noix" />
-                                <input type="text" pattern="une noix" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/pistachio.svg" alt="pistachio"
-                                    title="une pistache" />
-                                <input type="text" pattern="une pistache" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/peanut.svg" alt="peanut"
-                                    title="une cacahuète" />
-                                <input type="text" class="wide" pattern="une cacahuète" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/coconut.svg" alt="coconut"
-                                    title="une noix de coco" />
-                                <input type="text" class="wide" pattern="une noix de coco" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/date.svg" alt="date" title="une datte" />
-                                <input type="text" pattern="une datte" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/mango.svg" alt="mango" title="une mangue" />
-                                <input type="text" pattern="une mangue" />
-                            </li>
-                        </ol>
+                        <ol class="fruits"></ol>
                     </section>
                 </li>
 
@@ -182,162 +78,7 @@
                     <section>
                         <h3>Identifiez ces légumes.</h3>
 
-                        <ol>
-                            <li>
-                                <img src="../../../images/fruits-vegetables/mushroom.svg" alt="mushroom"
-                                    title="un champignon" />
-                                <input type="text" class="wide" pattern="un champignon" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/carrot.svg" alt="carrot"
-                                    title="une carotte" />
-                                <input type="text" pattern="une carotte" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/tomato.svg" alt="tomato"
-                                    title="une tomate" />
-                                <input type="text" pattern="une tomate" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/eggplant.svg" alt="eggplant"
-                                    title="une aubergine" />
-                                <input type="text" class="wide" pattern="une aubergine" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/onion.svg" alt="onion" title="un oignon" />
-                                <input type="text" pattern="un oignon" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/pepper.svg" alt="pepper"
-                                    title="un poivron" />
-                                <input type="text" pattern="un poivron" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/potato.svg" alt="potato"
-                                    title="une pomme de terre" />
-                                <input type="text" class="wide" pattern="une pomme de terre" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/cucumber.svg" alt="cucumber"
-                                    title="un concombre" />
-                                <input type="text" class="wide" pattern="un concombre" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/zucchini.svg" alt="zucchini"
-                                    title="une courgette" />
-                                <input type="text" pattern="une courgette" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/broccoli.svg" alt="broccoli"
-                                    title="un brocoli" />
-                                <input type="text" pattern="un brocoli" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/cauliflower.svg" alt="cauliflower"
-                                    title="un chou-fleur" />
-                                <input type="text" class="wide" pattern="un chou-fleur" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/lettuce.svg" alt="lettuce"
-                                    title="une salade" />
-                                <input type="text" pattern="une salade" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/radish.svg" alt="radish" title="un radis" />
-                                <input type="text" pattern="un radis" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/green-bean.svg" alt="green-bean"
-                                    title="un haricot vert" />
-                                <input type="text" class="wide" pattern="un haricot vert" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/leek.svg" alt="leek" title="un poireau" />
-                                <input type="text" pattern="un poireau" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/spinach.svg" alt="spinach"
-                                    title="un épinard" />
-                                <input type="text" pattern="un épinard" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/avocado.svg" alt="avocado"
-                                    title="un avocat" />
-                                <input type="text" pattern="un avocat" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/corn.svg" alt="corn" title="du maïs" />
-                                <input type="text" pattern="du maïs" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/garlic.svg" alt="garlic" title="de l'ail" />
-                                <input type="text" pattern="de l'ail" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/beet.svg" alt="beet"
-                                    title="une betterave" />
-                                <input type="text" pattern="une betterave" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/tournip.svg" alt="tournip"
-                                    title="un navet" />
-                                <input type="text" pattern="un navet" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/olive.svg" alt="olive" title="une olive" />
-                                <input type="text" pattern="une olive" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/pea.svg" alt="pea" title="un petit pois" />
-                                <input type="text" pattern="un petit pois" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/asparagus.svg" alt="asparagus"
-                                    title="une asperge" />
-                                <input type="text" pattern="une asperge" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/ginger.svg" alt="ginger"
-                                    title="du gingembre" />
-                                <input type="text" pattern="du gingembre" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/pumpkin.svg" alt="pumpkin"
-                                    title="une citrouille" />
-                                <input type="text" pattern="une citrouille" />
-                            </li>
-
-                            <li>
-                                <img src="../../../images/fruits-vegetables/parsley.svg" alt="parsley"
-                                    title="du persil" />
-                                <input type="text" pattern="du persil" />
-                            </li>
-                        </ol>
+                        <ol class="vegetables"></ol>
                     </section>
                 </li>
             </ol>
