@@ -38,6 +38,7 @@ import verbsInPastHistoricTense, { audioFileFolder as audioFileFolderForPastHist
 
 import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vocabulary/hMuet.mjs';
 import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/masculineFeminine.mjs';
+import wordListFruitsVegetables, { audioFileFolder as audioFileFolderFruitsVegetables } from '../js/vocabulary/fruitsVegetables.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
@@ -62,7 +63,7 @@ import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from
 
 // saveAudioFilesForWordList(wordListHMuet, audioFileFolderHMuet);
 saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
-
+saveAudioFilesForWordList(wordListFruitsVegetables, audioFileFolderFruitsVegetables);
 
 
 /**
@@ -75,7 +76,7 @@ function saveAudioFilesForWordList(wordList, fileFolder, onlyIfNotExists = true)
     for (let word in wordList) {
 
         let audioStr;
-        if (wordList[word]['article'] === "l'") {
+        if (wordList[word]['article'].slice(-1) === "'") {
             audioStr = wordList[word]['article'] + word;
         } else {
             audioStr = wordList[word]['article'] + ' ' + word;

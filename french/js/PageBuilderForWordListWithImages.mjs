@@ -49,11 +49,11 @@ export default class PageBuilderForWordListWithImages {
             let audioFullFileName = Resolver.AUDIO_BASE_PATH +
                 Utils.getAudioFileUrl(word, audiofileFolder, 'mp3');
 
-            // SpeakerPhone.init(
-            //     speakerPhoneElement,
-            //     '', // for ErrorCounter.getErrorCounterObj('')
-            //     audioFullFileName
-            // );
+            SpeakerPhone.init(
+                speakerPhoneElement,
+                '', // for ErrorCounter.getErrorCounterObj('')
+                audioFullFileName
+            );
 
             wordListRootElement.append(worldLiBlock);
         };
