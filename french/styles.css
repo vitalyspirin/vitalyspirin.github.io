@@ -97,17 +97,23 @@ header h2 {
     width: 9.5em;
     margin: 0 0.25em;
 }
-
+/*
 .speakerphone {
     fill: rgb(95, 99, 104);
 }
-
+*/
+.speakerphone svg {
+    display: none;
+}
 button.speakerphone {
     background-color: white;
     padding: 0;
     border-width: 2px;
     border-style: solid;
     border-radius: 3px;
+    width: 24px;
+    height: 24px;
+    background: url("images/speakerphone.svg") no-repeat center;
 }
 
 button.speakerphone:not(:focus) {
