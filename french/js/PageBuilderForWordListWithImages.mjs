@@ -37,7 +37,12 @@ export default class PageBuilderForWordListWithImages {
             let imageElement = /** @type {HTMLImageElement} */ (worldLiBlock.querySelector('img'));
             let wordInputElement = /** @type {HTMLInputElement} */ (worldLiBlock.querySelector('input[type="text"]'));
 
-            let titleHint = wordListObject[word].article + ' ' + word;
+            let titleHint;
+            if (wordListObject[word].article.slice(-1) === "'") {
+                titleHint = wordListObject[word].article + word;
+            } else {
+                titleHint = wordListObject[word].article + ' ' + word;
+            }
             wordInputElement.pattern = titleHint;
 
             imageElement.setAttribute('title', titleHint);
