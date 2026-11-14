@@ -18,7 +18,7 @@ export default {
     },
     "pastèque": {
         article: "une",
-        category: "fruitss"
+        category: "fruits"
     },
     "melon": {
         article: "un",
@@ -62,7 +62,8 @@ export default {
     },
     "framboise": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.7
     },
     "raisin": {
         article: "du",
@@ -70,7 +71,8 @@ export default {
     },
     "ananas": {
         article: "un",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.2
     },
     "kiwi": {
         article: "un",
@@ -78,7 +80,8 @@ export default {
     },
     "bleuet": {
         article: "un",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.7
     },
     "cerise": {
         article: "une",
@@ -90,7 +93,8 @@ export default {
     },
     "grenade": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.3
     },
     "noix": {
         article: "une",
@@ -98,15 +102,18 @@ export default {
     },
     "pistache": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.6
     },
     "cacahuète": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.2
     },
     "noix de coco": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.9
     },
     "datte": {
         article: "une",
@@ -114,8 +121,10 @@ export default {
     },
     "mangue": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.5
     },
+
 
 
     "champignon": {
@@ -136,23 +145,28 @@ export default {
     },
     "oignon": {
         article: "un",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.7
     },
     "poivron": {
         article: "un",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.8
     },
     "pomme de terre": {
         article: "une",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.8
     },
     "concombre": {
         article: "un",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.7
     },
     "courgette": {
         article: "une",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.8
     },
     "brocoli": {
         article: "un",
@@ -184,7 +198,8 @@ export default {
     },
     "épinard": {
         article: "un",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.7
     },
     "avocat": {
         article: "un",
@@ -220,10 +235,12 @@ export default {
     },
     "citrouille": {
         article: "une",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 1.4
     },
     "persil": {
         article: "du",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.7
     },
 }

@@ -10,7 +10,7 @@ import Utils from './Utils.mjs';
 export default class PageBuilderForWordListWithImages {
 
     /**
-     * @param {Record<string, {article: string, category: string, translation?: string}>} wordListObject 
+     * @param {Record<string, {article: string, category: string, scale?: number}>} wordListObject 
      * @param {string} wordListRootElementClassName 
      * @param {string} imageFileFolder 
      * @param {string} audiofileFolder 
@@ -43,6 +43,9 @@ export default class PageBuilderForWordListWithImages {
             imageElement.setAttribute('title', titleHint);
             imageElement.setAttribute('alt', word);
             imageElement.setAttribute('src', Resolver.IMAGE_BASE_PATH + imageFileFolder + '/' + word + '.svg');
+            if (Object.hasOwn(wordListObject[word], 'scale')) {
+                imageElement.style.transform = `scale(${wordListObject[word].scale})`;
+            }
 
             /** @type HTMLElement */
             let speakerPhoneElement = worldLiBlock.querySelector(".speakerphone");
