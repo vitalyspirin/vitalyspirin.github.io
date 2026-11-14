@@ -84,6 +84,10 @@ export default {
         article: "une",
         category: "fruits"
     },
+    "prune": {
+        article: "une",
+        category: "fruits"
+    },
     "grenade": {
         article: "une",
         category: "fruits"
@@ -166,6 +170,10 @@ export default {
         article: "un",
         category: "vegetables"
     },
+    "petit pois": {
+        article: "un",
+        category: "vegetables"
+    },
     "haricot vert": {
         article: "un",
         category: "vegetables"
@@ -200,10 +208,6 @@ export default {
     },
     "olive": {
         article: "une",
-        category: "vegetables"
-    },
-    "petit pois": {
-        article: "un",
         category: "vegetables"
     },
     "asperge": {
