@@ -14,7 +14,8 @@ export const audioFileFolder = 'vocabulary/fruits-vegetables';
 export default {
     "banane": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.8
     },
     "pastèque": {
         article: "une",
@@ -22,15 +23,18 @@ export default {
     },
     "melon": {
         article: "un",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.2
     },
     "pomme": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.8
     },
     "fraise": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.7
     },
     "citron": {
         article: "un",
@@ -38,7 +42,8 @@ export default {
     },
     "citron vert": {
         article: "un",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.8
     },
     "orange": {
         article: "une",
@@ -134,7 +139,8 @@ export default {
 
     "champignon": {
         article: "un",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.8
     },
     "carotte": {
         article: "une",
