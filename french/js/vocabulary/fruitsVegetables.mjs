@@ -42,7 +42,8 @@ export default {
     },
     "orange": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.2
     },
     "pamplemousse": {
         article: "un",
@@ -50,7 +51,8 @@ export default {
     },
     "pêche": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 1.05
     },
     "abricot": {
         article: "un",
@@ -76,7 +78,8 @@ export default {
     },
     "kiwi": {
         article: "un",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.8
     },
     "bleuet": {
         article: "un",
@@ -89,7 +92,8 @@ export default {
     },
     "prune": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.8
     },
     "grenade": {
         article: "une",
@@ -117,7 +121,8 @@ export default {
     },
     "datte": {
         article: "une",
-        category: "fruits"
+        category: "fruits",
+        scale: 0.8
     },
     "mangue": {
         article: "une",
@@ -211,7 +216,8 @@ export default {
     },
     "ail": {
         article: "de l'",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.7
     },
     "betterave": {
         article: "une",
@@ -227,7 +233,8 @@ export default {
     },
     "asperge": {
         article: "une",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.8
     },
     "gingembre": {
         article: "du",
