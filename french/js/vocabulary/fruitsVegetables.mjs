@@ -50,6 +50,11 @@ export default {
         category: "fruits",
         scale: 1.2
     },
+    "mandarine": {
+        article: "une",
+        category: "fruits",
+        scale: 0.7
+    },
     "pamplemousse": {
         article: "un",
         category: "fruits"
