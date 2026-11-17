@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<!-- exercises are taken from 
+ https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F128666177_Les_viandes__les_poissons_et_les_fruits_de_mer_Exercices_et_corrig_.pdf
+-->
+
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Les viandes, les poissons et les fruits de mer</title>
+
+    <link rel="icon" type="image/x-icon" href="../../../images/eiffel-tower.ico" />
+    <link rel="stylesheet" href="../../../styles.css" />
+
+    <script type="module">
+        "use strict";
+        import wordList, { imageFileFolder, audioFileFolder } from '../../../js/vocabulary/meatSeafood.mjs';
+        import PageBuilderForWordListWithImages from '../../../js/PageBuilderForWordListWithImages.mjs';
+        PageBuilderForWordListWithImages.build(
+            wordList,
+            'meat',
+            imageFileFolder,
+            audioFileFolder
+        );
+
+        PageBuilderForWordListWithImages.build(
+            wordList,
+            'seafood',
+            imageFileFolder,
+            audioFileFolder
+        );
+
+        import { ErrorCounter } from '../../../js/ErrorCounter.mjs';
+        ErrorCounter.initialize();
+    </script>
+</head>
+
+<body id="fruits-vegetables-page">
+    <main spellcheck="false">
+        <article class="text">
+            <h1>Les viandes, les poissons et les fruits de mer</h1>
+            <h2>Exercices et corrigé</h2>
+
+            <ol class="nested">
+                <li>
+                    <section>
+                        <h3>Identifiez ces aliments.</h3>
+
+                        <ol class="meat"></ol>
+                    </section>
+                </li>
+
+                <li>
+                    <section>
+                        <h3>Identifiez ces aliments.</h3>
+
+                        <ol class="seafood"></ol>
+                    </section>
+                </li>
+            </ol>
+
+            <template id="template-li-for-one-word">
+                <li>
+                    <div class="li-box">
+                        <span class="article"></span>
+
+                        <span class="word"></span>
+
+                        <span class="image-box">
+                            <img />
+                        </span>
+
+                        <input type="text" class="wide" pattern="" />
+
+                        <button class="speakerphone" tabindex="-1">
+                            <audio></audio>
+                        </button>
+                    </div>
+                </li>
+            </template>
+
+
+            <iframe id="error-counter" src="../../partials/error-counter.html"
+                onload="this.before(...(this.contentWindow.document.body||this.contentWindow.document).children);this.remove()"></iframe>
+
+        </article>
+    </main>
+</body>
+
+</html>
