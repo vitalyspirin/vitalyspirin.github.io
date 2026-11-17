@@ -1202,6 +1202,75 @@ textarea#stats {
     content: counter(rowNumber);
 }
 
+
+/* ------------------------------------------------ */
+/* implementation-progress page */
+
+#implementation-progress menu {
+    float: left;
+    margin: 0 0 3em 0;
+    list-style-type: none;
+}
+
+#implementation-progress menu li {
+    text-align: left;
+    padding: 0.5em 0;
+    width: 19em;
+}
+
+#implementation-progress menu li input {
+    margin: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+#implementation-progress menu li:has(input:checked) {
+    background-color: #cdddac;
+}
+
+#implementation-progress menu+section {
+    margin-left: 22em;
+    padding-left: 2em;
+    text-align: left;
+    border-left: 1px solid black;
+}
+
+#implementation-progress table {
+    border-collapse: collapse;
+    margin: 2em 0;
+}
+
+#implementation-progress table td,
+#implementation-progress table th {
+    border: 1px solid black;
+    padding: 0.5em 2em;
+}
+
+#implementation-progress table td.title {
+    text-align: center;
+    font-weight: bold;
+    color: #ceffbd;
+    background-color: #008339;
+}
+
+#implementation-progress table tbody tr.not-implemented {
+    background-color: LightPink;
+}
+
+#implementation-progress table tbody tr td a {
+    margin: 0 0.5em;
+    color: #1FBC49;
+}
+
+#implementation-progress table tbody tr a[href=""] {
+    display: none;
+}
+
+#implementation-progress footer {
+    clear: both;
+    margin: 4em 0;
+}
+
 /* ------------------------------------------------ */
 /* test page */
 

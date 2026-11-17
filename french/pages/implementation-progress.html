@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<!-- original exercises are taken from https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=2213&owa_no_fiche=51&owa_bottin= -->
+
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avancement du déploiement</title>
+
+    <link rel="icon" type="image/x-icon" href="../images/eiffel-tower.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <script type="module">
+        "use strict";
+
+        import PageBuilderForImplementationProgress from '../js/PageBuilderForImplementationProgress.mjs';
+
+        PageBuilderForImplementationProgress.build(
+            document.getElementById('menu'),
+            document.getElementById('menu-item-template'),
+            document.getElementById('table'),
+            document.getElementById('tr-title-template'),
+            document.getElementById('tr-template')
+        );
+    </script>
+</head>
+
+<body id="implementation-progress">
+    <main class="wide">
+        <article>
+            <header>
+                <h1>Avancement du déploiement</h1>
+            </header>
+
+            <menu id="menu">
+                <template id="menu-item-template">
+                    <li>
+                        <label>
+                            <input type="radio" name="menu" value="">
+                            <span class="menu-item-text"></span>
+                        </label>
+                    </li>
+                </template>
+            </menu>
+
+
+            <section>
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Info. originales</th>
+                            <th>Exercices originaux</th>
+                            <th>Mise en œuvre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template id="tr-title-template">
+                            <tr>
+                                <td class="title" colspan="3"></td>
+                            </tr>
+                        </template>
+
+                        <template id="tr-template">
+                            <tr>
+                                <td><a href=""></a></td>
+                                <td><a href="">Exercices et corrigé</a></td>
+                                <td>
+                                    <a class="info" href="">Info</a>
+                                    <a class="exercise" href="">Exercise1</a>
+                                </td>
+                            </tr>
+                        </template>
+
+                    </tbody>
+                </table>
+            </section>
+
+
+            <footer>
+                <hr />
+                <a href="https://oraprdnt.uqtr.uquebec.ca/portail/gscw031?owa_no_site=2213&owa_no_fiche=51">
+                    Lien vers le portail web d’origine</a>
+            </footer>
+        </article>
+    </main>
+</body>
+
+</html>
