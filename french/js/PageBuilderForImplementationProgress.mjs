@@ -110,6 +110,8 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
         aElement = (newTrElement.querySelector('td:nth-of-type(2) a'));
         aElement.setAttribute("href", exerciseDataObj["original"]["exercise"]);
 
+
+        // implemented exercises column
         if (Object.hasOwn(exerciseDataObj["implementation"], "info")) {
             /** @type {HTMLElement} */
             aElement = (newTrElement.querySelector('td:nth-of-type(3) a.info'));
@@ -119,7 +121,13 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
         if (Object.hasOwn(exerciseDataObj["implementation"], "exercise")) {
             /** @type {HTMLElement} */
             aElement = (newTrElement.querySelector('td:nth-of-type(3) a.exercise'));
-            aElement.setAttribute("href", exerciseDataObj["implementation"]["exercise"]);
+            aElement.setAttribute("href", exerciseDataObj["implementation"]["exercise"][0]);
+
+            if (exerciseDataObj["implementation"]["exercise"].length > 1) {
+                /** @type {HTMLElement} */
+                aElement = (newTrElement.querySelector('td:nth-of-type(3) a.exercise:last-of-type'));
+                aElement.setAttribute("href", exerciseDataObj["implementation"]["exercise"][1]);
+            }
         } else {
             newTrElement.classList.add('not-implemented');
         }
@@ -130,15 +138,17 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
      * @param {string} className
      */
     static #setVisible(className) {
-        document.querySelectorAll(`tbody tr.${className}`)
-            .forEach((/** @type {HTMLElement} */ trElement) => {
-                trElement.style.display = 'table-row';
-            });
+        /** @type {NodeListOf<HTMLTableRowElement>} */
+        const visibleRowList = document.querySelectorAll(`tbody tr.${className}`);
+        visibleRowList.forEach((trElement) => {
+            trElement.style.display = 'table-row';
+        });
 
-        document.querySelectorAll(`tbody tr:not(.${className})`)
-            .forEach(/** @type {HTMLElement} */(trElement) => {
-                trElement.style.display = 'none';
-            });
+        /** @type {NodeListOf<HTMLTableRowElement>} */
+        const hiddenRowList = document.querySelectorAll(`tbody tr:not(.${className})`)
+        hiddenRowList.forEach((trElement) => {
+            trElement.style.display = 'none';
+        });
     }
 
 

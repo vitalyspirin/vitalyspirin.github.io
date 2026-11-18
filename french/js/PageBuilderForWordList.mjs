@@ -34,7 +34,7 @@ export default class PageBuilderForWordList {
             wordElement.setAttribute('title', titleHint);
 
             worldLiBlock.querySelectorAll('input')
-                .forEach((/** @type {HTMLInputElement} */ inputElement) => {
+                .forEach((inputElement) => {
                     inputElement.setAttribute('name', word);
                     if (inputElement.value === wordListStructure[word].article) {
                         inputElement.setAttribute('required', 'required');

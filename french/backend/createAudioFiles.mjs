@@ -67,7 +67,7 @@ saveAudioFilesForWordList(wordListFruitsVegetables, audioFileFolderFruitsVegetab
 
 
 /**
- * @param {Record<string, Record<string, string>>} wordList
+ * @param {Record<string, {article: string, level?:string, category?: string, scale?: number}>} wordList
  * @param {string} fileFolder
  * @param {boolean} onlyIfNotExists
  */
