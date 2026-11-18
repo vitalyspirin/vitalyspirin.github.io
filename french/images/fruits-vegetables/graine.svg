@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 320" width="260" height="320">
+  <defs>
+    <!-- Exact teardrop/almond silhouette of the sunflower seed -->
+    <clipPath id="seedClip">
+      <path d="M 155 28 
+               C 198 28, 232 62, 232 108 
+               C 232 184, 148 286, 62 308 
+               C 44 306, 36 284, 38 256 
+               C 44 166, 98 28, 155 28 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Sunflower Seed (Transparent background) -->
+  <g clip-path="url(#seedClip)">
+    <!-- Solid Black Base Shell -->
+    <rect x="0" y="0" width="260" height="320" fill="#000000" />
+
+    <!-- Wide Left Beige/Tan Stripe -->
+    <path d="M 148 24 
+             C 172 24, 194 30, 206 38 
+             C 148 92, 92 192, 56 312 
+             L 32 306 
+             C 44 196, 96 86, 148 24 Z" fill="#CBB994" />
+
+    <!-- Inner Thin Black Line Dividing the Left Beige Stripe -->
+    <path d="M 176 36 
+             C 128 96, 82 188, 52 292 
+             C 86 192, 134 102, 176 36 Z" fill="#000000" />
+
+    <!-- Center-Right Tapered Beige Stripe -->
+    <path d="M 209 44 
+             C 176 116, 126 212, 72 288 
+             C 116 204, 166 112, 209 44 Z" fill="#CBB994" />
+
+    <!-- Far-Right Narrow Beige Stripe -->
+    <path d="M 218 54 
+             C 208 118, 184 182, 156 232 
+             C 178 176, 202 114, 218 54 Z" fill="#CBB994" />
+  </g>
+</svg>

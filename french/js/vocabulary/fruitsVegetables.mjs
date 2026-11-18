@@ -129,6 +129,11 @@ export default {
         category: "fruits",
         scale: 1.9
     },
+    "graine": {
+        article: "une",
+        category: "fruits",
+        scale: 0.6
+    },
     "datte": {
         article: "une",
         category: "fruits",
