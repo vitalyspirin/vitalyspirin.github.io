@@ -683,4 +683,8 @@ export default {
         article: "une",
         level: "B1"
     },
+    "tête": {
+        article: "une",
+        level: "A1"
+    },
 }

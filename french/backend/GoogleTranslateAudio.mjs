@@ -9,10 +9,12 @@ export default class GoogleTranslateAudio {
      * @return {Promise<ArrayBuffer>}
      */
     static async getAudioBinary(str) {
-
+        // the following Google Translate error is seemed to be fixed
+        // (check for "économie" and "une économie").
+        //
         // Google Translate reads words beginning with é as "E accent aigu" (unless
         // there is an apostrophe infront of it)
-        str = str.replace(" é", "'é");
+        // str = str.replace(" é", "'é");
 
         const result = fetch(this.getAudioUrl(str))
             .then((response) => {
