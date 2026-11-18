@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<defs>
+ <radialGradient id="red" cx="30%" cy="22%" r="80%">
+  <stop offset="0" stop-color="#ff6049"/><stop offset=".72" stop-color="#ff4028"/><stop offset="1" stop-color="#d83220"/>
+ </radialGradient>
+ <linearGradient id="shadow" x1="0" y1="0" x2="1" y2="1">
+  <stop offset=".35" stop-color="#8e2b20" stop-opacity="0"/><stop offset="1" stop-color="#70271d" stop-opacity=".85"/>
+ </linearGradient>
+</defs>
+<!-- Rear balls -->
+<g stroke="#06344e" stroke-width="2.5" stroke-linejoin="round">
+ <circle cx="56" cy="29" r="18.5" fill="url(#red)"/>
+ <path d="M65 12 C79 18 81 34 73 44 C68 51 59 52 52 48 C66 46 72 35 70 25 C69 19 67 15 65 12Z" fill="url(#shadow)" stroke="none"/>
+ <circle cx="95" cy="37" r="18.5" fill="url(#red)"/>
+ <path d="M104 20 C118 26 121 42 112 52 C106 59 97 60 90 55 C104 53 111 42 109 32 C108 26 106 23 104 20Z" fill="url(#shadow)" stroke="none"/>
+ <circle cx="26" cy="72" r="18.5" fill="url(#red)"/>
+ <path d="M35 55 C49 61 52 77 43 87 C37 94 28 95 21 90 C35 88 42 77 40 67 C39 61 37 58 35 55Z" fill="url(#shadow)" stroke="none"/>
+ <circle cx="70" cy="82" r="18.5" fill="url(#red)"/>
+ <path d="M79 65 C93 71 96 87 87 97 C81 104 72 105 65 100 C79 98 86 87 84 77 C83 71 81 68 79 65Z" fill="url(#shadow)" stroke="none"/>
+</g>
+<!-- Foreground balls -->
+<g stroke="#06344e" stroke-width="2.5" stroke-linejoin="round">
+ <circle cx="40" cy="55" r="18.5" fill="url(#red)"/>
+ <path d="M49 38 C63 44 66 60 57 70 C51 77 42 78 35 73 C49 71 56 60 54 50 C53 44 51 41 49 38Z" fill="url(#shadow)" stroke="none"/>
+ <circle cx="69" cy="43" r="18.5" fill="url(#red)"/>
+ <path d="M78 26 C92 32 95 48 86 58 C80 65 71 66 64 61 C78 59 85 48 83 38 C82 32 80 29 78 26Z" fill="url(#shadow)" stroke="none"/>
+ <circle cx="88" cy="65" r="18.5" fill="url(#red)"/>
+ <path d="M97 48 C111 54 114 70 105 80 C99 87 90 88 83 83 C97 81 104 70 102 60 C101 54 99 51 97 48Z" fill="url(#shadow)" stroke="none"/>
+</g>
+<!-- Gloss highlights -->
+<g fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round">
+ <path d="M48 20 Q51 15 56 15"/>
+ <path d="M85 31 Q88 26 93 25"/>
+ <path d="M18 65 Q20 59 25 57"/>
+ <path d="M61 75 Q63 69 68 68"/>
+ <path d="M27 39 Q29 32 34 30"/>
+ <path d="M59 36 Q61 30 66 29"/>
+ <path d="M79 59 Q81 53 86 52"/>
+</g>
+</svg>

@@ -22,6 +22,11 @@ export default {
         category: "meat",
         scale: 0.8
     },
+    "cochon": {
+        article: "un",
+        category: "meat",
+        scale: 1.4
+    },
     "jambon": {
         article: "du",
         category: "meat",
@@ -37,10 +42,20 @@ export default {
         category: "meat",
         scale: 0.7
     },
+    "cuisse de poulet": {
+        article: "une",
+        category: "meat",
+        scale: 1.1
+    },
     "pilon de poulet": {
         article: "un",
         category: "meat",
-        scale: 0.9
+        scale: 0.8
+    },
+    "oeuf": {
+        article: "un",
+        category: "meat",
+        scale: 0.7
     },
     "canard": {
         article: "un",
@@ -52,10 +67,15 @@ export default {
         category: "meat",
         scale: 0.9
     },
+    "chèvre": {
+        article: "une",
+        category: "meat",
+        scale: 1.1
+    },
     "agneau": {
         article: "un",
         category: "meat",
-        scale: 0.8
+        scale: 1
     },
     "poisson": {
         article: "un",
@@ -81,5 +101,15 @@ export default {
         article: "une",
         category: "seafood",
         scale: 1
+    },
+    "huître": {
+        article: "une",
+        category: "seafood",
+        scale: 1
+    },
+    "caviar": {
+        article: "du",
+        category: "seafood",
+        scale: 0.6
     },
 }
