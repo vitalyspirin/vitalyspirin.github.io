@@ -199,7 +199,13 @@ export default {
     },
     "salade": {
         article: "une",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.9
+    },
+    "chou vert": {
+        article: "un",
+        category: "vegetables",
+        scale: 0.8
     },
     "radis": {
         article: "un",

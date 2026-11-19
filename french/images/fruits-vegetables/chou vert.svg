@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 380" width="380" height="380">
+  <g stroke="#1A1109" stroke-width="10.5" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- ================= 1. OUTER ROUND CABBAGE / LETTUCE HEAD ================= -->
+    <path d="M 74 108
+             C 74 92, 86 82, 96 80
+             C 98 64, 114 56, 128 60
+             C 134 40, 156 34, 174 44
+             C 190 32, 218 30, 226 48
+             C 242 36, 266 40, 276 52
+             C 302 44, 326 60, 330 88
+             C 332 102, 330 114, 326 124
+             C 340 162, 342 214, 330 256
+             C 312 316, 256 352, 192 352
+             C 124 352, 62 308, 48 238
+             C 38 190, 48 140, 74 108 Z" fill="#86CA56" />
+
+    <!-- ================= 2. INNER LAYERED LEAVES & FOLDS ================= -->
+    <!-- Upper-left leaf outline curving down into center -->
+    <path d="M 128 60
+             C 152 68, 162 94, 162 124
+             C 162 146, 170 162, 184 174" fill="none" />
+
+    <!-- Top-center inner vertical fold -->
+    <path d="M 180 86
+             C 190 102, 196 122, 194 142" fill="none" />
+
+    <!-- Top-right tall leaf fold curving down to middle -->
+    <path d="M 276 52
+             C 246 62, 228 84, 228 116
+             C 228 142, 214 160, 192 174
+             C 172 186, 158 202, 148 220" fill="none" />
+
+    <!-- Upper-right inner vertical accent curve -->
+    <path d="M 288 94
+             C 266 106, 254 134, 250 176" fill="none" />
+
+    <!-- Mid-center short floating curve -->
+    <path d="M 218 190
+             C 208 198, 200 212, 198 226" fill="none" />
+
+    <!-- ================= 3. LEFT LEAF & BRANCHING VEIN ================= -->
+    <!-- Left outer leaf fold line -->
+    <path d="M 74 108
+             C 102 114, 114 134, 114 162
+             C 114 196, 128 214, 154 228
+             C 168 236, 178 244, 184 252" fill="none" />
+
+    <!-- Left main branching midrib (from upper-left down to bottom-left rim) -->
+    <path d="M 88 142
+             C 86 184, 98 228, 126 266
+             C 138 282, 144 302, 140 336" fill="none" />
+    <!-- Left upward branch -->
+    <path d="M 62 184 L 90 198" fill="none" />
+    <!-- Left downward-curling branch -->
+    <path d="M 78 260 C 90 254, 102 256, 112 264" fill="none" />
+    <!-- Left short inner branch -->
+    <path d="M 128 274 L 146 262" fill="none" />
+
+    <!-- ================= 4. BOTTOM-RIGHT OVERLAPPING LEAF & BRANCHING VEINS ================= -->
+    <!-- Upper-right leaf boundary curving down to the bottom-left stem base -->
+    <path d="M 326 124
+             C 304 134, 292 158, 282 188
+             C 272 218, 254 236, 224 244
+             C 194 252, 166 276, 142 336" fill="none" />
+
+    <!-- Bottom-right central midrib (sweeping from bottom base up toward right side) -->
+    <path d="M 146 338
+             C 188 324, 228 298, 264 264
+             C 286 244, 302 218, 314 192" fill="none" />
+
+    <!-- Bottom-right upward short branches (crossing upward from the midrib) -->
+    <path d="M 234 290 C 232 276, 228 266, 224 260" fill="none" />
+    <path d="M 276 252 C 272 240, 268 232, 264 226" fill="none" />
+
+    <!-- Bottom-right downward/outward short branches (crossing downward from the midrib) -->
+    <path d="M 236 322 C 244 310, 248 298, 250 282" fill="none" />
+    <path d="M 288 242 L 306 256" fill="none" />
+
+  </g>
+</svg>
