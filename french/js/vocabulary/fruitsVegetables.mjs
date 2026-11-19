@@ -267,6 +267,11 @@ export default {
         category: "vegetables",
         scale: 1.4
     },
+    "courge": {
+        article: "une",
+        category: "vegetables",
+        scale: 1.1
+    },
     "persil": {
         article: "du",
         category: "vegetables",
