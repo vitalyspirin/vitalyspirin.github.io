@@ -12,6 +12,11 @@ export const audioFileFolder = 'vocabulary/meat-seafood';
 
 
 export default {
+    "boeuf": {
+        article: "un",
+        category: "meat",
+        scale: 1
+    },
     "saucisse": {
         article: "une",
         category: "meat",
@@ -73,6 +78,11 @@ export default {
         scale: 1.1
     },
     "agneau": {
+        article: "un",
+        category: "meat",
+        scale: 1
+    },
+    "jarret d'agneau": {
         article: "un",
         category: "meat",
         scale: 1
