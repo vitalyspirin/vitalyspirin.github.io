@@ -27,12 +27,32 @@ export default {
         category: "meat",
         scale: 0.8
     },
+    "bifteck": {
+        article: "un",
+        category: "meat",
+        scale: 0.8
+    },
+    "boeuf haché": {
+        article: "du",
+        category: "meat",
+        scale: 1
+    },
+    "côtes levées": {
+        article: "des",
+        category: "meat",
+        scale: 1
+    },
     "cochon": {
         article: "un",
         category: "meat",
         scale: 1.4
     },
     "jambon": {
+        article: "du",
+        category: "meat",
+        scale: 0.7
+    },
+    "bacon": {
         article: "du",
         category: "meat",
         scale: 0.7
@@ -84,6 +104,11 @@ export default {
     },
     "jarret d'agneau": {
         article: "un",
+        category: "meat",
+        scale: 1
+    },
+    "charcuterie": {
+        article: "une",
         category: "meat",
         scale: 1
     },

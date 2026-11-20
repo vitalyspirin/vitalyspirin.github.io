@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 330" width="600" height="330">
+  <defs>
+    <!-- Clip path for the top seared steak surface -->
+    <clipPath id="steakTopClip">
+      <path d="M 22 162 
+               C 22 92, 134 22, 266 22 
+               C 368 22, 434 62, 514 82 
+               C 558 94, 582 118, 582 146 
+               C 582 180, 524 198, 456 206 
+               C 374 216, 326 244, 262 276 
+               C 198 308, 114 304, 64 264 
+               C 34 240, 22 204, 22 162 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- ================= 1. STEAK 3D THICKNESS / SIDE WALL ================= -->
+  <g>
+    <!-- Main Roasted Brown Side Wall -->
+    <path d="M 22 162 
+             L 22 188 
+             C 22 232, 36 266, 68 290 
+             C 118 328, 202 332, 266 300 
+             C 330 268, 378 240, 460 230 
+             C 528 222, 582 204, 582 170 
+             L 582 146 
+             C 582 180, 524 198, 456 206 
+             C 374 216, 326 244, 262 276 
+             C 198 308, 114 304, 64 264 
+             C 34 240, 22 204, 22 162 Z" fill="#9E4826" />
+
+    <!-- Lighter Warm Band Along Upper Side Edge -->
+    <path d="M 22 162 
+             L 22 173 
+             C 22 216, 35 251, 66 275 
+             C 116 314, 200 318, 264 286 
+             C 328 254, 376 226, 458 216 
+             C 526 208, 582 190, 582 156 
+             L 582 146 
+             C 582 180, 524 198, 456 206 
+             C 374 216, 326 244, 262 276 
+             C 198 308, 114 304, 64 264 
+             C 34 240, 22 204, 22 162 Z" fill="#BA5E38" />
+
+    <!-- Darker Roasted Shadow Along Bottom Rim & Right Curve -->
+    <path d="M 23 184 
+             C 25 226, 39 258, 70 282 
+             C 120 320, 204 324, 268 292 
+             C 332 260, 380 232, 462 222 
+             C 528 214, 580 196, 582 164 
+             L 582 170 
+             C 582 204, 528 222, 460 230 
+             C 378 240, 330 268, 266 300 
+             C 202 332, 118 328, 68 290 
+             C 36 266, 22 232, 22 188 Z" fill="#7D3519" />
+
+    <!-- Deep Shadow Pocket on the Far-Right Curved End -->
+    <path d="M 548 182 
+             C 568 173, 582 161, 582 146 
+             L 582 170 
+             C 582 186, 568 198, 548 207 
+             C 538 199, 538 189, 548 182 Z" fill="#6B2B13" />
+  </g>
+
+  <!-- ================= 2. TOP SEARED STEAK SURFACE & MARBLING ================= -->
+  <g clip-path="url(#steakTopClip)">
+    <!-- Outer Rim Base Color -->
+    <rect x="0" y="0" width="600" height="330" fill="#BA522B" />
+
+    <!-- Lighter Salmon-Peach Fat Rim Ring -->
+    <path d="M 34 162 
+             C 34 99, 140 34, 266 34 
+             C 364 34, 428 72, 506 91 
+             C 546 102, 568 122, 568 146 
+             C 568 174, 514 190, 450 198 
+             C 370 208, 322 234, 260 265 
+             C 198 296, 120 292, 74 255 
+             C 46 233, 34 200, 34 162 Z" fill="#DC7D56" />
+
+    <!-- Main Warm Terracotta-Red Seared Meat Interior -->
+    <path d="M 48 162 
+             C 48 106, 148 46, 266 46 
+             C 358 46, 420 82, 496 100 
+             C 532 109, 552 126, 552 146 
+             C 552 168, 504 182, 444 189 
+             C 366 198, 318 223, 258 253 
+             C 198 283, 126 279, 84 245 
+             C 58 224, 48 195, 48 162 Z" fill="#CA562E" />
+
+    <!-- Organic Intramuscular Fat Marbling Veins -->
+    <g fill="none" stroke="#DC7D56" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Outer connective marbling loop -->
+      <path d="M 106 112 
+               C 146 138, 174 182, 162 238 
+               C 156 262, 186 276, 206 254 
+               C 232 224, 212 184, 246 172 
+               C 284 158, 318 192, 356 184 
+               C 394 176, 382 126, 396 86 
+               C 402 68, 378 58, 368 76 
+               C 352 106, 318 134, 272 136 
+               C 222 138, 182 114, 156 84" stroke-width="11" />
+
+      <!-- Secondary inner fat web branches -->
+      <path d="M 164 166 C 194 156, 224 162, 248 172" stroke-width="9" />
+      <path d="M 272 136 C 282 154, 294 168, 312 178" stroke-width="8" />
+      <path d="M 388 124 C 424 134, 464 148, 514 144" stroke-width="10" />
+      <path d="M 488 102 C 482 122, 488 138, 502 146" stroke-width="8" />
+      <path d="M 88 218 C 118 212, 144 218, 164 232" stroke-width="8" />
+    </g>
+
+    <!-- ================= 3. SEVEN TAPERED CHARRED GRILL MARKS ================= -->
+    <g fill="#5C200C">
+      <!-- Grill Mark 1 (Bottom-Left) -->
+      <polygon points="34,166 176,246 173,251 32,170" />
+      <!-- Grill Mark 2 -->
+      <polygon points="56,126 232,226 229,232 54,130" />
+      <!-- Grill Mark 3 -->
+      <polygon points="94,86 294,200 291,206 92,90" />
+      <!-- Grill Mark 4 (Center Longest) -->
+      <polygon points="148,54 364,178 361,184 145,58" />
+      <!-- Grill Mark 5 -->
+      <polygon points="216,34 446,166 443,172 213,38" />
+      <!-- Grill Mark 6 -->
+      <polygon points="296,34 524,164 521,170 293,38" />
+      <!-- Grill Mark 7 (Top-Right) -->
+      <polygon points="396,56 574,158 571,164 393,60" />
+    </g>
+  </g>
+</svg>

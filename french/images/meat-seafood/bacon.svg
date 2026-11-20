@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Soft Warm Gradient for the Bacon Fat Stripes -->
+    <linearGradient id="fatGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFE0C8" />
+      <stop offset="50%" stop-color="#FFD4C2" />
+      <stop offset="100%" stop-color="#FFC7BC" />
+    </linearGradient>
+
+    <!-- Vibrant Red Gradient for the Lean Meat Base -->
+    <linearGradient id="leanGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF3B43" />
+      <stop offset="55%" stop-color="#F22931" />
+      <stop offset="100%" stop-color="#DC1E26" />
+    </linearGradient>
+
+    <!-- Deeper Crimson Shading Along the Right Edge -->
+    <linearGradient id="rightEdgeShadow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E61E26" />
+      <stop offset="100%" stop-color="#C4141B" />
+    </linearGradient>
+
+    <!-- Exact Wavy Rounded Bacon Slice Silhouette -->
+    <clipPath id="baconClip">
+      <path d="M 244 38 
+               C 254 32, 266 36, 276 44 
+               L 364 114 
+               C 374 122, 376 136, 366 146 
+               C 344 166, 326 174, 314 198 
+               C 302 222, 294 248, 268 272 
+               C 242 296, 224 304, 210 328 
+               C 196 352, 184 374, 156 394 
+               C 146 400, 134 398, 124 390 
+               L 22 308 
+               C 12 300, 12 288, 22 278 
+               C 50 258, 62 236, 76 212 
+               C 90 188, 108 180, 134 156 
+               C 160 132, 168 106, 180 82 
+               C 192 58, 210 50, 244 38 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Bacon Strip (Transparent Background) -->
+  <g clip-path="url(#baconClip)">
+    <!-- 1. Main Lean Red Meat Base -->
+    <rect x="0" y="0" width="400" height="400" fill="url(#leanGrad)" />
+
+    <!-- 2. Deeper Crimson Right-Side & Bottom-Right Rim Shading -->
+    <path d="M 378 124 
+             C 356 146, 338 156, 324 184 
+             C 310 212, 302 242, 272 270 
+             C 242 298, 222 308, 206 336 
+             C 190 364, 178 386, 148 406 
+             L 124 394 
+             C 156 374, 168 352, 182 328 
+             C 196 304, 214 294, 240 270 
+             C 266 246, 274 220, 286 196 
+             C 298 172, 316 164, 338 144 
+             C 344 138, 344 128, 336 122 
+             L 228 36 
+             L 262 24 Z" fill="url(#rightEdgeShadow)" />
+
+    <!-- 3. Upper-Left Outer Cream Fat Layer -->
+    <path d="M 244 32 
+             C 210 44, 190 54, 176 80 
+             C 162 106, 154 132, 128 156 
+             C 102 180, 84 188, 70 212 
+             C 56 236, 44 258, 16 278 
+             L 40 298 
+             C 68 278, 80 256, 94 232 
+             C 108 208, 126 200, 152 176 
+             C 178 152, 186 126, 200 100 
+             C 214 74, 232 64, 266 52 Z" fill="url(#fatGrad)" />
+
+    <!-- 4. Second Inner Cream Fat Ribbon -->
+    <path d="M 288 66 
+             C 254 78, 236 88, 222 114 
+             C 208 140, 200 166, 174 190 
+             C 148 214, 130 222, 116 246 
+             C 102 270, 90 292, 62 312 
+             L 84 330 
+             C 112 310, 124 288, 138 264 
+             C 152 240, 170 232, 196 208 
+             C 222 184, 230 158, 244 132 
+             C 258 106, 276 96, 310 84 Z" fill="url(#fatGrad)" />
+
+    <!-- 5. Soft Pink Transition Band Between Inner Fat and Lean Meat -->
+    <path d="M 298 74 
+             C 268 86, 250 96, 238 120 
+             C 226 144, 218 168, 194 190 
+             C 170 212, 152 220, 140 242 
+             C 128 264, 116 286, 88 306 
+             L 76 324 
+             C 104 304, 116 282, 130 258 
+             C 144 234, 162 226, 188 202 
+             C 214 178, 222 152, 236 126 
+             C 250 100, 268 90, 302 78 Z" fill="#FF8A9E" opacity="0.72" />
+  </g>
+</svg>
