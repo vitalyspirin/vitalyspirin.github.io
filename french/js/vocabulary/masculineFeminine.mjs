@@ -687,4 +687,12 @@ export default {
         article: "une",
         level: "A1"
     },
+    "couleur": {
+        article: "une",
+        level: "A1"
+    },
+    "espoir": {
+        article: "un",
+        level: "B1"
+    },
 }
