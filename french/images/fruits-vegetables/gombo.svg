@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" width="500" height="420">
+  <defs>
+    
+    <linearGradient id="okraPodGrad" x1="20%" y1="20%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#8AC744" />
+      <stop offset="55%" stop-color="#76B734" />
+      <stop offset="100%" stop-color="#5B9922" />
+    </linearGradient>
+
+    
+    <linearGradient id="stemCapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6AA92D" />
+      <stop offset="100%" stop-color="#538D1D" />
+    </linearGradient>
+
+    
+    <clipPath id="okraBodyClip">
+      <path d="M 32 372
+               C 28 362, 34 348, 46 338
+               C 146 254, 266 154, 368 72
+               C 376 66, 386 64, 396 68
+               C 402 74, 404 82, 404 92
+               C 414 92, 424 100, 426 112
+               C 436 116, 444 126, 446 138
+               C 448 148, 444 158, 436 166
+               C 324 256, 186 336, 54 382
+               C 42 386, 34 380, 32 372 Z" />
+    </clipPath>
+  </defs>
+
+  
+  <g stroke="#3F7011" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    
+    <path d="M 378 66
+             C 392 60, 408 66, 426 68
+             C 438 68, 448 60, 456 56
+             C 464 52, 472 56, 476 64
+             C 480 72, 478 80, 470 86
+             C 460 92, 452 100, 452 114
+             C 452 130, 450 144, 442 154
+             L 372 72 Z" fill="url(#stemCapGrad)" />
+
+    
+    <path d="M 426 106
+             C 434 94, 444 84, 458 76
+             C 466 72, 472 68, 476 64
+             C 480 72, 478 80, 470 86
+             C 460 92, 452 100, 452 114
+             C 452 130, 450 144, 442 154
+             L 432 140 Z" fill="#4E861A" stroke="none" />
+
+    
+    <path d="M 378 66
+             C 392 60, 408 66, 426 68
+             C 438 68, 448 60, 456 56
+             C 464 52, 472 56, 476 64
+             C 480 72, 478 80, 470 86
+             C 460 92, 452 100, 452 114
+             C 452 130, 450 144, 442 154" fill="none" stroke="#3F7011" stroke-width="5" />
+
+    
+    <path d="M 402 74 C 418 78, 432 76, 444 70" fill="none" stroke="#9DD554" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  
+  <g clip-path="url(#okraBodyClip)">
+    
+    <rect x="20" y="55" width="440" height="340" fill="url(#okraPodGrad)" />
+
+    
+    <path d="M 32 368
+             C 142 276, 266 172, 376 80
+             L 404 92
+             C 292 184, 162 288, 38 374 Z" fill="#8AC744" />
+
+    
+    <path d="M 44 380
+             C 178 332, 314 252, 426 112
+             L 448 148
+             C 332 254, 192 338, 52 384 Z" fill="#62A326" />
+
+    
+    <path d="M 118 304
+             C 192 242, 274 174, 354 108
+             C 358 105, 362 109, 358 113
+             C 280 180, 198 248, 122 308
+             C 118 311, 114 307, 118 304 Z" fill="#B6E673" opacity="0.85" />
+
+    
+    <path d="M 42 356 C 62 340, 82 324, 102 308" fill="none" stroke="#A7DC62" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+
+    
+    <g fill="none" stroke="#457B14" stroke-width="3.2" stroke-linecap="round">
+      
+      <path d="M 42 368 C 166 284, 294 186, 404 92" />
+      
+      <path d="M 48 375 C 184 306, 316 214, 426 112" />
+    </g>
+  </g>
+
+  
+  <path d="M 32 372
+           C 28 362, 34 348, 46 338
+           C 146 254, 266 154, 368 72
+           C 376 66, 386 64, 396 68
+           C 402 74, 404 82, 404 92
+           C 414 92, 424 100, 426 112
+           C 436 116, 444 126, 446 138
+           C 448 148, 444 158, 436 166
+           C 324 256, 186 336, 54 382
+           C 42 386, 34 380, 32 372 Z" fill="none" stroke="#3F7011" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
