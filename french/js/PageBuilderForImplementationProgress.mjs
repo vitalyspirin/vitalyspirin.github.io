@@ -51,7 +51,6 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
             radioButton.onclick = () => {
                 const className = this.utils.removeSpecialChars(radioButton.value);
                 this.#setVisible(className);
-                console.log('onclick');
             };
 
             menuElement.appendChild(newMenuItemElement);

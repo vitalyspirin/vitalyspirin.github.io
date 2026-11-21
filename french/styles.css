@@ -1246,7 +1246,7 @@ textarea#stats {
     padding: 0.5em 2em;
 }
 
-#implementation-progress table td.title {
+#implementation-progress table tr.title {
     text-align: center;
     font-weight: bold;
     color: #ceffbd;
@@ -1264,6 +1264,17 @@ textarea#stats {
 
 #implementation-progress table tbody tr a[href=""] {
     display: none;
+}
+
+#implementation-progress table {
+    counter-reset: rowNumber;
+}
+#implementation-progress table tbody tr:not(.title) {
+    counter-increment: rowNumber;
+}
+#implementation-progress table tbody tr:not(.title) td:first-of-type::before {
+   content: counter(rowNumber) ") ";
+   margin-left: -1.5em;
 }
 
 #implementation-progress footer {
