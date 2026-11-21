@@ -207,7 +207,7 @@ span.recent-days {
 
 /* Text exercises */
 
-article.text:not(.doc) {
+article.text:not(.doc), article.text.list-with-images {
     opacity: 60%;
 }
 
@@ -598,12 +598,12 @@ article.part-4 ol.nested>li.part-4 {
 
 /* ------------------------------------------------ */
 /* fruits-vegetables page */
-#fruits-vegetables-page .li-box {
+.list-with-images .li-box {
     display: flex;
     align-items: center;
 }
 
-#fruits-vegetables-page .image-box {
+.list-with-images .image-box {
     display: flex;
     justify-content: center;
     width: 5em;
@@ -612,7 +612,7 @@ article.part-4 ol.nested>li.part-4 {
     margin-right: 1em;
 }
 
-#fruits-vegetables-page .image-box img {
+.list-with-images .image-box img {
     max-width: 100%;
     max-height: 100%;
 
@@ -620,7 +620,7 @@ article.part-4 ol.nested>li.part-4 {
     transform: scale(1);
 }
 
-#fruits-vegetables-page .li-box input {
+.list-with-images .li-box input {
     height: min-content
 }
 

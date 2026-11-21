@@ -2,7 +2,6 @@
 
 <!-- exercises are taken from 
  https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F801039821_Les_fruits_Exercices_et_corrig_.pdf 
- https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F676238439_Les_l_gumes_Exercices_et_corrig_.pdf
 -->
 
 <html lang="fr">
@@ -10,7 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fruits et légumes</title>
+    <title>Fruits</title>
 
     <link rel="icon" type="image/x-icon" href="../../../images/eiffel-tower.ico" />
     <link rel="stylesheet" href="../../../styles.css" />
@@ -26,22 +25,15 @@
             audioFileFolder
         );
 
-        PageBuilderForWordListWithImages.build(
-            wordList,
-            'vegetables',
-            imageFileFolder,
-            audioFileFolder
-        );
-
-        import { ErrorCounter } from '../../../js/ErrorCounter.mjs';
-        ErrorCounter.initialize();
+        import Exercise from '../../../js/Exercise.mjs';
+        Exercise.init();
     </script>
 </head>
 
-<body id="fruits-vegetables-page">
+<body>
     <main spellcheck="false">
-        <article class="text">
-            <h1>Fruits et légumes</h1>
+        <article class="text list-with-images">
+            <h1>Fruits</h1>
             <h2>Exercices et corrigé</h2>
 
             <ol class="nested">
@@ -50,14 +42,6 @@
                         <h3>Identifiez ces fruits.</h3>
 
                         <ol class="fruits"></ol>
-                    </section>
-                </li>
-
-                <li>
-                    <section>
-                        <h3>Identifiez ces légumes.</h3>
-
-                        <ol class="vegetables"></ol>
                     </section>
                 </li>
             </ol>
