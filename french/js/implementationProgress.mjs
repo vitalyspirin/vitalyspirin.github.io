@@ -196,8 +196,75 @@ export default {
                 "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1745181958_L_imparfait.pdf",
                 "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1580480102_l_imparfait_exercices_et_corrig__concordance.pdf"
             },
-            "implementation": []
-        }
+            "implementation": {}
+        },
+        "La concordance du p. composé, de l'imparfait et du plus-que-parfait": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FO0000096615_la_concordance_au_pass__d_butant_interm_diaire.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000096617_la_concordance_au_pass__exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/concordance-3.pdf",
+                "exercise": ["exercises/tense-sequence/concordance-3.html"]
+            }
+        },
+        "La concordance du passé composé et de l'imparfait": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F959326456_Le_pass__compos__et_l_imparfait_d_butant_interm_diaire.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1096420110_La_concordance_au_pass__exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/concordance-2.pdf",
+                "exercise": ["exercises/tense-sequence/concordance.html"]
+            }
+        },
+        "Le passé surcomposé": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F861736313_Le_pass__surcompos__th_orie.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1203091814_Le_pass__surcompos__exercices_et_corrig__web.pdf"
+            },
+            "implementation": {}
+        },
+        "La concordance au futur": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F852506609_La_concordance_au_futur.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F515122883_La_concordance_au_futur_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/concordance-future.pdf",
+                "exercise": ["exercises/tense-sequence/concordance-future.html"]
+            }
+        },
+        "Les phrases de condition": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1421158839_Les_phrases_de_condition_interm_diaire.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1666479222_Les_phrases_de_condition_web_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/concordance-conditional.pdf",
+                "exercise": ["exercises/tense-sequence/concordance-conditional.html"]
+            }
+        },
+        "La concordance des temps de l'indicatif": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1464665636_La_concordance_des_temps_de_verbes_interm_diaire_avanc_.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F25484336_La_concordance_des_temps_de_l_indicatif_Exzercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/concordance-simultaneity-posteriority-anteriority.pdf",
+                "exercise": ["exercises/tense-sequence/concordance-simultaneity-posteriority-anteriority.html"]
+            }
+        },
+        "Le temps en grammaire": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1038426583_Le_temps_en_grammaire.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F67324646_Le_temps_en_grammaire_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/time-prepositions.pdf",
+                "exercise": ["exercises/prepositions/time-prepositions.html"]
+            }
+        },
     },
 
 
