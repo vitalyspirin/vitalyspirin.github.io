@@ -40,8 +40,7 @@ export default class TestEngineBase {
                 }
 
                 if (viewModel.aLinks) {
-
-                    await this.testALinks(testResult, iframeWindow);
+                    await this.testALinks(testResult, iframeWindow, true /* onlyLocal*/);
                 }
 
                 if (viewModel.xml) {
@@ -117,15 +116,19 @@ export default class TestEngineBase {
     /**
      * @param {TestResult} testResult
      * @param {Window} iframeWindow - The window object of the iframe.
+     * @param {boolean} onlyLocal - Test only links within the same domain
      */
-    static async testALinks(testResult, iframeWindow) {
+    static async testALinks(testResult, iframeWindow, onlyLocal = false) {
         const aLinkList = iframeWindow.document.getElementsByTagName('a');
         for (const aLink of aLinkList) {
             if (aLink.classList.contains(this.NO_TESTING_CLASS)) continue;
 
             const url = aLink.href;
+            const urlDomain = (new URL(url)).hostname;
+            if (onlyLocal && window.location.hostname !== urlDomain) continue;
+
             if (await this.isFetchSuccess(url)) {
-                if (window.location.hostname === (new URL(url)).hostname && // the same domain
+                if (window.location.hostname === urlDomain && // the same domain
                     this.PAGE_EXTENTIONS_LIST.includes(url.split(/[?#]/)[0].split('.').pop() + '') &&
                     !TestResult.testedPageUrlList.includes(url) &&
                     !TestResult.untestedPageUrlList.includes(url)
@@ -238,7 +241,7 @@ export default class TestEngineBase {
      */
     static async isFetchSuccess(url) {
         let result;
-
+        console.log('testing: ' + url);
         try {
             url = this.addProxyToExternalUrlIfNeeded(url);
 
