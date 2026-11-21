@@ -215,6 +215,11 @@ export default {
         article: "un",
         category: "vegetables"
     },
+    "pois chiche": {
+        article: "un",
+        category: "vegetables",
+        scale: 0.5
+    },
     "haricot vert": {
         article: "un",
         category: "vegetables"
