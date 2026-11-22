@@ -383,7 +383,7 @@ export default {
                 "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F68515847_L_interrogation_avec_inversion_Exercices_et_corrig_.pdf"
             },
             "implementation": {
-                "info": "qui-quel-quelle.pdf",
+                "info": "../pdf/qui-quel-quelle.pdf",
                 "exercise": [
                     "exercises/others/quand-comment-combien.html",
                     "exercises/others/qui-quel-quelle.html"
@@ -402,6 +402,42 @@ export default {
 
 
     "Les déterminants": {
+        "Les articles partitifs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F948512700_Les_partitifs_niveau_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F486168017_Les_partitifs_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/de-du-des.pdf",
+                "exercise": ["exercises/others/de-du-des.html"]
+            }
+        },
+        "Les démonstratifs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1394186794_Les_d_monstratifs.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F593832933_Les_d_monstratifs_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/ce-ces-cet.pdf",
+                "exercise": [
+                    "exercises/others/ce-ces-cet.html",
+                    "exercises/others/ceci-cela-celui.html"
+                ]
+            }
+        },
+        "Les possessifs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2010752_Les_possessifs.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0005627613_les_possessifs_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/mon-ton-son.pdf",
+                "exercise": [
+                    "exercises/others/mon-ton-son.html",
+                    "exercises/others/mien-sien.html"
+                ]
+            }
+        },
     },
 
 
