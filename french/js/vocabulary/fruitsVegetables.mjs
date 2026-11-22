@@ -197,7 +197,7 @@ export default {
         article: "un",
         category: "vegetables"
     },
-    "salade": {
+    "laitue": {
         article: "une",
         category: "vegetables",
         scale: 0.9
