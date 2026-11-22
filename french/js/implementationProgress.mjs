@@ -176,6 +176,26 @@ export default {
             },
             "implementation": []
         },
+        "Les semi-auxiliaires": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FO0002298790_les_semi_auxiliaires_niveau_d_butant.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F828587744_Les_semi_auxiliaires_Exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/devoir-pouvoir-falloir-vouloir.pdf",
+                "exercise": ["exercises/conjugations/extra/devoir-pouvoir-falloir-vouloir.html"]
+            }
+        },
+        "L'auxiliaire Avoir ou Être ?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F276198134_Les_auxiliaires_Tableau.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F_369989532_les_auxiliaires_exercices.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/avoir-etre.pdf",
+                "exercise": ["exercises/conjugations/extra/avoir-etre.html"]
+            }
+        },
         "La forme passive": {
             "original": {
                 "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F580063853_La_voix_passive.pdf",
@@ -270,15 +290,113 @@ export default {
 
 
     "Les participes passés": {
+        "Les semi-auxiliaires": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/genw403.afficher_acces_document?owa_url=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF1841455390_Les_semi_auxiliaires_niveau_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F828587744_Les_semi_auxiliaires_Exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/devoir-pouvoir-falloir-vouloir.pdf",
+                "exercise": ["exercises/conjugations/extra/devoir-pouvoir-falloir-vouloir.html"]
+            }
+        },
+        "L'auxiliaire Avoir ou Être ?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F58620721_Les_auxiliaires_Tableau.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F_272731726_les_auxiliaires_exercices.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/avoir-etre.pdf",
+                "exercise": ["exercises/conjugations/extra/avoir-etre.html"]
+            }
+        },
+        "L'accord des participes passés. Le passé composé": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1136364813_Le_pass__compos__conjugaison_et_accords_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1818990234_Les_participes_pass_s_d_butant_interm_diaire_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "L'accord des participes passés. Les participes passés. Niveau débutant-intermédiaire": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F943487695_Les_participes_pass_s_d_b.inter.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F648161952_Les_participes_pass_s_d_butant_interm_diaire_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "L'accord des participes passés. Les participes passés. Niveau intermédiaire-avancé": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1663437568_Les_participes_pass_s_inter_avanc_.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F866936252_Les_participes_pass_s_inter_avanc__exerc._et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
     },
 
 
     "La négation": {
+        "La négation et les articles. Niveau débutant": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1291093043_La_n_gation_et_les_articles.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F898821878_la_n_gation_et_les_articles_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "La nég. et l'interrogation au passé. Niveau débutant": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F325575567_La_n_gation_et_l_interrogation_au_pass__d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F407851770_l_interrogation_et_la_n_gation_au_pass__exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "La négation. Niveau intermédiaire": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000096623_la_n_gation_d_butant_interm_diaire.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000954042_la_n_gation_interm_diaire_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/negation.pdf",
+                "exercise": [
+                    "exercises/others/negation.html",
+                    "exercises/others/negation-2.html"
+                ]
+            }
+        },
     },
 
 
 
     "L'interrogation": {
+        "L'interrogation": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F86130289_L_interrogation.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0002687613_l_interrogation_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/quand-comment-combien.pdf",
+                "exercise": ["exercises/others/quand-comment-combien.html"]
+            }
+        },
+        "L'interrogation avec inversion": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F99924675_l_interrogation_avec_inversion.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F68515847_L_interrogation_avec_inversion_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "qui-quel-quelle.pdf",
+                "exercise": [
+                    "exercises/others/quand-comment-combien.html",
+                    "exercises/others/qui-quel-quelle.html"
+                ]
+            }
+        },
+        "L'interrogation et la négation au passé": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F325575567_La_n_gation_et_l_interrogation_au_pass__d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F407851770_l_interrogation_et_la_n_gation_au_pass__exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
     },
 
 
