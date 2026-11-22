@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="400" height="480">
+  <defs>
+    
+    <g id="drupelet">
+      
+      <circle cx="0" cy="0" r="46" fill="#2A2438" />
+      
+      <circle cx="0" cy="-2" r="44" fill="#4E456B" />
+      
+      <path d="M -41 -14 A 44 44 0 0 0 38 18 A 40 36 0 0 1 -41 -14 Z" fill="#352E4A" />
+      
+      <ellipse cx="8" cy="-14" rx="22" ry="15" transform="rotate(-18 8 -14)" fill="#685E8A" opacity="0.75" />
+    </g>
+
+    
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8AB83D" />
+      <stop offset="100%" stop-color="#699629" />
+    </linearGradient>
+  </defs>
+
+  
+  
+  
+  <use href="#drupelet" transform="translate(105, 175) scale(0.95)" />
+  <use href="#drupelet" transform="translate(300, 175) scale(0.95)" />
+  <use href="#drupelet" transform="translate(268, 165) scale(0.95)" />
+
+  
+  <use href="#drupelet" transform="translate(92, 315) scale(0.95)" />
+  <use href="#drupelet" transform="translate(168, 395) scale(0.96)" />
+
+  
+  <use href="#drupelet" transform="translate(218, 412) scale(1.02)" />
+
+  
+  <use href="#drupelet" transform="translate(142, 355) scale(0.98)" />
+  <use href="#drupelet" transform="translate(275, 370) scale(1.0)" />
+  <use href="#drupelet" transform="translate(215, 342) scale(1.04)" />
+
+  
+  <use href="#drupelet" transform="translate(86, 250) scale(1.0)" />
+  <use href="#drupelet" transform="translate(132, 305) scale(1.02)" />
+  <use href="#drupelet" transform="translate(310, 240) scale(0.98)" />
+  <use href="#drupelet" transform="translate(295, 305) scale(1.04)" />
+
+  
+  <use href="#drupelet" transform="translate(138, 195) scale(1.05)" />
+  <use href="#drupelet" transform="translate(172, 275) scale(1.08)" />
+  <use href="#drupelet" transform="translate(248, 265) scale(1.06)" />
+  <use href="#drupelet" transform="translate(205, 205) scale(1.05)" />
+
+  
+
+  
+  <path d="M 185 135 C 145 110, 115 85, 110 42 C 145 55, 175 85, 192 132 Z" fill="#77A330" />
+  <path d="M 185 135 C 155 105, 130 78, 110 42 C 138 72, 162 102, 188 134 Z" fill="#5D8222" />
+
+  
+  <path d="M 208 135 C 235 95, 265 75, 310 62 C 300 105, 270 135, 215 142 Z" fill="url(#leafGrad)" />
+  <path d="M 210 138 C 245 108, 278 85, 310 62 C 275 82, 242 106, 208 136 Z" fill="#5D8222" />
+
+  
+  <path d="M 182 140 C 175 95, 188 55, 222 22 C 228 17, 236 23, 231 30 C 202 62, 192 98, 198 140 Z" fill="#5E8724" />
+  
+  <path d="M 190 138 C 185 96, 196 58, 226 26" stroke="#7BA834" stroke-width="4" stroke-linecap="round" fill="none" />
+
+  
+  <path d="M 192 142 C 145 158, 95 142, 74 96 C 115 112, 155 112, 195 136 Z" fill="url(#leafGrad)" />
+  <path d="M 192 140 C 148 132, 110 118, 74 96 C 112 114, 150 128, 192 138 Z" fill="#5D8222" />
+
+  
+  <path d="M 212 142 C 248 135, 278 148, 298 172 C 268 176, 235 168, 208 148 Z" fill="#77A330" />
+
+  
+  <path d="M 202 128 C 226 128, 242 148, 235 174 C 228 192, 212 204, 202 212 C 190 204, 174 192, 168 174 C 162 148, 178 128, 202 128 Z" fill="#A5CD4E" />
+  
+  <path d="M 202 128 C 178 128, 162 148, 168 174 C 174 192, 190 204, 202 212 C 192 195, 186 175, 188 152 C 190 138, 196 131, 202 128 Z" fill="#8FB83B" />
+  
+  <ellipse cx="215" cy="154" rx="9" ry="15" transform="rotate(-15 215 154)" fill="#BCE068" />
+</svg>

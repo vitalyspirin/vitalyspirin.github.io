@@ -144,6 +144,16 @@ export default {
         category: "fruits",
         scale: 1.5
     },
+    "mûre": {
+        article: "une",
+        category: "fruits",
+        scale: 0.8
+    },
+    "canneberge": {
+        article: "une",
+        category: "fruits",
+        scale: 1
+    },
 
 
 

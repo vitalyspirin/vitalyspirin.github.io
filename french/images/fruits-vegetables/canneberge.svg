@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 400" width="420" height="400">
+  <defs>
+    
+    <g id="leaf">
+      
+      <path d="M 0 0 C -45 -35, -45 -105, 0 -145 C 45 -105, 45 -35, 0 0 Z" fill="#468511" />
+      
+      <path d="M 0 -5 C -32 -32, -32 -85, 0 -115 C 32 -85, 32 -32, 0 -5 Z" fill="#529E14" />
+    </g>
+
+    
+    <g id="calyx">
+      <circle cx="0" cy="0" r="24" fill="#F9B4B4" />
+      
+      <path d="M -14 -14 Q 0 -7 14 -14 Q 7 0 14 14 Q 0 7 -14 14 Q -7 0 -14 -14 Z" fill="#6E020C" />
+    </g>
+  </defs>
+
+  
+  
+  
+  <use href="#leaf" transform="translate(245, 165) rotate(-5)" />
+  <use href="#leaf" transform="translate(235, 175) rotate(48)" />
+
+  
+  <use href="#leaf" transform="translate(150, 225) rotate(-65)" />
+  <use href="#leaf" transform="translate(160, 235) rotate(-115)" />
+
+  
+  <use href="#leaf" transform="translate(225, 245) rotate(142) scale(0.95)" />
+
+
+  
+
+  
+  <g transform="translate(182, 290)">
+    
+    <circle cx="0" cy="0" r="76" fill="#9E0312" />
+    
+    <circle cx="7" cy="6" r="69" fill="#C90418" />
+    
+    <circle cx="-36" cy="-14" r="18" fill="#F20519" />
+    
+    <use href="#calyx" transform="translate(-26, 36) rotate(12) scale(0.85)" />
+  </g>
+
+  
+  <g transform="translate(302, 218)">
+    
+    <circle cx="0" cy="0" r="78" fill="#9E0312" />
+    
+    <circle cx="7" cy="7" r="70" fill="#C90418" />
+    
+    <circle cx="24" cy="-42" r="22" fill="#F20519" />
+    <circle cx="48" cy="-26" r="9" fill="#F20519" />
+    
+    <use href="#calyx" transform="translate(46, 14) rotate(8) scale(0.88)" />
+  </g>
+
+  
+  <g transform="translate(165, 148)">
+    
+    <circle cx="0" cy="0" r="87" fill="#9E0312" />
+    
+    <circle cx="-8" cy="-8" r="78" fill="#C90418" />
+    
+    <circle cx="22" cy="-48" r="22" fill="#F20519" />
+    <circle cx="40" cy="-26" r="9" fill="#F20519" />
+    
+    <circle cx="-62" cy="8" r="11" fill="#F20519" />
+    <circle cx="-70" cy="0" r="7" fill="#F20519" />
+    
+    <use href="#calyx" transform="translate(-32, -34) rotate(-5) scale(0.95)" />
+  </g>
+</svg>
