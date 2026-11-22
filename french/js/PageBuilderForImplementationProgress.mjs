@@ -120,18 +120,29 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
         if (Object.hasOwn(exerciseDataObj["implementation"], "exercise")) {
             /** @type {HTMLElement} */
             aElement = (newTrElement.querySelector('td:nth-of-type(3) a.exercise'));
-            aElement.setAttribute("href", exerciseDataObj["implementation"]["exercise"][0]);
+            this.#setExercise(aElement, exerciseDataObj["implementation"]["exercise"][0]);
 
             if (exerciseDataObj["implementation"]["exercise"].length > 1) {
                 /** @type {HTMLElement} */
                 aElement = (newTrElement.querySelector('td:nth-of-type(3) a.exercise:last-of-type'));
-                aElement.setAttribute("href", exerciseDataObj["implementation"]["exercise"][1]);
+                this.#setExercise(aElement, exerciseDataObj["implementation"]["exercise"][1]);
             }
         } else {
             newTrElement.classList.add('not-implemented');
         }
     }
 
+    /**
+     * @param {HTMLElement} aElement
+     * @param {string} exerciseLink
+     */
+    static #setExercise(aElement, exerciseLink) {
+        aElement.setAttribute("href", exerciseLink);
+
+        if (exerciseLink.slice(-5) === '.html') {
+            aElement.textContent = exerciseLink.split('/').pop();
+        }
+    }
 
     /**
      * @param {string} className

@@ -207,7 +207,8 @@ span.recent-days {
 
 /* Text exercises */
 
-article.text:not(.doc), article.text.list-with-images {
+article.text:not(.doc),
+article.text.list-with-images {
     opacity: 60%;
 }
 
@@ -1258,8 +1259,11 @@ textarea#stats {
 }
 
 #implementation-progress table tbody tr td a {
-    margin: 0 0.5em;
     color: #1FBC49;
+}
+
+#implementation-progress table tbody tr td a:not(:first-of-type) {
+    margin-left: 1em;
 }
 
 #implementation-progress table tbody tr a[href=""] {
@@ -1269,12 +1273,16 @@ textarea#stats {
 #implementation-progress table {
     counter-reset: rowNumber;
 }
+
 #implementation-progress table tbody tr:not(.title) {
     counter-increment: rowNumber;
 }
+
 #implementation-progress table tbody tr:not(.title) td:first-of-type::before {
-   content: counter(rowNumber) ") ";
-   margin-left: -1.5em;
+    content: counter(rowNumber) ") ";
+    margin-left: -1.5em;
+    display: inline-block;
+    width: 2em;
 }
 
 #implementation-progress footer {
