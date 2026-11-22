@@ -53,7 +53,7 @@ export default {
     "mandarine": {
         article: "une",
         category: "fruits",
-        scale: 0.7
+        scale: 1
     },
     "pamplemousse": {
         article: "un",
