@@ -234,11 +234,6 @@ export default {
         article: "un",
         category: "vegetables"
     },
-    "gombo": {
-        article: "du",
-        category: "vegetables",
-        scale: 1
-    },
     "poireau": {
         article: "un",
         category: "vegetables"
