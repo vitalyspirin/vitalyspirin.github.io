@@ -443,6 +443,96 @@ export default {
 
 
     "Les accords": {
+        "Le genre et le nombre des noms": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1976528709_Le_genre_et_le_pluriel_des_noms_communs_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1807237000_Le_genre_et_le_pluriel_des_noms_communs_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/noun-gender-number.pdf",
+                "exercise": [
+                    "exercises/vocabulary/noun-gender.html",
+                    "exercises/vocabulary/noun-number.html"
+                ]
+            }
+        },
+        "Le genre des noms communs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1175760931_Le_genre_des_noms_communs_interm_diaire_avanc_.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1807237000_Le_genre_et_le_pluriel_des_noms_communs_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/masculine-feminine.pdf",
+                "exercise": ["exercises/vocabulary/masculine-feminine.html"]
+            }
+        },
+        "L'accord des adjectifs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F289577849_le_genre_et_le_pluriel_des_adjectifs_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F157772956_L_accord_des_adjectifs_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/adjective-gender-number.pdf",
+                "exercise": [
+                    "exercises/vocabulary/adjective-gender.html",
+                    "exercises/vocabulary/adjective-number.html"
+                ]
+            }
+        },
+        "La place de l'adjectif": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F288621475_La_place_de_l_adjectif.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F217519863_La_place_de_l_adjectif_web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/adjective-position.pdf",
+                "exercise": ["exercises/vocabulary/adjective-position.html"]
+            }
+        },
+        "Les adjectifs de couleurs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1538231698_Les_adjectifs_de_couleur.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2078086093_Les_adjectifs_de_couleur_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le mot Tout": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F749172809_le_mot_tout.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000491836_le_mot_tout_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/tout.pdf",
+                "exercise": ["exercises/vocabulary/tout.html"]
+            }
+        },
+        "Le passé composé": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FO0000060209_le_pass__compos__niveau_d_butant.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000060210_le_pass__compos__exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": null,
+                "exercise": [
+                    "exercises/conjugations/conjugations.html?Le%20passé%20composé",
+                    "exercises/conjugations/present-perfect.html"
+                ]
+            }
+        },
+        "Les participes passés. Niveau débutant-intermédiaire": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F943487695_Les_participes_pass_s_d_b.inter.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F648161952_Les_participes_pass_s_d_butant_interm_diaire_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les participes passés. Niveau intermédiaire-avancé": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1663437568_Les_participes_pass_s_inter_avanc_.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F866936252_Les_participes_pass_s_inter_avanc__exerc._et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
     },
 
 
