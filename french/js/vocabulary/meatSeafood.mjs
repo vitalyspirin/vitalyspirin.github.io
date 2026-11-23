@@ -37,6 +37,11 @@ export default {
         category: "meat",
         scale: 1
     },
+    "boulette de bœuf": {
+        article: "une",
+        category: "meat",
+        scale: 0.7
+    },
     "côtes levées": {
         article: "des",
         category: "meat",
