@@ -1270,6 +1270,14 @@ textarea#stats {
     display: none;
 }
 
+#implementation-progress table tbody tr a.info[href=""]:has(+ a.exercise:not([href=""])) {
+    display: inline-block;
+    color: red;
+    text-decoration: line-through;
+    pointer-events: none;
+    cursor: default;
+}
+
 #implementation-progress table {
     counter-reset: rowNumber;
 }

@@ -24,7 +24,7 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
     ) {
         this.#buildMenu(menuElement, menuItemTemplate, implementationProgress);
 
-        this.#buildTable(tableElement, trTitleTemplate, trTemplate, implementationProgress);        
+        this.#buildTable(tableElement, trTitleTemplate, trTemplate, implementationProgress);
     }
 
     /**
@@ -79,13 +79,21 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
 
             tbodyElement.appendChild(newTrTitleElement);
 
+            let nonImplementedCounter = 0;
             for (let exerciseName in implementationProgress[menuItemName]) {
                 let newTrElement = /** @type {HTMLLIElement} */
                     (trElementFromTemplate.cloneNode(true));
 
-                this.#buildTr(newTrElement, implementationProgress, menuItemName, exerciseName);
+                if (!this.#buildTr(newTrElement, implementationProgress, menuItemName, exerciseName)) {
+                    nonImplementedCounter++;
+                };
 
                 tbodyElement.appendChild(newTrElement);
+            }
+
+            if (nonImplementedCounter > 0) {
+                let menuItemTextElement = document.querySelector(`input[type="radio"][value="${menuItemName}"] + span`);
+                menuItemTextElement.textContent += ' (' + nonImplementedCounter + ')';
             }
         }
     }
@@ -95,8 +103,12 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
      * @param {any} implementationProgress 
      * @param {string} menuItemName 
      * @param {string} exerciseName 
+     * 
+     * @return {boolean} true - if implemented, false if not implemented
      */
     static #buildTr(newTrElement, implementationProgress, menuItemName, exerciseName) {
+        let result = true;
+
         newTrElement.classList.add(this.utils.removeSpecialChars(menuItemName));
 
         const exerciseDataObj = implementationProgress[menuItemName][exerciseName];
@@ -130,7 +142,10 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
             }
         } else {
             newTrElement.classList.add('not-implemented');
+            result = false;
         }
+
+        return result;
     }
 
     /**

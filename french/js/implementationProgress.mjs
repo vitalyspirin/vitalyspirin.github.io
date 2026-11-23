@@ -512,7 +512,7 @@ export default {
                 "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000060210_le_pass__compos__exercices_et_corrig__web.pdf"
             },
             "implementation": {
-                "info": null,
+                "info": "",
                 "exercise": [
                     "exercises/conjugations/conjugations.html?Le%20passé%20composé",
                     "exercises/conjugations/present-perfect.html"
