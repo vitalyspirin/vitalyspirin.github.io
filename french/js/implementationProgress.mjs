@@ -538,6 +538,115 @@ export default {
 
 
     "Les pronoms": {
+        "Les pronoms directs et indirects": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F639920992_Les_pronoms_personnels_compl_ments.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000915320_les_pronoms_personnels_compl_ments_directs_et_indirects.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/lui-leur.pdf",
+                "exercise": ["exercises/others/lui-leur.html"]
+            }
+        },
+        "Les pronoms EN et Y": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1518569988_Les_pronoms_compl_ments_Y_et_EN.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1553321253_les_pronoms_en_et_y_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/y-en.pdf",
+                "exercise": ["exercises/others/y-en.html"]
+            }
+        },
+        "Qui ou Que?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1442611351_Les_pronoms_relatifs_Qui_ou_Que.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F563007166_Les_pronoms_relatifs_qui_et_que_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "",
+                "exercise": ["exercises/others/qui-que.html"]
+            }
+        },
+        "Que ou Dont?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F811087156_Les_pronoms_relatifs_Que_ou_Dont_web.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F858426483_Les_pronoms_relatifs_Que_ou_Dont_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/que-dont.pdf",
+                "exercise": ["exercises/others/que-dont.html"]
+            }
+        },
+        "Qui, Que, Dont, Où?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F105825782_Les_pronoms_relatifs_Qui_ou_Que_Dont_O__d_but.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1836712247_Les_pronoms_relatifs_Qui__Que__Dont__O_.pdf"
+            },
+            "implementation": {
+                "info": "",
+                "exercise": ["exercises/others/qui-que-dont-ou.html"]
+            }
+        },
+        "Dont ou Duquel?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1959095619_Les_pronoms_relatifs_interm_diaire_avanc__Dont_ou_Duquel_web.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1945959928_Les_pronoms_relatifs_Dont_ou_Duquel__de_laquelle__etc._.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/dont-duquel.pdf",
+                "exercise": ["exercises/others/dont-duquel.html"]
+            }
+        },
+        "Lequel, Auquel, Duquel?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1908785037_Les_pronoms_relatifs_interm_diaire_avanc__Lequel_Auquel_Duquel_web.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F112881369_les_pronoms_relatifs_lequel__auquel_ou_duquel_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/lequel-duquel-auquel.pdf",
+                "exercise": ["exercises/others/lequel-duquel-auquel.html"]
+            }
+        },
+        "Ce qui, Ce que, Ce dont ou Ce à quoi?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F245497354_Les_pronoms_relatifs_interm_diaire_avanc__ce_qui__ce_que._etc_web.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1654499558_Les_pronoms_relatifs_Ce_qui__Ce_que__Ce_dont__etc.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/ce-qui-ce-que.pdf",
+                "exercise": ["exercises/others/ce-qui-ce-que.html"]
+            }
+        },
+        "Les démonstratifs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1394186794_Les_d_monstratifs.pdf",
+                "exercise": [
+                    "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1539616401_les_d_monstratifs_exercices_et_corrig__d_butant.pdf",
+                    "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F593832933_Les_d_monstratifs_exercices_et_corrig_.pdf"
+                ]
+            },
+            "implementation": {
+                "info": "../pdf/ce-ces-cet.pdf",
+                "exercise": [
+                    "exercises/others/ce-ces-cet.html",
+                    "exercises/others/ceci-cela-celui.html"
+                ]
+            }
+        },
+        "Les possessifs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2010752_Les_possessifs.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0005627602_les_possessifs_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/mon-ton-son.pdf",
+                "exercise": [
+                    "exercises/others/mon-ton-son.html",
+                    "exercises/others/mien-sien.html"
+                ]
+            }
+        },
     },
 
 
