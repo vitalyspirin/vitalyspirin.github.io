@@ -16,6 +16,7 @@
         "use strict";
 
         import PageBuilderForImplementationProgress from '../js/PageBuilderForImplementationProgress.mjs';
+        import {CheckboxesAndRadioButtons} from '../js/CheckboxesAndRadioButtons.mjs';
 
         PageBuilderForImplementationProgress.build(
             document.getElementById('menu'),
@@ -24,6 +25,12 @@
             document.getElementById('tr-title-template'),
             document.getElementById('tr-template')
         );
+
+        let page = window.location.pathname.split('/').pop() + window.location.search;
+        CheckboxesAndRadioButtons.setRadioButtonsBasedOnConfig(page);
+
+        const radioButton = document.querySelector("input[type='radio']:checked");
+        if (radioButton !== null) {radioButton.click();}
     </script>
 </head>
 

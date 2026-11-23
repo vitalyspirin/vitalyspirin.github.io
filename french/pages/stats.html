@@ -18,13 +18,8 @@
         initialize();
 
         function initialize(self = this) {
-            if (document.getElementsByTagName('iframe').length != 0) {
-                // wait till checkbox iframe is loaded
-                setTimeout(initialize, 20, self);
-            } else {
-                CheckboxesAndRadioButtons.setValuesBasedOnConfig();
-                StatsPageBuilder.buildPage();
-            }
+            CheckboxesAndRadioButtons.setValuesBasedOnConfig();
+            StatsPageBuilder.buildPage();
         }
 
     </script>

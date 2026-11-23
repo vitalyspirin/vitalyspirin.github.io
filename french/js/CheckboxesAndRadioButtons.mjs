@@ -8,12 +8,20 @@ import Storage from './Storage.mjs';
 export class CheckboxesAndRadioButtons {
 
     static setValuesBasedOnConfig(self = this) {
-        let page = window.location.pathname.split('/').pop() + window.location.search;
+        if (document.getElementsByTagName('iframe').length != 0) {
+            // wait till checkbox iframe is loaded
+            setTimeout(self.setValuesBasedOnConfig, 20, self);
+        } else {
+            let page = window.location.pathname.split('/').pop() + window.location.search;
 
-        self.setCheckboxesBasedOnConfig(page, self);
-        self.setRadioButtonsBasedOnConfig(page, self);
+            self.setCheckboxesBasedOnConfig(page, self);
+            self.setRadioButtonsBasedOnConfig(page, self);
 
-        self.setNumberOfDays(page);
+            self.setEventHandlers(page, self);
+            self.addCssClassesBasedOnSelection();
+
+            self.setNumberOfDays(page);
+        }
     }
 
     /**
@@ -44,29 +52,16 @@ export class CheckboxesAndRadioButtons {
         const checkboxList = /** @type {NodeListOf<HTMLInputElement>} */
             (document.querySelectorAll('#checkboxes input[type="checkbox"]'));
 
-        if (checkboxList.length == 0) {
-            // iframe with checkboxes is not loaded yet, so wait...
-            setTimeout(self.setCheckboxesBasedOnConfig, 20, page, self);
-        } else {
-            checkboxList.forEach((checkboxElement) => {
-                if (Storage.getConfigDataForKey(page, checkboxElement.name) != null) {
-                    checkboxElement.checked = Storage.getConfigDataForKey(page, checkboxElement.name);
-                } else if (checkboxElement.hasAttribute('data-unchecked')) {
-                    // uncheck 'recent-dates' checkbox
-                    checkboxElement.checked = false;
-                } else {
-                    checkboxElement.checked = true;
-                }
-
-                checkboxElement.onclick = () => {
-                    Storage.saveConfigForKey(page, checkboxElement.name, checkboxElement.checked);
-                    self.addCssClassesBasedOnSelection();
-                }
-            });
-
-            self.addCssClassesBasedOnSelection();
-
-        } // if (checkboxList.length == 0) else {
+        checkboxList.forEach((checkboxElement) => {
+            if (Storage.getConfigDataForKey(page, checkboxElement.name) != null) {
+                checkboxElement.checked = Storage.getConfigDataForKey(page, checkboxElement.name);
+            } else if (checkboxElement.hasAttribute('data-unchecked')) {
+                // uncheck 'recent-dates' checkbox
+                checkboxElement.checked = false;
+            } else {
+                checkboxElement.checked = true;
+            }
+        });
     }
 
 
@@ -85,14 +80,34 @@ export class CheckboxesAndRadioButtons {
                     radioElement.checked = true;
                 }
             }
+        });
+    }
 
-            radioElement.onclick = () => {
-                Storage.saveConfigForKey(page, radioElement.name, radioElement.value);
+    /**
+     * @param {string} page 
+     * @param {*} self 
+     */
+    static setEventHandlers(page, self = this) {
+        const checkboxAndRadioList = /** @type {NodeListOf<HTMLInputElement>} */
+            (document.querySelectorAll('#checkboxes input[type="checkbox"], input[type="radio"]'));
+
+        checkboxAndRadioList.forEach((checkboxOrRadioElement) => {
+            checkboxOrRadioElement.onclick = () => {
+
+                /** @type {string|boolean} */
+                let value = checkboxOrRadioElement.value;
+
+                if (checkboxOrRadioElement.type === 'checkbox') {
+                    value = checkboxOrRadioElement.checked;
+                }
+                Storage.saveConfigForKey(
+                    page,
+                    checkboxOrRadioElement.name,
+                    value
+                );
                 self.addCssClassesBasedOnSelection();
             }
         });
-
-        self.addCssClassesBasedOnSelection();
     }
 
     static addCssClassesBasedOnSelection() {

@@ -3,6 +3,7 @@
 "use strict";
 
 import BaseObject from './BaseObject.mjs';
+import Storage from './Storage.mjs';
 import implementationProgress from './implementationProgress.mjs';
 
 export default class PageBuilderForImplementationProgress extends BaseObject {
@@ -23,11 +24,7 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
     ) {
         this.#buildMenu(menuElement, menuItemTemplate, implementationProgress);
 
-        this.#buildTable(tableElement, trTitleTemplate, trTemplate, implementationProgress);
-
-        /** @type {HTMLInputElement} */
-        const radioButton = menuElement.querySelector("input[type='radio']:first-of-type");
-        radioButton.click();
+        this.#buildTable(tableElement, trTitleTemplate, trTemplate, implementationProgress);        
     }
 
     /**
@@ -36,6 +33,8 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
      * @param {any} implementationProgress 
      */
     static #buildMenu(menuElement, menuItemTemplate, implementationProgress) {
+        let page = window.location.pathname.split('/').pop() + window.location.search;
+
         const menuItemElementFromTemplate = menuItemTemplate.content.firstElementChild;
 
         for (let menuItemName in implementationProgress) {
@@ -49,6 +48,8 @@ export default class PageBuilderForImplementationProgress extends BaseObject {
             let radioButton = newMenuItemElement.querySelector('input[type="radio"]');
             radioButton.value = menuItemName;
             radioButton.onclick = () => {
+                Storage.saveConfigForKey(page, radioButton.name, radioButton.value);
+
                 const className = this.utils.removeSpecialChars(radioButton.value);
                 this.#setVisible(className);
             };
