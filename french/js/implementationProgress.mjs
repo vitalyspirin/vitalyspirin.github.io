@@ -652,6 +652,48 @@ export default {
 
 
     "Les expressions": {
+        "Les expressions idiomatiques en 4 langues": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0002298796_les_expressions_idiomatiques_en_4_langues.pdf",
+                "exercise": ""
+            },
+            "implementation": {}
+        },
+        "Les expressions avec Avoir et Être": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1414724018_Les_expressions_idiomatiques_avec_avoir_et__tre.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1861940293_Les_expressions_idiomatiques_avec_avoir_et__tre_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Des expressions idiomatiques": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF2132806736_expressions_et_idiotismes_en_fran_ais.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F233040712_Expressions_et_idiotismes_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Comment décrire une personne?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F179444255_Expressions_Comment_d_crire_une_personne.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F428746939_Expressions_comment_d_crire_une_personne_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les animaux et nous": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF1655521854_expressions_les_animaux_et_nous.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F669462021_Expressions_les_animaux_et_nous_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les couleurs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000005214_Les_expressions_et_les_couleurs.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000005273_Les_expressions_et_les_couleurs_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
     },
 
 
