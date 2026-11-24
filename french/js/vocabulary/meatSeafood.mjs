@@ -40,7 +40,7 @@ export default {
     "boulette de bœuf": {
         article: "une",
         category: "meat",
-        scale: 0.7
+        scale: 0.4
     },
     "côtes levées": {
         article: "des",
