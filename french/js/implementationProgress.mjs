@@ -699,6 +699,177 @@ export default {
 
 
     "Le vocabulaire - Niveau débutant": {
+        "Les verbes en 4 langues": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1382463380_Le_sens_des_verbes_4_langues.pdf",
+                "exercise": ""
+            },
+            "implementation": {}
+        },
+        "Les exp. idiomatiques en 4 langues": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0002298796_les_expressions_idiomatiques_en_4_langues.pdf",
+                "exercise": ""
+            },
+            "implementation": {}
+        },
+        "Les exp. idiomatiques avec avoir et être": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1414724018_Les_expressions_idiomatiques_avec_avoir_et__tre.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1861940293_Les_expressions_idiomatiques_avec_avoir_et__tre_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le monde du travail / Pour en parler?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1957701086_Le_monde_du_travail_comment_en_parler.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1605579578_Le_monde_du_travail_comment_en_parler_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/noun-gender-number.pdf",
+                "exercise": ["exercises/vocabulary/noun-gender.html"]
+            }
+        },
+        "(Se) Présenter / C'est ou Il est?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2101267315_Pr_senter_c_est_ou_il_est.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1605579578_Le_monde_du_travail_comment_en_parler_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {}
+        },
+        "Le corps humain - La santé": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1205001524_Le_corps_humain___La_sant__Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le genre et le nombre des noms": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1976528709_Le_genre_et_le_pluriel_des_noms_communs_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1807237000_Le_genre_et_le_pluriel_des_noms_communs_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/noun-gender-number.pdf",
+                "exercise": ["exercises/vocabulary/noun-gender.html"]
+            }
+        },
+        "Le repas": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1067515861_Le_repas.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F98678736_Le_repas_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Faire sa toilette": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1489773156_Faire_sa_toilette.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F746125483_Faire_sa_toilette_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le ménage et le linge": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F331905380_Le_m_nage_et_le_linge.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F363225157_Le_m_nage_et_le_linge_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les vêtements et les accessoires": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F315457800_Les_v_tements_et_accessoires.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1762426267_Les_v_tements_d_butant_Exercices_et_corrig___.pdf"
+            },
+            "implementation": {}
+        },
+        "La météo": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1965148799_La_m_t_o_niveau_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F529380680_La_m_t_o_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/meteo.pdf",
+                "exercise": ["exercises/vocabulary/meteo.html"]
+            }
+        },
+        "Le temps qui passe": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0001736925_le_temps_qui_passe_niveau_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1860088015_Le_temps_qui_passe_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/calendar.pdf",
+                "exercise": ["exercises/vocabulary/calendar.html"]
+            }
+        },
+        "Les légumes": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF40742562_les_l_gumes.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F676238439_Les_l_gumes_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/vegetables.pdf",
+                "exercise": ["exercises/vocabulary/vegetables.html"]
+            }
+        },
+        "Les fruits": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF_155562513_les_fruits.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F801039821_Les_fruits_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/fruits.pdf",
+                "exercise": ["exercises/vocabulary/fruits.html"]
+            }
+        },
+        "Les produits laitiers": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF1501609038_les_produits_laitiers.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F960601225_Les_produits_laitiers_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les produits de base et les condiments": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FO0001255769_les_produits_de_base_et_les_condiments.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F560131819_Les_produits_de_base_et_le_condiments_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les viandes, les poissons, etc": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF_811836490_les_viandes__les_poissons_et_les_fruits_de_mer.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F128666177_Les_viandes__les_poissons_et_les_fruits_de_mer_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/meat-seafood.pdf",
+                "exercise": ["exercises/vocabulary/meat-seafood.html"]
+            }
+        },
+        "Le pain, les pâtisseries et les sucreries": {
+            "original": {
+                "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF1329099306_Le_pain__les_p_tisseries__etc.pptx&wdOrigin=BROWSELINK",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F812612897_Le_pain__la_p_tisserie__les_sucreries_Exercices_et_corrig__.pdf"
+            },
+            "implementation": {}
+        },
+        "Les magasins": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F266787860_Les_magasins_th_ories_web.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2092913426_Le_magasinage_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le H muet et aspiré": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1550618017_Le_H_muet_et_aspir__niveau_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F507117213_Le_H_muet_ou_aspir__perf._exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/h-muet.doc.html",
+                "exercise": ["exercises/vocabulary/h-muet.html"]
+            }
+        },
     },
 
 
