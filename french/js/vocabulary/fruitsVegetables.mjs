@@ -168,7 +168,8 @@ export default {
     },
     "tomate": {
         article: "une",
-        category: "vegetables"
+        category: "vegetables",
+        scale: 0.7
     },
     "aubergine": {
         article: "une",
