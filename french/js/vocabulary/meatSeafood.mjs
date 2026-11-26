@@ -50,12 +50,12 @@ export default {
     "cochon": {
         article: "un",
         category: "meat",
-        scale: 1.4
+        scale: 1
     },
     "jambon": {
         article: "du",
         category: "meat",
-        scale: 0.7
+        scale: 0.8
     },
     "bacon": {
         article: "du",
@@ -65,7 +65,7 @@ export default {
     "poulet": {
         article: "un",
         category: "meat",
-        scale: 1.3
+        scale: 1
     },
     "aile de poulet": {
         article: "une",
@@ -95,12 +95,12 @@ export default {
     "dinde": {
         article: "une",
         category: "meat",
-        scale: 0.9
+        scale: 1.2
     },
     "chèvre": {
         article: "une",
         category: "meat",
-        scale: 1.1
+        scale: 1
     },
     "agneau": {
         article: "un",
