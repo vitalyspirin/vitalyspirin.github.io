@@ -37,7 +37,7 @@ export default {
         category: "meat",
         scale: 1
     },
-    "boulette de bœuf": {
+    "boulette de boeuf": {
         article: "une",
         category: "meat",
         scale: 0.4
@@ -75,7 +75,7 @@ export default {
     "cuisse de poulet": {
         article: "une",
         category: "meat",
-        scale: 1.1
+        scale: 1
     },
     "pilon de poulet": {
         article: "un",
