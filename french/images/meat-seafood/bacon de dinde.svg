@@ -7,7 +7,7 @@
       <stop offset="100%" stop-color="#e2a493" />
     </linearGradient>
 
-    <!-- Gentle golden cooked surface (not dark rind) -->
+    <!-- Gentle golden cooked surface -->
     <linearGradient id="cookedSurface" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#d99a5c" />
       <stop offset="55%" stop-color="#c98544" />
@@ -34,66 +34,71 @@
     </radialGradient>
 
     <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#5a3a1a" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#5a3a1a" flood-opacity="0.18"/>
     </filter>
   </defs>
 
   <!-- WHITE background -->
   <rect width="600" height="400" fill="#ffffff" />
 
-  <!-- ===== STRIP 1 (back, offset) ===== -->
-  <g transform="translate(-4, 12)" opacity="0.93" filter="url(#softShadow)">
-    <rect x="70" y="188" width="490" height="58" rx="10" fill="url(#cookedSurface)" />
-    <rect x="78" y="194" width="474" height="46" rx="8" fill="url(#turkeyMeat)" />
-    <path d="M 90 206 C 180 202, 300 210, 420 206 C 480 204, 530 208, 548 206"
-      fill="none" stroke="url(#fatStreak)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
-    <path d="M 90 226 C 180 222, 300 230, 420 226 C 480 224, 530 228, 548 226"
-      fill="none" stroke="url(#fatStreak)" stroke-width="2.2" stroke-linecap="round" opacity="0.7"/>
-    <ellipse cx="200" cy="212" rx="34" ry="10" fill="url(#brownBlotch)" />
-    <ellipse cx="400" cy="222" rx="40" ry="11" fill="url(#brownBlotch)" />
+  <!-- ===== STRIP 1 (back) — both ends visible ===== -->
+  <g opacity="0.93" filter="url(#softShadow)">
+    <rect x="26" y="150" width="548" height="110" rx="18" fill="url(#cookedSurface)" />
+    <rect x="36" y="160" width="528" height="90" rx="14" fill="url(#turkeyMeat)" />
+    <path d="M 52 178 C 190 174, 330 182, 460 178 C 520 176, 556 180, 556 178"
+      fill="none" stroke="url(#fatStreak)" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 52 206 C 190 202, 330 210, 460 206 C 520 204, 556 208, 556 206"
+      fill="none" stroke="url(#fatStreak)" stroke-width="3.8" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 52 230 C 190 227, 330 233, 460 230 C 520 228, 556 231, 556 230"
+      fill="none" stroke="url(#fatStreak)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
+    <ellipse cx="200" cy="186" rx="58" ry="18" fill="url(#brownBlotch)" />
+    <ellipse cx="420" cy="218" rx="66" ry="19" fill="url(#brownBlotch)" />
   </g>
 
-  <!-- ===== STRIP 2 (center) ===== -->
+  <!-- ===== STRIP 2 (center) — both ends visible ===== -->
   <g filter="url(#softShadow)">
-    <rect x="60" y="128" width="500" height="62" rx="12" fill="url(#cookedSurface)" />
-    <rect x="68" y="134" width="484" height="50" rx="9" fill="url(#turkeyMeat)" />
+    <rect x="22" y="80" width="556" height="120" rx="20" fill="url(#cookedSurface)" />
+    <rect x="32" y="90" width="536" height="100" rx="15" fill="url(#turkeyMeat)" />
 
-    <path d="M 82 148 C 180 144, 300 152, 420 148 C 480 146, 530 150, 544 148"
-      fill="none" stroke="url(#fatStreak)" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
-    <path d="M 82 164 C 180 160, 300 168, 420 164 C 480 162, 530 166, 544 164"
-      fill="none" stroke="url(#fatStreak)" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
-    <path d="M 82 176 C 180 173, 300 179, 420 176 C 480 174, 530 177, 544 176"
-      fill="none" stroke="url(#fatStreak)" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 50 110 C 190 106, 330 114, 460 110 C 518 108, 552 112, 552 110"
+      fill="none" stroke="url(#fatStreak)" stroke-width="5.5" stroke-linecap="round" opacity="0.9"/>
+    <path d="M 50 142 C 190 138, 330 146, 460 142 C 518 140, 552 144, 552 142"
+      fill="none" stroke="url(#fatStreak)" stroke-width="3.8" stroke-linecap="round" opacity="0.75"/>
+    <path d="M 50 170 C 190 167, 330 173, 460 170 C 518 168, 552 171, 552 170"
+      fill="none" stroke="url(#fatStreak)" stroke-width="2.6" stroke-linecap="round" opacity="0.6"/>
 
-    <ellipse cx="150" cy="150" rx="46" ry="12" fill="url(#brownBlotch)" />
-    <ellipse cx="300" cy="160" rx="54" ry="13" fill="url(#brownBlotch)" />
-    <ellipse cx="450" cy="150" rx="44" ry="12" fill="url(#brownBlotch)" />
-    <ellipse cx="500" cy="170" rx="30" ry="9" fill="url(#brownBlotch)" />
+    <ellipse cx="140" cy="114" rx="70" ry="20" fill="url(#brownBlotch)" />
+    <ellipse cx="300" cy="142" rx="80" ry="22" fill="url(#brownBlotch)" />
+    <ellipse cx="460" cy="120" rx="68" ry="20" fill="url(#brownBlotch)" />
+    <ellipse cx="510" cy="164" rx="46" ry="15" fill="url(#brownBlotch)" />
 
-    <rect x="70" y="136" width="480" height="22" rx="8" fill="url(#sheen)" opacity="0.55"/>
+    <rect x="38" y="94" width="524" height="34" rx="12" fill="url(#sheen)" opacity="0.55"/>
   </g>
 
-  <!-- ===== STRIP 3 (front, slight rotation) ===== -->
-  <g transform="translate(16, 92) rotate(3 300 160)" filter="url(#softShadow)">
-    <rect x="80" y="88" width="480" height="56" rx="11" fill="url(#cookedSurface)" />
-    <rect x="88" y="94" width="464" height="44" rx="8" fill="url(#turkeyMeat)" />
+  <!-- ===== STRIP 3 (front, slight rotation) — both ends visible ===== -->
+  <g transform="rotate(2 300 160)" filter="url(#softShadow)">
+    <rect x="26" y="22" width="548" height="110" rx="18" fill="url(#cookedSurface)" />
+    <rect x="36" y="32" width="528" height="90" rx="14" fill="url(#turkeyMeat)" />
 
-    <path d="M 100 106 C 190 102, 300 110, 410 106 C 470 104, 520 108, 534 106"
-      fill="none" stroke="url(#fatStreak)" stroke-width="3.2" stroke-linecap="round" opacity="0.9"/>
-    <path d="M 100 122 C 190 118, 300 126, 410 122 C 470 120, 520 124, 534 122"
-      fill="none" stroke="url(#fatStreak)" stroke-width="2.2" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 54 50 C 190 46, 330 54, 460 50 C 516 48, 554 52, 554 50"
+      fill="none" stroke="url(#fatStreak)" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+    <path d="M 54 82 C 190 78, 330 86, 460 82 C 516 80, 554 84, 554 82"
+      fill="none" stroke="url(#fatStreak)" stroke-width="3.8" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 54 106 C 190 103, 330 109, 460 106 C 516 104, 554 107, 554 106"
+      fill="none" stroke="url(#fatStreak)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
 
-    <ellipse cx="220" cy="110" rx="38" ry="10" fill="url(#brownBlotch)" />
-    <ellipse cx="420" cy="120" rx="36" ry="10" fill="url(#brownBlotch)" />
+    <ellipse cx="220" cy="58" rx="60" ry="18" fill="url(#brownBlotch)" />
+    <ellipse cx="450" cy="92" rx="58" ry="18" fill="url(#brownBlotch)" />
 
-    <rect x="90" y="96" width="460" height="20" rx="7" fill="url(#sheen)" opacity="0.5"/>
+    <rect x="40" y="36" width="520" height="32" rx="11" fill="url(#sheen)" opacity="0.5"/>
   </g>
 
   <!-- scattered light seasoning -->
   <g fill="#6a4a2a" opacity="0.35">
-    <circle cx="160" cy="246" r="1.2"/>
-    <circle cx="340" cy="256" r="1.1"/>
-    <circle cx="470" cy="244" r="1.2"/>
-    <circle cx="250" cy="268" r="1.0"/>
+    <circle cx="120" cy="340" r="1.7"/>
+    <circle cx="330" cy="356" r="1.6"/>
+    <circle cx="510" cy="338" r="1.7"/>
+    <circle cx="220" cy="372" r="1.5"/>
+    <circle cx="430" cy="378" r="1.5"/>
   </g>
 </svg>
