@@ -98,7 +98,7 @@ export default {
         scale: 1.2
     },
     "bacon de dinde": {
-        article: "une",
+        article: "du",
         category: "meat",
         scale: 1
     },
