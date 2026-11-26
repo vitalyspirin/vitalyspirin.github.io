@@ -97,6 +97,11 @@ export default {
         category: "meat",
         scale: 1.2
     },
+    "bacon de dinde": {
+        article: "une",
+        category: "meat",
+        scale: 1
+    },
     "chèvre": {
         article: "une",
         category: "meat",
