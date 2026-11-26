@@ -47,6 +47,11 @@ export default {
         category: "meat",
         scale: 1
     },
+    "foie de veau": {
+        article: "du",
+        category: "meat",
+        scale: 0.7
+    },
     "cochon": {
         article: "un",
         category: "meat",
