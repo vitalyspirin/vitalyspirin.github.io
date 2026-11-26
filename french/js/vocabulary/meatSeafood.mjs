@@ -122,6 +122,11 @@ export default {
         category: "meat",
         scale: 1
     },
+    "côtelette d'agneau": {
+        article: "une",
+        category: "meat",
+        scale: 1.3
+    },
     "charcuterie": {
         article: "une",
         category: "meat",
