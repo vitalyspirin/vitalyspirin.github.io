@@ -22,35 +22,40 @@ export default {
         category: "pastry",
         scale: 0.9
     },
+    "croissant": {
+        article: "un",
+        category: "pastry",
+        scale: 0.8
+    },
     "bagel": {
         article: "un",
         category: "pastry",
         scale: 0.8
+    },
+    "beignet": {
+        article: "un",
+        category: "pastry",
+        scale: 0.6
     },
     "muffin": {
         article: "un",
         category: "pastry",
         scale: 0.6
     },
-    "croissant": {
-        article: "un",
+    "tarte": {
+        article: "une",
         category: "pastry",
-        scale: 0.8
+        scale: 0.7
     },
     "gâteau": {
         article: "un",
         category: "pastry",
         scale: 0.8
     },
-    "crème glacée": {
+    "brioche à la cannelle": {
         article: "une",
         category: "pastry",
         scale: 0.8
-    },
-    "tarte": {
-        article: "une",
-        category: "pastry",
-        scale: 0.7
     },
     "chausson aux pommes": {
         article: "un",
@@ -62,7 +67,12 @@ export default {
         category: "pastry",
         scale: 0.9
     },
-    "brioche à la cannelle": {
+    "bonbon": {
+        article: "un",
+        category: "pastry",
+        scale: 0.6
+    },
+    "crème glacée": {
         article: "une",
         category: "pastry",
         scale: 0.8

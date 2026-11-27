@@ -40,6 +40,7 @@ import wordListHMuet, { audioFileFolder as audioFileFolderHMuet } from '../js/vo
 import wordListNounGender, { audioFileFolder as audioFileFolderNounGender } from '../js/vocabulary/masculineFeminine.mjs';
 import wordListFruitsVegetables, { audioFileFolder as audioFileFolderFruitsVegetables } from '../js/vocabulary/fruitsVegetables.mjs';
 import wordListMeatSeafood, { audioFileFolder as audioFileFolderMeatSeafood } from '../js/vocabulary/meatSeafood.mjs';
+import wordListPastries, { audioFileFolder as audioFileFolderPastries } from '../js/vocabulary/pastries.mjs';
 
 //saveAudioFilesForVerbList(verbsInPresentTense, audioFileFolderForPresentTense);
 //saveAudioFilesForVerbList(verbsInFuturTense, audioFileFolderForFutureTense);
@@ -66,6 +67,7 @@ import wordListMeatSeafood, { audioFileFolder as audioFileFolderMeatSeafood } fr
 saveAudioFilesForWordList(wordListNounGender, audioFileFolderNounGender);
 saveAudioFilesForWordList(wordListFruitsVegetables, audioFileFolderFruitsVegetables);
 saveAudioFilesForWordList(wordListMeatSeafood, audioFileFolderMeatSeafood);
+saveAudioFilesForWordList(wordListPastries, audioFileFolderPastries);
 
 
 /**
