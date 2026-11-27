@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 720" width="800" height="720">
+  <defs>
+    
+    <linearGradient id="plateRimOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7DCE4" />
+      <stop offset="50%" stop-color="#C4CAD4" />
+      <stop offset="100%" stop-color="#A8B0BC" />
+    </linearGradient>
+
+    <linearGradient id="plateWellGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#F7F9FC" />
+      <stop offset="65%" stop-color="#E7ECF3" />
+      <stop offset="100%" stop-color="#D2D8E2" />
+    </linearGradient>
+
+    <linearGradient id="plateBottomLip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B0B7C2" />
+      <stop offset="50%" stop-color="#C8CFD9" />
+      <stop offset="100%" stop-color="#9CA4B0" />
+    </linearGradient>
+
+    
+    <linearGradient id="chocoOuterGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3E1B0E" />
+      <stop offset="45%" stop-color="#2D1208" />
+      <stop offset="100%" stop-color="#1E0A04" />
+    </linearGradient>
+
+    <linearGradient id="chocoTopGrad" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#5B2B18" />
+      <stop offset="50%" stop-color="#431D0F" />
+      <stop offset="100%" stop-color="#2E1309" />
+    </linearGradient>
+
+    
+    <linearGradient id="topStripeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6D5A0" />
+      <stop offset="55%" stop-color="#E6BA7A" />
+      <stop offset="100%" stop-color="#CE9A56" />
+    </linearGradient>
+
+    
+    <linearGradient id="spongeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B4B27" />
+      <stop offset="55%" stop-color="#763D1E" />
+      <stop offset="100%" stop-color="#5D2E14" />
+    </linearGradient>
+
+    
+    <linearGradient id="creamFillingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8F1E5" />
+      <stop offset="60%" stop-color="#EFE4D2" />
+      <stop offset="100%" stop-color="#DFD0B8" />
+    </linearGradient>
+
+    
+    <clipPath id="cakeOuterWallClip">
+      <path d="M 205 376
+               C 205 462, 206 556, 212 612
+               L 365 662
+               C 365 568, 365 470, 365 378
+               Z" />
+    </clipPath>
+
+    <clipPath id="cakeTopSurfaceClip">
+      <path d="M 205 376
+               C 205 344, 246 322, 304 316
+               C 382 308, 495 316, 614 338
+               L 365 380
+               C 298 378, 232 378, 205 376 Z" />
+    </clipPath>
+
+    <clipPath id="cutFaceClip">
+      <path d="M 365 380
+               L 614 338
+               L 614 584
+               L 365 662 Z" />
+    </clipPath>
+  </defs>
+
+  
+  <rect width="800" height="720" fill="#FFFFFF" />
+
+  
+  <g id="centered-cake-slice" transform="translate(0, 360) translate(0, -497)">
+    
+    <g id="plate">
+      
+      <path d="M 50 568
+               C 56 642, 214 686, 412 686
+               C 610 686, 756 642, 772 568
+               C 752 624, 602 664, 412 664
+               C 222 664, 72 624, 50 568 Z" fill="url(#plateBottomLip)" />
+
+      
+      <ellipse cx="412" cy="560" rx="364" ry="104" fill="url(#plateRimOuter)" />
+
+      
+      <ellipse cx="412" cy="558" rx="324" ry="86" fill="url(#plateWellGrad)" />
+
+      
+      <path d="M 102 544
+               C 148 494, 272 474, 412 474
+               C 552 474, 676 494, 722 544
+               C 668 504, 548 486, 412 486
+               C 276 486, 156 504, 102 544 Z" fill="#CBD2DD" opacity="0.65" />
+
+      
+      <path d="M 206 610
+               L 365 662
+               L 616 584
+               C 634 596, 616 618, 560 634
+               C 486 654, 372 664, 248 640
+               C 214 632, 196 620, 206 610 Z" fill="#B6BECB" opacity="0.55" />
+    </g>
+
+    
+    <g id="curved-chocolate-wall">
+      <path d="M 205 376
+               C 205 462, 206 556, 212 612
+               L 365 662
+               L 365 380
+               Z" fill="url(#chocoOuterGrad)" />
+
+      <g clip-path="url(#cakeOuterWallClip)">
+        
+        <path d="M 195 436 C 250 442, 310 446, 372 448 L 372 522 C 310 520, 250 516, 195 510 Z" fill="#4A2112" opacity="0.55" />
+        <path d="M 195 546 C 250 554, 310 558, 372 562 L 372 618 C 310 614, 250 610, 195 602 Z" fill="#4A2112" opacity="0.45" />
+
+        
+        <path d="M 222 396
+                 C 218 445, 220 510, 224 575" fill="none" stroke="#7A412A" stroke-width="9" stroke-linecap="round" opacity="0.55" />
+        <path d="M 234 402
+                 C 231 445, 232 495, 235 545" fill="none" stroke="#98583D" stroke-width="3.5" stroke-linecap="round" opacity="0.4" />
+      </g>
+    </g>
+
+    
+    <g id="cut-cross-section" clip-path="url(#cutFaceClip)">
+      
+      <rect x="360" y="330" width="260" height="340" fill="url(#spongeGrad)" />
+
+      
+      <rect x="360" y="330" width="260" height="340" fill="#240D05" opacity="0.14" />
+
+      
+      <path d="M 362 466
+               C 425 456, 488 446, 550 436
+               C 574 432, 596 429, 618 426
+               L 618 504
+               C 596 510, 574 516, 550 522
+               C 488 538, 425 554, 362 570 Z" fill="url(#creamFillingGrad)" stroke="#472112" stroke-width="2.5" />
+
+      
+      <g fill="#5C311B" opacity="0.72">
+        <circle cx="382" cy="482" r="2.2" />
+        <circle cx="404" cy="472" r="1.8" />
+        <circle cx="418" cy="498" r="2.5" />
+        <circle cx="436" cy="468" r="1.9" />
+        <circle cx="452" cy="488" r="2.3" />
+        <circle cx="468" cy="512" r="2.0" />
+        <circle cx="484" cy="462" r="2.4" />
+        <circle cx="502" cy="484" r="1.8" />
+        <circle cx="518" cy="502" r="2.2" />
+        <circle cx="534" cy="454" r="2.0" />
+        <circle cx="548" cy="476" r="2.4" />
+        <circle cx="566" cy="492" r="1.9" />
+        <circle cx="582" cy="448" r="2.2" />
+        <circle cx="598" cy="468" r="2.0" />
+        <circle cx="395" cy="524" r="2.1" />
+        <circle cx="432" cy="534" r="2.3" />
+        <circle cx="462" cy="528" r="1.8" />
+        <circle cx="496" cy="520" r="2.2" />
+        <circle cx="528" cy="514" r="1.9" />
+        <circle cx="560" cy="506" r="2.1" />
+        <circle cx="376" cy="546" r="1.9" />
+        <circle cx="410" cy="542" r="2.2" />
+        <circle cx="445" cy="548" r="1.7" />
+        <circle cx="478" cy="538" r="2.0" />
+        <circle cx="512" cy="530" r="1.8" />
+        <circle cx="542" cy="522" r="2.1" />
+      </g>
+
+      
+      <g fill="#3B1B0C" opacity="0.55">
+        <circle cx="384" cy="396" r="2.2" />
+        <circle cx="412" cy="388" r="1.8" />
+        <circle cx="438" cy="410" r="2.4" />
+        <circle cx="464" cy="378" r="2.0" />
+        <circle cx="488" cy="398" r="2.3" />
+        <circle cx="514" cy="370" r="1.9" />
+        <circle cx="538" cy="388" r="2.2" />
+        <circle cx="564" cy="362" r="2.0" />
+        <circle cx="588" cy="376" r="2.4" />
+        <circle cx="398" cy="428" r="2.1" />
+        <circle cx="428" cy="436" r="1.8" />
+        <circle cx="458" cy="422" r="2.2" />
+        <circle cx="492" cy="426" r="1.9" />
+        <circle cx="524" cy="414" r="2.3" />
+        <circle cx="556" cy="412" r="2.0" />
+        <circle cx="592" cy="402" r="2.2" />
+
+        <circle cx="386" cy="592" r="2.2" />
+        <circle cx="416" cy="586" r="1.9" />
+        <circle cx="446" cy="604" r="2.4" />
+        <circle cx="476" cy="576" r="2.0" />
+        <circle cx="506" cy="592" r="2.3" />
+        <circle cx="536" cy="566" r="1.9" />
+        <circle cx="566" cy="578" r="2.2" />
+        <circle cx="596" cy="560" r="2.0" />
+        <circle cx="402" cy="624" r="2.1" />
+        <circle cx="434" cy="628" r="1.8" />
+        <circle cx="466" cy="614" r="2.2" />
+        <circle cx="498" cy="616" r="1.9" />
+        <circle cx="528" cy="602" r="2.3" />
+        <circle cx="562" cy="598" r="2.0" />
+        <circle cx="592" cy="586" r="2.1" />
+      </g>
+
+      
+      <path d="M 362 376 L 616 336 L 616 346 L 362 386 Z" fill="#2A1107" />
+    </g>
+
+    
+    <g id="top-frosting" clip-path="url(#cakeTopSurfaceClip)">
+      
+      <rect x="195" y="305" width="430" height="85" fill="url(#chocoTopGrad)" />
+
+      
+      <path d="M 278 318
+               C 314 316, 336 322, 344 334
+               C 350 344, 336 356, 314 366
+               L 296 364
+               C 316 354, 328 344, 322 336
+               C 316 328, 294 324, 266 326 Z" fill="url(#topStripeGrad)" />
+
+      <path d="M 366 312
+               C 406 310, 434 318, 444 332
+               C 452 344, 438 354, 416 364
+               L 396 362
+               C 418 352, 430 342, 422 332
+               C 414 322, 386 318, 352 320 Z" fill="url(#topStripeGrad)" />
+
+      <path d="M 462 314
+               C 502 314, 532 322, 544 336
+               C 552 346, 540 354, 520 360
+               L 500 358
+               C 520 352, 530 344, 522 334
+               C 512 324, 482 320, 448 322 Z" fill="url(#topStripeGrad)" />
+
+      
+      <ellipse cx="242" cy="356" rx="18" ry="5.5" transform="rotate(14 242 356)" fill="#FFFFFF" opacity="0.92" />
+      <ellipse cx="272" cy="364" rx="8" ry="4" transform="rotate(14 272 364)" fill="#FFFFFF" opacity="0.92" />
+    </g>
+
+    
+    <path d="M 205 376
+             C 205 344, 246 322, 304 316
+             C 382 308, 495 316, 614 338
+             L 614 584
+             L 365 662
+             L 212 612
+             C 206 556, 205 462, 205 376 Z" fill="none" stroke="#260E05" stroke-width="3" stroke-linejoin="round" />
+
+    
+    <line x1="365" y1="380" x2="365" y2="662" stroke="#260E05" stroke-width="2.5" />
+  </g>
+</svg>

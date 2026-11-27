@@ -47,13 +47,33 @@ export default {
         category: "pastry",
         scale: 0.7
     },
+    "biscuit": {
+        article: "un",
+        category: "pastry",
+        scale: 0.5
+    },
     "gâteau": {
         article: "un",
         category: "pastry",
         scale: 0.8
     },
+    "gâteau au fromage": {
+        article: "un",
+        category: "pastry",
+        scale: 0.8
+    },
+    "morceau de gâteau": {
+        article: "un",
+        category: "pastry",
+        scale: 1
+    },
     "brioche à la cannelle": {
         article: "une",
+        category: "pastry",
+        scale: 0.8
+    },
+    "palmier": {
+        article: "un",
         category: "pastry",
         scale: 0.8
     },
@@ -71,6 +91,11 @@ export default {
         article: "un",
         category: "pastry",
         scale: 0.6
+    },
+    "tablette de chocolat": {
+        article: "une",
+        category: "pastry",
+        scale: 0.8
     },
     "crème glacée": {
         article: "une",

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" width="600" height="660">
+  <defs>
+    
+    <linearGradient id="cheesecakeTopGrad" x1="20%" y1="15%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#EBB452" />
+      <stop offset="65%" stop-color="#E7AC46" />
+      <stop offset="100%" stop-color="#DF9F38" />
+    </linearGradient>
+
+    
+    <linearGradient id="cheesecakeBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F7E6BE" />
+      <stop offset="72%" stop-color="#F4DFB0" />
+      <stop offset="100%" stop-color="#E8CF9C" />
+    </linearGradient>
+
+    
+    <linearGradient id="crustGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9A716E" />
+      <stop offset="70%" stop-color="#916865" />
+      <stop offset="100%" stop-color="#7F5855" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect width="600" height="660" fill="#FFFFFF" />
+
+  
+  
+  
+  <g id="crust-base">
+    <path d="M 42 426
+             L 42 464
+             C 42 544, 158 608, 300 608
+             C 442 608, 558 544, 558 464
+             L 558 426
+             C 558 506, 442 570, 300 570
+             C 158 570, 42 506, 42 426 Z" fill="url(#crustGrad)" />
+
+    
+    <path d="M 412 553
+             C 496 529, 558 481, 558 426
+             L 558 464
+             C 558 519, 496 567, 412 591 Z" fill="#7A5350" opacity="0.45" />
+  </g>
+
+  
+  
+  
+  <g id="cream-layer">
+    <path d="M 42 260
+             L 42 426
+             C 42 506, 158 570, 300 570
+             C 442 570, 558 506, 558 426
+             L 558 260
+             C 558 340, 442 404, 300 404
+             C 158 404, 42 340, 42 260 Z" fill="url(#cheesecakeBodyGrad)" />
+
+    
+    <path d="M 498 352
+             C 536 326, 558 294, 558 260
+             L 558 426
+             C 558 460, 536 492, 498 518 Z" fill="#E5C891" opacity="0.65" />
+
+    
+    <path d="M 74 374
+             C 94 374, 102 392, 120 392
+             C 138 392, 146 406, 166 406" fill="none" stroke="#E8CE9B" stroke-width="15" stroke-linecap="round" />
+
+    <path d="M 300 448
+             C 324 448, 336 442, 360 442
+             C 384 442, 396 446, 418 446" fill="none" stroke="#E8CE9B" stroke-width="15" stroke-linecap="round" />
+
+    <path d="M 496 420
+             C 514 416, 522 396, 538 392
+             C 548 389, 554 382, 558 374" fill="none" stroke="#DFC086" stroke-width="15" stroke-linecap="round" />
+  </g>
+
+  
+  
+  
+  <g id="top-surface">
+    
+    <ellipse cx="300" cy="260" rx="258" ry="158" fill="url(#cheesecakeTopGrad)" />
+
+    
+    <path d="M 300 102
+             C 442 102, 558 173, 558 260
+             C 558 347, 442 418, 300 418
+             C 424 414, 520 345, 520 260
+             C 520 175, 424 106, 300 102 Z" fill="#DF9C32" opacity="0.7" />
+
+    
+    <path d="M 136 184
+             C 178 152, 232 134, 290 130" fill="none" stroke="#F4CA7B" stroke-width="20" stroke-linecap="round" />
+
+    <path d="M 86 248
+             C 90 232, 96 220, 102 212" fill="none" stroke="#F4CA7B" stroke-width="20" stroke-linecap="round" />
+  </g>
+</svg>

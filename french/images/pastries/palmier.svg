@@ -1,0 +1,290 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="600" height="520">
+  <defs>
+    
+    <clipPath id="palmierHeartClip">
+      <path d="M 300 108
+               C 268 38, 174 14, 102 58
+               C 34 100, 14 196, 46 276
+               C 76 352, 168 424, 300 500
+               C 432 424, 524 352, 554 276
+               C 586 196, 566 100, 498 58
+               C 426 14, 332 38, 300 108 Z" />
+    </clipPath>
+
+    
+    <linearGradient id="palmierBaseGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#E5A864" />
+      <stop offset="55%" stop-color="#DC9A52" />
+      <stop offset="100%" stop-color="#CE8942" />
+    </linearGradient>
+
+    
+    <linearGradient id="puffBandWarm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9944B" />
+      <stop offset="50%" stop-color="#C87E36" />
+      <stop offset="100%" stop-color="#B96E28" />
+    </linearGradient>
+
+    
+    <linearGradient id="puffBandCream" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F7DFAC" />
+      <stop offset="100%" stop-color="#EBC788" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect width="600" height="520" fill="#FFFFFF" />
+
+  
+  <g id="palmier-pastry" clip-path="url(#palmierHeartClip)">
+    
+    <rect x="0" y="0" width="600" height="520" fill="url(#palmierBaseGrad)" />
+
+    
+    <g id="left-scroll">
+      
+      <path d="M 294 128
+               C 258 64, 178 46, 118 84
+               C 62 120, 46 200, 74 268
+               C 104 340, 186 402, 294 468
+               L 294 442
+               C 198 382, 124 324, 98 258
+               C 74 198, 88 130, 136 100
+               C 188 68, 254 84, 282 142 Z" fill="url(#puffBandWarm)" />
+
+      
+      <path d="M 284 146
+               C 254 88, 188 74, 140 104
+               C 94 134, 80 198, 104 256
+               C 130 320, 202 378, 294 434
+               L 294 414
+               C 212 362, 146 308, 122 248
+               C 102 198, 114 144, 152 120
+               C 194 94, 246 108, 270 158 Z" fill="url(#puffBandCream)" />
+
+      
+      <path d="M 272 162
+               C 246 112, 194 100, 154 126
+               C 118 148, 108 198, 128 246
+               C 152 304, 216 356, 294 404
+               L 294 386
+               C 224 340, 168 292, 146 238
+               C 128 196, 136 156, 166 138
+               C 198 118, 238 128, 258 172 Z" fill="url(#puffBandWarm)" />
+
+      
+      <path d="M 260 176
+               C 238 134, 198 124, 168 144
+               C 140 162, 134 198, 152 238
+               C 172 288, 228 334, 294 376
+               L 294 358
+               C 236 320, 186 278, 168 232
+               C 154 198, 158 170, 180 156
+               C 202 142, 230 150, 246 184 Z" fill="url(#puffBandCream)" />
+
+      
+      <path d="M 248 188
+               C 230 154, 202 148, 182 162
+               C 164 174, 162 198, 174 228
+               C 188 262, 218 286, 244 294
+               C 262 298, 274 286, 274 268
+               C 274 248, 258 234, 240 236
+               C 226 238, 218 248, 222 258" fill="none" stroke="#C87E36" stroke-width="11" stroke-linecap="round" />
+
+      <path d="M 244 194
+               C 228 166, 204 162, 188 174
+               C 174 184, 174 204, 184 226
+               C 196 254, 222 274, 244 280
+               C 256 282, 264 274, 262 262
+               C 260 250, 248 244, 238 246" fill="none" stroke="#F6DC9E" stroke-width="9" stroke-linecap="round" />
+    </g>
+
+    
+    <g id="right-scroll">
+      
+      <path d="M 306 128
+               C 342 64, 422 46, 482 84
+               C 538 120, 554 200, 526 268
+               C 496 340, 414 402, 306 468
+               L 306 442
+               C 402 382, 476 324, 502 258
+               C 526 198, 512 130, 464 100
+               C 412 68, 346 84, 318 142 Z" fill="url(#puffBandWarm)" />
+
+      
+      <path d="M 318 146
+               C 346 88, 412 74, 460 104
+               C 506 134, 520 198, 496 256
+               C 470 320, 398 378, 306 434
+               L 306 414
+               C 388 362, 454 308, 478 248
+               C 498 198, 486 144, 448 120
+               C 406 94, 354 108, 330 158 Z" fill="url(#puffBandCream)" />
+
+      
+      <path d="M 328 162
+               C 354 112, 406 100, 446 126
+               C 482 148, 492 198, 472 246
+               C 448 304, 384 356, 306 404
+               L 306 386
+               C 376 340, 432 292, 454 238
+               C 472 196, 464 156, 434 138
+               C 402 118, 362 128, 342 172 Z" fill="url(#puffBandWarm)" />
+
+      
+      <path d="M 340 176
+               C 362 134, 402 124, 432 144
+               C 460 162, 466 198, 448 238
+               C 428 288, 372 334, 306 376
+               L 306 358
+               C 364 320, 414 278, 432 232
+               C 446 198, 442 170, 420 156
+               C 398 142, 370 150, 354 184 Z" fill="url(#puffBandCream)" />
+
+      
+      <path d="M 352 188
+               C 370 154, 398 148, 418 162
+               C 436 174, 438 198, 426 228
+               C 412 262, 382 286, 356 294
+               C 338 298, 326 286, 326 268
+               C 326 248, 342 234, 360 236
+               C 374 238, 382 248, 378 258" fill="none" stroke="#C87E36" stroke-width="11" stroke-linecap="round" />
+
+      <path d="M 356 194
+               C 372 166, 396 162, 412 174
+               C 426 184, 426 204, 416 226
+               C 404 254, 378 274, 356 280
+               C 344 282, 336 274, 338 262
+               C 340 250, 352 244, 362 246" fill="none" stroke="#F6DC9E" stroke-width="9" stroke-linecap="round" />
+    </g>
+
+    
+    <path d="M 272 342
+             C 290 356, 310 356, 328 342" fill="none" stroke="#C67B33" stroke-width="14" stroke-linecap="round" />
+    <path d="M 276 346
+             C 292 358, 308 358, 324 346" fill="none" stroke="#F6DC9E" stroke-width="8" stroke-linecap="round" />
+
+    
+    <g id="sugar-crystals">
+      
+      <g fill="#FFFFFF">
+        <circle cx="298" cy="118" r="4.2" />
+        <circle cx="282" cy="86" r="3.5" />
+        <circle cx="256" cy="64" r="4.5" />
+        <circle cx="222" cy="52" r="3.2" />
+        <circle cx="188" cy="50" r="4.0" />
+        <circle cx="152" cy="62" r="3.6" />
+        <circle cx="122" cy="78" r="4.8" />
+        <circle cx="94" cy="102" r="3.4" />
+        <circle cx="72" cy="134" r="4.2" />
+        <circle cx="56" cy="172" r="3.5" />
+        <circle cx="54" cy="214" r="4.4" />
+        <circle cx="64" cy="256" r="3.3" />
+        <circle cx="84" cy="296" r="4.1" />
+        <circle cx="112" cy="336" r="3.7" />
+        <circle cx="144" cy="374" r="4.5" />
+        <circle cx="182" cy="410" r="3.4" />
+        <circle cx="224" cy="442" r="4.2" />
+        <circle cx="268" cy="472" r="3.8" />
+        <circle cx="300" cy="490" r="4.6" />
+        <circle cx="334" cy="472" r="3.5" />
+        <circle cx="378" cy="444" r="4.3" />
+        <circle cx="420" cy="410" r="3.6" />
+        <circle cx="458" cy="374" r="4.4" />
+        <circle cx="490" cy="336" r="3.4" />
+        <circle cx="518" cy="296" r="4.2" />
+        <circle cx="538" cy="256" r="3.6" />
+        <circle cx="548" cy="214" r="4.5" />
+        <circle cx="546" cy="172" r="3.3" />
+        <circle cx="530" cy="134" r="4.1" />
+        <circle cx="508" cy="102" r="3.7" />
+        <circle cx="480" cy="78" r="4.6" />
+        <circle cx="448" cy="62" r="3.5" />
+        <circle cx="412" cy="50" r="4.2" />
+        <circle cx="378" cy="52" r="3.3" />
+        <circle cx="344" cy="64" r="4.4" />
+        <circle cx="318" cy="86" r="3.6" />
+
+        
+        <circle cx="274" cy="126" r="3.2" />
+        <circle cx="238" cy="96" r="3.8" />
+        <circle cx="198" cy="88" r="3.0" />
+        <circle cx="158" cy="104" r="3.6" />
+        <circle cx="126" cy="134" r="3.2" />
+        <circle cx="106" cy="174" r="3.9" />
+        <circle cx="108" cy="218" r="3.1" />
+        <circle cx="124" cy="260" r="3.7" />
+        <circle cx="152" cy="298" r="3.2" />
+        <circle cx="188" cy="332" r="3.8" />
+        <circle cx="228" cy="364" r="3.4" />
+        <circle cx="268" cy="390" r="4.0" />
+        <circle cx="300" cy="406" r="3.5" />
+        <circle cx="332" cy="390" r="3.9" />
+        <circle cx="372" cy="364" r="3.3" />
+        <circle cx="412" cy="332" r="3.8" />
+        <circle cx="448" cy="298" r="3.2" />
+        <circle cx="476" cy="260" r="3.7" />
+        <circle cx="492" cy="218" r="3.1" />
+        <circle cx="494" cy="174" r="3.9" />
+        <circle cx="474" cy="134" r="3.2" />
+        <circle cx="442" cy="104" r="3.6" />
+        <circle cx="402" cy="88" r="3.0" />
+        <circle cx="362" cy="96" r="3.8" />
+        <circle cx="326" cy="126" r="3.2" />
+
+        
+        <circle cx="212" cy="132" r="2.7" />
+        <circle cx="176" cy="154" r="3.1" />
+        <circle cx="156" cy="188" r="2.8" />
+        <circle cx="164" cy="224" r="3.2" />
+        <circle cx="188" cy="256" r="2.9" />
+        <circle cx="220" cy="278" r="3.3" />
+        <circle cx="250" cy="284" r="2.8" />
+        <circle cx="266" cy="268" r="3.1" />
+        <circle cx="254" cy="248" r="2.6" />
+        <circle cx="236" cy="248" r="2.9" />
+        <circle cx="214" cy="212" r="2.7" />
+        <circle cx="196" cy="182" r="3.0" />
+
+        <circle cx="388" cy="132" r="2.7" />
+        <circle cx="424" cy="154" r="3.1" />
+        <circle cx="444" cy="188" r="2.8" />
+        <circle cx="436" cy="224" r="3.2" />
+        <circle cx="412" cy="256" r="2.9" />
+        <circle cx="380" cy="278" r="3.3" />
+        <circle cx="350" cy="284" r="2.8" />
+        <circle cx="334" cy="268" r="3.1" />
+        <circle cx="346" cy="248" r="2.6" />
+        <circle cx="364" cy="248" r="2.9" />
+        <circle cx="386" cy="212" r="2.7" />
+        <circle cx="404" cy="182" r="3.0" />
+
+        
+        <polygon points="242,74 248,68 254,74 248,80" />
+        <polygon points="108,118 114,112 120,118 114,124" />
+        <polygon points="82,238 88,232 94,238 88,244" />
+        <polygon points="204,424 210,418 216,424 210,430" />
+        <polygon points="390,424 396,418 402,424 396,430" />
+        <polygon points="512,238 518,232 524,238 518,244" />
+        <polygon points="486,118 492,112 498,118 492,124" />
+        <polygon points="352,74 358,68 364,74 358,80" />
+        <polygon points="282,368 287,363 292,368 287,373" />
+        <polygon points="312,368 317,363 322,368 317,373" />
+      </g>
+
+      
+      <g fill="#FFFDF7" opacity="0.85">
+        <circle cx="268" cy="104" r="2.4" />
+        <circle cx="138" cy="92" r="2.6" />
+        <circle cx="68" cy="188" r="2.5" />
+        <circle cx="128" cy="316" r="2.7" />
+        <circle cx="246" cy="456" r="2.6" />
+        <circle cx="354" cy="456" r="2.6" />
+        <circle cx="472" cy="316" r="2.7" />
+        <circle cx="532" cy="188" r="2.5" />
+        <circle cx="462" cy="92" r="2.6" />
+        <circle cx="332" cy="104" r="2.4" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 860" width="520" height="860">
+  <defs>
+    
+    <linearGradient id="chocoCenterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8C4A27" />
+      <stop offset="100%" stop-color="#7E4020" />
+    </linearGradient>
+
+    <linearGradient id="chocoTopBevel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9E5732" />
+      <stop offset="100%" stop-color="#8F4D2B" />
+    </linearGradient>
+
+    <linearGradient id="chocoLeftBevel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9B5430" />
+      <stop offset="100%" stop-color="#894826" />
+    </linearGradient>
+
+    <linearGradient id="chocoRightBevel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6B3318" />
+      <stop offset="100%" stop-color="#5B2A12" />
+    </linearGradient>
+
+    <linearGradient id="chocoBottomBevel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#693217" />
+      <stop offset="100%" stop-color="#54250F" />
+    </linearGradient>
+
+    
+    <linearGradient id="foilTopGrad" x1="0%" y1="0%" x2="100%" y2="25%">
+      <stop offset="0%" stop-color="#EFEFF1" />
+      <stop offset="55%" stop-color="#E5E5E8" />
+      <stop offset="100%" stop-color="#D9D9DD" />
+    </linearGradient>
+
+    <linearGradient id="foilLowerGrad" x1="0%" y1="0%" x2="100%" y2="30%">
+      <stop offset="0%" stop-color="#E2E2E6" />
+      <stop offset="60%" stop-color="#D5D5DA" />
+      <stop offset="100%" stop-color="#C7C7CD" />
+    </linearGradient>
+
+    
+    <linearGradient id="redMainGrad" x1="0%" y1="0%" x2="100%" y2="85%">
+      <stop offset="0%" stop-color="#E33229" />
+      <stop offset="55%" stop-color="#D92920" />
+      <stop offset="100%" stop-color="#C72119" />
+    </linearGradient>
+
+    <linearGradient id="redLeftEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0534A" />
+      <stop offset="100%" stop-color="#DC2E24" />
+    </linearGradient>
+
+    <linearGradient id="redRightEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C42018" />
+      <stop offset="100%" stop-color="#A81811" />
+    </linearGradient>
+
+    <linearGradient id="redBottomEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C21F17" />
+      <stop offset="100%" stop-color="#9E150E" />
+    </linearGradient>
+
+    
+    <clipPath id="chocolateBarClip">
+      <rect x="24" y="28" width="472" height="804" />
+    </clipPath>
+  </defs>
+
+  
+  <rect width="520" height="860" fill="#FFFFFF" />
+
+  
+  
+  
+  <g id="chocolate-bar" clip-path="url(#chocolateBarClip)">
+    
+    <rect x="24" y="28" width="472" height="804" fill="#6E3519" />
+
+    
+    
+    <g id="sq-0-0">
+      <polygon points="24,28 181.33,28 161.33,48 44,48" fill="url(#chocoTopBevel)" />
+      <polygon points="24,28 44,48 44,208 24,228" fill="url(#chocoLeftBevel)" />
+      <polygon points="181.33,28 181.33,228 161.33,208 161.33,48" fill="url(#chocoRightBevel)" />
+      <polygon points="24,228 44,208 161.33,208 181.33,228" fill="url(#chocoBottomBevel)" />
+      <rect x="44" y="48" width="117.33" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    <g id="sq-0-1">
+      <polygon points="181.33,28 338.67,28 318.67,48 201.33,48" fill="url(#chocoTopBevel)" />
+      <polygon points="181.33,28 201.33,48 201.33,208 181.33,228" fill="url(#chocoLeftBevel)" />
+      <polygon points="338.67,28 338.67,228 318.67,208 318.67,48" fill="url(#chocoRightBevel)" />
+      <polygon points="181.33,228 201.33,208 318.67,208 338.67,228" fill="url(#chocoBottomBevel)" />
+      <rect x="201.33" y="48" width="117.34" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    <g id="sq-0-2">
+      <polygon points="338.67,28 496,28 476,48 358.67,48" fill="url(#chocoTopBevel)" />
+      <polygon points="338.67,28 358.67,48 358.67,208 338.67,228" fill="url(#chocoLeftBevel)" />
+      <polygon points="496,28 496,228 476,208 476,48" fill="url(#chocoRightBevel)" />
+      <polygon points="338.67,228 358.67,208 476,208 496,228" fill="url(#chocoBottomBevel)" />
+      <rect x="358.67" y="48" width="117.33" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    
+    <g id="sq-1-0">
+      <polygon points="24,228 181.33,228 161.33,248 44,248" fill="url(#chocoTopBevel)" />
+      <polygon points="24,228 44,248 44,408 24,428" fill="url(#chocoLeftBevel)" />
+      <polygon points="181.33,228 181.33,428 161.33,408 161.33,248" fill="url(#chocoRightBevel)" />
+      <polygon points="24,428 44,408 161.33,408 181.33,428" fill="url(#chocoBottomBevel)" />
+      <rect x="44" y="248" width="117.33" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    <g id="sq-1-1">
+      <polygon points="181.33,228 338.67,228 318.67,248 201.33,248" fill="url(#chocoTopBevel)" />
+      <polygon points="181.33,228 201.33,248 201.33,408 181.33,428" fill="url(#chocoLeftBevel)" />
+      <polygon points="338.67,228 338.67,428 318.67,408 318.67,248" fill="url(#chocoRightBevel)" />
+      <polygon points="181.33,428 201.33,408 318.67,408 338.67,428" fill="url(#chocoBottomBevel)" />
+      <rect x="201.33" y="248" width="117.34" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    <g id="sq-1-2">
+      <polygon points="338.67,228 496,228 476,248 358.67,248" fill="url(#chocoTopBevel)" />
+      <polygon points="338.67,228 358.67,248 358.67,408 338.67,428" fill="url(#chocoLeftBevel)" />
+      <polygon points="496,228 496,428 476,408 476,248" fill="url(#chocoRightBevel)" />
+      <polygon points="338.67,428 358.67,408 476,408 496,428" fill="url(#chocoBottomBevel)" />
+      <rect x="358.67" y="248" width="117.33" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    
+    <g id="sq-2-0">
+      <polygon points="24,428 181.33,428 161.33,448 44,448" fill="url(#chocoTopBevel)" />
+      <polygon points="24,428 44,448 44,608 24,628" fill="url(#chocoLeftBevel)" />
+      <polygon points="181.33,428 181.33,628 161.33,608 161.33,448" fill="url(#chocoRightBevel)" />
+      <polygon points="24,628 44,608 161.33,608 181.33,628" fill="url(#chocoBottomBevel)" />
+      <rect x="44" y="448" width="117.33" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    <g id="sq-2-1">
+      <polygon points="181.33,428 338.67,428 318.67,448 201.33,448" fill="url(#chocoTopBevel)" />
+      <polygon points="181.33,428 201.33,448 201.33,608 181.33,628" fill="url(#chocoLeftBevel)" />
+      <polygon points="338.67,428 338.67,628 318.67,608 318.67,448" fill="url(#chocoRightBevel)" />
+      <polygon points="181.33,628 201.33,608 318.67,608 338.67,628" fill="url(#chocoBottomBevel)" />
+      <rect x="201.33" y="448" width="117.34" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    <g id="sq-2-2">
+      <polygon points="338.67,428 496,428 476,448 358.67,448" fill="url(#chocoTopBevel)" />
+      <polygon points="338.67,428 358.67,448 358.67,608 338.67,628" fill="url(#chocoLeftBevel)" />
+      <polygon points="496,428 496,628 476,608 476,448" fill="url(#chocoRightBevel)" />
+      <polygon points="338.67,628 358.67,608 476,608 496,628" fill="url(#chocoBottomBevel)" />
+      <rect x="358.67" y="448" width="117.33" height="160" fill="url(#chocoCenterGrad)" />
+    </g>
+
+    
+    <g stroke="#56250E" stroke-width="2" opacity="0.7">
+      <line x1="181.33" y1="28" x2="181.33" y2="560" />
+      <line x1="338.67" y1="28" x2="338.67" y2="560" />
+      <line x1="24" y1="228" x2="496" y2="228" />
+      <line x1="24" y1="428" x2="496" y2="428" />
+    </g>
+
+    
+    
+    
+    <g id="foil-wrapper">
+      
+      <polygon points="24,424 388,574 352,644 24,574" fill="url(#foilLowerGrad)" />
+
+      
+      <polygon points="24,424 496,522 388,574" fill="url(#foilTopGrad)" />
+
+      
+      <line x1="24" y1="424" x2="388" y2="574" stroke="#B8B8C0" stroke-width="2" />
+      <line x1="388" y1="574" x2="496" y2="522" stroke="#C6C6CE" stroke-width="1.5" />
+    </g>
+
+    
+    
+    
+    <g id="red-wrapper">
+      
+      <polygon points="282,530 388,574 366,612 276,568" fill="#A61912" opacity="0.55" />
+
+      
+      <polygon points="24,574 496,522 496,832 24,832" fill="url(#redMainGrad)" />
+
+      
+      <polygon points="24,574 42,572 42,814 24,832" fill="url(#redLeftEdge)" />
+
+      
+      <polygon points="24,574 496,522 478,540 42,588" fill="#EB4339" opacity="0.65" />
+
+      
+      <polygon points="496,522 496,832 478,814 478,540" fill="url(#redRightEdge)" />
+
+      
+      <polygon points="24,832 42,814 478,814 496,832" fill="url(#redBottomEdge)" />
+    </g>
+  </g>
+</svg>
