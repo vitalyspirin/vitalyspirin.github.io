@@ -1266,8 +1266,15 @@ textarea#stats {
     margin-left: 1em;
 }
 
-#implementation-progress table tbody tr a[href=""] {
+#implementation-progress table tbody tr a[href=""]:not(.original-info) {
     display: none;
+}
+
+#implementation-progress table tbody tr a.original-info[href=""] {
+    color: var(--text-color);
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
 }
 
 #implementation-progress table tbody tr a.info[href=""]:has(+ a.exercise:not([href=""])) {
