@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 680" width="800" height="680">
+  <defs>
+    
+    <clipPath id="cakeBodyClip">
+      <path d="M 96 360
+               C 96 460, 98 550, 102 598
+               C 112 640, 240 662, 400 662
+               C 560 662, 688 640, 698 598
+               C 702 550, 704 460, 704 360
+               Z" />
+    </clipPath>
+
+    
+    <clipPath id="candle1Clip">
+      <path d="M 225 186
+               C 225 172, 267 172, 267 186
+               L 267 314
+               C 267 328, 225 328, 225 314
+               Z" />
+    </clipPath>
+    <clipPath id="candle2Clip">
+      <path d="M 331 172
+               C 331 158, 373 158, 373 172
+               L 373 300
+               C 373 314, 331 314, 331 300
+               Z" />
+    </clipPath>
+    <clipPath id="candle3Clip">
+      <path d="M 435 172
+               C 435 158, 477 158, 477 172
+               L 477 300
+               C 477 314, 435 314, 435 300
+               Z" />
+    </clipPath>
+    <clipPath id="candle4Clip">
+      <path d="M 527 186
+               C 527 172, 569 172, 569 186
+               L 569 314
+               C 569 328, 527 328, 527 314
+               Z" />
+    </clipPath>
+  </defs>
+
+  
+  <rect width="800" height="680" fill="#ffffff" />
+
+  
+  
+  
+  <g id="cake-plate">
+    <ellipse cx="400" cy="582" rx="390" ry="92" fill="#F6E6CF" stroke="#3B1A13" stroke-width="5.5" />
+    <path d="M 36 574 C 80 628, 232 662, 400 662 C 568 662, 720 628, 764 574" fill="none" stroke="#E4CEB0" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+  </g>
+
+  
+  
+  
+  <g id="cake-layers">
+    
+    <path d="M 96 360
+             C 96 460, 98 550, 102 598
+             C 112 640, 240 662, 400 662
+             C 560 662, 688 640, 698 598
+             C 702 550, 704 460, 704 360
+             Z" fill="#B66B3F" />
+
+    
+    <g clip-path="url(#cakeBodyClip)">
+      
+      <path d="M 520 350 L 715 350 L 715 668 L 490 668 C 535 590, 540 460, 520 350 Z" fill="#A15931" opacity="0.55" />
+
+      
+      <path d="M 88 464
+               C 120 482, 156 496, 200 498
+               C 238 500, 266 492, 304 498
+               C 342 504, 376 512, 418 512
+               C 464 512, 502 502, 546 494
+               C 596 486, 656 468, 712 448
+               L 712 474
+               C 656 494, 596 512, 546 520
+               C 502 528, 464 538, 418 538
+               C 376 538, 342 530, 304 524
+               C 266 518, 238 526, 200 524
+               C 156 522, 120 508, 88 490
+               Z" fill="#F6D5A9" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+
+      
+      <path d="M 90 536
+               C 128 558, 174 572, 224 574
+               C 262 576, 294 568, 332 574
+               C 370 580, 404 586, 446 586
+               C 492 586, 532 576, 578 566
+               C 624 556, 668 540, 710 520
+               L 710 546
+               C 668 566, 624 582, 578 592
+               C 532 602, 492 612, 446 612
+               C 404 612, 370 606, 332 600
+               C 294 594, 262 602, 224 600
+               C 174 598, 128 584, 90 562
+               Z" fill="#F6D5A9" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+
+      
+      <path d="M 98 588
+               C 120 632, 244 654, 400 654
+               C 556 654, 680 632, 702 588
+               L 702 668 L 98 668 Z" fill="#9E562E" opacity="0.45" />
+    </g>
+
+    
+    <path d="M 96 420
+             C 96 485, 98 555, 102 598
+             C 112 640, 240 662, 400 662
+             C 560 662, 688 640, 698 598
+             C 702 555, 704 485, 704 420" fill="none" stroke="#3B1A13" stroke-width="5.5" stroke-linecap="round" />
+  </g>
+
+  
+  
+  
+  <g id="chocolate-frosting">
+    
+    <path d="M 86 336
+             C 86 272, 226 232, 400 232
+             C 574 232, 714 272, 714 336
+             C 714 364, 712 400, 710 426
+             C 708 442, 694 446, 688 434
+             C 682 422, 682 398, 672 398
+             C 662 398, 662 424, 650 428
+             C 638 432, 634 416, 622 418
+             C 610 420, 610 462, 594 464
+             C 578 466, 576 428, 560 430
+             C 544 432, 540 458, 522 458
+             C 504 458, 502 434, 488 436
+             C 474 438, 474 478, 456 478
+             C 438 478, 436 430, 412 430
+             C 388 430, 386 472, 368 472
+             C 350 472, 352 422, 334 422
+             C 316 422, 316 518, 294 518
+             C 272 518, 272 432, 250 432
+             C 228 432, 224 480, 204 480
+             C 184 480, 184 416, 168 416
+             C 152 416, 152 476, 134 476
+             C 116 476, 118 410, 106 410
+             C 94 410, 96 440, 88 434
+             C 82 428, 86 368, 86 336
+             Z" fill="#76432C" stroke="#3B1A13" stroke-width="5.5" stroke-linejoin="round" />
+
+    
+    <ellipse cx="400" cy="322" rx="294" ry="80" fill="#824B32" opacity="0.65" />
+
+    
+    <path d="M 118 344 C 148 378, 232 400, 336 408" fill="none" stroke="#9C6044" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+    <circle cx="154" cy="364" r="3.2" fill="#A96B4E" />
+    <circle cx="176" cy="376" r="2.6" fill="#A96B4E" />
+
+    
+    <path d="M 286 452 L 286 498" fill="none" stroke="#8F553A" stroke-width="4" stroke-linecap="round" opacity="0.75" />
+    <path d="M 128 432 L 128 458" fill="none" stroke="#8F553A" stroke-width="3.5" stroke-linecap="round" opacity="0.75" />
+    <path d="M 588 432 L 588 448" fill="none" stroke="#8F553A" stroke-width="3.5" stroke-linecap="round" opacity="0.75" />
+  </g>
+
+  
+  
+  
+
+  
+  <g id="candle-1">
+    <ellipse cx="246" cy="324" rx="24" ry="8" fill="#59301E" opacity="0.55" />
+    <path d="M 225 186 C 225 172, 267 172, 267 186 L 267 314 C 267 328, 225 328, 225 314 Z" fill="#FCEAD2" />
+    <g clip-path="url(#candle1Clip)">
+      <path d="M 220 214 L 272 202 L 272 222 L 220 234 Z" fill="#F07E58" />
+      <path d="M 220 258 L 272 246 L 272 266 L 220 278 Z" fill="#F07E58" />
+      <path d="M 220 302 L 272 290 L 272 310 L 220 322 Z" fill="#F07E58" />
+      <rect x="255" y="170" width="14" height="160" fill="#E3C7A6" opacity="0.45" />
+    </g>
+    <path d="M 225 186 C 225 172, 267 172, 267 186 L 267 314 C 267 328, 225 328, 225 314 Z" fill="none" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 233 190 C 240 195, 252 195, 259 190" fill="none" stroke="#3B1A13" stroke-width="4" stroke-linecap="round" />
+    <path d="M 246 176 L 246 162" stroke="#3B1A13" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 246 94 C 266 116, 272 148, 256 160 C 250 164, 242 164, 236 160 C 220 148, 226 116, 246 94 Z" fill="#F9C54B" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 246 126 C 255 138, 257 153, 246 158 C 235 153, 237 138, 246 126 Z" fill="#F38644" />
+  </g>
+
+  
+  <g id="candle-2">
+    <ellipse cx="352" cy="310" rx="24" ry="8" fill="#59301E" opacity="0.55" />
+    <path d="M 331 172 C 331 158, 373 158, 373 172 L 373 300 C 373 314, 331 314, 331 300 Z" fill="#FCEAD2" />
+    <g clip-path="url(#candle2Clip)">
+      <path d="M 326 200 L 378 188 L 378 208 L 326 220 Z" fill="#F07E58" />
+      <path d="M 326 244 L 378 232 L 378 252 L 326 264 Z" fill="#F07E58" />
+      <path d="M 326 288 L 378 276 L 378 296 L 326 308 Z" fill="#F07E58" />
+      <rect x="361" y="156" width="14" height="160" fill="#E3C7A6" opacity="0.45" />
+    </g>
+    <path d="M 331 172 C 331 158, 373 158, 373 172 L 373 300 C 373 314, 331 314, 331 300 Z" fill="none" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 339 176 C 346 181, 358 181, 365 176" fill="none" stroke="#3B1A13" stroke-width="4" stroke-linecap="round" />
+    <path d="M 352 162 L 352 148" stroke="#3B1A13" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 352 80 C 372 102, 378 134, 362 146 C 356 150, 348 150, 342 146 C 326 134, 332 102, 352 80 Z" fill="#F9C54B" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 352 112 C 361 124, 363 139, 352 144 C 341 139, 343 124, 352 112 Z" fill="#F38644" />
+  </g>
+
+  
+  <g id="candle-3">
+    <ellipse cx="456" cy="310" rx="24" ry="8" fill="#59301E" opacity="0.55" />
+    <path d="M 435 172 C 435 158, 477 158, 477 172 L 477 300 C 477 314, 435 314, 435 300 Z" fill="#FCEAD2" />
+    <g clip-path="url(#candle3Clip)">
+      <path d="M 430 200 L 482 188 L 482 208 L 430 220 Z" fill="#F07E58" />
+      <path d="M 430 244 L 482 232 L 482 252 L 430 264 Z" fill="#F07E58" />
+      <path d="M 430 288 L 482 276 L 482 296 L 430 308 Z" fill="#F07E58" />
+      <rect x="465" y="156" width="14" height="160" fill="#E3C7A6" opacity="0.45" />
+    </g>
+    <path d="M 435 172 C 435 158, 477 158, 477 172 L 477 300 C 477 314, 435 314, 435 300 Z" fill="none" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 443 176 C 450 181, 462 181, 469 176" fill="none" stroke="#3B1A13" stroke-width="4" stroke-linecap="round" />
+    <path d="M 456 162 L 456 148" stroke="#3B1A13" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 456 80 C 476 102, 482 134, 466 146 C 460 150, 452 150, 446 146 C 430 134, 436 102, 456 80 Z" fill="#F9C54B" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 456 112 C 465 124, 467 139, 456 144 C 445 139, 447 124, 456 112 Z" fill="#F38644" />
+  </g>
+
+  
+  <g id="candle-4">
+    <ellipse cx="548" cy="324" rx="24" ry="8" fill="#59301E" opacity="0.55" />
+    <path d="M 527 186 C 527 172, 569 172, 569 186 L 569 314 C 569 328, 527 328, 527 314 Z" fill="#FCEAD2" />
+    <g clip-path="url(#candle4Clip)">
+      <path d="M 522 214 L 574 202 L 574 222 L 522 234 Z" fill="#F07E58" />
+      <path d="M 522 258 L 574 246 L 574 266 L 522 278 Z" fill="#F07E58" />
+      <path d="M 522 302 L 574 290 L 574 310 L 522 322 Z" fill="#F07E58" />
+      <rect x="557" y="170" width="14" height="160" fill="#E3C7A6" opacity="0.45" />
+    </g>
+    <path d="M 527 186 C 527 172, 569 172, 569 186 L 569 314 C 569 328, 527 328, 527 314 Z" fill="none" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 535 190 C 542 195, 554 195, 561 190" fill="none" stroke="#3B1A13" stroke-width="4" stroke-linecap="round" />
+    <path d="M 548 176 L 548 162" stroke="#3B1A13" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 548 94 C 568 116, 574 148, 558 160 C 552 164, 544 164, 538 160 C 522 148, 528 116, 548 94 Z" fill="#F9C54B" stroke="#3B1A13" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 548 126 C 557 138, 559 153, 548 158 C 537 153, 539 138, 548 126 Z" fill="#F38644" />
+  </g>
+</svg>

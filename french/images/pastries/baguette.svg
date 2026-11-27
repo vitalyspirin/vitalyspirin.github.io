@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    
+    <clipPath id="baguetteClip">
+      <path d="M 38 564 
+               C 4 532, 16 458, 72 378 
+               C 138 286, 224 198, 326 116 
+               C 424 38, 526 24, 566 56 
+               C 598 84, 588 158, 534 238 
+               C 468 332, 378 422, 276 504 
+               C 178 582, 78 596, 38 564 Z" />
+    </clipPath>
+  </defs>
+
+  
+  <g id="baguette">
+    
+    <path d="M 38 564 
+             C 4 532, 16 458, 72 378 
+             C 138 286, 224 198, 326 116 
+             C 424 38, 526 24, 566 56 
+             C 598 84, 588 158, 534 238 
+             C 468 332, 378 422, 276 504 
+             C 178 582, 78 596, 38 564 Z" fill="#F5B240" />
+
+    
+    <g clip-path="url(#baguetteClip)">
+      
+      <path d="M 22 508 
+               C 44 544, 114 534, 198 468 
+               C 302 386, 408 282, 488 176 
+               C 542 104, 558 58, 540 38 
+               L 605 70 
+               L 570 250 
+               L 310 530 
+               L 70 605 
+               L 15 550 Z" fill="#DC8622" />
+
+      
+      <path d="M 24 510 
+               C 16 462, 46 398, 102 324 
+               C 172 232, 266 142, 372 68 
+               C 448 16, 514 14, 548 40 
+               C 516 26, 456 38, 384 90 
+               C 282 164, 192 254, 122 346 
+               C 66 418, 38 476, 34 522 Z" fill="#FDE29C" />
+
+      
+      
+      <g id="slash-1">
+        
+        <path d="M 48 492 
+                 C 68 446, 128 438, 168 468 
+                 C 126 462, 82 468, 48 492 Z" fill="#FCE29C" />
+        
+        <path d="M 52 490 
+                 C 74 454, 124 446, 164 468 
+                 C 124 462, 84 468, 52 490 Z" fill="#E59329" />
+        
+        <path d="M 46 492 C 66 444, 128 436, 170 468" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <path d="M 52 492 C 84 466, 128 462, 168 469" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <path d="M 64 474 C 86 456, 120 452, 152 464" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" opacity="0.7" />
+      </g>
+
+      
+      <g id="slash-2">
+        <path d="M 122 396 
+                 C 146 346, 212 338, 256 372 
+                 C 210 364, 162 372, 122 396 Z" fill="#FCE29C" />
+        <path d="M 128 394 
+                 C 152 356, 208 348, 250 372 
+                 C 208 364, 164 372, 128 394 Z" fill="#E59329" />
+        <path d="M 120 396 C 144 344, 212 336, 258 372" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 128 396 C 164 368, 212 364, 256 373" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 142 376 C 168 358, 204 354, 238 368" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" opacity="0.7" />
+      </g>
+
+      
+      <g id="slash-3">
+        <path d="M 224 294 
+                 C 248 242, 318 234, 366 270 
+                 C 316 262, 266 270, 224 294 Z" fill="#FCE29C" />
+        <path d="M 230 292 
+                 C 254 252, 314 244, 360 270 
+                 C 314 262, 268 270, 230 292 Z" fill="#E59329" />
+        <path d="M 222 294 C 246 240, 318 232, 368 270" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 230 294 C 268 266, 318 262, 366 271" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 244 274 C 272 254, 312 250, 348 264" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" opacity="0.7" />
+      </g>
+
+      
+      <g id="slash-4">
+        <path d="M 326 202 
+                 C 350 152, 416 144, 460 178 
+                 C 414 170, 366 178, 326 202 Z" fill="#FCE29C" />
+        <path d="M 332 200 
+                 C 356 162, 412 154, 454 178 
+                 C 412 170, 368 178, 332 200 Z" fill="#E59329" />
+        <path d="M 324 202 C 348 150, 416 142, 462 178" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 332 202 C 368 174, 416 170, 460 179" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 346 182 C 372 164, 408 160, 442 174" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" opacity="0.7" />
+      </g>
+
+      
+      <g id="slash-5">
+        <path d="M 424 114 
+                 C 446 74, 496 68, 532 98 
+                 C 494 92, 456 98, 424 114 Z" fill="#FCE29C" />
+        <path d="M 428 112 
+                 C 450 82, 492 76, 526 98 
+                 C 492 92, 458 98, 428 112 Z" fill="#E59329" />
+        <path d="M 422 114 C 444 72, 496 66, 534 98" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 428 114 C 458 94, 496 92, 532 99" fill="none" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+
+      
+      <g fill="none" stroke="#000000" stroke-linecap="round">
+        
+        <path d="M 32 526 C 34 542, 40 552, 48 558" stroke-width="3" />
+        <path d="M 78 564 C 106 556, 134 540, 158 518" stroke-width="3" />
+        
+        <path d="M 192 486 C 204 474, 214 462, 222 448" stroke-width="2.5" />
+        <path d="M 214 474 C 222 464, 228 456, 232 446" stroke-width="2.2" />
+        <path d="M 358 342 C 372 328, 384 312, 394 294" stroke-width="2.5" />
+        <path d="M 382 324 C 392 312, 400 300, 406 288" stroke-width="2.2" />
+        
+        <path d="M 548 164 C 562 142, 570 118, 572 96" stroke-width="2.5" />
+        <path d="M 556 132 C 562 118, 564 104, 564 90" stroke-width="2" />
+        <path d="M 454 62 C 470 54, 486 48, 502 46" stroke-width="2.5" />
+      </g>
+    </g>
+
+    
+    <path d="M 38 564 
+             C 4 532, 16 458, 72 378 
+             C 138 286, 224 198, 326 116 
+             C 424 38, 526 24, 566 56 
+             C 598 84, 588 158, 534 238 
+             C 468 332, 378 422, 276 504 
+             C 178 582, 78 596, 38 564 Z" fill="none" stroke="#000000" stroke-width="11" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>

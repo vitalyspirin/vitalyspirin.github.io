@@ -12,9 +12,60 @@ export const audioFileFolder = 'vocabulary/pastries';
 
 
 export default {
+    "baguette": {
+        article: "une",
+        category: "pastry",
+        scale: 0.7
+    },
+    "tranche de pain": {
+        article: "une",
+        category: "pastry",
+        scale: 0.9
+    },
+    "bagel": {
+        article: "un",
+        category: "pastry",
+        scale: 0.8
+    },
+    "muffin": {
+        article: "un",
+        category: "pastry",
+        scale: 0.6
+    },
+    "croissant": {
+        article: "un",
+        category: "pastry",
+        scale: 0.8
+    },
+    "gâteau": {
+        article: "un",
+        category: "pastry",
+        scale: 0.8
+    },
+    "crème glacée": {
+        article: "une",
+        category: "pastry",
+        scale: 0.8
+    },
+    "tarte": {
+        article: "une",
+        category: "pastry",
+        scale: 0.7
+    },
+    "chausson aux pommes": {
+        article: "un",
+        category: "pastry",
+        scale: 1
+    },
+    "éclair": {
+        article: "un",
+        category: "pastry",
+        scale: 0.9
+    },
     "brioche à la cannelle": {
         article: "une",
         category: "pastry",
         scale: 0.8
-    }
+    },
+
 }
