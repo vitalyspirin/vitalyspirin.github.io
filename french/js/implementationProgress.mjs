@@ -851,7 +851,10 @@ export default {
                 "info": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Foraprdnt.uqtr.uquebec.ca%2Fportail%2Fdocs%2FGSC2213%2FF1329099306_Le_pain__les_p_tisseries__etc.pptx&wdOrigin=BROWSELINK",
                 "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F812612897_Le_pain__la_p_tisserie__les_sucreries_Exercices_et_corrig__.pdf"
             },
-            "implementation": {}
+            "implementation": {
+                "info": "../pdf/pastries.pdf",
+                "exercise": ["exercises/vocabulary/pastries.html"]
+            }
         },
         "Les magasins": {
             "original": {
