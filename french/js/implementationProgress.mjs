@@ -875,6 +875,156 @@ export default {
 
 
     "Le vocabulaire - Niveaux intermédiaire et avancé": {
+        "L'argent - La banque": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F174530237_L_argent___La_banque_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le logement": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1070205237_Le_logement_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "La maison et ses objets": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1585468627_La_maison___le_logement_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les vêtements et les accessoires": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F315457800_Les_v_tements_et_accessoires.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F96651626_Les_v_tements_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le monde du travail": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1957701086_Le_monde_du_travail_comment_en_parler.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1605579578_Le_monde_du_travail_comment_en_parler_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {}
+        },
+        "Les études au Québec": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F452045435_Les__tudes_au_qu_bec.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2060839363_Les__tudes_au_Qu_bec_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les loisirs, les sports et les jeux": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F309735243_Les_loisirs__les_sports__les_jeux_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Les arts et les spectacles": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1344406390_Les_arts___les_spectacles_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "La technologie et les réseaux sociaux": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F_1795517770_La_technologie_et_les_r_seaux_sociaux_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Amener, Emmener, Apporter ou Emporter?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2061941348_Amener__emmener....pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F646218170_Amener_ou_Emmener_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/amener-emmener.pdf",
+                "exercise": ["exercises/vocabulary/amener-emmene.html"]
+            }
+        },
+        "Savoir ou Connaitre?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2027301654_savoir_ou_conna_tre.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F104263091_savoir_ou_connaitre_exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/savoir-connaitre.pdf",
+                "exercise": ["exercises/vocabulary/savoir-connaitre.html"]
+            }
+        },
+        "Il est ou C'est?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F987021192_il_est_ou_c_est.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F70180842_Il_est_ou_C_est_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/il-est.pdf",
+                "exercise": ["exercises/vocabulary/il-est.html"]
+            }
+        },
+        "Le H muet et aspiré": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1001395620_Le_H_muet_et__aspir__niveau_avanc_.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F101668740_Le_H_muet_ou_aspir__exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/h-muet.doc.html",
+                "exercise": ["exercises/vocabulary/h-muet.html"]
+            }
+        },
+        "Féminin ou masculin?": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1175760931_Le_genre_des_noms_communs_interm_diaire_avanc_.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F603134851_le_genre_des_noms_communs_tableau_et_exercices.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/masculine-feminine.pdf",
+                "exercise": ["exercises/vocabulary/masculine-feminine.html"]
+            }
+        },
+        "L'accord de l'adjectif": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F289577849_le_genre_et_le_pluriel_des_adjectifs_d_butant.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1046194830_L_accord_des_adjectifs_Exercices_et_corrig_.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/adjective-gender-number.pdf",
+                "exercise": ["exercises/vocabulary/adjective-gender.html"]
+            }
+        },
+        "La place de l'adjectif": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F288621475_La_place_de_l_adjectif.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F217519863_La_place_de_l_adjectif_web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/adjective-position.pdf",
+                "exercise": ["exercises/vocabulary/adjective-position.html"]
+            }
+        },
+        "Les adjectifs de couleurs": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1538231698_Les_adjectifs_de_couleur.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F2078086093_Les_adjectifs_de_couleur_exercices_et_corrig_.pdf"
+            },
+            "implementation": {}
+        },
+        "Le mot Tout": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F749172809_le_mot_tout.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/O0000491836_le_mot_tout_exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/tout.pdf",
+                "exercise": ["exercises/vocabulary/tout.html"]
+            }
+        },
     },
 
 
