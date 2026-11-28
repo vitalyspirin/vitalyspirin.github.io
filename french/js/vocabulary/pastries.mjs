@@ -70,12 +70,12 @@ export default {
     "brioche à la cannelle": {
         article: "une",
         category: "pastry",
-        scale: 0.8
+        scale: 0.6
     },
     "palmier": {
         article: "un",
         category: "pastry",
-        scale: 0.8
+        scale: 0.7
     },
     "chausson aux pommes": {
         article: "un",
@@ -86,6 +86,11 @@ export default {
         article: "un",
         category: "pastry",
         scale: 0.9
+    },
+    "crêpe": {
+        article: "une",
+        category: "pastry",
+        scale: 0.8
     },
     "bonbon": {
         article: "un",
