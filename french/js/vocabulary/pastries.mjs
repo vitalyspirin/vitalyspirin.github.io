@@ -112,5 +112,10 @@ export default {
         category: "pastry",
         scale: 0.8
     },
+    "confiture": {
+        article: "une",
+        category: "pastry",
+        scale: 0.6
+    },
 
 }
