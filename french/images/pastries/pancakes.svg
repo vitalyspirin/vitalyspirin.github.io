@@ -1,0 +1,332 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" width="900" height="720">
+  <defs>
+    
+    <linearGradient id="plateRimLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6E9EE" />
+      <stop offset="60%" stop-color="#CFD4DC" />
+      <stop offset="100%" stop-color="#B7BDC7" />
+    </linearGradient>
+
+    <linearGradient id="plateSlateGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#5B616A" />
+      <stop offset="55%" stop-color="#4A5058" />
+      <stop offset="100%" stop-color="#373C42" />
+    </linearGradient>
+
+    <linearGradient id="plateInnerShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2F3339" />
+      <stop offset="100%" stop-color="#454B53" />
+    </linearGradient>
+
+    
+    <linearGradient id="pancakeTopGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#EFC68F" />
+      <stop offset="60%" stop-color="#E4B577" />
+      <stop offset="100%" stop-color="#D5A05E" />
+    </linearGradient>
+
+    <linearGradient id="pancakeEdgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C88A47" />
+      <stop offset="50%" stop-color="#B97B39" />
+      <stop offset="100%" stop-color="#A66A2B" />
+    </linearGradient>
+
+    <linearGradient id="pancakeCreamLayer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F6E5C5" />
+      <stop offset="65%" stop-color="#EBD3A8" />
+      <stop offset="100%" stop-color="#D8BC8B" />
+    </linearGradient>
+
+    
+    <linearGradient id="syrupTopGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#F3B85A" />
+      <stop offset="55%" stop-color="#E49C38" />
+      <stop offset="100%" stop-color="#CC7D20" />
+    </linearGradient>
+
+    <linearGradient id="syrupDripGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DE8F2A" />
+      <stop offset="60%" stop-color="#C57318" />
+      <stop offset="100%" stop-color="#A5580D" />
+    </linearGradient>
+
+    <linearGradient id="syrupPoolGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#F2B351" />
+      <stop offset="65%" stop-color="#DC922E" />
+      <stop offset="100%" stop-color="#BD7117" />
+    </linearGradient>
+
+    
+    <linearGradient id="butterTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8C8" />
+      <stop offset="100%" stop-color="#F6E58B" />
+    </linearGradient>
+
+    <linearGradient id="butterLeftGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F2DC78" />
+      <stop offset="100%" stop-color="#DFC154" />
+    </linearGradient>
+
+    <linearGradient id="butterRightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E4C659" />
+      <stop offset="100%" stop-color="#C7A639" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect width="900" height="720" fill="#FFFFFF" />
+
+  
+  <g transform="translate(5, -17)">
+    
+    
+    
+    <g id="plate">
+      
+      <ellipse cx="445" cy="528" rx="430" ry="178" fill="url(#plateRimLight)" stroke="#232220" stroke-width="4.5" />
+
+      
+      <ellipse cx="445" cy="522" rx="406" ry="164" fill="#DCE0E6" stroke="#232220" stroke-width="3.5" />
+
+      
+      <ellipse cx="445" cy="515" rx="382" ry="148" fill="url(#plateSlateGrad)" stroke="#232220" stroke-width="4" />
+
+      
+      <path d="M 102 515
+               C 118 438, 266 388, 445 388
+               C 624 388, 772 438, 788 515
+               C 766 588, 620 638, 445 638
+               C 270 638, 124 588, 102 515 Z" fill="url(#plateInnerShade)" opacity="0.45" />
+
+      
+      <path d="M 142 570
+               C 214 618, 326 644, 445 644
+               C 564 644, 676 618, 748 570" fill="none" stroke="#7A818C" stroke-width="5" stroke-linecap="round" opacity="0.55" />
+    </g>
+
+    
+    
+    
+    <g id="plate-pools">
+      
+      <ellipse cx="212" cy="522" rx="68" ry="28" fill="#232220" />
+      <ellipse cx="212" cy="520" rx="64" ry="24" fill="url(#syrupPoolGrad)" />
+      <path d="M 164 514 C 184 501, 224 501, 246 510" fill="none" stroke="#FFD07A" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+
+      
+      <ellipse cx="152" cy="474" rx="34" ry="13" fill="#232220" />
+      <ellipse cx="152" cy="473" rx="31" ry="10" fill="url(#syrupPoolGrad)" />
+
+      
+      <ellipse cx="524" cy="596" rx="64" ry="26" fill="#232220" />
+      <ellipse cx="524" cy="594" rx="60" ry="22" fill="url(#syrupPoolGrad)" />
+      <path d="M 484 588 C 504 579, 542 579, 560 588" fill="none" stroke="#FFD07A" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+
+      
+      <ellipse cx="732" cy="500" rx="46" ry="19" fill="#232220" />
+      <ellipse cx="732" cy="498" rx="42" ry="16" fill="url(#syrupPoolGrad)" />
+
+      
+      <ellipse cx="668" cy="558" rx="76" ry="36" fill="#232220" />
+      <ellipse cx="668" cy="555" rx="72" ry="32" fill="url(#butterTopGrad)" />
+      <path d="M 614 542 C 642 529, 694 529, 720 542" fill="none" stroke="#FFFCE0" stroke-width="6" stroke-linecap="round" opacity="0.85" />
+    </g>
+
+    
+    
+    
+    <g id="pancake-stack">
+      
+      <g id="pancake-1">
+        <path d="M 168 486
+                 C 168 518, 294 568, 442 568
+                 C 590 568, 712 518, 712 486
+                 L 712 508
+                 C 712 552, 590 584, 442 584
+                 C 294 584, 168 552, 168 508 Z" fill="url(#pancakeEdgeGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+        <path d="M 168 498
+                 C 168 532, 294 574, 442 574
+                 C 590 574, 712 532, 712 498
+                 L 712 512
+                 C 712 554, 590 584, 442 584
+                 C 294 584, 168 554, 168 512 Z" fill="url(#pancakeCreamLayer)" />
+        <path d="M 168 486
+                 C 168 446, 286 418, 438 418
+                 C 590 418, 712 446, 712 486
+                 C 712 526, 590 554, 438 554
+                 C 286 554, 168 526, 168 486 Z" fill="url(#pancakeTopGrad)" stroke="#232220" stroke-width="4.5" />
+      </g>
+
+      
+      <g id="pancake-2">
+        <path d="M 164 446
+                 C 164 476, 288 524, 434 524
+                 C 580 524, 698 476, 698 446
+                 L 698 470
+                 C 698 512, 580 544, 434 544
+                 C 288 544, 164 512, 164 470 Z" fill="url(#pancakeEdgeGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+        <path d="M 164 458
+                 C 164 490, 288 530, 434 530
+                 C 580 530, 698 490, 698 458
+                 L 698 474
+                 C 698 514, 580 544, 434 544
+                 C 288 544, 164 514, 164 474 Z" fill="url(#pancakeCreamLayer)" />
+        <path d="M 164 446
+                 C 164 408, 280 382, 430 382
+                 C 580 382, 698 408, 698 446
+                 C 698 484, 580 510, 430 510
+                 C 280 510, 164 484, 164 446 Z" fill="url(#pancakeTopGrad)" stroke="#232220" stroke-width="4.5" />
+      </g>
+
+      
+      <g id="pancake-3">
+        <path d="M 184 404
+                 C 184 432, 302 478, 446 478
+                 C 590 478, 704 432, 704 404
+                 L 704 424
+                 C 704 464, 590 494, 446 494
+                 C 302 494, 184 464, 184 424 Z" fill="url(#pancakeEdgeGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+        <path d="M 184 414
+                 C 184 444, 302 484, 446 484
+                 C 590 484, 704 444, 704 414
+                 L 704 428
+                 C 704 466, 590 494, 446 494
+                 C 302 494, 184 466, 184 428 Z" fill="url(#pancakeCreamLayer)" />
+        <path d="M 184 404
+                 C 184 368, 296 344, 442 344
+                 C 588 344, 704 368, 704 404
+                 C 704 440, 588 464, 442 464
+                 C 296 464, 184 440, 184 404 Z" fill="url(#pancakeTopGrad)" stroke="#232220" stroke-width="4.5" />
+      </g>
+
+      
+      <g id="pancake-4">
+        <path d="M 172 362
+                 C 172 390, 288 434, 434 434
+                 C 580 434, 694 390, 694 362
+                 L 694 385
+                 C 694 424, 580 452, 434 452
+                 C 288 452, 172 424, 172 385 Z" fill="url(#pancakeEdgeGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+        <path d="M 172 374
+                 C 172 402, 288 440, 434 440
+                 C 580 440, 694 402, 694 374
+                 L 694 388
+                 C 694 426, 580 452, 434 452
+                 C 288 452, 172 426, 172 388 Z" fill="url(#pancakeCreamLayer)" />
+        <path d="M 172 362
+                 C 172 326, 284 302, 432 302
+                 C 580 302, 694 326, 694 362
+                 C 694 398, 580 422, 432 422
+                 C 284 422, 172 398, 172 362 Z" fill="url(#pancakeTopGrad)" stroke="#232220" stroke-width="4.5" />
+      </g>
+
+      
+      <g id="pancake-5">
+        <path d="M 184 316
+                 C 184 344, 296 386, 438 386
+                 C 580 386, 688 344, 688 316
+                 L 688 336
+                 C 688 374, 580 402, 438 402
+                 C 296 402, 184 374, 184 336 Z" fill="url(#pancakeEdgeGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+        <path d="M 184 326
+                 C 184 354, 296 392, 438 392
+                 C 580 392, 688 354, 688 326
+                 L 688 340
+                 C 688 376, 580 402, 438 402
+                 C 296 402, 184 376, 184 340 Z" fill="url(#pancakeCreamLayer)" />
+        <path d="M 184 316
+                 C 184 276, 292 252, 434 252
+                 C 576 252, 688 276, 688 316
+                 C 688 356, 576 380, 434 380
+                 C 292 380, 184 356, 184 316 Z" fill="url(#pancakeTopGrad)" stroke="#232220" stroke-width="4.5" />
+        
+        <path d="M 212 288 C 280 250, 586 250, 660 288" fill="none" stroke="#C88742" stroke-width="9" stroke-linecap="round" opacity="0.65" />
+      </g>
+    </g>
+
+    
+    
+    
+    <g id="syrup-pour">
+      
+      <path d="M 388 282
+               C 340 286, 260 302, 206 334
+               C 192 344, 190 360, 198 370
+               C 206 380, 210 392, 208 408
+               C 204 428, 206 454, 204 484
+               C 202 508, 194 532, 196 558
+               C 198 578, 206 592, 214 598
+               C 224 602, 232 592, 230 576
+               C 226 548, 224 512, 226 474
+               C 228 442, 224 414, 226 388
+               C 228 370, 240 358, 260 350
+               C 304 334, 354 324, 396 322
+               C 424 322, 440 340, 444 366
+               C 448 394, 464 420, 484 444
+               C 502 466, 514 490, 512 516
+               C 510 534, 496 548, 494 566
+               C 492 582, 504 594, 502 612
+               C 500 630, 488 640, 492 656
+               C 496 670, 516 678, 530 672
+               C 542 666, 542 650, 534 636
+               C 526 622, 526 604, 532 586
+               C 538 568, 534 550, 528 530
+               C 522 510, 526 486, 522 462
+               C 518 438, 504 416, 502 390
+               C 500 364, 516 338, 548 324
+               C 586 308, 636 302, 682 306
+               C 694 308, 696 296, 684 288
+               C 644 266, 554 262, 496 274 Z" fill="url(#syrupTopGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+
+      
+      <path d="M 206 370
+               C 214 384, 214 410, 212 442
+               C 210 476, 204 516, 204 552
+               C 204 574, 212 590, 222 596
+               C 216 600, 206 594, 200 580
+               C 194 562, 198 528, 200 494
+               C 202 458, 200 426, 202 398
+               C 204 382, 200 374, 196 368 Z" fill="url(#syrupDripGrad)" />
+
+      <path d="M 444 366
+               C 452 394, 470 420, 490 444
+               C 508 466, 520 490, 518 516
+               C 516 534, 502 548, 500 566
+               C 498 582, 510 594, 508 612
+               C 506 630, 496 640, 500 656
+               C 504 666, 516 672, 526 670
+               C 512 674, 496 666, 492 652
+               C 488 638, 500 628, 502 610
+               C 504 592, 492 580, 494 564
+               C 496 546, 510 532, 512 514
+               C 514 488, 502 464, 484 442
+               C 464 418, 448 392, 444 366 Z" fill="url(#syrupDripGrad)" />
+
+      
+      <path d="M 476 328 C 476 328, 484 340, 480 348 C 476 354, 468 352, 468 344 C 468 336, 476 328, 476 328 Z" fill="#E59C37" stroke="#232220" stroke-width="3" />
+
+      
+      <path d="M 252 320 C 296 300, 344 292, 382 290" fill="none" stroke="#FFE09C" stroke-width="7" stroke-linecap="round" opacity="0.8" />
+      <path d="M 526 294 C 568 280, 622 280, 666 292" fill="none" stroke="#FFE09C" stroke-width="7" stroke-linecap="round" opacity="0.8" />
+      <path d="M 216 402 C 216 438, 214 480, 214 522" fill="none" stroke="#FFC96B" stroke-width="4.5" stroke-linecap="round" opacity="0.75" />
+      <path d="M 512 456 C 516 484, 514 514, 510 540" fill="none" stroke="#FFC96B" stroke-width="4.5" stroke-linecap="round" opacity="0.75" />
+    </g>
+
+    
+    
+    
+    <g id="top-butter-pat">
+      
+      <polygon points="376,246 476,282 476,332 376,294" fill="url(#butterLeftGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+
+      
+      <polygon points="476,282 574,246 574,294 476,332" fill="url(#butterRightGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+
+      
+      <polygon points="476,214 574,246 476,282 376,246" fill="url(#butterTopGrad)" stroke="#232220" stroke-width="4.5" stroke-linejoin="round" />
+
+      
+      <polyline points="392,246 476,220 558,246" fill="none" stroke="#FFFCE2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" />
+    </g>
+  </g>
+</svg>

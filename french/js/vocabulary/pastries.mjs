@@ -45,7 +45,7 @@ export default {
     "tarte": {
         article: "une",
         category: "pastry",
-        scale: 0.7
+        scale: 0.6
     },
     "biscuit": {
         article: "un",
@@ -91,6 +91,11 @@ export default {
         article: "une",
         category: "pastry",
         scale: 0.8
+    },
+    "pancakes": {
+        article: "des",
+        category: "pastry",
+        scale: 1
     },
     "bonbon": {
         article: "un",
