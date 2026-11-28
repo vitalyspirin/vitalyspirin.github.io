@@ -1033,5 +1033,50 @@ export default {
 
 
     "Le vocabulaire - Niveau perfectionnement": {
+        "Le verbe Être et ses synonymes, exercices et corrigé": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1927445477_Vocabulaire_le_verbe__tre.pdf"
+            },
+            "implementation": {}
+        },
+        "Le verbe Avoir et ses synonymes, exercices et corrigé": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F640142127_Vocabulaire_le_verbe_Avoir.pdf"
+            },
+            "implementation": {}
+        },
+        "Le verbe DIRE et ses synonymes, exercices et corrigé": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F526891277_Vocabulaire_verbe_Dire.pdf"
+            },
+            "implementation": {}
+        },
+        "Le verbe Faire et ses synonymes, exercices et corrigé": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1627962773_Vocabulaire_le_verbe_FAIRE.pdf"
+            },
+            "implementation": {}
+        },
+        "Le verbe Mettre et ses synonymes, exercices et corrigé": {
+            "original": {
+                "info": "",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F984255138_Vocabulaire_le_verbe_Mettre.pdf"
+            },
+            "implementation": {}
+        },
+        "Le H muet et aspiré": {
+            "original": {
+                "info": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F1001395620_Le_H_muet_et__aspir__niveau_avanc_.pdf",
+                "exercise": "https://oraprdnt.uqtr.uquebec.ca/portail/docs/GSC2213/F507117213_Le_H_muet_ou_aspir__perf._exercices_et_corrig__web.pdf"
+            },
+            "implementation": {
+                "info": "../pdf/h-muet.doc.html",
+                "exercise": ["exercises/vocabulary/h-muet.html"]
+            }
+        },
     },
 }
